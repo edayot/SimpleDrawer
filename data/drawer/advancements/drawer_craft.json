@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "drawer:drawer_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "drawer:crafts/drawer_craft"
+    }
+}

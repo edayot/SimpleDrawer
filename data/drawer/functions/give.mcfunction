@@ -1,0 +1,8 @@
+function drawer:crafts/drawer_craft
+function drawer:crafts/hopper_upgrade_craft
+function drawer:crafts/iron_upgrade_craft
+function drawer:crafts/gold_upgrade_craft
+function drawer:crafts/diamond_upgrade_craft
+function drawer:crafts/star_upgrade_craft
+function drawer:crafts/netherite_upgrade_craft
+function drawer:crafts/downgrade_wand_craft

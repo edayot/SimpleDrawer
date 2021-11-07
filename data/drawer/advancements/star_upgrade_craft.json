@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "drawer:star_upgrade_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "drawer:crafts/star_upgrade_craft"
+    }
+}

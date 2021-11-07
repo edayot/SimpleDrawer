@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "drawer:hopper_upgrade_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "drawer:crafts/hopper_upgrade_craft"
+    }
+}

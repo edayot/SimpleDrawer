@@ -1,0 +1,15 @@
+[
+    {
+      "function": "minecraft:set_count",
+      "count": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "nbcrate"
+        },
+        "score": "SD_tempC",
+        "scale": 1
+      }
+    }
+  ]
+  
