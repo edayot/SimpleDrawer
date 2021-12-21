@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "simpledrawerdiamond_upgrade_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "simpledrawercrafts/diamond_upgrade_craft"
+    }
+}

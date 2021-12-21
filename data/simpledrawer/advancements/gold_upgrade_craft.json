@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "simpledrawergold_upgrade_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "simpledrawercrafts/gold_upgrade_craft"
+    }
+}
