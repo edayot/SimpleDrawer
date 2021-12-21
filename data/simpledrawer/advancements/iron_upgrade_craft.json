@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledraweriron_upgrade_craft"
+                "recipe": "simpledrawer:iron_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/iron_upgrade_craft"
+        "function": "simpledrawer:crafts/iron_upgrade_craft"
     }
 }

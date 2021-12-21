@@ -1,16 +1,16 @@
 
 #North
-execute if block ~ ~ ~ minecraft:furnace[facing=north] run function simpledrawerplace/orientation/north
+execute if block ~ ~ ~ minecraft:furnace[facing=north] run function simpledrawer:place/orientation/north
 
 
 #East
-execute if block ~ ~ ~ minecraft:furnace[facing=east] run function simpledrawerplace/orientation/east
+execute if block ~ ~ ~ minecraft:furnace[facing=east] run function simpledrawer:place/orientation/east
 
 #South
-execute if block ~ ~ ~ minecraft:furnace[facing=south] run function simpledrawerplace/orientation/south
+execute if block ~ ~ ~ minecraft:furnace[facing=south] run function simpledrawer:place/orientation/south
 
 #West
-execute if block ~ ~ ~ minecraft:furnace[facing=west] run function simpledrawerplace/orientation/west
+execute if block ~ ~ ~ minecraft:furnace[facing=west] run function simpledrawer:place/orientation/west
 
 
 
@@ -20,12 +20,12 @@ scoreboard players remove @s[scores={SD_Place=1..}] SD_Place 1
 data modify entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item.tag.info set from block ~ ~ ~ Items[0].tag.info
 
 
-execute if data block ~ ~ ~ Items[0].tag.data run function simpledrawerplace/placefilled
+execute if data block ~ ~ ~ Items[0].tag.data run function simpledrawer:place/placefilled
 
 
 
 
-execute as @e[type=glow_item_frame,tag=SD_summoned,limit=1] run function simpledrawerworking/display
+execute as @e[type=glow_item_frame,tag=SD_summoned,limit=1] run function simpledrawer:working/display
 
 execute if data entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item.tag.info{hopper:1} run tag @e[type=glow_item_frame,tag=SD_summoned2,limit=1] add SD_hopper
 #kill and reset

@@ -9,5 +9,5 @@ scoreboard players add Count SD_tempC 1
 
 execute if score Count SD_tempC <= maxCount SD_tempC store result entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.data.Count long 1 run scoreboard players get Count SD_tempC
 execute if score Count SD_tempC <= maxCount SD_tempC store result block ~ ~2 ~ Items[{Slot:0b}].Count byte 1 run scoreboard players get nbhopper SD_tempC
-execute if score Count SD_tempC <= maxCount SD_tempC as @e[type=glow_item_frame,tag=SD_selected,limit=1] run function simpledrawerworking/display
+execute if score Count SD_tempC <= maxCount SD_tempC as @e[type=glow_item_frame,tag=SD_selected,limit=1] run function simpledrawer:working/display
 execute if score Count SD_tempC <= maxCount SD_tempC run scoreboard players set @s SD_tempC 0

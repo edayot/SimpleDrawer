@@ -1,6 +1,6 @@
 #craft detection reset
-advancement revoke @s only simpledrawerdowngrade_wand_craft
-recipe take @s simpledrawerdowngrade_wand_craft
+advancement revoke @s only simpledrawer:downgrade_wand_craft
+recipe take @s simpledrawer:downgrade_wand_craft
 clear @s minecraft:knowledge_book 1
 
 #summon item with UUID

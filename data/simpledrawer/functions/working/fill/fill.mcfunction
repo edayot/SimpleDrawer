@@ -8,7 +8,7 @@ execute if score nbcrate SD_tempC <= maxCount SD_tempC run item replace entity @
 #Display and reset
 
 
-execute unless score nbcrate SD_tempC <= maxCount SD_tempC run function simpledrawerworking/fill/fullfill
+execute unless score nbcrate SD_tempC <= maxCount SD_tempC run function simpledrawer:working/fill/fullfill
 
 
-function simpledrawerworking/display
+function simpledrawer:working/display

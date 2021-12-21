@@ -7,13 +7,13 @@ execute if entity @s[tag=SD_west] positioned ~-0.1 ~ ~ run tag @e[type=glow_item
 
 
 
-function simpledrawersummon
+function simpledrawer:summon
 execute as @e[type=glow_item_frame,tag=SD_selected,limit=1] run data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.BlockEntityTag.Items[0].tag.info set from entity @s Item.tag.info
 
 data remove entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore
-data remove storage simpledrawertemp maxCount 
-data modify storage simpledrawertemp maxCount set from entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.BlockEntityTag.Items[0].tag.info.maxCount
-setblock 0 0 0 oak_sign{Text1:'[{"text":"0 ","color":"white","italic":false},{"text":"/ ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawertemp","color":"white","italic":false}]'} replace
+data remove storage simpledrawer:temp maxCount 
+data modify storage simpledrawer:temp maxCount set from entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.BlockEntityTag.Items[0].tag.info.maxCount
+setblock 0 0 0 oak_sign{Text1:'[{"text":"0 ","color":"white","italic":false},{"text":"/ ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawer:temp","color":"white","italic":false}]'} replace
 data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 0 0 Text1
 
 setblock 0 0 0 bedrock
@@ -33,7 +33,7 @@ execute if data entity @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=
 
 execute store result entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.CustomModelData long 1 run scoreboard players get model SD_tempC
 
-execute as @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=1] run function simpledrawerdestroy/destroyfilled
+execute as @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=1] run function simpledrawer:destroy/destroyfilled
 
 data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append value '{"text":"Simple Drawer","color":"blue","italic":false}'
 #all kill

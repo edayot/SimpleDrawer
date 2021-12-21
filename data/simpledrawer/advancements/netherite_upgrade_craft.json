@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawernetherite_upgrade_craft"
+                "recipe": "simpledrawer:netherite_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/netherite_upgrade_craft"
+        "function": "simpledrawer:crafts/netherite_upgrade_craft"
     }
 }

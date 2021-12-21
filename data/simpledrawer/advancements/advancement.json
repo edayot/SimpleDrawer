@@ -11,7 +11,7 @@
       "trigger": "minecraft:item_used_on_block",
       "conditions": {
         "item": {
-          "nbt": "{simpledrawer1b}"
+          "nbt": "{simpledrawer:1b}"
         }
       }
     }

@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawerdiamond_upgrade_craft"
+                "recipe": "simpledrawer:diamond_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/diamond_upgrade_craft"
+        "function": "simpledrawer:crafts/diamond_upgrade_craft"
     }
 }

@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawerdowngrade_wand_craft"
+                "recipe": "simpledrawer:downgrade_wand_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/downgrade_wand_craft"
+        "function": "simpledrawer:crafts/downgrade_wand_craft"
     }
 }

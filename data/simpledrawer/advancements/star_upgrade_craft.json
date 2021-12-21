@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawerstar_upgrade_craft"
+                "recipe": "simpledrawer:star_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/star_upgrade_craft"
+        "function": "simpledrawer:crafts/star_upgrade_craft"
     }
 }

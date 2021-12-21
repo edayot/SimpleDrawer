@@ -11,7 +11,7 @@ execute at @s if entity @s[tag=SD_east] positioned ~-0.5 ~ ~ run tag @e[type=glo
 execute at @s if entity @s[tag=SD_west] positioned ~0.5 ~ ~ run tag @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_west,distance=..1,sort=nearest,limit=1] add SD_selected2
 tag @e[type=glow_item_frame,tag=SD_selected2,limit=1] remove SD_hopper
 
-function simpledrawerworking/display
+function simpledrawer:working/display
 tag @e remove SD_selected2
 
 

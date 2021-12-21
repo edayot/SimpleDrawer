@@ -10,7 +10,7 @@ execute at @s if entity @s[tag=SD_west] positioned ~0.5 ~ ~ run tag @e[type=glow
 tag @e[type=glow_item_frame,tag=SD_selected2,limit=1] add SD_hopper
 
 tag @e remove SD_selected2
-function simpledrawerworking/display
+function simpledrawer:working/display
 
 
 

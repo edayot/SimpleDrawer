@@ -1,6 +1,6 @@
 #craft detection reset
-advancement revoke @s only simpledraweriron_upgrade_craft
-recipe take @s simpledraweriron_upgrade_craft
+advancement revoke @s only simpledrawer:iron_upgrade_craft
+recipe take @s simpledrawer:iron_upgrade_craft
 clear @s minecraft:knowledge_book 1
 
 #summon item with UUID

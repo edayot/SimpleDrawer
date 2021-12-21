@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawergold_upgrade_craft"
+                "recipe": "simpledrawer:gold_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/gold_upgrade_craft"
+        "function": "simpledrawer:crafts/gold_upgrade_craft"
     }
 }

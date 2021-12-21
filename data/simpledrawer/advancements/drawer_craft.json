@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawerdrawer_craft"
+                "recipe": "simpledrawer:drawer_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/drawer_craft"
+        "function": "simpledrawer:crafts/drawer_craft"
     }
 }

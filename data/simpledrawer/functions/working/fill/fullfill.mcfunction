@@ -3,6 +3,6 @@ scoreboard players operation nbcrate SD_tempC -= maxCount SD_tempC
 
 
 
-item modify entity @p[tag=SD_adder] weapon.mainhand simpledrawerset_count
+item modify entity @p[tag=SD_adder] weapon.mainhand simpledrawer:set_count
 
 

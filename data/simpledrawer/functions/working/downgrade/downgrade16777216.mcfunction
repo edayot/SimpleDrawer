@@ -4,5 +4,5 @@ tag @e remove SD_summoned
 execute at @s run playsound minecraft:block.note_block.harp master @s ~ ~ ~ 1 0.8
 
 data modify entity @s Item.tag.info.maxCount set value 262144
-function simpledrawerworking/display
+function simpledrawer:working/display
 

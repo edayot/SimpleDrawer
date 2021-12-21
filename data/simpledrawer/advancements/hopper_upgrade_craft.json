@@ -3,11 +3,11 @@
         "unlock": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-                "recipe": "simpledrawerhopper_upgrade_craft"
+                "recipe": "simpledrawer:hopper_upgrade_craft"
             }
         }
     },
     "rewards": {
-        "function": "simpledrawercrafts/hopper_upgrade_craft"
+        "function": "simpledrawer:crafts/hopper_upgrade_craft"
     }
 }

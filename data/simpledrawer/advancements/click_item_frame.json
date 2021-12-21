@@ -10,6 +10,6 @@
     }
   },
   "rewards": {
-    "function": "simpledrawerclick_item_frame"
+    "function": "simpledrawer:click_item_frame"
   }
 }
