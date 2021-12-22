@@ -7,4 +7,4 @@ function simpledrawer:crafts/star_upgrade_craft
 function simpledrawer:crafts/netherite_upgrade_craft
 function simpledrawer:crafts/downgrade_wand_craft
 
-function simpledrawer:book
+function simpledrawer:crafts/guide_craft

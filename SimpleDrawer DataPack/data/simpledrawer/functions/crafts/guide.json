@@ -124,7 +124,7 @@
        }
     },
     {
-       "text":"\\uff07",
+       "text":"\\uff07\\n\\n\\n",
        "font":"simpledrawer:font",
        "color":"white",
        "hoverEvent":{
@@ -138,6 +138,23 @@
        "clickEvent":{
           "action":"change_page",
           "value":"9"
+       }
+    },
+    {
+       "text":"\\uff08",
+       "font":"simpledrawer:font",
+       "color":"white",
+       "hoverEvent":{
+          "action":"show_text",
+          "contents":[
+             {
+                "text":"Simple Drawer Guide"
+             }
+          ]
+       },
+       "clickEvent":{
+          "action":"change_page",
+          "value":"10"
        }
     }
  ]

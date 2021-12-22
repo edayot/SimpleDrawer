@@ -13,6 +13,6 @@ data modify storage simpledrawer:temp Name set from entity @s Item.tag.data.tag.
 data modify storage simpledrawer:temp maxCount set from entity @s Item.tag.info.maxCount
 
 setblock 0 -64 0 oak_sign{Text1:'[{"score":{"name":"temp","objective":"SD_tempC"},"color":"white","italic":false},{"text":" / ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawer:temp","color":"white","italic":false},{"text":" of ","color":"gray","italic":false},{"nbt":"id","storage":"simpledrawer:temp","color":"gold","italic":false}]',Text2:'[{"text":"Named :  §r","color":"gray","italic":false},{"nbt":"Name","storage":"simpledrawer:temp","interpret":true,"italic":false}]'} replace
-data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 0 0 Text1
-execute if data entity @s Item.tag.data.tag.display.Name run data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 0 0 Text2
+data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 -64 0 Text1
+execute if data entity @s Item.tag.data.tag.display.Name run data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 -64 0 Text2
 setblock 0 -64 0 bedrock
