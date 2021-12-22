@@ -13,10 +13,10 @@ execute as @e[type=glow_item_frame,tag=SD_selected,limit=1] run data modify enti
 data remove entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore
 data remove storage simpledrawer:temp maxCount 
 data modify storage simpledrawer:temp maxCount set from entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.BlockEntityTag.Items[0].tag.info.maxCount
-setblock 0 0 0 oak_sign{Text1:'[{"text":"0 ","color":"white","italic":false},{"text":"/ ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawer:temp","color":"white","italic":false}]'} replace
+setblock 0 -64 0 oak_sign{Text1:'[{"text":"0 ","color":"white","italic":false},{"text":"/ ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawer:temp","color":"white","italic":false}]'} replace
 data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 0 0 Text1
 
-setblock 0 0 0 bedrock
+setblock 0 -64 0 bedrock
 
 
 

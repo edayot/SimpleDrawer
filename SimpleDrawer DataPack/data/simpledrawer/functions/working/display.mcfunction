@@ -3,9 +3,9 @@
 scoreboard players set temp SD_tempC 0
 execute store result score temp SD_tempC run data get entity @s Item.tag.data.Count
 execute store result score temp2 SD_tempC run data get entity @s Item.tag.info.maxCount
-setblock 0 0 0 oak_sign{Text1:'[{"score":{"name":"temp","objective":"SD_tempC"},"color":"white","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false},{"text":" / ","color":"black","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false},{"score":{"name":"temp2","objective":"SD_tempC"},"color":"white","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false}]'} replace
+setblock 0 -64 0 oak_sign{Text1:'[{"score":{"name":"temp","objective":"SD_tempC"},"color":"white","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false},{"text":" / ","color":"black","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false},{"score":{"name":"temp2","objective":"SD_tempC"},"color":"white","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false}]'} replace
 data modify entity @s Item.tag.display.Name set from block 0 0 0 Text1
-setblock 0 0 0 bedrock
+setblock 0 -64 0 bedrock
 
 execute at @s if entity @s[tag=SD_north] positioned ~ ~ ~0.5 run tag @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_north,distance=..1,sort=nearest,limit=1] add SD_selected2
 execute at @s if entity @s[tag=SD_south] positioned ~ ~ ~-0.5 run tag @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_south,distance=..1,sort=nearest,limit=1] add SD_selected2
