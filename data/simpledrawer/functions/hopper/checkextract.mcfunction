@@ -8,20 +8,20 @@ execute if entity @s[tag=SD_west] positioned ~-0.1 ~ ~ run tag @e[type=glow_item
 
 execute if entity @e[tag=SD_selected,tag=!filled] run scoreboard players set @s SD_tempC 0
 
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper/items0/check
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper/items0/extract
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper_extract/items0/check
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper_extract/items0/extract
 
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:1b}] unless data block ~ ~ ~ Items[{Slot:1b,Count:64b}] run function simpledrawer:hopper/items1/check
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:1b}] unless data block ~ ~ ~ Items[{Slot:1b,Count:64b}] run function simpledrawer:hopper/items1/extract
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:1b}] unless data block ~ ~ ~ Items[{Slot:1b,Count:64b}] run function simpledrawer:hopper_extract/items1/check
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:1b}] unless data block ~ ~ ~ Items[{Slot:1b,Count:64b}] run function simpledrawer:hopper_extract/items1/extract
 
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:2b}] unless data block ~ ~ ~ Items[{Slot:2b,Count:64b}] run function simpledrawer:hopper/items2/check
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:2b}] unless data block ~ ~ ~ Items[{Slot:2b,Count:64b}] run function simpledrawer:hopper/items2/extract
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:2b}] unless data block ~ ~ ~ Items[{Slot:2b,Count:64b}] run function simpledrawer:hopper_extract/items2/check
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:2b}] unless data block ~ ~ ~ Items[{Slot:2b,Count:64b}] run function simpledrawer:hopper_extract/items2/extract
 
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:3b}] unless data block ~ ~ ~ Items[{Slot:3b,Count:64b}] run function simpledrawer:hopper/items3/check
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:3b}] unless data block ~ ~ ~ Items[{Slot:3b,Count:64b}] run function simpledrawer:hopper/items3/extract
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:3b}] unless data block ~ ~ ~ Items[{Slot:3b,Count:64b}] run function simpledrawer:hopper_extract/items3/check
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:3b}] unless data block ~ ~ ~ Items[{Slot:3b,Count:64b}] run function simpledrawer:hopper_extract/items3/extract
 
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:4b}] unless data block ~ ~ ~ Items[{Slot:4b,Count:64b}] run function simpledrawer:hopper/items4/check
-execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:4b}] unless data block ~ ~ ~ Items[{Slot:4b,Count:64b}] run function simpledrawer:hopper/items4/extract
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:4b}] unless data block ~ ~ ~ Items[{Slot:4b,Count:64b}] run function simpledrawer:hopper_extract/items4/check
+execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:4b}] unless data block ~ ~ ~ Items[{Slot:4b,Count:64b}] run function simpledrawer:hopper_extract/items4/extract
 
 
 #say @e[type=glow_item_frame,tag=SD_selected]

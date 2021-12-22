@@ -11,4 +11,4 @@ data remove storage simpledrawer:temp ItemHopper.Count
 data remove storage simpledrawer:temp ItemHopper.Slot
 
 execute store success score same SD_tempC run data modify storage simpledrawer:temp ItemDrawer set from storage simpledrawer:temp ItemHopper
-execute if score same SD_tempC matches 0 run function simpledrawer:hopper/items3/extract
+execute if score same SD_tempC matches 0 run function simpledrawer:hopper_extract/items3/extract
