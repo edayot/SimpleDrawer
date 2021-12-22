@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/stick"
+    },
+    "overrides":[
+        {"predicate":{"custom_model_data":20},"model":"simpledrawer:item/downgrade_wand"}
+    ]
+}

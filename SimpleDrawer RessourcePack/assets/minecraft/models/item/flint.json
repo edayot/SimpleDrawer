@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/flint"
+    },
+    "overrides":[
+        {"predicate":{"custom_model_data":20},"model":"simpledrawer:item/hopper_upgrade"}
+    ]
+}

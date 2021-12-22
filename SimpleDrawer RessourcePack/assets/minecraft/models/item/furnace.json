@@ -1,0 +1,35 @@
+{
+    "parent": "minecraft:block/furnace",
+    "overrides":[
+        {"predicate":{"custom_model_data":256},"model":"simpledrawer:block/drawer256"},
+        {"predicate":{"custom_model_data":257},"model":"simpledrawer:block/drawer256tapped"},
+        {"predicate":{"custom_model_data":258},"model":"simpledrawer:block/drawer256_hopper"},
+        {"predicate":{"custom_model_data":259},"model":"simpledrawer:block/drawer256tapped_hopper"},
+
+        {"predicate":{"custom_model_data":1024},"model":"simpledrawer:block/drawer1024"},
+        {"predicate":{"custom_model_data":1025},"model":"simpledrawer:block/drawer1024tapped"},
+        {"predicate":{"custom_model_data":1026},"model":"simpledrawer:block/drawer1024_hopper"},
+        {"predicate":{"custom_model_data":1027},"model":"simpledrawer:block/drawer1024tapped_hopper"},
+
+        {"predicate":{"custom_model_data":2048},"model":"simpledrawer:block/drawer2048"},
+        {"predicate":{"custom_model_data":2049},"model":"simpledrawer:block/drawer2048tapped"},
+        {"predicate":{"custom_model_data":2050},"model":"simpledrawer:block/drawer2048_hopper"},
+        {"predicate":{"custom_model_data":2051},"model":"simpledrawer:block/drawer2048tapped_hopper"},
+
+        {"predicate":{"custom_model_data":32768},"model":"simpledrawer:block/drawer32768"},
+        {"predicate":{"custom_model_data":32769},"model":"simpledrawer:block/drawer32768tapped"},
+        {"predicate":{"custom_model_data":32770},"model":"simpledrawer:block/drawer32768_hopper"},
+        {"predicate":{"custom_model_data":32771},"model":"simpledrawer:block/drawer32768tapped_hopper"},
+
+        {"predicate":{"custom_model_data":262144},"model":"simpledrawer:block/drawer262144"},
+        {"predicate":{"custom_model_data":262145},"model":"simpledrawer:block/drawer262144tapped"},
+        {"predicate":{"custom_model_data":262146},"model":"simpledrawer:block/drawer262144_hopper"},
+        {"predicate":{"custom_model_data":262147},"model":"simpledrawer:block/drawer262144tapped_hopper"},
+
+        {"predicate":{"custom_model_data":16777216},"model":"simpledrawer:block/drawer16777216"},
+        {"predicate":{"custom_model_data":16777218},"model":"simpledrawer:block/drawer16777216tapped"},
+        {"predicate":{"custom_model_data":16777220},"model":"simpledrawer:block/drawer16777216_hopper"},
+        {"predicate":{"custom_model_data":16777222},"model":"simpledrawer:block/drawer16777216tapped_hopper"}
+
+    ]
+}

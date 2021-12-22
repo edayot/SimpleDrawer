@@ -1,0 +1,4 @@
+{"providers": [
+	{ "type": "bitmap", "file": "simpledrawer:font/none.png",	"ascent": 8, "height": 19, "chars": ["\uef00"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_drawer.png",	"ascent": 12, "height": 139, "chars": ["\uef01"] }
+]}
