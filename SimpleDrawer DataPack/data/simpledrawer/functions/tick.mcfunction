@@ -30,6 +30,8 @@ scoreboard players reset * SD_click
 scoreboard players add 7t SD_time 1
 execute if score 7t SD_time matches 7.. run scoreboard players set 7t SD_time 0
 
+execute as @a[tag=!SD_book] at @s run function simpledrawer:crafts/guide_craft
+tag @a add SD_book
 
 #data remove storage simpledrawer:temp ItemDrawer
 #data remove storage simpledrawer:temp ItemHopper

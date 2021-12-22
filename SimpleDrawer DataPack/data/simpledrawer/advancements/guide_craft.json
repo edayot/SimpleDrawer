@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "unlock": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "simpledrawer:guide_craft"
+            }
+        }
+    },
+    "rewards": {
+        "function": "simpledrawer:crafts/guide_craft"
+    }
+}

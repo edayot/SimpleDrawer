@@ -9,3 +9,4 @@ scoreboard objectives add SD_Place minecraft.used:minecraft.furnace
 
 
 tellraw @a {"text":"Loaded SimpleDrawer v1.0","color":"green"}
+

@@ -9,5 +9,5 @@
 	{ "type": "bitmap", "file": "simpledrawer:font/craft_netherite.png",	"ascent": 12, "height": 139, "chars": ["\uef07"] },
 	{ "type": "bitmap", "file": "simpledrawer:font/craft_hopper.png",	"ascent": 12, "height": 139, "chars": ["\uef08"] },
 	{ "type": "bitmap", "file": "simpledrawer:font/craft_wrench.png",	"ascent": 12, "height": 139, "chars": ["\uef09"] },
-	{ "type": "bitmap", "file": "simpledrawer:font/items.png",	"ascent": 14, "height": 24, "chars": ["\uff00\uff01\uff02\uff03\uff04\uff05\uff06\uff07"] }
+	{ "type": "bitmap", "file": "simpledrawer:font/items.png",	"ascent": 14, "height": 24, "chars": ["\uff00\uff01\uff02\uff03\uff04\uff05\uff06\uff07\uff08"] }
 ]}
