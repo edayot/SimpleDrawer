@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/orientable_with_bottom",
+    "textures": {
+      "top": "simpledrawer:block/drawers_star_hopper",
+      "bottom": "simpledrawer:block/drawers_star_hopper",
+      "side": "simpledrawer:block/drawers_star_side",
+      "front": "simpledrawer:block/drawers_star_front",
+      "particle": "simpledrawer:block/drawers_star_side"
+    },
+    "ambientocclusion":false
+  }

@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/orientable_with_bottom",
+    "textures": {
+      "top": "simpledrawer:block/drawers_netherite_side",
+      "bottom": "simpledrawer:block/drawers_netherite_side",
+      "side": "simpledrawer:block/drawers_netherite_side",
+      "front": "simpledrawer:block/drawers_netherite_front",
+      "particle": "simpledrawer:block/drawers_netherite_side"
+    },
+    "ambientocclusion":false
+  }

@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/orientable_with_bottom",
+    "textures": {
+      "top": "simpledrawer:block/drawers_wood_hopper",
+      "bottom": "simpledrawer:block/drawers_wood_hopper",
+      "side": "simpledrawer:block/drawers_wood_side",
+      "front": "simpledrawer:block/drawers_wood_tapped",
+      "particle": "simpledrawer:block/drawers_wood_side"
+    },
+    "ambientocclusion":false
+  }

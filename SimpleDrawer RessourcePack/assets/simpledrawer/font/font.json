@@ -1,4 +1,11 @@
 {"providers": [
 	{ "type": "bitmap", "file": "simpledrawer:font/none.png",	"ascent": 8, "height": 19, "chars": ["\uef00"] },
-	{ "type": "bitmap", "file": "simpledrawer:font/craft_drawer.png",	"ascent": 12, "height": 139, "chars": ["\uef01"] }
+	{ "type": "bitmap", "file": "simpledrawer:font/page.png",	"ascent": 12, "height": 139, "chars": ["\uef01"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_drawer.png",	"ascent": 12, "height": 139, "chars": ["\uef02"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_iron.png",	"ascent": 12, "height": 139, "chars": ["\uef03"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_gold.png",	"ascent": 12, "height": 139, "chars": ["\uef04"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_diamond.png",	"ascent": 12, "height": 139, "chars": ["\uef05"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_star.png",	"ascent": 12, "height": 139, "chars": ["\uef06"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/craft_netherite.png",	"ascent": 12, "height": 139, "chars": ["\uef07"] },
+	{ "type": "bitmap", "file": "simpledrawer:font/items.png",	"ascent": 0, "height": 16, "chars": ["\uff00\uff01\uff02\uff03\uff04\uff05\uff06\uff07"] }
 ]}
