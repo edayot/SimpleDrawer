@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:block/item/furnace",
+    "parent": "minecraft:block/furnace",
     "overrides":[
         {"predicate":{"custom_model_data":256},"model":"simpledrawer:block/item/drawer256"},
         {"predicate":{"custom_model_data":257},"model":"simpledrawer:block/item/drawer256tapped"},
