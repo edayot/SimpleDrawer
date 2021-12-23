@@ -14,4 +14,4 @@ tag @e[type=glow_item_frame,tag=SD_selected2,limit=1] remove SD_hopper
 function simpledrawer:working/display
 tag @e remove SD_selected2
 
-
+tag @s add SD_upgrade

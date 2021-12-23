@@ -127,7 +127,10 @@ execute if score nb SD_tempC matches 0 run function simpledrawer:working/unfill/
 execute if score nb SD_tempC matches 1.. store result entity @s Item.tag.data.Count long 1 run scoreboard players get nb SD_tempC 
 function simpledrawer:working/display
 
+#tellraw @a ["",{"text":"nbstack "},{"score":{"name":"nbstack","objective":"SD_tempC"}}]
+
 function simpledrawer:working/unfill/drop_bigunfill
+
 execute as @e[type=item,tag=SD_summoned] run data modify entity @s Item set from storage simpledrawer:temp ItemUnfilled
 execute as @e[type=item,tag=SD_summoned] run data modify entity @s Owner set from entity @p[tag=SD_adder] UUID
 tag @e remove SD_summoned

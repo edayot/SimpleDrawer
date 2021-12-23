@@ -6,3 +6,4 @@ execute at @s run playsound minecraft:block.note_block.harp master @s ~ ~ ~ 1 0.
 data modify entity @s Item.tag.info.maxCount set value 32768
 function simpledrawer:working/display
 
+tag @s add SD_upgrade

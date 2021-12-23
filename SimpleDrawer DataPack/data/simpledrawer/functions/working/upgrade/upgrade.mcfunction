@@ -7,3 +7,4 @@ execute if score setCount SD_tempC matches 16777216 run clear @p[tag=SD_adder] #
 
 execute at @s run playsound minecraft:entity.experience_orb.pickup neutral @a ~ ~ ~ 1 1
 function simpledrawer:working/display
+tag @s add SD_upgrade

@@ -1,5 +1,5 @@
 
-execute at @s at @p[tag=SD_adder] run summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:stone",Count:64b}}
+execute at @s at @p[tag=SD_adder] run summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:stone",Count:1b}}
 
 
 scoreboard players remove nbstack SD_tempC 1
