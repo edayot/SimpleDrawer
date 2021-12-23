@@ -3,7 +3,7 @@ data remove storage simpledrawer:temp ItemHopper
 data modify storage simpledrawer:temp ItemHopper set from block ~ ~2 ~ Items[{Slot:1b}]
 data modify storage simpledrawer:temp info set from entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info
 
-tag @e[type=glow_item_frame,tag=SD_selected,limit=1] add filled
+tag @e[type=glow_item_frame,tag=SD_selected,limit=1] add SD_filled
 
 data modify entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item set from storage simpledrawer:temp ItemHopper
 data modify entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.data set from storage simpledrawer:temp ItemHopper

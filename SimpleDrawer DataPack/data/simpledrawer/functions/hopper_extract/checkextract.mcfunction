@@ -6,7 +6,7 @@ execute if entity @s[tag=SD_north] positioned ~ ~ ~-0.1 run tag @e[type=glow_ite
 execute if entity @s[tag=SD_south] positioned ~ ~ ~0.1 run tag @e[type=glow_item_frame,tag=SD_DrawerItem,sort=nearest,limit=1,tag=SD_south] add SD_selected
 execute if entity @s[tag=SD_west] positioned ~-0.1 ~ ~ run tag @e[type=glow_item_frame,tag=SD_DrawerItem,sort=nearest,limit=1,tag=SD_west] add SD_selected
 
-execute if entity @e[tag=SD_selected,tag=!filled] run scoreboard players set @s SD_tempC 0
+execute if entity @e[tag=SD_selected,tag=!SD_filled] run scoreboard players set @s SD_tempC 0
 
 execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ if data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper_extract/items0/check
 execute if score @s SD_tempC matches 1 positioned ~ ~-1 ~ unless data block ~ ~ ~ Items[{Slot:0b}] unless data block ~ ~ ~ Items[{Slot:0b,Count:64b}] run function simpledrawer:hopper_extract/items0/extract

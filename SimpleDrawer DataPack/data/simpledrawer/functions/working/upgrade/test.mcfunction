@@ -19,11 +19,11 @@ execute if score maxCount SD_tempC matches 262144 if score setCount SD_tempC mat
 
 execute if score hopperUpgrade SD_tempC matches 1 unless data entity @s Item.tag.info{hopper:1} run function simpledrawer:working/upgrade/hopper
 
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 256 if data entity @s Item.tag.info{hopper:1} run function simpledrawer:working/downgrade/downgrade256
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 1024 run function simpledrawer:working/downgrade/downgrade1024
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 2048 run function simpledrawer:working/downgrade/downgrade2048
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 32768 run function simpledrawer:working/downgrade/downgrade32768
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 262144 run function simpledrawer:working/downgrade/downgrade262144
-execute if entity @s[tag=!filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 16777216 run function simpledrawer:working/downgrade/downgrade16777216
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 256 if data entity @s Item.tag.info{hopper:1} run function simpledrawer:working/downgrade/downgrade256
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 1024 run function simpledrawer:working/downgrade/downgrade1024
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 2048 run function simpledrawer:working/downgrade/downgrade2048
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 32768 run function simpledrawer:working/downgrade/downgrade32768
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 262144 run function simpledrawer:working/downgrade/downgrade262144
+execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 16777216 run function simpledrawer:working/downgrade/downgrade16777216
 
-execute if entity @s[tag=filled] if score downgrade SD_tempC matches 1 run tellraw @p[tag=SD_adder] [{"text":"Can't downgrade filled drawer","color":"red"}]
+execute if entity @s[tag=SD_filled] if score downgrade SD_tempC matches 1 run tellraw @p[tag=SD_adder] [{"text":"Can't downgrade filled drawer","color":"red"}]

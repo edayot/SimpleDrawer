@@ -22,18 +22,18 @@ setblock 0 -64 0 bedrock
 
 execute store result score model SD_tempC run data get entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info.maxCount
 execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
-execute if entity @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=1] run scoreboard players add model SD_tempC 1
+execute if entity @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] run scoreboard players add model SD_tempC 1
 
 #limitation https://en.wikipedia.org/wiki/Single-precision_floating-point_format#Precision_limitations_on_integer_values
 execute if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
 execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
-execute if data entity @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
 
 
 
 execute store result entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.CustomModelData long 1 run scoreboard players get model SD_tempC
 
-execute as @e[type=glow_item_frame,tag=SD_selected,tag=filled,limit=1] run function simpledrawer:destroy/destroyfilled
+execute as @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] run function simpledrawer:destroy/destroyfilled
 
 data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append value '{"text":"Simple Drawer","color":"blue","italic":false}'
 #all kill

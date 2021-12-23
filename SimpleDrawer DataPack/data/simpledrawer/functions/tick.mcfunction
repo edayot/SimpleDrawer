@@ -14,8 +14,9 @@ execute as @e[type=glow_item_frame,tag=SD_DrawerItem] at @s if block ~ ~ ~ air r
 execute as @e[type=glow_item_frame,tag=SD_DrawerItem] at @s unless block ~ ~ ~ air run data modify entity @s Fixed set value 1b
 
 #Test click
-execute as @e[type=glow_item_frame,tag=SD_DrawerItem,tag=!filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/fill/firstfilltest
-execute as @e[type=glow_item_frame,tag=SD_DrawerItem,tag=filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/testclick
+execute as @e[type=glow_item_frame,tag=SD_DrawerItem] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/click/repart
+#execute as @e[type=glow_item_frame,tag=SD_DrawerItem,tag=!SD_filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/fill/firstfilltest
+#execute as @e[type=glow_item_frame,tag=SD_DrawerItem,tag=SD_filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/testclick
 
 
 
