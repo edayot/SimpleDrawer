@@ -6,7 +6,7 @@ for i in range(0,36):
         os.mkdir("slot"+str(i))
     except:
         pass
-    test="""data modify storage simpledrawer:temp ItemInventory set from entity @p[tag=adder] Inventory[{Slot:"""+str(i)+"""b}]
+    test="""data modify storage simpledrawer:temp ItemInventory set from entity @p[tag=SD_adder] Inventory[{Slot:"""+str(i)+"""b}]
 data remove storage simpledrawer:temp ItemInventory.Count
 data remove storage simpledrawer:temp ItemInventory.Slot
 execute store success storage simpledrawer:temp bigfilltest byte 1 run data modify storage simpledrawer:temp ItemInventory set from storage simpledrawer:temp ItemDrawer
