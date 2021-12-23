@@ -37,7 +37,7 @@ tag @a add SD_book
 #data remove storage simpledrawer:temp ItemDrawer
 #data remove storage simpledrawer:temp ItemHopper
 #data remove storage simpledrawer:temp ItemAdded
-data remove storage simpledrawer:temp ItemUnfilled
+#data remove storage simpledrawer:temp ItemUnfilled
 data remove storage simpledrawer:temp Name
 data remove storage simpledrawer:temp Count
 data remove storage simpledrawer:temp id
