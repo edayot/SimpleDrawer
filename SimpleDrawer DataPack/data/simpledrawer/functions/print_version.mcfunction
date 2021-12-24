@@ -1,1 +1,1 @@
-tellraw @a {"text":"Loaded SimpleDrawer v1.0.3","color":"green"}
+tellraw @a {"text":"Loaded SimpleDrawer v1.1.0","color":"green"}
