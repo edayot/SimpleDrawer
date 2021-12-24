@@ -16,23 +16,23 @@ def change_version(version):
             }
         }
         json.dump(pack,f, indent = 4)
-    with open("SimpleDrawer RessourcePack/pack.mcmeta","w") as f:
+    with open("SimpleDrawer ResourcePack/pack.mcmeta","w") as f:
         pack={
             "pack":{
                 "pack_format":8,
-                "description":"§aSimpleDrawer RessourcePack "+version+" :\n§rThe ressource pack of the SimpleDrawer datapack"
+                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rThe Resource pack of the SimpleDrawer datapack"
             }
         }
         json.dump(pack,f, indent = 4)
 
 def create_zip(version):
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
-    shutil.make_archive("release/SimpleDrawer_RessourcePack_"+version, "zip", "SimpleDrawer RessourcePack")
+    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "SimpleDrawer ResourcePack")
 
 def git_push(version):
     r = git.Repo.init("")
     r.index.add("SimpleDrawer DataPack/pack.mcmeta")
-    r.index.add("SimpleDrawer RessourcePack/pack.mcmeta")
+    r.index.add("SimpleDrawer ResourcePack/pack.mcmeta")
     r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction")
 
     r.index.commit("[AUTO] updated to "+version)
