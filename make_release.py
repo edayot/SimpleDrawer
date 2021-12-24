@@ -36,7 +36,7 @@ def git_push(version):
     r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction")
 
     r.index.commit("[AUTO] updated to "+version)
-    r.index.push()
+    r.remote("origin").push()
 
 
 
