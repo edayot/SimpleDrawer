@@ -36,4 +36,4 @@ tag @a add SD_book
 
 
 
-execute as @e[type=item] if data entity @s {Item:{tag:{Drawer:1b}}} at @s run function simpledrawer:destroy/speed_destroy
+execute as @e[type=item] if data entity @s {Item:{tag:{Drawer:1b}}} at @s run function simpledrawer:destroy/fast_destroy
