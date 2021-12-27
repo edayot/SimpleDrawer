@@ -1,5 +1,5 @@
 
-
+data remove storage simpledrawer:temp info
 data modify storage simpledrawer:temp info set from entity @s Item.tag.info
 #test SelectedItem
 data remove storage simpledrawer:temp ItemAdded

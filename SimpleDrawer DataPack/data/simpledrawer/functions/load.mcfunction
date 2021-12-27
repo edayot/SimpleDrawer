@@ -8,7 +8,7 @@ scoreboard objectives add SD_time dummy
 scoreboard objectives add SD_Place minecraft.used:minecraft.furnace
 
 
-
+forceload add 0 0
 scoreboard players set 64 SD_tempC 64
 
 function simpledrawer:print_version

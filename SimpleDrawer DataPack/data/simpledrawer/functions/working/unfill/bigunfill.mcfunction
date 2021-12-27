@@ -108,7 +108,7 @@ execute store success storage simpledrawer:temp bigunfill byte 1 run data get en
 execute if data storage simpledrawer:temp {bigunfill:0b} run scoreboard players add bigunfill SD_tempC 1
 
 
-
+data remove storage simpledrawer:temp ItemUnfilled
 data modify storage simpledrawer:temp ItemUnfilled set from entity @s Item.tag.data
 data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
 

@@ -1,5 +1,6 @@
 #Copy item to unfill and max to Count:64b
 execute store result score nb SD_tempC run data get entity @s Item.tag.data.Count
+data remove storage simpledrawer:temp ItemUnfilled
 data modify storage simpledrawer:temp ItemUnfilled set from entity @s Item.tag.data
 execute if score nb SD_tempC matches 65.. run data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
 

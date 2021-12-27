@@ -1,6 +1,7 @@
 #add item to drawer
 data remove storage simpledrawer:temp ItemHopper
 data modify storage simpledrawer:temp ItemHopper set from block ~ ~2 ~ Items[{Slot:2b}]
+data remove storage simpledrawer:temp info
 data modify storage simpledrawer:temp info set from entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info
 
 tag @e[type=glow_item_frame,tag=SD_selected,limit=1] add SD_filled

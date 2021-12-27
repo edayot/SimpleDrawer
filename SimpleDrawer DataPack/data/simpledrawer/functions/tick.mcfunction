@@ -34,12 +34,6 @@ execute if score 7t SD_time matches 7.. run scoreboard players set 7t SD_time 0
 execute as @a[tag=!SD_book] at @s run function simpledrawer:crafts/guide_craft
 tag @a add SD_book
 
-#data remove storage simpledrawer:temp ItemDrawer
-#data remove storage simpledrawer:temp ItemHopper
-#data remove storage simpledrawer:temp ItemAdded
-#data remove storage simpledrawer:temp ItemUnfilled
-data remove storage simpledrawer:temp Name
-data remove storage simpledrawer:temp Count
-data remove storage simpledrawer:temp id
-data remove storage simpledrawer:temp ItemPlace
-data remove storage simpledrawer:temp info
+
+
+execute as @e[type=item] if data entity @s {Item:{tag:{Drawer:1b}}} at @s run function simpledrawer:destroy/speed_destroy
