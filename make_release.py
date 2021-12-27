@@ -11,7 +11,7 @@ def change_version(version):
     with open("SimpleDrawer DataPack/pack.mcmeta","w") as f:
         pack={
             "pack":{
-                "pack_format":6,
+                "pack_format":8,
                 "description":"§aSimpleDrawer DataPack "+version+" :\n§rA simple datapack that add drawers in to minecraft"
             }
         }
