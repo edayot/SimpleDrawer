@@ -12,7 +12,7 @@ def change_version(version):
         pack={
             "pack":{
                 "pack_format":8,
-                "description":"§aSimpleDrawer DataPack "+version+" :\n§rA simple datapack that add drawers in to minecraft"
+                "description":"§aSimpleDrawer DataPack "+version+" :\n§rAdd drawers in to minecraft"
             }
         }
         json.dump(pack,f, indent = 4)
@@ -20,7 +20,7 @@ def change_version(version):
         pack={
             "pack":{
                 "pack_format":8,
-                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rThe Resource pack of the SimpleDrawer datapack"
+                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rSimpleDrawer's Resource pack"
             }
         }
         json.dump(pack,f, indent = 4)
