@@ -12,6 +12,7 @@ execute if block ~ ~ ~ minecraft:furnace[facing=south] run function simpledrawer
 #West
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run function simpledrawer:place/orientation/west
 
+data modify entity @e[tag=SD_summoned,limit=1,sort=nearest,type=glow_item_frame] Item.tag.info.maxCount set from storage simpledrawer:temp Drawers.wood
 
 
 scoreboard players remove @s[scores={SD_Place=1..}] SD_Place 1
@@ -20,10 +21,10 @@ scoreboard players remove @s[scores={SD_Place=1..}] SD_Place 1
 data modify entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item.tag.info set from block ~ ~ ~ Items[0].tag.info
 
 
+
 execute if data block ~ ~ ~ Items[0].tag.data run function simpledrawer:place/placefilled
 
-
-
+execute as @e[type=glow_item_frame,tag=SD_summoned,limit=1] run function simpledrawer:working/set_max_count
 
 execute as @e[type=glow_item_frame,tag=SD_summoned,limit=1] run function simpledrawer:working/display
 

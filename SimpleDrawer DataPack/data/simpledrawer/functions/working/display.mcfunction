@@ -18,12 +18,13 @@ execute at @s if entity @s[tag=SD_west] positioned ~0.5 ~ ~ run tag @e[type=glow
 
 
 
-execute store result score model SD_tempC run data get entity @s Item.tag.info.maxCount
+scoreboard players set model SD_tempC 42000
 execute if data entity @s Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
-
-#limitation https://en.wikipedia.org/wiki/Single-precision_floating-point_format#Precision_limitations_on_integer_values
-execute if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
-execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
+execute if data entity @s Item.tag.info{type:"iron"} run scoreboard players add model SD_tempC 10
+execute if data entity @s Item.tag.info{type:"gold"} run scoreboard players add model SD_tempC 20
+execute if data entity @s Item.tag.info{type:"diamond"} run scoreboard players add model SD_tempC 30
+execute if data entity @s Item.tag.info{type:"star"} run scoreboard players add model SD_tempC 40
+execute if data entity @s Item.tag.info{mtype:"netherite"} run scoreboard players add model SD_tempC 50
 
 
 execute store result entity @e[type=glow_item_frame,tag=SD_selected2,limit=1] Item.tag.CustomModelData long 1 run scoreboard players get model SD_tempC

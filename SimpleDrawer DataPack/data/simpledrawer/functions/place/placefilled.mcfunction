@@ -7,5 +7,6 @@ data modify entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item set fro
 data modify entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item.tag.data set from block ~ ~ ~ Items[0].tag.data
 data modify entity @e[type=glow_item_frame,tag=SD_summoned,limit=1] Item.tag.info set from block ~ ~ ~ Items[0].tag.info
 
+say t
 
 

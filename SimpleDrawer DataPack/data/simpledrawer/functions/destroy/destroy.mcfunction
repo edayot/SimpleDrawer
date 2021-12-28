@@ -20,15 +20,15 @@ execute in simpledrawer:intern run setblock 0 -64 0 bedrock
 
 
 
-execute store result score model SD_tempC run data get entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info.maxCount
-execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
+
+scoreboard players set model SD_tempC 42000
 execute if entity @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] run scoreboard players add model SD_tempC 1
-
-#limitation https://en.wikipedia.org/wiki/Single-precision_floating-point_format#Precision_limitations_on_integer_values
-execute if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
-execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
-execute if data entity @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] Item.tag.info{hopper:1} if score model SD_tempC matches 16777216.. run scoreboard players add model SD_tempC 1
-
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"iron"} run scoreboard players add model SD_tempC 10
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"gold"} run scoreboard players add model SD_tempC 20
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"diamond"} run scoreboard players add model SD_tempC 30
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"star"} run scoreboard players add model SD_tempC 40
+execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"netherite"} run scoreboard players add model SD_tempC 50
 
 
 execute store result entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.CustomModelData long 1 run scoreboard players get model SD_tempC
