@@ -1,33 +1,23 @@
-scoreboard players set setCount SD_tempC 0
-scoreboard players set maxCount SD_tempC 0
-scoreboard players set hopperUpgrade SD_tempC 0
-scoreboard players set downgrade SD_tempC 0
-execute store result score setCount SD_tempC run data get entity @p[tag=SD_adder] SelectedItem.tag.setCount
-execute store result score maxCount SD_tempC run data get entity @s Item.tag.info.maxCount
-execute store result score hopperUpgrade SD_tempC run data get entity @p[tag=SD_adder] SelectedItem.tag.hopperUpgrade
-execute store result score downgrade SD_tempC run data get entity @p[tag=SD_adder] SelectedItem.tag.downgrade
 
 
-#tellraw @p [{"text":"setCount : "},{"score":{"name":"setCount","objective":"SD_tempC"}}]
-#tellraw @p [{"text":"maxCount : "},{"score":{"name":"maxCount","objective":"SD_tempC"}}]
 
-execute if score maxCount SD_tempC matches 256 if score setCount SD_tempC matches 1024 run function simpledrawer:working/upgrade/upgrade
-execute if score maxCount SD_tempC matches 1024 if score setCount SD_tempC matches 2048 run function simpledrawer:working/upgrade/upgrade
-execute if score maxCount SD_tempC matches 2048 if score setCount SD_tempC matches 32768 run function simpledrawer:working/upgrade/upgrade
-execute if score maxCount SD_tempC matches 32768 if score setCount SD_tempC matches 262144 run function simpledrawer:working/upgrade/upgrade
-execute if score maxCount SD_tempC matches 262144 if score setCount SD_tempC matches 16777216 run function simpledrawer:working/upgrade/upgrade
 
-execute if score hopperUpgrade SD_tempC matches 1 unless data entity @s Item.tag.info{hopper:1} run function simpledrawer:working/upgrade/hopper
 
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 256 if data entity @s Item.tag.info{hopper:1} run function simpledrawer:working/downgrade/downgrade_wood
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 1024 run function simpledrawer:working/downgrade/downgrade_iron
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 2048 run function simpledrawer:working/downgrade/downgrade_gold
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 32768 run function simpledrawer:working/downgrade/downgrade_diamond
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 262144 run function simpledrawer:working/downgrade/downgrade_star
-execute if entity @s[tag=!SD_filled] if score downgrade SD_tempC matches 1 if score maxCount SD_tempC matches 16777216 run function simpledrawer:working/downgrade/downgrade_netherite
+execute unless data entity @s Item.tag.info{hopper:1} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"hopper"} run function simpledrawer:working/upgrade/hopper
+execute if data entity @s Item.tag.info{type:"wood"} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"iron"} run function simpledrawer:working/upgrade/upgrade
+execute if data entity @s Item.tag.info{type:"iron"} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"gold"} run function simpledrawer:working/upgrade/upgrade
+execute if data entity @s Item.tag.info{type:"gold"} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"diamond"} run function simpledrawer:working/upgrade/upgrade
+execute if data entity @s Item.tag.info{type:"diamond"} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"star"} run function simpledrawer:working/upgrade/upgrade
+execute if data entity @s Item.tag.info{type:"star"} if data entity @p[tag=SD_adder] SelectedItem.tag{setType:"netherite"} run function simpledrawer:working/upgrade/upgrade
+
+
+
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{hopper:1} if data entity @s Item.tag.info{type:"wood"} run function simpledrawer:working/downgrade/downgrade_wood
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"iron"} run function simpledrawer:working/downgrade/downgrade_iron
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"gold"} run function simpledrawer:working/downgrade/downgrade_gold
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"diamond"} run function simpledrawer:working/downgrade/downgrade_diamond
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"star"} run function simpledrawer:working/downgrade/downgrade_star
+execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"netherite"} run function simpledrawer:working/downgrade/downgrade_netherite
+
 
 execute if entity @s[tag=SD_filled] if score downgrade SD_tempC matches 1 run tellraw @p[tag=SD_adder] [{"text":"Can't downgrade filled drawer","color":"red"}]
-
-
-
-execute if data entity @s Item.tag.info{type:"wood"} if data @p[tag=SD_adder] SelectedItem.tag{setType:"iron"} run data modify entity @s Item.tag.info.type set value "iron"

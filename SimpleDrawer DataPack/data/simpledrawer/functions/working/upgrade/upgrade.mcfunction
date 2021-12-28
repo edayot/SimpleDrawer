@@ -1,10 +1,6 @@
-execute store result entity @s Item.tag.info.maxCount int 1 run scoreboard players get setCount SD_tempC
-execute if score setCount SD_tempC matches 1024 run clear @p[tag=SD_adder] #simpledrawer:upgrade{setCount:1024} 1
-execute if score setCount SD_tempC matches 2048 run clear @p[tag=SD_adder] #simpledrawer:upgrade{setCount:2048} 1
-execute if score setCount SD_tempC matches 32768 run clear @p[tag=SD_adder] #simpledrawer:upgrade{setCount:32768} 1
-execute if score setCount SD_tempC matches 262144 run clear @p[tag=SD_adder] #simpledrawer:upgrade{setCount:262144} 1
-execute if score setCount SD_tempC matches 16777216 run clear @p[tag=SD_adder] #simpledrawer:upgrade{setCount:16777216} 1
-
+data modify entity @s Item.tag.info.type set from entity @p[tag=SD_adder] SelectedItem.tag.setType
+function simpledrawer:working/set_max_count
+item modify entity @p[tag=SD_adder] weapon.mainhand simpledrawer:delete_one
 execute at @s run playsound minecraft:entity.experience_orb.pickup neutral @a ~ ~ ~ 1 1
 function simpledrawer:working/display
 tag @s add SD_upgrade

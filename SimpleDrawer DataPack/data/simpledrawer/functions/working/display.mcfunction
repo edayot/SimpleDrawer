@@ -24,7 +24,7 @@ execute if data entity @s Item.tag.info{type:"iron"} run scoreboard players add 
 execute if data entity @s Item.tag.info{type:"gold"} run scoreboard players add model SD_tempC 20
 execute if data entity @s Item.tag.info{type:"diamond"} run scoreboard players add model SD_tempC 30
 execute if data entity @s Item.tag.info{type:"star"} run scoreboard players add model SD_tempC 40
-execute if data entity @s Item.tag.info{mtype:"netherite"} run scoreboard players add model SD_tempC 50
+execute if data entity @s Item.tag.info{type:"netherite"} run scoreboard players add model SD_tempC 50
 
 
 execute store result entity @e[type=glow_item_frame,tag=SD_selected2,limit=1] Item.tag.CustomModelData long 1 run scoreboard players get model SD_tempC
