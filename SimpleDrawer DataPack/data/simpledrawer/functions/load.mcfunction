@@ -12,10 +12,10 @@ execute in simpledrawer:intern run forceload add 0 0
 scoreboard players set 64 SD_tempC 64
 
 data modify storage simpledrawer:temp Drawers.wood set value 256
-data modify storage simpledrawer:temp Drawers.iron set value 1024
-data modify storage simpledrawer:temp Drawers.gold set value 2048
-data modify storage simpledrawer:temp Drawers.diamond set value 32768
-data modify storage simpledrawer:temp Drawers.star set value 262144
-data modify storage simpledrawer:temp Drawers.netherite set value 16777216
+data modify storage simpledrawer:temp Drawers.iron set value 2048
+data modify storage simpledrawer:temp Drawers.gold set value 8192
+data modify storage simpledrawer:temp Drawers.diamond set value 65536
+data modify storage simpledrawer:temp Drawers.star set value 1048576
+data modify storage simpledrawer:temp Drawers.netherite set value 1073741824
 
 function simpledrawer:print_version

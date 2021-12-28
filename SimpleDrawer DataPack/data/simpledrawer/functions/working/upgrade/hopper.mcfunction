@@ -1,5 +1,5 @@
 data modify entity @s Item.tag.info.hopper set value 1
-execute at @s run clear @p[tag=SD_adder] flint{hopperUpgrade:1} 1
+item modify entity @p[tag=SD_adder] weapon.mainhand simpledrawer:delete_one
 execute at @s run playsound minecraft:entity.experience_orb.pickup neutral @a ~ ~ ~ 1 1
 
 execute at @s if entity @s[tag=SD_north] positioned ~ ~ ~0.5 run tag @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_north,distance=..1,sort=nearest,limit=1] add SD_selected2
