@@ -1,7 +1,13 @@
 #Hopper compatibility 
+scoreboard players add @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper] SD_time 0
+execute as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper,scores={SD_time=1..}] run scoreboard players remove @s SD_time 1
 
-execute if score 7t SD_time matches 0 as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper] at @s if block ~ ~-1 ~ hopper run function simpledrawer:hopper_extract/checkextract
-execute if score 7t SD_time matches 0 as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper] at @s if block ~ ~1 ~ hopper[facing=down] run function simpledrawer:hopper_insert/checkinsert
+
+execute as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper,scores={SD_time=..0}] at @s if block ~ ~1 ~ hopper[facing=down] run scoreboard players set @s SD_time 8
+execute as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper,scores={SD_time=..0}] at @s if block ~ ~-1 ~ hopper run scoreboard players set @s SD_time 8
+
+execute as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper,scores={SD_time=8}] at @s if block ~ ~-1 ~ hopper run function simpledrawer:hopper_extract/checkextract
+execute as @e[type=glow_item_frame,tag=SD_DrawerBlock,tag=SD_hopper,scores={SD_time=8}] at @s if block ~ ~1 ~ hopper[facing=down] run function simpledrawer:hopper_insert/checkinsert
 
 #Place and destroy
 execute as @e[type=glow_item_frame,tag=SD_DrawerBlock] at @s unless block ~ ~ ~ minecraft:beehive run function simpledrawer:destroy/destroy
@@ -27,10 +33,6 @@ scoreboard players set @a SD_sneak 0
 
 
 
-
-
-scoreboard players add 7t SD_time 1
-execute if score 7t SD_time matches 7.. run scoreboard players set 7t SD_time 0
 
 
 

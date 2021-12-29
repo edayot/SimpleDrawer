@@ -8,7 +8,7 @@ data modify storage simpledrawer:temp ItemUnfilled set from entity @s Item.tag.d
 
 #test stack 
 
-execute if data entity @s Item.tag.info{stack1:0b,stack16:0b} if score nb SD_tempC matches 65.. run data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
+execute if score nb SD_tempC matches 65.. run data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
 execute if data entity @s Item.tag.info{stack1:0b,stack16:1b} if score nb SD_tempC matches 17.. run data modify storage simpledrawer:temp ItemUnfilled.Count set value 16b
 execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb SD_tempC matches 1.. run data modify storage simpledrawer:temp ItemUnfilled.Count set value 1b
 
@@ -31,7 +31,9 @@ execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb SD_tem
 execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb SD_tempC matches 2.. run function simpledrawer:working/unfill/sup65
 function simpledrawer:working/display
 
+execute unless data entity @s Item.tag.info.stack1 if score nb SD_tempC matches ..64 run function simpledrawer:working/unfill/inf64
+execute unless data entity @s Item.tag.info.stack1 if score nb SD_tempC matches 65.. run function simpledrawer:working/unfill/sup65
 
 tag @e remove SD_summoned
-tp @e[tag=SD_StackCheck,type=minecraft:chest_minecart] ~ -128 ~
+
 #data modify entity @s ItemRotation set value 0b
