@@ -1,5 +1,5 @@
 {
     "values": [
-        "simpledrawer:load"
+        "#load:_private/load"
     ]
 }
