@@ -4,6 +4,6 @@
         "layer0": "item/diamond"
     },
     "overrides":[
-        {"predicate":{"custom_model_data":32768},"model":"simpledrawer:item/diamond_upgrade"}
+        {"predicate":{"custom_model_data":42030},"model":"simpledrawer:item/diamond_upgrade"}
     ]
 }

@@ -4,6 +4,6 @@
         "layer0": "item/gold_ingot"
     },
     "overrides":[
-        {"predicate":{"custom_model_data":2048},"model":"simpledrawer:item/gold_upgrade"}
+        {"predicate":{"custom_model_data":42020},"model":"simpledrawer:item/gold_upgrade"}
     ]
 }

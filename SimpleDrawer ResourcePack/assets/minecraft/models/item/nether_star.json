@@ -4,6 +4,6 @@
         "layer0": "item/nether_star"
     },
     "overrides":[
-        {"predicate":{"custom_model_data":262144},"model":"simpledrawer:item/nether_star_upgrade"}
+        {"predicate":{"custom_model_data":42040},"model":"simpledrawer:item/nether_star_upgrade"}
     ]
 }
