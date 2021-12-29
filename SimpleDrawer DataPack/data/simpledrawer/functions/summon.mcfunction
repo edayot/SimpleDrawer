@@ -1,5 +1,5 @@
 
-summon item ~ ~ ~ {Tags:["SD_summoned"],Age:1,PickupDelay:0,Motion:[0.0,0.1,0.0],Item:{id:"minecraft:furnace",Count:1b,tag:{SD_simpledrawer:1b,display:{Name:'{"text":"Empty Drawer","italic":false}'},BlockEntityTag:{Items:[{Slot:0b,id:"minecraft:dirt",Count:1b,tag:{info:{type:"wood"},Drawer:1b}}],Lock:"SD_DrawerPlacer"}}}}
+summon item ~ ~ ~ {Tags:["SD_summoned"],Age:1,PickupDelay:0,Motion:[0.0,0.1,0.0],Item:{id:"minecraft:furnace",Count:1b,tag:{SD_simpledrawer:1b,display:{Name:'{"text":"Empty Drawer","italic":false}'},BlockEntityTag:{Items:[{Slot:0b,id:"minecraft:dirt",Count:1b,tag:{info:{type:"wood",hopper:0},Drawer:1b}}],Lock:"SD_DrawerPlacer"}}}}
 
 data modify entity @e[tag=SD_summoned,limit=1,sort=nearest,type=item] Item.tag.BlockEntityTag.Items[0].tag.info.maxCount set from storage simpledrawer:temp Drawers.wood
 
