@@ -1,4 +1,4 @@
-
+advancement revoke @s only simpledrawer:drawer_place
 #execute positioned ~ ~-1 ~ if data block ~ ~ ~ {Lock:"SD_DrawerPlacer"} run function simpledrawer:place/place
 summon chest_minecart ~ 320 ~ {Tags:["SD_GetPos"],Items:[{Slot:0b,id:"minecraft:dirt",Count:1b}]}
 item modify entity @e[tag=SD_GetPos,type=minecraft:chest_minecart] container.0 simpledrawer:get_pos

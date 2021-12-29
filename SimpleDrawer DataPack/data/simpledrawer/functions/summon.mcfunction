@@ -5,7 +5,7 @@ data modify entity @e[tag=SD_summoned,limit=1,sort=nearest,type=item] Item.tag.B
 
 data remove storage simpledrawer:temp maxCount 
 data modify storage simpledrawer:temp maxCount set from entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.BlockEntityTag.Items[0].tag.info.maxCount
-data modify entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.CustomModelData set value 42000
+data modify entity @e[type=item,tag=SD_summoned,limit=1] Item.tag.CustomModelData set value 42000L
 
 execute in simpledrawer:intern run setblock 0 -64 0 oak_sign{Text1:'[{"text":"0 ","color":"white","italic":false},{"text":"/ ","color":"dark_gray","italic":false},{"nbt":"maxCount","storage":"simpledrawer:temp","color":"white","italic":false}]'} replace
 execute in simpledrawer:intern run data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append from block 0 -64 0 Text1

@@ -1,4 +1,3 @@
-execute at @s run tag @p[distance=..4,scores={SD_click=1}] add SD_adder
 
 #add @s asItems if player as item
 data remove storage simpledrawer:temp ItemAdded
