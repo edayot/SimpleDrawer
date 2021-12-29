@@ -6,6 +6,8 @@ scoreboard objectives add SD_time dummy
 
 execute in simpledrawer:intern run forceload add 0 0
 scoreboard players set 64 SD_tempC 64
+scoreboard players set 16 SD_tempC 16
+scoreboard players set 1 SD_tempC 1
 
 data modify storage simpledrawer:temp Drawers.wood set value 256L
 data modify storage simpledrawer:temp Drawers.iron set value 2048L

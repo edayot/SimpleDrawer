@@ -110,14 +110,19 @@ execute if data storage simpledrawer:temp {bigunfill:0b} run scoreboard players 
 
 data remove storage simpledrawer:temp ItemUnfilled
 data modify storage simpledrawer:temp ItemUnfilled set from entity @s Item.tag.data
-data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
+execute if data entity @s Item.tag.info{stack1:0b,stack16:0b} run data modify storage simpledrawer:temp ItemUnfilled.Count set value 64b
+execute if data entity @s Item.tag.info{stack1:0b,stack16:16b} run data modify storage simpledrawer:temp ItemUnfilled.Count set value 16b
+execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} run data modify storage simpledrawer:temp ItemUnfilled.Count set value 1b
 
 #drop (bigunfill) items
 
 execute if score nb SD_tempC >= bigunfill SD_tempC run scoreboard players operation nbstack SD_tempC = bigunfill SD_tempC
 execute if score nb SD_tempC <= bigunfill SD_tempC run scoreboard players operation nbstack SD_tempC = nb SD_tempC
 scoreboard players operation nbitems SD_tempC = nbstack SD_tempC
-scoreboard players operation nbitems SD_tempC *= 64 SD_tempC
+execute if data entity @s Item.tag.info{stack1:0b,stack16:0b} run scoreboard players operation nbitems SD_tempC *= 64 SD_tempC
+execute if data entity @s Item.tag.info{stack1:0b,stack16:1b} run scoreboard players operation nbitems SD_tempC *= 16 SD_tempC
+execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} run scoreboard players operation nbitems SD_tempC *= 1 SD_tempC
+
 
 execute store result score nb SD_tempC run data get entity @s Item.tag.data.Count
 scoreboard players operation nb SD_tempC -= nbitems SD_tempC
@@ -135,4 +140,3 @@ execute as @e[type=item,tag=SD_summoned] run data modify entity @s Item set from
 execute as @e[type=item,tag=SD_summoned] run data modify entity @s Owner set from entity @p[tag=SD_adder] UUID
 tag @e remove SD_summoned
 #drop (nb) items
-
