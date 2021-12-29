@@ -29,11 +29,10 @@ execute if data entity @s Item.tag.info{stack1:0b,stack16:1b} if score nb SD_tem
 
 execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb SD_tempC matches ..1 run function simpledrawer:working/unfill/inf64
 execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb SD_tempC matches 2.. run function simpledrawer:working/unfill/sup65
-function simpledrawer:working/display
 
 execute unless data entity @s Item.tag.info.stack1 if score nb SD_tempC matches ..64 run function simpledrawer:working/unfill/inf64
 execute unless data entity @s Item.tag.info.stack1 if score nb SD_tempC matches 65.. run function simpledrawer:working/unfill/sup65
-
+function simpledrawer:working/display
 tag @e remove SD_summoned
 
 #data modify entity @s ItemRotation set value 0b
