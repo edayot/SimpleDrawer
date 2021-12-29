@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:block/beehive",
+    "parent": "minecraft:block/furnace",
     "overrides":[
         {"predicate":{"custom_model_data":42000},"model":"simpledrawer:block/item/drawer_wood_"},
         {"predicate":{"custom_model_data":42001},"model":"simpledrawer:block/item/drawer_wood_tapped"},
