@@ -20,4 +20,4 @@ execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data e
 execute if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} if data entity @s Item.tag.info{type:"netherite"} run function simpledrawer:working/downgrade/downgrade_netherite
 
 
-execute if entity @s[tag=SD_filled] if score downgrade SD_tempC matches 1 run tellraw @p[tag=SD_adder] [{"translate":"simpledrawer.text.cant_downgrade","color":"red"}]
+execute if entity @s[tag=SD_filled] if data entity @p[tag=SD_adder] SelectedItem.tag{downgrade:1b} run tellraw @p[tag=SD_adder] [{"translate":"simpledrawer.text.cant_downgrade","color":"red"}]
