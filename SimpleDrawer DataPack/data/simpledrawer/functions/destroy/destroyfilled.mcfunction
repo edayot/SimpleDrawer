@@ -6,7 +6,7 @@ data remove storage simpledrawer:temp id
 
 data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.BlockEntityTag.Items[0].tag.data set from entity @s Item.tag.data
 
-data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Name set value '{"text":"Filled Drawer","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false}'
+data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Name set value '{"translate":"simpledrawer.drawer.filled","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false}'
 
 #Custom Lore
 data remove entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore

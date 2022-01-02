@@ -1,0 +1,16 @@
+{
+    "simpledrawer.name":"Simple Drawer",
+    "simpledrawer.load":"Chargé SimpleDrawer ",
+    "simpledrawer.drawer.empty":"Drawer Vide",
+    "simpledrawer.drawer.filled":"Drawer Rempli",
+    "simpledrawer.hopper_upgrade":"Amélioration Hopper",
+    "simpledrawer.iron_upgrade":"Amélioration Fer",
+    "simpledrawer.gold_upgrade":"Amélioration Or",
+    "simpledrawer.diamond_upgrade":"Amélioration Diamant",
+    "simpledrawer.star_upgrade":"Amélioration Nether Star",
+    "simpledrawer.netherite_upgrade":"Amélioration Netherite",
+    "simpledrawer.downgrade_wrench":"Clé de rétrogradation",
+    "simpledrawer.text.of":" de ",
+    "simpledrawer.text.named":"Nommé : §r",
+    "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli"
+}

@@ -114,7 +114,7 @@
           "action":"show_text",
           "contents":[
              {
-                "text":"Hopper upgrade"
+                "translate":"simpledrawer.hopper_upgrade"
              }
           ]
        },
