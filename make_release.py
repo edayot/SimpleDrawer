@@ -7,7 +7,7 @@ import git
 
 def change_version(version):
     with open("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction","w") as f:
-        f.write('tellraw @a {"text":"Loaded SimpleDrawer '+version+'","color":"green"}')
+        f.write('tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+'","color":"green"}]')
     with open("SimpleDrawer DataPack/pack.mcmeta","w") as f:
         pack={
             "pack":{

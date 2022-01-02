@@ -35,7 +35,7 @@ execute store result entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.Custo
 
 execute as @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] run function simpledrawer:destroy/destroyfilled
 
-data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append value '{"text":"Simple Drawer","color":"blue","italic":false}'
+data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore append value '{"translate":"simpledrawer.name","color":"blue","italic":false}'
 #all kill
 
 kill @e[type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}]

@@ -1,0 +1,15 @@
+{
+    "simpledrawer.name":"Simple Drawer",
+    "simpledrawer.load":"Loaded SimpleDrawer ",
+    "simpledrawer.drawer.empty":"Empty Drawer",
+    "simpledrawer.drawer.filled":"Filled Drawer",
+    "simpledrawer.iron_upgrade":"Iron Upgrade",
+    "simpledrawer.gold_upgrade":"Gold Upgrade",
+    "simpledrawer.diamond_upgrade":"Diamond Upgrade",
+    "simpledrawer.star_upgrade":"Nether Star Upgrade",
+    "simpledrawer.netherite_upgrade":"Netherite Upgrade",
+    "simpledrawer.downgrade_wrench":"Downgrade Wrench",
+    "simpledrawer.text.of":" of ",
+    "simpledrawer.text.named":"Named : §r",
+    "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer"
+}

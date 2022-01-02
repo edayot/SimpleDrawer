@@ -29,7 +29,7 @@
           "action":"show_text",
           "contents":[
              {
-                "text":"Iron upgrade"
+                "translate":"simpledrawer.iron_upgrade"
              }
           ]
        },
@@ -46,7 +46,7 @@
           "action":"show_text",
           "contents":[
              {
-                "text":"Gold upgrade"
+                "translate":"simpledrawer.gold_upgrade"
              }
           ]
        },
@@ -63,7 +63,7 @@
           "action":"show_text",
           "contents":[
              {
-                "text":"Diamond upgrade"
+                "translate":"simpledrawer.diamond_upgrade"
              }
           ]
        },
@@ -80,7 +80,7 @@
           "action":"show_text",
           "contents":[
              {
-                "text":"Nether Star upgrade"
+                "translate":"simpledrawer.star_upgrade"
              }
           ]
        },
