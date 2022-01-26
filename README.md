@@ -3,7 +3,7 @@
 A simple datapack that add drawer to minecraft.
 
 
-Theses are the more important craft, see in-game guide for more informations :
+Theses are the more important crafts, see in-game guide for more informations :
 
 ![CraftDrawer](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_drawer.png) ![Vide](/images/vide.png) ![CraftGuide](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_guide.png)
 
