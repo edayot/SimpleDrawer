@@ -23,7 +23,7 @@
 
         {"predicate":{"custom_model_data":1430040},"model":"simpledrawer:block/drawer/drawer_star_"},
         {"predicate":{"custom_model_data":1430041},"model":"simpledrawer:block/drawer/drawer_star_tapped"},
-        {"predicate":{"custom_model_data":143001430},"model":"simpledrawer:block/drawer/drawer_star__hopper"},
+        {"predicate":{"custom_model_data":1430042},"model":"simpledrawer:block/drawer/drawer_star__hopper"},
         {"predicate":{"custom_model_data":1430043},"model":"simpledrawer:block/drawer/drawer_star_tapped_hopper"},
 
         {"predicate":{"custom_model_data":1430050},"model":"simpledrawer:block/drawer/drawer_netherite_"},
