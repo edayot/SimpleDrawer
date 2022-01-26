@@ -4,6 +4,6 @@
         "layer0": "item/netherite_ingot"
     },
     "overrides":[
-        {"predicate":{"custom_model_data":42050},"model":"simpledrawer:item/netherite_upgrade"}
+        {"predicate":{"custom_model_data":1430050},"model":"simpledrawer:item/netherite_upgrade"}
     ]
 }

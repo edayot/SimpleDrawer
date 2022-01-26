@@ -21,7 +21,7 @@ execute in simpledrawer:intern run setblock 0 -64 0 bedrock
 
 
 
-scoreboard players set model SD_tempC 42000
+scoreboard players set model SD_tempC 1430000
 execute if entity @e[type=glow_item_frame,tag=SD_selected,tag=SD_filled,limit=1] run scoreboard players add model SD_tempC 1
 execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
 execute if data entity @e[type=glow_item_frame,tag=SD_selected,limit=1] Item.tag.info{type:"iron"} run scoreboard players add model SD_tempC 10

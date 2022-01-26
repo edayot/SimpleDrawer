@@ -1,35 +1,35 @@
 {
     "parent": "minecraft:block/beehive",
     "overrides":[
-        {"predicate":{"custom_model_data":42000},"model":"simpledrawer:block/drawer/drawer_wood_"},
-        {"predicate":{"custom_model_data":42001},"model":"simpledrawer:block/drawer/drawer_wood_tapped"},
-        {"predicate":{"custom_model_data":42002},"model":"simpledrawer:block/drawer/drawer_wood__hopper"},
-        {"predicate":{"custom_model_data":42003},"model":"simpledrawer:block/drawer/drawer_wood_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:block/drawer/drawer_wood_"},
+        {"predicate":{"custom_model_data":1430001},"model":"simpledrawer:block/drawer/drawer_wood_tapped"},
+        {"predicate":{"custom_model_data":1430002},"model":"simpledrawer:block/drawer/drawer_wood__hopper"},
+        {"predicate":{"custom_model_data":1430003},"model":"simpledrawer:block/drawer/drawer_wood_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":42010},"model":"simpledrawer:block/drawer/drawer_iron_"},
-        {"predicate":{"custom_model_data":42011},"model":"simpledrawer:block/drawer/drawer_iron_tapped"},
-        {"predicate":{"custom_model_data":42012},"model":"simpledrawer:block/drawer/drawer_iron__hopper"},
-        {"predicate":{"custom_model_data":42013},"model":"simpledrawer:block/drawer/drawer_iron_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430010},"model":"simpledrawer:block/drawer/drawer_iron_"},
+        {"predicate":{"custom_model_data":1430011},"model":"simpledrawer:block/drawer/drawer_iron_tapped"},
+        {"predicate":{"custom_model_data":1430012},"model":"simpledrawer:block/drawer/drawer_iron__hopper"},
+        {"predicate":{"custom_model_data":1430013},"model":"simpledrawer:block/drawer/drawer_iron_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":42020},"model":"simpledrawer:block/drawer/drawer_gold_"},
-        {"predicate":{"custom_model_data":42021},"model":"simpledrawer:block/drawer/drawer_gold_tapped"},
-        {"predicate":{"custom_model_data":42022},"model":"simpledrawer:block/drawer/drawer_gold__hopper"},
-        {"predicate":{"custom_model_data":42023},"model":"simpledrawer:block/drawer/drawer_gold_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430020},"model":"simpledrawer:block/drawer/drawer_gold_"},
+        {"predicate":{"custom_model_data":1430021},"model":"simpledrawer:block/drawer/drawer_gold_tapped"},
+        {"predicate":{"custom_model_data":1430022},"model":"simpledrawer:block/drawer/drawer_gold__hopper"},
+        {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/drawer/drawer_gold_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":42030},"model":"simpledrawer:block/drawer/drawer_diamond_"},
-        {"predicate":{"custom_model_data":42031},"model":"simpledrawer:block/drawer/drawer_diamond_tapped"},
-        {"predicate":{"custom_model_data":42032},"model":"simpledrawer:block/drawer/drawer_diamond__hopper"},
-        {"predicate":{"custom_model_data":42033},"model":"simpledrawer:block/drawer/drawer_diamond_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430030},"model":"simpledrawer:block/drawer/drawer_diamond_"},
+        {"predicate":{"custom_model_data":1430031},"model":"simpledrawer:block/drawer/drawer_diamond_tapped"},
+        {"predicate":{"custom_model_data":1430032},"model":"simpledrawer:block/drawer/drawer_diamond__hopper"},
+        {"predicate":{"custom_model_data":1430033},"model":"simpledrawer:block/drawer/drawer_diamond_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":42040},"model":"simpledrawer:block/drawer/drawer_star_"},
-        {"predicate":{"custom_model_data":42041},"model":"simpledrawer:block/drawer/drawer_star_tapped"},
-        {"predicate":{"custom_model_data":42042},"model":"simpledrawer:block/drawer/drawer_star__hopper"},
-        {"predicate":{"custom_model_data":42043},"model":"simpledrawer:block/drawer/drawer_star_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430040},"model":"simpledrawer:block/drawer/drawer_star_"},
+        {"predicate":{"custom_model_data":1430041},"model":"simpledrawer:block/drawer/drawer_star_tapped"},
+        {"predicate":{"custom_model_data":143001430},"model":"simpledrawer:block/drawer/drawer_star__hopper"},
+        {"predicate":{"custom_model_data":1430043},"model":"simpledrawer:block/drawer/drawer_star_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":42050},"model":"simpledrawer:block/drawer/drawer_netherite_"},
-        {"predicate":{"custom_model_data":42051},"model":"simpledrawer:block/drawer/drawer_netherite_tapped"},
-        {"predicate":{"custom_model_data":42052},"model":"simpledrawer:block/drawer/drawer_netherite__hopper"},
-        {"predicate":{"custom_model_data":42053},"model":"simpledrawer:block/drawer/drawer_netherite_tapped_hopper"}
+        {"predicate":{"custom_model_data":1430050},"model":"simpledrawer:block/drawer/drawer_netherite_"},
+        {"predicate":{"custom_model_data":1430051},"model":"simpledrawer:block/drawer/drawer_netherite_tapped"},
+        {"predicate":{"custom_model_data":1430052},"model":"simpledrawer:block/drawer/drawer_netherite__hopper"},
+        {"predicate":{"custom_model_data":1430053},"model":"simpledrawer:block/drawer/drawer_netherite_tapped_hopper"}
 
     ]
 }

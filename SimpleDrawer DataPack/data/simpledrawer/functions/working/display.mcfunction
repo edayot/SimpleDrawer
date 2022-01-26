@@ -18,7 +18,7 @@ execute at @s if entity @s[tag=SD_west] positioned ~0.5 ~ ~ run tag @e[type=glow
 
 
 
-scoreboard players set model SD_tempC 42000
+scoreboard players set model SD_tempC 1430000
 execute if data entity @s Item.tag.info{hopper:1} run scoreboard players add model SD_tempC 2
 execute if data entity @s Item.tag.info{type:"iron"} run scoreboard players add model SD_tempC 10
 execute if data entity @s Item.tag.info{type:"gold"} run scoreboard players add model SD_tempC 20
