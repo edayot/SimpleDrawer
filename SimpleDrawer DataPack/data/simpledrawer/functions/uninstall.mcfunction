@@ -4,7 +4,7 @@ scoreboard objectives remove SD_sneak
 scoreboard objectives remove SD_time
 data remove storage simpledrawer:temp Loaded
 
-execute in simpledrawer:intern run forceload remove 0 0
+execute as @e[tag=simpledrawer.forceload,type=marker] run function simpledrawer:unforceload_try
 tag @a remove SD_book
 
 tellraw @s [{"text":"[Simple Drawer Uninstall]"}]

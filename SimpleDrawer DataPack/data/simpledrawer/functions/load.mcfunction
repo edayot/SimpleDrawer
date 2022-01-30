@@ -6,7 +6,9 @@ scoreboard objectives add SD_sneak minecraft.custom:minecraft.sneak_time
 scoreboard objectives add SD_time dummy
 
 
-execute in simpledrawer:intern run forceload add 0 0
+execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run forceload add 0 0
+execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run summon marker 0 0 0 {Tags:["simpledrawer.forceload","global.forceload"]}
+
 scoreboard players set 64 SD_tempC 64
 scoreboard players set 16 SD_tempC 16
 scoreboard players set 1 SD_tempC 1
