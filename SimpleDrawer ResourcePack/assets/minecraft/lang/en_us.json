@@ -12,5 +12,7 @@
     "simpledrawer.downgrade_wrench":"Downgrade Wrench",
     "simpledrawer.text.of":" of ",
     "simpledrawer.text.named":"Named : §r",
-    "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer"
+    "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer",
+    "simpledrawer.guide.message":"Check the wiki for details"
+
 }

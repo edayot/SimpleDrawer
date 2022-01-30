@@ -12,5 +12,6 @@
     "simpledrawer.downgrade_wrench":"Clé de rétrogradation",
     "simpledrawer.text.of":" de ",
     "simpledrawer.text.named":"Nommé : §r",
-    "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli"
+    "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli",
+    "simpledrawer.guide.message":"Lisez le wiki pour plus de détails"
 }
