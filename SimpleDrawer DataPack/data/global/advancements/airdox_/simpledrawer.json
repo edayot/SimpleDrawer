@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "Simple Drawer",
+        "description": "v1.2.3 \nA datapack that add drawer to minecraft",
+        "icon": {
+            "item": "minecraft:chest"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "global:airdox_",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

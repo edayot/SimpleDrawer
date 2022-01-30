@@ -24,6 +24,25 @@ def change_version(version):
             }
         }
         json.dump(pack,f, indent = 4)
+    with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json") as f:
+        pack={
+            "display": {
+                "title": "Simple Drawer",
+                "description": version+" \nA datapack that add drawer to minecraft",
+                "icon": {
+                    "item": "minecraft:chest"
+                },
+                "announce_to_chat": False,
+                "show_toast": False
+            },
+            "parent": "global:airdox_",
+            "criteria": {
+                "trigger": {
+                    "trigger": "minecraft:tick"
+                }
+            }
+        }
+        json.dump(pack,f, indent = 4)
 
 def create_zip(version):
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
