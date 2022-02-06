@@ -1,0 +1,19 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:placed_block",
+        "conditions": {
+          "block": "minecraft:furnace",
+          "location": {
+            "block": {
+              "nbt": "{Lock:\"SD_DrawerPlacer\"}"
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "simpledrawer:place/checkplace_old"
+    }
+  }
+  

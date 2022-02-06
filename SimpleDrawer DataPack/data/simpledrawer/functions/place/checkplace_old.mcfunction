@@ -1,8 +1,8 @@
-advancement revoke @s only simpledrawer:drawer_place
+advancement revoke @s only simpledrawer:drawer_place_old
 
 #execute positioned ~ ~-1 ~ if data block ~ ~ ~ {Lock:"simpledrawer.DrawerPlacer"} run function simpledrawer:place/place
 summon chest_minecart ~ 320 ~ {Tags:["simpledrawer.GetPos"],Items:[{Slot:0b,id:"minecraft:dirt",Count:1b}]}
-item modify entity @e[tag=simpledrawer.GetPos,type=minecraft:chest_minecart] container.0 simpledrawer:get_pos
+item modify entity @e[tag=simpledrawer.GetPos,type=minecraft:chest_minecart] container.0 simpledrawer:get_pos_old
 
 execute store result score delta_x simpledrawer.tempC run data get entity @e[tag=simpledrawer.GetPos,type=minecraft:chest_minecart,limit=1] Items[0].tag.pos[0]
 
