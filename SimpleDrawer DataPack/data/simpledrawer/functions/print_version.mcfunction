@@ -1,1 +1,1 @@
-tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"v1.2.3","color":"green"}]
+tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"v1.3.0","color":"green"}]
