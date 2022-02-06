@@ -1,10 +1,10 @@
 data modify entity @s Item.tag.data.Count set from entity @s Item.tag.info.maxCount
-scoreboard players operation nbcrate SD_tempC -= maxCount SD_tempC
+scoreboard players operation nbcrate simpledrawer.tempC -= maxCount simpledrawer.tempC
 
 
 
-item modify entity @p[tag=SD_adder] container.23 simpledrawer:set_count
+item modify entity @p[tag=simpledrawer.adder] container.23 simpledrawer:set_count
 
-tag @s add SD_full
+tag @s add simpledrawer.full
 
     

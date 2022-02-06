@@ -6,10 +6,10 @@ function simpledrawer:working/display
 
 #clear and reset
 
-item modify entity @p[tag=SD_adder] weapon.mainhand simpledrawer:selected_item
+item modify entity @p[tag=simpledrawer.adder] weapon.mainhand simpledrawer:selected_item
 
-execute store success entity @s Item.tag.info.stack1 byte 1 run clear @p[tag=SD_adder] #simpledrawer:stack1{SelectedItem:1b} 0
-execute store success entity @s Item.tag.info.stack16 byte 1 run clear @p[tag=SD_adder] #simpledrawer:stack16{SelectedItem:1b} 0
+execute store success entity @s Item.tag.info.stack1 byte 1 run clear @p[tag=simpledrawer.adder] #simpledrawer:stack1{SelectedItem:1b} 0
+execute store success entity @s Item.tag.info.stack16 byte 1 run clear @p[tag=simpledrawer.adder] #simpledrawer:stack16{SelectedItem:1b} 0
 
-item replace entity @p[tag=SD_adder] weapon.mainhand with air
+item replace entity @p[tag=simpledrawer.adder] weapon.mainhand with air
 

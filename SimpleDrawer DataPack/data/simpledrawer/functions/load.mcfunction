@@ -1,17 +1,17 @@
 #execute only at installation
 execute unless data storage simpledrawer:temp {Loaded:1b} run function simpledrawer:print_version
 
-scoreboard objectives add SD_tempC dummy
-scoreboard objectives add SD_sneak minecraft.custom:minecraft.sneak_time
-scoreboard objectives add SD_time dummy
+scoreboard objectives add simpledrawer.tempC dummy
+scoreboard objectives add simpledrawer.sneak minecraft.custom:minecraft.sneak_time
+scoreboard objectives add simpledrawer.time dummy
 
 
 execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run forceload add 0 0
 execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run summon marker 0 0 0 {Tags:["simpledrawer.forceload","global.forceload"]}
 
-scoreboard players set 64 SD_tempC 64
-scoreboard players set 16 SD_tempC 16
-scoreboard players set 1 SD_tempC 1
+scoreboard players set 64 simpledrawer.tempC 64
+scoreboard players set 16 simpledrawer.tempC 16
+scoreboard players set 1 simpledrawer.tempC 1
 
 
 data modify storage simpledrawer:temp Drawers.wood set value 256L
@@ -35,7 +35,7 @@ data modify storage simpledrawer:temp ItemsNBT.Upgrades.netherite set value {id:
 
 data modify storage simpledrawer:temp ItemsNBT.wrench set value {id:"minecraft:stick",Count:1b,tag:{ctc:{id:"wrench",from:"airdox_:simpledrawer",traits:{"item":1b,"tool/wrench":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'},CustomModelData:1374,simpledrawer.downgrade:1b}}
 
-data modify storage simpledrawer:temp ItemsNBT.drawer set value {id: "minecraft:furnace", Count: 1b, tag: {ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},SD_simpledrawer: 1b, CustomModelData: 1430000L, BlockEntityTag: {Items: [{Slot: 0b, id: "minecraft:dirt", Count: 1b, tag: {Drawer: 1b, info: {type: "wood", hopper: 0, maxCount: 256L}}}], Lock: "SD_DrawerPlacer"}, display: {Lore: ['{"italic":false,"color":"white","extra":[{"italic":false,"color":"dark_gray","text":"/ "},{"italic":false,"color":"white","text":"256L"}],"text":"0 "}', '{"translate":"simpledrawer.name","color":"blue","italic":false}'], Name: '{"translate":"simpledrawer.drawer.empty","italic":false}'}}}
+data modify storage simpledrawer:temp ItemsNBT.drawer set value {id: "minecraft:furnace", Count: 1b, tag: {ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},simpledrawer.simpledrawer: 1b, CustomModelData: 1430000L, BlockEntityTag: {Items: [{Slot: 0b, id: "minecraft:dirt", Count: 1b, tag: {Drawer: 1b, info: {type: "wood", hopper: 0, maxCount: 256L}}}], Lock: "simpledrawer.DrawerPlacer"}, display: {Lore: ['{"italic":false,"color":"white","extra":[{"italic":false,"color":"dark_gray","text":"/ "},{"italic":false,"color":"white","text":"256L"}],"text":"0 "}', '{"translate":"simpledrawer.name","color":"blue","italic":false}'], Name: '{"translate":"simpledrawer.drawer.empty","italic":false}'}}}
 
 
 

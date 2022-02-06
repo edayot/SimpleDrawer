@@ -6,7 +6,7 @@
           "block": "minecraft:furnace",
           "location": {
             "block": {
-              "nbt": "{Lock:\"SD_DrawerPlacer\"}"
+              "nbt": "{Lock:\"simpledrawer.DrawerPlacer\"}"
             }
           }
         }

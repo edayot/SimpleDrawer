@@ -7,7 +7,7 @@
           "type": "minecraft:fixed",
           "name": "nbcrate"
         },
-        "score": "SD_tempC",
+        "score": "simpledrawer.tempC",
         "scale": 1
       }
     }

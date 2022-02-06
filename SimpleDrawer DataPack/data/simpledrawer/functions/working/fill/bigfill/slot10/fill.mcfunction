@@ -1,9 +1,9 @@
-execute store result score nbcrate SD_tempC run data get entity @s Item.tag.data.Count
-execute store result score nbplayer SD_tempC run data get entity @p[tag=SD_adder] Inventory[{Slot:10b}].Count
-scoreboard players operation nbcrate SD_tempC += nbplayer SD_tempC 
-execute if score nbcrate SD_tempC <= maxCount SD_tempC store result entity @s Item.tag.data.Count long 1 run scoreboard players get nbcrate SD_tempC 
-execute if score nbcrate SD_tempC <= maxCount SD_tempC run item replace entity @p[tag=SD_adder] container.10 with air
+execute store result score nbcrate simpledrawer.tempC run data get entity @s Item.tag.data.Count
+execute store result score nbplayer simpledrawer.tempC run data get entity @p[tag=simpledrawer.adder] Inventory[{Slot:10b}].Count
+scoreboard players operation nbcrate simpledrawer.tempC += nbplayer simpledrawer.tempC 
+execute if score nbcrate simpledrawer.tempC <= maxCount simpledrawer.tempC store result entity @s Item.tag.data.Count long 1 run scoreboard players get nbcrate simpledrawer.tempC 
+execute if score nbcrate simpledrawer.tempC <= maxCount simpledrawer.tempC run item replace entity @p[tag=simpledrawer.adder] container.10 with air
 
-execute unless score nbcrate SD_tempC <= maxCount SD_tempC run function simpledrawer:working/fill/bigfill/slot10/fullfill
+execute unless score nbcrate simpledrawer.tempC <= maxCount simpledrawer.tempC run function simpledrawer:working/fill/bigfill/slot10/fullfill
 
     

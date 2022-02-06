@@ -1,4 +1,4 @@
-tag @s remove SD_filled
+tag @s remove simpledrawer.filled
 data remove storage simpledrawer:temp info
 data modify storage simpledrawer:temp info set from entity @s Item.tag.info
 data remove storage simpledrawer:temp info.stack1
