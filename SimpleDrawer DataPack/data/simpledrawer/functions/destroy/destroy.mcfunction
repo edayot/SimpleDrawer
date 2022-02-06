@@ -7,7 +7,8 @@ execute if entity @s[tag=SD_west] positioned ~-0.1 ~ ~ run tag @e[type=glow_item
 
 
 
-function simpledrawer:summon
+summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:stone",Count:1b}}
+data modify entity @e[type=item,tag=SD_summoned,limit=1,sort=nearest] Item set from storage simpledrawer:temp ItemsNBT.drawer
 execute as @e[type=glow_item_frame,tag=SD_selected,limit=1] run data modify entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.BlockEntityTag.Items[0].tag.info set from entity @s Item.tag.info
 
 data remove entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore

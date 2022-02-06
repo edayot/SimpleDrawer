@@ -1,4 +1,5 @@
-function simpledrawer:summon
+summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:stone",Count:1b}}
+data modify entity @e[type=item,tag=SD_summoned,limit=1,sort=nearest] Item set from storage simpledrawer:temp ItemsNBT.drawer
 data modify entity @e[tag=SD_summoned,limit=1,sort=nearest] Item.tag.BlockEntityTag.Items[0] set from entity @s Item
 data remove entity @e[type=item,limit=1,tag=SD_summoned] Item.tag.display.Lore
 
