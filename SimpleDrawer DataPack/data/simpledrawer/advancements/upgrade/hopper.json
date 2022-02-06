@@ -1,0 +1,25 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Automation"
+        },
+        "description": {
+            "text": "Craft a hopper upgrade"
+        },
+        "icon": {
+            "item": "minecraft:hopper",
+            "nbt": "{CustomModelData:1430020}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "lol": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:root"
+}

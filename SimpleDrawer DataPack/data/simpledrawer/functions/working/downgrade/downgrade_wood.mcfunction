@@ -1,4 +1,4 @@
-execute at @p[tag=SD_adder] run summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:flint",Count:1b,tag:{display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.hopper_upgrade","color":"green","italic":false}'},CustomModelData:20,setType:"hopper"}}}
+execute at @p[tag=SD_adder] run summon item ~ ~ ~ {Tags:["SD_summoned"],Item:{id:"minecraft:flint",Count:1b,tag:{display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.hopper_upgrade","color":"green","italic":false}'},CustomModelData:1430020,setType:"hopper"}}}
 data modify entity @e[type=item,tag=SD_summoned,limit=1,sort=nearest] Owner set from entity @p[tag=SD_adder] UUID
 tag @e remove SD_summoned
 execute at @s run playsound minecraft:block.note_block.harp master @s ~ ~ ~ 1 0.8

@@ -1,0 +1,25 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Large storage"
+        },
+        "description": {
+            "text": "Craft a Diamond upgrade"
+        },
+        "icon": {
+            "item": "minecraft:diamond",
+            "nbt": "{CustomModelData:1430030}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "lol": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:upgrade/gold"
+}

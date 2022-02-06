@@ -1,0 +1,33 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Simple Drawers"
+        },
+        "description": {
+            "text": "Just craft and place a drawer"
+        },
+        "icon": {
+            "item": "minecraft:furnace",
+            "nbt": "{CustomModelData:1430000L}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/block/oak_planks.png"
+    },
+    "criteria": {
+        "lol": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:furnace",
+                "location": {
+                    "block": {
+                        "nbt": "{Lock:\"SD_DrawerPlacer\"}"
+                    }
+                }
+            }
+        }
+    }
+}

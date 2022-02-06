@@ -4,6 +4,6 @@
         "layer0": "item/flint"
     },
     "overrides":[
-        {"predicate":{"custom_model_data":20},"model":"simpledrawer:item/hopper_upgrade"}
+        {"predicate":{"custom_model_data":1430020},"model":"simpledrawer:item/hopper_upgrade"}
     ]
 }
