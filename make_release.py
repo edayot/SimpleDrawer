@@ -24,7 +24,7 @@ def change_version(version):
             }
         }
         json.dump(pack,f, indent = 4)
-    with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json") as f:
+    with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json","w") as f:
         pack={
             "display": {
                 "title": "Simple Drawer",
@@ -43,7 +43,7 @@ def change_version(version):
                 }
             }
         }
-        json.dump(pack,f, indent = 4)
+        #json.dump(pack,f, indent = 4)
 
 def create_zip(version):
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
@@ -54,6 +54,7 @@ def git_push(version):
     r.index.add("SimpleDrawer DataPack/pack.mcmeta")
     r.index.add("SimpleDrawer ResourcePack/pack.mcmeta")
     r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction")
+    r.index.add("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json")
 
     r.index.commit("[AUTO] updated to "+version)
     r.remote("origin").push()
