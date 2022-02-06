@@ -21,4 +21,18 @@ data modify storage simpledrawer:temp Drawers.diamond set value 65536L
 data modify storage simpledrawer:temp Drawers.star set value 1048576L
 data modify storage simpledrawer:temp Drawers.netherite set value 1073741824L
 
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.hopper set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"hopper_upgrade",from:"simpledrawer:hopper_upgrade",traits:{"item":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.hopper_upgrade","color":"green","italic":false}'},CustomModelData:1430001,setType:"hopper"}}
+
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.iron set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"iron_upgrade",from:"simpledrawer:iron_upgrade",traits:{"item":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.iron_upgrade","color":"white","italic":false}'},CustomModelData:1430002,setType:"iron"}}
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.gold set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"gold_upgrade",from:"simpledrawer:gold_upgrade",traits:{"item":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.gold_upgrade","color":"gold","italic":false}'},CustomModelData:1430003,setType:"gold"}}
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.diamond set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"diamond_upgrade",from:"simpledrawer:diamond_upgrade",traits:{"item":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.diamond_upgrade","color":"aqua","italic":false}'},CustomModelData:1430004,setType:"diamond"}}
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.star set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"star_upgrade",from:"simpledrawer:star_upgrade",traits:{"item":1b}},Enchantments:[{}],display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.star_upgrade","color":"dark_grey","italic":false}'},CustomModelData:1430005,setType:"star"}}
+data modify storage simpledrawer:temp ItemsNBT.Upgrades.netherite set value {id:"minecraft:flint",Count:1b,tag:{ctc:{id:"netherite_upgrade",from:"simpledrawer:netherite_upgrade",traits:{"item":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.netherite_upgrade","color":"black","italic":false}'},CustomModelData:1430006,setType:"netherite"}}
+
+
+data modify storage simpledrawer:temp ItemsNBT.wrench {id:"minecraft:stick",Count:1b,tag:{ctc:{id:"wrench",from:"simpledrawer:wrench",traits:{"item":1b,"tool/wrench":1b}},display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}'],Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'},CustomModelData:1374,simpledrawer.downgrade:1b}}
 data modify storage simpledrawer:temp Loaded set value 1b
+
+
+
+

@@ -1,9 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "item/nether_star"
-    },
-    "overrides":[
-        {"predicate":{"custom_model_data":1430040},"model":"simpledrawer:item/nether_star_upgrade"}
-    ]
-}
