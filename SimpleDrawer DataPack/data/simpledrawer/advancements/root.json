@@ -8,7 +8,7 @@
             "text": "Just craft and place a drawer"
         },
         "icon": {
-            "item": "minecraft:furnace",
+            "item": "minecraft:beehive",
             "nbt": "{CustomModelData:1430000L}"
         },
         "frame": "task",
