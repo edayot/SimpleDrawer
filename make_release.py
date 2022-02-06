@@ -28,14 +28,15 @@ def change_version(version):
         pack={
             "display": {
                 "title": "Simple Drawer",
-                "description": version+" \nA datapack that add drawer to minecraft",
+                "description": version + "\nA datapack that add drawer to minecraft",
                 "icon": {
-                    "item": "minecraft:chest"
+                    "item": "minecraft:beehive",
+                    "nbt": "{CustomModelData:1430000L}"
                 },
                 "announce_to_chat": False,
                 "show_toast": False
             },
-            "parent": "global:airdox_",
+            "parent": "global:airdox_/root",
             "criteria": {
                 "trigger": {
                     "trigger": "minecraft:tick"
