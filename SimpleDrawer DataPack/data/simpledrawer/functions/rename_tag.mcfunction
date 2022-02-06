@@ -30,3 +30,8 @@ tag @e[tag=SD_selected] remove SD_west
 tag @e[tag=SD_selected] remove SD_filled
 
 tag @e[tag=SD_selected] remove SD_selected
+
+
+scoreboard objectives remove simpledrawer.tempC
+scoreboard objectives remove simpledrawer.sneak
+scoreboard objectives remove simpledrawer.time
