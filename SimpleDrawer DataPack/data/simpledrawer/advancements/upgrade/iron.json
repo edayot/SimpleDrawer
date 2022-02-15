@@ -8,8 +8,8 @@
             "text": "Craft a iron upgrade"
         },
         "icon": {
-            "item": "minecraft:iron_ingot",
-            "nbt": "{CustomModelData:1430010}"
+            "item": "minecraft:flint",
+            "nbt": "{CustomModelData:1430002}"
         },
         "frame": "task",
         "show_toast": true,

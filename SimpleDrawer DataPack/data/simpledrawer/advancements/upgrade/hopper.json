@@ -8,8 +8,8 @@
             "text": "Craft a hopper upgrade"
         },
         "icon": {
-            "item": "minecraft:hopper",
-            "nbt": "{CustomModelData:1430020}"
+            "item": "minecraft:flint",
+            "nbt": "{CustomModelData:1430001}"
         },
         "frame": "task",
         "show_toast": true,

@@ -8,8 +8,8 @@
             "text": "Craft a gold upgrade"
         },
         "icon": {
-            "item": "minecraft:gold_ingot",
-            "nbt": "{CustomModelData:1430020}"
+            "item": "minecraft:flint",
+            "nbt": "{CustomModelData:1430003}"
         },
         "frame": "task",
         "show_toast": true,
