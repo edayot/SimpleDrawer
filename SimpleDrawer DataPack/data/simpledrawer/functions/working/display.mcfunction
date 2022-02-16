@@ -29,5 +29,5 @@ execute if data entity @s Item.tag.info{type:"netherite"} run scoreboard players
 
 execute store result entity @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] Item.tag.CustomModelData long 1 run scoreboard players get model simpledrawer.tempC
 
-tag @e remove simpledrawer.selected2
+tag @e[type=glow_item_frame,tag=simpledrawer.selected2] remove simpledrawer.selected2
 
