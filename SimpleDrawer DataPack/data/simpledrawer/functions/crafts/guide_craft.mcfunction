@@ -21,4 +21,4 @@ data modify entity @e[tag=summoned,limit=1] Item.tag.pages append value '{"text"
 data modify entity @e[tag=summoned,limit=1] Item.tag.pages append value '{"text":"\\uef0a","font":"simpledrawer:font","color":"white"}'
 
 data modify entity @e[type=item,tag=simpledrawer.summoned,limit=1,sort=nearest] Owner set from entity @s UUID
-tag @e remove summoned
+tag @e[type=item,tag=simpledrawer.summoned] remove summoned

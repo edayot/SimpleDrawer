@@ -7,6 +7,6 @@ data remove entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.disp
 
 
 data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.display.Lore append value '{"translate":"simpledrawer.name","color":"blue","italic":false}'
-tag @e remove simpledrawer.summoned
+tag @e[] remove simpledrawer.summoned
 kill @s
 kill @e[type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:furnace"}}]

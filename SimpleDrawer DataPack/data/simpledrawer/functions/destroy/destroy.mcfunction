@@ -43,5 +43,5 @@ kill @e[type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}]
 kill @e[type=glow_item_frame,limit=1,tag=simpledrawer.selected]
 
 kill @s
-tag @e remove simpledrawer.summoned
-tag @e remove simpledrawer.selected
+tag @e[type=item,tag=simpledrawer.summoned] remove simpledrawer.summoned
+tag @e[type=glow_item_frame,tag=simpledrawer.selected] remove simpledrawer.selected

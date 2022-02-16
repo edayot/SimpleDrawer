@@ -10,5 +10,5 @@ execute unless entity @s[tag=simpledrawer.asItems] run function simpledrawer:wor
 
 
 data modify entity @s ItemRotation set value 0b
-tag @a remove simpledrawer.adder
+tag @a[tag=simpledrawer.adder] remove simpledrawer.adder
 tag @s remove simpledrawer.asItems

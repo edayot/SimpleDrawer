@@ -38,10 +38,10 @@ execute if block ~ ~ ~ minecraft:furnace[facing=south] run setblock ~ ~ ~ minecr
 execute if block ~ ~ ~ minecraft:furnace[facing=east] run setblock ~ ~ ~ minecraft:beehive[facing=east]
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run setblock ~ ~ ~ minecraft:beehive[facing=west]
 
-tag @e[tag=simpledrawer.summoned] add global.ignore
-tag @e[tag=simpledrawer.summoned2] add global.ignore
+tag @e[type=glow_item_frame,tag=simpledrawer.summoned] add global.ignore
+tag @e[type=glow_item_frame,tag=simpledrawer.summoned2] add global.ignore
 
 
-tag @e remove simpledrawer.summoned
-tag @e remove simpledrawer.summoned2
+tag @e[type=glow_item_frame,tag=simpledrawer.summoned] remove simpledrawer.summoned
+tag @e[type=glow_item_frame,tag=simpledrawer.summoned2] remove simpledrawer.summoned2
 

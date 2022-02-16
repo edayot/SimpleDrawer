@@ -9,7 +9,7 @@ execute at @s if entity @s[tag=simpledrawer.west] positioned ~0.5 ~ ~ run tag @e
 
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] add simpledrawer.hopper
 
-tag @e remove simpledrawer.selected2
+tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.selected2
 function simpledrawer:working/display
 tag @s add simpledrawer.upgrade
 

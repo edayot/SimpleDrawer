@@ -1,7 +1,7 @@
 execute at @p[tag=simpledrawer.adder] run summon item ~ ~ ~ {Tags:["simpledrawer.summoned"],Item:{id:"minecraft:stone",Count:1b}}
 execute at @p[tag=simpledrawer.adder] run data modify entity @e[type=item,tag=simpledrawer.summoned,limit=1,sort=nearest] Item set from storage simpledrawer:temp ItemsNBT.Upgrades.hopper
 execute at @p[tag=simpledrawer.adder] run data modify entity @e[type=item,tag=simpledrawer.summoned,limit=1,sort=nearest] Owner set from entity @p[tag=simpledrawer.adder] UUID
-tag @e remove simpledrawer.summoned
+tag @e[type=item,tag=simpledrawer.summoned] remove simpledrawer.summoned
 execute at @s run playsound minecraft:block.note_block.harp master @s ~ ~ ~ 1 0.8
 
 data modify entity @s Item.tag.info.hopper set value 0
@@ -13,6 +13,6 @@ execute at @s if entity @s[tag=simpledrawer.west] positioned ~0.5 ~ ~ run tag @e
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.hopper
 
 function simpledrawer:working/display
-tag @e remove simpledrawer.selected2
+tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.selected2
 
 tag @s add simpledrawer.upgrade

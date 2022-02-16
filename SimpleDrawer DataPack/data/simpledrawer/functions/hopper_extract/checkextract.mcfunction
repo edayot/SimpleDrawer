@@ -25,5 +25,5 @@ execute if score @s simpledrawer.tempC matches 1 positioned ~ ~-1 ~ unless data 
 
 
 #say @e[type=glow_item_frame,tag=simpledrawer.selected]
-tag @e remove simpledrawer.selected
+tag @e[type=glow_item_frame,tag=simpledrawer.selected] remove simpledrawer.selected
 execute unless score @s simpledrawer.tempC matches 1 run scoreboard players set @s simpledrawer.time 8
