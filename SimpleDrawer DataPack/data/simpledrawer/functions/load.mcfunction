@@ -12,6 +12,7 @@ execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer
 scoreboard players set 64 simpledrawer.tempC 64
 scoreboard players set 16 simpledrawer.tempC 16
 scoreboard players set 1 simpledrawer.tempC 1
+scoreboard players set 4 simpledrawer.tempC 4
 
 
 data modify storage simpledrawer:temp Drawers.wood set value 256L
