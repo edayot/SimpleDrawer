@@ -2,7 +2,6 @@
 #North
 execute if block ~ ~ ~ minecraft:furnace[facing=north] run function simpledrawer:place/orientation/north
 
-
 #East
 execute if block ~ ~ ~ minecraft:furnace[facing=east] run function simpledrawer:place/orientation/east
 
@@ -12,6 +11,10 @@ execute if block ~ ~ ~ minecraft:furnace[facing=south] run function simpledrawer
 #West
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run function simpledrawer:place/orientation/west
 
+
+
+
+
 data modify entity @e[tag=simpledrawer.summoned,limit=1,sort=nearest,type=glow_item_frame] Item.tag.info.maxCount set from storage simpledrawer:temp Drawers.wood
 
 
@@ -20,6 +23,9 @@ data modify entity @e[tag=simpledrawer.summoned,limit=1,sort=nearest,type=glow_i
 #Test filled
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] Item.tag.info set from block ~ ~ ~ Items[0].tag.info
 
+#UUID copy in Item.tag.info.Owner
+data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] Item.tag.info.Owner set from entity @e[type=glow_item_frame,tag=simpledrawer.summoned2,limit=1] UUID
+data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned2,limit=1] Item.tag.info.Owner set from entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] UUID
 
 
 execute if data block ~ ~ ~ Items[0].tag.data run function simpledrawer:place/placefilled
