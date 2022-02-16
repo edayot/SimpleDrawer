@@ -6,10 +6,10 @@ execute as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.Dra
 
 tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simpledrawer.DrawerItem] add simpledrawer.selected
 
-execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.east] positioned ~0.1 ~ ~ run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.east] add simpledrawer.selected
-execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.north] positioned ~ ~ ~-0.1 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.north] add simpledrawer.selected
-execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.south] positioned ~ ~ ~0.1 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.south] add simpledrawer.selected
-execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.west] positioned ~-0.1 ~ ~ run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.west] add simpledrawer.selected
+execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.east] positioned ~0.1 ~ ~ run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.east] add simpledrawer.selected
+execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.north] positioned ~ ~ ~-0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.north] add simpledrawer.selected
+execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.south] positioned ~ ~ ~0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.south] add simpledrawer.selected
+execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.west] positioned ~-0.1 ~ ~ run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.west] add simpledrawer.selected
 
 execute if entity @e[tag=simpledrawer.selected,tag=!simpledrawer.filled] run scoreboard players set @s simpledrawer.tempC 0
 
