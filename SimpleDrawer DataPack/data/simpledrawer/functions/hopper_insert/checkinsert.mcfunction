@@ -23,4 +23,5 @@ execute if score @s simpledrawer.tempC matches 1 if entity @e[type=glow_item_fra
 execute if score @s simpledrawer.tempC matches 1 if entity @e[type=glow_item_frame,tag=simpledrawer.selected,tag=simpledrawer.filled] positioned ~ ~-1 ~ if data block ~ ~2 ~ Items[{Slot:4b}] run function simpledrawer:hopper_insert/items4/check
 execute if score @s simpledrawer.tempC matches 1 if entity @e[type=glow_item_frame,tag=simpledrawer.selected,tag=!simpledrawer.filled] positioned ~ ~-1 ~ if data block ~ ~2 ~ Items[{Slot:4b}] run function simpledrawer:hopper_insert/items4/first
 
-tag @e remove simpledrawer.selected
+tag @e[type=glow_item_frame,tag=simpledrawer.selected] remove simpledrawer.selected
+execute unless score @s simpledrawer.tempC matches 1 run scoreboard players set @s simpledrawer.time 8
