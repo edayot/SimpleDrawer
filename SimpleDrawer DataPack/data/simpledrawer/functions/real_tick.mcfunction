@@ -22,7 +22,7 @@ tag @a add simpledrawer.book
 
 #scoreboard players reset * simpledrawer.tempC
 scoreboard players set @a simpledrawer.sneak 0
-execute as @e[type=glow_item_frame,tag=SD_DrawerBlock] at @s unless block ~ ~ ~ minecraft:beehive run function simpledrawer:working/rename_tag
+#execute as @e[type=glow_item_frame,tag=SD_DrawerBlock] at @s unless block ~ ~ ~ minecraft:beehive run function simpledrawer:working/rename_tag
 execute as @e[type=item] if data entity @s {Item:{tag:{Drawer:1b}}} at @s run function simpledrawer:destroy/fast_destroy
 
 #Different ticks
