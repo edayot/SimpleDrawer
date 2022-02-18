@@ -1,6 +1,6 @@
 
 tag @s add simpledrawer.selected2
-execute as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerItem] run function simpledrawer:destroy/test_uuid_for_ite
+execute as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerItem] run function simpledrawer:destroy/test_uuid_for_item
 
 tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simpledrawer.DrawerItem] add simpledrawer.selected
 
