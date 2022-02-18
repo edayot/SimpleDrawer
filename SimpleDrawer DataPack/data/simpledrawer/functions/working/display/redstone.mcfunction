@@ -1,3 +1,7 @@
+scoreboard players set temp simpledrawer.tempC 0
+execute store result score temp simpledrawer.tempC run data get entity @s Item.tag.data.Count
+execute store result score temp2 simpledrawer.tempC run data get entity @s Item.tag.info.maxCount
+
 tag @s add simpledrawer.selected
 execute at @s as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerBlock] run function simpledrawer:working/test_uuid_for_block
 
