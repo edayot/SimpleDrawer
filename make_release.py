@@ -43,7 +43,7 @@ def change_version(version):
                 }
             }
         }
-        #json.dump(pack,f, indent = 4)
+        json.dump(pack,f, indent = 4)
 
 def create_zip(version):
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
