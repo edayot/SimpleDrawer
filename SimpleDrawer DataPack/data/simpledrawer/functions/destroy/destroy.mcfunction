@@ -12,10 +12,9 @@ tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simpledrawer.DrawerItem]
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.south] positioned ~ ~ ~0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.south] add simpledrawer.selected
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.west] positioned ~-0.1 ~ ~ run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.west] add simpledrawer.selected
 
+tag @e[limit=1,type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}] add simpledrawer.summoned
+data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item set from storage simpledrawer:temp ItemsNBT.drawer
 
-
-summon item ~ ~ ~ {Tags:["simpledrawer.summoned"],Item:{id:"minecraft:stone",Count:1b}}
-data modify entity @e[type=item,tag=simpledrawer.summoned,limit=1,sort=nearest] Item set from storage simpledrawer:temp ItemsNBT.drawer
 data remove entity @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] Item.tag.info.Owner
 execute as @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] run data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.BlockEntityTag.Items[0].tag.info set from entity @s Item.tag.info
 
@@ -47,7 +46,7 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.selected,tag=simpledrawer.fi
 data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.display.Lore append value '{"translate":"simpledrawer.name","color":"blue","italic":false}'
 #all kill
 
-kill @e[type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}]
+
 kill @e[type=glow_item_frame,limit=1,tag=simpledrawer.selected]
 
 kill @s
