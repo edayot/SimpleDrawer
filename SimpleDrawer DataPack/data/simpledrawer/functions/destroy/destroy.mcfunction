@@ -12,8 +12,12 @@ tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simpledrawer.DrawerItem]
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.south] positioned ~ ~ ~0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.south] add simpledrawer.selected
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.west] positioned ~-0.1 ~ ~ run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.west] add simpledrawer.selected
 
-tag @e[limit=1,type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}] add simpledrawer.summoned
-data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item set from storage simpledrawer:temp ItemsNBT.drawer
+
+kill @e[limit=1,type=item,distance=..5,nbt={Age:0s,Item:{id:"minecraft:beehive"}}]
+loot spawn ~ ~ ~ loot simpledrawer:items/drawer_destroyed
+tag @e[type=item,sort=nearest,predicate=simpledrawer:is_summoned_drawer] add simpledrawer.summoned
+data remove entity @e[type=item,tag=simpledrawer.summoned,limit=1] Item.tag.simpledrawer_summoned
+
 
 data remove entity @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] Item.tag.info.Owner
 execute as @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] run data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.BlockEntityTag.Items[0].tag.info set from entity @s Item.tag.info
