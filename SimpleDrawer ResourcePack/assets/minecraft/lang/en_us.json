@@ -13,6 +13,7 @@
     "simpledrawer.text.of":" of ",
     "simpledrawer.text.named":"Named : §r",
     "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer",
-    "simpledrawer.guide.message":"Check the wiki for details"
+    "simpledrawer.guide.message":"Check the wiki for details",
+    "simpledrawer.tellraw_prefix":"[Simple Drawer] "
 
 }
