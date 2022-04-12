@@ -14,3 +14,7 @@ Theses are the more important crafts, see in-game guide for more informations an
 - StorageDrawer mod (idea and textures) : https://github.com/jaquadro/StorageDrawers
 
 - Isometric rendering mod : https://github.com/glisco03/isometric-renders
+
+- Smithed Crafting : https://github.com/Smithed-MC/Libraries
+
+- LanternLoad : https://github.com/LanternMC/load
