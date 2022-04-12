@@ -1,8 +1,25 @@
 [
    {
-     "text": "\\uef01\n\n\n\n\n\n",
+     "text": "\\uef01\\n\\n\\n\\n\\n\\n",
      "font": "simpledrawer:font",
      "color": "white"
+   },
+   {
+     "text": "\\uff0a",
+     "font": "simpledrawer:font",
+     "color": "white",
+     "hoverEvent": {
+       "action": "show_text",
+       "contents": [
+         {
+           "text": "Smithed crafting table"
+         }
+       ]
+     },
+     "clickEvent": {
+       "action": "change_page",
+       "value": "2"
+     }
    },
    {
      "text": "\\uff00",
@@ -18,7 +35,7 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "2"
+       "value": "3"
      }
    },
    {
@@ -35,11 +52,11 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "3"
+       "value": "4"
      }
    },
    {
-     "text": "\\uff03",
+     "text": "\\uff03\\n\\n\\n",
      "font": "simpledrawer:font",
      "color": "white",
      "hoverEvent": {
@@ -52,11 +69,11 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "4"
+       "value": "5"
      }
    },
    {
-     "text": "\\uff04\n\n\n",
+     "text": "\\uff04",
      "font": "simpledrawer:font",
      "color": "white",
      "hoverEvent": {
@@ -69,7 +86,7 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "5"
+       "value": "6"
      }
    },
    {
@@ -86,7 +103,7 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "6"
+       "value": "7"
      }
    },
    {
@@ -103,11 +120,11 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "7"
+       "value": "8"
      }
    },
    {
-     "text": "\\uff01",
+     "text": "\\uff01\\n\\n\\n",
      "font": "simpledrawer:font",
      "color": "white",
      "hoverEvent": {
@@ -120,11 +137,11 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "8"
+       "value": "9"
      }
    },
    {
-     "text": "\\uff07\n\n\n",
+     "text": "\\uff07",
      "font": "simpledrawer:font",
      "color": "white",
      "hoverEvent": {
@@ -137,7 +154,7 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "9"
+       "value": "10"
      }
    },
    {
@@ -154,11 +171,11 @@
      },
      "clickEvent": {
        "action": "change_page",
-       "value": "10"
+       "value": "11"
      }
    },
    {
-      "text":"      "
+      "text":"    "
    }
    ,
    {

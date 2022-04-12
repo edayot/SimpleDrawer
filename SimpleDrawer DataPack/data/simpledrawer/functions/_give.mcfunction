@@ -1,10 +1,9 @@
-function simpledrawer:crafts/drawer_craft
-function simpledrawer:crafts/hopper_upgrade_craft
-function simpledrawer:crafts/iron_upgrade_craft
-function simpledrawer:crafts/gold_upgrade_craft
-function simpledrawer:crafts/diamond_upgrade_craft
-function simpledrawer:crafts/star_upgrade_craft
-function simpledrawer:crafts/netherite_upgrade_craft
-function simpledrawer:crafts/downgrade_wand_craft
-
-function simpledrawer:crafts/guide_craft
+loot give @s loot simpledrawer:items/drawer
+loot give @s loot simpledrawer:items/upgrade/hopper
+loot give @s loot simpledrawer:items/upgrade/iron
+loot give @s loot simpledrawer:items/upgrade/gold
+loot give @s loot simpledrawer:items/upgrade/diamond
+loot give @s loot simpledrawer:items/upgrade/star
+loot give @s loot simpledrawer:items/upgrade/netherite
+loot give @s loot simpledrawer:items/wrench
+loot give @s loot simpledrawer:items/guide
