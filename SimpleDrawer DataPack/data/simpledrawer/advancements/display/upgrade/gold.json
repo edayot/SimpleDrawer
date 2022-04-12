@@ -2,16 +2,16 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "\"Infinite\" storage"
+            "text": "More storage"
         },
         "description": {
-            "text": "Craft a Netherite upgrade"
+            "text": "Craft a gold upgrade"
         },
         "icon": {
             "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430006}"
+            "nbt": "{CustomModelData:1430003}"
         },
-        "frame": "challenge",
+        "frame": "task",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false
@@ -21,5 +21,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "simpledrawer:upgrade/star"
+    "parent": "simpledrawer:display/upgrade/iron"
 }

@@ -1,5 +1,5 @@
 
-execute at @s at @p[tag=simpledrawer.adder] run summon item ~ ~ ~ {Tags:["simpledrawer.summoned"],Item:{id:"minecraft:stone",Count:1b}}
+summon item ~ ~ ~ {Tags:["simpledrawer.summoned"],Item:{id:"minecraft:stone",Count:1b}}
 
 
 scoreboard players remove nbstack simpledrawer.tempC 1

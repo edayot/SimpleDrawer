@@ -16,8 +16,7 @@
 #execute as @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,tag=!simpledrawer.filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/fill/firstfilltest
 #execute as @e[type=glow_item_frame,tag=simpledrawer.DrawerItem,tag=simpledrawer.filled] unless data entity @s {ItemRotation:0b} run function simpledrawer:working/testclick
 
-loot give @a[tag=!simpledrawer.book] loot simpledrawer:items/guide
-tag @a add simpledrawer.book
+
 
 #scoreboard players reset * simpledrawer.tempC
 scoreboard players set @a simpledrawer.sneak 0

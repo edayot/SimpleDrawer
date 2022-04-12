@@ -134,7 +134,7 @@ function simpledrawer:working/display
 
 #tellraw @a ["",{"text":"nbstack "},{"score":{"name":"nbstack","objective":"simpledrawer.tempC"}}]
 
-function simpledrawer:working/unfill/drop_bigunfill
+execute at @s at @p[tag=simpledrawer.adder] run function simpledrawer:working/unfill/drop_bigunfill
 
 execute as @e[type=item,tag=simpledrawer.summoned] run data modify entity @s Item set from storage simpledrawer:temp ItemUnfilled
 execute as @e[type=item,tag=simpledrawer.summoned] run data modify entity @s Owner set from entity @p[tag=simpledrawer.adder] UUID

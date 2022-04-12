@@ -5,10 +5,10 @@
             "text": "Simple Drawers"
         },
         "description": {
-            "text": "Just craft and place a drawer"
+            "text": "Open the Simple Drawer guide to learn how to craft drawers."
         },
         "icon": {
-            "item": "minecraft:beehive",
+            "item": "minecraft:written_book",
             "nbt": "{CustomModelData:1430000L}"
         },
         "frame": "task",
@@ -19,15 +19,12 @@
     },
     "criteria": {
         "lol": {
-            "trigger": "minecraft:placed_block",
-            "conditions": {
-                "block": "minecraft:furnace",
-                "location": {
-                    "block": {
-                        "nbt": "{Lock:\"simpledrawer.DrawerPlacer\"}"
-                    }
-                }
-            }
+            "trigger": "minecraft:tick"
         }
+    },
+    "rewards": {
+      "loot": [
+        "simpledrawer:items/guide"
+      ]
     }
 }

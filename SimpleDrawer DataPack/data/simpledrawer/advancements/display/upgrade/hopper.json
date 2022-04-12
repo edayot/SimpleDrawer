@@ -2,14 +2,14 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Large storage"
+            "text": "Automation"
         },
         "description": {
-            "text": "Craft a Diamond upgrade"
+            "text": "Craft a hopper upgrade"
         },
         "icon": {
             "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430004}"
+            "nbt": "{CustomModelData:1430001}"
         },
         "frame": "task",
         "show_toast": true,
@@ -21,5 +21,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "simpledrawer:upgrade/gold"
+    "parent": "simpledrawer:display/root"
 }

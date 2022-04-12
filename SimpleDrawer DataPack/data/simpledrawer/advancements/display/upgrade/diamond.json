@@ -2,14 +2,14 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Little more storage"
+            "text": "Large storage"
         },
         "description": {
-            "text": "Craft a iron upgrade"
+            "text": "Craft a Diamond upgrade"
         },
         "icon": {
             "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430002}"
+            "nbt": "{CustomModelData:1430004}"
         },
         "frame": "task",
         "show_toast": true,
@@ -21,5 +21,5 @@
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "simpledrawer:root"
+    "parent": "simpledrawer:display/upgrade/gold"
 }
