@@ -1,9 +1,13 @@
 #define storage simpledrawer:temp
 
+
+scoreboard players set simpledrawer load.status 1
+function simpledrawer:set_version
+
 gamerule maxCommandChainLength 2147483647
 
 #execute only at installation
-execute unless data storage simpledrawer:temp {Loaded:1b} run function simpledrawer:print_version
+
 
 scoreboard objectives add simpledrawer.tempC dummy
 scoreboard objectives add simpledrawer.sneak minecraft.custom:minecraft.sneak_time
@@ -63,5 +67,5 @@ data modify storage simpledrawer:temp ItemsNBT.guide.tag.pages append value '{"t
 data modify storage simpledrawer:temp Loaded set value 1b
 
 
-
+schedule function simpledrawer:tick 1t
 

@@ -2,7 +2,8 @@
 scoreboard objectives remove simpledrawer.tempC
 scoreboard objectives remove simpledrawer.sneak
 scoreboard objectives remove simpledrawer.time
-data remove storage simpledrawer:temp Loaded
+scoreboard players set simpledrawer load.status 0
+schedule clear simpledrawer:tick
 
 execute as @e[tag=simpledrawer.forceload,type=marker] run function simpledrawer:unforceload_try
 tag @a remove simpledrawer.book

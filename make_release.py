@@ -6,8 +6,20 @@ import git
 
 
 def change_version(version):
+    v=version[1:].split(".")
+    major=v[0]
+    minor=v[1]
+    patch=v[2]
     with open("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction","w") as f:
-        f.write('tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+'","color":"green"}]')
+        f.write('tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+'","color":"green"}]\nscoreboard players set simpledrawer load.status 1')
+    
+    with open("SimpleDrawer DataPack/data/simpledrawer/functions/set_version.mcfunction","w") as f:
+        f.write("""scoreboard players set simpledrawer.major load.status {}
+scoreboard players set simpledrawer.minor load.status {}
+scoreboard players set simpledrawer.patch load.status {}
+            """.format(major,minor,patch))
+        
+
     with open("SimpleDrawer DataPack/pack.mcmeta","w") as f:
         pack={
             "pack":{
@@ -54,6 +66,7 @@ def git_push(version):
     r.index.add("SimpleDrawer DataPack/pack.mcmeta")
     r.index.add("SimpleDrawer ResourcePack/pack.mcmeta")
     r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction")
+    r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/set_version.mcfunction")
     r.index.add("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json")
 
     r.index.commit("[AUTO] updated to "+version)
