@@ -11,7 +11,7 @@ data modify entity @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] It
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] Item.tag.data.Count set value 1
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] Item.tag.info set from storage simpledrawer:temp info
 
-execute as @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] run function simpledrawer:working/display
+execute as @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] run function simpledrawer:working/display/item_frame_name
 
 #delete item from hopper
 scoreboard players set nbhopper simpledrawer.tempC 0

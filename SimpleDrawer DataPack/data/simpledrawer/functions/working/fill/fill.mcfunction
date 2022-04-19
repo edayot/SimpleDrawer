@@ -11,4 +11,4 @@ execute if score nbcrate simpledrawer.tempC <= maxCount simpledrawer.tempC run i
 execute unless score nbcrate simpledrawer.tempC <= maxCount simpledrawer.tempC run function simpledrawer:working/fill/fullfill
 
 
-function simpledrawer:working/display
+function simpledrawer:working/display/item_frame_name

@@ -32,7 +32,7 @@ execute if data entity @s Item.tag.info{stack1:1b,stack16:0b} if score nb simple
 
 execute unless data entity @s Item.tag.info.stack1 if score nb simpledrawer.tempC matches ..64 run function simpledrawer:working/unfill/inf64
 execute unless data entity @s Item.tag.info.stack1 if score nb simpledrawer.tempC matches 65.. run function simpledrawer:working/unfill/sup65
-function simpledrawer:working/display
+function simpledrawer:working/display/item_frame_name
 tag @e[type=item,tag=simpledrawer.summoned] remove simpledrawer.summoned
 
 #data modify entity @s ItemRotation set value 0b

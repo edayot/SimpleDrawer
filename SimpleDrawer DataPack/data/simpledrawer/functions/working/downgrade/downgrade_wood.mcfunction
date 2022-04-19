@@ -18,7 +18,7 @@ execute at @s run tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simple
 #execute at @s if entity @s[tag=simpledrawer.west] positioned ~0.5 ~ ~ run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.west,distance=..1,sort=nearest,limit=1] add simpledrawer.selected2
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.hopper
 
-function simpledrawer:working/display
+function simpledrawer:working/display/drawer_block
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.selected2
 
 tag @s add simpledrawer.upgrade

@@ -130,7 +130,7 @@ scoreboard players operation nb simpledrawer.tempC -= nbitems simpledrawer.tempC
 execute if score nb simpledrawer.tempC matches 0 run function simpledrawer:working/unfill/inf64
 
 execute if score nb simpledrawer.tempC matches 1.. store result entity @s Item.tag.data.Count long 1 run scoreboard players get nb simpledrawer.tempC 
-function simpledrawer:working/display
+function simpledrawer:working/display/item_frame_name
 
 #tellraw @a ["",{"text":"nbstack "},{"score":{"name":"nbstack","objective":"simpledrawer.tempC"}}]
 

@@ -17,7 +17,7 @@ execute at @s run tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simple
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] add simpledrawer.hopper
 
 tag @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] remove simpledrawer.selected2
-function simpledrawer:working/display
+function simpledrawer:working/display/item_frame_name
 tag @s add simpledrawer.upgrade
 
 
