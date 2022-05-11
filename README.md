@@ -8,7 +8,12 @@ Theses are the more important crafts, see in-game guide for more informations an
 ![CraftDrawer](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_drawer.png) ![Vide](/images/vide.png) ![CraftGuide](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_guide.png)
 
 
+# Exploring the datapack :
 
+This command will give you all items available in the datapack :
+```/function simpledrawer:_give```
+
+In creative mod only : you can break the item frame, this will totally break the drawer.
 
 # Some sources :
 - StorageDrawer mod (idea and textures) : https://github.com/jaquadro/StorageDrawers
