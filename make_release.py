@@ -24,7 +24,7 @@ scoreboard players set simpledrawer.patch load.status {}
         pack={
             "pack":{
                 "pack_format":8,
-                "description":"§aSimpleDrawer DataPack "+version+" :\n§rAdd drawers in to minecraft"
+                "description":"§aSimpleDrawer DataPack "+version+" :\n§rAdd drawers in to minecraft, by AirDox_"
             }
         }
         json.dump(pack,f, indent = 4)
@@ -32,7 +32,7 @@ scoreboard players set simpledrawer.patch load.status {}
         pack={
             "pack":{
                 "pack_format":8,
-                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rSimpleDrawer's Resource pack"
+                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rSimpleDrawer's Resource pack, by AirDox_"
             }
         }
         json.dump(pack,f, indent = 4)

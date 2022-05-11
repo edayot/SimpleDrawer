@@ -25,17 +25,3 @@ execute store result score @s smithed.data if entity @s[scores={smithed.data=0}]
 
 #Hopper
 execute store result score @s smithed.data if entity @s[scores={smithed.data=0}] if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:stick"}],1:[{Slot:0b,id:"minecraft:hopper"},{Slot:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"iron_upgrade"}}},{Slot:2b,id:"minecraft:hopper"}],2:[{Slot:0b,id:"minecraft:redstone"},{Slot:1b,id:"minecraft:air"},{Slot:2b,id:"minecraft:redstone"}]}} run loot replace block ~ ~ ~ container.16 loot simpledrawer:items/upgrade/hopper
-
-
-
-
-
-
-
-
-
-
-
-
-
-
