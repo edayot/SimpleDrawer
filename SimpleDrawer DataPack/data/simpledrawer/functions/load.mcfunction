@@ -14,8 +14,8 @@ scoreboard objectives add simpledrawer.sneak minecraft.custom:minecraft.sneak_ti
 scoreboard objectives add simpledrawer.time dummy
 
 
-execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run forceload add 0 0
-execute unless entity @e[tag=simpledrawer.forceload,type=marker] in simpledrawer:intern run summon marker 0 0 0 {Tags:["simpledrawer.forceload","global.forceload"]}
+execute in simpledrawer:intern run forceload add 0 0
+execute in simpledrawer:intern unless entity @e[tag=simpledrawer.forceload,type=marker,distance=0..] run summon marker 0 0 0 {Tags:["simpledrawer.forceload","global.forceload"]}
 
 scoreboard players set 64 simpledrawer.tempC 64
 scoreboard players set 16 simpledrawer.tempC 16

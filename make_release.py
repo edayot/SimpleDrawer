@@ -36,6 +36,14 @@ scoreboard players set simpledrawer.patch load.status {}
             }
         }
         json.dump(pack,f, indent = 4)
+    with open("SimpleDrawer Data + Resource Pack/pack.mcmeta","w") as f:
+        pack={
+            "pack":{
+                "pack_format":8,
+                "description":"§aSimpleDrawer"+version+" :\n§rAdd drawers in to minecraft, by AirDox_"
+            }
+        }
+        json.dump(pack,f, indent = 4)
     with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json","w") as f:
         pack={
             "display": {
@@ -60,6 +68,19 @@ scoreboard players set simpledrawer.patch load.status {}
 def create_zip(version):
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
     shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "SimpleDrawer ResourcePack")
+    
+def data_resource_release(version):
+    # delete Data + Resource Pack folder
+    shutil.rmtree("SimpleDrawer Data + Resource Pack")
+    # copy assets, data, LICENSE, pack.mcmeta, pack.png from SimpleDrawer DataPack and ResourcePack to Data + Resource Pack
+    shutil.copytree("SimpleDrawer DataPack/assets", "SimpleDrawer Data + Resource Pack/assets")
+    shutil.copytree("SimpleDrawer DataPack/data", "SimpleDrawer Data + Resource Pack/data")
+    shutil.copy("LICENSE", "SimpleDrawer Data + Resource Pack/LICENSE")
+    
+    shutil.make_archive("release/SimpleDrawer_Data + Resource Pack_"+version, "zip", "SimpleDrawer Data + Resource Pack")
+
+
+
 
 def git_push(version):
     r = git.Repo.init("")
@@ -78,7 +99,7 @@ def git_push(version):
 if __name__=="__main__":
     version=input("Please select a version tag : ")
     check=input("The version tag is "+version+" confirm [y/n]")
-    if check=="y":
+    if check=="y" and len(version)>0:
         change_version(version)
         git_push(version)
         create_zip(version)
