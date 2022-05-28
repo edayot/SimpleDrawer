@@ -43,4 +43,4 @@ execute if entity @s[tag=!simpledrawer.full] run function simpledrawer:working/f
 execute if entity @s[tag=!simpledrawer.full] run function simpledrawer:working/fill/bigfill/slot35/test
 
 tag @s remove simpledrawer.full
-function simpledrawer:working/display/item_frame_name
+function simpledrawer:working/display

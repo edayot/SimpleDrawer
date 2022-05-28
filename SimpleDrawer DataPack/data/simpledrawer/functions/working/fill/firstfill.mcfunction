@@ -2,7 +2,7 @@
 data modify entity @s Item set from storage simpledrawer:temp ItemAdded
 data modify entity @s Item.tag.data set from storage simpledrawer:temp ItemAdded
 data modify entity @s Item.tag.info set from storage simpledrawer:temp info
-function simpledrawer:working/display/item_frame_name
+function simpledrawer:working/display
 
 #clear and reset
 

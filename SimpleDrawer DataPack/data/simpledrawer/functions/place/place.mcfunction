@@ -23,6 +23,9 @@ data modify entity @e[tag=simpledrawer.summoned,limit=1,sort=nearest,type=glow_i
 #Test filled
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] Item.tag.info set from block ~ ~ ~ Items[0].tag.info
 
+scoreboard players add #global_id simpledrawer.drawer_id 1
+scoreboard players operation @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] simpledrawer.drawer_id = #global_id simpledrawer.drawer_id
+scoreboard players operation @e[type=glow_item_frame,tag=simpledrawer.summoned2,limit=1] simpledrawer.drawer_id = #global_id simpledrawer.drawer_id
 #UUID copy in Item.tag.info.Owner
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] Item.tag.info.Owner set from entity @e[type=glow_item_frame,tag=simpledrawer.summoned2,limit=1] UUID
 data modify entity @e[type=glow_item_frame,tag=simpledrawer.summoned2,limit=1] Item.tag.info.Owner set from entity @e[type=glow_item_frame,tag=simpledrawer.summoned,limit=1] UUID

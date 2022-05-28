@@ -6,6 +6,6 @@ execute at @s run playsound minecraft:block.note_block.harp master @s ~ ~ ~ 1 0.
 
 data modify entity @s Item.tag.info.type set value "diamond"
 function simpledrawer:working/set_max_count
-function simpledrawer:working/display/drawer_block
+function simpledrawer:working/display
 
 tag @s add simpledrawer.upgrade

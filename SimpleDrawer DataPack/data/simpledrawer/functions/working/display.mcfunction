@@ -9,9 +9,10 @@ execute in simpledrawer:intern run setblock 0 -64 0 bedrock
 
 
 tag @s add simpledrawer.selected
-execute at @s as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerBlock] run function simpledrawer:working/test_uuid_for_block
+execute at @s as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerBlock] if score @s simpledrawer.drawer_id = @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] simpledrawer.drawer_id run tag @s add simpledrawer.selected2
 
-execute at @s run tag @e[scores={simpledrawer.tempC=0},distance=..1.5,tag=simpledrawer.DrawerBlock] add simpledrawer.selected2
+
+
 
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected2] at @s if entity @s[tag=simpledrawer.north] positioned ~ ~ ~0.5 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.north,distance=..0.5,sort=nearest,limit=1] add simpledrawer.selected2
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected2] at @s if entity @s[tag=simpledrawer.south] positioned ~ ~ ~-0.5 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.south,distance=..0.5,sort=nearest,limit=1] add simpledrawer.selected2

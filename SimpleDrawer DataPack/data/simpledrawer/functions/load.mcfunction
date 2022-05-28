@@ -12,6 +12,7 @@ gamerule maxCommandChainLength 2147483647
 scoreboard objectives add simpledrawer.tempC dummy
 scoreboard objectives add simpledrawer.sneak minecraft.custom:minecraft.sneak_time
 scoreboard objectives add simpledrawer.time dummy
+scoreboard objectives add simpledrawer.drawer_id dummy
 
 
 execute in simpledrawer:intern run forceload add 0 0
