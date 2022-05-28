@@ -3,8 +3,8 @@ execute store result score temp simpledrawer.tempC run data get entity @s Item.t
 execute store result score temp2 simpledrawer.tempC run data get entity @s Item.tag.info.maxCount
 
 tag @s add simpledrawer.selected
-execute at @s as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerBlock] if score @s simpledrawer.drawer_id = @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] simpledrawer.drawer_id run tag @s add simpledrawer.selected2
-
+scoreboard players operation #predicate simpledrawer.tempC = @s simpledrawer.drawer_id
+execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerBlock,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected2
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected2] at @s if entity @s[tag=simpledrawer.north] positioned ~ ~ ~0.5 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.north,distance=..0.5,sort=nearest,limit=1] add simpledrawer.selected2
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected2] at @s if entity @s[tag=simpledrawer.south] positioned ~ ~ ~-0.5 run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.south,distance=..0.5,sort=nearest,limit=1] add simpledrawer.selected2
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected2] at @s if entity @s[tag=simpledrawer.east] positioned ~-0.5 ~ ~ run tag @e[type=glow_item_frame,tag=simpledrawer.DrawerBlock,tag=simpledrawer.east,distance=..0.5,sort=nearest,limit=1] add simpledrawer.selected2

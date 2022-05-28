@@ -1,7 +1,7 @@
 
 tag @s add simpledrawer.selected
-execute at @s as @e[distance=..1.5,type=minecraft:glow_item_frame,tag=simpledrawer.DrawerBlock] if score @s simpledrawer.drawer_id = @e[type=glow_item_frame,tag=simpledrawer.selected,limit=1] simpledrawer.drawer_id run tag @s add simpledrawer.selected2
-
+scoreboard players operation #predicate simpledrawer.tempC = @s simpledrawer.drawer_id
+execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerBlock,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected2
 
 
 #Summon and test tapped
