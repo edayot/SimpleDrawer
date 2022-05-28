@@ -1,7 +1,7 @@
 {
     "display": {
         "title": "Simple Drawer",
-        "description": "v1.5.1\nA datapack that add drawer to minecraft",
+        "description": "v1.6.0\nA datapack that add drawer to minecraft",
         "icon": {
             "item": "minecraft:beehive",
             "nbt": "{CustomModelData:1430000L}"
