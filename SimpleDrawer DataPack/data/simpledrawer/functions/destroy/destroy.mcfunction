@@ -1,7 +1,6 @@
-
-tag @s add simpledrawer.selected
+tag @s add simpledrawer.selected2
 scoreboard players operation #predicate simpledrawer.tempC = @s simpledrawer.drawer_id
-execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerBlock,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected2
+execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerItem,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected
 
 
 #Summon and test tapped
@@ -47,9 +46,7 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.selected,tag=simpledrawer.fi
 
 data modify entity @e[type=item,limit=1,tag=simpledrawer.summoned] Item.tag.display.Lore append value '{"translate":"simpledrawer.name","color":"blue","italic":false}'
 #all kill
-
-
-kill @e[type=glow_item_frame,limit=1,tag=simpledrawer.selected]
+kill @e[type=glow_item_frame,tag=simpledrawer.selected]
 
 kill @s
 tag @e[type=item,tag=simpledrawer.summoned] remove simpledrawer.summoned

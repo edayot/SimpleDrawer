@@ -1,8 +1,8 @@
 scoreboard players set @s simpledrawer.tempC 1
 
-tag @s add simpledrawer.selected
+tag @s add simpledrawer.selected2
 scoreboard players operation #predicate simpledrawer.tempC = @s simpledrawer.drawer_id
-execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerBlock,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected2
+execute at @s run tag @e[y=0,type=glow_item_frame,tag=simpledrawer.DrawerItem,predicate=simpledrawer:as_same_drawer_id] add simpledrawer.selected
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.east] positioned ~0.1 ~ ~ run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.east] add simpledrawer.selected
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.north] positioned ~ ~ ~-0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.north] add simpledrawer.selected
 #execute unless entity @e[type=glow_item_frame,tag=simpledrawer.selected] if entity @s[tag=simpledrawer.south] positioned ~ ~ ~0.1 run tag @e[distance=..0.8,type=glow_item_frame,tag=simpledrawer.DrawerItem,sort=nearest,limit=1,tag=simpledrawer.south] add simpledrawer.selected
