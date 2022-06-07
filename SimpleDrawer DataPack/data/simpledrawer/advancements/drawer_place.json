@@ -13,7 +13,7 @@
       }
     },
     "rewards": {
-      "function": "simpledrawer:place/checkplace"
+      "function": "simpledrawer:advancements_calls/drawer_place"
     }
   }
   

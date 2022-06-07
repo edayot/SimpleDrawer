@@ -32,4 +32,3 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.DrawerItem] run function sim
 schedule function simpledrawer:tick 1t
 
 
-

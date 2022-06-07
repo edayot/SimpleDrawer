@@ -1,4 +1,4 @@
-advancement revoke @s only simpledrawer:drawer_place
+
 
 #execute positioned ~ ~-1 ~ if data block ~ ~ ~ {Lock:"simpledrawer.DrawerPlacer"} run function simpledrawer:place/place
 summon chest_minecart ~ 320 ~ {Tags:["simpledrawer.GetPos"],Items:[{Slot:0b,id:"minecraft:dirt",Count:1b}]}
