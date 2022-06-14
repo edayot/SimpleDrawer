@@ -1,0 +1,30 @@
+[
+	{
+	  "function": "minecraft:set_name",
+	  "entity": "this",
+	  "name": [
+		{
+		  "score": {
+			"name": "#count",
+			"objective": "simpledrawer.math"
+		  },
+		  "color": "white",
+		  "italic": false
+		},
+		{
+		  "text": " / ",
+		  "color": "light_gray",
+		  "italic": false
+		},
+		{
+		  "score": {
+			"name": "#maxCount",
+			"objective": "simpledrawer.math"
+		  },
+		  "color": "white",
+		  "italic": false
+		}
+	  ]
+	}
+  ]
+  

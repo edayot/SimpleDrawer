@@ -3,6 +3,7 @@ data modify storage simpledrawer:main temp.simpledrawer set from entity @s Item.
 data remove storage simpledrawer:main temp.simpledrawer.Item
 data modify entity @s Item set value {id:"minecraft:barrier",Count:1b,tag:{simpledrawer:{type:"wood",hopper:0}}}
 data modify entity @s Item.tag.simpledrawer set from storage simpledrawer:main temp.simpledrawer
+function simpledrawer:drawer/working/display/count
 
 
 #IO compatibility

@@ -7,7 +7,7 @@ scoreboard players operation #count_total simpledrawer.math += #count_drawer sim
 
 execute if score #count_total simpledrawer.math < @s simpledrawer.drawer.maxCount store result entity @s Item.tag.simpledrawer.Item.Count long 1 run scoreboard players get #count_total simpledrawer.math
 execute if score #count_total simpledrawer.math >= @s simpledrawer.drawer.maxCount store result entity @s Item.tag.simpledrawer.Item.Count long 1 run scoreboard players get @s simpledrawer.drawer.maxCount
-
+function simpledrawer:drawer/working/display/count
 
 #IO compatibility
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
