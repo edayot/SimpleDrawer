@@ -1,5 +1,6 @@
 {
     "values":[
-        "#smithed.crafter:block/place"
+        "#smithed.crafter:block/place",
+        "simpledrawer:calls/on_place"
     ]
 }
