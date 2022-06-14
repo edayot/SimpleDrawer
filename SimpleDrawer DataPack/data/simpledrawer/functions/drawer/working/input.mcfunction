@@ -1,4 +1,6 @@
 #Take simpledrawer:io input as argument
+#Generate simpledrawer:io output and #count_output simpledrawer:io
+#also simpledrawer:io success
 #Executed by simpledrawer.drawer.item
 #define storage simpledrawer:io
 data modify storage simpledrawer:io success set value 0

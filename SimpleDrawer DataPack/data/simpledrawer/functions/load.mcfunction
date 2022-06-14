@@ -13,5 +13,6 @@ data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:f
 scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
+scoreboard objectives add simpledrawer.io dummy
 
 schedule function simpledrawer:tick 1t replace

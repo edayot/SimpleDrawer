@@ -1,0 +1,31 @@
+{
+	"pools": [
+	  {
+		"rolls": 1,
+		"bonus_rolls": 0,
+		"entries": [
+		  {
+			"type": "minecraft:alternatives",
+			"children": [],
+			"functions": [
+			  {
+				"function": "minecraft:copy_nbt",
+				"source": {
+				  "type": "minecraft:storage",
+				  "source": "simpledrawer:io"
+				},
+				"ops": [
+				  {
+					"source": "output",
+					"target": "",
+					"op": "merge"
+				  }
+				]
+			  }
+			]
+		  }
+		]
+	  }
+	]
+  }
+  

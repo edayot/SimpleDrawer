@@ -1,7 +1,7 @@
 
 
 data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main ItemsNBT.drawer
-data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer set from entity @s Item.tag.simpledrawer
+data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0] merge from entity @s Item
 
 execute if entity @s[tag=simpledrawer.drawer.filled] run scoreboard players add #model simpledrawer.math 1
 execute store result storage simpledrawer:main temp.dropped_item.tag.CustomModelData long 1 run scoreboard players get #model simpledrawer.math
