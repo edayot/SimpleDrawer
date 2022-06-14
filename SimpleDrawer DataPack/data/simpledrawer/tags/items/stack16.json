@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+	  "#banners",
+	  "#signs",
+	  "honey_bottle",
+	  "ender_pearl",
+	  "snowball",
+	  "armor_stand"
+	]
+  }
+  
