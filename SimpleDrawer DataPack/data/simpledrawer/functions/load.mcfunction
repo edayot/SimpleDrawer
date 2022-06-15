@@ -16,3 +16,4 @@ scoreboard objectives add simpledrawer.drawer.maxCount dummy
 scoreboard objectives add simpledrawer.io dummy
 
 schedule function simpledrawer:tick 1t replace
+schedule function simpledrawer:tick_2 2t replace
