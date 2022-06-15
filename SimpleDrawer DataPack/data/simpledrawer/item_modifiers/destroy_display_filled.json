@@ -24,6 +24,17 @@
 			},
 			"color": "white",
 			"italic": false
+		  },
+		  {
+			"translate": "simpledrawer.text.of",
+			"color": "gold",
+			"italic": false
+		  },
+		  {
+			"nbt": "temp.id",
+			"storage": "simpledrawer:main",
+			"color": "gold",
+			"italic": false
 		  }
 		],
 		{

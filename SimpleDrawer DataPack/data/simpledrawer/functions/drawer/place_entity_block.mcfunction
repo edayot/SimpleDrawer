@@ -16,4 +16,4 @@ execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{type:
 execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{type:"star"} run scoreboard players add #model simpledrawer.math 16
 execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{type:"netherite"} run scoreboard players add #model simpledrawer.math 20
 
-execute store result entity @s Item.tag.CustomModelData long 1 run scoreboard players get #model simpledrawer.math
+execute store result entity @s Item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math

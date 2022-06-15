@@ -21,12 +21,12 @@
 					"op": "merge"
 				  },
 				  {
-					"source": "drawer_type.wood.id",
+					"source": "drawer_type.diamond.id",
 					"target": "BlockEntityTag.Items[0].tag.simpledrawer.type",
 					"op": "replace"
 				  },
 				  {
-					"source": "drawer_type.wood.model",
+					"source": "drawer_type.diamond.model",
 					"target": "CustomModelData",
 					"op": "replace"
 				  }
@@ -48,7 +48,7 @@
 					  "italic": false
 					},
 					{
-					  "nbt": "drawer_type.wood.maxCount",
+					  "nbt": "drawer_type.diamond.maxCount",
 					  "storage": "simpledrawer:main",
 					  "color": "white",
 					  "italic": false

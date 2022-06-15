@@ -1,6 +1,5 @@
 {
     "values":[
-        "#smithed.crafter:recipes/shaped",
-        "simpledrawer:custom_crafts/shaped"
+        "#smithed.crafter:recipes/shaped"
     ]
 }

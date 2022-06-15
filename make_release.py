@@ -44,7 +44,7 @@ scoreboard players set simpledrawer.patch load.status {}
                 "description": version + "\nA datapack that add drawer to minecraft",
                 "icon": {
                     "item": "minecraft:beehive",
-                    "nbt": "{CustomModelData:1430000L}"
+                    "nbt": "{CustomModelData:1430000}"
                 },
                 "announce_to_chat": False,
                 "show_toast": False
