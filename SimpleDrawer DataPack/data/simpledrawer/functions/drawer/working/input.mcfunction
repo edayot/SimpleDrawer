@@ -12,5 +12,5 @@ data modify storage simpledrawer:main temp.input_no_slot set from storage simple
 data remove storage simpledrawer:main temp.input_no_slot.Slot
 
 
-execute if entity @s[tag=!simpledrawer.drawer.filled] run function simpledrawer:drawer/working/fill/first
-execute if entity @s[tag=simpledrawer.drawer.filled] run function simpledrawer:drawer/working/fill/test
+execute if data storage simpledrawer:io input if entity @s[tag=!simpledrawer.drawer.filled] run function simpledrawer:drawer/working/fill/first
+execute if data storage simpledrawer:io input if entity @s[tag=simpledrawer.drawer.filled] run function simpledrawer:drawer/working/fill/test

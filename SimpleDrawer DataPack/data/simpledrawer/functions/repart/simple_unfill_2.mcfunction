@@ -11,5 +11,5 @@ execute as @e[tag=simpledrawer.stack_test,limit=1] if predicate simpledrawer:sta
 kill @e[tag=simpledrawer.stack_test,limit=1]
 
 function simpledrawer:drawer/working/output
-summon item ~ ~ ~ {Tags:["simpledrawer.summoned"],Item:{id:"minecraft:stone",Count:1b}}
 
+execute if data storage simpledrawer:io {success:1} run function simpledrawer:repart/simple_unfill_3
