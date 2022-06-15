@@ -12,4 +12,4 @@ kill @e[tag=simpledrawer.stack_test,limit=1]
 
 function simpledrawer:drawer/working/output
 
-execute if data storage simpledrawer:io {success:1} run function simpledrawer:drawer/working/repart/simple_unfill_3
+execute if score #success simpledrawer.io matches 1 run function simpledrawer:drawer/working/repart/simple_unfill_3

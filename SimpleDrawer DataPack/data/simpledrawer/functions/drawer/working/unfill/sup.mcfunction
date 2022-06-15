@@ -10,6 +10,7 @@ function simpledrawer:drawer/working/display/count
 
 
 #IO compatibility
-data modify storage simpledrawer:io success set value 1
+
+scoreboard players set #success simpledrawer.io 1
 execute store result storage simpledrawer:io output.Count long 1 run scoreboard players get #count_drawer simpledrawer.math
 tag @s remove simpledrawer.drawer.filled

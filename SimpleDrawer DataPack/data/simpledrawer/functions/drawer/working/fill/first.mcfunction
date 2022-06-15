@@ -8,5 +8,6 @@ function simpledrawer:drawer/working/display/count
 #IO compatibility
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
 data modify storage simpledrawer:io output.Count set value 0b
-data modify storage simpledrawer:io success set value 1
+
+scoreboard players set #success simpledrawer.io 1
 scoreboard players set #count_output simpledrawer.io 0

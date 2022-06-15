@@ -1,6 +1,9 @@
 #Take #count simpledrawer.io as argument
 #Executed by simpledrawer.drawer.item
-data modify storage simpledrawer:io success set value 0
+#Generate simpledrawer:io output
+#also #success simpledrawer.io
+
+scoreboard players set #success simpledrawer.io 0
 data remove storage simpledrawer:io output
 execute store result score #count_drawer simpledrawer.math run data get entity @s Item.tag.simpledrawer.Item.Count
 
