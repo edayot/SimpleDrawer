@@ -7,10 +7,9 @@ data remove storage simpledrawer:main temp.ItemPlayer[{Slot:102b}]
 data remove storage simpledrawer:main temp.ItemPlayer[{Slot:103b}]
 data remove storage simpledrawer:main temp.ItemPlayer[{Slot:-106b}]
 
-
 #All 36 slot
 tag @s add simpledrawer.adder
-execute run function simpledrawer:drawer/working/repart/big_fill_2
+execute as @e[tag=simpledrawer.selected,limit=1] run function simpledrawer:drawer/working/repart/big_fill_2
 
 
 tag @s remove simpledrawer.adder
