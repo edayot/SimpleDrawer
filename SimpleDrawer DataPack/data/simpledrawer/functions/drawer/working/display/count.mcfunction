@@ -1,4 +1,4 @@
-scoreboard players set #count simpledrawer.math 0
-execute store result score #count simpledrawer.math run data get entity @s Item.tag.simpledrawer.Item.Count
-scoreboard players operation #maxCount simpledrawer.math = @s simpledrawer.drawer.maxCount
-item modify entity @s container.0 simpledrawer:drawer_display
+
+execute store success score #player simpledrawer.math if entity @p[distance=..5]
+execute if score #player simpledrawer.math matches 1 run function simpledrawer:drawer/working/display/count_2
+execute if score #player simpledrawer.math matches 0 run tag @s add simpledrawer.drawer.to_update
