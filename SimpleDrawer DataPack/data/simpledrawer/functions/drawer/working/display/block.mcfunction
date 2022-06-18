@@ -3,4 +3,4 @@ data modify storage simpledrawer:main temp.hopper set from entity @s Item.tag.si
 
 
 scoreboard players operation #test_id simpledrawer.math = @s simpledrawer.id
-execute as @e[type=minecraft:glow_item_frame,tag=simpledrawer.drawer.block] if score @s simpledrawer.id = #test_id simpledrawer.math run function simpledrawer:drawer/working/display/block_2
+execute as @e[type=minecraft:glow_item_frame,tag=simpledrawer.drawer.block,distance=..1] if score @s simpledrawer.id = #test_id simpledrawer.math run function simpledrawer:drawer/working/display/block_2

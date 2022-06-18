@@ -10,7 +10,7 @@
     "simpledrawer.star_upgrade":"Amélioration Nether Star",
     "simpledrawer.netherite_upgrade":"Amélioration Netherite",
     "simpledrawer.downgrade_wrench":"Clé de rétrogradation",
-    "simpledrawer.text.of":" de ",
+    "simpledrawer.text.of":" de §r",
     "simpledrawer.text.named":"Nommé : §r",
     "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli",
     "simpledrawer.guide.message":"Lisez le wiki pour plus de détails",

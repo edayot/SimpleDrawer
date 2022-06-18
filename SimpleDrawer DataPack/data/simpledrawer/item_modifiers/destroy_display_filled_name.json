@@ -31,10 +31,10 @@
 			"italic": false
 		  },
 		  {
-			"nbt": "temp.id",
+			"nbt": "temp.Name",
 			"storage": "simpledrawer:main",
-			"color": "gold",
-			"italic": false
+			"italic": false,
+			"interpret":true
 		  }
 		],
 		{
