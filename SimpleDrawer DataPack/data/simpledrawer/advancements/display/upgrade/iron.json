@@ -1,0 +1,25 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Little more storage"
+        },
+        "description": {
+            "text": "Use a iron upgrade"
+        },
+        "icon": {
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430001}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "lol": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/root"
+}

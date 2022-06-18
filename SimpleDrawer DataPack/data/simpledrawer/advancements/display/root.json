@@ -1,0 +1,30 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Simple Drawers"
+        },
+        "description": {
+            "text": "Open the Simple Drawer guide to learn how to craft drawers."
+        },
+        "icon": {
+            "item": "minecraft:written_book",
+            "nbt": "{CustomModelData:1430000L}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/block/oak_planks.png"
+    },
+    "criteria": {
+        "lol": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "rewards": {
+      "loot": [
+        "simpledrawer:items/guide"
+      ]
+    }
+}
