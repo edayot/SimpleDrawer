@@ -1,2 +1,2 @@
 function simpledrawer:drawer/working/input
-scoreboard players set #already simpledrawer.math 1
+execute if score #success simpledrawer.io matches 1 run scoreboard players set #already simpledrawer.math 1
