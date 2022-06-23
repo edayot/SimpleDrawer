@@ -1,5 +1,5 @@
 tag @e[type=item,nbt={Item:{id:"minecraft:beehive"},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
-execute unless entity @e[type=item,tag=simpledrawer.dropped_item] run summon item ~ ~ ~ {Tags:["simpledrawer.dropped_item"],Item:{id:"minecraft:barrier",Count:1b,tag:{CustomModelData:1430000}}}
+execute unless entity @e[type=item,tag=simpledrawer.dropped_item] run summon item ~ ~ ~ {Tags:["simpledrawer.dropped_item"],Item:{id:"minecraft:barrier",Count:1b}}
 
 execute store result score #model simpledrawer.math run data get entity @s Item.tag.CustomModelData
 
