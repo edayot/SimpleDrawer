@@ -1,3 +1,4 @@
+playsound minecraft:entity.item_frame.add_item master @s ~ ~ ~
 data remove storage simpledrawer:main temp.ItemInput
 data modify storage simpledrawer:main temp.ItemInput set from entity @s SelectedItem
 

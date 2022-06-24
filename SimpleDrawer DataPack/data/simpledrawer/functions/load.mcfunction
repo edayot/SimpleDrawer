@@ -6,6 +6,11 @@ function simpledrawer:set_version
 
 gamerule maxCommandChainLength 2147483647
 
+kill 00022e98-0000-0378-0000-037800000058
+forceload add 0 0
+summon armor_stand ~ ~ ~ {Tags:["global.forceload"],NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,UUID:[I;143000,888,888,88],HandItems:[{id:"minecraft:stone",Count:1b},{}]}
+
+
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 data modify storage simpledrawer:main drawer_type set value {wood:{id:"wood",maxCount:256,model:1430000},iron:{id:"iron",maxCount:2048,model:1430004},gold:{id:"gold",maxCount:8192,model:1430008},diamond:{id:"diamond",maxCount:65536,model:1430012},star:{id:"star",maxCount:1048576,model:1430016},netherite:{id:"netherite",maxCount:1073741824,model:1430020}}

@@ -1,12 +1,10 @@
 
 scoreboard players set #count_max simpledrawer.math 64
-summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,Tags:["simpledrawer.stack_test"],HandItems:[{id:"minecraft:stone",Count:1b},{}]}
-data modify entity @e[tag=simpledrawer.stack_test,limit=1] HandItems[0].id set from storage simpledrawer:main temp.ItemTry.id
+data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from storage simpledrawer:main temp.ItemTry.id
 
-execute as @e[tag=simpledrawer.stack_test,limit=1] if predicate simpledrawer:stack16 run scoreboard players set #count_max simpledrawer.math 16
-execute as @e[tag=simpledrawer.stack_test,limit=1] if predicate simpledrawer:stack1 run scoreboard players set #count_max simpledrawer.math 1
+execute as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack16 run scoreboard players set #count_max simpledrawer.math 16
+execute as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack1 run scoreboard players set #count_max simpledrawer.math 1
 
-kill @e[tag=simpledrawer.stack_test,limit=1]
 
 execute store result score #count_hopper simpledrawer.math run data get storage simpledrawer:main temp.ItemsHopper[{Slot:0b}].Count
 
