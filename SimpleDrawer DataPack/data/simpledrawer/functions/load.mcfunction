@@ -7,8 +7,8 @@ function simpledrawer:set_version
 gamerule maxCommandChainLength 2147483647
 
 kill 00022e98-0000-0378-0000-037800000058
-forceload add 0 0
-summon armor_stand ~ ~ ~ {Tags:["global.forceload"],NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,UUID:[I;143000,888,888,88],HandItems:[{id:"minecraft:stone",Count:1b},{}]}
+forceload add -30000000 1600
+summon armor_stand -30000000 20 1610 {Tags:["global.forceload"],NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,UUID:[I;143000,888,888,88],HandItems:[{id:"minecraft:stone",Count:1b},{}]}
 
 
 #Drawer
@@ -48,7 +48,9 @@ data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"t
 data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef09","font":"simpledrawer:font","color":"white"}'
 data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef0a","font":"simpledrawer:font","color":"white"}'
 
+data modify storage simpledrawer:main ItemsNBT.guide2 set value {id:"minecraft:written_book",Count:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"guide",traits:{items:1b}},CustomModelData:1430000,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":false}']},title:"Simple Drawer Guide",author:"AirDox_",generation:0,pages:[]}} 
 
+data modify storage simpledrawer:main ItemsNBT.guide2.tag.pages append value '{"text":"yolor","hoverEvent":{"action":"show_item","contents":{"id":"minecraft:stone","count":1}}}'
 
 scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
