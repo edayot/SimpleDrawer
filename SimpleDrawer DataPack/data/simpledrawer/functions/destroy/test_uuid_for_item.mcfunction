@@ -1,2 +1,0 @@
-data modify storage simpledrawer:temp UUID_Block set from entity @e[type=glow_item_frame,tag=simpledrawer.selected2,limit=1] UUID
-execute store success score @s simpledrawer.tempC run data modify storage simpledrawer:temp UUID_Block set from entity @s Item.tag.info.Owner

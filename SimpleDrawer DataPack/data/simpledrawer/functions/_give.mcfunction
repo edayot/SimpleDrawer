@@ -1,9 +1,0 @@
-loot give @s loot simpledrawer:items/drawer
-loot give @s loot simpledrawer:items/upgrade/hopper
-loot give @s loot simpledrawer:items/upgrade/iron
-loot give @s loot simpledrawer:items/upgrade/gold
-loot give @s loot simpledrawer:items/upgrade/diamond
-loot give @s loot simpledrawer:items/upgrade/star
-loot give @s loot simpledrawer:items/upgrade/netherite
-loot give @s loot simpledrawer:items/wrench
-loot give @s loot simpledrawer:items/guide

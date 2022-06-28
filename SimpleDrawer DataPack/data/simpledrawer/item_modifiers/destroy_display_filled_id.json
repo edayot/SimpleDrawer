@@ -1,0 +1,48 @@
+[
+	{
+	  "function": "minecraft:set_lore",
+	  "entity": "this",
+	  "lore": [
+		[
+		  {
+			"score": {
+			  "name": "#count",
+			  "objective": "simpledrawer.math"
+			},
+			"color": "white",
+			"italic": false
+		  },
+		  {
+			"text": " / ",
+			"color": "gray",
+			"italic": false
+		  },
+		  {
+			"score": {
+			  "name": "#maxCount",
+			  "objective": "simpledrawer.math"
+			},
+			"color": "white",
+			"italic": false
+		  },
+		  {
+			"translate": "simpledrawer.text.of",
+			"color": "gold",
+			"italic": false
+		  },
+		  {
+			"nbt": "temp.id",
+			"storage": "simpledrawer:main",
+			"italic": false,
+			"interpret":false
+		  }
+		],
+		{
+		  "translate": "simpledrawer.name",
+		  "color": "blue",
+		  "italic": false
+		}
+	  ]
+	}
+  ]
+  

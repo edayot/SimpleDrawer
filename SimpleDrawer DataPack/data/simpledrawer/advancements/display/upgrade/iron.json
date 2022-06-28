@@ -5,11 +5,11 @@
             "text": "Little more storage"
         },
         "description": {
-            "text": "Craft a iron upgrade"
+            "text": "Use a iron upgrade"
         },
         "icon": {
-            "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430002}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430001}"
         },
         "frame": "task",
         "show_toast": true,

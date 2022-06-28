@@ -5,11 +5,11 @@
             "text": "Very Large storage"
         },
         "description": {
-            "text": "Craft a Nether Star upgrade"
+            "text": "Use a Nether Star upgrade"
         },
         "icon": {
-            "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430005}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430004}"
         },
         "frame": "challenge",
         "show_toast": true,

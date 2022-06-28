@@ -5,11 +5,11 @@
             "text": "\"Infinite\" storage"
         },
         "description": {
-            "text": "Craft a Netherite upgrade"
+            "text": "Use a Netherite upgrade"
         },
         "icon": {
-            "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430006}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430005}"
         },
         "frame": "challenge",
         "show_toast": true,

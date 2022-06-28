@@ -5,11 +5,11 @@
             "text": "Automation"
         },
         "description": {
-            "text": "Craft a hopper upgrade"
+            "text": "Use a hopper upgrade"
         },
         "icon": {
-            "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430001}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430000}"
         },
         "frame": "task",
         "show_toast": true,

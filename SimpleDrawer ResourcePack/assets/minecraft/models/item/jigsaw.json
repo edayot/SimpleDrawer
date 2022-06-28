@@ -1,0 +1,13 @@
+{
+    "parent": "minecraft:block/jigsaw",
+    "overrides":[
+        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:item/hopper_upgrade"},
+        {"predicate":{"custom_model_data":1430001},"model":"simpledrawer:item/iron_upgrade"},
+        {"predicate":{"custom_model_data":1430002},"model":"simpledrawer:item/gold_upgrade"},
+        {"predicate":{"custom_model_data":1430003},"model":"simpledrawer:item/diamond_upgrade"},
+        {"predicate":{"custom_model_data":1430004},"model":"simpledrawer:item/star_upgrade"},
+        {"predicate":{"custom_model_data":1430005},"model":"simpledrawer:item/netherite_upgrade"},
+        {"predicate":{"custom_model_data":1430006},"model":"simpledrawer:item/downgrade_wand"}
+
+    ]
+}

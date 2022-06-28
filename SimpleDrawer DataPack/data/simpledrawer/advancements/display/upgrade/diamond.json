@@ -5,11 +5,11 @@
             "text": "Large storage"
         },
         "description": {
-            "text": "Craft a Diamond upgrade"
+            "text": "Use a Diamond upgrade"
         },
         "icon": {
-            "item": "minecraft:flint",
-            "nbt": "{CustomModelData:1430004}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430003}"
         },
         "frame": "task",
         "show_toast": true,
