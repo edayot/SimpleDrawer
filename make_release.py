@@ -39,23 +39,23 @@ scoreboard players set simpledrawer.patch load.status {}
     
     with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json","w") as f:
         pack={
-            "display": {
-                "title": "Simple Drawer",
-                "description": version + "\nA datapack that add drawer to minecraft",
-                "icon": {
-                    "item": "minecraft:beehive",
-                    "nbt": "{CustomModelData:1430000}"
-                },
-                "announce_to_chat": False,
-                "show_toast": False
+        "display": {
+            "title": "Simple Drawer",
+            "description": version+"\nA datapack that add drawer to minecraft",
+            "icon": {
+                "item": "minecraft:beehive",
+                "nbt": "{CustomModelData:1430000L}"
             },
-            "parent": "global:airdox_/root",
-            "criteria": {
-                "trigger": {
-                    "trigger": "minecraft:tick"
-                }
+            "announce_to_chat": False,
+            "show_toast": False
+        },
+        "parent": "global:airdox_/root",
+        "criteria": {
+            "trigger": {
+                "trigger": "minecraft:tick"
             }
         }
+    }
         json.dump(pack,f, indent = 4)
 
 def create_zip(version):
