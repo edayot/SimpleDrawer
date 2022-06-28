@@ -6,7 +6,7 @@ data remove storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items
 
 
 scoreboard players set #count simpledrawer.math 0
-execute store result score #count simpledrawer.math run data get entity @s Item.tag.simpledrawer.Item.Count
+scoreboard players operation #count simpledrawer.math = @s simpledrawer.drawer.Count
 scoreboard players operation #maxCount simpledrawer.math = @s simpledrawer.drawer.maxCount
 
 data remove entity @s Item.tag.display

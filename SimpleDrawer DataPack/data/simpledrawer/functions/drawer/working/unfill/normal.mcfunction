@@ -1,8 +1,7 @@
 data modify storage simpledrawer:io output set from entity @s Item.tag.simpledrawer.Item
 
 
-scoreboard players operation #count_drawer simpledrawer.math -= #count simpledrawer.io
-execute store result entity @s Item.tag.simpledrawer.Item.Count int 1 run scoreboard players get #count_drawer simpledrawer.math
+scoreboard players operation @s simpledrawer.drawer.Count -= #count simpledrawer.io
 function simpledrawer:drawer/working/display/count
 
 #IO compatibility

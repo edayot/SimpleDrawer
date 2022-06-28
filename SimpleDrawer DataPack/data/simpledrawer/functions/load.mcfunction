@@ -54,8 +54,10 @@ data modify storage simpledrawer:main ItemsNBT.guide2.tag.pages append value '{"
 
 scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
+scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
 scoreboard objectives add simpledrawer.io dummy
+
 
 schedule function simpledrawer:tick 1t replace
 schedule function simpledrawer:8tick 8t replace

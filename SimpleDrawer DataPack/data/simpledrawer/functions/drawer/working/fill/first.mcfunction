@@ -15,6 +15,8 @@ data modify storage simpledrawer:main temp.ItemDisplay.tag.Explosion set from st
 data modify entity @s Item set from storage simpledrawer:main temp.ItemDisplay
 data modify entity @s Item.tag.simpledrawer set from storage simpledrawer:main temp.ItemDrawer.tag.simpledrawer
 data modify entity @s Item.tag.simpledrawer.Item set from storage simpledrawer:main temp.input_no_slot
+scoreboard players set @s simpledrawer.drawer.Count 0
+execute store result score @s simpledrawer.drawer.Count run data get storage simpledrawer:main temp.input_no_slot.Count
 function simpledrawer:drawer/working/display/count
 
 #IO compatibility
