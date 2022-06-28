@@ -4,7 +4,7 @@
         "description": "v1.7.0\nA datapack that add drawer to minecraft",
         "icon": {
             "item": "minecraft:beehive",
-            "nbt": "{CustomModelData:1430000L}"
+            "nbt": "{CustomModelData:1430000}"
         },
         "announce_to_chat": false,
         "show_toast": false
