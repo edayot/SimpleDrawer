@@ -17,7 +17,7 @@
         "hidden": false
     },
     "criteria": {
-        "lol": {
+        "Use netherite upgrade": {
             "trigger": "minecraft:impossible"
         }
     },

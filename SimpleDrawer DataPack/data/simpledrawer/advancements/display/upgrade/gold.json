@@ -17,7 +17,7 @@
         "hidden": false
     },
     "criteria": {
-        "lol": {
+        "Use gold upgrade": {
             "trigger": "minecraft:impossible"
         }
     },

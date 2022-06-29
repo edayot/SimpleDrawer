@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "text": "Fill a netherite drawer"
+        },
+        "description": {
+            "text": "Use the max capacity of a netherite drawer"
+        },
+        "icon": {
+            "item": "minecraft:furnace",
+            "nbt": "{CustomModelData:1430020}"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Fill a netherite drawer": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/filled/star"
+}

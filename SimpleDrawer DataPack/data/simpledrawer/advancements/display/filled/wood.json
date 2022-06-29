@@ -1,14 +1,13 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Automation"
+            "text": "Fill a wood drawer"
         },
         "description": {
-            "text": "Use a hopper upgrade"
+            "text": "Use the max capacity of a wood drawer"
         },
         "icon": {
-            "item": "minecraft:jigsaw",
+            "item": "minecraft:furnace",
             "nbt": "{CustomModelData:1430000}"
         },
         "frame": "task",
@@ -17,7 +16,7 @@
         "hidden": false
     },
     "criteria": {
-        "Use hopper upgrade": {
+        "Fill a wood drawer": {
             "trigger": "minecraft:impossible"
         }
     },

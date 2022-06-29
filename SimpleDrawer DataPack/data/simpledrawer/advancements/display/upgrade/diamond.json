@@ -17,7 +17,7 @@
         "hidden": false
     },
     "criteria": {
-        "lol": {
+        "Use diamond upgrade": {
             "trigger": "minecraft:impossible"
         }
     },

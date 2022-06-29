@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "text": "Fill a gold drawer"
+        },
+        "description": {
+            "text": "Use the max capacity of a gold drawer"
+        },
+        "icon": {
+            "item": "minecraft:furnace",
+            "nbt": "{CustomModelData:1430008}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Fill a gold drawer": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/filled/iron"
+}

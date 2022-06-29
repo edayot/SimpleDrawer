@@ -23,7 +23,7 @@ scoreboard players set simpledrawer.patch load.status {}
     with open("SimpleDrawer DataPack/pack.mcmeta","w") as f:
         pack={
             "pack":{
-                "pack_format":8,
+                "pack_format":10,
                 "description":"§aSimpleDrawer DataPack "+version+" :\n§rAdd drawers in to minecraft, by AirDox_"
             }
         }
@@ -31,7 +31,7 @@ scoreboard players set simpledrawer.patch load.status {}
     with open("SimpleDrawer ResourcePack/pack.mcmeta","w") as f:
         pack={
             "pack":{
-                "pack_format":8,
+                "pack_format":9,
                 "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rSimpleDrawer's Resource pack, by AirDox_"
             }
         }

@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "text": "Fill a diamond drawer"
+        },
+        "description": {
+            "text": "Use the max capacity of a diamond drawer"
+        },
+        "icon": {
+            "item": "minecraft:furnace",
+            "nbt": "{CustomModelData:1430012}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Fill a diamond drawer": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/filled/gold"
+}
