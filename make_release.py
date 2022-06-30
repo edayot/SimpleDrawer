@@ -2,6 +2,7 @@ import json
 from os import access
 import shutil
 import git
+import zipfile
 
 
 
@@ -59,8 +60,30 @@ scoreboard players set simpledrawer.patch load.status {}
         json.dump(pack,f, indent = 4)
 
 def create_zip(version):
+    shutil.rmtree("build")
+    #copy SimpleDrawer DataPack and ResourcePack to temp build folder
+    shutil.copytree("SimpleDrawer DataPack","build/SimpleDrawer DataPack")
+    shutil.copytree("SimpleDrawer ResourcePack","build/SimpleDrawer ResourcePack")
+
+    shutil.rmtree("build\SimpleDrawer ResourcePack\\assets\smithed.crafter")
+
+    shutil.rmtree("build\SimpleDrawer DataPack\data\smithed.crafter")
+    shutil.rmtree("build\SimpleDrawer DataPack\data\smithed.custom_block")
+
+    shutil.copytree("SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event")
+    shutil.copytree("SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event")
+
+
+    #create zip file
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
     shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "SimpleDrawer ResourcePack")
+
+    shutil.make_archive("release/SimpleDrawer_DataPack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer DataPack")
+    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer ResourcePack")
+    
+
+    
+
     
 
 
@@ -80,7 +103,7 @@ def git_push(version):
 
 
 
-if __name__=="__main__":
+if __name__=="__main__" and False:
     version=input("Please select a version tag : ")
     check=input("The version tag is "+version+" confirm [y/n]")
     if check=="y" and len(version)>0:
