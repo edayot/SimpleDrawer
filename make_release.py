@@ -11,7 +11,7 @@ def change_version(version):
     minor=v[1]
     patch=v[2]
     with open("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction","w") as f:
-        f.write('tellraw @a [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+'","color":"green"}]\nscoreboard players set simpledrawer load.status 1')
+        f.write('tellraw @s [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+']","color":"green"}]')
     
     with open("SimpleDrawer DataPack/data/simpledrawer/functions/set_version.mcfunction","w") as f:
         f.write("""scoreboard players set simpledrawer.major load.status {}

@@ -61,3 +61,4 @@ scoreboard objectives add simpledrawer.io dummy
 
 schedule function simpledrawer:tick 1t replace
 schedule function simpledrawer:8tick 8t replace
+execute as @a[tag=simpledrawer.dev] run function simpledrawer:print_version

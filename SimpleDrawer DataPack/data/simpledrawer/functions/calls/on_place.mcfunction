@@ -1,1 +1,1 @@
-execute if data storage smithed.custom_block:main {blockApi:{id:"simpledrawer:drawer"}} run function simpledrawer:drawer/place
+execute if score simpledrawer load.status matches 1 run function simpledrawer:calls/on_place_2
