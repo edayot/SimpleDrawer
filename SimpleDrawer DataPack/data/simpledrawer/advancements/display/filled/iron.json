@@ -1,10 +1,10 @@
 {
     "display": {
         "title": {
-            "text": "Fill a iron drawer"
+            "text": "Fill an iron drawer"
         },
         "description": {
-            "text": "Use the max capacity of a iron drawer"
+            "text": "Use the max capacity of an iron drawer"
         },
         "icon": {
             "item": "minecraft:furnace",

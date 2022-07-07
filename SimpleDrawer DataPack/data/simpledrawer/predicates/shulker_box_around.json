@@ -1,0 +1,78 @@
+{
+	"condition": "minecraft:alternative",
+	"terms": [
+	  {
+		"condition": "minecraft:location_check",
+		"offsetZ": -1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "south"
+			}
+		  }
+		}
+	  },
+	  {
+		"condition": "minecraft:location_check",
+		"offsetZ": 1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "north"
+			}
+		  }
+		}
+	  },
+	  {
+		"condition": "minecraft:location_check",
+		"offsetX": -1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "east"
+			}
+		  }
+		}
+	  },
+	  {
+		"condition": "minecraft:location_check",
+		"offsetX": 1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "west"
+			}
+		  }
+		}
+	  },
+	  {
+		"condition": "minecraft:location_check",
+		"offsetY": 1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "down"
+			}
+		  }
+		}
+	  },
+	  {
+		"condition": "minecraft:location_check",
+		"offsetY": -1,
+		"predicate": {
+		  "block": {
+			"tag": "minecraft:shulker_boxes",
+			"state": {
+			  "facing": "up"
+			}
+		  }
+		}
+	  }
+	]
+  }
+  

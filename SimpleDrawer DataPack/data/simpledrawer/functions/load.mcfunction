@@ -6,10 +6,9 @@ function simpledrawer:set_version
 
 gamerule maxCommandChainLength 2147483647
 
-kill 00022e98-0000-0378-0000-037800000058
 forceload add -30000000 1600
-summon armor_stand -30000000 20 1610 {Tags:["global.forceload"],NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,UUID:[I;143000,888,888,88],HandItems:[{id:"minecraft:stone",Count:1b},{}]}
 
+schedule function simpledrawer:load_2 2s
 
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
