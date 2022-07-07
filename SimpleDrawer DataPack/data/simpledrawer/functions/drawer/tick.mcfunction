@@ -1,8 +1,8 @@
-execute if predicate simpledrawer:air_blocks unless predicate simpledrawer:shulker_box_around unless entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 0b
+execute if predicate simpledrawer:fixed_free_blocks unless predicate simpledrawer:shulker_box_around unless entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 0b
 
 
 
-execute unless predicate simpledrawer:air_blocks run data modify entity @s Fixed set value 1b
+execute unless predicate simpledrawer:fixed_free_blocks run data modify entity @s Fixed set value 1b
 execute if predicate simpledrawer:shulker_box_around run data modify entity @s Fixed set value 1b
 execute if entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 1b
 

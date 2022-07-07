@@ -2,7 +2,7 @@
     "condition": "minecraft:location_check",
     "predicate": {
       "block": {
-        "tag": "simpledrawer:air_blocks"
+        "tag": "simpledrawer:fixed_free_blocks"
       }
     }
   }
