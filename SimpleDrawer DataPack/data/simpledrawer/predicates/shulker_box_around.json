@@ -6,7 +6,7 @@
 		"offsetZ": -1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "south"
 			}
@@ -18,7 +18,7 @@
 		"offsetZ": 1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "north"
 			}
@@ -30,7 +30,7 @@
 		"offsetX": -1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "east"
 			}
@@ -42,7 +42,7 @@
 		"offsetX": 1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "west"
 			}
@@ -54,7 +54,7 @@
 		"offsetY": 1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "down"
 			}
@@ -66,7 +66,7 @@
 		"offsetY": -1,
 		"predicate": {
 		  "block": {
-			"tag": "simpledrawer:unstable_block",
+			"tag": "simpledrawer:unstable_blocks",
 			"state": {
 			  "facing": "up"
 			}

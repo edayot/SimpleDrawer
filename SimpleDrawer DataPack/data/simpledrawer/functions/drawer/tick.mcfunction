@@ -8,9 +8,9 @@ execute if score #me simpledrawer.math matches 1 if predicate simpledrawer:fixed
 
 
 execute if score #me simpledrawer.math matches 0 run data modify entity @s Fixed set value 1b
-execute unless predicate simpledrawer:fixed_free_blocks run data modify entity @s Fixed set value 1b
-execute if predicate simpledrawer:shulker_box_around run data modify entity @s Fixed set value 1b
-execute if entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 1b
+execute if score #me simpledrawer.math matches 1 unless predicate simpledrawer:fixed_free_blocks run data modify entity @s Fixed set value 1b
+execute if score #me simpledrawer.math matches 1 if predicate simpledrawer:shulker_box_around run data modify entity @s Fixed set value 1b
+execute if score #me simpledrawer.math matches 1 if entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 1b
 
 
 
