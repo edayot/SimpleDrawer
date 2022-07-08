@@ -1,10 +1,11 @@
+tag @s add simpledrawer.adder
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 data remove storage simpledrawer:main temp.ItemInput
 data modify storage simpledrawer:main temp.ItemInput set from entity @s SelectedItem
 
 scoreboard players set #already simpledrawer.math 0
 
-tag @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item,limit=1] add simpledrawer.selected
+execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:calls/click_3 
 
 
 scoreboard players set #exist simpledrawer.math 0
@@ -38,3 +39,4 @@ execute if score #already simpledrawer.math matches 0 if score #exist simpledraw
 #U
 data modify entity @e[tag=simpledrawer.selected,limit=1] ItemRotation set value 0b
 tag @e[tag=simpledrawer.selected] remove simpledrawer.selected
+tag @s remove simpledrawer.adder

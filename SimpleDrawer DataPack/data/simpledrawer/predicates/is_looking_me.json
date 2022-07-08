@@ -1,0 +1,20 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+	  "type_specific": {
+		"type": "player",
+		"looking_at": {
+		  "type": "minecraft:glow_item_frame",
+		  "nbt": "{Tags:[\"simpledrawer.drawer.item.me\"]}",
+		  "distance": {
+			"absolute": {
+			  "min": 0,
+			  "max": 7
+			}
+		  }
+		}
+	  }
+	}
+  }
+  
