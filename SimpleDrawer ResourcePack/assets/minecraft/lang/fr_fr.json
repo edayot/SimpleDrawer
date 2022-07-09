@@ -14,5 +14,7 @@
     "simpledrawer.text.named":"Nommé : §r",
     "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli",
     "simpledrawer.guide.message":"Lisez le wiki pour plus de détails",
-    "simpledrawer.tellraw_prefix":"[Simple Drawer] "
+    "simpledrawer.tellraw_prefix":"[Simple Drawer] ",
+    "simpledrawer.load_error.smithed.custom_block":"La librairie smithed.custom_block n'a pas été trouvé",
+    "simpledrawer.load_error.smithed.crafter":"La librairie smithed.crafter n'a pas été trouvé"
 }

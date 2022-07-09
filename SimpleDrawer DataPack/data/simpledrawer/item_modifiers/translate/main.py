@@ -44,7 +44,7 @@ def generate(id,translate):
             {
                 "translate": "simpledrawer.name",
                 "color": "blue",
-                "italic": False
+                "italic": True
             }
         ],
         "conditions": [

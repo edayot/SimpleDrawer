@@ -57,7 +57,7 @@
 				  {
 					"translate": "simpledrawer.name",
 					"color": "blue",
-					"italic": false
+					"italic": true
 				  }
 				]
 			  }
