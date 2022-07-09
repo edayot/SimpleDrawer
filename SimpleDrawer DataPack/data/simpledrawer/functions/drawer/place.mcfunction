@@ -21,8 +21,16 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.summoned1] at @s run functio
 execute as @e[type=glow_item_frame,tag=simpledrawer.summoned2] at @s run function simpledrawer:drawer/place_entity_item
 
 
+
 execute if block ~ ~ ~ minecraft:furnace[facing=north] run setblock ~ ~ ~ minecraft:beehive[facing=north]
 execute if block ~ ~ ~ minecraft:furnace[facing=south] run setblock ~ ~ ~ minecraft:beehive[facing=south]
 execute if block ~ ~ ~ minecraft:furnace[facing=east] run setblock ~ ~ ~ minecraft:beehive[facing=east]
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run setblock ~ ~ ~ minecraft:beehive[facing=west]
 
+
+execute if score #check_place simpledrawer.math matches 0 run setblock ~ ~ ~ air
+execute if score #check_place simpledrawer.math matches 0 as @e[tag=simpledrawer.summoned1] at @s run function simpledrawer:drawer/destroy
+
+tag @e remove simpledrawer.summoned
+tag @e remove simpledrawer.summoned1
+tag @e remove simpledrawer.summoned2

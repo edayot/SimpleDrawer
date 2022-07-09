@@ -1,5 +1,4 @@
-tag @s remove simpledrawer.summoned
-tag @s remove simpledrawer.summoned2
+
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.drawer.item
@@ -19,3 +18,7 @@ function simpledrawer:drawer/working/set_maxcount
 function simpledrawer:drawer/working/display/count
 
 function simpledrawer:drawer/working/display/block
+
+scoreboard players set #check_place simpledrawer.math 0
+execute if block ~ ~ ~ #simpledrawer:air run scoreboard players set #check_place simpledrawer.math 1
+execute if score #check_place simpledrawer.math matches 1 run setblock ~ ~ ~ moving_piston
