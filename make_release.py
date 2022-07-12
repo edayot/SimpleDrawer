@@ -115,10 +115,11 @@ def git_push(version):
 
 
 
-if __name__=="__main__" and False:
+if __name__=="__main__" and True:
     version=input("Please select a version tag : ")
-    check=input("The version tag is "+version+" confirm [y/n]")
-    if check=="y" and len(version)>0:
-        change_version(version)
-        git_push(version)
-        create_zip(version)
+    if len(version)>0:
+        check=input("The version tag is "+version+" confirm [y/n]")
+        if check=="y":
+            change_version(version)
+            git_push(version)
+            create_zip(version)
