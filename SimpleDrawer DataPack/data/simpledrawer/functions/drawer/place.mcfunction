@@ -28,7 +28,8 @@ execute if block ~ ~ ~ minecraft:furnace[facing=east] run setblock ~ ~ ~ minecra
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run setblock ~ ~ ~ minecraft:beehive[facing=west]
 
 
-execute if score #check_place simpledrawer.math matches 0 run setblock ~ ~ ~ air
+execute if score #check_place simpledrawer.math matches 0 run title @s[tag=!global.ignore.gui] actionbar [{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},{"translate":"simpledrawer.place_error","color":"red"}]
+execute if score #check_place simpledrawer.math matches 0 run setblock ~ ~ ~ air destroy
 execute if score #check_place simpledrawer.math matches 0 as @e[tag=simpledrawer.summoned1] at @s run function simpledrawer:drawer/destroy
 
 tag @e remove simpledrawer.summoned

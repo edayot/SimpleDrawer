@@ -73,6 +73,9 @@ def create_zip(version):
     shutil.copytree("SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event")
     shutil.copytree("SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event")
 
+    with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json") as f:
+        data=json.load(f)
+
 
     #create zip file
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")

@@ -16,7 +16,8 @@
     "simpledrawer.guide.message":"Check the wiki for details",
     "simpledrawer.tellraw_prefix":"[Simple Drawer] ",
     "simpledrawer.load_error.smithed.custom_block":"No smithed.custom_block lib found",
-    "simpledrawer.load_error.smithed.crafter":"No smithed.crafter lib found"
+    "simpledrawer.load_error.smithed.crafter":"No smithed.crafter lib found",
+    "simpledrawer.place_error":"You can't place the drawer here"
 
 
 
