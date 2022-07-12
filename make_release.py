@@ -60,7 +60,10 @@ scoreboard players set simpledrawer.patch load.status {}
         json.dump(pack,f, indent = 4)
 
 def create_zip(version):
-    shutil.rmtree("build")
+    try:
+        shutil.rmtree("build")
+    except:
+        pass
     #copy SimpleDrawer DataPack and ResourcePack to temp build folder
     shutil.copytree("SimpleDrawer DataPack","build/SimpleDrawer DataPack")
     shutil.copytree("SimpleDrawer ResourcePack","build/SimpleDrawer ResourcePack")
@@ -73,8 +76,14 @@ def create_zip(version):
     shutil.copytree("SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event")
     shutil.copytree("SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event")
 
-    with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json") as f:
-        data=json.load(f)
+    with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json","r") as f:
+        #delete a line from furnace.json
+        lines=f.readlines()
+        lines.remove('        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
+        with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json","w") as f:
+            f.writelines(lines)
+
+        
 
 
     #create zip file
@@ -83,7 +92,7 @@ def create_zip(version):
 
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer DataPack")
     shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer ResourcePack")
-    shutil.rmtree("build")
+    #shutil.rmtree("build")
 
     
 
@@ -106,7 +115,7 @@ def git_push(version):
 
 
 
-if __name__=="__main__" and True:
+if __name__=="__main__" and False:
     version=input("Please select a version tag : ")
     check=input("The version tag is "+version+" confirm [y/n]")
     if check=="y" and len(version)>0:
