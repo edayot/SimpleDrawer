@@ -29,15 +29,10 @@
         {"predicate":{"custom_model_data":1430020},"model":"simpledrawer:block/item/drawer_netherite_"},
         {"predicate":{"custom_model_data":1430021},"model":"simpledrawer:block/item/drawer_netherite_tapped"},
         {"predicate":{"custom_model_data":1430022},"model":"simpledrawer:block/item/drawer_netherite__hopper"},
-        {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/item/drawer_netherite_tapped_hopper"},
+        {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/item/drawer_netherite_tapped_hopper"}
 
         
-        {
-            "predicate": {
-              "custom_model_data": 4250001
-            },
-            "model": "smithed.crafter:block/table"
-          }
+        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}
 
     ]
 }
