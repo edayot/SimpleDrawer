@@ -11,7 +11,7 @@ execute if entity @s[tag=simpledrawer.north] if block ~ ~ ~-1 moving_piston run 
 execute if entity @s[tag=simpledrawer.south] if block ~ ~ ~1 moving_piston run setblock ~ ~ ~1 air
 execute if entity @s[tag=simpledrawer.east] if block ~1 ~ ~ moving_piston run setblock ~1 ~ ~ air
 execute if entity @s[tag=simpledrawer.west] if block ~-1 ~ ~ moving_piston run setblock ~-1 ~ ~ air
-
+execute as @e[type=minecraft:glow_item_frame,tag=simpledrawer.drawer.item,distance=..2] at @s run setblock ~ ~ ~ moving_piston
 
 
 tag @e[type=item,tag=simpledrawer.dropped_item] remove simpledrawer.dropped_item
