@@ -21,4 +21,4 @@ function simpledrawer:drawer/working/display/block
 
 scoreboard players set #check_place simpledrawer.math 0
 execute if block ~ ~ ~ #simpledrawer:air run scoreboard players set #check_place simpledrawer.math 1
-execute if score #check_place simpledrawer.math matches 1 run setblock ~ ~ ~ moving_piston
+execute if score #check_place simpledrawer.math matches 1 run setblock ~ ~ ~ moving_piston destroy
