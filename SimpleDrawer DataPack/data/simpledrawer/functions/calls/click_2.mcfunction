@@ -37,6 +37,5 @@ execute if score #already simpledrawer.math matches 0 if score #exist_filled sim
 execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 1 run function simpledrawer:drawer/working/repart/simple_fill
 
 #U
-data modify entity @e[tag=simpledrawer.selected,limit=1] ItemRotation set value 0b
 tag @e[tag=simpledrawer.selected] remove simpledrawer.selected
 tag @s remove simpledrawer.adder
