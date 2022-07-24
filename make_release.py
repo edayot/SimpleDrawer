@@ -41,7 +41,7 @@ scoreboard players set simpledrawer.patch load.status {}
     with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json","w") as f:
         pack={
         "display": {
-            "title": "Simple Drawer",
+            "title": "SimpleDrawer",
             "description": version+"\nA datapack that add drawer to minecraft",
             "icon": {
                 "item": "minecraft:beehive",
@@ -76,12 +76,13 @@ def create_zip(version):
     shutil.copytree("SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event")
     shutil.copytree("SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event")
 
-    with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json","r") as f:
-        #delete a line from furnace.json
-        lines=f.readlines()
-        lines.remove('        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
-        with open("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json","w") as f:
-            f.writelines(lines)
+
+    #delete useless lines
+    delete_line("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json",'        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
+    
+    #delete_line("build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event/recipes.json",'        "#smithed.crafter:recipes/shaped",\n')
+
+    #delete_line("build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event/on_place.json",'        "#smithed.crafter:block/place",\n')
 
         
 
@@ -95,8 +96,13 @@ def create_zip(version):
     #shutil.rmtree("build")
 
     
-
-    
+def delete_line(file,line):
+    with open(file,"r") as f:
+        #delete a line from furnace.json
+        lines=f.readlines()
+        lines.remove(line)
+    with open(file,"w") as f:
+        f.writelines(lines)
 
 
 
@@ -113,9 +119,7 @@ def git_push(version):
     r.remote("origin").push()
 
 
-
-
-if __name__=="__main__" and True:
+def start():
     version=input("Please select a version tag : ")
     if len(version)>0:
         check=input("The version tag is "+version+" confirm [y/n]")
@@ -123,3 +127,6 @@ if __name__=="__main__" and True:
             change_version(version)
             git_push(version)
             create_zip(version)
+
+if __name__=="__main__" and False:
+    start()

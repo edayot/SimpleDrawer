@@ -2,10 +2,10 @@
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Simple Drawers"
+            "text": "SimpleDrawer"
         },
         "description": {
-            "text": "Open the Simple Drawer guide to learn how to craft drawers."
+            "text": "Open the SimpleDrawer guide to learn how to craft drawers."
         },
         "icon": {
             "item": "minecraft:written_book",
