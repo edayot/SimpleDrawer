@@ -80,9 +80,9 @@ def create_zip(version):
     #delete useless lines
     delete_line("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json",'        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
     
-    #delete_line("build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event/recipes.json",'        "#smithed.crafter:recipes/shaped",\n')
+    delete_line("build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event/recipes.json",'        "#smithed.crafter:recipes/shaped",\n')
 
-    #delete_line("build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event/on_place.json",'        "#smithed.crafter:block/place",\n')
+    delete_line("build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event/on_place.json",'        "#smithed.crafter:block/place",\n')
 
         
 
