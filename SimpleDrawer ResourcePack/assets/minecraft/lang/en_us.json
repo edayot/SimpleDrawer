@@ -18,7 +18,8 @@
     "simpledrawer.load_error.smithed.custom_block":"No smithed.custom_block lib found",
     "simpledrawer.load_error.smithed.crafter":"No smithed.crafter lib found",
     "simpledrawer.place_error":"You can't place the drawer here",
-    "simpledrawer.input_error":"This item isn't allowed in the drawer"
+    "simpledrawer.input_error":"This item isn't allowed in the drawer",
+    "simpledrawer.drawer_connector":"Drawer Connector"
 
 
 

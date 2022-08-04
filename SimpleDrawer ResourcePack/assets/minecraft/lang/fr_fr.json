@@ -18,5 +18,6 @@
     "simpledrawer.load_error.smithed.custom_block":"La librairie smithed.custom_block n'a pas été trouvé",
     "simpledrawer.load_error.smithed.crafter":"La librairie smithed.crafter n'a pas été trouvé",
     "simpledrawer.place_error":"Tu ne peux pas placer un drawer ici",
-    "simpledrawer.input_error":"Cet item n'est pas autorisé dans un drawer"
+    "simpledrawer.input_error":"Cet item n'est pas autorisé dans un drawer",
+    "simpledrawer.drawer_connector":"Connecteur de drawer"
 }
