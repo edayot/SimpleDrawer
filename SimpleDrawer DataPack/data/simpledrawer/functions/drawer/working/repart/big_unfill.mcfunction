@@ -11,5 +11,7 @@ execute store result score #nb_filled_slot simpledrawer.math if data storage sim
 
 scoreboard players operation #nb_empty_slot simpledrawer.math -= #nb_filled_slot simpledrawer.math
 
-
+scoreboard players operation #mode_temp simpledrawer.math = @s simpledrawer.config.output_mode
+scoreboard players set @s simpledrawer.config.output_mode 2
 execute as @e[tag=simpledrawer.selected,limit=1,tag=simpledrawer.drawer.filled] run function simpledrawer:drawer/working/repart/big_unfill_2
+scoreboard players operation @s simpledrawer.config.output_mode = #mode_temp simpledrawer.math

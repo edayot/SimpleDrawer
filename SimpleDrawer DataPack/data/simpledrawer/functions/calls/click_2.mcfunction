@@ -25,7 +25,10 @@ execute if score #already simpledrawer.math matches 0 if score #exist simpledraw
 
 
 #First checks fill unfill, bigfill and bigunfill
-execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 run function simpledrawer:drawer/working/repart/simple_fill
+execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.drawer.cooldown matches 0 run function simpledrawer:drawer/working/repart/simple_fill
+
+execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.drawer.cooldown matches 1.. run function simpledrawer:drawer/working/repart/simple_unfill
+
 
 execute if score #already simpledrawer.math matches 0 if score #exist_filled simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 0 if score #sneaking simpledrawer.math matches 0 run function simpledrawer:drawer/working/repart/simple_unfill
 

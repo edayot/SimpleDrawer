@@ -23,8 +23,6 @@
         }
     },
     "rewards": {
-      "loot": [
-        "simpledrawer:items/guide"
-      ]
+      "function": "simpledrawer:calls/first_join"
     }
 }
