@@ -1,15 +1,9 @@
 
 
+function simpledrawer:drawer_connector/gui
+
+data modify block ~ ~-1 ~ TransferCooldown set value 12
+execute positioned ~ ~-1 ~ as @e[type=minecraft:hopper_minecart,distance=..1,tag=!simpledrawer.minecart_checked] run function simpledrawer:drawer_connector/minecart_protection/set
 
 
 
-scoreboard players operation #max_connected_drawer simpledrawer.math = #max_connected_drawer simpledrawer.config
-function simpledrawer:drawer_connector/construct_network
-#say @e[tag=simpledrawer.drawer_connector.same_network]
-
-scoreboard players set #success_connector simpledrawer.math 0
-
-
-execute if entity @e[tag=simpledrawer.drawer_connector.same_network,tag=simpledrawer.drawer.block] run function simpledrawer:drawer_connector/if_drawer_in_network
-
-tag @e remove simpledrawer.drawer_connector.same_network

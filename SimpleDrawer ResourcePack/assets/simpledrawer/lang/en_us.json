@@ -19,7 +19,8 @@
     "simpledrawer.load_error.smithed.crafter":"No smithed.crafter lib found",
     "simpledrawer.place_error":"You can't place the drawer here",
     "simpledrawer.input_error":"This item isn't allowed in the drawer",
-    "simpledrawer.drawer_connector":"Drawer Connector"
+    "simpledrawer.drawer_connector":"Drawer Connector",
+    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s"
 
 
 

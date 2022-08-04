@@ -4,4 +4,5 @@ execute unless entity @e[type=item,tag=simpledrawer.dropped_item] run summon ite
 data modify entity @e[tag=simpledrawer.dropped_item,limit=1] Item set from storage simpledrawer:main ItemsNBT.drawer_connector
 
 tag @e[type=item,tag=simpledrawer.dropped_item] remove simpledrawer.dropped_item
+kill @e[type=item,distance=..5,nbt={Age:0s,Item:{tag:{simpledrawer:{gui:1b}}}}]
 kill @s
