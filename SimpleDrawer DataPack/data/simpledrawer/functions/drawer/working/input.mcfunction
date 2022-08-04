@@ -5,6 +5,7 @@
 #define storage simpledrawer:io
 
 scoreboard players set #success simpledrawer.io 0
+scoreboard players set #nothing_changed simpledrawer.io 0
 data remove storage simpledrawer:io output
 
 data modify storage simpledrawer:main temp.ItemDrawer set from entity @s Item

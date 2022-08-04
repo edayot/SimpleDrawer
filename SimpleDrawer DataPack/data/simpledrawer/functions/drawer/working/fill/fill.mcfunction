@@ -19,4 +19,5 @@ execute if score #count_output simpledrawer.math matches 0.. run scoreboard play
 execute unless score #count_output simpledrawer.math matches 0.. run data modify storage simpledrawer:io output.Count set value 0
 execute unless score #count_output simpledrawer.math matches 0.. run scoreboard players set #count_output simpledrawer.io 0
 scoreboard players set #success simpledrawer.io 1
+execute if score #count_output simpledrawer.math = #count_input simpledrawer.math run scoreboard players set #nothing_changed simpledrawer.io 1
 

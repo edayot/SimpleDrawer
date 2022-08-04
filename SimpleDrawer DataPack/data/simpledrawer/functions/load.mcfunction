@@ -53,11 +53,15 @@ data modify storage simpledrawer:main ItemsNBT.guide2 set value {id:"minecraft:w
 
 data modify storage simpledrawer:main ItemsNBT.guide2.tag.pages append value '{"text":"yolor","hoverEvent":{"action":"show_item","contents":{"id":"minecraft:stone","count":1}}}'
 
+
 scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
 scoreboard objectives add simpledrawer.io dummy
+
+scoreboard objectives add simpledrawer.config dummy
+scoreboard players set #max_connected_drawer simpledrawer.config 128
 
 
 schedule function simpledrawer:tick 1t replace
