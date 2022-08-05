@@ -5,4 +5,4 @@ data modify storage simpledrawer:main temp.ItemDrawer_no_count set from storage 
 data remove storage simpledrawer:main temp.ItemDrawer_no_count.Count
 
 execute store success score #!same simpledrawer.math run data modify storage simpledrawer:main temp.input_no_slot_no_count set from storage simpledrawer:main temp.ItemDrawer_no_count
-execute if score #!same simpledrawer.math matches 0 run function simpledrawer:drawer/working/fill/fill
+execute if score #!same simpledrawer.math matches 0 run function simpledrawer:drawer/working/fill/test_count

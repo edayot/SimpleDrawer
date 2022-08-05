@@ -1,11 +1,11 @@
-![Banner](/images/simple_drawer.png)
+![Banner](https://github.com/edayot/SimpleDrawer/raw/master/images/simple_drawer.png)
 
 A simple datapack that add drawer to minecraft.
 
 
 Theses are the more important crafts, see in-game guide for more informations and [the wiki](https://github.com/edayot/SimpleDrawer/wiki) :
 
-![CraftDrawer](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_drawer.png) ![Vide](/images/vide.png) ![CraftGuide](/SimpleDrawer&#32;ResourcePack/assets/simpledrawer/textures/font/craft_guide.png)
+![CraftDrawer](https://github.com/edayot/SimpleDrawer/raw/master/SimpleDrawer%20ResourcePack/assets/simpledrawer/textures/font/craft_drawer.png) ![Vide](https://github.com/edayot/SimpleDrawer/raw/master/images/vide.png) ![CraftGuide](https://github.com/edayot/SimpleDrawer/raw/master/SimpleDrawer%20ResourcePack/assets/simpledrawer/textures/font/craft_guide.png)
 
 
 # Exploring the datapack :

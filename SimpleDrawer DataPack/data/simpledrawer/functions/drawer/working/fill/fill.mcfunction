@@ -1,4 +1,3 @@
-execute store result score #count_input simpledrawer.math run data get storage simpledrawer:io input.Count
 
 scoreboard players operation #count_total simpledrawer.math = #count_input simpledrawer.math
 scoreboard players operation #count_total simpledrawer.math += @s simpledrawer.drawer.Count
@@ -18,6 +17,4 @@ execute if score #count_output simpledrawer.math matches 0.. store result storag
 execute if score #count_output simpledrawer.math matches 0.. run scoreboard players operation #count_output simpledrawer.io = #count_output simpledrawer.math
 execute unless score #count_output simpledrawer.math matches 0.. run data modify storage simpledrawer:io output.Count set value 0
 execute unless score #count_output simpledrawer.math matches 0.. run scoreboard players set #count_output simpledrawer.io 0
-scoreboard players set #success simpledrawer.io 1
-execute if score #count_output simpledrawer.math = #count_input simpledrawer.math run scoreboard players set #nothing_changed simpledrawer.io 1
 

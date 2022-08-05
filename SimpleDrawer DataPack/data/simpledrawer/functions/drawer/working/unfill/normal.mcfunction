@@ -8,3 +8,4 @@ function simpledrawer:drawer/working/display/count
 
 scoreboard players set #success simpledrawer.io 1
 execute store result storage simpledrawer:io output.Count int 1 run scoreboard players get #count simpledrawer.io
+scoreboard players operation #count_output simpledrawer.io = #count simpledrawer.io

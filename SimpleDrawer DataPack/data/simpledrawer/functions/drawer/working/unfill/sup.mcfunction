@@ -12,6 +12,7 @@ data modify entity @s Item.tag.simpledrawer set from storage simpledrawer:main t
 
 scoreboard players set #success simpledrawer.io 1
 execute store result storage simpledrawer:io output.Count int 1 run scoreboard players get @s simpledrawer.drawer.Count
+scoreboard players operation #count_output simpledrawer.io = @s simpledrawer.drawer.Count
 tag @s remove simpledrawer.drawer.filled
 scoreboard players set @s simpledrawer.drawer.Count 0
 
