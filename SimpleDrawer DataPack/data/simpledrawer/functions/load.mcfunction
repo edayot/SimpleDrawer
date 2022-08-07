@@ -58,10 +58,14 @@ scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
 scoreboard objectives add simpledrawer.io dummy
-scoreboard objectives add simpledrawer.drawer.cooldown dummy
+scoreboard objectives add simpledrawer.player.output_cooldown dummy
+scoreboard objectives add simpledrawer.player.input_cooldown dummy
+scoreboard objectives add simpledrawer.player.last_id dummy
 
 scoreboard objectives add simpledrawer.config dummy
 scoreboard objectives add simpledrawer.config.output_mode dummy
+scoreboard objectives add simpledrawer.config.input_mode dummy
+
 execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:config/load_default
 
 

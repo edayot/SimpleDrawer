@@ -7,6 +7,9 @@ scoreboard players set #already simpledrawer.math 0
 
 execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:calls/click_3 
 
+scoreboard players operation #last_id simpledrawer.math = @e[tag=simpledrawer.selected,limit=1] simpledrawer.id
+execute unless score @s simpledrawer.player.last_id = #last_id simpledrawer.math run function simpledrawer:calls/click_4 
+scoreboard players operation @s simpledrawer.player.last_id = #last_id simpledrawer.math
 
 scoreboard players set #exist simpledrawer.math 0
 scoreboard players set #exist_filled simpledrawer.math 0
@@ -25,9 +28,9 @@ execute if score #already simpledrawer.math matches 0 if score #exist simpledraw
 
 
 #First checks fill unfill, bigfill and bigunfill
-execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.drawer.cooldown matches 0 run function simpledrawer:drawer/working/repart/simple_fill
+execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.player.output_cooldown matches 0 run function simpledrawer:drawer/working/repart/simple_fill
 
-execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.drawer.cooldown matches 1.. run function simpledrawer:drawer/working/repart/simple_unfill
+execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 0 if score @s simpledrawer.player.output_cooldown matches 1.. run function simpledrawer:drawer/working/repart/simple_unfill
 
 
 execute if score #already simpledrawer.math matches 0 if score #exist_filled simpledrawer.math matches 1 if score #filled_hand simpledrawer.math matches 0 if score #sneaking simpledrawer.math matches 0 run function simpledrawer:drawer/working/repart/simple_unfill

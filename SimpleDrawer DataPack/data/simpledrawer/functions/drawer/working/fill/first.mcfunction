@@ -25,3 +25,4 @@ data modify storage simpledrawer:io output.Count set value 0b
 
 scoreboard players set #success simpledrawer.io 1
 scoreboard players set #count_output simpledrawer.io 0
+scoreboard players operation #count_insert simpledrawer.io = @s simpledrawer.drawer.Count
