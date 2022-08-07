@@ -7,8 +7,5 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.drawer_connector] at @s run 
 
 execute as @e[type=glow_item_frame,tag=simpledrawer.drawer_connector,predicate=!simpledrawer:destroyer_barrel] at @s run function simpledrawer:drawer_connector/destroy
 
-clear @a stone{simpledrawer:{gui:1b}}
-scoreboard players remove @a[scores={simpledrawer.player.output_cooldown=1..}] simpledrawer.player.output_cooldown 1
-scoreboard players remove @a[scores={simpledrawer.player.input_cooldown=1..}] simpledrawer.player.input_cooldown 1
-
+execute as @a run function simpledrawer:tick_player
 schedule function simpledrawer:tick 1t replace

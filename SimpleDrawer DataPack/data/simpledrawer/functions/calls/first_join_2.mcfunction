@@ -1,4 +1,6 @@
 loot give @s loot simpledrawer:items/guide
+scoreboard players add @a simpledrawer.player.input_cooldown 0
+scoreboard players add @a simpledrawer.player.output_cooldown 0
 
 #Output mode
 # 0 is 1 output and a double click is 64

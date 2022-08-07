@@ -9,5 +9,4 @@ execute if score @s simpledrawer.drawer.Count < @s simpledrawer.drawer.maxCount 
 
 execute if entity @s[tag=simpledrawer.drawer.to_update] if entity @p[distance=..5] run function simpledrawer:drawer/working/display/count_2
 
-scoreboard players add @a simpledrawer.player.input_cooldown 0
-scoreboard players add @a simpledrawer.player.output_cooldown 0
+
