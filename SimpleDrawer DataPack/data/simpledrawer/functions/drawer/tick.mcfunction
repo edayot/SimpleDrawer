@@ -3,7 +3,5 @@ execute unless predicate simpledrawer:shulker_box_around unless entity @e[type=s
 execute if predicate simpledrawer:shulker_box_around run data modify entity @s Fixed set value 1b
 execute if entity @e[type=shulker,distance=..1.8] run data modify entity @s Fixed set value 1b
 
-execute if entity @s[tag=simpledrawer.drawer.hopper,tag=simpledrawer.drawer.filled] positioned ^ ^ ^-1 run function simpledrawer:drawer/working/minecart_hopper_extract/test
-
 
 execute if predicate simpledrawer:unless_moving_piston run setblock ~ ~ ~ moving_piston
