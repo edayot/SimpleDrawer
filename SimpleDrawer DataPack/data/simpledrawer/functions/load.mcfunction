@@ -1,4 +1,6 @@
 #define storage simpledrawer:main
+#define storage simpledrawer:io
+
 
 
 scoreboard players set simpledrawer load.status 1
