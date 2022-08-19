@@ -19,14 +19,17 @@ scoreboard players set @s simpledrawer.drawer.Count 0
 execute store result score @s simpledrawer.drawer.Count run data get storage simpledrawer:main temp.input_no_slot.Count
 
 
+#IO compatibility
+data modify storage simpledrawer:io output set from storage simpledrawer:io input
+data modify storage simpledrawer:io output.Count set value 0b
+
+execute if score @s simpledrawer.drawer.Count > @s simpledrawer.drawer.maxCount store result storage simpledrawer:io output.Count int 1 run scoreboard players get @s simpledrawer.drawer.maxCount
 execute if score @s simpledrawer.drawer.Count > @s simpledrawer.drawer.maxCount run scoreboard players operation @s simpledrawer.drawer.Count = @s simpledrawer.drawer.maxCount
 
 
 function simpledrawer:drawer/working/display/count
 
-#IO compatibility
-data modify storage simpledrawer:io output set from storage simpledrawer:io input
-data modify storage simpledrawer:io output.Count set value 0b
+
 
 
 
