@@ -31,7 +31,6 @@
         {"predicate":{"custom_model_data":1430022},"model":"simpledrawer:block/drawer/drawer_netherite__hopper"},
         {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/drawer/drawer_netherite_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":1430032},"model":"simpledrawer:block/drawer_connector"}
 
 
     ]
