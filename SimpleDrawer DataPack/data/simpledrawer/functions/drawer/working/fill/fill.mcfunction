@@ -22,4 +22,4 @@ execute unless score #count_output simpledrawer.math matches 0.. run scoreboard 
 scoreboard players operation #count_insert simpledrawer.io = #count_input simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io -= #count_output simpledrawer.io
 
-execute if score #count_insert simpledrawer.io matches 0 run scoreboard players set #nothing_changed simpledrawer.io 1
+execute if score #count_insert simpledrawer.io = @s simpledrawer.drawer.Count run scoreboard players set #nothing_changed simpledrawer.io 1
