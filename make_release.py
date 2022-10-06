@@ -1,9 +1,18 @@
 import json
 from os import access
+
 import shutil
 import git
 import zipfile
+import os
+from PIL import Image
 
+def list_files(dir):
+    r = []
+    for root, dirs, files in os.walk(dir):
+        for name in files:
+            r.append(os.path.join(root, name))
+    return r
 
 
 def change_version(version):
@@ -68,6 +77,21 @@ def create_zip(version):
     shutil.copytree("SimpleDrawer DataPack","build/SimpleDrawer DataPack")
     shutil.copytree("SimpleDrawer ResourcePack","build/SimpleDrawer ResourcePack")
 
+    #optimizing images
+    for filepath in list_files("build"):
+        if filepath.endswith(".png"):
+            #print(f'{filepath=}')
+            img=Image.open(filepath)
+            img.convert("P", palette=Image.ADAPTIVE)
+            img.save(filepath)
+            
+
+    
+
+    #create zip file for normal release
+    shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "build/SimpleDrawer DataPack")
+    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "build/SimpleDrawer ResourcePack")
+
     shutil.rmtree("build\SimpleDrawer ResourcePack\\assets\smithed.crafter")
 
     shutil.rmtree("build\SimpleDrawer DataPack\data\smithed.crafter")
@@ -87,10 +111,8 @@ def create_zip(version):
         
 
 
-    #create zip file
-    shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "SimpleDrawer DataPack")
-    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "SimpleDrawer ResourcePack")
-
+    
+    #create zip file for smithed release
     shutil.make_archive("release/SimpleDrawer_DataPack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer DataPack")
     shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer ResourcePack")
     #shutil.rmtree("build")
