@@ -1,11 +1,11 @@
 import json
-from os import access
-
 import shutil
 import git
-import zipfile
 import os
 from PIL import Image
+
+with open("make_release.json") as f:
+    config=json.load(f)
 
 def list_files(dir):
     r = []
@@ -20,62 +20,72 @@ def change_version(version):
     major=v[0]
     minor=v[1]
     patch=v[2]
-    with open("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction","w") as f:
-        f.write('tellraw @s [{"translate":"simpledrawer.load","color":"green"},{"text":"'+version+']","color":"green"}]')
-    
-    with open("SimpleDrawer DataPack/data/simpledrawer/functions/set_version.mcfunction","w") as f:
-        f.write("""scoreboard players set simpledrawer.major load.status {}
-scoreboard players set simpledrawer.minor load.status {}
-scoreboard players set simpledrawer.patch load.status {}
-            """.format(major,minor,patch))
-        
+    namespace_data=f"{config['name']} DataPack/data/{config['name']}/"
 
-    with open("SimpleDrawer DataPack/pack.mcmeta","w") as f:
-        pack={
-            "pack":{
-                "pack_format":10,
-                "description":"§aSimpleDrawer DataPack "+version+" :\n§rAdd drawers in to minecraft, by AirDox_"
+    if config["datapack"]:
+        with open(f"{namespace_data}/functions/print_version.mcfunction","w") as f:
+            message=[
+                {"translate":f"{config['namespace']}.load","color":"green"},
+                {"text":f"{version}]","color":"green"}
+            ]
+            f.write(f'tellraw @s {message}')
+        
+        with open(f"{namespace_data}/functions/set_version.mcfunction","w") as f:
+            f.write(f"""scoreboard players set {config['namespace']}.major load.status {major}
+    scoreboard players set {config['namespace']}.minor load.status {minor}
+    scoreboard players set {config['namespace']}.patch load.status {patch}
+                """)
+            
+
+        with open(f"{config['name']} DataPack/pack.mcmeta","w") as f:
+            pack={
+                "pack":{
+                    "pack_format":10,
+                    "description":f"{config['name']} DataPack {version} : \n§rThe datapack"
+                }
             }
-        }
-        json.dump(pack,f, indent = 4)
-    with open("SimpleDrawer ResourcePack/pack.mcmeta","w") as f:
-        pack={
-            "pack":{
-                "pack_format":9,
-                "description":"§aSimpleDrawer ResourcePack "+version+" :\n§rSimpleDrawer's Resource pack, by AirDox_"
-            }
-        }
-        json.dump(pack,f, indent = 4)
-    
-    with open("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json","w") as f:
-        pack={
-        "display": {
-            "title": "SimpleDrawer",
-            "description": version+"\nA datapack that add drawer to minecraft",
-            "icon": {
-                "item": "minecraft:beehive",
-                "nbt": "{CustomModelData:1430000}"
+            json.dump(pack,f, indent = 4)
+        with open(f"{config['name']} DataPack/data/global/advancements/{config['usernamespace']}/{config['namespace']}.json","w") as f:
+            pack={
+            "display": {
+                "title": config['name'],
+                "description": f"{version}",
+                "icon": config["icon"],
+                "announce_to_chat": False,
+                "show_toast": False
             },
-            "announce_to_chat": False,
-            "show_toast": False
-        },
-        "parent": "global:airdox_/root",
-        "criteria": {
-            "trigger": {
-                "trigger": "minecraft:tick"
+            "parent": "global:{config['usernamespace']}/root",
+            "criteria": {
+                "trigger": {
+                    "trigger": "minecraft:tick"
+                }
             }
         }
-    }
-        json.dump(pack,f, indent = 4)
+            json.dump(pack,f, indent = 4)
+
+
+
+    if config["resourcepack"]:
+        with open(f"{config['name']} ResourcePack/pack.mcmeta","w") as f:
+            pack={
+                "pack":{
+                    "pack_format":9,
+                    "description":f"{config['name']} ResourcePack {version} : \n§rThe resourcepack"
+                }
+            }
+            json.dump(pack,f, indent = 4)
+    
+    
 
 def create_zip(version):
     try:
         shutil.rmtree("build")
     except:
         pass
-    #copy SimpleDrawer DataPack and ResourcePack to temp build folder
-    shutil.copytree("SimpleDrawer DataPack","build/SimpleDrawer DataPack")
-    shutil.copytree("SimpleDrawer ResourcePack","build/SimpleDrawer ResourcePack")
+    if config["datapack"]:
+        shutil.copytree(f"{config['name']} DataPack",f"build/{config['name']} DataPack")
+    if config["resourcepack"]:
+        shutil.copytree(f"{config['name']} ResourcePack",f"build/{config['name']} ResourcePack")
 
     #optimizing images
     for filepath in list_files("build"):
@@ -87,35 +97,32 @@ def create_zip(version):
             
 
     
+    if config["datapack"]:
+        #normal release
+        shutil.make_archive(f"release/{config['name']}_DataPack_"+version, "zip", f"build/{config['name']} DataPack")
+        #delete integrated libs
+        if "smithed.crafter" in config["dependencies"]:
+            shutil.rmtree(f"build\{config['name']} DataPack\data\smithed.crafter")
+            shutil.copytree(f"{config['name']} DataPack/data/smithed.crafter/tags/functions/event",f"build/{config['name']} DataPack/data/smithed.crafter/tags/functions/event")
+            delete_line(f"build/{config['name']} DataPack/data/smithed.crafter/tags/functions/event/recipes.json",'        "#smithed.crafter:recipes/shaped",\n')
+        if "smithed.custom_block" in config["dependencies"]:
+            shutil.rmtree(f"build\{config['name']} DataPack\data\smithed.custom_block")
+            shutil.copytree(f"{config['name']} DataPack/data/smithed.custom_block/tags/functions/event",f"build/{config['name']} DataPack/data/smithed.custom_block/tags/functions/event")
+            delete_line(f"build/{config['name']} DataPack/data/smithed.custom_block/tags/functions/event/on_place.json",'        "#smithed.crafter:block/place",\n')
+        #create_zip
+        shutil.make_archive(f"release/{config['name']}_DataPack_{version}_NoLibrairies", "zip", f"build/{config['name']} DataPack")
 
-    #create zip file for normal release
-    shutil.make_archive("release/SimpleDrawer_DataPack_"+version, "zip", "build/SimpleDrawer DataPack")
-    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version, "zip", "build/SimpleDrawer ResourcePack")
-
-    shutil.rmtree("build\SimpleDrawer ResourcePack\\assets\smithed.crafter")
-
-    shutil.rmtree("build\SimpleDrawer DataPack\data\smithed.crafter")
-    shutil.rmtree("build\SimpleDrawer DataPack\data\smithed.custom_block")
-
-    shutil.copytree("SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event")
-    shutil.copytree("SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event","build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event")
-
-
-    #delete useless lines
-    delete_line("build/SimpleDrawer ResourcePack/assets/minecraft/models/item/furnace.json",'        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
-    
-    delete_line("build/SimpleDrawer DataPack/data/smithed.crafter/tags/functions/event/recipes.json",'        "#smithed.crafter:recipes/shaped",\n')
-
-    delete_line("build/SimpleDrawer DataPack/data/smithed.custom_block/tags/functions/event/on_place.json",'        "#smithed.crafter:block/place",\n')
-
-        
-
+    if config["resourcepack"]:
+        shutil.make_archive(f"release/{config['name']}_ResourcePack_{version}", "zip", f"build/{config['name']} ResourcePack")
+        shutil.rmtree(f"build\{config['name']} ResourcePack\\assets\smithed.crafter")
+        delete_line(f"build/{config['name']} ResourcePack/assets/minecraft/models/item/furnace.json",'        ,{"predicate": {"custom_model_data": 4250001},"model": "smithed.crafter:block/table"}\n')
+        shutil.make_archive(f"release/{config['name']}_ResourcePack_"+version+"_NoLibrairies", "zip", f"build/{config['name']} ResourcePack")
 
     
-    #create zip file for smithed release
-    shutil.make_archive("release/SimpleDrawer_DataPack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer DataPack")
-    shutil.make_archive("release/SimpleDrawer_ResourcePack_"+version+"_NoLibrairies", "zip", "build/SimpleDrawer ResourcePack")
-    #shutil.rmtree("build")
+
+    
+
+    
 
     
 def delete_line(file,line):
@@ -131,13 +138,17 @@ def delete_line(file,line):
 
 def git_push(version):
     r = git.Repo.init("")
-    r.index.add("SimpleDrawer DataPack/pack.mcmeta")
-    r.index.add("SimpleDrawer ResourcePack/pack.mcmeta")
-    r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/print_version.mcfunction")
-    r.index.add("SimpleDrawer DataPack/data/simpledrawer/functions/set_version.mcfunction")
-    r.index.add("SimpleDrawer DataPack/data/global/advancements/airdox_/simpledrawer.json")
+    if config["datapack"]:
+        r.index.add(f"{config['name']} DataPack/pack.mcmeta")
+        r.index.add(f"{config['name']} DataPack/data/{config['namespace']}/functions/print_version.mcfunction")
+        r.index.add(f"{config['name']} DataPack/data/{config['namespace']}/functions/set_version.mcfunction")
+        r.index.add(f"{config['name']} DataPack/data/global/advancements/{config['usernamespace']}/{config['namespace']}.json")
 
-    r.index.commit("[AUTO] updated to "+version)
+    if config["resourcepack"]:
+        r.index.add(f"{config['name']} ResourcePack/pack.mcmeta")
+    
+
+    r.index.commit(f"[AUTO] updated to {version}")
     r.remote("origin").push()
 
 

@@ -1,0 +1,20 @@
+{
+    "datapack":true,
+    "resourcepack":true,
+
+    "name":"SimpleDrawer",
+    "namespace":"simpledrawer",
+    "description":"Add drawers in to minecraft, by AirDox_",
+
+    "usernamespace":"airdox_",
+
+    "icon":{
+        "item": "minecraft:beehive",
+        "nbt": "{CustomModelData:1430000}"
+    },
+    
+    "dependencies":[
+        "smithed.crafter",
+        "smithed.custom_block"
+    ]
+}
