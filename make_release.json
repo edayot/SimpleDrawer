@@ -1,6 +1,7 @@
 {
     "datapack":true,
     "resourcepack":true,
+    "versioning":false,
 
     "name":"SimpleDrawer",
     "namespace":"simpledrawer",

@@ -14,29 +14,76 @@ def list_files(dir):
             r.append(os.path.join(root, name))
     return r
 
+def enumerate_versioning(namespace_data,version,major,minor,patch):
+    with open(f"{namespace_data}/functions/{version}/load/enumerate.mcfunction","w") as f:
+        function=f"""scoreboard players reset {config['namespace']} load.status
+scoreboard players add {config['namespace']}.major load.status 0
+scoreboard players add {config['namespace']}.minor load.status 0
+scoreboard players add {config['namespace']}.patch load.status 0
+function {config['namespace']}:{version}/load/enumerate/major"""
+        f.write(function)
+    with open(f"{namespace_data}/functions/{version}/load/enumerate/major.mcfunction","w") as f:
+        function=f"""execute if score {config['namespace']}.major load.status matches ..{major} unless score {config['namespace']}.major load.status matches {major} run function {config['namespace']}:{version}/load/enumerate/set_version
+execute unless score {config['namespace']} load.status matches 1 if score {config['namespace']}.major load.status matches ..{major} if score {config['namespace']}.major load.status matches {major} run function {config['namespace']}:{version}/load/enumerate/minor
+"""
+        f.write(function)
+    with open(f"{namespace_data}/functions/{version}/load/enumerate/minor.mcfunction","w") as f:
+        function=f"""execute if score {config['namespace']}.minor load.status matches ..{minor} unless score {config['namespace']}.minor load.status matches {minor} run function {config['namespace']}:{version}/load/enumerate/set_version
+execute unless score {config['namespace']} load.status matches 1 if score {config['namespace']}.minor load.status matches ..{minor} if score {config['namespace']}.minor load.status matches {minor} run function {config['namespace']}:{version}/load/enumerate/patch
+"""     
+        f.write(function)
+    with open(f"{namespace_data}/functions/{version}/load/enumerate/patch.mcfunction","w") as f:
+        function=f"""execute if score {config['namespace']}.patch load.status matches ..{patch} unless score {config['namespace']}.patch load.status matches {patch} run function {config['namespace']}:{version}/load/enumerate/set_version
+"""
+        f.write(function)
+    with open(f"{namespace_data}/functions/{version}/load/enumerate/set_version.mcfunction","w") as f:
+        function=f"""scoreboard players set {config['namespace']}.major load.status {major}
+scoreboard players set {config['namespace']}.minor load.status {minor}
+scoreboard players set {config['namespace']}.patch load.status {patch}
+
+scoreboard players set {config['namespace']} load.status 1"""
+
+        f.write(function)
+    
+    #resolve
+    with open(f"{namespace_data}/functions/{version}/load/resolve.mcfunction","w") as f:
+        function=f"""schedule clear {config['namespace']}:{version}/tick
+execute if score {config['namespace']}.major load.status matches {major} if score {config['namespace']}.minor load.status matches {minor} if score {config['namespace']}.patch load.status matches {patch} run function {config['namespace']}:{version}/load
+"""
+        f.write(function)
 
 def change_version(version):
     v=version[1:].split(".")
     major=v[0]
     minor=v[1]
     patch=v[2]
-    namespace_data=f"{config['name']} DataPack/data/{config['name']}/"
+    namespace_data=f"{config['name']} DataPack/data/{config['namespace']}/"
 
     if config["datapack"]:
-        with open(f"{namespace_data}/functions/print_version.mcfunction","w") as f:
-            message=[
-                {"translate":f"{config['namespace']}.load","color":"green"},
-                {"text":f"{version}]","color":"green"}
-            ]
-            f.write(f'tellraw @s {message}')
-        
-        with open(f"{namespace_data}/functions/set_version.mcfunction","w") as f:
-            f.write(f"""scoreboard players set {config['namespace']}.major load.status {major}
-    scoreboard players set {config['namespace']}.minor load.status {minor}
-    scoreboard players set {config['namespace']}.patch load.status {patch}
-                """)
+        if config["versioning"]:
+            with open(f"{namespace_data}/functions/{version}/print_version.mcfunction","w") as f:
+                message=[
+                    {"translate":f"{config['namespace']}.load","color":"green"},
+                    {"text":f"{version}]","color":"green"}
+                ]
+                f.write(f'tellraw @s {message}')
             
-
+            ## Enumerate thing 
+            enumerate_versioning(namespace_data,version,major,minor,patch)
+        else:
+            with open(f"{namespace_data}/functions/print_version.mcfunction","w") as f:
+                message=[
+                    {"translate":f"{config['namespace']}.load","color":"green"},
+                    {"text":f"{version}]","color":"green"}
+                ]
+                f.write(f'tellraw @s {message}')
+            
+            with open(f"{namespace_data}/functions/set_version.mcfunction","w") as f:
+                f.write(f"""scoreboard players set {config['namespace']}.major load.status {major}
+        scoreboard players set {config['namespace']}.minor load.status {minor}
+        scoreboard players set {config['namespace']}.patch load.status {patch}
+                    """)
+            
         with open(f"{config['name']} DataPack/pack.mcmeta","w") as f:
             pack={
                 "pack":{
@@ -54,7 +101,7 @@ def change_version(version):
                 "announce_to_chat": False,
                 "show_toast": False
             },
-            "parent": "global:{config['usernamespace']}/root",
+            "parent": f"global:{config['usernamespace']}/root",
             "criteria": {
                 "trigger": {
                     "trigger": "minecraft:tick"
