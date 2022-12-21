@@ -1,0 +1,7 @@
+id: simpledrawer
+name: SimpleDrawer
+version: "1.7.5"
+description: Add drawers in to minecraft
+author: AirDox_
+
+extend: "common.yaml"
