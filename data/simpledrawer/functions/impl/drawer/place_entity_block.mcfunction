@@ -9,4 +9,6 @@ tag @s add itemio.container.auto_handled_io
 tag @s add itemio.container.hopper
 tag @s add itemio.container.not_vanilla_container
 
+tag @s add global.ignore
+
 function #itemio:calls/container/init

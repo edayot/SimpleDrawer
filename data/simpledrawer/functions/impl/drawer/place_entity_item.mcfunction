@@ -4,6 +4,8 @@ tag @s add simpledrawer.block
 tag @s add simpledrawer.drawer.item
 tag @s add simpledrawer.drawer
 
+tag @s add global.ignore
+
 
 
 data modify entity @s Item set from storage simpledrawer:main temp.ItemPlaced
