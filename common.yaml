@@ -1,11 +1,11 @@
 data_pack:
-  name: "{{ project_name }} v{{ project_version }} - Datapack"
+  name: "{{ project_name }}-v{{ project_version }}-Datapack"
   description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - Datapack"
   load: .
   zipped: false
 
 resource_pack:
-  name: "{{ project_name }} v{{ project_version }} - Resourcepack"
+  name: "{{ project_name }}-v{{ project_version }}-Resourcepack"
   description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - Resourcepack"
   load: .
   zipped: false

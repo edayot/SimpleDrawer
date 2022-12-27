@@ -1,9 +1,7 @@
-extend: "beet.yaml"
 
-output: "build/"
+broadcast: [releases/all-bundled, releases/no-bundled]
+extend: beet.yaml
 
-data_pack:
-  zipped: true
 
-resource_pack:
-  zipped: true
+output: ../../build
+
