@@ -43,7 +43,7 @@ meta:
       lantern_load:
         step: load                          # which LL step to start pack discovery
         tag_path: load                      # base path for tags needed for LL impl
-        function_path: impl/load  # base path for functions needed for LL impl
+        function_path: impl/test_load  # base path for functions needed for LL impl
 
       # configures how versions get injected into paths and folders
       #  ex: smithed.actionbar/impl/reset -> smithed.actionbar/impl/v1.2.3/reset
