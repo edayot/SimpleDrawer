@@ -4,11 +4,11 @@ output: "../../build/"
 
 data_pack:
   name: "{{ project_name }}-v{{ project_version }}-Datapack-Bundled"
-  zipped: false
+  zipped: true
 
 resource_pack:
   name: "{{ project_name }}-v{{ project_version }}-Resourcepack-Bundled"
-  zipped: false
+  zipped: true
 
 pipeline:
   - airdox_.dependency_injection
