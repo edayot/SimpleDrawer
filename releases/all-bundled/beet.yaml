@@ -4,14 +4,19 @@ output: "../../build/"
 
 data_pack:
   name: "{{ project_name }}-v{{ project_version }}-Datapack-Bundled"
-  load: [".","../included/*"]
-  zipped: true
+  zipped: false
 
 resource_pack:
   name: "{{ project_name }}-v{{ project_version }}-Resourcepack-Bundled"
-  load: [".","../included/*"]
-  zipped: true
+  zipped: false
+
+pipeline:
+  - airdox_.dependency_injection
+  - airdox_.add_license
 
 
-
+meta:
+  airdox_:
+    include_path: "releases/included/"
+    license_path: "LICENSE"
 

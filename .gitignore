@@ -7,4 +7,5 @@ pack.mcmeta
 dist/
 docs/
 *.zip
+!releases/included/*.zip
 build

@@ -3,7 +3,14 @@ extend: "../../beet.yaml"
 output: "build/"
 
 data_pack:
-  zipped: true
+  zipped: false
 
 resource_pack:
-  zipped: true
+  zipped: false
+
+pipeline:
+  - airdox_.add_license
+
+meta:
+  airdox_:
+    license_path: "LICENSE"
