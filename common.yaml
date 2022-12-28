@@ -19,9 +19,18 @@ pipeline:
   - mecha
   - smithed_libraries.plugins.versioning
   - beet.contrib.find_replace
+  - airdox_.dependency_injection
+  - airdox_.add_license
 
+
+  
 
 meta:
+  airdox_:
+    include_path: "releases/included/"
+    data_pack_merge: false
+    resource_pack_merge: false
+    license_path: "LICENSE"
   find_replace:
     substitute:
       - data_pack:

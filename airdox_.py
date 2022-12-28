@@ -31,26 +31,32 @@ def custom_merge(self, other: "Model") -> bool:
 
 def dependency_injection(ctx: Context):
     "Injecting dependency"
-    current_path=ctx.meta["airdox_"]["include_path"]
-    for path in os.listdir(ctx.meta["airdox_"]["include_path"]):
-        
-        #DataPack
-        data=DataPack(path=current_path+path)
-        with suppress(KeyError):
-            del data.extra["pack.png"]
-        with suppress(KeyError):
-            del data.function_tags["load:load"] # delete load:load in every pack
-        ctx.data.merge(data)
+    data_pack_merge=ctx.meta["airdox_"]["data_pack_merge"]
+    resource_pack_merge=ctx.meta["airdox_"]["resource_pack_merge"]
 
-        #ResourcePack
-        resource=ResourcePack(path=current_path+path)
-        with suppress(KeyError):
-            del resource.extra["pack.png"]
-        for model in resource.models.match("minecraft:*"):
-            custom_merge(ctx.assets.models[model],resource.models[model])
-            del resource.models[model]
-            
-        ctx.assets.merge(resource)
+    if data_pack_merge or resource_pack_merge:
+        current_path=ctx.meta["airdox_"]["include_path"]
+        for path in os.listdir(ctx.meta["airdox_"]["include_path"]):
+            if data_pack_merge:
+                #DataPack
+                data=DataPack(path=current_path+path)
+                with suppress(KeyError):
+                    del data.extra["pack.png"]
+                with suppress(KeyError):
+                    del data.function_tags["load:load"] # delete load:load in every pack
+                ctx.data.merge(data)
+
+            if resource_pack_merge:
+                #ResourcePack
+                resource=ResourcePack(path=current_path+path)
+                with suppress(KeyError):
+                    del resource.extra["pack.png"]
+                for model in resource.models.match("minecraft:*"):
+                    if model in ctx.assets.models:
+                        custom_merge(ctx.assets.models[model],resource.models[model])
+                        del resource.models[model]
+                    
+                ctx.assets.merge(resource)
         
 
 def add_license(ctx: Context):

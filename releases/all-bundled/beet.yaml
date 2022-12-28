@@ -10,13 +10,11 @@ resource_pack:
   name: "{{ project_name }}-v{{ project_version }}-Resourcepack-Bundled"
   zipped: true
 
-pipeline:
-  - airdox_.dependency_injection
-  - airdox_.add_license
-
 
 meta:
   airdox_:
     include_path: "releases/included/"
+    data_pack_merge: true
+    resource_pack_merge: true
     license_path: "LICENSE"
 
