@@ -1,4 +1,4 @@
-scoreboard players set simpledrawer.major load.status 1
-scoreboard players set simpledrawer.minor load.status 7
-scoreboard players set simpledrawer.patch load.status 5
+scoreboard players operation simpledrawer.major load.status = #simpledrawer.major load.status
+scoreboard players operation simpledrawer.minor load.status = #simpledrawer.major load.status
+scoreboard players operation simpledrawer.patch load.status = #simpledrawer.major load.status
             
