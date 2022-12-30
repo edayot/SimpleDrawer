@@ -1,3 +1,5 @@
+# @public
+
 loot give @s loot simpledrawer:items/drawer
 loot give @s loot simpledrawer:items/hopper_upgrade
 loot give @s loot simpledrawer:items/iron_upgrade
