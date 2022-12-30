@@ -60,11 +60,11 @@ scoreboard objectives add simpledrawer.drawer.maxCount dummy
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
-scoreboard players add @a simpledrawer.player.input_cooldown 0
-scoreboard players add @a simpledrawer.player.output_cooldown 0
 scoreboard objectives add simpledrawer.player.last_id dummy
 
-scoreboard objectives add simpledrawer.config dummy
+scoreboard objectives add simpledrawer.config trigger
+scoreboard players enable @a simpledrawer.config
+
 scoreboard objectives add simpledrawer.config.output_mode dummy
 scoreboard objectives add simpledrawer.config.input_mode dummy
 
