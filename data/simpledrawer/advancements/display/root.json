@@ -23,6 +23,6 @@
         }
     },
     "rewards": {
-      "function": "simpledrawer:calls/first_join"
+      "function": "simpledrawer:advancements/display/root"
     }
 }

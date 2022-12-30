@@ -5,10 +5,10 @@ data modify storage simpledrawer:main temp.ItemInput set from entity @s Selected
 
 scoreboard players set #already simpledrawer.math 0
 
-execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:impl/calls/click_3 
+execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:impl/drawer/click/search
 
 scoreboard players operation #last_id simpledrawer.math = @e[tag=simpledrawer.selected,limit=1] simpledrawer.id
-execute unless score @s simpledrawer.player.last_id = #last_id simpledrawer.math run function simpledrawer:impl/calls/click_4 
+execute unless score @s simpledrawer.player.last_id = #last_id simpledrawer.math run function simpledrawer:impl/drawer/click/reset_cooldown
 scoreboard players operation @s simpledrawer.player.last_id = #last_id simpledrawer.math
 
 scoreboard players set #exist simpledrawer.math 0

@@ -1,3 +1,4 @@
+# @public
 #Drawer
 execute store result score @s smithed.data if entity @s[scores={smithed.data=0}] if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:stick"},{Slot:2b,item_tag:["#minecraft:planks"]}],1:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:stick"}],2:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,item_tag:["#minecraft:planks"]}]}} run loot replace block ~ ~ ~ container.16 loot simpledrawer:items/drawer
 

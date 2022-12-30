@@ -1,5 +1,5 @@
 {
     "values":[
-        "simpledrawer:impl/calls/on_place"
+        "simpledrawer:impl/calls/drawer/on_place"
     ]
 }

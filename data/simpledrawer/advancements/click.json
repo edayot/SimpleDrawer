@@ -10,7 +10,7 @@
 	  }
 	},
 	"rewards": {
-	  "function": "simpledrawer:impl/calls/click"
+	  "function": "simpledrawer:advancements/click"
 	}
   }
   
