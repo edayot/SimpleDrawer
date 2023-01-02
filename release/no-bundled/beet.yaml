@@ -1,4 +1,4 @@
-extend: "../../beet.yaml"
+extend: ["../../beet.yaml"]
 
 
 output: "build/"
