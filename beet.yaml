@@ -4,6 +4,8 @@ version: "1.7.5"
 description: Add drawers in to minecraft
 author: AirDox_
 
+output: build
+
 require:
   - mecha.contrib.messages
 

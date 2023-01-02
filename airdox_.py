@@ -7,56 +7,7 @@ from contextlib import suppress
 
 
 
-def custom_merge(self, other: "Model") -> bool:
-    for overide in other.data["overrides"]:
-        self.data["overrides"].append(deepcopy(overide))
-    
-    #take all overrides in a separate list if overide["predicate"]["custom_model_data"] does not exist
-    #then sort the list by custom_model_data
-    not_custom_model_data=[]
-    for overide in self.data["overrides"]:
-        if "custom_model_data" not in overide["predicate"]:
-            self.data["overrides"].remove(overide)
-            not_custom_model_data.append(overide)
-    self.data["overrides"].sort(key=lambda x: x["predicate"]["custom_model_data"])
-    
-    for overide in not_custom_model_data:
-        self.data["overrides"].append(overide)
-        
-    return True
 
-
-
-
-
-def dependency_injection(ctx: Context):
-    "Injecting dependency"
-    data_pack_merge=ctx.meta["airdox_"]["data_pack_merge"]
-    resource_pack_merge=ctx.meta["airdox_"]["resource_pack_merge"]
-
-    if data_pack_merge or resource_pack_merge:
-        current_path=ctx.meta["airdox_"]["include_path"]
-        for path in os.listdir(ctx.meta["airdox_"]["include_path"]):
-            if data_pack_merge:
-                #DataPack
-                data=DataPack(path=current_path+path)
-                with suppress(KeyError):
-                    del data.extra["pack.png"]
-                with suppress(KeyError):
-                    del data.function_tags["load:load"] # delete load:load in every pack
-                ctx.data.merge(data)
-
-            if resource_pack_merge:
-                #ResourcePack
-                resource=ResourcePack(path=current_path+path)
-                with suppress(KeyError):
-                    del resource.extra["pack.png"]
-                for model in resource.models.match("minecraft:*"):
-                    if model in ctx.assets.models:
-                        custom_merge(ctx.assets.models[model],resource.models[model])
-                        del resource.models[model]
-                    
-                ctx.assets.merge(resource)
         
 
 def add_license(ctx: Context):
@@ -68,5 +19,5 @@ def add_license(ctx: Context):
     
 
 
-    
-
+def delete_load_tag(ctx: Context):
+    print(ctx)

@@ -13,8 +13,5 @@ resource_pack:
 
 meta:
   airdox_:
-    include_path: "releases/included/"
-    data_pack_merge: true
-    resource_pack_merge: true
     license_path: "LICENSE"
 
