@@ -5,8 +5,8 @@ description: Add drawers in to minecraft
 author: AirDox_
 
 data_pack:
-  load: .
+  load: [.]
 resource_pack:
-  load: .
+  load: [.]
 
-extend: common.yaml
+extend: [common.yaml]

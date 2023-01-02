@@ -12,7 +12,9 @@ require:
   - smithed_libraries.plugins.companion_mod
   - smithed_libraries.plugins.misc.display_broadcasted_pack
   - smithed_libraries.plugins.manifest.collect_version
-  - mecha
+  - mecha.contrib.messages
+  - beet.contrib.render
+
 
 pipeline:
   - mecha
