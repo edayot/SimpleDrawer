@@ -8,4 +8,6 @@ dist/
 docs/
 *.zip
 !releases/included/*.zip
+!releases/included/none/pack.mcmeta
+
 build

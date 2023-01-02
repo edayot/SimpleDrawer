@@ -20,5 +20,7 @@ def add_license(ctx: Context):
 
 
 def delete_load_tag_and_packpng(ctx: Context):
-    del ctx.data.function_tags["load:load"]
-    del ctx.data.extra["pack.png"]
+    if "load:load" in ctx.data.function_tags:
+        del ctx.data.function_tags["load:load"]
+    if "pack.png" in ctx.data.extra:
+        del ctx.data.extra["pack.png"]
