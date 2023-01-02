@@ -1,0 +1,22 @@
+extend: "../../beet.yaml"
+
+output: "../../build/"
+
+data_pack:
+  name: "{{ project_name }}-v{{ project_version }}-Datapack-Bundled"
+  zipped: false
+
+resource_pack:
+  name: "{{ project_name }}-v{{ project_version }}-Resourcepack-Bundled"
+  zipped: false
+
+
+pipeline:
+  -
+    data_pack:
+      load: "../included/*"
+    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+  -
+    resource_pack:
+      load: "../included/*"
+    pipeline: ["airdox_.delete_load_tag_and_packpng"]

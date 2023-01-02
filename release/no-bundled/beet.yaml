@@ -1,9 +1,10 @@
 extend: "../../beet.yaml"
 
+
 output: "build/"
 
 data_pack:
-  zipped: true
+  zipped: false
 
 resource_pack:
-  zipped: true
+  zipped: false

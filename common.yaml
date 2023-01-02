@@ -1,13 +1,11 @@
 data_pack:
   name: "{{ project_name }}-v{{ project_version }}-Datapack"
   description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - Datapack"
-  load: ["."]
   zipped: false
 
 resource_pack:
   name: "{{ project_name }}-v{{ project_version }}-Resourcepack"
   description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - Resourcepack"
-  load: ["releases/included/*","."]
   zipped: false
 
 require:
@@ -22,10 +20,8 @@ pipeline:
   - beet.contrib.find_replace
   - airdox_.add_license
   - mecha.contrib.messages
-  -
-    data_pack:
-      load: "releases/included/*"
-    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+  - beet.contrib.render
+
  
 
 
