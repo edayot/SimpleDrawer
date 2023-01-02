@@ -7,7 +7,3 @@ data_pack:
 
 resource_pack:
   zipped: true
-
-meta:
-  airdox_:
-    license_path: "LICENSE"

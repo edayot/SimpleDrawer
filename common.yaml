@@ -1,7 +1,7 @@
 data_pack:
   name: "{{ project_name }}-v{{ project_version }}-Datapack"
   description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - Datapack"
-  load: ["releases/included/*","."]
+  load: ["."]
   zipped: false
 
 resource_pack:
@@ -14,12 +14,19 @@ require:
   - smithed_libraries.plugins.companion_mod
   - smithed_libraries.plugins.misc.display_broadcasted_pack
   - smithed_libraries.plugins.manifest.collect_version
+  - mecha
 
 pipeline:
   - mecha
   - smithed_libraries.plugins.versioning
   - beet.contrib.find_replace
   - airdox_.add_license
+  - mecha.contrib.messages
+  -
+    data_pack:
+      load: "releases/included/*"
+    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+ 
 
 
   
