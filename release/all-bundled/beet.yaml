@@ -1,4 +1,4 @@
-extend: "../../beet.yaml"
+extend: ["../../beet.yaml"]
 
 output: "../../build/"
 
@@ -14,9 +14,9 @@ resource_pack:
 pipeline:
   -
     data_pack:
-      load: "../included/*"
+      load: ["../included/*"]
     pipeline: ["airdox_.delete_load_tag_and_packpng"]
   -
     resource_pack:
-      load: "../included/*"
+      load: ["../included/*"]
     pipeline: ["airdox_.delete_load_tag_and_packpng"]
