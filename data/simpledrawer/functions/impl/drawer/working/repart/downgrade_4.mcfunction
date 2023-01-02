@@ -1,0 +1,2 @@
+data modify storage smithed.actionbar:input message set value {json: '[{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},{"translate":"simpledrawer.text.cant_downgrade","color":"red"}]',priority: 'notification'}
+function #smithed.actionbar:message

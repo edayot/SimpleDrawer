@@ -11,7 +11,7 @@ Theses are the more important crafts, see in-game guide for more informations an
 # Exploring the datapack :
 
 This command will give you all items available in the datapack :
-```/function #simpledrawer:give```
+```/function simpledrawer:give```
 
 In creative mod only : you can break the item frame, this will totally break the drawer.
 

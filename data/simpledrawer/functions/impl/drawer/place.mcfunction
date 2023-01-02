@@ -27,8 +27,8 @@ execute if block ~ ~ ~ minecraft:furnace[facing=south] run setblock ~ ~ ~ minecr
 execute if block ~ ~ ~ minecraft:furnace[facing=east] run setblock ~ ~ ~ minecraft:beehive[facing=east]
 execute if block ~ ~ ~ minecraft:furnace[facing=west] run setblock ~ ~ ~ minecraft:beehive[facing=west]
 
-
-execute if score #check_place simpledrawer.math matches 0 run title @s[tag=!global.ignore.gui] actionbar [{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},{"translate":"simpledrawer.place_error","color":"red"}]
+execute if score #check_place simpledrawer.math matches 0 run data modify storage smithed.actionbar:input message set value {json: '[{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},{"translate":"simpledrawer.place_error","color":"red"}]',priority: 'notification'}
+execute if score #check_place simpledrawer.math matches 0 run function #smithed.actionbar:message
 execute if score #check_place simpledrawer.math matches 0 run setblock ~ ~ ~ air destroy
 execute if score #check_place simpledrawer.math matches 0 as @e[tag=simpledrawer.summoned1] at @s run function simpledrawer:impl/drawer/destroy
 

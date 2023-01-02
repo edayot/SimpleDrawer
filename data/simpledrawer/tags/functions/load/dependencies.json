@@ -2,6 +2,7 @@
     "values": [
 		"#itemio:load",
 		"#smithed.crafter:load",
-        "#smithed.custom_block:load"
+        "#smithed.custom_block:load",
+        "#smithed.actionbar:load"
     ]
 }
