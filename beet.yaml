@@ -1,7 +1,7 @@
 id: simpledrawer
 name: SimpleDrawer
 version: "1.7.5"
-description: Add drawers in to minecraft
+description: A datapack that add drawers in to minecraft
 author: AirDox_
 
 data_pack:
