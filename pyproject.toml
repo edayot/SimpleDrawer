@@ -1,0 +1,29 @@
+
+[tool.poetry]
+name = "simpledrawer"
+version = "1.7.5"
+description = "A datapack that add drawers in to minecraft"
+authors = ["edayot <pro.e.dayot@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+smithed-libraries = "^0.2.0"
+python-semantic-release = "^7.16.2"
+
+[tool.semantic_release]
+major_on_zero = false
+build_command = "python -m beet -p beet-release.yaml"
+dist_path = "build"
+upload_to_pypi = false
+upload_to_release = true
+version_toml = "pyproject.toml:tool.poetry.version"
+version_pattern = "beet.yaml:(\\d+\\.\\d+\\.\\d+)"
+version_source = "tag"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
