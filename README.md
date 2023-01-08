@@ -20,6 +20,8 @@ In creative mod only : you can break the item frame, this will totally break the
 
 - Isometric rendering mod : https://github.com/glisco03/isometric-renders
 
-- Smithed Crafting : https://github.com/Smithed-MC/Libraries
+- Smithed Crafting, Custom Block, ActionBar : https://github.com/Smithed-MC/Libraries
 
 - LanternLoad : https://github.com/LanternMC/load
+
+- ItemIO : https://github.com/edayot/ItemIO
