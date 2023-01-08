@@ -9,8 +9,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-smithed-libraries = "^0.2.0"
 python-semantic-release = "^7.16.2"
+smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
 
 [tool.semantic_release]
 major_on_zero = false

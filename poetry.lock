@@ -2,14 +2,14 @@
 
 [[package]]
 name = "beet"
-version = "0.80.1"
+version = "0.82.1"
 description = "The Minecraft pack development kit"
 category = "main"
 optional = false
-python-versions = ">=3.8,<4.0"
+python-versions = ">=3.10,<4.0"
 files = [
-    {file = "beet-0.80.1-py3-none-any.whl", hash = "sha256:499ffc70888afd0a81a41ba432dcbd5a7c08c016b9476b0e587624476fd0e17f"},
-    {file = "beet-0.80.1.tar.gz", hash = "sha256:4ccda72bef9ccfffc34dbefe8ec479852f1ed6e3da459feadaf71d0ddfefb530"},
+    {file = "beet-0.82.1-py3-none-any.whl", hash = "sha256:21c96a94a854fea0b5f0b8b393b9c11f2e1c38a6c10707fffc5d6db764b6104e"},
+    {file = "beet-0.82.1.tar.gz", hash = "sha256:f4e1b2d542f079282bd39ee5e5cf02117dd0a19ef3369546f5001066ab811843"},
 ]
 
 [package.dependencies]
@@ -18,7 +18,7 @@ click-help-colors = ">=0.9.1,<0.10.0"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
 Jinja2 = ">=3.1.2,<4.0.0"
 nbtlib = ">=1.12.1,<2.0.0"
-pathspec = ">=0.10.1,<0.11.0"
+pathspec = ">=0.10.2,<0.11.0"
 pydantic = ">=1.10.2,<2.0.0"
 PyYAML = ">=6.0,<7.0"
 toml = ">=0.10.2,<0.11.0"
@@ -515,18 +515,18 @@ files = [
 
 [[package]]
 name = "mecha"
-version = "0.57.5"
+version = "0.62.0"
 description = "A powerful Minecraft command library"
 category = "main"
 optional = false
-python-versions = ">=3.8,<4.0"
+python-versions = ">=3.10,<4.0"
 files = [
-    {file = "mecha-0.57.5-py3-none-any.whl", hash = "sha256:ee33565baf2ea8186f18a070b34533e320f80e33dce123ac2b140e30f32ba181"},
-    {file = "mecha-0.57.5.tar.gz", hash = "sha256:312793c7a31cb11173b55dc039d5787cd9bc1647ea1225cc9a6d405672e4136b"},
+    {file = "mecha-0.62.0-py3-none-any.whl", hash = "sha256:367d74c139e7e98aaa2026ba038f14605cf991cc2ee7160a222059a882b87999"},
+    {file = "mecha-0.62.0.tar.gz", hash = "sha256:cde519c63f35a92ac5248959d6f022086c0699c8f7f9e752970e5d471e76af3e"},
 ]
 
 [package.dependencies]
-beet = ">=0.79.0"
+beet = ">=0.80.1"
 tokenstream = ">=1.4.2,<2.0.0"
 
 [[package]]
@@ -945,18 +945,22 @@ version = "0.2.1"
 description = "All of the Smithed Libraries"
 category = "main"
 optional = false
-python-versions = ">=3.10,<4.0"
-files = [
-    {file = "smithed_libraries-0.2.1-py3-none-any.whl", hash = "sha256:f328fb763bfaecb41d29a8148e34ff3c18a10834fb8e6f7672661c7d8c1e7434"},
-    {file = "smithed_libraries-0.2.1.tar.gz", hash = "sha256:dac92d9867e9fd337f3d5599aade239f31e49d9d0dc6904d672445d99dd5e946"},
-]
+python-versions = "^3.10"
+files = []
+develop = false
 
 [package.dependencies]
-beet = ">=0.80.1,<0.81.0"
-bolt = ">=0.20.1,<0.21.0"
-bolt-expressions = ">=0.8.2,<0.9.0"
-mecha = ">=0.57.5,<0.58.0"
-pydantic = ">=1.10.2,<2.0.0"
+beet = "^0.82.1"
+bolt = "^0.20.1"
+bolt-expressions = "^0.8.2"
+mecha = "^0.62.0"
+pydantic = "^1.10.2"
+
+[package.source]
+type = "git"
+url = "https://github.com/edayot/Libraries.git"
+reference = "HEAD"
+resolved_reference = "52f233da2e09c4cb78d8d0a4eda5076a5ee4bc3a"
 
 [[package]]
 name = "smmap"
@@ -1126,4 +1130,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "64966ba5ba45543fadba31b333085fcb3ee0798c5c7f27bf8e7c5a2b9161e511"
+content-hash = "27bfbdb63c53088e521a36503e2c1c64a66d6c62c4c79a169828111b44537b40"
