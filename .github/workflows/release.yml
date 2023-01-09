@@ -1,8 +1,17 @@
-name: CI
+name: Make a release
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'Overide the automatic version bump (default: automatic)'
+        required: true
+        default: 'automatic'
+        type: choice
+        options:
+        - automatic
+        - patch
+        - minor
+        - major
 
 jobs:
   release:
@@ -32,7 +41,23 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "action@github.com"
-          poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>"
+          if [ "$VERSION_BUMP" = "automatic" ]; then
+            poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>";
+            exit;
+          fi
+          if [ "$VERSION_BUMP" = "patch" ]; then
+            poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>" --patch;
+            exit;
+          fi
+          if [ "$VERSION_BUMP" = "minor" ]; then
+            poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>" --minor;
+            exit;
+          fi
+          if [ "$VERSION_BUMP" = "major" ]; then
+            poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>" --major;
+            exit;
+          fi
