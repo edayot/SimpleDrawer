@@ -7,7 +7,7 @@ import yaml
 
 print("Hello World")
 print(os.environ["SMITHED_UID"])
-print(os.environ("CURRENT_VERSION"))
+print(os.environ["CURRENT_VERSION"])
 
 """
 try:
