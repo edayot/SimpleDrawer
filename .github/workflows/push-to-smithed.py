@@ -5,7 +5,7 @@ from typing import Any
 import requests
 import yaml
 
-
+print(os.environ["SMITHED_UID"])
 
 try:
 	uid=os.environ["SMITHED_UID"]

@@ -31,5 +31,6 @@ jobs:
         run: poetry run python .github/workflows/push-to-smithed.py 
         env:
           BUILT_PACKS: ${{ steps.beet-build.outputs.built_packs }}
+          SMITHED_UID: ${{ secrets.SMITHED_UID }}
           SMITHED_TOKEN: ${{ secrets.SMITHED_TOKEN }}
           CURRENT_VERSION: ${{ poetry run semantic-release print-version --current }}
