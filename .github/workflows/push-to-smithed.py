@@ -6,7 +6,9 @@ import requests
 import yaml
 
 print(os.environ["SMITHED_UID"])
+print(os.environ("CURRENT_VERSION"))
 
+print(a)
 try:
 	uid=os.environ["SMITHED_UID"]
 	token=os.environ["SMITHED_TOKEN"]
