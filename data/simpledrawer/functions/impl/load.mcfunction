@@ -61,6 +61,7 @@ scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
 scoreboard objectives add simpledrawer.player.last_id dummy
+scoreboard objectives add simpledrawer.nb_click dummy
 
 scoreboard objectives add simpledrawer.config trigger
 scoreboard players enable @a simpledrawer.config
@@ -73,4 +74,3 @@ execute unless score #configure simpledrawer.config matches 1 run function simpl
 
 
 schedule function simpledrawer:impl/tick 1t replace
-schedule function simpledrawer:impl/8tick 8t replace

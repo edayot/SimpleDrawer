@@ -1,14 +1,14 @@
 {
     "display": {
         "title": {
-            "text": "Fill a diamond drawer"
+            "text": "Config clicker !"
         },
         "description": {
-            "text": "Use the max capacity of a diamond drawer"
+            "text": "Use the /trigger simpledrawer.config"
         },
         "icon": {
-            "item": "minecraft:furnace",
-            "nbt": "{CustomModelData:1430012}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430006}"
         },
         "frame": "task",
         "show_toast": true,
@@ -16,9 +16,9 @@
         "hidden": false
     },
     "criteria": {
-        "Fill a diamond drawer": {
+        "Click 32 times on a drawer": {
             "trigger": "minecraft:impossible"
         }
     },
-    "parent": "simpledrawer:display/filled/gold"
+    "parent": "simpledrawer:display/config/32_usage"
 }

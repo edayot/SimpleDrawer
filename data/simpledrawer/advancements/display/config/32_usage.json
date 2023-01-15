@@ -1,14 +1,14 @@
 {
     "display": {
         "title": {
-            "text": "Fill a wood drawer"
+            "text": "Super clicker"
         },
         "description": {
-            "text": "Use the max capacity of a wood drawer"
+            "text": "Click 32 times on a drawer\nDo you know that you can config your click via with /trigger simpledrawer.config"
         },
         "icon": {
-            "item": "minecraft:furnace",
-            "nbt": "{CustomModelData:1430000}"
+            "item": "minecraft:jigsaw",
+            "nbt": "{CustomModelData:1430007}"
         },
         "frame": "task",
         "show_toast": true,
@@ -16,7 +16,7 @@
         "hidden": false
     },
     "criteria": {
-        "Fill a wood drawer": {
+        "Click 32 times on a drawer": {
             "trigger": "minecraft:impossible"
         }
     },

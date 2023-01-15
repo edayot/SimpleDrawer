@@ -1,4 +1,5 @@
 tag @s add simpledrawer.adder
+scoreboard players add @s simpledrawer.nb_click 1
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 data remove storage simpledrawer:main temp.ItemInput
 data modify storage simpledrawer:main temp.ItemInput set from entity @s SelectedItem
