@@ -57,6 +57,28 @@ scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
+
+#New drawer
+scoreboard objectives add simpledrawer.drawer.nb_enabled dummy
+
+scoreboard objectives add simpledrawer.drawer.Count0 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount0 dummy
+
+scoreboard objectives add simpledrawer.drawer.Count1 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount1 dummy
+
+scoreboard objectives add simpledrawer.drawer.Count2 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount2 dummy
+
+scoreboard objectives add simpledrawer.drawer.Count3 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount3 dummy
+
+scoreboard objectives add simpledrawer.drawer.Count4 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount4 dummy
+
+scoreboard objectives add simpledrawer.drawer.Count5 dummy
+scoreboard objectives add simpledrawer.drawer.maxCount5 dummy
+
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
