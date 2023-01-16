@@ -32,6 +32,6 @@ execute if score #check_place simpledrawer.math matches 0 run function #smithed.
 execute if score #check_place simpledrawer.math matches 0 run setblock ~ ~ ~ air destroy
 execute if score #check_place simpledrawer.math matches 0 as @e[tag=simpledrawer.summoned1] at @s run function simpledrawer:impl/drawer/destroy
 
-tag @e remove simpledrawer.summoned
-tag @e remove simpledrawer.summoned1
-tag @e remove simpledrawer.summoned2
+tag @e[tag=simpledrawer.summoned] remove simpledrawer.summoned
+tag @e[tag=simpledrawer.summoned1] remove simpledrawer.summoned1
+tag @e[tag=simpledrawer.summoned2] remove simpledrawer.summoned2
