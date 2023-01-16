@@ -28,7 +28,6 @@ scoreboard players set @s simpledrawer.drawer.Count5 0
 scoreboard players set @s simpledrawer.drawer.maxCount5 256
 
 
-function simpledrawer:impl/drawer/working/set_maxcount
 
 
 tag @s add simpledrawer.block
