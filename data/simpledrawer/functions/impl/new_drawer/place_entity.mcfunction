@@ -4,10 +4,8 @@ function simpledrawer:impl/new_drawer/regen_books
 
 data modify entity @s Item.tag.simpledrawer set from storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer
 
-execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item run tag @s add simpledrawer.new_drawer.filled
-execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{hopper:1b} run tag @s add simpledrawer.new_drawer.hopper
+execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
 
-scoreboard players set @s simpledrawer.drawer.nb_enabled 1
 
 scoreboard players set @s simpledrawer.drawer.Count0 0
 scoreboard players set @s simpledrawer.drawer.maxCount0 256
@@ -27,16 +25,15 @@ scoreboard players set @s simpledrawer.drawer.maxCount4 256
 scoreboard players set @s simpledrawer.drawer.Count5 0
 scoreboard players set @s simpledrawer.drawer.maxCount5 256
 
-
-
+scoreboard players set @s simpledrawer.drawer.nb_enabled 1
+data modify entity @s Item.tag.simpledrawer.interact set value [{type:0,slot:0},{type:0,slot:0},{type:1,slot:0},{type:0,slot:0},{type:0,slot:0},{type:1,slot:0}]
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer
 
 tag @s add itemio.container
 tag @s add itemio.container.auto_handled_io
-tag @s add itemio.container.hopper
-tag @s add itemio.container.not_vanilla_container
+
 
 tag @s add global.ignore
 
