@@ -9,6 +9,7 @@ resource_pack:
   zipped: false
 
 require:
+  - airdox_.allow_function_without_name
   - smithed_libraries.plugins.companion_mod
   - smithed_libraries.plugins.misc.display_broadcasted_pack
   - smithed_libraries.plugins.manifest.collect_version

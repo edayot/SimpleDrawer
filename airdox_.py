@@ -1,9 +1,31 @@
-from beet import Context, Model, DataPack, ResourcePack, TextFile
+from beet import Context, TextFile
 from copy import deepcopy
-import os
-from contextlib import suppress
+from pathlib import PurePath
+
+@property
+def modified_suffixes(self):
+    """
+    A list of the final component's suffixes, if any.
+
+    These include the leading periods. For example: ['.tar', '.gz']
+    """    
+    name = self.name
+    if name==".mcfunction":
+        if name.endswith('.'):
+            return []
+        #name = name.lstrip('.')    
+        return ['.' + suffix for suffix in name.split('.')[1:]]
+    else:
+        if name.endswith('.'):
+            return []
+        name = name.lstrip('.')    
+        return ['.' + suffix for suffix in name.split('.')[1:]]
 
 
+def allow_function_without_name(ctx: Context):
+    PurePath.suffixes = modified_suffixes
+
+                
 
 
 
