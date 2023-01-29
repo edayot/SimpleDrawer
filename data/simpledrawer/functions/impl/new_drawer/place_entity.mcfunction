@@ -1,32 +1,37 @@
 tag @s remove simpledrawer.summoned
 function simpledrawer:impl/new_drawer/regen_books
 
-
+data modify entity @s Item.tag.simpledrawer.type set value "wood"
 data modify entity @s Item.tag.simpledrawer set from storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer
 
 execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
 
 
 scoreboard players set @s simpledrawer.drawer.Count0 0
-scoreboard players set @s simpledrawer.drawer.maxCount0 256
+execute store result score @s simpledrawer.drawer.Count0 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item0.Count
 
 scoreboard players set @s simpledrawer.drawer.Count1 0
-scoreboard players set @s simpledrawer.drawer.maxCount1 256
+execute store result score @s simpledrawer.drawer.Count1 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item1.Count
 
 scoreboard players set @s simpledrawer.drawer.Count2 0
-scoreboard players set @s simpledrawer.drawer.maxCount2 256
+execute store result score @s simpledrawer.drawer.Count2 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item2.Count
 
 scoreboard players set @s simpledrawer.drawer.Count3 0
-scoreboard players set @s simpledrawer.drawer.maxCount3 256
+execute store result score @s simpledrawer.drawer.Count3 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item3.Count
 
 scoreboard players set @s simpledrawer.drawer.Count4 0
-scoreboard players set @s simpledrawer.drawer.maxCount4 256
+execute store result score @s simpledrawer.drawer.Count4 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item4.Count
 
 scoreboard players set @s simpledrawer.drawer.Count5 0
-scoreboard players set @s simpledrawer.drawer.maxCount5 256
+execute store result score @s simpledrawer.drawer.Count5 run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item5.Count
+
 
 scoreboard players set @s simpledrawer.drawer.nb_enabled 1
-data modify entity @s Item.tag.simpledrawer.interact set value [{type:0,slot:0},{type:0,slot:0},{type:1,slot:0},{type:0,slot:0},{type:0,slot:0},{type:1,slot:0}]
+execute store result score @s simpledrawer.drawer.nb_enabled run data get storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.nb_enabled
+
+
+function simpledrawer:impl/new_drawer/working/set_maxcount
+
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer

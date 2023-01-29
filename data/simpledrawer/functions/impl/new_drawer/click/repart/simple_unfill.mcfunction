@@ -7,30 +7,30 @@ scoreboard players set #count simpledrawer.io 1
 execute if score #mode simpledrawer.math matches 0 unless score #cooldown simpledrawer.math matches 1.. run scoreboard players set #count simpledrawer.io 1
 execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. run scoreboard players set #count simpledrawer.io 63
 
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 0 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item0.id
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 1 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item1.id
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 2 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item2.id
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 3 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item3.id
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 4 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item4.id
-execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 5 if score #cooldown simpledrawer.math matches 1.. run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item5.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 0 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item0.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 1 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item1.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 2 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item2.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 3 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item3.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 4 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item4.id
+execute if score #mode simpledrawer.math matches 0 if score #input_slot simpledrawer.io matches 5 if score #cooldown simpledrawer.math matches 1.. run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item5.id
 
-execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack16 run scoreboard players set #count simpledrawer.io 15
-execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack1 run scoreboard players set #count simpledrawer.io 1
+execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack16 run scoreboard players set #count simpledrawer.io 15
+execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack1 run scoreboard players set #count simpledrawer.io 1
 execute if score #mode simpledrawer.math matches 0 if score #cooldown simpledrawer.math matches 1.. run scoreboard players set @p[tag=simpledrawer.adder] simpledrawer.player.output_cooldown -1
 
 execute if score #mode simpledrawer.math matches 1 run scoreboard players set #count simpledrawer.io 1
 
 execute if score #mode simpledrawer.math matches 2 run scoreboard players set #count simpledrawer.io 64
 
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 0 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item0.id
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 1 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item1.id
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 2 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item2.id
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 3 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item3.id
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 4 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item4.id
-execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 5 run data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item5.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 0 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item0.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 1 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item1.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 2 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item2.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 3 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item3.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 4 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item4.id
+execute if score #mode simpledrawer.math matches 2 if score #input_slot simpledrawer.io matches 5 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s Item.tag.simpledrawer.Item5.id
 
-execute if score #mode simpledrawer.math matches 2 as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack16 run scoreboard players set #count simpledrawer.io 16
-execute if score #mode simpledrawer.math matches 2 as 00022e98-0000-0378-0000-037800000058 if predicate simpledrawer:stack1 run scoreboard players set #count simpledrawer.io 1
+execute if score #mode simpledrawer.math matches 2 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack16 run scoreboard players set #count simpledrawer.io 16
+execute if score #mode simpledrawer.math matches 2 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack1 run scoreboard players set #count simpledrawer.io 1
 execute if score #mode simpledrawer.math matches 2 run scoreboard players set @p[tag=simpledrawer.adder] simpledrawer.player.output_cooldown -1
 
 

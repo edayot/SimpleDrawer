@@ -8,9 +8,9 @@ data modify storage simpledrawer:main temp.id set from storage simpledrawer:main
 data modify storage simpledrawer:main temp.Name set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Item.tag.display.Name
 
 
-data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0] set value {id:"minecraft:stone",Count:1b}
-data modify entity 00022e98-0000-0378-0000-037800000058 HandItems[0].id set from storage simpledrawer:main temp.id
-execute unless data storage simpledrawer:main temp.Name as 00022e98-0000-0378-0000-037800000058 run item modify entity @s weapon.mainhand simpledrawer:translate/test_translate
-execute if data storage simpledrawer:main temp.Name as 00022e98-0000-0378-0000-037800000058 run item modify entity @s weapon.mainhand simpledrawer:destroy_display_filled_name
+data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0] set value {id:"minecraft:stone",Count:1b}
+data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from storage simpledrawer:main temp.id
+execute unless data storage simpledrawer:main temp.Name as 93682a08-d099-4e8f-a4a6-1e33a3692301 run item modify entity @s weapon.mainhand simpledrawer:translate/test_translate
+execute if data storage simpledrawer:main temp.Name as 93682a08-d099-4e8f-a4a6-1e33a3692301 run item modify entity @s weapon.mainhand simpledrawer:destroy_display_filled_name
 
-data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore set from entity 00022e98-0000-0378-0000-037800000058 HandItems[0].tag.display.Lore
+data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore set from entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].tag.display.Lore

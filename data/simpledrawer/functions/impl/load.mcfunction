@@ -8,12 +8,12 @@ function simpledrawer:impl/set_version
 
 gamerule maxCommandChainLength 2147483647
 
-forceload add -30000000 1600
-
-schedule function simpledrawer:impl/load_2 2s
-
+tag AirDox_ add convention.debug
+execute as @a[tag=convention.debug] run function simpledrawer:impl/print_version
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
+
+data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:beehive",Count:1b,Slot:0b,tag:{simpledrawer:{nb_enabled:1b,type:"wood",hopper:0b,interact:[{type:0,slot:0},{type:0,slot:0},{type:1,slot:0},{type:0,slot:0},{type:0,slot:0},{type:1,slot:0}],Item0:{Count:0b},Item1:{Count:0b},Item2:{Count:0b},Item3:{Count:0b},Item4:{Count:0b},Item5:{Count:0b}},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
 
 #Items

@@ -40,6 +40,17 @@ scoreboard players operation @p[tag=simpledrawer.adder] simpledrawer.player.last
 scoreboard players set #already simpledrawer.math 0
 
 execute if score #already simpledrawer.math matches 0 
+    if score #interact_type simpledrawer.math matches 1 
+    if data storage simpledrawer:main temp.ItemInput.tag.simpledrawer.upgrade
+    run function simpledrawer:impl/new_drawer/click/repart/upgrade
+
+execute if score #already simpledrawer.math matches 0 
+    if score #interact_type simpledrawer.math matches 1 
+    if data storage simpledrawer:main temp.ItemInput.tag.simpledrawer.downgrade
+    run function simpledrawer:impl/new_drawer/click/repart/downgrade
+
+
+execute if score #already simpledrawer.math matches 0 
     if score #interact_type simpledrawer.math matches 0 
     if score #filled_hand simpledrawer.math matches 1 
     if score @p[tag=simpledrawer.adder] simpledrawer.player.output_cooldown matches 0 
@@ -58,6 +69,9 @@ execute if score #already simpledrawer.math matches 0
     if score #filled_hand simpledrawer.math matches 0 
     if score @p[tag=simpledrawer.adder] simpledrawer.player.output_cooldown matches ..5
     run function simpledrawer:impl/new_drawer/click/repart/simple_unfill
+
+
+
 
 
 tag @s remove simpledrawer.selected

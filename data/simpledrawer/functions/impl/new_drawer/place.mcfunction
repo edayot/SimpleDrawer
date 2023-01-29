@@ -14,6 +14,12 @@ data remove storage simpledrawer:main temp.ItemPlaced.Slot
 
 execute unless block ~ ~ ~ minecraft:furnace run setblock ~ ~ ~ minecraft:chiseled_bookshelf[facing=north,slot_0_occupied=true,slot_1_occupied=true,slot_2_occupied=true,slot_3_occupied=true,slot_4_occupied=true,slot_5_occupied=true]
 
+execute if block ~ ~ ~ furnace[facing=north] run function simpledrawer:impl/new_drawer/rengen_books/north
+execute if block ~ ~ ~ furnace[facing=south] run function simpledrawer:impl/new_drawer/rengen_books/south
+execute if block ~ ~ ~ furnace[facing=west] run function simpledrawer:impl/new_drawer/rengen_books/west
+execute if block ~ ~ ~ furnace[facing=east] run function simpledrawer:impl/new_drawer/rengen_books/east
+
+
 execute as @e[type=glow_item_frame,tag=simpledrawer.summoned] at @s run function simpledrawer:impl/new_drawer/place_entity
 
 
