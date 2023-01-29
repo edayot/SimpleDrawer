@@ -1,0 +1,1 @@
+scoreboard players set #already simpledrawer.math 1

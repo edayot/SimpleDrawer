@@ -24,12 +24,12 @@ execute if score #last simpledrawer.math matches 3 run function simpledrawer:imp
 execute if score #last simpledrawer.math matches 4 run function simpledrawer:impl/new_drawer/click/new_drawer/4
 execute if score #last simpledrawer.math matches 5 run function simpledrawer:impl/new_drawer/click/new_drawer/5
 
-execute if score #input_slot simpledrawer.io matches 0 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count0 matches 1.. 
-execute if score #input_slot simpledrawer.io matches 1 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count1 matches 1..
-execute if score #input_slot simpledrawer.io matches 2 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count2 matches 1..
-execute if score #input_slot simpledrawer.io matches 3 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count3 matches 1..
-execute if score #input_slot simpledrawer.io matches 4 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count4 matches 1..
-execute if score #input_slot simpledrawer.io matches 5 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count5 matches 1..
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 0 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count0 matches 1.. 
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 1 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count1 matches 1..
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 2 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count2 matches 1..
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 3 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count3 matches 1..
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 4 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count4 matches 1..
+execute unless score #filled simpledrawer.math matches 1 if score #input_slot simpledrawer.io matches 5 store success score #filled simpledrawer.math if score @s simpledrawer.drawer.Count5 matches 1..
 
 
 
