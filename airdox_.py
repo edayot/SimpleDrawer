@@ -11,10 +11,7 @@ def modified_suffixes(self):
     """    
     name = self.name
     if name==".mcfunction":
-        if name.endswith('.'):
-            return []
-        #name = name.lstrip('.')    
-        return ['.' + suffix for suffix in name.split('.')[1:]]
+        return [name]
     else:
         if name.endswith('.'):
             return []

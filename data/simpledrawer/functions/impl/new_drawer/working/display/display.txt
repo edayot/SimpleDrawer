@@ -1,0 +1,31 @@
+
+
+0..999 => 0..999
+
+1000..9999 => 100..999 // pour afficher 1.24k par exemple
+on divise par 10 puis on ajoute le k
+
+10_000..99_999 => 100..999 // pour afficher 10.5k par exemple
+on divise par 100 puis on ajoute le k
+
+100_000..999_999 => 100..999 // pour afficher 100k par exemple
+on divise par 1000 puis on ajoute le k
+
+1_000_000..9_999_999 => 100..999 // pour afficher 1.24M par exemple
+on divise par 10000 puis on ajoute le M
+
+10_000_000..99_999_999 => 100..999 // pour afficher 10.5M par exemple
+on divise par 100000 puis on ajoute le M
+
+100_000_000..999_999_999 => 100..999 // pour afficher 100M par exemple
+on divise par 1000000 puis on ajoute le M
+
+1_000_000_000..9_999_999_999 => 100..999 // pour afficher 1.24G par exemple
+on divise par 10000000 puis on ajoute le G
+
+10_000_000_000..99_999_999_999 => 100..999 // pour afficher 10.5G par exemple
+on divise par 100000000 puis on ajoute le G
+
+100_000_000_000..999_999_999_999 => 100..999 // pour afficher 100G par exemple
+on divise par 1000000000 puis on ajoute le G
+

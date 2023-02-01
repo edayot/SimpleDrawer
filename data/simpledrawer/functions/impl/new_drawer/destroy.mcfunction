@@ -24,4 +24,6 @@ execute store result storage simpledrawer:main temp.dropped_item.tag.BlockEntity
 data modify entity @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] Item set from storage simpledrawer:main temp.dropped_item
 tag @e[type=item,tag=simpledrawer.dropped_item] remove simpledrawer.dropped_item
 kill @e[type=item,nbt={Item:{id:"minecraft:book",tag:{simpledrawer:{drawer_book:1b}}},Age:0s},distance=..3]
+scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.id
+kill @e[type=armor_stand,tag=simpledrawer.new_drawer.display,predicate=simpledrawer:search_id]
 kill @s
