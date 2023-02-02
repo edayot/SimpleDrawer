@@ -29,7 +29,7 @@ data modify storage simpledrawer:main temp.ItemDisplay.tag.Explosion set from st
 # 1_000_000-9_999_999 : Emerald flottants type 1.25M
 # 10_000_000-99_999_999 : Netherite flottants type 12.5M
 # 100_000_000-999_999_999 : Stick entiers type 125M
-# 1_000_000_000-9_999_999_999 : Gold block flottants type 1.25B
+# 1_000_000_000-9_999_999_999 : Coal flottants type 1.25G
 
 # 2^31 = 2_147_483_648
 
@@ -41,7 +41,7 @@ data modify storage simpledrawer:main temp.ItemDisplay.tag.Explosion set from st
 # Nombres flottants type 1.25:
 # - Gold ingot k
 # - Emerald M
-# - Gold block B
+# - Coal G
 # Nombres flottants type 12.5:
 # - Copper ingot k
 # - Netherite M
@@ -74,7 +74,7 @@ execute if score @s simpledrawer.drawer.Count0 matches 10000000..99999999 run sc
 execute if score @s simpledrawer.drawer.Count0 matches 100000000..999999999 run data modify storage simpledrawer:main temp.ItemNumber set value {id:"minecarft:stick",Count:1b}
 execute if score @s simpledrawer.drawer.Count0 matches 100000000..999999999 run scoreboard players operation #nb_display simpledrawer.math /= #1000000 simpledrawer.math
 
-execute if score @s simpledrawer.drawer.Count0 matches 1000000000..2147483647 run data modify storage simpledrawer:main temp.ItemNumber set value {id:"minecarft:gold_block",Count:1b}
+execute if score @s simpledrawer.drawer.Count0 matches 1000000000..2147483647 run data modify storage simpledrawer:main temp.ItemNumber set value {id:"minecarft:coal",Count:1b}
 execute if score @s simpledrawer.drawer.Count0 matches 1000000000..2147483647 run scoreboard players operation #nb_display simpledrawer.math /= #10000000 simpledrawer.math
 
 scoreboard players add #nb_display simpledrawer.math 1430000
@@ -106,7 +106,7 @@ execute if score @s simpledrawer.drawer.maxCount0 matches 10000000..99999999 run
 execute if score @s simpledrawer.drawer.maxCount0 matches 100000000..999999999 run data modify storage simpledrawer:main temp.ItemSlot set value {id:"minecarft:stick",Count:1b}
 execute if score @s simpledrawer.drawer.maxCount0 matches 100000000..999999999 run scoreboard players operation #nb_display simpledrawer.math /= #1000000 simpledrawer.math
 
-execute if score @s simpledrawer.drawer.maxCount0 matches 1000000000..2147483647 run data modify storage simpledrawer:main temp.ItemSlot set value {id:"minecarft:gold_block",Count:1b}
+execute if score @s simpledrawer.drawer.maxCount0 matches 1000000000..2147483647 run data modify storage simpledrawer:main temp.ItemSlot set value {id:"minecarft:coal",Count:1b}
 execute if score @s simpledrawer.drawer.maxCount0 matches 1000000000..2147483647 run scoreboard players operation #nb_display simpledrawer.math /= #10000000 simpledrawer.math
 
 scoreboard players add #nb_display simpledrawer.math 1430000
