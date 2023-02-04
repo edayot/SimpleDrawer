@@ -49,3 +49,4 @@ execute if score @s simpledrawer.drawer.nb_enabled matches 6.. if score #good_it
 
 
 
+function simpledrawer:impl/new_drawer/working/display/repart

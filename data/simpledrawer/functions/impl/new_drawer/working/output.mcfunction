@@ -26,3 +26,4 @@ execute if score @s simpledrawer.drawer.nb_enabled matches 5.. if score #input_s
 execute if score @s simpledrawer.drawer.nb_enabled matches 6.. if score #input_slot simpledrawer.io matches 5 if score #count simpledrawer.io matches 0.. if score #count simpledrawer.io >= @s simpledrawer.drawer.Count5 run function simpledrawer:impl/new_drawer/working/5/unfill/sup
 execute if score @s simpledrawer.drawer.nb_enabled matches 6.. if score #input_slot simpledrawer.io matches 5 if score #count simpledrawer.io matches 0.. if score #count simpledrawer.io < @s simpledrawer.drawer.Count5 run function simpledrawer:impl/new_drawer/working/5/unfill/normal
 
+function simpledrawer:impl/new_drawer/working/display/repart

@@ -20,6 +20,11 @@ data modify storage simpledrawer:main ItemsNBT.double_new_drawer.tag.BlockEntity
 data modify storage simpledrawer:main ItemsNBT.double_new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer.nb_enabled set value 2
 data modify storage simpledrawer:main ItemsNBT.double_new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer.interact set value [{type:0,slot:0},{type:0,slot:0},{type:1,slot:0},{type:0,slot:1},{type:0,slot:1},{type:1,slot:1}]
 
+data modify storage simpledrawer:main ItemsNBT.triple_new_drawer set from storage simpledrawer:main ItemsNBT.new_drawer
+data modify storage simpledrawer:main ItemsNBT.triple_new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer.variant set value "triple"
+data modify storage simpledrawer:main ItemsNBT.triple_new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer.nb_enabled set value 3
+data modify storage simpledrawer:main ItemsNBT.triple_new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer.interact set value [{type:0,slot:0},{type:0,slot:1},{type:0,slot:2},{type:1,slot:0},{type:1,slot:1},{type:1,slot:2}]
+
 
 #Items
 #hopper_upgrade

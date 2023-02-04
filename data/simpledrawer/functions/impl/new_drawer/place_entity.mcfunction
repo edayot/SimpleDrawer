@@ -33,6 +33,11 @@ execute store result score @s simpledrawer.drawer.nb_enabled run data get storag
 function simpledrawer:impl/new_drawer/working/set_maxcount
 
 
+function simpledrawer:impl/new_drawer/working/summon/repart
+
+function simpledrawer:impl/new_drawer/working/display/repart
+
+
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer
 
