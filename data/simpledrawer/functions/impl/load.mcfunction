@@ -104,5 +104,8 @@ scoreboard objectives add simpledrawer.config.input_mode dummy
 execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 
 
+scoreboard players set #experimental_features simpledrawer.config 0
+function simpledrawer:impl/test_experimental_feature
+
 
 schedule function simpledrawer:impl/tick 1t replace
