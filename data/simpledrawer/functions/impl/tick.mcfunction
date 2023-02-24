@@ -2,8 +2,6 @@ execute as @e[type=glow_item_frame,tag=simpledrawer.drawer.item] at @s run funct
 
 execute as @e[type=glow_item_frame,tag=simpledrawer.drawer.block,predicate=!simpledrawer:destroyer_beehive] at @s run function simpledrawer:impl/drawer/destroy
 
-execute as @e[type=glow_item_frame,tag=simpledrawer.new_drawer,predicate=!simpledrawer:destroyer_chiseled_bookshelf] at @s run function simpledrawer:impl/new_drawer/destroy
-
 
 
 execute as @a run function simpledrawer:impl/tick_player

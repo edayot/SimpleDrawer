@@ -1,2 +1,0 @@
-execute if score #filled simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/click/repart/downgrade/only_empty_drawer
-execute if score #filled simpledrawer.math matches 0 run function simpledrawer:impl/new_drawer/click/repart/downgrade/repart
