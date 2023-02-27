@@ -13,7 +13,7 @@ execute as @a[tag=convention.debug] run function simpledrawer:impl/print_version
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
-
+data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single"},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
 
 #Items
 #hopper_upgrade
@@ -57,26 +57,9 @@ scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
 
-#New drawer
-scoreboard objectives add simpledrawer.drawer.nb_enabled dummy
+scoreboard objectives add simpledrawer.new_drawer.id dummy
+scoreboard objectives add simpledrawer.new_drawer.part_id dummy
 
-scoreboard objectives add simpledrawer.drawer.Count0 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount0 dummy
-
-scoreboard objectives add simpledrawer.drawer.Count1 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount1 dummy
-
-scoreboard objectives add simpledrawer.drawer.Count2 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount2 dummy
-
-scoreboard objectives add simpledrawer.drawer.Count3 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount3 dummy
-
-scoreboard objectives add simpledrawer.drawer.Count4 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount4 dummy
-
-scoreboard objectives add simpledrawer.drawer.Count5 dummy
-scoreboard objectives add simpledrawer.drawer.maxCount5 dummy
 
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy
@@ -93,8 +76,7 @@ scoreboard objectives add simpledrawer.config.input_mode dummy
 execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 
 
-scoreboard players set #experimental_features simpledrawer.config 0
-function simpledrawer:impl/test_experimental_feature
+
 
 
 schedule function simpledrawer:impl/tick 1t replace
