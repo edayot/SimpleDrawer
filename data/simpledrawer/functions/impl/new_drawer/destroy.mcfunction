@@ -4,7 +4,7 @@ execute unless entity @e[type=item,tag=simpledrawer.dropped_item] run summon ite
 
 data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main ItemsNBT.new_drawer
 
-data modify storage simpledrawer:main temp.dropped_item.tag.simpledrawer set from entity @s item.tag.simpledrawer
+data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer set from entity @s item.tag.simpledrawer
 
 data modify entity @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] Item set from storage simpledrawer:main temp.dropped_item
 

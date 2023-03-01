@@ -31,7 +31,7 @@
         {"predicate":{"custom_model_data":1430022},"model":"simpledrawer:block/item/drawer_netherite__hopper"},
         {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/item/drawer_netherite_tapped_hopper"},
 
-        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:block/item/drawer_wood_"}
+        {"predicate":{"custom_model_data":1430200},"model":"simpledrawer:block/item/drawer_wood_"}
 
 
     ]

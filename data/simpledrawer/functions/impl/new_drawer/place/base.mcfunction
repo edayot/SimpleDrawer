@@ -2,9 +2,9 @@
 scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
 
 
-data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430200}}
+data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430200,simpledrawer:{}}}
 
-data modify storage simpledrawer:main temp.item.simpledrawer set from storage simpledrawer:main temp.simpledrawer
+data modify storage simpledrawer:main temp.item.tag.simpledrawer set from storage simpledrawer:main temp.simpledrawer
 
 data modify entity @s item set from storage simpledrawer:main temp.item
 

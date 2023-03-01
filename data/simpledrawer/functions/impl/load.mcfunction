@@ -13,7 +13,7 @@ execute as @a[tag=convention.debug] run function simpledrawer:impl/print_version
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
-data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single"},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single",globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
 
 #Items
 #hopper_upgrade
