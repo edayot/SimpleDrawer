@@ -5,8 +5,8 @@ scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawe
 data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430200,simpledrawer:{}}}
 
 data modify storage simpledrawer:main temp.item.tag.simpledrawer set from storage simpledrawer:main temp.simpledrawer
-
 data modify entity @s item set from storage simpledrawer:main temp.item
+execute store result score #maxCount simpledrawer.math run data get entity @s item.tag.simpledrawer.maxCount
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer.base
