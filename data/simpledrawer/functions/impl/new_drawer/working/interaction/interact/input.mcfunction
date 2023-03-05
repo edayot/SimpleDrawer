@@ -1,5 +1,7 @@
+scoreboard players set #if_item simpledrawer.math 1
 
-data modify storage simpledrawer:io input set from entity @p[tag=simpledrawer.interacter] SelectedItem
+data remove storage simpledrawer:io input
+data modify storage simpledrawer:io input set from storage simpledrawer:main temp.SelectedItem
 execute store result score #countItem simpledrawer.math run data get storage simpledrawer:io input.Count
 
 
