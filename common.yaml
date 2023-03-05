@@ -49,7 +49,7 @@ meta:
     versioning:
       # Either a list or single item of paths to schedule clocks
       #  Used to kill library ticking if a newer library exists in-world
-      scheduled_paths: impl/tick
+      scheduled_paths: [impl/tick,impl/20tick]
 
       # configures how the pack leverages LL to implement enumeration and resolution
       lantern_load:
