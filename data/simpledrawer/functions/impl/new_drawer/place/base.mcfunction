@@ -25,3 +25,5 @@ function #itemio:calls/container/init
 
 tp @s ~ ~ ~ ~180 ~
 data merge entity @s {brightness:{block:15,sky:15},transformation:{scale:[2.01f,2.01f,2.01f]}}
+
+function simpledrawer:impl/new_drawer/base_display

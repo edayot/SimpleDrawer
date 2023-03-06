@@ -12,7 +12,6 @@ scoreboard players operation @s simpledrawer.new_drawer.part_id = #part_index si
 tp @s ~ ~ ~ ~ ~
 
 execute store result score #newCount simpledrawer.math run data get storage simpledrawer:main temp.item_stored.Count
-execute store result score #newCount simpledrawer.math run data get storage simpledrawer:main temp.item_stored.Count
 
 data modify entity @s text set value '[{"score":{"name":"#newCount","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount","objective":"simpledrawer.math"}}]'
 
