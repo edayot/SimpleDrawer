@@ -2,7 +2,7 @@
 scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
 
 
-data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430200,simpledrawer:{}}}
+data modify storage simpledrawer:main temp.item set value {id:"minecraft:beehive",Count:1b,tag:{CustomModelData:1430200,simpledrawer:{}}}
 
 data modify storage simpledrawer:main temp.item.tag.simpledrawer set from storage simpledrawer:main temp.simpledrawer
 data modify entity @s item set from storage simpledrawer:main temp.item
@@ -24,6 +24,6 @@ tag @s add global.ignore
 function #itemio:calls/container/init
 
 tp @s ~ ~ ~ ~180 ~
-data merge entity @s {brightness:{block:15,sky:15},transformation:{scale:[2.01f,2.01f,2.01f]}}
+data merge entity @s {brightness:{block:15,sky:15},transformation:{scale:[1.01f,1.01f,1.01f]}}
 
 function simpledrawer:impl/new_drawer/base_display

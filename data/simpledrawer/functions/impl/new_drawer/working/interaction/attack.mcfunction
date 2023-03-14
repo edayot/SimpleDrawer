@@ -1,6 +1,6 @@
 # @public
 
-advancement revoke @s only simpledrawer:attack
+advancement revoke @s only simpledrawer:impl/attack
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
 #say ATTACK

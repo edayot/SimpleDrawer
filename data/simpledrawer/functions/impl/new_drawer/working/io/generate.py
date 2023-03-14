@@ -82,7 +82,6 @@ data modify storage simpledrawer:io output set from storage simpledrawer:io inpu
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
 
-execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run scoreboard players operation #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math
 
 execute store result score #initCount simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{{Slot:{i}}}].Count
 scoreboard players operation #newCount simpledrawer.math = #initCount simpledrawer.math 
@@ -113,7 +112,7 @@ execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_di
 
 scoreboard players operation #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math
 
-
+scoreboard players operation #newCount simpledrawer.math -= #inputCount simpledrawer.math 
 scoreboard players operation #newCount simpledrawer.math += #newGlobalCount simpledrawer.math 
 scoreboard players operation #newCount simpledrawer.math -= #globalCount simpledrawer.math 
 
@@ -123,6 +122,7 @@ scoreboard players operation #newCount simpledrawer.math -= #globalCount simpled
         f.write(over)
     
     unless_item=f"""
+
 scoreboard players set #success simpledrawer.io 1
 
 
@@ -133,12 +133,12 @@ data modify storage simpledrawer:main temp.newItem set from storage simpledrawer
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
 
-execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run scoreboard players operation #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math
-
-
 scoreboard players operation #newCount simpledrawer.math = #inputCount simpledrawer.math 
-execute if score #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math run scoreboard players operation #newCount simpledrawer.math += #newGlobalCount simpledrawer.math 
-execute if score #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math run scoreboard players operation #newCount simpledrawer.math -= #maxCount simpledrawer.math 
+
+
+execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run function simpledrawer:impl/new_drawer/working/io/{i}/input/over
+
+
 
 # apply new count
 execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math

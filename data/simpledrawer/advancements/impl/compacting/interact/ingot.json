@@ -4,13 +4,13 @@
 		"trigger": "minecraft:player_interacted_with_entity",
 		"conditions": {
 		  "entity": {
-			"nbt": "{Tags:[\"simpledrawer.new_drawer.part.interaction\"]}"
+			"nbt": "{Tags:[\"simpledrawer.new_drawer.part.interaction_ingot\"]}"
 		  }
 		}
 	  }
 	},
 	"rewards": {
-	  "function": "simpledrawer:advancements/interact"
+	  "function": "simpledrawer:impl/calls/new_drawer/compacting/interaction/interact/ingot"
 	}
   }
   

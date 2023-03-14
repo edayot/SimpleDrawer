@@ -23,3 +23,4 @@ execute store result score #globalCount simpledrawer.math run data get entity @s
 
 execute unless score #success simpledrawer.io matches ..-1 run function simpledrawer:impl/new_drawer/working/io/output_check 
 
+function simpledrawer:impl/new_drawer/base_display

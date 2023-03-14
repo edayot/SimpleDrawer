@@ -1,4 +1,5 @@
 
+
 scoreboard players set #success simpledrawer.io 1
 
 
@@ -9,12 +10,12 @@ data modify storage simpledrawer:main temp.newItem set from storage simpledrawer
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
 
-execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run scoreboard players operation #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math
-
-
 scoreboard players operation #newCount simpledrawer.math = #inputCount simpledrawer.math 
-execute if score #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math run scoreboard players operation #newCount simpledrawer.math += #newGlobalCount simpledrawer.math 
-execute if score #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math run scoreboard players operation #newCount simpledrawer.math -= #maxCount simpledrawer.math 
+
+
+execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run function simpledrawer:impl/new_drawer/working/io/31/input/over
+
+
 
 # apply new count
 execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math

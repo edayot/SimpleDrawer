@@ -1,6 +1,6 @@
 # @public
 #say INTERACT
-advancement revoke @s only simpledrawer:interact
+advancement revoke @s only simpledrawer:impl/interact
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
 

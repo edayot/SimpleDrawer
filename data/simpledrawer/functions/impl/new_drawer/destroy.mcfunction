@@ -6,7 +6,10 @@ data modify storage simpledrawer:main temp.dropped_item set from storage simpled
 
 data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer set from entity @s item.tag.simpledrawer
 
-data modify entity @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] Item set from storage simpledrawer:main temp.dropped_item
+function simpledrawer:impl/new_drawer/destroy_variant
+
+
+execute as @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] run function simpledrawer:impl/new_drawer/destroy_item
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id

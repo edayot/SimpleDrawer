@@ -29,5 +29,5 @@ execute if score #globalCount simpledrawer.math >= #maxCount simpledrawer.math r
 execute if score #good_item simpledrawer.math matches 1 unless score #success simpledrawer.io matches ..-1 run function simpledrawer:impl/new_drawer/working/io/input_check
 
 
-
+function simpledrawer:impl/new_drawer/base_display
 

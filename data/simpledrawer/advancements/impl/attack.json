@@ -10,7 +10,7 @@
 	  }
 	},
 	"rewards": {
-	  "function": "simpledrawer:advancements/attack"
+	  "function": "simpledrawer:impl/calls/new_drawer/working/interaction/attack"
 	}
   }
   

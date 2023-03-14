@@ -14,6 +14,7 @@ execute as @a[tag=convention.debug] run function simpledrawer:impl/print_version
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
 data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.compacting_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"compacting",variant:"single",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
 data modify storage simpledrawer:main ItemsNBT.double_new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"double",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}'}}}
 
 #Items
@@ -74,12 +75,17 @@ scoreboard players enable @a simpledrawer.config
 scoreboard objectives add simpledrawer.config.output_mode dummy
 scoreboard objectives add simpledrawer.config.input_mode dummy
 
+scoreboard players set #9 simpledrawer.math 9
+scoreboard players set #81 simpledrawer.math 81
+
 execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 
 
-advancement revoke @a only simpledrawer:interact
-advancement revoke @a only simpledrawer:attack
-advancement revoke @a only simpledrawer:click
+advancement revoke @a only simpledrawer:impl/interact
+advancement revoke @a only simpledrawer:impl/attack
+advancement revoke @a only simpledrawer:impl/click
+advancement revoke @s only simpledrawer:impl/compacting/attack
+advancement revoke @s only simpledrawer:impl/compacting/interact
 
 
 schedule function simpledrawer:impl/tick 1t replace
