@@ -48,12 +48,13 @@ scoreboard players set #success_compacting simpledrawer.io 0
 function #simpledrawer:compacting
 
 
-execute if score #count_display simpledrawer.math >= #compacting_nugget_in_ingot simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_ingot,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:io compacting.ingot
-execute if score #count_display simpledrawer.math < #compacting_nugget_in_ingot simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_ingot,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
+execute if score #success_compacting simpledrawer.io matches 1 if score #count_display simpledrawer.math >= #compacting_nugget_in_ingot simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_ingot,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:io compacting.ingot
+execute if score #success_compacting simpledrawer.io matches 1 if score #count_display simpledrawer.math < #compacting_nugget_in_ingot simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_ingot,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
+execute if score #success_compacting simpledrawer.io matches 0 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_ingot,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
 
-
-execute if score #count_display simpledrawer.math >= #compacting_nugget_in_block simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_block,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:io compacting.block
-execute if score #count_display simpledrawer.math < #compacting_nugget_in_block simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_block,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
+execute if score #success_compacting simpledrawer.io matches 1 if score #count_display simpledrawer.math >= #compacting_nugget_in_block simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_block,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:io compacting.block
+execute if score #success_compacting simpledrawer.io matches 1 if score #count_display simpledrawer.math < #compacting_nugget_in_block simpledrawer.io at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_block,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
+execute if score #success_compacting simpledrawer.io matches 0 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display_block,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air"}
 
 
 
