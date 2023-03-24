@@ -1,6 +1,6 @@
 
 
-say try to compacting
+#say try to compacting
 
 data remove storage simpledrawer:main temp.SelectedItem
 execute if score #compacting_type simpledrawer.io matches 1 run data modify storage simpledrawer:main temp.SelectedItem set from storage simpledrawer:io compacting.nugget
