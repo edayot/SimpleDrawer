@@ -9,7 +9,7 @@ scoreboard players operation @s simpledrawer.new_drawer.part_id = #part_index si
 
 
 
-tp @s ~ ~ ~ ~ ~
+tp @s ~ ~ ~ ~180 ~
 data merge entity @s {transformation:{scale:[0.6f,0.6f,0.01f]},item_display:"gui"}
 
 execute store result score #count_nugget simpledrawer.math run data get entity @s item.tag.simpledrawer.globalCount
