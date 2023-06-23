@@ -23,7 +23,7 @@ tag @s add global.ignore
 
 function #itemio:calls/container/init
 
-tp @s ~ ~ ~ ~180 ~
+tp @s ~ ~ ~ ~ ~
 data merge entity @s {brightness:{block:15,sky:15},transformation:{scale:[1.01f,1.01f,1.01f]}}
 
 function simpledrawer:impl/new_drawer/base_display

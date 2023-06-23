@@ -1,0 +1,9 @@
+{
+    "asset_name": "jungle",
+    "description": {
+      "color": "#ffffff",
+      "translate": "jungle"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143003
+  }

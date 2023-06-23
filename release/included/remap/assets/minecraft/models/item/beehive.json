@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/beehive",
+    "overrides":[
+    
+    ]
+}
