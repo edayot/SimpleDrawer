@@ -24,6 +24,7 @@ execute if data storage simpledrawer:main temp{upgrade:"diamond"} run scoreboard
 execute if data storage simpledrawer:main temp{upgrade:"star"} run scoreboard players add #model simpledrawer.math 16
 execute if data storage simpledrawer:main temp{upgrade:"netherite"} run scoreboard players add #model simpledrawer.math 20
 
+scoreboard players set #model simpledrawer.math 1430200
 
 execute store result entity @s item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math
 
