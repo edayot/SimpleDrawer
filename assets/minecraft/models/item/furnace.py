@@ -55,7 +55,7 @@ d2={
 
 
 
-with open("beehive_init.json","r") as f:
+with open("furnace_init.json","r") as f:
     data=json.load(f)
 
 for i in range(1430000,1430006):
@@ -72,7 +72,7 @@ for i in range(1430000,1430006):
         }
         data["overrides"].append(default)
 
-with open("beehive.json","w") as f:
+with open("furnace.json","w") as f:
     json.dump(data,f,indent=4)
 
 

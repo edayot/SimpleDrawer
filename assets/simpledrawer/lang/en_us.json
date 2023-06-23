@@ -21,7 +21,13 @@
     "simpledrawer.place_error":"You can't place the drawer here",
     "simpledrawer.input_error":"This item isn't allowed in the drawer",
     "simpledrawer.drawer_connector":"Drawer Connector",
-    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s"
+    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s",
+    "simpledrawer.new_drawer.empty":"Empty Drawer",
+    "simpledrawer.new_drawer.filled":"Filled Drawer",
+    "simpledrawer.double_new_drawer.empty":"Empty Double Drawer",
+    "simpledrawer.double_new_drawer.filled":"Filled Double Drawer",
+    "simpledrawer.quadruple_new_drawer.empty":"Empty Quadruple Drawer",
+    "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer"
 
 
 

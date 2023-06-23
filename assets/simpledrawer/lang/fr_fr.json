@@ -21,5 +21,7 @@
     "simpledrawer.place_error":"Tu ne peux pas placer un drawer ici",
     "simpledrawer.input_error":"Cet item n'est pas autorisé dans un drawer",
     "simpledrawer.drawer_connector":"Connecteur de drawer",
-    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s"
+    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s",
+    "simpledrawer.new_drawer.empty":"Drawer Vide"
+
 }

@@ -17,14 +17,10 @@ data modify storage simpledrawer:main temp.upgrade set from entity @s item.tag.s
 
 
 scoreboard players set #model simpledrawer.math 1430000
-execute if data storage simpledrawer:main temp{hopper:1b} run scoreboard players add #model simpledrawer.math 2
-execute if data storage simpledrawer:main temp{upgrade:"iron"} run scoreboard players add #model simpledrawer.math 4
-execute if data storage simpledrawer:main temp{upgrade:"gold"} run scoreboard players add #model simpledrawer.math 8
-execute if data storage simpledrawer:main temp{upgrade:"diamond"} run scoreboard players add #model simpledrawer.math 12
-execute if data storage simpledrawer:main temp{upgrade:"star"} run scoreboard players add #model simpledrawer.math 16
-execute if data storage simpledrawer:main temp{upgrade:"netherite"} run scoreboard players add #model simpledrawer.math 20
 
-scoreboard players set #model simpledrawer.math 1430200
+data modify entity @s item.tag.Trim set value {material:"simpledrawer:acacia",pattern:"minecraft:sentry"}
+data modify entity @s item.tag.Trim.material set from storage simpledrawer:main temp.simpledrawer.wood_type
+
 
 execute store result entity @s item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math
 
