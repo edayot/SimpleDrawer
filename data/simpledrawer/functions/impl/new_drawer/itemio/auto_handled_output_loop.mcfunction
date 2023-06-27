@@ -2,7 +2,9 @@
 
 
 data modify storage itemio:io Item_auto_output set from storage simpledrawer:main temp.Items_aho[0]
+#tellraw @a {"nbt":"Item_auto_output","storage":"itemio:io"}
 function #itemio:calls/auto_handled_output
+#tellraw @a {"score":{"name":"#remove_count","objective":"itemio.math.output"}}
 
 scoreboard players operation #count simpledrawer.io = #remove_count itemio.math.output
 execute store result score #slot simpledrawer.io run data get storage simpledrawer:main temp.Items_aho[0].Slot
