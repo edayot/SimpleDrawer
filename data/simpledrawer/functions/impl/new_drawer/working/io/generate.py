@@ -97,10 +97,6 @@ execute store result entity @s item.tag.simpledrawer.Items[{{Slot:{i}}}].Count i
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io -= #initCount simpledrawer.math
 
-scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
-scoreboard players set #search_slot simpledrawer.math 0
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '___chaine___'
-
 
 """
     if_item_same=if_item_same.replace("___chaine___",chaine)
@@ -154,7 +150,6 @@ scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_
 scoreboard players set #search_slot simpledrawer.math {i}
 data modify storage simpledrawer:main temp.newItem.Count set value 1b
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '___chaine___'
 """
     unless_item=unless_item.replace("___chaine___",chaine)
     with open(f"{i}/input/unless_item.mcfunction", "w") as f:
@@ -183,7 +178,6 @@ scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_
 scoreboard players set #search_slot simpledrawer.math {i}
 scoreboard players set #newCount simpledrawer.math 0
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {{id:"minecraft:air",Count:1b}}
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '___chaine___'
 
 """
     sup=sup.replace("___chaine___",chaine)
@@ -209,9 +203,6 @@ execute store result entity @s item.tag.simpledrawer.globalCount int 1 run score
 
 
 execute store result entity @s item.tag.simpledrawer.Items[{{Slot:{i}}}].Count int 1 run scoreboard players get #newCount simpledrawer.math
-scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
-scoreboard players set #search_slot simpledrawer.math {i}
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '___chaine___'
 
 
 

@@ -31,4 +31,3 @@ scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_
 scoreboard players set #search_slot simpledrawer.math 16
 data modify storage simpledrawer:main temp.newItem.Count set value 1b
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#newCount","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount","objective":"simpledrawer.math"}}]'
