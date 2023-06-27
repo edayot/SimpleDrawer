@@ -1,6 +1,6 @@
 
 
-
+scoreboard players set @s simpledrawer.new_drawer.slot_count 1
 
 
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.globalCount
@@ -12,15 +12,11 @@ scoreboard players set #search_slot simpledrawer.math 0
 
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount_display","objective":"simpledrawer.math"}}]'
 
-data modify storage simpledrawer:main temp.hopper set from entity @s item.tag.simpledrawer.hopper
-data modify storage simpledrawer:main temp.upgrade set from entity @s item.tag.simpledrawer.upgrade
 
-
-scoreboard players set #model simpledrawer.math 1430000
 
 data modify entity @s item.tag.Trim set value {material:"simpledrawer:acacia",pattern:"minecraft:sentry"}
-data modify entity @s item.tag.Trim.material set from storage simpledrawer:main temp.simpledrawer.wood_type
+data modify entity @s item.tag.Trim.material set from storage simpledrawer:main temp.simpledrawerXX.wood_type
 
 
-execute store result entity @s item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math
+data modify entity @s item.tag.CustomModelData set value 1430000
 

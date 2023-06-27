@@ -63,6 +63,7 @@ scoreboard objectives add simpledrawer.drawer.maxCount dummy
 
 scoreboard objectives add simpledrawer.new_drawer.id dummy
 scoreboard objectives add simpledrawer.new_drawer.part_id dummy
+scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
 
 
 scoreboard objectives add simpledrawer.io dummy

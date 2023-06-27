@@ -9,7 +9,7 @@
 # The item in storage simpledrawer.io output
 # The 
 # The score #success simpledrawer.io for success (-2 for full error, -1 for input error, 0 for others error)
-#say INPUT
+# say INPUT
 scoreboard players set #success simpledrawer.io 0
 data remove storage simpledrawer:io output
 
@@ -26,7 +26,8 @@ execute store result score #globalCount simpledrawer.math run data get entity @s
 
 execute if score #globalCount simpledrawer.math >= #maxCount simpledrawer.math run scoreboard players set #success simpledrawer.io -2
 
-execute if score #good_item simpledrawer.math matches 1 unless score #success simpledrawer.io matches ..-1 run function simpledrawer:impl/new_drawer/working/io/input_check
+execute if score #good_item simpledrawer.math matches 1 unless score #success simpledrawer.io matches ..-1 unless score #slot simpledrawer.io matches -1 run function simpledrawer:impl/new_drawer/working/io/input_check
+execute if score #good_item simpledrawer.math matches 1 unless score #success simpledrawer.io matches ..-1 if score #slot simpledrawer.io matches -1 run function simpledrawer:impl/new_drawer/working/io/input_all
 
 
 function simpledrawer:impl/new_drawer/base_display

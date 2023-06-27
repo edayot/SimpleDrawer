@@ -4,6 +4,7 @@ item modify entity @p[tag=simpledrawer.attacker,gamemode=!creative] weapon.mainh
 
 data modify entity @s item.tag.simpledrawer.hopper set value 1b
 tag @s add simpledrawer.new_drawer.hopper
+tag @s add itemio.container.hopper
 
 function simpledrawer:impl/new_drawer/base_display
 

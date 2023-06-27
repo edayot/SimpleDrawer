@@ -4,7 +4,8 @@ scoreboard players add #model simpledrawer.math 3
 data modify storage simpledrawer:main temp.dropped_item.tag.display.Name set value '{"translate":"simpledrawer.new_drawer.filled","color":"white","italic":false}'
 
 
-
+execute store result score #count simpledrawer.math run data get storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Items[0].Count
+execute store result score #maxCount simpledrawer.math run data get storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount
 
 
 data remove storage simpledrawer:main temp.id

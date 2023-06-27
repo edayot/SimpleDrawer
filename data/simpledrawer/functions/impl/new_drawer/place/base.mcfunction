@@ -14,6 +14,11 @@ tag @s add simpledrawer.new_drawer.part
 tag @s add simpledrawer.new_drawer.part.base
 
 
+execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} run tag @s add simpledrawer.new_drawer.hopper
+execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
+
+
+
 
 tag @s add itemio.container
 tag @s add itemio.container.auto_handled_io

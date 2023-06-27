@@ -1,4 +1,5 @@
 
+scoreboard players set @s simpledrawer.new_drawer.slot_count 1
 
 
 
