@@ -11,7 +11,7 @@ readme = "README.md"
 python = "^3.11"
 python-semantic-release = "^7.32.2"
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
-cryptography = "^39.0.1"
+cryptography = "^41.0.0"
 
 [tool.semantic_release]
 major_on_zero = false
