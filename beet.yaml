@@ -13,7 +13,7 @@ extend: [common.yaml]
 
 meta:
   smithed_dependencies:
-    "smithed:custom-block": "0.1.0"
-    "smithed:crafter": "0.1.0"
-    "smithed:actionbar": "0.1.0"
-    "airdox_:itemio": "0.1.0"
+    - "smithed:custom-block": "0.1.0"
+    - "smithed:crafter": "0.1.0"
+    - "smithed:actionbar": "0.1.0"
+    - "airdox_:itemio": "0.4.1"
