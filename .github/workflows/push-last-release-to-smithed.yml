@@ -32,4 +32,3 @@ jobs:
         env:
           SMITHED_UID: ${{ secrets.SMITHED_UID }}
           SMITHED_TOKEN: ${{ secrets.SMITHED_TOKEN }}
-          CURRENT_VERSION: $(poetry run semantic-release print-version --current)

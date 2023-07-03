@@ -9,7 +9,6 @@ import os
 try: 
     SMITHED_UID = os.environ['SMITHED_UID']
     SMITHED_TOKEN = os.environ['SMITHED_TOKEN']
-    CURRENT_VERSION = os.environ['CURRENT_VERSION']
     beet = yaml.safe_load(open("beet.yaml"))
 except KeyError:
     try:
@@ -17,7 +16,6 @@ except KeyError:
             creds = json.load(f)
         SMITHED_UID = creds['SMITHED_UID']
         SMITHED_TOKEN = creds['SMITHED_TOKEN']
-        CURRENT_VERSION = "0.4.1"
         beet = yaml.safe_load(open("../../beet.yaml"))
     except:
         print("Missing credentials")
@@ -25,6 +23,8 @@ except KeyError:
 
 
 print(beet)
+
+CURRENT_VERSION=beet['version']
 
 
 
@@ -73,4 +73,12 @@ response = requests.post(
     data=json.dumps({"data": pack_version})
 )
 
-print(response.status_code)
+print("PACK_VERSION:")
+# print indented pack_version
+print(json.dumps({"pack_version": pack_version}["pack_version"], indent=4))
+
+
+
+# print response
+print("RESPONSE:")
+print(response.text)
