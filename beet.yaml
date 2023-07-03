@@ -4,6 +4,8 @@ version: "1.8.2"
 description: A datapack that add drawers in to minecraft
 author: AirDox_
 
+
+
 data_pack:
   load: [.]
 resource_pack:
@@ -12,6 +14,7 @@ resource_pack:
 extend: [common.yaml]
 
 meta:
+  supports: ["1.20","1.20.1"]
   smithed_dependencies:
     - "smithed:custom-block": "0.1.0"
     - "smithed:crafter": "0.1.0"
