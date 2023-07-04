@@ -15,7 +15,6 @@ require:
   - smithed_libraries.plugins.manifest.collect_version
   - mecha.contrib.messages
   - beet.contrib.render
-  - beet.contrib.unknown_files
   - beet.contrib.model_merging
 
 
