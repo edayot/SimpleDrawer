@@ -1,0 +1,37 @@
+[
+	{
+	  "function": "minecraft:set_lore",
+	  "entity": "this",
+	  "lore": [
+		[
+		  {
+			"score": {
+			  "name": "#count",
+			  "objective": "simpledrawer.math"
+			},
+			"color": "white",
+			"italic": false
+		  },
+		  {
+			"text": " / ",
+			"color": "gray",
+			"italic": false
+		  },
+		  {
+			"score": {
+			  "name": "#maxCount",
+			  "objective": "simpledrawer.math"
+			},
+			"color": "white",
+			"italic": false
+		  },
+		  {
+			"translate": "simpledrawer.text.in_total",
+			"color": "gold",
+			"italic": false
+		  }
+        ]
+	  ]
+	}
+  ]
+  

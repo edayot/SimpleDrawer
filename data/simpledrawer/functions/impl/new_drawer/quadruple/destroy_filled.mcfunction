@@ -1,19 +1,30 @@
 scoreboard players add #model simpledrawer.math 3
 
 
-data modify storage simpledrawer:main temp.dropped_item.tag.display.Name set value '{"translate":"simpledrawer.double_new_drawer.filled","color":"white","italic":false}'
+data modify storage simpledrawer:main temp.dropped_item.tag.display.Name set value '{"translate":"simpledrawer.quadruple_new_drawer.filled","color":"white","italic":false}'
 data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore set value []
 
 data remove storage simpledrawer:main temp.current_item
 data modify storage simpledrawer:main temp.current_item set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Items[{Slot:0}]
 
-execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/double/destroy_filled_2
+execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/quadruple/destroy_filled_2
 
 data remove storage simpledrawer:main temp.current_item
 data modify storage simpledrawer:main temp.current_item set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Items[{Slot:1}]
 
-execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/double/destroy_filled_2
+execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/quadruple/destroy_filled_2
 
+
+data remove storage simpledrawer:main temp.current_item
+data modify storage simpledrawer:main temp.current_item set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Items[{Slot:2}]
+
+execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/quadruple/destroy_filled_2
+
+
+data remove storage simpledrawer:main temp.current_item
+data modify storage simpledrawer:main temp.current_item set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.Items[{Slot:3}]
+
+execute if data storage simpledrawer:main temp.current_item run function simpledrawer:impl/new_drawer/quadruple/destroy_filled_2
 
 
 

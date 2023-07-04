@@ -5,7 +5,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~0.325 ~ positioned ^ ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/double/place/text_display
 execute positioned ~ ~0.2 ~ positioned ^ ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/double/place/item_display
-execute positioned ~ ~0.075 ~ positioned ^ ^ ^0.2 summon interaction run function simpledrawer:impl/new_drawer/double/place/interaction
+execute positioned ~ ~0.075 ~ positioned ^ ^ ^0.1 summon interaction run function simpledrawer:impl/new_drawer/double/place/interaction
 
 
 
@@ -17,7 +17,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.325 ~ positioned ^ ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/double/place/text_display
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.2 ~ positioned ^ ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/double/place/item_display
-execute positioned ~ ~-0.51 ~ positioned ~ ~0.075 ~ positioned ^ ^ ^0.2 summon interaction run function simpledrawer:impl/new_drawer/double/place/interaction
+execute positioned ~ ~-0.51 ~ positioned ~ ~0.075 ~ positioned ^ ^ ^0.1 summon interaction run function simpledrawer:impl/new_drawer/double/place/interaction
 
 
 

@@ -65,6 +65,53 @@ def generate(id,translate):
     }
     return item_modifier
 
+def generate_multiple(id,translate):
+    item_modifier={
+        "function": "minecraft:set_lore",
+        "entity": "this",
+        "lore": [
+            [
+                {
+                    "score": {
+                        "name": "#count",
+                        "objective": "simpledrawer.math"
+                    },
+                    "color": "white",
+                    "italic": False
+                },
+                {
+                    "translate": "simpledrawer.text.of",
+                    "color": "gold",
+                    "italic": False
+                },
+                {
+                    "translate": translate,
+                    "color":"white",
+                    "italic": False
+                }
+            ]
+        ],
+        "conditions": [
+            {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "equipment": {
+                        "mainhand": {
+                            "items": [
+                                id
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+    return item_modifier
+
+
+
+
 def get_ids():
     #Get all items ids
     with open("all.jsonD","r") as f:
@@ -103,4 +150,24 @@ def main():
             with open("all.jsonD","w") as f:
                 json.dump(data,f,indent=4)
     with open("test_translate.json","w") as f:
+        json.dump(I,f,indent=4)
+
+def main_multiple():
+    id_list=get_ids()
+    #id_list=["minecraft:stone"]
+    I=[]
+    for id in id_list:
+        translate=get_translate_from_id(id)
+        if translate is not None:
+            item_modifier=generate_multiple(id,translate)
+            I.append(item_modifier)
+        else:
+            print("No translate for "+id)
+            #delete id from all.jsonD
+            with open("all.jsonD","r") as f:
+                data=json.load(f)
+                data["values"].remove(id)
+            with open("all.jsonD","w") as f:
+                json.dump(data,f,indent=4)
+    with open("test_translate_multiple.json","w") as f:
         json.dump(I,f,indent=4)

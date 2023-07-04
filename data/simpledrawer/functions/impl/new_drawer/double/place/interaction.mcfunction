@@ -5,4 +5,4 @@ scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawe
 scoreboard players operation @s simpledrawer.new_drawer.part_id = #part_index simpledrawer.new_drawer.part_id
 
 
-data merge entity @s {width:0.625,height:0.3125}
+data merge entity @s {width:0.85,height:0.38}
