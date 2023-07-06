@@ -5,7 +5,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~0.325 ~ positioned ^-0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/quadruple/place/text_display
 execute positioned ~ ~0.2 ~ positioned ^-0.25 ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/quadruple/place/item_display
-execute positioned ~ ~0.075 ~ positioned ^-0.25 ^ ^0.4 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
+execute positioned ~ ~0.025 ~ positioned ^-0.25 ^ ^0.29 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
 
 
 
@@ -17,8 +17,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.325 ~ positioned ^-0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/quadruple/place/text_display
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.2 ~ positioned ^-0.25 ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/quadruple/place/item_display
-execute positioned ~ ~-0.51 ~ positioned ~ ~0.075 ~ positioned ^-0.25 ^ ^0.4 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
-
+execute positioned ~ ~-0.51 ~ positioned ~ ~0.025 ~ positioned ^-0.25 ^ ^0.29 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 2
@@ -27,7 +26,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~0.325 ~ positioned ^0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/quadruple/place/text_display
 execute positioned ~ ~0.2 ~ positioned ^0.25 ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/quadruple/place/item_display
-execute positioned ~ ~0.075 ~ positioned ^0.25 ^ ^0.4 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
+execute positioned ~ ~0.025 ~ positioned ^0.25 ^ ^0.29 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
 
 
 
@@ -39,7 +38,7 @@ data modify storage simpledrawer:main temp.item_stored set from storage simpledr
 
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.325 ~ positioned ^0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/quadruple/place/text_display
 execute positioned ~ ~-0.51 ~ positioned ~ ~0.2 ~ positioned ^0.25 ^ ^0.51 summon item_display run function simpledrawer:impl/new_drawer/quadruple/place/item_display
-execute positioned ~ ~-0.51 ~ positioned ~ ~0.075 ~ positioned ^0.25 ^ ^0.4 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
+execute positioned ~ ~-0.51 ~ positioned ~ ~0.025 ~ positioned ^0.25 ^ ^0.29 summon interaction run function simpledrawer:impl/new_drawer/quadruple/place/interaction
 
 
 
