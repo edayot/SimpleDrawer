@@ -1,8 +1,8 @@
 {
     "simpledrawer.name":"SimpleDrawer",
     "simpledrawer.load":"[Loaded SimpleDrawer ",
-    "simpledrawer.drawer.empty":"Empty Drawer",
-    "simpledrawer.drawer.filled":"Filled Drawer",
+    "simpledrawer.drawer.empty":"Empty Drawer §7(legacy)",
+    "simpledrawer.drawer.filled":"Filled Drawer §7(legacy)",
     "simpledrawer.hopper_upgrade":"Hopper Upgrade",
     "simpledrawer.iron_upgrade":"Iron Upgrade",
     "simpledrawer.gold_upgrade":"Gold Upgrade",
