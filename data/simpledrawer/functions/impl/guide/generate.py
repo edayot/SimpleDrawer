@@ -74,7 +74,7 @@ for i in range(6):
 json_encode=json_encode[:-1]+"]"
 
 with open("generate.mcfunction","w") as f:
-    f.write(f"data modify storage simpledrawer:main ItemsNBT.guide2.tag.pages append value '{json_encode}'")
+    f.write(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{json_encode}'")
     f.write("\n\n\n")
 
 

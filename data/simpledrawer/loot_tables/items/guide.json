@@ -16,7 +16,7 @@
 							},
 							"ops": [
 								{
-									"source": "ItemsNBT.guide2.tag",
+									"source": "ItemsNBT.guide.tag",
 									"target": "{}",
 									"op": "merge"
 								}
