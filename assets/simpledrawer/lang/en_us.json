@@ -28,7 +28,8 @@
     "simpledrawer.double_new_drawer.empty":"Empty Double Drawer",
     "simpledrawer.double_new_drawer.filled":"Filled Double Drawer",
     "simpledrawer.quadruple_new_drawer.empty":"Empty Quadruple Drawer",
-    "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer"
+    "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer",
+    "simpledrawer.guide":"SimpleDrawer Guide"
 
 
 
