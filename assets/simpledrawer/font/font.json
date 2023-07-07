@@ -1,9 +1,17 @@
 {"providers": [
-	{ "type": "bitmap", "file": "simpledrawer:item/font/none_2.png",	"ascent": 7, "height": 8, "chars": ["\uef00"] },
-	{ "type": "bitmap", "file": "simpledrawer:item/font/none_3.png",	"ascent": 7, "height": 8, "chars": ["\uef01"] },
-	{ "type": "bitmap", "file": "simpledrawer:item/font/none_4.png",	"ascent": 7, "height": 8, "chars": ["\uef02"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",	"ascent": 7, "height": 8, "chars": ["\uef00"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",	"ascent": 7, "height": 8, "chars": ["\uef01"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",	"ascent": 7, "height": 8, "chars": ["\uef02"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",	"ascent": -3, "height": 68, "chars": ["\uff01"] },
-	{ "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",	"ascent": -20, "height": 34, "chars": ["\uff02"] }
+	{ "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",	"ascent": -20, "height": 34, "chars": ["\uff02"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_new_drawer.png",	"ascent": -3, "height": 68, "chars": ["\uff03"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/result_new_drawer.png",	"ascent": -20, "height": 34, "chars": ["\uff04"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_double_new_drawer.png",	"ascent": -3, "height": 68, "chars": ["\uff05"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/result_double_new_drawer.png",	"ascent": -20, "height": 34, "chars": ["\uff06"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_quadruple_new_drawer.png",	"ascent": -3, "height": 68, "chars": ["\uff07"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/result_quadruple_new_drawer.png",	"ascent": -20, "height": 34, "chars": ["\uff08"] }
+
+
 
 
 
