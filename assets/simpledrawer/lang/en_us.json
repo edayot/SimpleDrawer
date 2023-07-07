@@ -29,8 +29,21 @@
     "simpledrawer.double_new_drawer.filled":"Filled Double Drawer",
     "simpledrawer.quadruple_new_drawer.empty":"Empty Quadruple Drawer",
     "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer",
-    "simpledrawer.guide":"SimpleDrawer Guide"
-
+    "simpledrawer.guide":"SimpleDrawer Guide",
+    "simpledrawer.guide.heavy_workbench":"The Heavy Workbench is a crafting table for SimpleDrawer and other data packs.",
+    "simpledrawer.guide.new_drawer":"The drawer is a block that can store 1 item type but up to 256 items.",
+    "simpledrawer.guide.double_new_drawer":"Same as the drawer but can store 2 different item types.",
+    "simpledrawer.guide.quadruple_new_drawer":"Same as the drawer but can store 4 different item types.",
+    "simpledrawer.guide.upgrade":"An upgrade is an item that can be applied to the drawer to modify its behavior. Apply them by sneaking + left clicking on the drawer.",
+    "simpledrawer.guide.hopper_upgrade":"Enable hopper capability.",
+    "simpledrawer.guide.iron_upgrade":"Increase capacity up to 2048 items.",
+    "simpledrawer.guide.gold_upgrade":"Increase capacity up to 8192 items.",
+    "simpledrawer.guide.diamond_upgrade":"Increase capacity up to 65536 items.",
+    "simpledrawer.guide.star_upgrade":"Increase capacity up to 1048576 items.",
+    "simpledrawer.guide.netherite_upgrade":"Increase capacity up to 16777216 items.",
+    "simpledrawer.guide.downgrade_wrench":"Downgrade the drawer by one tier by a sneak left click on the drawer.",
+    "simpledrawer.guide.guide":"A simple guide for SimpleDrawer"
+    
 
 
 

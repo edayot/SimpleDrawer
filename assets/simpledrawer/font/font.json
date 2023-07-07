@@ -1,4 +1,8 @@
 {"providers": [
+	{ "type": "bitmap", "file": "simpledrawer:item/upgrade_hopper.png",				"ascent": 7, "height": 48, "chars": ["\uee00"] },
+
+
+
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
