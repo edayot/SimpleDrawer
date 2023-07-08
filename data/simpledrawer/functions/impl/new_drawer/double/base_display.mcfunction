@@ -21,11 +21,8 @@ execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_di
 
 
 
+execute at @s as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:search_id_new_drawer,distance=..10] run function simpledrawer:impl/new_drawer/double/base_block_display
 
 
-data modify entity @s item.tag.Trim set value {material:"simpledrawer:acacia",pattern:"minecraft:sentry"}
-data modify entity @s item.tag.Trim.material set from storage simpledrawer:main temp.simpledrawerXX.wood_type
 
-
-data modify entity @s item.tag.CustomModelData set value 1430001
 

@@ -1,8 +1,18 @@
 
+execute if score #facing simpledrawer.math matches 0 run tag @s add simpledrawer.new_drawer.base.north
+execute if score #facing simpledrawer.math matches 1 run tag @s add simpledrawer.new_drawer.base.south
+execute if score #facing simpledrawer.math matches 2 run tag @s add simpledrawer.new_drawer.base.east
+execute if score #facing simpledrawer.math matches 3 run tag @s add simpledrawer.new_drawer.base.west
+
+
+
 scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
 
 
-data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430000,simpledrawer:{}}}
+execute positioned ^ ^ ^1 summon item_display run function simpledrawer:impl/new_drawer/place/base_block
+
+
+data modify storage simpledrawer:main temp.item set value {id:"minecraft:air",Count:1b,tag:{CustomModelData:1430000,simpledrawer:{}}}
 
 data modify storage simpledrawer:main temp.item.tag.simpledrawer set from storage simpledrawer:main temp.simpledrawer
 data modify entity @s item set from storage simpledrawer:main temp.item
@@ -29,6 +39,5 @@ tag @s add global.ignore
 function #itemio:calls/container/init
 
 tp @s ~ ~ ~ ~ ~
-data merge entity @s {brightness:{block:15,sky:15},transformation:{scale:[1.01f,1.01f,1.01f]}}
 
 function simpledrawer:impl/new_drawer/base_display
