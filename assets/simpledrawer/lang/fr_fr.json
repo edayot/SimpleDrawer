@@ -30,6 +30,7 @@
     "simpledrawer.quadruple_new_drawer.empty":"Drawer Quadruple Vide",
     "simpledrawer.quadruple_new_drawer.filled":"Drawer Quadruple Rempli",
     "simpledrawer.guide":"SimpleDrawer Guide",
+    "simpledrawer.guide_first":"Guide",
     "simpledrawer.guide.heavy_workbench":"C'est une table de craft qui permet de crafter les items de SimpleDrawer.",
     "simpledrawer.guide.new_drawer":"C'est un bloc qui permet de stocker un seul type d'item, mais 256 en unités",
     "simpledrawer.guide.double_new_drawer":"Pareil que le drawer mais peut stocker 2 types d'items différents",
@@ -46,6 +47,7 @@
     "simpledrawer.new_drawer":"Drawer",
     "simpledrawer.double_new_drawer":"Drawer Double",
     "simpledrawer.quadruple_new_drawer":"Drawer Quadruple",
-    "simpledrawer.upgrades":"Améliorations"
+    "simpledrawer.upgrades":"Améliorations",
+    "simpledrawer.guide.first_page":"Ce guide montre tout les blocs et items de SimpleDrawer, avec leurs recettes respectives."
 
 }

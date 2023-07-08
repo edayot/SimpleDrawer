@@ -1,5 +1,9 @@
 {"providers": [
-	{ "type": "bitmap", "file": "simpledrawer:item/upgrade_hopper.png",				"ascent": 7, "height": 48, "chars": ["\uee00"] },
+	{
+		"type": "reference",
+		"id": "minecraft:include/space"
+	},
+	{ "type": "bitmap", "file": "simpledrawer:item/font/drawer.png",				"ascent": 7, "height": 64, "chars": ["\uee00"] },
 
 
 

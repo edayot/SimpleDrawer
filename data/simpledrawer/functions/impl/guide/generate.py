@@ -167,6 +167,16 @@ guide.page_title="simpledrawer.guide"
 
 commands=[]
 
+#First page
+
+first_page='["",'
+first_page=first_page+'{"translate":"simpledrawer.guide_first","font":"simpledrawer:big","color":"black","bold":true},'
+first_page=first_page+'{"text":"\\\\n      \\\\uee00\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n","font":"simpledrawer:font","color":"white"},'
+first_page=first_page+'{"translate":"simpledrawer.guide.first_page","color":"black"}]'
+
+commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{first_page}'")
+
+
 # heavy_workbench
 craft=[
     [oak_log, oak_log, oak_log],

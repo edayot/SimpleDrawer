@@ -38,7 +38,6 @@ data modify storage simpledrawer:main ItemsNBT.netherite_upgrade set value {id:"
 data modify storage simpledrawer:main ItemsNBT.downgrade_wrench set value {id:"minecraft:jigsaw",Count:1b				,tag:{CustomModelData:1430006,ctc:{id:"downgrade_wrench",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{downgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'}}}
 
 data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:written_book",Count:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"guide",traits:{items:1b}},CustomModelData:1430000,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']},title:"SimpleDrawer Guide",author:"AirDox_",generation:0,pages:[]}} 
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value ''
 function simpledrawer:impl/guide/generate
 
 
@@ -71,7 +70,7 @@ scoreboard objectives add simpledrawer.config.input_mode dummy
 scoreboard players set #9 simpledrawer.math 9
 scoreboard players set #81 simpledrawer.math 81
 
-execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
+execute unless score #configured simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 
 
 advancement revoke @a only simpledrawer:impl/interact

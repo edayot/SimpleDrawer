@@ -30,6 +30,7 @@
     "simpledrawer.quadruple_new_drawer.empty":"Empty Quadruple Drawer",
     "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer",
     "simpledrawer.guide":"SimpleDrawer Guide",
+    "simpledrawer.guide_first":"Guide",
     "simpledrawer.guide.heavy_workbench":"The Heavy Workbench is a crafting table for SimpleDrawer and other data packs.",
     "simpledrawer.guide.new_drawer":"The drawer is a block that can store 1 item type but up to 256 items.",
     "simpledrawer.guide.double_new_drawer":"Same as the drawer but can store 2 different item types.",
@@ -46,7 +47,8 @@
     "simpledrawer.new_drawer":"Drawer",
     "simpledrawer.double_new_drawer":"Double Drawer",
     "simpledrawer.quadruple_new_drawer":"Quadruple Drawer",
-    "simpledrawer.upgrades":"Upgrades"
+    "simpledrawer.upgrades":"Upgrades",
+    "simpledrawer.guide.first_page":"This guide show all the blocks and items added by SimpleDrawer, with their respectives recipes."
     
 
 
