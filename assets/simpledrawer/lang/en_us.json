@@ -7,7 +7,7 @@
     "simpledrawer.iron_upgrade":"Iron Upgrade",
     "simpledrawer.gold_upgrade":"Gold Upgrade",
     "simpledrawer.diamond_upgrade":"Diamond Upgrade",
-    "simpledrawer.star_upgrade":"Nether Star Upgrade",
+    "simpledrawer.star_upgrade":"Star Upgrade",
     "simpledrawer.netherite_upgrade":"Netherite Upgrade",
     "simpledrawer.downgrade_wrench":"Downgrade Wrench",
     "simpledrawer.text.of":" of §r",
@@ -42,7 +42,11 @@
     "simpledrawer.guide.star_upgrade":"Increase capacity up to 1048576 items.",
     "simpledrawer.guide.netherite_upgrade":"Increase capacity up to 16777216 items.",
     "simpledrawer.guide.downgrade_wrench":"Downgrade the drawer by one tier by a sneak left click on the drawer.",
-    "simpledrawer.guide.guide":"A simple guide for SimpleDrawer"
+    "simpledrawer.guide.guide":"A simple guide for SimpleDrawer",
+    "simpledrawer.new_drawer":"Drawer",
+    "simpledrawer.double_new_drawer":"Double Drawer",
+    "simpledrawer.quadruple_new_drawer":"Quadruple Drawer",
+    "simpledrawer.upgrades":"Upgrades"
     
 
 
