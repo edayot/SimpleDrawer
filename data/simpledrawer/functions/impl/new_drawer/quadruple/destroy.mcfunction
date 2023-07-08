@@ -2,7 +2,7 @@
 data modify storage simpledrawer:main temp.dropped_item.tag.display set from storage simpledrawer:main ItemsNBT.quadruple_new_drawer.tag.display
 
 
-execute store result score #model simpledrawer.math run data get entity @s item.tag.CustomModelData
+scoreboard players set #model simpledrawer.math 1430002
 execute unless data entity @s item.tag.simpledrawer{globalCount:0} run function simpledrawer:impl/new_drawer/quadruple/destroy_filled
 execute store result storage simpledrawer:main temp.dropped_item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math
 

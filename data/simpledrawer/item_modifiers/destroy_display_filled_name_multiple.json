@@ -23,12 +23,7 @@
 			"italic": false,
 			"interpret":true
 		  }
-		],
-		{
-		  "translate": "simpledrawer.name",
-		  "color": "blue",
-		  "italic": true
-		}
+		]
 	  ]
 	}
   ]

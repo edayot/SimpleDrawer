@@ -26,7 +26,7 @@ scoreboard players set #simpledrawer.smithed.crafter.patch load.status 0
 # Smithed Actionbar version are ^major.minor.patch
 scoreboard players set #simpledrawer.smithed.actionbar.major load.status 0
 scoreboard players set #simpledrawer.smithed.actionbar.minor load.status 4
-scoreboard players set #simpledrawer.smithed.actionbar.patch load.status 0
+scoreboard players set #simpledrawer.smithed.actionbar.patch load.status 1
 
 
 
