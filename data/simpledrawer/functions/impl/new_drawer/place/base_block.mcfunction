@@ -8,6 +8,6 @@ tp @s ~ ~ ~ ~ ~
 
 data modify entity @s item set from storage simpledrawer:main temp.item
 
-data merge entity @s {transformation:{scale:[1.01f,1.01f,1.01f],translation:[0.0f,0.0f,-1.0f]}}
+data merge entity @s {transformation:{scale:[1.001f,1.001f,1.001f],translation:[0.0f,0.0f,-1.0f]}}
 
 
