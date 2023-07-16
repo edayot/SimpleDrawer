@@ -3,10 +3,11 @@
 A simple datapack that add drawer to minecraft.
 
 
-Theses are the more important crafts, see in-game guide for more informations and [the wiki](https://github.com/edayot/SimpleDrawer/wiki) :
+The most important item of the datapack is the guide, every player will receive it when joining the world for the first time.
 
-![CraftDrawer](https://github.com/edayot/SimpleDrawer/raw/master/assets/simpledrawer/textures/item/font/craft_drawer.png) ![Vide](https://github.com/edayot/SimpleDrawer/raw/master/images/vide.png) ![CraftGuide](https://github.com/edayot/SimpleDrawer/raw/master/assets/simpledrawer/textures/item/font/craft_guide.png)
+Their is also a crafting recipe for the guide :
 
+![Guide](assets/simpledrawer/textures/item/font/craft_guide.png) ![Guide](assets/simpledrawer/textures/item/font/result_guide.png)
 
 # Exploring the datapack :
 
