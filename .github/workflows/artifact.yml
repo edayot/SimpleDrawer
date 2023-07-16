@@ -41,19 +41,19 @@ jobs:
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
       - uses: actions/upload-artifact@v3
         with:
-          name: datapack.zip
+          name: datapack
           path: build/datapack.zip
       - uses: actions/upload-artifact@v3
         with:
-          name: resourcepack.zip
+          name: resourcepack
           path: build/resourcepack.zip
       - uses: actions/upload-artifact@v3
         with:
-          name: datapack-bundled.zip
+          name: datapack-bundled
           path: build/datapack-bundled.zip
       - uses: actions/upload-artifact@v3  
         with:
-          name: resourcepack-bundled.zip
+          name: resourcepack-bundled
           path: build/resourcepack-bundled.zip
       
       
