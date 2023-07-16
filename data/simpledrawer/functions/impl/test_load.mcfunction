@@ -11,7 +11,7 @@ scoreboard players set #simpledrawer.smithed.actionbar load.status 0
 # ItemIO version are ^major.minor.patch
 scoreboard players set #simpledrawer.itemio.major load.status 0
 scoreboard players set #simpledrawer.itemio.minor load.status 5
-scoreboard players set #simpledrawer.itemio.patch load.status 0
+scoreboard players set #simpledrawer.itemio.patch load.status 3
 
 # Smithed Custom Block version are ^major.minor.patch
 scoreboard players set #simpledrawer.smithed.custom_block.major load.status 0

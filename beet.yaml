@@ -16,11 +16,9 @@ extend: [common.yaml]
 meta:
   supports: ["1.20","1.20.1"]
   smithed_dependencies:
-    - id: "smithed:custom-block"
-      version: "0.2.0"
     - id: "smithed:crafter"
       version: "0.2.0"
     - id: "smithed:actionbar"
       version: "0.4.1"
     - id: "airdox_:itemio"
-      version: "0.5.0"
+      version: "0.5.3"
