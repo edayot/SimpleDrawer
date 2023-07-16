@@ -48,7 +48,14 @@
     "simpledrawer.double_new_drawer":"Double Drawer",
     "simpledrawer.quadruple_new_drawer":"Quadruple Drawer",
     "simpledrawer.upgrades":"Upgrades",
-    "simpledrawer.guide.first_page":"This guide show all the blocks and items added by SimpleDrawer, with their respectives recipes."
+    "simpledrawer.guide.first_page":"This guide show all the blocks and items added by SimpleDrawer, with their respectives recipes.",
+    "simpledrawer.drawers":"Drawer manual",
+    "simpledrawer.guide.drawers.inserting_title":"Inserting : \n\n",
+    "simpledrawer.guide.drawers.extracting_title":"Extracting : \n\n",
+    "simpledrawer.guide.drawers.inserting":"Just right click on the drawer with the item you want to insert. Sneaking will insert a full stack and with a empty hand you will insert all items from your inventory.",
+    "simpledrawer.guide.drawers.extracting":"Just left click on the drawer to extract one item. Sneaking will extract a full stack."
+
+    
     
 
 

@@ -48,6 +48,12 @@
     "simpledrawer.double_new_drawer":"Drawer Double",
     "simpledrawer.quadruple_new_drawer":"Drawer Quadruple",
     "simpledrawer.upgrades":"Améliorations",
-    "simpledrawer.guide.first_page":"Ce guide montre tout les blocs et items de SimpleDrawer, avec leurs recettes respectives."
+    "simpledrawer.guide.first_page":"Ce guide montre tout les blocs et items de SimpleDrawer, avec leurs recettes respectives.",
+
+    "simpledrawer.drawers":"Mode d'emploi",
+    "simpledrawer.guide.drawers.inserting_title":"Insertion : \n\n",
+    "simpledrawer.guide.drawers.extracting_title":"Extraction : \n\n",
+    "simpledrawer.guide.drawers.inserting":"Faite un clic droit sur le drawer pour insérer un item. S'accroupir permet d'insérer un stack entier et avec une main vide, insère tout les items de l'inventaire.",
+    "simpledrawer.guide.drawers.extracting":"Faite un clic gauche sur le drawer pour extraire un item. S'accroupir permet d'extraire un stack entier."
 
 }

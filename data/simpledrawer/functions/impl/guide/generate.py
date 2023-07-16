@@ -1,5 +1,3 @@
-
-
 # good syntax
 #data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"aaa",hoverEvent:{action:"show_item",contents:{id:"minecraft:stick",tag:"{display:{Name:\'{\\"text\\":\\"coucou\\"}\'}}"}}}'
 
@@ -95,72 +93,91 @@ chest=Item('{"id":"minecraft:chest"}', -1)
 
 # All custom items
 
+start_page=2
+
 # heavy_workbench
 string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"block.smithed.crafter\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\'}}"}'
-heavy_workbench=Item(string_item, 2)
+heavy_workbench=Item(string_item, start_page)
+start_page=start_page+1
 heavy_workbench.description="simpledrawer.guide.heavy_workbench"
 heavy_workbench.page_title="block.smithed.crafter"
 
 # new_drawer
 string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.new_drawer.empty\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-new_drawer=Item(string_item, 3)
+new_drawer=Item(string_item, start_page)
+start_page=start_page+1
 new_drawer.description="simpledrawer.guide.new_drawer"
 new_drawer.page_title="simpledrawer.new_drawer"
 
+# drawer_page
+start_page=start_page+1
+
 # double_new_drawer
 string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.double_new_drawer.empty\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-double_new_drawer=Item(string_item, 4)
+double_new_drawer=Item(string_item, start_page)
+start_page=start_page+1
 double_new_drawer.description="simpledrawer.guide.double_new_drawer"
 double_new_drawer.page_title="simpledrawer.double_new_drawer"
 
 # quadruple_new_drawer
 string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.quadruple_new_drawer.empty\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-quadruple_new_drawer=Item(string_item, 5)
+quadruple_new_drawer=Item(string_item, start_page)
+start_page=start_page+1
 quadruple_new_drawer.description="simpledrawer.guide.quadruple_new_drawer"
 quadruple_new_drawer.page_title="simpledrawer.quadruple_new_drawer"
 
 
+# upgrade_page
+start_page=start_page+1
 
 # hopper_upgrade
 string_item='{"id":"minecraft:string","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.hopper_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-hopper_upgrade=Item(string_item, 7)
+hopper_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 hopper_upgrade.description="simpledrawer.guide.hopper_upgrade"
 hopper_upgrade.page_title="simpledrawer.hopper_upgrade"
 # iron_upgrade
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.iron_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-iron_upgrade=Item(string_item, 8)
+iron_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 iron_upgrade.description="simpledrawer.guide.iron_upgrade"
 iron_upgrade.page_title="simpledrawer.iron_upgrade"
 # gold_upgrade
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.gold_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-gold_upgrade=Item(string_item, 9)
+gold_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 gold_upgrade.description="simpledrawer.guide.gold_upgrade"
 gold_upgrade.page_title="simpledrawer.gold_upgrade"
 # diamond_upgrade
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.diamond_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-diamond_upgrade=Item(string_item, 10)
+diamond_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 diamond_upgrade.description="simpledrawer.guide.diamond_upgrade"
 diamond_upgrade.page_title="simpledrawer.diamond_upgrade"
 # star_upgrade
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.star_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-star_upgrade=Item(string_item, 11)
+star_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 star_upgrade.description="simpledrawer.guide.star_upgrade"
 star_upgrade.page_title="simpledrawer.star_upgrade"
 # netherite_upgrade
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.netherite_upgrade\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-netherite_upgrade=Item(string_item, 12)
+netherite_upgrade=Item(string_item, start_page)
+start_page=start_page+1
 netherite_upgrade.description="simpledrawer.guide.netherite_upgrade"
 netherite_upgrade.page_title="simpledrawer.netherite_upgrade"
 
 # downgrade_wrench
 string_item='{"id":"minecraft:jigsaw","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.downgrade_wrench\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-downgrade_wrench=Item(string_item, 13)
+downgrade_wrench=Item(string_item, start_page)
+start_page=start_page+1
 downgrade_wrench.description="simpledrawer.guide.downgrade_wrench"
 downgrade_wrench.page_title="simpledrawer.downgrade_wrench"
 
 # guide
 string_item='{"id":"minecraft:book","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.guide\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
-guide=Item(string_item, 13)
+guide=Item(string_item, start_page)
+start_page=start_page+1
 guide.description="simpledrawer.guide.guide"
 guide.page_title="simpledrawer.guide"
 
@@ -196,6 +213,18 @@ craft=[
 craft_result=new_drawer
 
 commands.append(generate_page(craft, craft_result,"uff05","uff06"))
+
+### Drawer page
+drawer_page='["",{"translate":"simpledrawer.drawers","font":"simpledrawer:big","color":"black"},{"text":"\\\\n\\\\n\\\\n","font":"simpledrawer:big","color":"black"}'
+drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.inserting_title","color":"black","font":"simpledrawer:medium"}'
+drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.inserting","color":"black"}'
+drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.extracting_title","color":"black","font":"simpledrawer:medium"}'
+drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.extracting","color":"black"}'
+drawer_page=drawer_page+']'
+
+
+
+commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{drawer_page}'")
 
 # double_new_drawer
 craft=[
