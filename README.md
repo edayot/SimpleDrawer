@@ -1,4 +1,4 @@
-![Banner](https://github.com/edayot/SimpleDrawer/raw/master/images/simple_drawer.png)
+![Banner](images/simple_drawer.png)
 
 A simple datapack that add drawer to minecraft.
 
