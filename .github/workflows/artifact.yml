@@ -33,7 +33,6 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
         run: |
           git_hash=$(git rev-parse --short HEAD)
           python .github/workflows/artifact.py
