@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - develop
+      - 1.20_feature
 
 jobs:
   release:
