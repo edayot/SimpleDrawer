@@ -111,6 +111,7 @@ new_drawer.page_title="simpledrawer.new_drawer"
 
 # drawer_page
 start_page=start_page+1
+start_page=start_page+1
 
 # double_new_drawer
 string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.double_new_drawer.empty\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
@@ -215,16 +216,19 @@ craft_result=new_drawer
 commands.append(generate_page(craft, craft_result,"uff05","uff06"))
 
 ### Drawer page
-drawer_page='["",{"translate":"simpledrawer.drawers","font":"simpledrawer:big","color":"black"},{"text":"\\\\n\\\\n\\\\n","font":"simpledrawer:big","color":"black"}'
+drawer_page='["",{"translate":"simpledrawer.drawers","font":"simpledrawer:big","color":"black"},{"text":"\\\\n\\\\n","font":"simpledrawer:big","color":"black"}'
 drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.inserting_title","color":"black","font":"simpledrawer:medium"}'
 drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.inserting","color":"black"}'
+drawer_page=drawer_page+']'
+commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{drawer_page}'")
+
+drawer_page='["",{"translate":"simpledrawer.drawers","font":"simpledrawer:big","color":"black"},{"text":"\\\\n\\\\n","font":"simpledrawer:big","color":"black"}'
 drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.extracting_title","color":"black","font":"simpledrawer:medium"}'
 drawer_page=drawer_page+',{"translate":"simpledrawer.guide.drawers.extracting","color":"black"}'
 drawer_page=drawer_page+']'
-
-
-
 commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{drawer_page}'")
+
+
 
 # double_new_drawer
 craft=[
