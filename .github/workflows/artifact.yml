@@ -37,9 +37,23 @@ jobs:
         run: |
           poetry run python .github/workflows/artifact.py
           poetry run python -m beet -p beet-artifact.yaml
-          
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.0.0
+      
+      # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
+      - uses: actions/upload-artifact@v3
         with:
-          name: artifact
-          path: build/
+          name: datapack.zip
+          path: build/datapack.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          name: resourcepack.zip
+          path: build/resourcepack.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          name: datapack-bundled.zip
+          path: build/datapack-bundled.zip
+      - uses: actions/upload-artifact@v3  
+        with:
+          name: resourcepack-bundled.zip
+          path: build/resourcepack-bundled.zip
+      
+      
