@@ -35,8 +35,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
         run: |
-          python .github/workflows/artifact.py
-          python -m beet -p beet-artifact.yaml
+          poetry run python .github/workflows/artifact.py
+          poetry run python -m beet -p beet-artifact.yaml
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0

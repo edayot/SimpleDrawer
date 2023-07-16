@@ -3,7 +3,7 @@ import os
 
 
 #Get the git hash
-git_hash = os.environ("GIT_HASH")
+git_hash = os.environ["GIT_HASH"]
 
 
 #Replace all __git_hash__ with the git hash in ../../beet-artifact.yaml
