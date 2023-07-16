@@ -4,11 +4,11 @@ output: "../../build/"
 
 data_pack:
   name: "datapack-bundled"
-  zipped: true
+  zipped: false
 
 resource_pack:
   name: "resourcepack-bundled"
-  zipped: true
+  zipped: false
 
 
 pipeline:

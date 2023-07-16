@@ -42,18 +42,18 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: datapack
-          path: build/datapack.zip
+          path: build/datapack/
       - uses: actions/upload-artifact@v3
         with:
           name: resourcepack
-          path: build/resourcepack.zip
+          path: build/resourcepack/
       - uses: actions/upload-artifact@v3
         with:
           name: datapack-bundled
-          path: build/datapack-bundled.zip
+          path: build/datapack-bundled/
       - uses: actions/upload-artifact@v3  
         with:
           name: resourcepack-bundled
-          path: build/resourcepack-bundled.zip
+          path: build/resourcepack-bundled/
       
       

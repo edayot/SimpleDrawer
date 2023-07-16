@@ -5,8 +5,8 @@ output: "build/"
 
 data_pack:
   name: "datapack"
-  zipped: true
+  zipped: false
 
 resource_pack:
   name: "resourcepack"
-  zipped: true
+  zipped: false
