@@ -45,9 +45,14 @@ download_url = (
 )
 
 try:
-    dep = beet['meta']['smithed_dependencies']
+    dep_no = beet['meta']['smithed_dependencies']
 except KeyError:
-    dep = []
+    dep_no = []
+
+dep = []
+for i in dep_no:
+    dep.append({"id":i["id"],"version":i["version"]})
+
 
 
 pack_version = {

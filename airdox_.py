@@ -51,3 +51,40 @@ def delete_load_tag_and_packpng(ctx: Context):
         del ctx.data.extra["pack.png"]
     if "pack.png" in ctx.assets.extra:
         del ctx.assets.extra["pack.png"]
+
+
+
+def test_load_generator(ctx: Context):
+    "Injecting test_load"
+
+
+    dep_check="""scoreboard players set #{project_id}.{dep_id} load.status 0
+# {dep_name} version are ^major.minor.patch
+scoreboard players set #{project_id}.{dep_id}.major load.status {dep_major}
+scoreboard players set #{project_id}.{dep_id}.minor load.status {dep_minor}
+scoreboard players set #{project_id}.{dep_id}.patch load.status {dep_patch}
+
+execute if score {dep_prefix}major load.status = #{project_id}.{dep_id}.major load.status if score {dep_prefix}minor load.status = #{project_id}.{dep_id}.minor load.status if score {dep_prefix}patch load.status >= #{project_id}.{dep_id}.patch load.status run scoreboard players set #{project_id}.{dep_id} load.status 1
+
+execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a [{{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"}},{{"text":"Error Loading {project_name}, {dep_name} v","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.patch","objective":"load.status"}},"color":"red"}},{{"text":"+ is required but the installed version is v","color":"red"}},{{"score":{{"name":"{dep_prefix}major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}patch","objective":"load.status"}},"color":"red"}}]
+
+
+"""
+    function=""
+    final_test="execute "
+
+    for dep in ctx.meta["smithed_dependencies"]:
+        if dep["versioning"]["type"]=="normal":
+            major,minor,patch=dep["version"].split(".")
+            function=function+dep_check.format(project_id=ctx.project_id,dep_id=dep["id"],dep_name=dep["id"],dep_major=major,dep_minor=minor,dep_patch=patch,dep_prefix=dep["versioning"]["prefix"],project_name=ctx.project_name)
+
+            final_test=final_test+"if score #{project_id}.{dep_id} load.status matches 1 ".format(project_id=ctx.project_id,dep_id=dep["id"])
+
+    final_test=final_test+"run function {project_id}:v{project_version}/load".format(project_id=ctx.project_id,project_version=ctx.project_version)
+
+    function=function+final_test
+    ctx.data.functions[f"{ctx.project_id}:v{ctx.project_version}/test_load"]=TextFile(function)
+    
+
+
+
