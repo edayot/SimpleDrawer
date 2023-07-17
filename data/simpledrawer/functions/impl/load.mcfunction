@@ -18,7 +18,6 @@ data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer set value {i
 
 
 
-data modify storage simpledrawer:main ItemsNBT.compacting_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430000,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"compacting",variant:"single",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
 
 #Items
 #hopper_upgrade
