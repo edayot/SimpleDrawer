@@ -54,6 +54,11 @@ scoreboard objectives add simpledrawer.new_drawer.id dummy
 scoreboard objectives add simpledrawer.new_drawer.part_id dummy
 scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
 
+# Versioning block for future updates
+scoreboard objectives add simpledrawer.block.major dummy
+scoreboard objectives add simpledrawer.block.minor dummy
+scoreboard objectives add simpledrawer.block.patch dummy
+
 
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy

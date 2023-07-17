@@ -1,3 +1,16 @@
+# Versioning (for future use)
+
+scoreboard players operation @s simpledrawer.block.major = #simpledrawer.major load.status
+scoreboard players operation @s simpledrawer.block.minor = #simpledrawer.minor load.status
+scoreboard players operation @s simpledrawer.block.patch = #simpledrawer.patch load.status
+
+
+
+
+
+
+
+
 
 execute if score #facing simpledrawer.math matches 0 run tag @s add simpledrawer.new_drawer.base.north
 execute if score #facing simpledrawer.math matches 1 run tag @s add simpledrawer.new_drawer.base.south
