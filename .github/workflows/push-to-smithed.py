@@ -53,7 +53,7 @@ except KeyError:
 pack_version = {
   "name": CURRENT_VERSION,
   "downloads": {},
-  "supports": beet['meta']['supports'],
+  "supports": beet['meta']['mc_supports'],
   "dependencies": dep,
 }
 

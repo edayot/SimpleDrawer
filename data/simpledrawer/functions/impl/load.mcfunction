@@ -8,8 +8,7 @@ function simpledrawer:impl/set_version
 
 gamerule maxCommandChainLength 2147483647
 
-tag AirDox_ add convention.debug
-execute as @a[tag=convention.debug] run function simpledrawer:impl/print_version
+
 #Drawer
 data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
@@ -87,3 +86,5 @@ advancement revoke @s only simpledrawer:impl/compacting/interact
 
 schedule function simpledrawer:impl/tick 1t replace
 schedule function simpledrawer:impl/20tick 20t replace
+
+function simpledrawer:impl/mc_version_warning

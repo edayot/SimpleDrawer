@@ -35,7 +35,13 @@ def add_license(ctx: Context):
     #take the file name from the path
     file_name=path_to_license.split("/")[-1]
     ctx.data.extra[file_name]=TextFile(open(path_to_license).read())
-    
+def add_readme(ctx: Context):
+    "Injecting README"
+    path_to_readme=ctx.meta["airdox_"]["readme_path"]
+    #take the file name from the path
+    file_name=path_to_readme.split("/")[-1]
+    ctx.data.extra[file_name]=TextFile(open(path_to_readme).read())
+
 
 
 def delete_load_tag_and_packpng(ctx: Context):

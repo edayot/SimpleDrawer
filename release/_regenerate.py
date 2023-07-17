@@ -24,7 +24,7 @@ for pack in dep:
         url = download_url.format(pack_id=pack_id, pack_version=pack_version, mode=mode)
         # download the file at url and save it to the current directory
         r = requests.get(url)
-        with open(f"{pack_id}-{pack_version}_{mode}.zip", "wb") as f:
+        with open(f"included/{pack_id}-{pack_version}_{mode}.zip", "wb") as f:
             f.write(r.content)
 
 

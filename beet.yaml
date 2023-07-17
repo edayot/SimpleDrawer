@@ -11,10 +11,14 @@ data_pack:
 resource_pack:
   load: [.]
 
+pipeline:
+  - simpledrawer.add_mc_version_support
+
 extend: [common.yaml]
 
 meta:
-  supports: ["1.20","1.20.1"]
+  mc_supports: ["1.20","1.20.1"]
+  mc_supports_dataversion: [3463,3465]
   smithed_dependencies:
     - id: "smithed:crafter"
       version: "0.2.0"
