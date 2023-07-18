@@ -33,7 +33,7 @@ execute store result score #maxCount simpledrawer.math run data get storage simp
 
 
 data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0] set value {id:"minecraft:stone",Count:1b}
-item modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 weapon.mainhand simpledrawer:destroy_maxcount
+item modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 weapon.mainhand simpledrawer:impl/destroy_maxcount
 
 data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore append from entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].tag.display.Lore[]
 

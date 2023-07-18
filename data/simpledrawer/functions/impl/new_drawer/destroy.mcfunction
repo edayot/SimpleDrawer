@@ -13,4 +13,4 @@ execute as @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] run 
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
-kill @e[tag=simpledrawer.new_drawer.part,predicate=simpledrawer:search_id_new_drawer]
+kill @e[tag=simpledrawer.new_drawer.part,predicate=simpledrawer:impl/search_id_new_drawer]

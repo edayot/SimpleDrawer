@@ -10,7 +10,7 @@ scoreboard players operation #count simpledrawer.math = @s simpledrawer.drawer.C
 scoreboard players operation #maxCount simpledrawer.math = @s simpledrawer.drawer.maxCount
 
 data remove entity @s Item.tag.display
-item modify entity @s container.0 simpledrawer:destroy_display
+item modify entity @s container.0 simpledrawer:impl/destroy_display
 data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore set from entity @s Item.tag.display.Lore
 
 execute if entity @s[tag=simpledrawer.drawer.filled] run function simpledrawer:impl/drawer/destroy_item_filled

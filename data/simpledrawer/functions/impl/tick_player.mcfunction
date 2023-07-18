@@ -24,4 +24,4 @@ execute if score @s simpledrawer.nb_click matches 32.. run advancement grant @s 
 
 
 
-execute if predicate simpledrawer:sneaking at @s positioned ^ ^ ^2 as @e[tag=simpledrawer.new_drawer.base,limit=1,sort=nearest,distance=..3] run function simpledrawer:impl/new_drawer/base_display_noformat
+execute if predicate simpledrawer:impl/sneaking at @s positioned ^ ^ ^2 as @e[tag=simpledrawer.new_drawer.base,limit=1,sort=nearest,distance=..3] run function simpledrawer:impl/new_drawer/base_display_noformat

@@ -12,4 +12,4 @@ data remove storage simpledrawer:main temp.Inventory[{Slot:-106b}]
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players operation #slot simpledrawer.io = @s simpledrawer.new_drawer.part_id
 
-execute if data storage simpledrawer:main temp.Inventory[0] as @e[tag=simpledrawer.new_drawer.part.base,predicate=simpledrawer:search_id_new_drawer] run function simpledrawer:impl/new_drawer/working/interaction/interact/big_input_2
+execute if data storage simpledrawer:main temp.Inventory[0] as @e[tag=simpledrawer.new_drawer.part.base,predicate=simpledrawer:impl/search_id_new_drawer] run function simpledrawer:impl/new_drawer/working/interaction/interact/big_input_2

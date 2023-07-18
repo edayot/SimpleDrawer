@@ -40,8 +40,8 @@ execute if score #slot simpledrawer.io matches 30 if score #ifsneak simpledrawer
 execute if score #slot simpledrawer.io matches 31 if score #ifsneak simpledrawer.math matches 1 run data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from entity @s item.tag.simpledrawer.Items[{Slot:31}].id
 
 
-execute if score #ifsneak simpledrawer.math matches 1 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack16 run scoreboard players set #count simpledrawer.io 16
-execute if score #ifsneak simpledrawer.math matches 1 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:stack1 run scoreboard players set #count simpledrawer.io 1
+execute if score #ifsneak simpledrawer.math matches 1 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:impl/stack16 run scoreboard players set #count simpledrawer.io 16
+execute if score #ifsneak simpledrawer.math matches 1 as 93682a08-d099-4e8f-a4a6-1e33a3692301 if predicate simpledrawer:impl/stack1 run scoreboard players set #count simpledrawer.io 1
 
 
 

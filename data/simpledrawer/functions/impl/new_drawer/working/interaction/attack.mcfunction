@@ -5,7 +5,7 @@ playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
 #say ATTACK
 execute store result score #gametime simpledrawer.math run time query gametime
-execute store success score #ifsneak simpledrawer.math if predicate simpledrawer:sneaking
+execute store success score #ifsneak simpledrawer.math if predicate simpledrawer:impl/sneaking
 
 data remove storage simpledrawer:main temp.SelectedItem
 data modify storage simpledrawer:main temp.SelectedItem set from entity @s SelectedItem

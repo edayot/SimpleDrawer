@@ -19,5 +19,5 @@ data remove entity @s item.tag.simpledrawer.Items[{Slot:30}]
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math 30
 scoreboard players set #newCount simpledrawer.math 0
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:1b}
+execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:1b}
 
