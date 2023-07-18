@@ -9,5 +9,4 @@ data modify storage simpledrawer:main temp.simpledrawer set from block ~ ~ ~ Ite
 execute summon item_display run function simpledrawer:impl/new_drawer/place/base
 setblock ~ ~ ~ beehive
 
-function simpledrawer:impl/new_drawer/place/variant
 

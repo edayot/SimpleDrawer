@@ -72,6 +72,16 @@ scoreboard objectives add simpledrawer.config.input_mode dummy
 
 scoreboard players set #9 simpledrawer.math 9
 scoreboard players set #81 simpledrawer.math 81
+scoreboard players set #10 simpledrawer.math 10
+scoreboard players set #100 simpledrawer.math 100
+scoreboard players set #1000 simpledrawer.math 1000
+scoreboard players set #10000 simpledrawer.math 10000
+scoreboard players set #100000 simpledrawer.math 100000
+scoreboard players set #1000000 simpledrawer.math 1000000
+scoreboard players set #10000000 simpledrawer.math 10000000
+scoreboard players set #100000000 simpledrawer.math 100000000
+scoreboard players set #1000000000 simpledrawer.math 1000000000
+
 
 execute unless score #configured simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 

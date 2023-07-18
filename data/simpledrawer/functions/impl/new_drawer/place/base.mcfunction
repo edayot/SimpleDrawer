@@ -53,4 +53,7 @@ function #itemio:calls/container/init
 
 tp @s ~ ~ ~ ~ ~
 
+
+function simpledrawer:impl/new_drawer/place/variant
+
 function simpledrawer:impl/new_drawer/base_display
