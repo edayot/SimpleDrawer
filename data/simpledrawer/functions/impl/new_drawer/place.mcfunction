@@ -1,3 +1,6 @@
+scoreboard players set #success_version simpledrawer.math 1
+
+
 scoreboard players set #facing simpledrawer.math 0
 execute if block ~ ~ ~ furnace[facing=north] run scoreboard players set #facing simpledrawer.math 0
 execute if block ~ ~ ~ furnace[facing=south] run scoreboard players set #facing simpledrawer.math 1
