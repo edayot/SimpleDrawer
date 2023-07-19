@@ -95,7 +95,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
 
     for dep in ctx.meta["smithed_dependencies"]:
         if dep["versioning"]["type"]=="normal":
-            major,minor,patch=dep["version"].split(".")
+            major,minor,patch=dep["version_"].split(".")
             function=function+dep_check.format(project_id=ctx.project_id,dep_id=dep["id"],dep_name=dep["id"],dep_major=major,dep_minor=minor,dep_patch=patch,dep_prefix=dep["versioning"]["prefix"],project_name=ctx.project_name)
 
             final_test=final_test+"if score #{project_id}.{dep_id} load.status matches 1 ".format(project_id=ctx.project_id,dep_id=dep["id"])
