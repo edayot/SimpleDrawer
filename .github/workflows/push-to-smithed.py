@@ -51,7 +51,7 @@ except KeyError:
 
 dep = []
 for i in dep_no:
-    dep.append({"id":i["id"],"version":i["version_"]})
+    dep.append({"id":i["id"].split(":")[1],"version":i["version_"]})
 
 
 
