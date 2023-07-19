@@ -23,25 +23,25 @@ meta:
   mc_supports_dataversion: [3463,3465]
   smithed_dependencies:
     - id: "smithed:crafter"
-      version: "0.2.0"
+      version_: "0.2.0"
       versioning:
         type: "normal"
         prefix: "#smithed.crafter."
 
     - id: "smithed:custom_block"
-      version: "0.2.0"
+      version_: "0.2.0"
       versioning:
         type: "normal"
         prefix: "#smithed.custom_block."
 
     - id: "smithed:actionbar"
-      version: "0.4.1"
+      version_: "0.4.1"
       versioning:
         type: "normal"
         prefix: "#smithed.actionbar."
 
     - id: "airdox_:itemio"
-      version: "0.5.3"
+      version_: "0.5.3"
       versioning:
         type: "normal"
         prefix: "#itemio."
