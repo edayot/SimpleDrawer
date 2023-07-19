@@ -4,7 +4,8 @@ version: "1.9.0"
 description: A datapack that add drawers in to minecraft
 author: AirDox_
 
-
+overrides:
+  - meta.smithed.versioning.scheduled_paths: [impl/tick,impl/5tick,impl/20tick,impl/mc_version_check]
 
 data_pack:
   load: [.]
@@ -16,7 +17,7 @@ pipeline:
   - simpledrawer.add_versioning_to_items
   - airdox_.test_load_generator
 
-extend: [common.yaml]
+extend: "@airdox_/common.yaml"
 
 meta:
   mc_supports: ["1.20","1.20.1"]

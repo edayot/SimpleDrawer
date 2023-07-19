@@ -9,9 +9,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-semantic-release = "^7.32.2"
-smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
-cryptography = "^41.0.0"
+airdox_ = {git = "https://github.com/edayot/airdox_.git"}
 
 [tool.semantic_release]
 major_on_zero = false
