@@ -15,6 +15,6 @@ execute if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:
 execute if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:0b,id:"minecraft:warped_planks"}]}} run function simpledrawer:impl/crafts/double_new_drawer/warped
 
 
-loot replace block ~ ~ ~ container.16 loot simpledrawer:items/new_drawer_craft
+loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer_craft
 
 

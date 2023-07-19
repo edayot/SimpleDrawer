@@ -11,6 +11,6 @@ execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[
 
 data modify storage simpledrawer:main temp.ItemCraft.tag.display.Lore prepend value '{"text":"This drawer as been converted","color":"gray"}'
 
-loot replace block ~ ~ ~ container.16 loot simpledrawer:items/new_drawer_craft
+loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer_craft
 
 

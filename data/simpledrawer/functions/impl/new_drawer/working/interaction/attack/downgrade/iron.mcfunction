@@ -1,5 +1,5 @@
 scoreboard players set #upgrade_success simpledrawer.math 1
-loot give @p[tag=simpledrawer.attacker] loot simpledrawer:items/iron_upgrade
+loot give @p[tag=simpledrawer.attacker] loot simpledrawer:impl/items/iron_upgrade
 
 
 data modify entity @s item.tag.simpledrawer.upgrade set value "wood"
