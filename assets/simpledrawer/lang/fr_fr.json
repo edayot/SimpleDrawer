@@ -1,8 +1,8 @@
 {
     "simpledrawer.name":"SimpleDrawer",
     "simpledrawer.load":"[Chargé SimpleDrawer ",
-    "simpledrawer.drawer.empty":"Drawer Vide",
-    "simpledrawer.drawer.filled":"Drawer Rempli",
+    "simpledrawer.drawer.empty":"Drawer Vide §7(originel)",
+    "simpledrawer.drawer.filled":"Drawer Rempli §7(originel)",
     "simpledrawer.hopper_upgrade":"Amélioration Hopper",
     "simpledrawer.iron_upgrade":"Amélioration Fer",
     "simpledrawer.gold_upgrade":"Amélioration Or",

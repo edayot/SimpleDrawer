@@ -7,6 +7,14 @@ data modify storage simpledrawer:main temp.ItemCraft set from storage simpledraw
 data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.upgrade set from storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer.type
 data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.hopper set from storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer.hopper
 
+execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer{type:"iron"} run data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.iron.maxCount
+execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer{type:"gold"} run data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.gold.maxCount
+execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer{type:"diamond"} run data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.diamond.maxCount
+execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer{type:"star"} run data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.star.maxCount
+execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer{type:"netherite"} run data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].tag.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.netherite.maxCount
+
+
+
 execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer.Item run function simpledrawer:impl/crafts/convertion_filled
 
 data modify storage simpledrawer:main temp.ItemCraft.tag.display.Lore prepend value '{"text":"This drawer as been converted","color":"gray"}'
