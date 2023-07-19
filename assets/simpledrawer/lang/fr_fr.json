@@ -36,7 +36,7 @@
     "simpledrawer.guide.new_drawer":"C'est un bloc qui permet de stocker un seul type d'item, mais 256 en unités",
     "simpledrawer.guide.double_new_drawer":"Pareil que le drawer mais peut stocker 2 types d'items différents",
     "simpledrawer.guide.quadruple_new_drawer":"Pareil que le drawer mais peut stocker 4 types d'items différents",
-    "simpledrawer.guide.upgrade":"Une amélioration permet de modifier le drawer. On les applique en s'accroupissant et en faisant un clic gauche sur le drawer.",
+    "simpledrawer.guide.upgrade":"Une amélioration permet de modifier le drawer. On les applique en s'accroupissant et en faisant un clic gauche sur le drawer. L'ordre d'application des amélioration de stockage doit être celui du guide.",
     "simpledrawer.guide.hopper_upgrade":"Permet d'utiliser les hoppers avec le drawer.",
     "simpledrawer.guide.iron_upgrade":"Augmente la capacité du drawer à 2048 items.",
     "simpledrawer.guide.gold_upgrade":"Augmente la capacité du drawer à 8192 items.",

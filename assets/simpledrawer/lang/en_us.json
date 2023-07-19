@@ -36,7 +36,7 @@
     "simpledrawer.guide.new_drawer":"The drawer is a block that can store 1 item type but up to 256 items.",
     "simpledrawer.guide.double_new_drawer":"Same as the drawer but can store 2 different item types.",
     "simpledrawer.guide.quadruple_new_drawer":"Same as the drawer but can store 4 different item types.",
-    "simpledrawer.guide.upgrade":"An upgrade is an item that can be applied to the drawer to modify its behavior. Apply them by sneaking + left clicking on the drawer.",
+    "simpledrawer.guide.upgrade":"An upgrade is an item that can be applied to the drawer to modify its behavior. Apply them by sneaking + left clicking on the drawer.\n The application order of storage upgrades need to be the same as the guide.",
     "simpledrawer.guide.hopper_upgrade":"Enable hopper capability.",
     "simpledrawer.guide.iron_upgrade":"Increase capacity up to 2048 items.",
     "simpledrawer.guide.gold_upgrade":"Increase capacity up to 8192 items.",
