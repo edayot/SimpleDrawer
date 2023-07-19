@@ -1,0 +1,9 @@
+{
+    "asset_name": "crimson",
+    "description": {
+      "color": "#ffffff",
+      "translate": "crimson"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143008
+  }

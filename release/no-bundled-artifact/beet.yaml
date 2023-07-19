@@ -1,0 +1,12 @@
+extend: ["../../beet.yaml"]
+
+
+output: "build/"
+
+data_pack:
+  name: "datapack"
+  zipped: false
+
+resource_pack:
+  name: "resourcepack"
+  zipped: false

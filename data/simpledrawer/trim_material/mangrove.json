@@ -1,0 +1,9 @@
+{
+    "asset_name": "mangrove",
+    "description": {
+      "color": "#ffffff",
+      "translate": "mangrove"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143006
+  }

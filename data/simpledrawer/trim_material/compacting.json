@@ -1,0 +1,9 @@
+{
+    "asset_name": "compacting",
+    "description": {
+      "color": "#ffffff",
+      "translate": "compacting"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143011
+  }

@@ -14,6 +14,7 @@ execute if block ~ ~ ~ minecraft:furnace[facing=west] run summon glow_item_frame
 
 function simpledrawer:impl/drawer/generate_id
 
+data remove storage simpledrawer:main temp.ItemPlaced
 data modify storage simpledrawer:main temp.ItemPlaced set from block ~ ~ ~ Items[0]
 data remove storage simpledrawer:main temp.ItemPlaced.Slot
 

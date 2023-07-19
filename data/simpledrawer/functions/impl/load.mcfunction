@@ -8,12 +8,15 @@ function simpledrawer:impl/set_version
 
 gamerule maxCommandChainLength 2147483647
 
-forceload add -30000000 1600
-
-schedule function simpledrawer:impl/load_2 2s
 
 #Drawer
-data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:barrier",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
+
+data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430000,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
+data modify storage simpledrawer:main ItemsNBT.double_new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430001,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"double",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.double_new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
+data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430002,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"quadruple",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.quadruple_new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
+
+
 
 
 #Items
@@ -33,30 +36,29 @@ data modify storage simpledrawer:main ItemsNBT.netherite_upgrade set value {id:"
 data modify storage simpledrawer:main ItemsNBT.downgrade_wrench set value {id:"minecraft:jigsaw",Count:1b				,tag:{CustomModelData:1430006,ctc:{id:"downgrade_wrench",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{downgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'}}}
 
 data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:written_book",Count:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"guide",traits:{items:1b}},CustomModelData:1430000,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']},title:"SimpleDrawer Guide",author:"AirDox_",generation:0,pages:[]}} 
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '[{"text":"\\uef01\\n\\n\\n\\n\\n\\n","font":"simpledrawer:font","color":"white"},{"text":"\\uff0a","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Heavy Workbench"}]},"clickEvent":{"action":"change_page","value":"2"}},{"text":"\\uff00","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Drawer"}]},"clickEvent":{"action":"change_page","value":"3"}},{"text":"\\uff02","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.iron_upgrade"}]},"clickEvent":{"action":"change_page","value":"4"}},{"text":"\\uff03\\n\\n\\n","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.gold_upgrade"}]},"clickEvent":{"action":"change_page","value":"5"}},{"text":"\\uff04","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.diamond_upgrade"}]},"clickEvent":{"action":"change_page","value":"6"}},{"text":"\\uff05","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.star_upgrade"}]},"clickEvent":{"action":"change_page","value":"7"}},{"text":"\\uff06","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Netherite"}]},"clickEvent":{"action":"change_page","value":"8"}},{"text":"\\uff01\\n\\n\\n","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.hopper_upgrade"}]},"clickEvent":{"action":"change_page","value":"9"}},{"text":"\\uff07","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"Downgrade Wrench"}]},"clickEvent":{"action":"change_page","value":"10"}},{"text":"\\uff08","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"text":"SimpleDrawer Guide"}]},"clickEvent":{"action":"change_page","value":"11"}},{"text":"      "},{"text":"\\uff09","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","contents":[{"translate":"simpledrawer.guide.message"}]},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/SimpleDrawer/wiki"}}]'
+function simpledrawer:impl/guide/generate
 
-#Warning counting not follow
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef0b","font":"simpledrawer:font","color":"white"}'
 
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef02","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef03","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef04","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef05","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef06","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef07","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef08","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef09","font":"simpledrawer:font","color":"white"}'
-data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{"text":"\\uef0a","font":"simpledrawer:font","color":"white"}'
+function simpledrawer:impl/versioning_items
 
-data modify storage simpledrawer:main ItemsNBT.guide2 set value {id:"minecraft:written_book",Count:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"guide",traits:{items:1b}},CustomModelData:1430000,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']},title:"SimpleDrawer Guide",author:"AirDox_",generation:0,pages:[]}} 
 
-data modify storage simpledrawer:main ItemsNBT.guide2.tag.pages append value '{"text":"yolor","hoverEvent":{"action":"show_item","contents":{"id":"minecraft:stone","count":1}}}'
 
 
 scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
 scoreboard objectives add simpledrawer.drawer.Count dummy
 scoreboard objectives add simpledrawer.drawer.maxCount dummy
+
+scoreboard objectives add simpledrawer.new_drawer.id dummy
+scoreboard objectives add simpledrawer.new_drawer.part_id dummy
+scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
+
+# Versioning block for future updates
+scoreboard objectives add simpledrawer.block.major dummy
+scoreboard objectives add simpledrawer.block.minor dummy
+scoreboard objectives add simpledrawer.block.patch dummy
+
+
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
@@ -69,8 +71,31 @@ scoreboard players enable @a simpledrawer.config
 scoreboard objectives add simpledrawer.config.output_mode dummy
 scoreboard objectives add simpledrawer.config.input_mode dummy
 
-execute unless score #configure simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
+scoreboard players set #9 simpledrawer.math 9
+scoreboard players set #81 simpledrawer.math 81
+scoreboard players set #10 simpledrawer.math 10
+scoreboard players set #100 simpledrawer.math 100
+scoreboard players set #1000 simpledrawer.math 1000
+scoreboard players set #10000 simpledrawer.math 10000
+scoreboard players set #100000 simpledrawer.math 100000
+scoreboard players set #1000000 simpledrawer.math 1000000
+scoreboard players set #10000000 simpledrawer.math 10000000
+scoreboard players set #100000000 simpledrawer.math 100000000
+scoreboard players set #1000000000 simpledrawer.math 1000000000
 
+
+execute unless score #configured simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
+
+
+advancement revoke @a only simpledrawer:impl/interact
+advancement revoke @a only simpledrawer:impl/attack
+advancement revoke @a only simpledrawer:impl/click
+advancement revoke @s only simpledrawer:impl/compacting/attack
+advancement revoke @s only simpledrawer:impl/compacting/interact
 
 
 schedule function simpledrawer:impl/tick 1t replace
+schedule function simpledrawer:impl/5tick 5t replace
+schedule function simpledrawer:impl/20tick 20t replace
+
+function simpledrawer:impl/mc_version_warning

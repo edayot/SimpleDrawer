@@ -1,13 +1,8 @@
 extend: [beet.yaml]
 
 pipeline:
-  -
-    resource_pack:
-      load: ["release/included/*"]
-    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+  - airdox_.load_included
 
-  -
-    data_pack:
-      load: ["release/included/*"]
-    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+meta:
+  load_included_path: ["./release/included"]
 

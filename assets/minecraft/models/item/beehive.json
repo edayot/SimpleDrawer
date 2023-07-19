@@ -1,6 +1,10 @@
 {
     "parent": "minecraft:block/beehive",
     "overrides":[
+
+
+
+
         {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:block/drawer/drawer_wood_"},
         {"predicate":{"custom_model_data":1430001},"model":"simpledrawer:block/drawer/drawer_wood_tapped"},
         {"predicate":{"custom_model_data":1430002},"model":"simpledrawer:block/drawer/drawer_wood__hopper"},
@@ -30,7 +34,6 @@
         {"predicate":{"custom_model_data":1430021},"model":"simpledrawer:block/drawer/drawer_netherite_tapped"},
         {"predicate":{"custom_model_data":1430022},"model":"simpledrawer:block/drawer/drawer_netherite__hopper"},
         {"predicate":{"custom_model_data":1430023},"model":"simpledrawer:block/drawer/drawer_netherite_tapped_hopper"}
-
 
 
     ]

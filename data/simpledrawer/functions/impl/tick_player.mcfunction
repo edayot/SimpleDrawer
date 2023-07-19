@@ -1,4 +1,3 @@
-clear @s stone{simpledrawer:{gui:1b}}
 scoreboard players remove @s[scores={simpledrawer.player.output_cooldown=1..}] simpledrawer.player.output_cooldown 1
 scoreboard players remove @s[scores={simpledrawer.player.input_cooldown=1..}] simpledrawer.player.input_cooldown 1
 
@@ -15,9 +14,13 @@ execute if score @s simpledrawer.config matches 7 run scoreboard players set @s 
 
 
 
-execute if score @s simpledrawer.config matches 1.. run advancement grant @s only simpledrawer:display/config/config
+#execute if score @s simpledrawer.config matches 1.. run advancement grant @s only simpledrawer:display/config/config
 execute if score @s simpledrawer.config matches 1.. run scoreboard players enable @s simpledrawer.config
 execute if score @s simpledrawer.config matches 1.. run scoreboard players set @s simpledrawer.config 0
 
 
 execute if score @s simpledrawer.nb_click matches 32.. run advancement grant @s only simpledrawer:display/config/32_usage
+
+
+
+

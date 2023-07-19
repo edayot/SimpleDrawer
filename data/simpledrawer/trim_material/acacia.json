@@ -1,0 +1,9 @@
+{
+    "asset_name": "acacia",
+    "description": {
+      "color": "#ffffff",
+      "translate": "acacia"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143004
+  }

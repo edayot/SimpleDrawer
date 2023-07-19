@@ -6,7 +6,7 @@ data modify storage simpledrawer:main temp.ItemInput set from entity @s Selected
 
 scoreboard players set #already simpledrawer.math 0
 
-execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:impl/drawer/click/search
+execute as @e[type=glow_item_frame,sort=nearest,predicate=!simpledrawer:impl/not_rotated,distance=..7,tag=simpledrawer.drawer.item] at @s run function simpledrawer:impl/drawer/click/search
 
 scoreboard players operation #last_id simpledrawer.math = @e[tag=simpledrawer.selected,limit=1] simpledrawer.id
 execute unless score @s simpledrawer.player.last_id = #last_id simpledrawer.math run function simpledrawer:impl/drawer/click/reset_cooldown
@@ -20,7 +20,7 @@ scoreboard players set #sneaking simpledrawer.math 0
 execute store success score #exist simpledrawer.math if entity @e[tag=simpledrawer.selected]
 execute store success score #exist_filled simpledrawer.math if entity @e[tag=simpledrawer.selected,tag=simpledrawer.drawer.filled]
 execute store success score #filled_hand simpledrawer.math if data storage simpledrawer:main temp.ItemInput
-execute store success score #sneaking simpledrawer.math if entity @s[predicate=simpledrawer:sneaking]
+execute store success score #sneaking simpledrawer.math if entity @s[predicate=simpledrawer:impl/sneaking]
 
 #Upgrade and downgrade system
 execute if score #already simpledrawer.math matches 0 if score #exist simpledrawer.math matches 1 if score #sneaking simpledrawer.math matches 1 if data storage simpledrawer:main temp.ItemInput.tag.simpledrawer.downgrade run function simpledrawer:impl/drawer/working/repart/downgrade

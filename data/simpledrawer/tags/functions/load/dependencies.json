@@ -1,8 +1,20 @@
 {
     "values": [
-		"#itemio:load",
-		"#smithed.crafter:load",
-        "#smithed.custom_block:load",
-        "#smithed.actionbar:load"
+        {
+            "id": "#itemio:load",
+            "required": false
+        },
+        {
+            "id": "#smithed.crafter:load",
+            "required": false
+        },
+        {
+            "id": "#smithed.custom_block:load",
+            "required": false
+        },
+        {
+            "id": "#smithed.actionbar:load",
+            "required": false
+        }
     ]
 }

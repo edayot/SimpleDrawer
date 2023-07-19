@@ -1,0 +1,18 @@
+extend: ["../../beet.yaml"]
+
+output: "../../build/"
+
+data_pack:
+  name: "datapack-bundled"
+  zipped: false
+
+resource_pack:
+  name: "resourcepack-bundled"
+  zipped: false
+
+
+pipeline:
+  - airdox_.load_included
+
+meta:
+  load_included_path: ["./release/included"]

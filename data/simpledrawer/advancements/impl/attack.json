@@ -1,0 +1,16 @@
+{
+	"criteria": {
+	  "requirement": {
+		"trigger": "minecraft:player_hurt_entity",
+		"conditions": {
+		  "entity": {
+			"nbt": "{Tags:[\"simpledrawer.new_drawer.part.interaction\"]}"
+		  }
+		}
+	  }
+	},
+	"rewards": {
+	  "function": "simpledrawer:impl/calls/new_drawer/working/interaction/attack"
+	}
+  }
+  

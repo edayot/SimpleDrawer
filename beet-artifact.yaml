@@ -1,0 +1,21 @@
+
+broadcast: [release/all-bundled-artifact, release/no-bundled-artifact]
+extend: [beet.yaml]
+
+data_pack:
+  description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - __git_hash__ - Datapack"
+
+resource_pack:
+  description: "{{ project_description }}\n by {{ project_author }}, v{{ project_version }} - __git_hash__ - Resourcepack"
+
+
+output: ../../build
+meta:
+  find_replace:
+    substitute:
+      - data_pack:
+          match:
+            functions: "{{ project_id }}:*"
+        substitute:
+          - find: "__version__"
+            replace: "v{{ project_version }} - __git_hash__"

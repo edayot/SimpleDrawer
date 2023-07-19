@@ -1,0 +1,9 @@
+{
+    "asset_name": "cherry",
+    "description": {
+      "color": "#ffffff",
+      "translate": "cherry"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143007
+  }

@@ -2,9 +2,9 @@
 
 data modify storage simpledrawer:main temp.type set from entity @s Item.tag.simpledrawer.type
 
-execute if data storage simpledrawer:main temp{type:"wood"} run scoreboard players set @s simpledrawer.drawer.maxCount 256
-execute if data storage simpledrawer:main temp{type:"iron"} run scoreboard players set @s simpledrawer.drawer.maxCount 2048
-execute if data storage simpledrawer:main temp{type:"gold"} run scoreboard players set @s simpledrawer.drawer.maxCount 8192
-execute if data storage simpledrawer:main temp{type:"diamond"} run scoreboard players set @s simpledrawer.drawer.maxCount 65536
-execute if data storage simpledrawer:main temp{type:"star"} run scoreboard players set @s simpledrawer.drawer.maxCount 1048576
-execute if data storage simpledrawer:main temp{type:"netherite"} run scoreboard players set @s simpledrawer.drawer.maxCount 1073741824
+execute if data storage simpledrawer:main temp{type:"wood"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.wood.maxCount
+execute if data storage simpledrawer:main temp{type:"iron"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.iron.maxCount
+execute if data storage simpledrawer:main temp{type:"gold"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.gold.maxCount
+execute if data storage simpledrawer:main temp{type:"diamond"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.diamond.maxCount
+execute if data storage simpledrawer:main temp{type:"star"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.star.maxCount
+execute if data storage simpledrawer:main temp{type:"netherite"} store result score @s simpledrawer.drawer.maxCount run data get storage simpledrawer:main drawer_type.netherite.maxCount

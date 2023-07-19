@@ -1,0 +1,9 @@
+{
+    "asset_name": "oak",
+    "description": {
+      "color": "#ffffff",
+      "translate": "oak"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143000
+  }

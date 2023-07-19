@@ -1,87 +1,89 @@
+
+
+
+import yaml
+import requests
 import json
 import os
-from typing import Any
 
-import requests
-import yaml
+try: 
+    SMITHED_UID = os.environ['SMITHED_UID']
+    SMITHED_TOKEN = os.environ['SMITHED_TOKEN']
+    beet = yaml.safe_load(open("beet.yaml"))
+except KeyError:
+    try:
+        with open("credentials.json", "r") as f:
+            creds = json.load(f)
+        SMITHED_UID = creds['SMITHED_UID']
+        SMITHED_TOKEN = creds['SMITHED_TOKEN']
+        beet = yaml.safe_load(open("../../beet.yaml"))
+    except:
+        print("Missing credentials")
+        exit(1)
 
-print("Hello World")
-print(os.environ["SMITHED_UID"])
-print(os.environ["CURRENT_VERSION"])
 
-"""
-try:
-	uid=os.environ["SMITHED_UID"]
-	token=os.environ["SMITHED_TOKEN"]
-	current_version = os.environ("CURRENT_VERSION")
-except:
-	uid="UID"
-	token="TOKEN"
-	current_version="1.0.0"
+print(beet)
+
+CURRENT_VERSION=beet['version']
+
 
 
 post_url = (
-    "https://api.smithed.dev/addUserPackVersion?"
-    f"uid={uid}"
-    "&pack={pack}"
-    "&version={version}"
-    f"&token={token}"
+    "https://api.smithed.dev/v2/packs/"
+    f"{beet['id']}/versions"
+    f"?token={SMITHED_TOKEN}"
+    f"&version={CURRENT_VERSION}"
 )
+
+
 download_url = (
-	"https://github.com/edayot/"
-	"{name}/releases/download/{current_version}/{name}-{current_version}-{type}.zip?raw=true"
+    "https://github.com/edayot/"
+    f"{beet['name']}/releases/download/"
+    f"v{CURRENT_VERSION}/"
+    f"{beet['name']}-v{CURRENT_VERSION}-"
+    "{ziptype}.zip"
 )
 
-headers = {"Content-Type": "application/json"}
+try:
+    dep_no = beet['meta']['smithed_dependencies']
+except KeyError:
+    dep_no = []
 
-payload: Any ={
-        "name": "",
-        "breaking": False,
-        "downloads": {"datapack": ""},
-        "supports": [],
-        "dependencies": [],
-    }
-
+dep = []
+for i in dep_no:
+    dep.append({"id":i["id"],"version":i["version"]})
 
 
-# Post to smithed
 
-beet = yaml.safe_load(open("../../beet.yaml"))
+pack_version = {
+  "name": CURRENT_VERSION,
+  "downloads": {},
+  "supports": beet['meta']['mc_supports'],
+  "dependencies": dep,
+}
 
-
-payload["name"] = current_version
-
-payload["downloads"]["datapack"] = download_url.format(
-        name=beet["name"],
-        current_version=current_version,
-        type="Datapack",
-    )
+if "data_pack" in beet:
+    pack_version["downloads"]["datapack"] = download_url.format(ziptype="Datapack")
+else:
+    pack_version["downloads"]["datapack"] = ""
 if "resource_pack" in beet:
-	payload["downloads"]["resourcepack"] = download_url.format(
-        name=beet["name"],
-        current_version=current_version,
-        type="Resourcepack",
-    )
+    pack_version["downloads"]["resourcepack"] = download_url.format(ziptype="Resourcepack")
+else:
+    pack_version["downloads"]["resourcepack"] = ""
 
-payload["supports"] = ["1.19"]
 
-payload["dependencies"] = [
-	{"id": f"{dependency}", "version": version}
-	for dependency, version in beet.get("meta", {}).get("smithed_dependencies", {}).items()
-]
-
-pack = beet["id"]
-version = current_version
-
-resp = requests.post(
-	url=post_url.format(pack=pack, version=version),
-	headers={"Content-Type": "application/json"},
-	data=json.dumps({"data": payload}),
+response = requests.post(
+    url=post_url,
+    headers={"Content-Type": "application/json"},
+    data=json.dumps({"data": pack_version})
 )
 
-if resp.status_code != 200:
-	print(f"{resp.status_code=} ⚠️ UPLOAD ERROR ⚠️")
-	print(f"{pack=} {version=}")
-	print(f"{payload=}")
+print("PACK_VERSION:")
+# print indented pack_version
+print(json.dumps({"pack_version": pack_version}["pack_version"], indent=4))
 
-"""
+
+
+# print response
+print("RESPONSE:")
+print(response.text)

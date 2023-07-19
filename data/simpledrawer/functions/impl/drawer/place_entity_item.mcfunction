@@ -1,3 +1,9 @@
+# Versioning (for future use)
+
+scoreboard players operation @s simpledrawer.block.major = #simpledrawer.major load.status
+scoreboard players operation @s simpledrawer.block.minor = #simpledrawer.minor load.status
+scoreboard players operation @s simpledrawer.block.patch = #simpledrawer.patch load.status
+
 
 
 tag @s add simpledrawer.block
@@ -7,7 +13,7 @@ tag @s add simpledrawer.drawer
 tag @s add global.ignore
 
 
-
+data modify storage simpledrawer:main temp.ItemPlaced.id set value "minecraft:barrier"
 data modify entity @s Item set from storage simpledrawer:main temp.ItemPlaced
 
 execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item run tag @s add simpledrawer.drawer.filled

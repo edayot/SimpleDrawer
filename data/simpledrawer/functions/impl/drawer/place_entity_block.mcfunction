@@ -1,3 +1,9 @@
+# Versioning (for future use)
+
+scoreboard players operation @s simpledrawer.block.major = #simpledrawer.major load.status
+scoreboard players operation @s simpledrawer.block.minor = #simpledrawer.minor load.status
+scoreboard players operation @s simpledrawer.block.patch = #simpledrawer.patch load.status
+
 
 
 tag @s add simpledrawer.block
