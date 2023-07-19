@@ -14,7 +14,7 @@ execute if score @s simpledrawer.config matches 7 run scoreboard players set @s 
 
 
 
-execute if score @s simpledrawer.config matches 1.. run advancement grant @s only simpledrawer:display/config/config
+#execute if score @s simpledrawer.config matches 1.. run advancement grant @s only simpledrawer:display/config/config
 execute if score @s simpledrawer.config matches 1.. run scoreboard players enable @s simpledrawer.config
 execute if score @s simpledrawer.config matches 1.. run scoreboard players set @s simpledrawer.config 0
 
@@ -24,4 +24,3 @@ execute if score @s simpledrawer.nb_click matches 32.. run advancement grant @s 
 
 
 
-execute if predicate simpledrawer:impl/sneaking at @s positioned ^ ^ ^2 as @e[tag=simpledrawer.new_drawer.base,limit=1,sort=nearest,distance=..3,predicate=simpledrawer:impl/test_version] run function simpledrawer:impl/new_drawer/base_display_noformat
