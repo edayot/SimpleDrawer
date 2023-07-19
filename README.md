@@ -26,3 +26,5 @@ In creative mod only : you can break the item frame, this will totally break the
 - LanternLoad : https://github.com/LanternMC/load
 
 - ItemIO : https://github.com/edayot/ItemIO
+
+- Minecraft Title Generator (blockbench plugin) : https://ewanhowell.com/plugins/minecraft-title-generator/
