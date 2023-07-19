@@ -12,11 +12,7 @@ resource_pack:
 
 
 pipeline:
-  -
-    data_pack:
-      load: ["../included/*"]
-    pipeline: ["airdox_.delete_load_tag_and_packpng"]
-  -
-    resource_pack:
-      load: ["../included/*"]
-    pipeline: ["airdox_.delete_load_tag_and_packpng"]
+  - airdox_.load_included
+
+meta:
+  load_included_path: ["./release/included"]
