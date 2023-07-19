@@ -1,6 +1,8 @@
-from beet import Context, TextFile
+from beet import Context, TextFile, ResourcePack, DataPack
 from copy import deepcopy
 from pathlib import PurePath
+from beet.contrib.model_merging import model_merging
+import os
 
 @property
 def modified_suffixes(self):
@@ -23,6 +25,24 @@ def allow_function_without_name(ctx: Context):
     PurePath.suffixes = modified_suffixes
 
                 
+def load_included(ctx: Context):
+    ctx.require(model_merging)
+    for location in ctx.meta["load_included_path"]:
+        for path in os.listdir(location):
+            data=DataPack(path="./release/included/"+path)
+            assets=ResourcePack(path="./release/included/"+path)
+
+
+            if "load:load" in data.function_tags:
+                del data.function_tags["load:load"]
+            if "pack.png" in data.extra:
+                del data.extra["pack.png"]
+            if "pack.png" in assets.extra:
+                del assets.extra["pack.png"]
+            
+            ctx.assets.merge(assets)
+            ctx.data.merge(data)
+
 
 
 
