@@ -3,13 +3,13 @@
     "simpledrawer.load":"[Loaded SimpleDrawer ",
     "simpledrawer.drawer.empty":"Empty Drawer §7(legacy)",
     "simpledrawer.drawer.filled":"Filled Drawer §7(legacy)",
-    "simpledrawer.hopper_upgrade":"Hopper Upgrade",
-    "simpledrawer.iron_upgrade":"Iron Upgrade",
-    "simpledrawer.gold_upgrade":"Gold Upgrade",
-    "simpledrawer.diamond_upgrade":"Diamond Upgrade",
-    "simpledrawer.star_upgrade":"Star Upgrade",
-    "simpledrawer.netherite_upgrade":"Netherite Upgrade",
-    "simpledrawer.downgrade_wrench":"Downgrade Wrench",
+    "simpledrawer.hopper_upgrade":"Hopper upgrade",
+    "simpledrawer.iron_upgrade":"Iron upgrade",
+    "simpledrawer.gold_upgrade":"Gold upgrade",
+    "simpledrawer.diamond_upgrade":"Diamond upgrade",
+    "simpledrawer.star_upgrade":"Star upgrade",
+    "simpledrawer.netherite_upgrade":"Netherite upgrade",
+    "simpledrawer.downgrade_wrench":"Downgrade wrench",
     "simpledrawer.text.of":" of §r",
     "simpledrawer.text.in_total":" in total §r",
     "simpledrawer.text.named":"Named : §r",
@@ -54,7 +54,12 @@
     "simpledrawer.guide.drawers.inserting_title":"Inserting : \n\n",
     "simpledrawer.guide.drawers.extracting_title":"Extracting : \n\n",
     "simpledrawer.guide.drawers.inserting":"Just right click on the drawer with the item you want to insert. Sneaking will insert a full stack and with a empty hand you will insert all items from your inventory.",
-    "simpledrawer.guide.drawers.extracting":"Just left click on the drawer to extract one item. Sneaking will extract a full stack."
+    "simpledrawer.guide.drawers.extracting":"Just left click on the drawer to extract one item. Sneaking will extract a full stack.",
+    "simpledrawer.iron_tier":"Iron tier",
+    "simpledrawer.gold_tier":"Gold tier",
+    "simpledrawer.diamond_tier":"Diamond tier",
+    "simpledrawer.star_tier":"Star tier",
+    "simpledrawer.netherite_tier":"Netherite tier"
 
     
     

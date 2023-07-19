@@ -3,12 +3,12 @@
     "simpledrawer.load":"[Chargé SimpleDrawer ",
     "simpledrawer.drawer.empty":"Drawer Vide §7(originel)",
     "simpledrawer.drawer.filled":"Drawer Rempli §7(originel)",
-    "simpledrawer.hopper_upgrade":"Amélioration Hopper",
-    "simpledrawer.iron_upgrade":"Amélioration Fer",
-    "simpledrawer.gold_upgrade":"Amélioration Or",
-    "simpledrawer.diamond_upgrade":"Amélioration Diamant",
-    "simpledrawer.star_upgrade":"Amélioration Étoile",
-    "simpledrawer.netherite_upgrade":"Amélioration Netherite",
+    "simpledrawer.hopper_upgrade":"Amélioration hopper",
+    "simpledrawer.iron_upgrade":"Amélioration fer",
+    "simpledrawer.gold_upgrade":"Amélioration or",
+    "simpledrawer.diamond_upgrade":"Amélioration diamant",
+    "simpledrawer.star_upgrade":"Amélioration étoile",
+    "simpledrawer.netherite_upgrade":"Amélioration netherite",
     "simpledrawer.downgrade_wrench":"Clé de rétrogradation",
     "simpledrawer.text.of":" de §r",
     "simpledrawer.text.in_total":" au total §r",
@@ -55,6 +55,12 @@
     "simpledrawer.guide.drawers.inserting_title":"Insertion : \n\n",
     "simpledrawer.guide.drawers.extracting_title":"Extraction : \n\n",
     "simpledrawer.guide.drawers.inserting":"Faite un clic droit sur le drawer pour insérer un item. S'accroupir permet d'insérer un stack entier et avec une main vide, insère tout les items de l'inventaire.",
-    "simpledrawer.guide.drawers.extracting":"Faite un clic gauche sur le drawer pour extraire un item. S'accroupir permet d'extraire un stack entier."
+    "simpledrawer.guide.drawers.extracting":"Faite un clic gauche sur le drawer pour extraire un item. S'accroupir permet d'extraire un stack entier.",
+
+    "simpledrawer.iron_tier":"Tier Fer",
+    "simpledrawer.gold_tier":"Tier Or",
+    "simpledrawer.diamond_tier":"Tier Diamant",
+    "simpledrawer.star_tier":"Tier Etoile",
+    "simpledrawer.netherite_tier":"Tier Netherite"
 
 }
