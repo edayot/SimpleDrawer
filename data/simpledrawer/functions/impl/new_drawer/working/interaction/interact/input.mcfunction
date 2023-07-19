@@ -22,3 +22,6 @@ execute as @e[tag=simpledrawer.new_drawer.part.base,predicate=simpledrawer:impl/
 
 execute if score #success simpledrawer.io matches 1 run function simpledrawer:impl/new_drawer/working/interaction/interact/remove_count
 execute if score #success simpledrawer.io matches ..0 run function simpledrawer:impl/new_drawer/working/interaction/interact/error
+
+execute if score #success simpledrawer.io matches -2 run function simpledrawer:impl/new_drawer/working/interaction/interact/full_advancement
+
