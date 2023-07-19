@@ -28,7 +28,7 @@ meta:
         type: "normal"
         prefix: "#smithed.crafter."
 
-    - id: "smithed:custom_block"
+    - id: "smithed:custom-block"
       version_: "0.2.0"
       versioning:
         type: "normal"
