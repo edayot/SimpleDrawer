@@ -6,6 +6,8 @@ data modify storage simpledrawer:main temp.dropped_item set from storage simpled
 
 data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer set from entity @s item.tag.simpledrawer
 
+data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer
+
 function simpledrawer:impl/new_drawer/destroy_variant
 
 

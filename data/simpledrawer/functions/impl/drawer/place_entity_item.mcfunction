@@ -13,7 +13,7 @@ tag @s add simpledrawer.drawer
 tag @s add global.ignore
 
 
-
+data modify storage simpledrawer:main temp.ItemPlaced.id set value "minecraft:barrier"
 data modify entity @s Item set from storage simpledrawer:main temp.ItemPlaced
 
 execute if data storage simpledrawer:main temp.ItemPlaced.tag.simpledrawer.Item run tag @s add simpledrawer.drawer.filled

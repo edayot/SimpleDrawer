@@ -19,6 +19,17 @@ execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[
 
 data modify storage simpledrawer:main temp.ItemCraft.tag.display.Lore prepend value '{"text":"This drawer as been converted","color":"gray"}'
 
+
+data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main temp.ItemCraft
+data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer
+
+function simpledrawer:impl/new_drawer/destroy_variant
+
+
+
+
+data modify storage simpledrawer:main temp.ItemCraft set from storage simpledrawer:main temp.dropped_item
+
 loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer_craft
 
 
