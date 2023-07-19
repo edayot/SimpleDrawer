@@ -17,7 +17,6 @@ execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[
 
 execute if data storage smithed.crafter:main root.temp.shapeless_crafting_input[0].tag.BlockEntityTag.Items[0].tag.simpledrawer.Item run function simpledrawer:impl/crafts/convertion_filled
 
-data modify storage simpledrawer:main temp.ItemCraft.tag.display.Lore prepend value '{"text":"This drawer as been converted","color":"gray"}'
 
 
 data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main temp.ItemCraft
