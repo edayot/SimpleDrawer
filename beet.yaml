@@ -17,7 +17,7 @@ pipeline:
   - simpledrawer.add_versioning_to_items
   - airdox_.test_load_generator
 
-extend: "@airdox_/common.yaml"
+extend: "common.yaml"
 
 meta:
   mc_supports: ["1.20","1.20.1"]
