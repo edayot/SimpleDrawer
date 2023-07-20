@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.9.1 (2023-07-20)
+
+### Fix
+
+* Hopper upgrade is now display in the drawer Lore ([`dc8ef9a`](https://github.com/edayot/SimpleDrawer/commit/dc8ef9a3ea45950e37b7378a94444d504501d438))
+
 ## v1.9.0 (2023-07-19)
 
 ### Feature
