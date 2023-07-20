@@ -5,6 +5,7 @@ import yaml
 import requests
 import json
 import os
+import sys
 
 try: 
     SMITHED_UID = os.environ['SMITHED_UID']
@@ -87,3 +88,8 @@ print(json.dumps({"pack_version": pack_version}["pack_version"], indent=4))
 # print response
 print("RESPONSE:")
 print(response.text)
+
+
+if not response.ok:
+    print("Error: " + response.text)
+    sys.exit(1)
