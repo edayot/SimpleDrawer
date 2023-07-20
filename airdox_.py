@@ -1,4 +1,4 @@
-from beet import Context, TextFile, ResourcePack, DataPack
+from beet import Context, TextFile, ResourcePack, DataPack, JsonFile
 from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
@@ -84,9 +84,9 @@ scoreboard players set #{project_id}.{dep_id}.major load.status {dep_major}
 scoreboard players set #{project_id}.{dep_id}.minor load.status {dep_minor}
 scoreboard players set #{project_id}.{dep_id}.patch load.status {dep_patch}
 
-execute if score {dep_prefix}major load.status = #{project_id}.{dep_id}.major load.status if score {dep_prefix}minor load.status = #{project_id}.{dep_id}.minor load.status if score {dep_prefix}patch load.status >= #{project_id}.{dep_id}.patch load.status run scoreboard players set #{project_id}.{dep_id} load.status 1
+execute if score {dep_prefix}.major load.status = #{project_id}.{dep_id}.major load.status if score {dep_prefix}.minor load.status = #{project_id}.{dep_id}.minor load.status if score {dep_prefix}.patch load.status >= #{project_id}.{dep_id}.patch load.status run scoreboard players set #{project_id}.{dep_id} load.status 1
 
-execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a [{{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"}},{{"text":"Error Loading {project_name}, {dep_name} v","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.patch","objective":"load.status"}},"color":"red"}},{{"text":"+ is required but the installed version is v","color":"red"}},{{"score":{{"name":"{dep_prefix}major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}patch","objective":"load.status"}},"color":"red"}}]
+execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a [{{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"}},{{"text":"Error Loading {project_name}, {dep_name} v","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"#{project_id}.{dep_id}.patch","objective":"load.status"}},"color":"red"}},{{"text":"+ is required but the installed version is v","color":"red"}},{{"score":{{"name":"{dep_prefix}.major","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}.minor","objective":"load.status"}},"color":"red"}},{{"text":".","color":"red"}},{{"score":{{"name":"{dep_prefix}.patch","objective":"load.status"}},"color":"red"}}]
 
 
 """
@@ -106,5 +106,14 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     ctx.data.functions[f"{ctx.project_id}:v{ctx.project_version}/test_load"]=TextFile(function)
     
 
+    # dep functions tag
+    load_dependencies_tag={
+        "values":[]
+    }
+    for dep in ctx.meta["smithed_dependencies"]:
+        load_dependencies_tag["values"].append({"id":"{dep_prefix}:load".format(dep_prefix=dep["versioning"]["prefix"]), "required":False})
+    
+    ctx.data.function_tags["{project_id}:load/dependencies".format(project_id=ctx.project_id)]=JsonFile(load_dependencies_tag)
+        
 
 

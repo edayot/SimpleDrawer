@@ -27,23 +27,23 @@ meta:
       version_: "0.2.0"
       versioning:
         type: "normal"
-        prefix: "#smithed.crafter."
+        prefix: "#smithed.crafter"
 
     - id: "smithed:custom-block"
       version_: "0.2.0"
       versioning:
         type: "normal"
-        prefix: "#smithed.custom_block."
+        prefix: "#smithed.custom_block"
 
     - id: "smithed:actionbar"
       version_: "0.4.1"
       versioning:
         type: "normal"
-        prefix: "#smithed.actionbar."
+        prefix: "#smithed.actionbar"
 
     - id: "airdox_:itemio"
       version_: "0.5.4"
       versioning:
         type: "normal"
-        prefix: "#itemio."
+        prefix: "#itemio"
         
