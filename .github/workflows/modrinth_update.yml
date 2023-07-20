@@ -1,0 +1,12 @@
+on:
+    push:
+      branches: [ master ]
+jobs:
+    modrinth-desc:
+      runs-on: 'ubuntu-latest'
+      steps:
+      - uses: actions/checkout@v3
+      - uses: funnyboy-roks/modrinth-auto-desc@v1.5
+        with:
+          auth-token: ${{ secrets.MODRINTH_AUTH_TOKEN }}
+          slug: 'simpledrawer'

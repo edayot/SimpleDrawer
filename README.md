@@ -14,7 +14,7 @@ Their is also a crafting recipe for the guide :
 This command will give you all items available in the datapack :
 ```/function simpledrawer:give```
 
-In creative mod only : you can break the item frame, this will totally break the drawer.
+In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
 
 # Some sources :
 - StorageDrawer mod (idea and textures) : https://github.com/jaquadro/StorageDrawers
