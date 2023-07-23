@@ -61,3 +61,7 @@ jobs:
             poetry run semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>" --major;
             exit;
           fi
+      - name: Push to Modrinth
+        run: poetry run python .github/workflows/push-to-modrinth.py 
+        env:
+          MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}

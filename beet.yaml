@@ -20,6 +20,7 @@ pipeline:
 extend: "common.yaml"
 
 meta:
+  modrinth_id: "JmCxCKiW"
   mc_supports: ["1.20","1.20.1"]
   mc_supports_dataversion: [3463,3465]
   smithed_dependencies:
