@@ -5,8 +5,29 @@ import json
 import os
 import sys
 from requests_toolbelt.multipart.encoder import MultipartEncoder
+import hashlib
+import time
 
+time.sleep(10)
 
+def get_sha512(file):
+    sha512 = hashlib.sha512()
+    with open(file,"rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            sha512.update(chunk)
+    return sha512.hexdigest()
+
+def post_modrinth_version(data,files):
+    return requests.post(
+        "https://api.modrinth.com/v2/version",
+        headers={
+        "Authorization":MODRINTH_AUTH_TOKEN
+        },
+        data={
+            "data":json.dumps(data)
+        },
+        files=files
+    )
 
 try: 
     MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
@@ -49,26 +70,6 @@ data={
 }
 
 
-"""
-files={}
-for file in release['assets']:
-    if "Bundled" in file['name']:
-        data['file_parts'].append(file["name"])
-
-        
-        # get the file from github
-        r=requests.get(file['browser_download_url'])
-        if r.status_code != 200:
-            print(f"Error downloading {file['name']}")
-            exit(1)
-        files[file['name']] = (file['name'],r.content)
-
-
-
-    if "Datapack" in file['name'] and "Bundled" in file['name']:
-        data['primary_file']=file["name"]
-"""
-
 # check if the directory exists
 build="build"
 if not os.path.isdir("build"):
@@ -87,7 +88,6 @@ for file in os.listdir(build):
 
 
 
-payload=MultipartEncoder(fields=files)
 
 
 #multipart/form-data
@@ -98,15 +98,7 @@ payload=MultipartEncoder(fields=files)
 
 
 
-r=requests.post("https://api.modrinth.com/v2/version",
-    headers={
-        "Authorization":MODRINTH_AUTH_TOKEN
-    },
-    data={
-        "data":json.dumps(data)
-    },
-    files=files
-)
+r=post_modrinth_version(data,files)
  
 try:
     print(r.json())
@@ -115,3 +107,18 @@ except:
 
 if r.status_code != 200:
     exit(1)
+
+
+
+
+# Check hashes
+files_modrinth=r.json()['files']
+
+for file in files_modrinth:
+    if file["hashes"]["sha512"] != get_sha512(os.path.join(build,file["filename"])):
+        print(f"Hashes don't match for {file['filename']}")
+    else:
+        print(f"Hashes match for {file['filename']}")
+            
+# Modify the resource pack file_type to "required-resource-pack"
+
