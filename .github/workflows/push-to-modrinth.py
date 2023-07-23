@@ -108,5 +108,10 @@ r=requests.post("https://api.modrinth.com/v2/version",
     files=files
 )
  
+try:
+    print(r.json())
+except:
+    print(r.text)
 
-
+if r.status_code != 200:
+    exit(1)
