@@ -12,7 +12,9 @@ Their is also a crafting recipe for the guide :
 # Exploring the datapack :
 
 This command will give you all items available in the datapack :
-```/function simpledrawer:give```
+```mcfunction
+function simpledrawer:give
+```
 
 In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
 
