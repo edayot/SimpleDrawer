@@ -9,5 +9,5 @@ docs/
 *.zip
 !release/included/*.zip
 !release/included/none/pack.mcmeta
-
+README.bbcode
 build
