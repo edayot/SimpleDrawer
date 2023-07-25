@@ -1,13 +1,16 @@
 ![Banner](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png)
 
-A simple datapack that add drawer to minecraft.
+A simple datapack that addq drawer to minecraft.
 
 
 The most important item of the datapack is the guide, every player will receive it when joining the world for the first time.
 
-Their is also a crafting recipe for the guide :
+There is also a crafting recipe for the guide :
 
 ![Guide](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/craft_guide.png) ![Guide](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/result_guide.png)
+
+## ⚠ Warning the datapack has to be loaded at the world start (or server start)! (If not, you will have unmatching textures)
+
 
 # Exploring the datapack :
 
