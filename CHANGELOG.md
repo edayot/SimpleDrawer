@@ -1,5 +1,13 @@
 <!--next-version-placeholder-->
 
+## v1.9.2 (2023-07-26)
+
+### Fix
+
+* Console error fix ([`839ec69`](https://github.com/edayot/SimpleDrawer/commit/839ec6991dbe99fa959e3d16479ee9e2ea0925a7))
+* Legacy drawer Lore updated ([`d5c4165`](https://github.com/edayot/SimpleDrawer/commit/d5c4165efd1a6ab2c1dd102c9c9c3e81978bdd18))
+* Spelling ([`e09bdf4`](https://github.com/edayot/SimpleDrawer/commit/e09bdf419d81a8ae2df91787b8abba40d2ec03c9))
+
 ## v1.9.1 (2023-07-20)
 
 ### Fix
