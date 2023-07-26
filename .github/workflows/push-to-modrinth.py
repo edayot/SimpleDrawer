@@ -33,7 +33,7 @@ try:
     MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
 except KeyError:
     try:
-        with open("credentials.json", "r") as f:
+        with open(".github/workflows/credentials.json", "r") as f:
             creds = json.load(f)
         MODRINTH_AUTH_TOKEN = creds['MODRINTH_AUTH_TOKEN']
     except:
@@ -72,7 +72,6 @@ data={
 
 # check if the directory exists
 build="build"
-print(os.listdir("."))
 files={}
 for file in os.listdir(build):
     if "Bundled" in file:
