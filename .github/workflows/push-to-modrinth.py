@@ -72,9 +72,7 @@ data={
 
 # check if the directory exists
 build="build"
-if not os.path.isdir("build"):
-    build="../../build"
-
+print(os.listdir("."))
 files={}
 for file in os.listdir(build):
     if "Bundled" in file:
