@@ -12,6 +12,7 @@ python = "^3.10"
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
 python-semantic-release = "^7.32.2"
 cryptography = "^41.0.0"
+beet= "^0.89.1"
 
 [tool.semantic_release]
 major_on_zero = false
