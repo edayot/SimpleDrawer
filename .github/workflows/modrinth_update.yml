@@ -1,3 +1,4 @@
+name: 'Modrinth Auto Description'
 on:
     push:
       branches: [ master ]
