@@ -62,7 +62,9 @@
     "simpledrawer.diamond_tier":"Tier Diamant",
     "simpledrawer.star_tier":"Tier Etoile",
     "simpledrawer.netherite_tier":"Tier Netherite",
-    "simpledrawer.hopper_tier":"Amélioré Hopper"
+    "simpledrawer.hopper_tier":"Amélioré Hopper",
+    "simpledrawer.outdated_drawer": "Ce drawer est obsolète, il va continuer à fonctionner.",
+    "simpledrawer.outdated_drawer_craft":"Il peut être mis à jour en le mettant dans une Heavy Workbench."
 
 
 }

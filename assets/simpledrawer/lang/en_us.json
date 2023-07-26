@@ -60,7 +60,10 @@
     "simpledrawer.diamond_tier":"Diamond tier",
     "simpledrawer.star_tier":"Star tier",
     "simpledrawer.netherite_tier":"Netherite tier",
-    "simpledrawer.hopper_tier":"Hopper upgraded"
+    "simpledrawer.hopper_tier":"Hopper upgraded",
+    "simpledrawer.outdated_drawer": "This drawer is outdated, it will continue to work fine.",
+    "simpledrawer.outdated_drawer_craft": "You can update it by putting it in a Heavy Workbench."
+
 
     
     

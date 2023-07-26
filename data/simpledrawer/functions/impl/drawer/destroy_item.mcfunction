@@ -17,6 +17,10 @@ execute if entity @s[tag=simpledrawer.drawer.filled] run function simpledrawer:i
 execute store result storage simpledrawer:main temp.dropped_item.tag.CustomModelData int 1 run scoreboard players get #model simpledrawer.math
 
 
+data remove storage simpledrawer:main temp.dropped_item.tag.display.Lore[-1]
+data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore append value '{"translate":"simpledrawer.outdated_drawer","color":"gray","italic":true}'
+data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore append value '{"translate":"simpledrawer.outdated_drawer_craft","color":"gray","italic":true}'
+data modify storage simpledrawer:main temp.dropped_item.tag.display.Lore append value '{"translate":"simpledrawer.name","color":"blue","italic":true}'
 
 
 
