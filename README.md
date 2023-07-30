@@ -1,6 +1,6 @@
 ![Banner](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png)
 
-A simple datapack that addq drawer to minecraft.
+A simple datapack that addq drawer to minecraft !
 
 
 The most important item of the datapack is the guide, every player will receive it when joining the world for the first time.
