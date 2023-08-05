@@ -23,6 +23,7 @@ upload_to_release = true
 version_toml = "pyproject.toml:tool.poetry.version"
 version_pattern = "beet.yaml:(?<=version: \")(\\d+\\.\\d+\\.\\d+)"
 version_source = "commit"
+remove_dist = false
 
 [build-system]
 requires = ["poetry-core"]
