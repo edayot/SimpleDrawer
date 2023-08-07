@@ -1,6 +1,5 @@
 extend: ["../../beet.yaml"]
 
-
 output: "build/"
 
 data_pack:

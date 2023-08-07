@@ -3,6 +3,8 @@ from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
 import os
+import json
+import requests
 
 @property
 def modified_suffixes(self):
@@ -25,23 +27,6 @@ def allow_function_without_name(ctx: Context):
     PurePath.suffixes = modified_suffixes
 
                 
-def load_included(ctx: Context):
-    ctx.require(model_merging)
-    for location in ctx.meta["load_included_path"]:
-        for path in os.listdir(location):
-            data=DataPack(path="./release/included/"+path)
-            assets=ResourcePack(path="./release/included/"+path)
-
-
-            if "load:load" in data.function_tags:
-                del data.function_tags["load:load"]
-            if "pack.png" in data.extra:
-                del data.extra["pack.png"]
-            if "pack.png" in assets.extra:
-                del assets.extra["pack.png"]
-            
-            ctx.assets.merge(assets)
-            ctx.data.merge(data)
 
 
 
@@ -116,4 +101,63 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     ctx.data.function_tags["{project_id}:load/dependencies".format(project_id=ctx.project_id)]=JsonFile(load_dependencies_tag)
         
 
+
+def cache_dependencies(ctx: Context):
+    "Injecting cache_dependencies"
+    download_url = (
+        "https://api.smithed.dev/v2/download"
+        "?pack={pack_id}@{pack_version}"
+        "&mode={mode}"
+    )
+    if not "airdox_" in ctx.cache.json:
+        ctx.cache.json["airdox_"]={
+            "list_dep":[],
+        }
+
+    list_dep=list()
+    for dep in ctx.meta["smithed_dependencies"]:
+        list_dep.append(f"{dep['id']}@{dep['version_']}")
+    
+      
+    for dep in list_dep:
+        if dep not in ctx.cache.json["airdox_"]["list_dep"]:
+            print(f"Downloading {dep}")
+            ctx.cache.json["airdox_"]["list_dep"].append(dep)
+            dep_full_id,dep_version=dep.split("@")
+            dep_author,dep_id=dep_full_id.split(":")
+            datapack=requests.get(download_url.format(pack_id=dep_id,pack_version=dep_version,mode="datapack"))
+            resourcepack=requests.get(download_url.format(pack_id=dep_id,pack_version=dep_version,mode="resourcepack"))
+
+            try:
+                os.mkdir(f"{ctx.cache.path}/airdox_")
+                os.mkdir(f"{ctx.cache.path}/airdox_/dep")
+            except:
+                pass
+            with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_datapack.zip","wb") as f:
+                f.write(datapack.content)
+            with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_resourcepack.zip","wb") as f:
+                f.write(resourcepack.content)
+
+            
+            
+            
+            
+
+def load_included(ctx: Context):
+    ctx.require(model_merging)
+    
+    for dep in ctx.meta["smithed_dependencies"]: 
+        identifier=f"{dep['id']}@{dep['version_']}"
+        data=DataPack(path=f"{ctx.cache.path}/airdox_/dep/{identifier}_datapack.zip")
+        assets=ResourcePack(path=f"{ctx.cache.path}/airdox_/dep/{identifier}_resourcepack.zip")
+
+        if "load:load" in data.function_tags:
+            del data.function_tags["load:load"]
+        if "pack.png" in data.extra:
+            del data.extra["pack.png"]
+        if "pack.png" in assets.extra:
+            del assets.extra["pack.png"]
+        
+        ctx.assets.merge(assets)
+        ctx.data.merge(data)
 
