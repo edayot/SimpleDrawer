@@ -40,7 +40,7 @@ function ./material/iron:
 
     scoreboard players set #nugget_in_ingot simpledrawer.io 9
 
-    scoreboard players set #hide_nugget simpledrawer.io 0
+    scoreboard players set @s simpledrawer.hide_nugget 0
     # 0: show, 1: hide, used for redstone block
 
     data modify storage simpledrawer:io material set value {
@@ -73,7 +73,7 @@ function ./material/redstone:
 
     scoreboard players set #nugget_in_ingot simpledrawer.io 1
 
-    scoreboard players set #hide_nugget simpledrawer.io 1
+    scoreboard players set @s simpledrawer.hide_nugget 1
     # 0: show, 1: hide, used for redstone block
 
     data modify storage simpledrawer:io material set value {

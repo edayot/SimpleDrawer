@@ -67,11 +67,11 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items:
 
     scoreboard players set #search_slot simpledrawer.math 2
     execute 
-        if score #hide_nugget simpledrawer.io matches 0
+        if score @s simpledrawer.hide_nugget matches 0
         at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main items_display.nugget
 
     execute
-        if score #hide_nugget simpledrawer.io matches 1
+        if score @s simpledrawer.hide_nugget matches 1
         at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
 
 

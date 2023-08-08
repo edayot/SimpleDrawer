@@ -88,6 +88,7 @@ scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
 scoreboard objectives add simpledrawer.player.last_id dummy
 scoreboard objectives add simpledrawer.nb_click dummy
+scoreboard objectives add simpledrawer.hide_nugget dummy
 
 scoreboard objectives add simpledrawer.config trigger
 scoreboard players enable @a simpledrawer.config

@@ -43,7 +43,9 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 
 
-
+scoreboard players operation #temp_hide simpledrawer.math = @s simpledrawer.hide_nugget
+scoreboard players set #has_material simpledrawer.math 0
+execute unless data entity @s item.tag.simpledrawer{current_material:"none"} run scoreboard players set #has_material simpledrawer.math 1
 execute at @s as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:impl/search_id_new_drawer,distance=..10] run function simpledrawer:impl/new_drawer/compacting/base_block_display
 
 

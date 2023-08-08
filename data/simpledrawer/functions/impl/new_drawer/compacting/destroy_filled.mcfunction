@@ -1,4 +1,4 @@
-scoreboard players add #model simpledrawer.math 1
+scoreboard players add #model simpledrawer.math 3
 
 
 data modify storage simpledrawer:main temp.dropped_item.tag.display.Name set value '{"translate":"simpledrawer.compacting_new_drawer.filled","color":"white","italic":false}'
