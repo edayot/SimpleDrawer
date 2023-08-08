@@ -2,6 +2,7 @@
 
 scoreboard players set @s simpledrawer.new_drawer.slot_count 4
 
+scoreboard players set #count_display simpledrawer.math 0
 
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.globalCount
 execute store result score #maxCount_display simpledrawer.math run data get entity @s item.tag.simpledrawer.maxCount
@@ -17,6 +18,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 
 scoreboard players set #search_slot simpledrawer.math 0
+scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:0}].Count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
@@ -26,6 +28,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 
 scoreboard players set #search_slot simpledrawer.math 1
+scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:1}].Count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
@@ -33,6 +36,7 @@ execute unless score #noformat simpledrawer.math matches 1 run function simpledr
 execute unless score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"nbt":"temp.count_int","storage":"simpledrawer:main"},{"nbt":"temp.dot","storage":"simpledrawer:main"},{"nbt":"temp.count_reminder","storage":"simpledrawer:main"},{"nbt":"temp.count_suffix","storage":"simpledrawer:main"}]'
 
 scoreboard players set #search_slot simpledrawer.math 2
+scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:2}].Count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
@@ -40,6 +44,7 @@ execute unless score #noformat simpledrawer.math matches 1 run function simpledr
 execute unless score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"nbt":"temp.count_int","storage":"simpledrawer:main"},{"nbt":"temp.dot","storage":"simpledrawer:main"},{"nbt":"temp.count_reminder","storage":"simpledrawer:main"},{"nbt":"temp.count_suffix","storage":"simpledrawer:main"}]'
 
 scoreboard players set #search_slot simpledrawer.math 3
+scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:3}].Count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 

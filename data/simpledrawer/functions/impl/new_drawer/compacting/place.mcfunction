@@ -1,4 +1,9 @@
 
+scoreboard players set @s simpledrawer.new_drawer.slot_count 3
+execute if data entity @s item.tag.simpledrawer{current_material:"none"} run scoreboard players set @s simpledrawer.new_drawer.slot_count 1
+
+
+
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 0
 data modify storage simpledrawer:main temp.item_stored set value {id:"minecraft:air",Count:0b}
 data modify storage simpledrawer:main temp.item_stored set from storage simpledrawer:main temp.simpledrawer.Items[{Slot:0}]
