@@ -1,6 +1,7 @@
 
 
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io 8
 
 
 data modify storage simpledrawer:io output set from entity @s item.tag.simpledrawer.Items[{Slot:8}]

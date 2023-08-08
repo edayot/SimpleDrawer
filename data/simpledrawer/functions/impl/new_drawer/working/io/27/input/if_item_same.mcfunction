@@ -1,5 +1,6 @@
 
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io 27
 
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
 

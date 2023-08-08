@@ -75,6 +75,7 @@ execute if score #!same simpledrawer.math matches 0 run function simpledrawer:im
     
     if_item_same=f"""
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io {i}
 
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
 
@@ -120,6 +121,7 @@ scoreboard players operation #newCount simpledrawer.math -= #globalCount simpled
     unless_item=f"""
 
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io {i}
 
 
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
@@ -159,6 +161,8 @@ execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_di
     sup=f"""
 
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io {i}
+
 
 
 data modify storage simpledrawer:io output set from entity @s item.tag.simpledrawer.Items[{{Slot:{i}}}]
@@ -187,6 +191,7 @@ execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_di
     normal=f"""
 
 scoreboard players set #success simpledrawer.io 1
+scoreboard players set #modified_slot simpledrawer.io {i}
 
 
 data modify storage simpledrawer:io output set from entity @s item.tag.simpledrawer.Items[{{Slot:{i}}}]
