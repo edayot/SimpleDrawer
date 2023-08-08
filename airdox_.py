@@ -147,8 +147,9 @@ def load_included(ctx: Context):
     ctx.require(model_merging)
     
     for dep in ctx.meta["smithed_dependencies"]: 
-        identifier=f"{dep['id']}@{dep['version_']}"
-        data=DataPack(path=f"{ctx.cache.path}/airdox_/dep/{identifier}_datapack.zip")
+        dep_author,dep_id=dep["id"].split(":")
+        identifier=f"{dep_id}@{dep['version_']}"
+        data=DataPack(zipfile=f"{ctx.cache.path}/airdox_/dep/{identifier}_datapack.zip")
         assets=ResourcePack(path=f"{ctx.cache.path}/airdox_/dep/{identifier}_resourcepack.zip")
 
         if "load:load" in data.function_tags:

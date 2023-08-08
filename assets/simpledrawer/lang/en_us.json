@@ -30,6 +30,8 @@
     "simpledrawer.double_new_drawer.filled":"Filled Double Drawer",
     "simpledrawer.quadruple_new_drawer.empty":"Empty Quadruple Drawer",
     "simpledrawer.quadruple_new_drawer.filled":"Filled Quadruple Drawer",
+    "simpledrawer.compacting_new_drawer.empty": "Empty Compacting Drawer",
+    "simpledrawer.compacting_new_drawer.filled": "Filled Compacting Drawer",
     "simpledrawer.guide":"SimpleDrawer Guide",
     "simpledrawer.guide_first":"Guide",
     "simpledrawer.guide.heavy_workbench":"The Heavy Workbench is a crafting table for SimpleDrawer and other data packs.",

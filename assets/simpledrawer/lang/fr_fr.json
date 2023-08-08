@@ -30,6 +30,8 @@
     "simpledrawer.double_new_drawer.filled":"Drawer Double Rempli",
     "simpledrawer.quadruple_new_drawer.empty":"Drawer Quadruple Vide",
     "simpledrawer.quadruple_new_drawer.filled":"Drawer Quadruple Rempli",
+    "simpledrawer.compacting_new_drawer.empty":"Drawer Compacteur Vide",
+    "simpledrawer.compacting_new_drawer.filled":"Drawer Compacteur Rempli",
     "simpledrawer.guide":"SimpleDrawer Guide",
     "simpledrawer.guide_first":"Guide",
     "simpledrawer.guide.heavy_workbench":"C'est une table de craft qui permet de crafter les items de SimpleDrawer.",

@@ -3,6 +3,4 @@ extend: [beet.yaml]
 pipeline:
   - airdox_.load_included
 
-meta:
-  load_included_path: ["./release/included"]
-
+output: build

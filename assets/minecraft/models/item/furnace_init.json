@@ -3,6 +3,8 @@
     "overrides":[
 
 
+        {"predicate":{"custom_model_data":1430000,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/compdrawers_open3"},
+        {"predicate":{"custom_model_data":1430001,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/compdrawers_open3_tapped"},
 
 
         {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:block/item/drawer_wood_"},
