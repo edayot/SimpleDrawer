@@ -121,12 +121,13 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             scoreboard players operation #total_item simpledrawer.math += #nb_ingot simpledrawer.math
             scoreboard players operation #total_item simpledrawer.math += #nb_nugget simpledrawer.math
 
-            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #total_item simpledrawer.math
+            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #nb_block simpledrawer.math
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
     
     execute
         if score #total_item simpledrawer.math matches 0
         run function simpledrawer:impl/new_drawer/working/io/compacting_output/normal/clear_all:
+            scoreboard players set @s simpledrawer.new_drawer.slot_count 1
             data modify entity @s item.tag.simpledrawer.Items set value []
             data modify entity @s item.tag.simpledrawer.globalCount set value 0
 

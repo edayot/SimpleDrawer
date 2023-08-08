@@ -143,7 +143,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/none:
             scoreboard players operation #total_item simpledrawer.math += #nb_ingot simpledrawer.math
             scoreboard players operation #total_item simpledrawer.math += #nb_nugget simpledrawer.math
 
-            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #total_item simpledrawer.math
+            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #nb_block simpledrawer.math
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
 
 
@@ -223,7 +223,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
             scoreboard players operation #total_item simpledrawer.math += #nb_ingot simpledrawer.math
             scoreboard players operation #total_item simpledrawer.math += #nb_nugget simpledrawer.math
 
-            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #total_item simpledrawer.math
+            execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #nb_block simpledrawer.math
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
         
     execute
