@@ -1,7 +1,5 @@
 
-scoreboard players operation #temp_hide simpledrawer.math = @s simpledrawer.hide_nugget
-scoreboard players set #has_material simpledrawer.math 0
-execute unless data entity @s item.tag.simpledrawer{current_material:"none"} run scoreboard players set #has_material simpledrawer.math 1
+scoreboard players operation #temp_slot_count simpledrawer.math = @s simpledrawer.new_drawer.slot_count 
 
 
 
@@ -33,12 +31,12 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 scoreboard players set #search_slot simpledrawer.math 1
 scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:1}].Count
-execute if score #has_material simpledrawer.math matches 0 run scoreboard players reset #count_display simpledrawer.math
+execute if score #temp_slot_count simpledrawer.math matches 1 run scoreboard players reset #count_display simpledrawer.math
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay
 
-execute unless score #noformat simpledrawer.math matches 1 if score #has_material simpledrawer.math matches 0 run data merge storage simpledrawer:main {temp:{count_int:"",dot:"",count_reminder:"",count_suffix:""}}
+execute unless score #noformat simpledrawer.math matches 1 if score #temp_slot_count simpledrawer.math matches 1 run data merge storage simpledrawer:main {temp:{count_int:"",dot:"",count_reminder:"",count_suffix:""}}
 
 execute unless score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"nbt":"temp.count_int","storage":"simpledrawer:main"},{"nbt":"temp.dot","storage":"simpledrawer:main"},{"nbt":"temp.count_reminder","storage":"simpledrawer:main"},{"nbt":"temp.count_suffix","storage":"simpledrawer:main"}]'
 
@@ -46,16 +44,14 @@ scoreboard players set #search_slot simpledrawer.math 2
 scoreboard players set #count_display simpledrawer.math 0
 execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.Items[{Slot:2}].Count
 
-execute if score #temp_hide simpledrawer.math matches 1 run scoreboard players reset #count_display simpledrawer.math
-execute if score #has_material simpledrawer.math matches 0 run scoreboard players reset #count_display simpledrawer.math
+execute if score #temp_slot_count simpledrawer.math matches 1..2 run scoreboard players reset #count_display simpledrawer.math
 
 
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay
 
-execute unless score #noformat simpledrawer.math matches 1 if score #has_material simpledrawer.math matches 0 run data merge storage simpledrawer:main {temp:{count_int:"",dot:"",count_reminder:"",count_suffix:""}}
-execute unless score #noformat simpledrawer.math matches 1 if score #temp_hide simpledrawer.math matches 1 run data merge storage simpledrawer:main {temp:{count_int:"",dot:"",count_reminder:"",count_suffix:""}}
+execute unless score #noformat simpledrawer.math matches 1 if score #temp_slot_count simpledrawer.math matches 1..2 run data merge storage simpledrawer:main {temp:{count_int:"",dot:"",count_reminder:"",count_suffix:""}}
 
 execute unless score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"nbt":"temp.count_int","storage":"simpledrawer:main"},{"nbt":"temp.dot","storage":"simpledrawer:main"},{"nbt":"temp.count_reminder","storage":"simpledrawer:main"},{"nbt":"temp.count_suffix","storage":"simpledrawer:main"}]'
 

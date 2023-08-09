@@ -2,6 +2,9 @@
 scoreboard players set @s simpledrawer.new_drawer.slot_count 3
 execute if data entity @s item.tag.simpledrawer{current_material:"none"} run scoreboard players set @s simpledrawer.new_drawer.slot_count 1
 
+execute store result score @s simpledrawer.new_drawer.slot_count run data get storage simpledrawer:main temp.simpledrawer.slot_count
+
+
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 0

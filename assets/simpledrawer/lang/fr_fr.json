@@ -66,7 +66,8 @@
     "simpledrawer.netherite_tier":"Tier Netherite",
     "simpledrawer.hopper_tier":"Amélioré Hopper",
     "simpledrawer.outdated_drawer": "Ce drawer est obsolète, il va continuer à fonctionner.",
-    "simpledrawer.outdated_drawer_craft":"Il peut être mis à jour en le mettant dans une Heavy Workbench."
+    "simpledrawer.outdated_drawer_craft":"Il peut être mis à jour en le mettant dans une Heavy Workbench.",
 
-
+    "simpledrawer.minecraft.redstone":"Redstone",
+    "simpledrawer.minecraft.iron":"Fer"
 }

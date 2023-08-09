@@ -43,9 +43,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/none:
     scoreboard players set #none simpledrawer.math 1
 
 
-function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
-    scoreboard players set @s simpledrawer.new_drawer.slot_count 3
-    
+function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:    
     data remove storage simpledrawer:io item_material
     data modify storage simpledrawer:io item_material set from storage simpledrawer:io output
     function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call

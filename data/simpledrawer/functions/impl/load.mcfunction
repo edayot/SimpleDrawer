@@ -30,11 +30,13 @@ data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {
             type:"compacting",
             variant:"normal",
             current_material:"none",
+            slot_count:1,
             wood_type:"simpledrawer:compacting",
             upgrade:"wood",
             hopper:0b,
             globalCount:0,
-            maxCount:256
+            maxCount:256,
+            Items:[]
         },
         smithed:{block:{id:"simpledrawer:new_drawer"}}}}
         ]}
@@ -88,7 +90,6 @@ scoreboard objectives add simpledrawer.player.output_cooldown dummy
 scoreboard objectives add simpledrawer.player.input_cooldown dummy
 scoreboard objectives add simpledrawer.player.last_id dummy
 scoreboard objectives add simpledrawer.nb_click dummy
-scoreboard objectives add simpledrawer.hide_nugget dummy
 
 scoreboard objectives add simpledrawer.config trigger
 scoreboard players enable @a simpledrawer.config

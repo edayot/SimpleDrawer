@@ -40,11 +40,11 @@ function ./material/iron:
 
     scoreboard players set #nugget_in_ingot simpledrawer.io 9
 
-    scoreboard players set @s simpledrawer.hide_nugget 0
-    # 0: show, 1: hide, used for redstone block
+    scoreboard players set @s simpledrawer.new_drawer.slot_count 3
+    # 3 for normal use, 2 for redstone block
 
     data modify storage simpledrawer:io material set value {
-        material: "simpledrawer.minecraft.iron",
+        material: '{"translate":"simpledrawer.minecraft.iron"}',
         block: {id:"minecraft:iron_block",Count:1b,Slot:0},
         ingot: {id:"minecraft:iron_ingot",Count:1b,Slot:1},
         nugget: {id:"minecraft:iron_nugget",Count:1b,Slot:2}
@@ -73,12 +73,12 @@ function ./material/redstone:
 
     scoreboard players set #nugget_in_ingot simpledrawer.io 1
 
-    scoreboard players set @s simpledrawer.hide_nugget 1
-    # 0: show, 1: hide, used for redstone block
+    scoreboard players set @s simpledrawer.new_drawer.slot_count 2
+    # 3 for normal use, 2 for redstone block like
 
     data modify storage simpledrawer:io material set value {
-        material: "simpledrawer.minecraft.redstone",
+        material: '{"translate":"simpledrawer.minecraft.redstone"}',
         block: {id:"minecraft:redstone_block",Count:1b,Slot:0},
         ingot: {id:"minecraft:redstone",Count:1b,Slot:1},
-        nugget: {id:"minecraft:redstone",Count:1b,Slot:2}
+        nugget: {id:"minecraft:air",Count:1b,Slot:2}
     }

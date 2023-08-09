@@ -8,3 +8,6 @@ execute store result storage simpledrawer:main temp.dropped_item.tag.CustomModel
 
 data modify storage simpledrawer:main temp.dropped_item.tag.Trim.material set from entity @s item.tag.simpledrawer.wood_type
 
+execute 
+    store result storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].tag.simpledrawer.slot_count int 1 
+    run scoreboard players get @s simpledrawer.new_drawer.slot_count
