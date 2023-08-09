@@ -28,7 +28,7 @@ def add_versioning_to_items(ctx: Context):
     command_furnace='data modify storage simpledrawer:main ItemsNBT.{item}.tag.BlockEntityTag.Items[0].tag.simpledrawer.version set value {{major:{major},minor:{minor},patch:{patch}}}'
     
     items=["hopper_upgrade","iron_upgrade","gold_upgrade","diamond_upgrade","star_upgrade","netherite_upgrade","downgrade_wrench","guide"]
-    items_with_furnace=["drawer","new_drawer","double_new_drawer","quadruple_new_drawer"]
+    items_with_furnace=["drawer","new_drawer","double_new_drawer","quadruple_new_drawer","compacting_new_drawer"]
 
     for item in items_with_furnace:
         versioning=versioning+command_furnace.format(item=item,major=major,minor=minor,patch=patch)+"\n"
