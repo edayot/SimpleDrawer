@@ -51,13 +51,13 @@ function simpledrawer:impl/new_drawer/base_display
 function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
     scoreboard players set #success_material simpledrawer.io 0
     function #simpledrawer:material
+    function simpledrawer:impl/new_drawer/compacting/calls/material
     execute 
         if score @s simpledrawer.new_drawer.slot_count matches 4.. 
         run scoreboard players set @s simpledrawer.new_drawer.slot_count 3
     execute
         if score @s simpledrawer.new_drawer.slot_count matches ..0
         run scoreboard players set @s simpledrawer.new_drawer.slot_count 1
-    
     
 
 
@@ -77,6 +77,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items:
     scoreboard players set #search_slot simpledrawer.math 2
     execute 
         if score @s simpledrawer.new_drawer.slot_count matches 3
+        at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main items_display.nugget
+
+    execute 
+        if score @s simpledrawer.new_drawer.slot_count matches 1
         at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main items_display.nugget
 
     execute
