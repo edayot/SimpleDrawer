@@ -68,6 +68,20 @@
     "simpledrawer.outdated_drawer": "Ce drawer est obsolète, il va continuer à fonctionner.",
     "simpledrawer.outdated_drawer_craft":"Il peut être mis à jour en le mettant dans une Heavy Workbench.",
 
-    "simpledrawer.minecraft.redstone":"Redstone",
-    "simpledrawer.minecraft.iron":"Fer"
+    "simpledrawer.minecraft.gold": "Or",
+    "simpledrawer.minecraft.redstone": "Redstone",
+    "simpledrawer.minecraft.iron": "Fer",
+    "simpledrawer.minecraft.copper": "Cuivre",
+    "simpledrawer.minecraft.diamond": "Diamant",
+    "simpledrawer.minecraft.emerald": "Emeraude",
+    "simpledrawer.minecraft.lapis": "Lapis",
+    "simpledrawer.minecraft.coal": "Charbon",
+    "simpledrawer.minecraft.nettherite": "Netherite",
+    "simpledrawer.minecraft.raw_iron": "Fer Brut",
+    "simpledrawer.minecraft.raw_gold": "Or Brut",
+    "simpledrawer.minecraft.raw_copper": "Cuivre Brut",
+    "simpledrawer.minecraft.slime": "Slime",
+    "simpledrawer.minecraft.wheat": "Blé",
+    "simpledrawer.minecraft.bone": "Os",
+    "simpledrawer.minecraft.clay": "Argile"
 }
