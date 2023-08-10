@@ -1,6 +1,6 @@
 #In :
 #- score #success_material simpledrawer.io
-#- storage simpledrawer:io mitem_material
+#- storage simpledrawer:io item_material
 
 #Out :
 #- storage simpledrawer:io material
@@ -9,7 +9,7 @@
 #- score #ingot_in_block simpledrawer.io
 #- score #nugget_in_block simpledrawer.io
 #- score #nugget_in_ingot simpledrawer.io
-#- score @s simpledrawer:new_drawer slot_count (3: normal, 2: redstone block like)
+#- score @s simpledrawer.new_drawer.slot_count (3: normal, 2: redstone block like)
 
 
 

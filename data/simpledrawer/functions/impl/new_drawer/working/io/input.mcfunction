@@ -10,6 +10,11 @@
 # The 
 # The score #success simpledrawer.io for success (-2 for full error, -1 for input error, 0 for others error)
 # say INPUT
+
+
+
+
+
 scoreboard players set #success simpledrawer.io 0
 data remove storage simpledrawer:io output
 
@@ -58,6 +63,14 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
     execute
         if score @s simpledrawer.new_drawer.slot_count matches ..0
         run scoreboard players set @s simpledrawer.new_drawer.slot_count 1
+    
+    data modify storage simpledrawer:io material.block.Slot set value 0
+    data modify storage simpledrawer:io material.ingot.Slot set value 1
+    data modify storage simpledrawer:io material.nugget.Slot set value 2
+
+    data modify storage simpledrawer:io material.block.Count set value 1
+    data modify storage simpledrawer:io material.ingot.Count set value 1
+    data modify storage simpledrawer:io material.nugget.Count set value 1
     
 
 
