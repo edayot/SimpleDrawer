@@ -4,6 +4,6 @@
         "top": "simpledrawer:block/new_drawer/drawers_comp_side",
         "front": "simpledrawer:block/new_drawer/drawers_comp_front_2",
         "side": "simpledrawer:block/new_drawer/drawers_comp_side_2",
-        "trim": "simpledrawer:block/new_drawer/drawers_comp_trim"
+        "bottom": "simpledrawer:block/new_drawer/drawers_comp_trim"
     }
 }
