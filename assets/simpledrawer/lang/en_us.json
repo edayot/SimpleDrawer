@@ -50,6 +50,7 @@
     "simpledrawer.new_drawer":"Drawer",
     "simpledrawer.double_new_drawer":"Double Drawer",
     "simpledrawer.quadruple_new_drawer":"Quadruple Drawer",
+    "simpledrawer.compacting_new_drawer": "Compacting Drawer",
     "simpledrawer.upgrades":"Upgrades",
     "simpledrawer.guide.first_page":"This guide show all the blocks and items added by SimpleDrawer, with their respectives recipes.",
     "simpledrawer.drawers":"Drawer manual",
@@ -81,8 +82,9 @@
     "simpledrawer.minecraft.slime": "Slime",
     "simpledrawer.minecraft.wheat": "Wheat",
     "simpledrawer.minecraft.bone": "Bone",
-    "simpledrawer.minecraft.clay": "Clay"
+    "simpledrawer.minecraft.clay": "Clay",
 
+    "simpledrawer.guide.compacting_new_drawer": "A drawer that make display block, ingot and nuggets on the drawer."
 
     
     

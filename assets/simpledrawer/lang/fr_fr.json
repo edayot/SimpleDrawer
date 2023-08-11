@@ -50,6 +50,7 @@
     "simpledrawer.new_drawer":"Drawer",
     "simpledrawer.double_new_drawer":"Drawer Double",
     "simpledrawer.quadruple_new_drawer":"Drawer Quadruple",
+    "simpledrawer.compacting_new_drawer":"Drawer Compacteur",
     "simpledrawer.upgrades":"Améliorations",
     "simpledrawer.guide.first_page":"Ce guide montre tous les blocs et items de SimpleDrawer, avec leurs recettes respectives.",
 
@@ -83,5 +84,8 @@
     "simpledrawer.minecraft.slime": "Slime",
     "simpledrawer.minecraft.wheat": "Blé",
     "simpledrawer.minecraft.bone": "Os",
-    "simpledrawer.minecraft.clay": "Argile"
+    "simpledrawer.minecraft.clay": "Argile",
+
+    "simpledrawer.guide.compacting_new_drawer": "Ce drawer affiche les formes blocks, lingots et pépites de l'item stocké."
+
 }

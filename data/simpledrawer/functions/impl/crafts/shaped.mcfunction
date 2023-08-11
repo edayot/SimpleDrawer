@@ -34,6 +34,13 @@ execute store result score @s smithed.data if entity @s[scores={smithed.data=0}]
 execute store result score @s smithed.data if entity @s[scores={smithed.data=0}] if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,item_tag:["#minecraft:planks"]}],1:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:stick"}],2:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,item_tag:["#minecraft:planks"]}]}} run function simpledrawer:impl/crafts/double_new_drawer
 execute store result score @s smithed.data if entity @s[scores={smithed.data=0}] if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,item_tag:["#minecraft:planks"]}],1:[{Slot:0b,id:"minecraft:barrel"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:barrel"}],2:[{Slot:0b,item_tag:["#minecraft:planks"]},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,item_tag:["#minecraft:planks"]}]}} run function simpledrawer:impl/crafts/quadruple_new_drawer
 
+execute 
+    store result score @s smithed.data if entity @s[scores={smithed.data=0}] 
+    if data storage smithed.crafter:main root.temp{crafting_input:{
+        0:[{Slot:0b,id:"minecraft:smooth_stone"},{Slot:1b,id:"minecraft:crafting_table"},{Slot:2b,id:"minecraft:smooth_stone"}],
+        1:[{Slot:0b,id:"minecraft:piston"},{Slot:1b,tag:{ctc:{from:"airdox_:simpledrawer",id:"new_drawer"}}},{Slot:2b,id:"minecraft:piston"}],
+        2:[{Slot:0b,id:"minecraft:smooth_stone"},{Slot:1b,id:"minecraft:iron_ingot"},{Slot:2b,id:"minecraft:smooth_stone"}]}} 
+        run loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/compacting_new_drawer
 
 
 

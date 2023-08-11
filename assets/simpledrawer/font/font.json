@@ -35,7 +35,9 @@
 	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_wrench.png",					"ascent": -3, "height": 68, "chars": ["\uff17"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/result_wrench.png",					"ascent": -20, "height": 34, "chars": ["\uff18"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_guide.png",					"ascent": -3, "height": 68, "chars": ["\uff19"] },
-	{ "type": "bitmap", "file": "simpledrawer:item/font/result_guide.png",					"ascent": -20, "height": 34, "chars": ["\uff1a"] }
+	{ "type": "bitmap", "file": "simpledrawer:item/font/result_guide.png",					"ascent": -20, "height": 34, "chars": ["\uff1a"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_compacting.png",					"ascent": -3, "height": 68, "chars": ["\uff1b"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/font/result_compacting.png",				"ascent": -20, "height": 34, "chars": ["\uff1c"] }
 
 
 

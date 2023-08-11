@@ -90,6 +90,9 @@ smooth_stone=Item('{"id":"minecraft:smooth_stone"}', -1)
 gold_ingot=Item('{"id":"minecraft:gold_ingot"}', -1)
 book=Item('{"id":"minecraft:book"}', -1)
 chest=Item('{"id":"minecraft:chest"}', -1)
+crafting_table=Item('{"id":"minecraft:crafting_table"}', -1)
+piston=Item('{"id":"minecraft:piston"}', -1)
+smooth_stone=Item('{"id":"minecraft:smooth_stone"}', -1)
 
 # All custom items
 
@@ -126,6 +129,14 @@ quadruple_new_drawer=Item(string_item, start_page)
 start_page=start_page+1
 quadruple_new_drawer.description="simpledrawer.guide.quadruple_new_drawer"
 quadruple_new_drawer.page_title="simpledrawer.quadruple_new_drawer"
+
+# compacting_new_drawer
+string_item='{"id":"minecraft:furnace","tag":"{display:{Name:\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.compacting_new_drawer.empty\\\\\",\\\\\"color\\\\\":\\\\\"white\\\\\",\\\\\"italic\\\\\":false}\\\',Lore:[\\\'{\\\\\"translate\\\\\":\\\\\"simpledrawer.name\\\\\",\\\\\"color\\\\\":\\\\\"blue\\\\\",\\\\\"italic\\\\\":true}\\\']}}"}'
+compacting_drawer=Item(string_item, start_page)
+start_page=start_page+1
+compacting_drawer.description="simpledrawer.guide.compacting_new_drawer"
+compacting_drawer.page_title="simpledrawer.compacting_new_drawer"
+
 
 
 # upgrade_page
@@ -250,6 +261,19 @@ craft_result=quadruple_new_drawer
 
 commands.append(generate_page(craft, craft_result,"uff09","uff0a"))
 
+# compacting_drawer
+craft=[
+    [smooth_stone,crafting_table,smooth_stone],
+    [piston,new_drawer,piston],
+    [smooth_stone,iron_ingot,smooth_stone]
+]
+craft_result=compacting_drawer
+
+commands.append(generate_page(craft, craft_result,"uff1b","uff1c"))
+
+
+
+
 ### Upgrade page
 upgrade_page='["",{"translate":"simpledrawer.upgrades","font":"simpledrawer:big","color":"black"},{"text":"\\\\n\\\\n\\\\n","font":"simpledrawer:big","color":"black"},{"translate":"simpledrawer.guide.upgrade","color":"black"}]'
 commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{upgrade_page}'")
@@ -334,7 +358,7 @@ craft_result=guide
 
 commands.append(generate_page(craft, craft_result,"uff19","uff1a"))
 
-    
+
 
 with open("generate.mcfunction","w") as f:
     for command in commands:
