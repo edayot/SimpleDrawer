@@ -7,6 +7,5 @@ data modify storage simpledrawer:main temp.simpledrawer set from storage simpled
 data modify storage simpledrawer:main temp.simpledrawer set from storage smithed.custom_block:main blockApi.__data.Items[0].tag.simpledrawer
 
 execute summon item_display run function simpledrawer:impl/new_drawer/place/base
-setblock ~ ~ ~ beehive
 
 

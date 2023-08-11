@@ -4,7 +4,7 @@ execute if data entity @s item.tag.simpledrawer{current_material:"none"} run sco
 
 execute store result score @s simpledrawer.new_drawer.slot_count run data get storage simpledrawer:main temp.simpledrawer.slot_count
 
-
+tag @s add simpledrawer.new_drawer.stone_base
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 0
