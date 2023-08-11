@@ -45,6 +45,11 @@ execute
         scoreboard players set #type simpledrawer.io 2
         function my_data_pack:my_material
 
+```
+
+```mcfunction
+
+
 function my_data_pack:my_material
     scoreboard players set #success_material simpledrawer.io 1
 
@@ -52,7 +57,8 @@ function my_data_pack:my_material
     scoreboard players set #nugget_in_block simpledrawer.io 81
     scoreboard players set #nugget_in_ingot simpledrawer.io 9
 
-    # 3 if the material as a nugget form, 2 if the material as only a block and ingot form
+    # 3 If the material has a block form, an ingot form and a nugget form
+    # 2 If the material has a block form, and an ingot form 
     scoreboard players set @s simpledrawer.new_drawer.slot_count 3 
 
     data modify storage simpledrawer:io material set value {
