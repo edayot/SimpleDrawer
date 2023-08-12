@@ -1,4 +1,5 @@
-![Banner](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png)
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png align="center">
+
 
 A simple datapack that addq drawer to minecraft !
 
@@ -6,8 +7,10 @@ A simple datapack that addq drawer to minecraft !
 The most important item of the datapack is the guide, every player will receive it when joining the world for the first time.
 
 There is also a crafting recipe for the guide :
-
-![Guide](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/craft_guide.png) ![Guide](https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/result_guide.png)
+<p align="center">
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/craft_guide.png> 
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/result_guide.png>
+</p>
 
 ## ⚠ Warning the datapack has to be loaded at the world start (or server start)! (If not, you will have unmatching textures)
 
