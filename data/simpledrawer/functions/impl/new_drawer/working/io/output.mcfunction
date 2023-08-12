@@ -51,6 +51,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
     execute
         if score #success_material simpledrawer.io matches 1
         run function simpledrawer:impl/new_drawer/working/io/compacting_output/normal/remove_others:
+            data modify entity @s item.tag.simpledrawer.current_material set from storage simpledrawer:io material.material
             execute
                 store result score #nb_block simpledrawer.math 
                 run data get entity @s item.tag.simpledrawer.Items[{Slot:0}].Count
@@ -121,7 +122,41 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
 
             execute store result entity @s item.tag.simpledrawer.globalCount int 1 run scoreboard players get #nb_block simpledrawer.math
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
-    
+    execute
+        if score #success_material simpledrawer.io matches 0
+        run function simpledrawer:impl/new_drawer/working/io/compacting_output/normal/failed:
+            scoreboard players set @s simpledrawer.new_drawer.slot_count 1
+
+            execute 
+                if score #modified_slot simpledrawer.io matches 0
+                run data modify storage simpledrawer:main temp_item set from entity @s item.tag.simpledrawer.Items[{Slot:0}]
+            execute
+                if score #modified_slot simpledrawer.io matches 1
+                run data modify storage simpledrawer:main temp_item set from entity @s item.tag.simpledrawer.Items[{Slot:1}]
+            execute
+                if score #modified_slot simpledrawer.io matches 2
+                run data modify storage simpledrawer:main temp_item set from entity @s item.tag.simpledrawer.Items[{Slot:2}]
+
+            data modify entity @s item.tag.simpledrawer.Items set value []
+            data modify entity @s item.tag.simpledrawer.current_material set value "none"
+
+            data modify storage simpledrawer:main temp_item.Slot set value 0
+            data modify entity @s item.tag.simpledrawer.Items append from storage simpledrawer:main temp_item
+
+            data modify entity @s item.tag.simpledrawer.globalCount set from storage simpledrawer:main temp_item.Count
+
+            # display items
+            scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
+            scoreboard players set #search_slot simpledrawer.math 0
+            data modify storage simpledrawer:main temp_item.Count set value 1b
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp_item
+
+            scoreboard players set #search_slot simpledrawer.math 1
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+
+            scoreboard players set #search_slot simpledrawer.math 2
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+
     execute
         if score #total_item simpledrawer.math matches 0
         run function simpledrawer:impl/new_drawer/working/io/compacting_output/normal/clear_all:
