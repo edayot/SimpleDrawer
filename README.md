@@ -1,5 +1,6 @@
-<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png align="center">
-
+<p align="center">
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png>
+</p>
 
 A simple datapack that addq drawer to minecraft !
 
