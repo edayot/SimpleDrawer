@@ -145,6 +145,8 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
 
             data modify entity @s item.tag.simpledrawer.globalCount set from storage simpledrawer:main temp_item.Count
 
+            execute store result score #total_item simpledrawer.math run data get entity @s item tag simpledrawer globalCount
+
             # display items
             scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
             scoreboard players set #search_slot simpledrawer.math 0
