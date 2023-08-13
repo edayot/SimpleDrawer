@@ -94,6 +94,11 @@ scoreboard objectives add simpledrawer.nb_click dummy
 scoreboard objectives add simpledrawer.config trigger
 scoreboard players enable @a simpledrawer.config
 
+scoreboard objectives add simpledrawer.update_guide trigger
+scoreboard players enable @a simpledrawer.update_guide
+
+scoreboard objectives add simpledrawer.leave_game minecraft.custom:minecraft.leave_game
+
 scoreboard objectives add simpledrawer.config.output_mode dummy
 scoreboard objectives add simpledrawer.config.input_mode dummy
 

@@ -84,9 +84,10 @@
     "simpledrawer.minecraft.bone": "Bone",
     "simpledrawer.minecraft.clay": "Clay",
 
-    "simpledrawer.guide.compacting_new_drawer": "This drawer display block, ingot and nugget form of the stored item."
+    "simpledrawer.guide.compacting_new_drawer": "This drawer display block, ingot and nugget form of the stored item.",
 
-    
+    "simpledrawer.guide.update_button": "Clic here to update the guide",
+    "simpledrawer.update_guide": "The guide has been updated"
     
 
 

@@ -1,0 +1,16 @@
+[
+    {
+        "function": "minecraft:copy_nbt",
+        "source": {
+            "type": "minecraft:storage",
+            "source": "simpledrawer:main"
+        },
+        "ops": [
+            {
+                "source": "ItemsNBT.guide.tag",
+                "target": "{}",
+                "op": "merge"
+            }
+        ]
+    }
+]

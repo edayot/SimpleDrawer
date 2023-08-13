@@ -10,6 +10,10 @@
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
+
+	
+	{ "type": "bitmap", "file": "simpledrawer:item/font/update_button.png",				"ascent": 7, "height": 18, "chars": ["\uef03"] },
+
 	{ "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",				"ascent": -3, "height": 68, "chars": ["\uff01"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",				"ascent": -20, "height": 34, "chars": ["\uff02"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_smithed.png",					"ascent": -3, "height": 68, "chars": ["\uff03"] },
@@ -38,6 +42,7 @@
 	{ "type": "bitmap", "file": "simpledrawer:item/font/result_guide.png",					"ascent": -20, "height": 34, "chars": ["\uff1a"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/craft_compacting.png",					"ascent": -3, "height": 68, "chars": ["\uff1b"] },
 	{ "type": "bitmap", "file": "simpledrawer:item/font/result_compacting.png",				"ascent": -20, "height": 34, "chars": ["\uff1c"] }
+
 
 
 

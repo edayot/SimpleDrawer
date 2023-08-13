@@ -24,3 +24,15 @@ execute if score @s simpledrawer.nb_click matches 32.. run advancement grant @s 
 
 
 
+execute if score @s simpledrawer.update_guide matches 1 run function simpledrawer:impl/guide/update
+
+
+execute if score @s simpledrawer.leave_game matches 1
+	run function simpledrawer:impl/tick_player/leave_game:
+		scoreboard players enable @s simpledrawer.update_guide
+		scoreboard players set @s simpledrawer.update_guide 0
+		scoreboard players enable @s simpledrawer.config
+		scoreboard players set @s simpledrawer.config 0
+
+		scoreboard players set @s simpledrawer.leave_game 0
+		
