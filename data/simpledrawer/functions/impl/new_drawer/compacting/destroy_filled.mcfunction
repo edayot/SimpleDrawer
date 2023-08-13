@@ -37,7 +37,7 @@ execute
         execute store result score #maxCount simpledrawer.math run data get storage simpledrawer:main temp.simpledrawer.maxCount
 
         data remove storage simpledrawer:main temp.material
-        data modify storage simpledrawer:main temp.material set from storage simpledrawer:main temp.simpledrawer.current_material
+        data modify storage simpledrawer:main temp.material set from storage simpledrawer:main temp.simpledrawer.current_material_name
 
         data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0] set value {id:"minecraft:stone",Count:1b}
 

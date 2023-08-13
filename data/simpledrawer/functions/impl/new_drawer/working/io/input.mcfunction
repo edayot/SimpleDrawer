@@ -113,6 +113,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/none:
         if score #success_material simpledrawer.io matches 1
         run function simpledrawer:impl/new_drawer/working/io/compacting_input/apply_material:
             data modify entity @s item.tag.simpledrawer.current_material set from storage simpledrawer:io material.material
+            data modify entity @s item.tag.simpledrawer.current_material_name set from storage simpledrawer:io material.material_name
             execute 
                 store result score #count_drawer simpledrawer.math 
                 run data get storage simpledrawer:io item_material.Count
@@ -271,6 +272,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
 
             data modify entity @s item.tag.simpledrawer.Items set value []
             data modify entity @s item.tag.simpledrawer.current_material set value "none"
+            data modify entity @s item.tag.simpledrawer.current_material_name set value '{"text":"none"}'
 
             data modify storage simpledrawer:main temp_item.Slot set value 0
             data modify entity @s item.tag.simpledrawer.Items append from storage simpledrawer:main temp_item

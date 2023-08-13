@@ -25,7 +25,7 @@ scoreboard players set @s simpledrawer.config.input_mode 2
 
 #tellraw all possible output modes with clickable commands
 
-
+tag @s add simpledrawer.player.first_join
 
 
 

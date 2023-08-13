@@ -52,6 +52,8 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
         if score #success_material simpledrawer.io matches 1
         run function simpledrawer:impl/new_drawer/working/io/compacting_output/normal/remove_others:
             data modify entity @s item.tag.simpledrawer.current_material set from storage simpledrawer:io material.material
+            data modify entity @s item.tag.simpledrawer.current_material_name set from storage simpledrawer:io material.material_name
+
             execute
                 store result score #nb_block simpledrawer.math 
                 run data get entity @s item.tag.simpledrawer.Items[{Slot:0}].Count
@@ -139,6 +141,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
 
             data modify entity @s item.tag.simpledrawer.Items set value []
             data modify entity @s item.tag.simpledrawer.current_material set value "none"
+            data modify entity @s item.tag.simpledrawer.current_material_name set value '{"text":"none"}'
 
             data modify storage simpledrawer:main temp_item.Slot set value 0
             data modify entity @s item.tag.simpledrawer.Items append from storage simpledrawer:main temp_item
@@ -167,6 +170,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             data modify entity @s item.tag.simpledrawer.globalCount set value 0
 
             data modify entity @s item.tag.simpledrawer.current_material set value "none"
+            data modify entity @s item.tag.simpledrawer.current_material_name set value '{"text":"none"}'
 
             data modify storage simpledrawer:io material set value {
                 material: "simpledrawer.minecraft.iron",

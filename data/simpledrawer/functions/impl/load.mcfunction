@@ -30,6 +30,7 @@ data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {
             type:"compacting",
             variant:"normal",
             current_material:"none",
+            current_material_name:'{"text":"none"}',
             slot_count:1,
             wood_type:"simpledrawer:compacting",
             upgrade:"wood",

@@ -62,9 +62,11 @@ function my_data_pack:my_material
     scoreboard players set @s simpledrawer.new_drawer.slot_count 3 
 
     data modify storage simpledrawer:io material set value {
-        material: '{"translate":"my_data_pack.my_material"}' # The json text component of the material name
-        block: <The block NBT> # The block NBT of the block form of the material
-        ingot: <The item NBT> # The item NBT of the ingot form of the material
+        material: "my_data_pack.my_material', # The UNIQUE identifier of the material, should be namespaced
+        material_name: '{"text":"My material"}', # The json text component of the material name
+
+        block: <The block NBT> <,# The block NBT of the block form of the material
+        ingot: <The item NBT>, # The item NBT of the ingot form of the material
         nugget: <The item NBT> # The item NBT of the nugget form of the material, air if the material doesn't have a nugget form
     }
 
