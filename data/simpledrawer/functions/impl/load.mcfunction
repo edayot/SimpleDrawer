@@ -198,13 +198,13 @@ data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:wr
     ctc:{from:"airdox_:simpledrawer",id:"guide",traits:{items:1b}},
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
-        Name:'{"translate":"simpledrawer.guide","color":"white","italic":false}'},
-        },
+        Name:'{"translate":"simpledrawer.guide","color":"white","italic":false}'
+    },
     title:"SimpleDrawer Guide",
     author:"AirDox_",
     generation:0,
     pages:[]
-}
+}}
 
 function simpledrawer:impl/guide/generate
 
