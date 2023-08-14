@@ -10,11 +10,87 @@ gamerule maxCommandChainLength 2147483647
 
 
 #Drawer
-data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b						,tag:{ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"wood",hopper:0b},smithed:{block:{id:"simpledrawer:drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:furnace",Count:1b,tag:{
+    ctc:{id:"drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{type:"wood",hopper:0b},
+        smithed:{block:{id:"simpledrawer:drawer"}}
+    }}]},
+    display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
 
-data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430000,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"single",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
-data modify storage simpledrawer:main ItemsNBT.double_new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430001,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"double",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.double_new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
-data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer set value {id:"minecraft:furnace",Count:1b						,tag:{CustomModelData:1430002,Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},HideFlags:128,ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}}										,BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{simpledrawer:{type:"normal",variant:"quadruple",wood_type:"simpledrawer:oak",upgrade:"wood",hopper:0b,globalCount:0,maxCount:256},smithed:{block:{id:"simpledrawer:new_drawer"}}}}]}							,display:{Name:'{"translate":"simpledrawer.quadruple_new_drawer.empty","color":"white","italic":false}',Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']}}}
+data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430000,
+    Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"single",
+            wood_type:"simpledrawer:oak",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+        },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
+
+
+
+data modify storage simpledrawer:main ItemsNBT.double_new_drawer set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430001,
+    Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.double_new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"double",
+            wood_type:"simpledrawer:oak",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+        },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
+
+
+
+data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430002,
+    Trim:{material:"simpledrawer:oak",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.quadruple_new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"quadruple",
+            wood_type:"simpledrawer:oak",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+            },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
 
 data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {id:"minecraft:furnace",Count:1b,tag:{
     CustomModelData:1430000,
@@ -48,19 +124,74 @@ data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {
 
 #Items
 #hopper_upgrade
-data modify storage simpledrawer:main ItemsNBT.hopper_upgrade set value {id:"minecraft:jigsaw",Count:1b					,tag:{CustomModelData:1430000,ctc:{id:"hopper_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.hopper_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.hopper_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430000,
+    ctc:{id:"hopper_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.hopper_upgrade","color":"white","italic":false}'
+    }
+}}
 #iron_upgrade
-data modify storage simpledrawer:main ItemsNBT.iron_upgrade set value {id:"minecraft:jigsaw",Count:1b					,tag:{CustomModelData:1430001,ctc:{id:"iron_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.iron_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.iron_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430001,
+    ctc:{id:"iron_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.iron_upgrade","color":"white","italic":false}'}
+}}
 #gold_upgrade
-data modify storage simpledrawer:main ItemsNBT.gold_upgrade set value {id:"minecraft:jigsaw",Count:1b					,tag:{CustomModelData:1430002,ctc:{id:"gold_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.gold_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.gold_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430002,
+    ctc:{id:"gold_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.gold_upgrade","color":"white","italic":false}'
+    }
+}}
 #diamond_upgrade
-data modify storage simpledrawer:main ItemsNBT.diamond_upgrade set value {id:"minecraft:jigsaw",Count:1b				,tag:{CustomModelData:1430003,ctc:{id:"diamond_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.diamond_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.diamond_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430003,
+    ctc:{id:"diamond_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.diamond_upgrade","color":"white","italic":false}'
+    }
+}}
 #star_upgrade
-data modify storage simpledrawer:main ItemsNBT.star_upgrade set value {id:"minecraft:jigsaw",Count:1b					,tag:{CustomModelData:1430004,ctc:{id:"star_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.star_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.star_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430004,
+    ctc:{id:"star_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.star_upgrade","color":"white","italic":false}'
+    }
+}}
 #netherite_upgrade
-data modify storage simpledrawer:main ItemsNBT.netherite_upgrade set value {id:"minecraft:jigsaw",Count:1b				,tag:{CustomModelData:1430005,ctc:{id:"netherite_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{upgrade:1b}							,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.netherite_upgrade","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.netherite_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430005,
+    ctc:{id:"netherite_upgrade",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{upgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.netherite_upgrade","color":"white","italic":false}'
+    }
+}}
 #downgrade_wrench
-data modify storage simpledrawer:main ItemsNBT.downgrade_wrench set value {id:"minecraft:jigsaw",Count:1b				,tag:{CustomModelData:1430006,ctc:{id:"downgrade_wrench",from:"airdox_:simpledrawer",traits:{"item":1b}},simpledrawer:{downgrade:1b}									,display:{Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'}}}
+data modify storage simpledrawer:main ItemsNBT.downgrade_wrench set value {id:"minecraft:jigsaw",Count:1b,tag:{
+    CustomModelData:1430006,
+    ctc:{id:"downgrade_wrench",from:"airdox_:simpledrawer",traits:{"item":1b}},
+    simpledrawer:{downgrade:1b},
+    display:{
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
+        Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'
+    }
+}}
 
 data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:written_book",Count:1b,tag:{
     CustomModelData:1430000,
@@ -77,7 +208,7 @@ data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:wr
 
 function simpledrawer:impl/guide/generate
 
-
+#automatic script that generate tag.simpledrawer{major:X,minor:X,patch:X} & tag.BlockEntityTag.Items[0].tag.simpledrawer{major:X,minor:X,patch:X}
 function simpledrawer:impl/versioning_items
 
 
