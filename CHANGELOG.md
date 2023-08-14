@@ -1,5 +1,12 @@
 <!--next-version-placeholder-->
 
+## v1.10.1 (2023-08-14)
+
+### Fix
+
+* Slot_count fix on compacting drawer ([`00ac9d7`](https://github.com/edayot/SimpleDrawer/commit/00ac9d7eddeb570ee03167ba7f284a24960fc127))
+* Deleting clay material ([`bb979f6`](https://github.com/edayot/SimpleDrawer/commit/bb979f6886db287eb3369868408ec0bf009d894c))
+
 ## v1.10.0 (2023-08-14)
 
 ### Feature
