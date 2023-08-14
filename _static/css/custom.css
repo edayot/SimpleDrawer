@@ -1,0 +1,9 @@
+.bottom-of-page .icons img,.bottom-of-page .icons svg {
+    font-size: 1.125rem;
+    height: 1.5em;
+    width: 1.5em
+}
+body {
+    --admonition-font-size: 0.9rem;
+    --admonition-title-font-size: 0.90rem;
+}

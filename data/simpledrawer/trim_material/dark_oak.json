@@ -1,9 +1,0 @@
-{
-    "asset_name": "dark_oak",
-    "description": {
-      "color": "#ffffff",
-      "translate": "dark_oak"
-    },
-    "ingredient": "minecraft:air",
-    "item_model_index": 0.143005
-  }

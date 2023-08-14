@@ -1,9 +1,0 @@
-{
-    "asset_name": "spruce",
-    "description": {
-      "color": "#ffffff",
-      "translate": "spruce"
-    },
-    "ingredient": "minecraft:air",
-    "item_model_index": 0.143001
-  }

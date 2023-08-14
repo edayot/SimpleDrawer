@@ -1,6 +1,0 @@
-extend: [beet.yaml]
-
-pipeline:
-  - airdox_.load_included
-
-output: build

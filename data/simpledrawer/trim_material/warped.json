@@ -1,9 +1,0 @@
-{
-    "asset_name": "warped",
-    "description": {
-      "color": "#ffffff",
-      "translate": "warped"
-    },
-    "ingredient": "minecraft:air",
-    "item_model_index": 0.143009
-  }
