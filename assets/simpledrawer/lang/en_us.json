@@ -87,9 +87,8 @@
     "simpledrawer.guide.compacting_new_drawer": "This drawer display block, ingot and nugget form of the stored item.",
 
     "simpledrawer.guide.update_button": "Clic here to update the guide",
-    "simpledrawer.update_guide": "The guide has been updated"
-    
-
+    "simpledrawer.update_guide": "The guide has been updated",
+    "simpledrawer.update_guide_fail": "There is no guide to update"
 
 
 }

@@ -89,6 +89,7 @@
     "simpledrawer.guide.compacting_new_drawer": "Ce drawer affiche les formes blocks, lingots et pépites de l'item stocké.",
 
     "simpledrawer.guide.update_button": "Cliquez ici pour mettre à jour le guide",
-    "simpledrawer.update_guide": "Le guide a été mis à jour"
+    "simpledrawer.update_guide": "Le guide a été mis à jour",
+    "simpledrawer.update_guide_fail": "Il n'y a pas de guide à mettre à jour"
 
 }
