@@ -1,7 +1,7 @@
 
 [tool.poetry]
 name = "simpledrawer"
-version = "1.9.2"
+version = "1.10.0"
 description = "A simple datapack that add drawers in to minecraft"
 authors = ["edayot <pro.e.dayot@gmail.com>"]
 license = "MIT"

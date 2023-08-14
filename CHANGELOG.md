@@ -1,5 +1,19 @@
 <!--next-version-placeholder-->
 
+## v1.10.0 (2023-08-14)
+
+### Feature
+
+* Implementing compacting drawer ([`32a22f9`](https://github.com/edayot/SimpleDrawer/commit/32a22f9311b0ffa6985d296616ad174606071840))
+
+### Fix
+
+* Auto handled output only if there is count ([`d71f184`](https://github.com/edayot/SimpleDrawer/commit/d71f184e8964c03bebef0c17ad12a304af85ef2c))
+
+### Documentation
+
+* Small dev docs ([`e9426ba`](https://github.com/edayot/SimpleDrawer/commit/e9426ba5b036ba877b512a7b8e805f0ea56e85ca))
+
 ## v1.9.2 (2023-07-26)
 
 ### Fix
