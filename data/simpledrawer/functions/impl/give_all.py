@@ -22,5 +22,8 @@ loot give @s loot simpledrawer:impl/items/new_drawer_craft
 
 
 """
+    t=t+f"""
+loot give @s loot simpledrawer:impl/items/compacting_new_drawer
+"""
 
     f.write(t)

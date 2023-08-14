@@ -185,3 +185,5 @@ data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0]
 loot give @s loot simpledrawer:impl/items/new_drawer_craft
 
 
+
+loot give @s loot simpledrawer:impl/items/compacting_new_drawer
