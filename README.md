@@ -25,6 +25,11 @@ This command will give you all items available in the datapack :
 
 In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
 
+# Developers :
+See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your own material or disabling items.
+
+
+
 # Some sources :
 - StorageDrawer mod (idea and textures) : https://github.com/jaquadro/StorageDrawers
 
