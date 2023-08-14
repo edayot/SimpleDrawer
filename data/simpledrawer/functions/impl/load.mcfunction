@@ -203,7 +203,8 @@ data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:wr
     title:"SimpleDrawer Guide",
     author:"AirDox_",
     generation:0,
-    pages:[]
+    pages:[],
+    resolved: 1b
 }}
 
 function simpledrawer:impl/guide/generate
