@@ -2,7 +2,7 @@
 <img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png>
 </p>
 
-A simple datapack that addq drawer to minecraft !
+A simple datapack that add drawer to minecraft !
 
 
 The most important item of the datapack is the guide, every player will receive it when joining the world for the first time.
@@ -18,10 +18,7 @@ There is also a crafting recipe for the guide :
 
 # Exploring the datapack :
 
-This command will give you all items available in the datapack :
-```
-/function simpledrawer:give
-```
+This command will give you all items available in the datapack : `/function simpledrawer:give`
 
 In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
 
