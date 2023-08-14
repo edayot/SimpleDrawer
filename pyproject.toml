@@ -13,6 +13,17 @@ smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
 python-semantic-release = "^7.32.2"
 cryptography = "^41.0.0"
 
+sphinx = "^7.1.1"
+sphinx_design = "^0.5.0"
+sphinx-pyproject = "^0.1.0"
+sphinx-autobuild = "^2021.3.14"
+pygments= "^2.15.1"
+myst-parser = "^2.0.0"
+sphinxcontrib-mermaid = "^0.7.1"
+sphinx_copybutton = "^0.5.2"
+furo = "^2023.7.26"
+linkify-it-py = "^2.0.2"
+
 [tool.semantic_release]
 major_on_zero = false
 build_command = "python -m beet -p beet-release.yaml"

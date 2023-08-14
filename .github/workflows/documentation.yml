@@ -1,0 +1,55 @@
+name: Update the documentation
+on:
+  workflow_dispatch:
+  # only run on master branch on push that modifies data/ by edayot
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**'
+
+
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v2
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.5.1
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      - name: Setup cache for dependencies
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{  runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install
+
+
+      - name: Sphinx build
+        run: |
+          cd docs/
+          make html
+          cd ../
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build/
+          destination_dir: "."
+
+      
+      
+      

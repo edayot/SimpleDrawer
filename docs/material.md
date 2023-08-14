@@ -1,30 +1,38 @@
-## `#simpledrawer:material`
+
+# 💎 Adding your own material
+
+
+## Function Tag 
+
+### `#simpledrawer:material`
 
 Add your custom material to this function tag to make it compatible with the compacting drawer.
 
-
+#### Inputs
 | Input Name                            | Input Type   | Input Source             | Input Objective/Path    | 
 | ---                                   | ---          | ---                      | ---                     | 
-| 'Success'                 | score        | #success_material        | simpledrawer.io         | 
-| 'The item'                   | storage      | item_material            | simpledrawer:io         |
+| Success                | score        | #success_material        | simpledrawer.io         | 
+| The item                  | storage      | item_material            | simpledrawer:io         |
 
 
+#### Outputs
 | Output Name       | Output Type  | Output Source             | Output Objective/Path    | 
 | ---               | ---          | ---                       | ---                     | 
-| 'Success'         | score        | #success_material         | simpledrawer.io             | 
-| 'The material'                   | storage      | material            | simpledrawer:io         |
-| 'Type of compacting' <br> (0: block, 1: ingot, 2: nugget)        | score        | #type         | simpledrawer.io             | 
-| 'Number of ingot in a block'         | score        | #ingot_in_block         | simpledrawer.io             | 
-| 'Number of nugget in a block'         | score        | #nugget_in_block         | simpledrawer.io             |
-| 'Number of nugget in a ingot'         | score        | #nugget_in_ingot         | simpledrawer.io             |
-| 'Slot count'         | score        | @s         | simpledrawer.new_drawer.slot_count             |
+| Success        | score        | #success_material         | simpledrawer.io             | 
+| The material                  | storage      | material            | simpledrawer:io         |
+| Type of compacting<br> (0: block, 1: ingot, 2: nugget)        | score        | #type         | simpledrawer.io             | 
+| Number of ingot in a block        | score        | #ingot_in_block         | simpledrawer.io             | 
+| Number of nugget in a block        | score        | #nugget_in_block         | simpledrawer.io             |
+| Number of nugget in a ingot        | score        | #nugget_in_ingot         | simpledrawer.io             |
 
 
 
-### Example
+#### Example
 The function tag will be called when the material of the item need to be checked.
 
-```mcfunction
+##### In the function tag
+```{code-block} mcfunction
+:force:
 
 execute 
     unless score #success_material simpledrawer.io matches 1
@@ -44,12 +52,13 @@ execute
     run function my_data_pack:my_material/block:
         scoreboard players set #type simpledrawer.io 2
         function my_data_pack:my_material
-
 ```
 
-```mcfunction
 
+##### Material function
 
+```{code-block} mcfunction
+:force:
 function my_data_pack:my_material
     scoreboard players set #success_material simpledrawer.io 1
 
