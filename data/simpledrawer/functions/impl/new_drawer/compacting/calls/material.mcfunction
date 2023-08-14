@@ -63,14 +63,12 @@ def generate_material(
         material_last=translate_key.split(".")[-1]
 
         if nugget is None:
-            scoreboard players set @s simpledrawer.new_drawer.slot_count 2
 
             data modify storage simpledrawer:io material set value {
                 material: translate_key,
                 material_name: f'{{"translate":"{translate_key}","fallback":"{material_last}"}}',
                 block: block.nbt,
                 ingot: ingot.nbt,
-                nugget: {id:"minecraft:air",Count:1,Slot:2}
             }
         else:
             scoreboard players set @s simpledrawer.new_drawer.slot_count 3

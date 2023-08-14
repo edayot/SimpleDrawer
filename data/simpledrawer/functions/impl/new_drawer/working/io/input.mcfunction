@@ -55,14 +55,16 @@ function simpledrawer:impl/new_drawer/base_display
 # define function
 function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
     scoreboard players set #success_material simpledrawer.io 0
+    data remove storage simpledrawer:io material
     function #simpledrawer:material
     function simpledrawer:impl/new_drawer/compacting/calls/material
+    
+    scoreboard players set @s simpledrawer.new_drawer.slot_count 3
     execute 
-        if score @s simpledrawer.new_drawer.slot_count matches 4.. 
-        run scoreboard players set @s simpledrawer.new_drawer.slot_count 3
-    execute
-        if score @s simpledrawer.new_drawer.slot_count matches ..0
-        run scoreboard players set @s simpledrawer.new_drawer.slot_count 1
+        unless data storage simpledrawer:io material.nugget
+        run function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call_2:
+            scoreboard players set @s simpledrawer.new_drawer.slot_count 2
+            data modify storage simpledrawer:io material.nugget set value {id:"minecraft:air",Count:1,Slot:2}
     
     data modify storage simpledrawer:io material.block.Slot set value 0
     data modify storage simpledrawer:io material.ingot.Slot set value 1
