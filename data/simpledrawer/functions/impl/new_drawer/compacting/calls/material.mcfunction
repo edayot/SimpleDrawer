@@ -266,17 +266,7 @@ generate_material(
     },
 )
 
-generate_material(
-    "simpledrawer.minecraft.clay",
-    block={
-        test: {id:"minecraft:clay"},
-        nbt: {id:"minecraft:clay",Count:1,Slot:0}
-    },
-    ingot={
-        test: {id:"minecraft:clay_ball"},
-        nbt: {id:"minecraft:clay_ball",Count:1,Slot:1}
-    },
-)
+
 
 
 
