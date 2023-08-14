@@ -27,10 +27,12 @@ Add your custom material to this function tag to make it compatible with the com
 
 
 
-#### Example
+#### Basic format
 The function tag will be called when the material of the item need to be checked.
 
-##### In the function tag
+
+
+###### In the function tag
 ```{code-block} mcfunction
 :force:
 
@@ -55,7 +57,7 @@ execute
 ```
 
 
-##### Material function
+###### Material function
 
 ```{code-block} mcfunction
 :force:
@@ -77,3 +79,8 @@ function my_data_pack:my_material
     }
 
 ```
+
+
+#### Example repository
+
+Take a look at the this [example datapack](https://github.com/edayot/SimpleDrawer/tree/master/example_material) to see how to add your own material.
