@@ -59,20 +59,23 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
     function #simpledrawer:material
     function simpledrawer:impl/new_drawer/compacting/calls/material
     
-    scoreboard players set @s simpledrawer.new_drawer.slot_count 3
     execute 
-        unless data storage simpledrawer:io material.nugget
+        if score #success_material simpledrawer.io matches 1
         run function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call_2:
-            scoreboard players set @s simpledrawer.new_drawer.slot_count 2
-            data modify storage simpledrawer:io material.nugget set value {id:"minecraft:air",Count:1,Slot:2}
-    
-    data modify storage simpledrawer:io material.block.Slot set value 0
-    data modify storage simpledrawer:io material.ingot.Slot set value 1
-    data modify storage simpledrawer:io material.nugget.Slot set value 2
+            scoreboard players set @s simpledrawer.new_drawer.slot_count 3
+            execute 
+                unless data storage simpledrawer:io material.nugget
+                run function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call_3:
+                    scoreboard players set @s simpledrawer.new_drawer.slot_count 2
+                    data modify storage simpledrawer:io material.nugget set value {id:"minecraft:air",Count:1,Slot:2}
+            
+            data modify storage simpledrawer:io material.block.Slot set value 0
+            data modify storage simpledrawer:io material.ingot.Slot set value 1
+            data modify storage simpledrawer:io material.nugget.Slot set value 2
 
-    data modify storage simpledrawer:io material.block.Count set value 1
-    data modify storage simpledrawer:io material.ingot.Count set value 1
-    data modify storage simpledrawer:io material.nugget.Count set value 1
+            data modify storage simpledrawer:io material.block.Count set value 1
+            data modify storage simpledrawer:io material.ingot.Count set value 1
+            data modify storage simpledrawer:io material.nugget.Count set value 1
     
 
 
