@@ -18,6 +18,8 @@ execute
         execute 
             if score #found simpledrawer.math matches 0
             run function simpledrawer:impl/new_drawer/working/interaction/interact/search
+        data remove entity @s interaction
+        data remove entity @s attack
 tag @s remove simpledrawer.interacter
 
 

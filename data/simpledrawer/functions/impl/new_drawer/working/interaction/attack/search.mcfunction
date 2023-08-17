@@ -11,5 +11,3 @@ execute if score #test_player simpledrawer.math matches 1 run function simpledra
 
 
 execute if score #test_player simpledrawer.math matches 1 run scoreboard players set #found simpledrawer.math 1
-data remove entity @s interaction
-data remove entity @s attack
