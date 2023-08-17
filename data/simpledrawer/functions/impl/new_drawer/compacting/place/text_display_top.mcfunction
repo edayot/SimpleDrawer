@@ -2,6 +2,7 @@
 
 
 
+tag @s add global.ignore
 tag @s add simpledrawer.new_drawer.part
 tag @s add simpledrawer.new_drawer.part.text_display
 

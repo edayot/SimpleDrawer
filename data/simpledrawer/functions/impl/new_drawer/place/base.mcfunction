@@ -33,6 +33,7 @@ execute store result score #maxCount simpledrawer.math run data get entity @s it
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer.base
+tag @s add global.ignore
 tag @s add simpledrawer.new_drawer.part
 tag @s add simpledrawer.new_drawer.part.base
 
