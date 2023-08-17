@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v1.10.2 (2023-08-17)
+
+### Feature
+
+* Start implementing optional materials ([`04df07d`](https://github.com/edayot/SimpleDrawer/commit/04df07d8fcc8651ffd5d3cb4e9389c4b715c325e))
+
+### Fix
+
+* Improve search algorithm ([`654246e`](https://github.com/edayot/SimpleDrawer/commit/654246ea1fdd8e45294f37f1e43cb06c372aa167))
+* Add global.ignore tag to all parts ([`a731265`](https://github.com/edayot/SimpleDrawer/commit/a731265ad168fa29cd641f67af46f5b25882795a))
+
 ## v1.10.1 (2023-08-14)
 
 ### Fix
