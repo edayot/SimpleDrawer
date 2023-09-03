@@ -5,6 +5,7 @@ from beet.contrib.model_merging import model_merging
 import os
 import json
 import requests
+import weld
 
 @property
 def modified_suffixes(self):
@@ -121,7 +122,10 @@ def cache_dependencies(ctx: Context):
       
     for dep in list_dep:
         if dep not in ctx.cache.json["airdox_"]["list_dep"]:
+            # logging the download
             print(f"Downloading {dep}")
+
+            
             ctx.cache.json["airdox_"]["list_dep"].append(dep)
             dep_full_id,dep_version=dep.split("@")
             dep_author,dep_id=dep_full_id.split(":")
@@ -144,7 +148,7 @@ def cache_dependencies(ctx: Context):
             
 
 def load_included(ctx: Context):
-    ctx.require(model_merging)
+    weld.toolchain.main.weld(ctx)
     
     for dep in ctx.meta["smithed_dependencies"]: 
         dep_author,dep_id=dep["id"].split(":")

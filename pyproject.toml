@@ -10,6 +10,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
+smithed= "0.13.2"
 python-semantic-release = "^7.32.2"
 cryptography = "^41.0.0"
 
