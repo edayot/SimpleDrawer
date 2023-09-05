@@ -29,6 +29,7 @@ pipeline:
   - beet.contrib.render
   - beet.contrib.minify_json
   - beet.contrib.minify_function
+  - airdox_.add_id
  
 
 

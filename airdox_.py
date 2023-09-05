@@ -1,4 +1,4 @@
-from beet import Context, TextFile, ResourcePack, DataPack, JsonFile
+from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta
 from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
@@ -122,10 +122,7 @@ def cache_dependencies(ctx: Context):
       
     for dep in list_dep:
         if dep not in ctx.cache.json["airdox_"]["list_dep"]:
-            # logging the download
             print(f"Downloading {dep}")
-
-            
             ctx.cache.json["airdox_"]["list_dep"].append(dep)
             dep_full_id,dep_version=dep.split("@")
             dep_author,dep_id=dep_full_id.split(":")
@@ -166,3 +163,9 @@ def load_included(ctx: Context):
         ctx.assets.merge(assets)
         ctx.data.merge(data)
 
+def add_id(ctx: Context):
+    """Function to add the id to the pack.mcmeta"""
+    ctx.assets.extra["pack.mcmeta"].data["id"]=str(ctx.project_id)
+    ctx.data.extra["pack.mcmeta"].data["id"]=str(ctx.project_id)
+
+    
