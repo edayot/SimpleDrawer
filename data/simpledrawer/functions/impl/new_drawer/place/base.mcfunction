@@ -42,6 +42,9 @@ execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} 
 execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
 
 
+tag @s add smithed.block
+tag @s add smithed.entity
+tag @s add smithed.strict
 
 
 tag @s add itemio.container

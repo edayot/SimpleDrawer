@@ -3,6 +3,9 @@ tag @s add global.ignore
 tag @s add simpledrawer.new_drawer.part
 tag @s add simpledrawer.new_drawer.part.hopper_display
 
+tag @s add smithed.entity
+tag @s add smithed.strict
+
 scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
 
 
