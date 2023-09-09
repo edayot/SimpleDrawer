@@ -16,7 +16,11 @@ data modify storage simpledrawer:main ItemsNBT.drawer set value {id:"minecraft:f
         simpledrawer:{type:"wood",hopper:0b},
         smithed:{block:{id:"simpledrawer:drawer"}}
     }}]},
-    display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'}}}
+    display:{Name:'{"translate":"simpledrawer.drawer.empty","color":"white","italic":false}'},
+    smithed:{
+        id:"airdox_:simpledrawer/drawer",
+    },
+}}
 
 data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecraft:furnace",Count:1b,tag:{
     CustomModelData:1430000,
@@ -26,6 +30,9 @@ data modify storage simpledrawer:main ItemsNBT.new_drawer set value {id:"minecra
     display:{
         Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/new_drawer",
     },
     BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
         simpledrawer:{
@@ -52,6 +59,9 @@ data modify storage simpledrawer:main ItemsNBT.double_new_drawer set value {id:"
         Name:'{"translate":"simpledrawer.double_new_drawer.empty","color":"white","italic":false}',
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
     },
+    smithed:{
+        id:"airdox_:simpledrawer/double_new_drawer",
+    },
     BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
         simpledrawer:{
             type:"normal",
@@ -77,7 +87,9 @@ data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer set value {i
         Name:'{"translate":"simpledrawer.quadruple_new_drawer.empty","color":"white","italic":false}',
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
     },
-
+    smithed:{
+        id:"airdox_:simpledrawer/quadruple_new_drawer",
+    },
     BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
         simpledrawer:{
             type:"normal",
@@ -100,6 +112,9 @@ data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {
     display:{
         Name:'{"translate":"simpledrawer.compacting_new_drawer.empty","color":"white","italic":false}',
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']},
+    smithed:{
+        id:"airdox_:simpledrawer/compacting_new_drawer",
+    },
 
     BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
         simpledrawer:{
@@ -131,6 +146,9 @@ data modify storage simpledrawer:main ItemsNBT.hopper_upgrade set value {id:"min
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.hopper_upgrade","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/hopper_upgrade",
     }
 }}
 #iron_upgrade
@@ -140,7 +158,10 @@ data modify storage simpledrawer:main ItemsNBT.iron_upgrade set value {id:"minec
     simpledrawer:{upgrade:1b},
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
-        Name:'{"translate":"simpledrawer.iron_upgrade","color":"white","italic":false}'}
+        Name:'{"translate":"simpledrawer.iron_upgrade","color":"white","italic":false}'},
+    smithed:{
+        id:"airdox_:simpledrawer/iron_upgrade",
+    }
 }}
 #gold_upgrade
 data modify storage simpledrawer:main ItemsNBT.gold_upgrade set value {id:"minecraft:jigsaw",Count:1b,tag:{
@@ -150,6 +171,9 @@ data modify storage simpledrawer:main ItemsNBT.gold_upgrade set value {id:"minec
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.gold_upgrade","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/gold_upgrade",
     }
 }}
 #diamond_upgrade
@@ -160,6 +184,9 @@ data modify storage simpledrawer:main ItemsNBT.diamond_upgrade set value {id:"mi
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.diamond_upgrade","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/diamond_upgrade",
     }
 }}
 #star_upgrade
@@ -170,6 +197,9 @@ data modify storage simpledrawer:main ItemsNBT.star_upgrade set value {id:"minec
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.star_upgrade","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/star_upgrade",
     }
 }}
 #netherite_upgrade
@@ -190,6 +220,9 @@ data modify storage simpledrawer:main ItemsNBT.downgrade_wrench set value {id:"m
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.downgrade_wrench","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/downgrade_wrench",
     }
 }}
 
@@ -199,6 +232,9 @@ data modify storage simpledrawer:main ItemsNBT.guide set value {id:"minecraft:wr
     display:{
         Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}'],
         Name:'{"translate":"simpledrawer.guide","color":"white","italic":false}'
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/guide",
     },
     title:"SimpleDrawer Guide",
     author:"AirDox_",
