@@ -145,6 +145,10 @@ def cache_dependencies(ctx: Context):
             
 
 def load_included(ctx: Context):
+
+    if not "bundled" in ctx.meta.keys() or not ctx.meta["bundled"]:
+        return
+
     weld.toolchain.main.weld(ctx)
     
     for dep in ctx.meta["smithed_dependencies"]: 

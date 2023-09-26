@@ -1,2 +1,0 @@
-beet l --minecraft "/home/erwan/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.20.1/.minecraft/" --data-pack "/home/erwan/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.20.1/.minecraft//saves/Datapack island/datapacks" --resource-pack "/home/erwan/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.20.1/.minecraft//resourcepacks"
-beet --project beet-dev.yaml w
