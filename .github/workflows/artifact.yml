@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - 1.20_feature
 
 jobs:
   release:
@@ -35,8 +34,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
         run: |
-          poetry run python .github/workflows/artifact.py
-          poetry run python -m beet -p beet-artifact.yaml
+          make BUILD_TYPE=artifact
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
       - uses: actions/upload-artifact@v3
