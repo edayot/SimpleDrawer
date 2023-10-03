@@ -65,3 +65,8 @@ jobs:
         run: poetry run python .github/workflows/push-to-modrinth.py 
         env:
           MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}
+      - name: Push to smithed
+        run: poetry run python .github/workflows/push-to-smithed.py 
+        env:
+          SMITHED_UID: ${{ secrets.SMITHED_UID }}
+          SMITHED_TOKEN: ${{ secrets.SMITHED_TOKEN }}

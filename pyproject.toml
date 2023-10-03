@@ -27,7 +27,7 @@ linkify-it-py = "^2.0.2"
 
 [tool.semantic_release]
 major_on_zero = false
-build_command = "python -m beet -p beet-release.yaml"
+build_command = "make BUILD_TYPE=release"
 dist_path = "build"
 upload_to_pypi = false
 upload_to_release = true
