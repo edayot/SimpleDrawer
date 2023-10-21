@@ -368,6 +368,23 @@ commands.append(generate_page(craft, craft_result,"uff19","uff1a"))
 
 
 
+project_pages='["",'
+project_pages=project_pages+'{"translate":"simpledrawer.guide_first","font":"simpledrawer:big","color":"black","bold":true},'
+project_pages=project_pages+'{"text":"\\\\uef01\\\\uef01\\\\uef00\\\\uef00\\\\uef00","font":"simpledrawer:font","color":"white"},'
+project_pages=project_pages+'{"text":"\\\\uef03","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","value":{"translate":"simpledrawer.guide.update_button","with":[{"text":"__version__"}]}},"clickEvent":{"action":"run_command","value":"/trigger simpledrawer.update_guide"}},'
+
+
+project_pages=project_pages+'{"text":"\\\\n\\\\uef01\\\\uef01\\\\uef01\\\\uef01\\\\uef00\\\\uef00\\\\uef00\\\\uef00\\\\uef00","font":"simpledrawer:font","color":"white"},'
+
+project_pages=project_pages+'{"text":"\\\\uef01","font":"simpledrawer:font","color":"white","hoverEvent":{"action":"show_text","value":{"translate":"simpledrawer.guide.update_button","with":[{"text":"__version__"}]}},"clickEvent":{"action":"run_command","value":"/trigger simpledrawer.update_guide"}},'
+
+project_pages=project_pages+'{"text":"      \\\\uee00\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n","font":"simpledrawer:font","color":"white"},'
+project_pages=project_pages+'{"translate":"simpledrawer.guide.project_pages","color":"black"}]'
+
+commands.append(f"data modify storage simpledrawer:main ItemsNBT.guide.tag.pages append value '{project_pages}'")
+
+
+
 with open("generate.mcfunction","w") as f:
     for command in commands:
         f.write(command+"\n")

@@ -47,7 +47,7 @@ meta:
         prefix: "#smithed.actionbar"
 
     - id: "airdox_:itemio"
-      version_: "0.7.2"
+      version_: "0.8.0"
       versioning:
         type: "normal"
         prefix: "#itemio"

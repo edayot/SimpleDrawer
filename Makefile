@@ -3,8 +3,8 @@
 
 MINECRAFT_FOLDER = /mnt/c/Users/erwan/AppData/Roaming/PrismLauncher/instances/1.20.1/.minecraft/
 SAVE_FOLDER = $(MINECRAFT_FOLDER)saves/Datapack\ island/
-DATAPACKS_FOLDER = $(SAVE_FOLDER)datapacks/
-RESOURCES_PACK_FOLDER = $(MINECRAFT_FOLDER)resourcepacks/
+DATAPACKS_FOLDER = /home/erwan/Dev/Server/world/datapacks
+RESOURCES_PACK_FOLDER = /var/www/html/resourcepacks
 
 
 # BUILD_TYPE is an argument passed via make build BUILD_TYPE=release
@@ -23,10 +23,18 @@ else
 endif
 ifeq ($(BUILD_TYPE), dev)
 	VERSION_STRING = $(VERSION)-$(COMMIT_HASH)-dev
+	ZIPPED = true
 endif
 
-
+# if dev or artifact, we don't want the version in the name
+ifeq ($(BUILD_TYPE), dev)
+	version_bool = true
+endif
 ifeq ($(BUILD_TYPE), artifact)
+	version_bool = true
+endif
+
+ifdef version_bool
 	DATA_NAME = "datapack"
 	ASSETS_NAME = "resourcepack"
 	DATA_BUNDLED_NAME = "datapack-bundled"
@@ -75,7 +83,7 @@ endif
 
 
 watch: link
-	@poetry run beet --project beet.yaml watch
+	@poetry run beet --project beet.yaml $(BUNDLED_ARGS) watch
 
 link:
 	@poetry run beet l --minecraft $(MINECRAFT_FOLDER) --data-pack $(DATAPACKS_FOLDER) --resource-pack $(RESOURCES_PACK_FOLDER) 
