@@ -63,7 +63,7 @@ meta:
       #  ex: smithed.actionbar/impl/reset -> smithed.actionbar/impl/v1.2.3/reset
       # here, we need to specify `{{ ctx.project_id }}`
       refactor:
-        match: "*:*"                  # which files to look at
+        match: "{{ project_id }}:*"                  # which files to look at
         find: "{{ project_id }}:impl/"               # which paths to look for
         replace: "{{ project_id }}:v{{ version }}/"  # what to replace path w/
 
