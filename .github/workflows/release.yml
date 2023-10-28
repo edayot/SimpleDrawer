@@ -23,10 +23,12 @@ jobs:
           fetch-depth: 0
       - name: Setup Python 3.11
         uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
-          version: 1.5.1
+          version: 1.6.1
           virtualenvs-create: true
           virtualenvs-in-project: true
       - name: Setup cache for dependencies
