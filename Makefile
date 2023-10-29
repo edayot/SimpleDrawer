@@ -1,10 +1,10 @@
 
 
 
-MINECRAFT_FOLDER = /mnt/c/Users/erwan/AppData/Roaming/PrismLauncher/instances/1.20.1/.minecraft/
+MINECRAFT_FOLDER = /mnt/c/Users/erwan/AppData/Roaming/PrismLauncher/instances/1.20.2/.minecraft/
 SAVE_FOLDER = $(MINECRAFT_FOLDER)saves/Datapack\ island/
-DATAPACKS_FOLDER = /home/erwan/Dev/Server/world/datapacks
-RESOURCES_PACK_FOLDER = /var/www/html/resourcepacks
+DATAPACKS_FOLDER = $(SAVE_FOLDER)datapacks/
+RESOURCES_PACK_FOLDER = $(MINECRAFT_FOLDER)resourcepacks/
 
 
 # BUILD_TYPE is an argument passed via make build BUILD_TYPE=release
@@ -27,9 +27,6 @@ ifeq ($(BUILD_TYPE), dev)
 endif
 
 # if dev or artifact, we don't want the version in the name
-ifeq ($(BUILD_TYPE), dev)
-	version_bool = true
-endif
 ifeq ($(BUILD_TYPE), artifact)
 	version_bool = true
 endif
