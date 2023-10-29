@@ -25,8 +25,8 @@ extend: "common.yaml"
 
 meta:
   modrinth_id: "JmCxCKiW"
-  mc_supports: ["1.20","1.20.1"]
-  mc_supports_dataversion: [3463,3465]
+  mc_supports: ["1.20.2"]
+  mc_supports_dataversion: [3578]
   smithed_dependencies:
     - id: "smithed:crafter"
       version_: "0.2.0"

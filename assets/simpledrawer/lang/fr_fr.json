@@ -90,6 +90,11 @@
 
     "simpledrawer.guide.update_button": "Cliquez ici pour mettre à jour le guide\nVersion actuelle : %s",
     "simpledrawer.update_guide": "Le guide a été mis à jour",
-    "simpledrawer.update_guide_fail": "Il n'y a pas de guide à mettre à jour"
+    "simpledrawer.update_guide_fail": "Il n'y a pas de guide à mettre à jour",
 
+
+    "simpledrawer.project": "Le projet",
+    "simpledrawer.guide.project_pages": "Regarde toutes les pages officielles du projet"
+
+    
 }

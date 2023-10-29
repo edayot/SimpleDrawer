@@ -4,6 +4,10 @@
 		"id": "minecraft:include/space"
 	},
 	{ "type": "bitmap", "file": "simpledrawer:item/font/drawer.png",				"ascent": 7, "height": 64, "chars": ["\uee00"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/logo/github.png",				"ascent": 7, "height": 25, "chars": ["\uee01"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/logo/pmc.png",				"ascent": 7, "height": 25, "chars": ["\uee02"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/logo/smithed.png",				"ascent": 7, "height": 25, "chars": ["\uee03"] },
+	{ "type": "bitmap", "file": "simpledrawer:item/logo/modrinth.png",				"ascent": 7, "height": 25, "chars": ["\uee04"] },
 
 
 
