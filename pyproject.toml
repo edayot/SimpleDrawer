@@ -8,7 +8,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "3.11"
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git"}
 smithed= "0.13.2"
 python-semantic-release = "^7.32.2"
