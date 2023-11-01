@@ -20,6 +20,9 @@ execute
             run function simpledrawer:impl/new_drawer/working/interaction/interact/search
         data remove entity @s interaction
         data remove entity @s attack
+execute 
+    unless score #found simpledrawer.math matches 0
+    run scoreboard players add @s simpledrawer.nb_click 1
 tag @s remove simpledrawer.interacter
 
 
