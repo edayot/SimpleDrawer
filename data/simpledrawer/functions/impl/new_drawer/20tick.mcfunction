@@ -30,7 +30,9 @@ execute
         execute
             if score #player_nearby simpledrawer.math matches 1
             if score @s simpledrawer.new_drawer.as_players_entities matches 0
+            if score #count_summon simpledrawer.math < #max_resummon simpledrawer.math
             run function ./resummon_player_entities:
+                scoreboard players add #count_summon simpledrawer.math 1
                 data remove storage simpledrawer:main temp
                 data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main ItemsNBT.new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer
                 data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.tag.simpledrawer
