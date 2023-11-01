@@ -132,12 +132,18 @@ def cache_dependencies(ctx: Context):
             try:
                 os.mkdir(f"{ctx.cache.path}/airdox_")
                 os.mkdir(f"{ctx.cache.path}/airdox_/dep")
-            except:
+            except FileExistsError:
                 pass
-            with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_datapack.zip","wb") as f:
-                f.write(datapack.content)
-            with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_resourcepack.zip","wb") as f:
-                f.write(resourcepack.content)
+
+            if datapack.ok and resourcepack.ok:
+                with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_datapack.zip","wb") as f:
+                    f.write(datapack.content)
+                with open(f"{ctx.cache.path}/airdox_/dep/{dep_id}@{dep_version}_resourcepack.zip","wb") as f:
+                    f.write(resourcepack.content)
+            elif not datapack.ok:
+                raise Exception(f"Error downloading {dep} datapack")
+            elif not resourcepack.ok:
+                raise Exception(f"Error downloading {dep} resourcepack")
 
             
             
