@@ -1,6 +1,6 @@
 {
 	"pack": {
 		"pack_format": 15,
-		"description": "My datapack"
+		"description": "My datapack, the data.ignore folder is just to make sure beet doesn't include the files in the build."
 	}
 }

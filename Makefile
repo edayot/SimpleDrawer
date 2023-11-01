@@ -23,7 +23,6 @@ else
 endif
 ifeq ($(BUILD_TYPE), dev)
 	VERSION_STRING = $(VERSION)-$(COMMIT_HASH)-dev
-	ZIPPED = true
 endif
 
 # if dev or artifact, we don't want the version in the name
