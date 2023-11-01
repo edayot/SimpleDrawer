@@ -69,7 +69,7 @@ BUNDLED_ARGS = $(ARGS) \
 
 
 # Build
-b: 
+b: clean
 ifeq ($(BUILD_TYPE), dev)
 	@poetry run beet $(BUNDLED_ARGS) build
 else
