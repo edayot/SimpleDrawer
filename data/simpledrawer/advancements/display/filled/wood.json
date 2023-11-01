@@ -1,10 +1,20 @@
 {
     "display": {
         "title": {
-            "text": "Fill a wood drawer"
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.wood"
+                }
+            ]
         },
         "description": {
-            "text": "Use the max capacity of a wood drawer"
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.wood"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:furnace",

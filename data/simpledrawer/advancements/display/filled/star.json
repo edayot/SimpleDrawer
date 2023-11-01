@@ -1,10 +1,20 @@
 {
     "display": {
         "title": {
-            "text": "Fill a star drawer"
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.star"
+                }
+            ]
         },
         "description": {
-            "text": "Use the max capacity of a star drawer"
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.star"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:furnace",

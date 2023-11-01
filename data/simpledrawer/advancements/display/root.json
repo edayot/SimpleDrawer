@@ -1,11 +1,10 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "SimpleDrawer"
+            "translate": "simpledrawer.advancement.root.title"
         },
         "description": {
-            "text": "Open the SimpleDrawer guide to learn how to craft drawers."
+            "translate": "simpledrawer.advancement.root.description"
         },
         "icon": {
             "item": "minecraft:written_book",
@@ -23,6 +22,6 @@
         }
     },
     "rewards": {
-      "function": "simpledrawer:advancements/display/root"
+        "function": "simpledrawer:advancements/display/root"
     }
 }

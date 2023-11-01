@@ -1,10 +1,20 @@
 {
     "display": {
         "title": {
-            "text": "Fill a netherite drawer"
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.netherite"
+                }
+            ]
         },
         "description": {
-            "text": "Use the max capacity of a netherite drawer"
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.netherite"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:furnace",
@@ -13,7 +23,7 @@
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": false
+        "hidden": true
     },
     "criteria": {
         "Fill a netherite drawer": {

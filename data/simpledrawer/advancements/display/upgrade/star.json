@@ -1,11 +1,15 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Very Large storage"
+            "translate": "simpledrawer.advancement.upgrade.star.title"
         },
         "description": {
-            "text": "Use a Nether Star upgrade"
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.star"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:jigsaw",

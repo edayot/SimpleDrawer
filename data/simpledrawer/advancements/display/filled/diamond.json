@@ -1,10 +1,20 @@
 {
     "display": {
         "title": {
-            "text": "Fill a diamond drawer"
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.diamond"
+                }
+            ]
         },
         "description": {
-            "text": "Use the max capacity of a diamond drawer"
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.diamond"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:furnace",

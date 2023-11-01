@@ -1,10 +1,20 @@
 {
     "display": {
         "title": {
-            "text": "Fill a gold drawer"
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.gold"
+                }
+            ]
         },
         "description": {
-            "text": "Use the max capacity of a gold drawer"
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.gold"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:furnace",

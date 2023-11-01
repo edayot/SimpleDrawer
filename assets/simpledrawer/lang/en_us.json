@@ -92,7 +92,33 @@
 
 
     "simpledrawer.project":"The project",
-    "simpledrawer.guide.project_pages":"Check all official pages of the project"
+    "simpledrawer.guide.project_pages":"Check all official pages of the project",
+
+    "simpledrawer.advancement.root.title":"SimpleDrawer",
+    "simpledrawer.advancement.root.description":"Open the SimpleDrawer guide to know how to craft drawers.",
+
+    "simpledrawer.advancement.config.32_usage.title":"Super Clicker",
+    "simpledrawer.advancement.config.32_usage.description":"Click 32 times on a drawer",
+
+    "simpledrawer.advancement.filled.title":"Fill a %s drawer",
+    "simpledrawer.advancement.filled.description":"Use the max capacity of a %s drawer",
+
+    "simpledrawer.advancement.upgrade.hopper.title":"Automation",
+    "simpledrawer.advancement.upgrade.iron.title":"Little more storage",
+    "simpledrawer.advancement.upgrade.gold.title":"More storage",
+    "simpledrawer.advancement.upgrade.diamond.title":"Large storage",
+    "simpledrawer.advancement.upgrade.star.title":"Very large storage",
+    "simpledrawer.advancement.upgrade.netherite.title":"\"Infinite\" storage",
+
+    "simpledrawer.advancement.upgrade.description":"Use a %s upgrade on a drawer",
+    
+    "simpledrawer.advancement.hopper":"hopper",
+    "simpledrawer.advancement.wood":"wood",
+    "simpledrawer.advancement.iron":"iron",
+    "simpledrawer.advancement.gold":"gold",
+    "simpledrawer.advancement.diamond":"diamond",
+    "simpledrawer.advancement.star":"star",
+    "simpledrawer.advancement.netherite":"netherite"
 
 
 

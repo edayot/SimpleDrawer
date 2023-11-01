@@ -1,11 +1,15 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Automation"
+            "translate": "simpledrawer.advancement.upgrade.hopper.title"
         },
         "description": {
-            "text": "Use a hopper upgrade"
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.hopper"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:jigsaw",

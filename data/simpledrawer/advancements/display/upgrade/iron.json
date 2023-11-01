@@ -1,11 +1,15 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Little more storage"
+            "translate": "simpledrawer.advancement.upgrade.iron.title"
         },
         "description": {
-            "text": "Use a iron upgrade"
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.iron"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:jigsaw",

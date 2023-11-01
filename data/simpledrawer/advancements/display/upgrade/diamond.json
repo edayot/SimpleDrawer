@@ -1,11 +1,15 @@
 {
-    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
     "display": {
         "title": {
-            "text": "Large storage"
+            "translate": "simpledrawer.advancement.upgrade.diamond.title"
         },
         "description": {
-            "text": "Use a Diamond upgrade"
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.diamond"
+                }
+            ]
         },
         "icon": {
             "item": "minecraft:jigsaw",

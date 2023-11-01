@@ -1,10 +1,10 @@
 {
     "display": {
         "title": {
-            "text": "Super clicker"
+            "translate": "simpledrawer.advancement.config.32_usage.title"
         },
         "description": {
-            "text": "Click 32 times on a drawer\nDo you know that you can config your click via with /trigger simpledrawer.config"
+            "translate": "Click 32 times on a drawer"
         },
         "icon": {
             "item": "minecraft:jigsaw",
