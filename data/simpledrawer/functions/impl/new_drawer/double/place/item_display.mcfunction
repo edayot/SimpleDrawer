@@ -6,7 +6,7 @@ tag @s add simpledrawer.new_drawer.part.item_display
 tag @s add smithed.entity
 tag @s add smithed.strict
 
-scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
+scoreboard players operation @s simpledrawer.new_drawer.id = #place_id simpledrawer.math
 scoreboard players operation @s simpledrawer.new_drawer.part_id = #part_index simpledrawer.new_drawer.part_id
 
 

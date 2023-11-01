@@ -18,6 +18,18 @@ execute
         scoreboard players set @s simpledrawer.block.patch 0
 
 
+# 1.10.X to 1.11.0 => add score simpledrawer.as_players_entities
+# all drawers have players entities in that time
+execute
+    if score @s simpledrawer.block.major matches 1
+    if score @s simpledrawer.block.minor matches 10
+    if score @s simpledrawer.block.patch matches 0..
+    run function ./1.10_to_1.11:
+        scoreboard players set @s simpledrawer.as_players_entities 1
+        scoreboard players set @s simpledrawer.block.major 1
+        scoreboard players set @s simpledrawer.block.minor 11
+        scoreboard players set @s simpledrawer.block.patch 0
+
 
 
 #copy the new version

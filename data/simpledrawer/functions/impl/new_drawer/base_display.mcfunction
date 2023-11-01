@@ -2,7 +2,7 @@
 data modify storage simpledrawer:main temp.simpledrawerXX set from entity @s item.tag.simpledrawer
 
 
-execute store success score #if_player_around simpledrawer.math if entity @a[distance=..15]
+execute store success score #if_player_around simpledrawer.math if entity @a[distance=..16]
 
  
 execute if score #if_player_around simpledrawer.math matches 0 run tag @s add simpledrawer.new_drawer.to_update

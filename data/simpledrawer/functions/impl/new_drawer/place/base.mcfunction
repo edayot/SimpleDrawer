@@ -36,6 +36,7 @@ tag @s add simpledrawer.new_drawer.base
 tag @s add global.ignore
 tag @s add simpledrawer.new_drawer.part
 tag @s add simpledrawer.new_drawer.part.base
+scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
 
 
 execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} run tag @s add simpledrawer.new_drawer.hopper
@@ -58,6 +59,7 @@ function #itemio:calls/container/init
 tp @s ~ ~ ~ ~ ~
 
 
+scoreboard players operation #place_id simpledrawer.math = @s simpledrawer.new_drawer.id
 function simpledrawer:impl/new_drawer/place/variant
 
 function simpledrawer:impl/new_drawer/base_display

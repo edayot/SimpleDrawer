@@ -10,7 +10,7 @@ tag @s add simpledrawer.new_drawer.part.maxcount
 tag @s add smithed.entity
 tag @s add smithed.strict
 
-scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
+scoreboard players operation @s simpledrawer.new_drawer.id = #place_id simpledrawer.math
 
 
 tp @s ~ ~ ~ ~ ~
