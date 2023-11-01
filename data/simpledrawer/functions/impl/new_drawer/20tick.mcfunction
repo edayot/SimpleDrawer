@@ -24,6 +24,7 @@ execute
                     tag=simpledrawer.new_drawer.part,
                     predicate=simpledrawer:impl/search_id_new_drawer
                 ]
+                data modify entity @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,sort=nearest, predicate=simpledrawer:impl/search_id_new_drawer] transformation.scale set value [1.01f,1.01f,1.01f]
                 scoreboard players set @s simpledrawer.new_drawer.as_players_entities 0
 
 
@@ -40,6 +41,9 @@ execute
                 function simpledrawer:impl/new_drawer/place/variant
                 scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
                 function simpledrawer:impl/new_drawer/base_display_rup
+                
+                scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
+                data modify entity @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,sort=nearest, predicate=simpledrawer:impl/search_id_new_drawer] transformation.scale set value [1.001f,1.001f,1.001f]
 
 
 
