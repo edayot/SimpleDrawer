@@ -117,7 +117,8 @@ def cache_dependencies(ctx: Context):
 
     list_dep=list()
     for dep in ctx.meta["smithed_dependencies"]:
-        list_dep.append(f"{dep['id']}@{dep['version_']}")
+        if dep["versioning"]["type"]=="normal":
+            list_dep.append(f"{dep['id']}@{dep['version_']}")
     
       
     for dep in list_dep:
@@ -158,6 +159,9 @@ def load_included(ctx: Context):
     weld.toolchain.main.weld(ctx)
     
     for dep in ctx.meta["smithed_dependencies"]: 
+        if not dep["versioning"]["type"]=="normal":
+            continue
+
         dep_author,dep_id=dep["id"].split(":")
         identifier=f"{dep_id}@{dep['version_']}"
         data=DataPack(zipfile=f"{ctx.cache.path}/airdox_/dep/{identifier}_datapack.zip")

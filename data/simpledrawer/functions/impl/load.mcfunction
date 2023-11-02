@@ -313,3 +313,9 @@ schedule function simpledrawer:impl/5tick 5t replace
 schedule function simpledrawer:impl/20tick 20t replace
 
 function simpledrawer:impl/mc_version_warning
+
+setblock -29999990 33 1610 air
+setblock -29999990 33 1610 player_head{SkullOwner:{Name:"jeb_"}}
+
+
+function simpledrawer:impl/timestamp

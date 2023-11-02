@@ -35,7 +35,7 @@ See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your 
 
 
 
-# Some sources :
+# Some credits :
 - StorageDrawer mod (idea and textures) : https://github.com/jaquadro/StorageDrawers
 
 - Isometric rendering mod : https://github.com/glisco03/isometric-renders
@@ -47,3 +47,5 @@ See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your 
 - ItemIO : https://github.com/edayot/ItemIO
 
 - Minecraft Title Generator (blockbench plugin) : https://ewanhowell.com/plugins/minecraft-title-generator/
+
+- Minecraft base64 decoder : https://github.com/DorkOrc/Minecraft-Base64-Tool

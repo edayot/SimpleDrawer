@@ -7,7 +7,7 @@ author: AirDox_
 output: "build"
 
 overrides:
-  - meta.smithed.versioning.scheduled_paths: [impl/tick,impl/5tick,impl/20tick,impl/mc_version_check]
+  - meta.smithed.versioning.scheduled_paths: [impl/tick,impl/5tick,impl/20tick,impl/mc_version_check,impl/timestamp]
 
 data_pack:
   load: [.]
@@ -47,8 +47,13 @@ meta:
         prefix: "#smithed.actionbar"
 
     - id: "airdox_:itemio"
-      version_: "0.9.0"
+      version_: "0.9.1"
       versioning:
         type: "normal"
         prefix: "#itemio"
         
+    - id: "dorkorc:dork.base64"
+      version_: "0.0.0"
+      versioning:
+        type: "included"
+        prefix: "dork.base64"
