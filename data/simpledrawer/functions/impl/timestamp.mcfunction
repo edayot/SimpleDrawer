@@ -3,6 +3,20 @@
 function ./timestamp/scoreboard_process:
     $data modify storage simpledrawer:timestamp timestamp set value $(timestamp)L
     execute store result score #timestamp simpledrawer.math run data get storage simpledrawer:timestamp timestamp 0.001
+
+    scoreboard players operation #timestamp_year simpledrawer.math = #timestamp simpledrawer.math
+    scoreboard players operation #timestamp_year simpledrawer.math /= #second_in_a_year simpledrawer.math
+
+    scoreboard players operation #current_year_% simpledrawer.math = #timestamp_year simpledrawer.math
+    scoreboard players operation #current_year_% simpledrawer.math %= #100 simpledrawer.math
+
+    # enable christmas event from december 1st to mid january aproximately
+    scoreboard players set #christas_event simpledrawer.math 0
+    execute if score #current_year_% simpledrawer.math matches 91.. run scoreboard players set #christas_event simpledrawer.math 1
+    execute if score #current_year_% simpledrawer.math matches 0..5 run scoreboard players set #christas_event simpledrawer.math 1
+
+    execute if score #christas_event simpledrawer.math matches 1 run function simpledrawer:event/christmas
+
     
 
 
