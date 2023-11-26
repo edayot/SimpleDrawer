@@ -2,7 +2,7 @@
 import json
 
 
-for wood_type in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
+for wood_type in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak", "ice"]:
     for drawer_type in [1,2,4]:
         with open(f"{wood_type}_full_drawers_{drawer_type}.json","w") as f:
             j={

@@ -266,6 +266,13 @@
         },
         {
             "predicate": {
+                "custom_model_data": 1430000,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_1"
+        },
+        {
+            "predicate": {
                 "custom_model_data": 1430001,
                 "trim_type": 0.143
             },
@@ -340,6 +347,13 @@
                 "trim_type": 0.14301
             },
             "model": "simpledrawer:block/new_drawer/bamboo_full_drawers_2"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 1430001,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_2"
         },
         {
             "predicate": {
@@ -420,6 +434,13 @@
         },
         {
             "predicate": {
+                "custom_model_data": 1430002,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_4"
+        },
+        {
+            "predicate": {
                 "custom_model_data": 1430003,
                 "trim_type": 0.143
             },
@@ -494,6 +515,13 @@
                 "trim_type": 0.14301
             },
             "model": "simpledrawer:block/new_drawer/bamboo_full_drawers_1_tapped"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 1430003,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_1_tapped"
         },
         {
             "predicate": {
@@ -574,6 +602,13 @@
         },
         {
             "predicate": {
+                "custom_model_data": 1430004,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_2_tapped"
+        },
+        {
+            "predicate": {
                 "custom_model_data": 1430005,
                 "trim_type": 0.143
             },
@@ -648,6 +683,13 @@
                 "trim_type": 0.14301
             },
             "model": "simpledrawer:block/new_drawer/bamboo_full_drawers_4_tapped"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 1430005,
+                "trim_type": 0.143012
+            },
+            "model": "simpledrawer:block/new_drawer/ice_full_drawers_4_tapped"
         }
     ]
 }

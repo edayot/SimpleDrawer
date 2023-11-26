@@ -135,6 +135,34 @@ data modify storage simpledrawer:main ItemsNBT.compacting_new_drawer set value {
     }
 }
 
+# Ice drawer
+
+data modify storage simpledrawer:main ItemsNBT.new_drawer_ice set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430000,
+    Trim:{material:"simpledrawer:ice",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/new_drawer",
+    },
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"single",
+            wood_type:"simpledrawer:ice",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+        },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
+
 
 
 #Items

@@ -19,6 +19,7 @@ import json
 # si j=0.143008 alors material=crimson
 # si j=0.143009 alors material=warped
 # si j=0.143010 alors material=bamboo
+# si j=0.143011 alors material=ice
 
 # si i=1430000 alors drawer_type=1
 # si i=1430001 alors drawer_type=2
@@ -38,7 +39,8 @@ d={
     7:"cherry",
     8:"crimson",
     9:"warped",
-    10:"bamboo"
+    10:"bamboo",
+    12:"ice",
 }
 
 d2={
@@ -59,7 +61,9 @@ with open("furnace_init.json","r") as f:
     data=json.load(f)
 
 for i in range(1430000,1430006):
-    for j in range(0,11,1):
+    for j in range(0,13,1):
+        if j==11:
+            continue
         j_=0.143000+j/10**6
         material=d[j]
         drawer_type=d2[i]

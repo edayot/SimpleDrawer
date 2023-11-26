@@ -1,0 +1,9 @@
+{
+    "asset_name": "ice",
+    "description": {
+      "color": "#ffffff",
+      "translate": "ice"
+    },
+    "ingredient": "minecraft:air",
+    "item_model_index": 0.143012
+  }

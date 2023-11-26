@@ -43,4 +43,14 @@ execute
         run loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/compacting_new_drawer
 
 
+# Christmas drawer
+execute 
+    if score #christas_event simpledrawer.math matches 1
+    store result score @s smithed.data if entity @s[scores={smithed.data=0}] 
+    if data storage smithed.crafter:main root.temp{crafting_input:{
+        0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:packed_ice"}],
+        1:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:stick"}],
+        2:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}]}} 
+    
+    run function simpledrawer:impl/crafts/new_drawer_ice
 
