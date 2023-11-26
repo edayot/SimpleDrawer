@@ -64,6 +64,9 @@ function simpledrawer:impl/new_drawer/place/variant
 
 function simpledrawer:impl/new_drawer/base_display
 
+execute if data storage simpledrawer:main temp.item.tag.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s add simpledrawer.new_drawer.stone_base
+execute if data storage simpledrawer:main temp.item.tag.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s remove simpledrawer.new_drawer.wood_base
+
 scoreboard players set #temp simpledrawer.math 0
 execute store success score #temp simpledrawer.math if entity @s[tag=simpledrawer.new_drawer.wood_base] run setblock ~ ~ ~ beehive
 execute store success score #temp simpledrawer.math if entity @s[tag=simpledrawer.new_drawer.stone_base] run setblock ~ ~ ~ lodestone
