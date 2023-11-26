@@ -11,11 +11,11 @@ function ./timestamp/scoreboard_process:
     scoreboard players operation #current_year_% simpledrawer.math %= #100 simpledrawer.math
 
     # enable christmas event from december 1st to mid january aproximately
-    scoreboard players set #christas_event simpledrawer.math 0
-    execute if score #current_year_% simpledrawer.math matches 91.. run scoreboard players set #christas_event simpledrawer.math 1
-    execute if score #current_year_% simpledrawer.math matches 0..5 run scoreboard players set #christas_event simpledrawer.math 1
+    scoreboard players set #christmas_event simpledrawer.math 0
+    execute if score #current_year_% simpledrawer.math matches 91.. run scoreboard players set #christmas_event simpledrawer.math 1
+    execute if score #current_year_% simpledrawer.math matches 0..5 run scoreboard players set #christmas_event simpledrawer.math 1
 
-    execute if score #christas_event simpledrawer.math matches 1 run function simpledrawer:event/christmas
+    execute if score #christmas_event simpledrawer.math matches 1 run function simpledrawer:event/christmas
 
     
 

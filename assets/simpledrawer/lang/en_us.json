@@ -16,6 +16,7 @@
     "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer",
     "simpledrawer.guide.message":"Check the wiki for details",
     "simpledrawer.tellraw_prefix":"[SimpleDrawer] ",
+    "simpledrawer.tellraw_christmas":"Christmas event is enable until the next server restart / reload",
     "simpledrawer.load_error.smithed.custom_block":"No smithed.custom_block lib found",
     "simpledrawer.load_error.smithed.crafter":"No smithed.crafter lib found",
     "simpledrawer.load_error.itemio":"No itemio lib found",

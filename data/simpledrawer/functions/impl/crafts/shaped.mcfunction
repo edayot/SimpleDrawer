@@ -45,7 +45,7 @@ execute
 
 # Christmas drawer
 execute 
-    if score #christas_event simpledrawer.math matches 1
+    if score #christmas_event simpledrawer.math matches 1
     store result score @s smithed.data if entity @s[scores={smithed.data=0}] 
     if data storage smithed.crafter:main root.temp{crafting_input:{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:packed_ice"}],
@@ -56,7 +56,7 @@ execute
 
 # Christmas drawer
 execute 
-    if score #christas_event simpledrawer.math matches 1
+    if score #christmas_event simpledrawer.math matches 1
     store result score @s smithed.data if entity @s[scores={smithed.data=0}] 
     if data storage smithed.crafter:main root.temp{crafting_input:{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
@@ -67,7 +67,7 @@ execute
 
 # Christmas drawer
 execute 
-    if score #christas_event simpledrawer.math matches 1
+    if score #christmas_event simpledrawer.math matches 1
     store result score @s smithed.data if entity @s[scores={smithed.data=0}] 
     if data storage smithed.crafter:main root.temp{crafting_input:{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
