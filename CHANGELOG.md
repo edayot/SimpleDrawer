@@ -1,5 +1,26 @@
 <!--next-version-placeholder-->
 
+## v1.11.0 (2023-11-26)
+
+### Feature
+
+* Ice drawer in the book ([`59befb4`](https://github.com/edayot/SimpleDrawer/commit/59befb455ab0695f0eb0a457723f01738b3e0e1b))
+* Getting the current timestamp for time based events ([`da6f700`](https://github.com/edayot/SimpleDrawer/commit/da6f70066fbdc9d654955e509f7590ee238008ec))
+* Kill drawer entities if there is no players nearby ([`dc85278`](https://github.com/edayot/SimpleDrawer/commit/dc85278e40f8edcc6ed1ca40da4203c868ff9d15))
+* Generate_drawers function to place all possible drawers ([`39465e2`](https://github.com/edayot/SimpleDrawer/commit/39465e211c7a04088ad6170a1c72d05e2df4e58b))
+* Translate in advancement ([`874a1fa`](https://github.com/edayot/SimpleDrawer/commit/874a1fa55a9efa7bd08b886afd22c8b566971c65))
+* Project page added to the book ([`322e550`](https://github.com/edayot/SimpleDrawer/commit/322e550595e41978f498e2cb8d469967df7fb463))
+* Implementing contribution page ([`3839bb4`](https://github.com/edayot/SimpleDrawer/commit/3839bb4bd23c6575a151bf2beb81e5972c73bb98))
+
+### Fix
+
+* Double & quad ice drawer ([`f715f24`](https://github.com/edayot/SimpleDrawer/commit/f715f24a2c341504197527682454e5d6d6301839))
+* Stone based ([`47a194c`](https://github.com/edayot/SimpleDrawer/commit/47a194c0e77431484f8cda48048f5b6c171264e8))
+* Drawers render from far away z-fight #16 ([`b4a689d`](https://github.com/edayot/SimpleDrawer/commit/b4a689dd6f68d7c97232d1f4019df428cca561a3))
+* Resummon max iteration ([`6148db7`](https://github.com/edayot/SimpleDrawer/commit/6148db7e26afc308ec57a687a7d28c3cdfa1e7ed))
+* 32 usage working properly ([`f67604d`](https://github.com/edayot/SimpleDrawer/commit/f67604db2bc8165ca194efe2a52a1ab4e2e226f3))
+* Adding smithed entity tags ([`650ca8a`](https://github.com/edayot/SimpleDrawer/commit/650ca8ade873a629a81fbaba77a48c770cc5993c))
+
 ## v1.10.2 (2023-08-17)
 
 ### Feature
