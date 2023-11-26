@@ -58,7 +58,7 @@
     "simpledrawer.guide.drawers.inserting_title":"Insertion : \n\n",
     "simpledrawer.guide.drawers.extracting_title":"Extraction : \n\n",
     "simpledrawer.guide.drawers.inserting":"Faites un clic droit sur le drawer pour insérer un item. S'accroupir permet d'insérer un stack entier et avec une main vide, insère tous les items de l'inventaire.",
-    "simpledrawer.guide.drawers.extracting":"Faites un clic gauche sur le drawer pour extraire un item. S'accroupir permet d'extraire un stack entier.",
+    "simpledrawer.guide.drawers.extracting":"Faites un clic gauche sur le drawer pour extraire un item et en s'accroupissant un stack entier.\n\nPS : Durant Noël, on peut crafter des drawers avec de la Glace compactée.",
 
     "simpledrawer.iron_tier":"Tier Fer",
     "simpledrawer.gold_tier":"Tier Or",
