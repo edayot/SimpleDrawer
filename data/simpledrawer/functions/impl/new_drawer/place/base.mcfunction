@@ -77,4 +77,7 @@ execute
 execute 
     if score #temp simpledrawer.math matches 0
     run tag @s add simpledrawer.new_drawer.wood_base
+execute 
+    if score #temp simpledrawer.math matches 0
+    run tag @s remove simpledrawer.new_drawer.stone_base
 

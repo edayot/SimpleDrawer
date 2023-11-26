@@ -163,6 +163,59 @@ data modify storage simpledrawer:main ItemsNBT.new_drawer_ice set value {id:"min
     }}]},
 }}
 
+data modify storage simpledrawer:main ItemsNBT.double_new_drawer_ice set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430001,
+    Trim:{material:"simpledrawer:ice",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.double_new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/new_drawer",
+    },
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"double",
+            wood_type:"simpledrawer:ice",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+        },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
+
+data modify storage simpledrawer:main ItemsNBT.quadruple_new_drawer_ice set value {id:"minecraft:furnace",Count:1b,tag:{
+    CustomModelData:1430002,
+    Trim:{material:"simpledrawer:ice",pattern:"minecraft:sentry"},
+    HideFlags:128,
+    ctc:{id:"new_drawer",from:"airdox_:simpledrawer",traits:{"block":1b}},
+    display:{
+        Name:'{"translate":"simpledrawer.quadruple_new_drawer.empty","color":"white","italic":false}',
+        Lore:['{"translate":"simpledrawer.name","color":"blue","italic":true}']
+    },
+    smithed:{
+        id:"airdox_:simpledrawer/new_drawer",
+    },
+    BlockEntityTag:{Items:[{id:"minecraft:stone",Count:1b,Slot:0b,tag:{
+        simpledrawer:{
+            type:"normal",
+            variant:"quadruple",
+            wood_type:"simpledrawer:ice",
+            upgrade:"wood",
+            hopper:0b,
+            globalCount:0,
+            maxCount:256
+        },
+        smithed:{block:{id:"simpledrawer:new_drawer"}}
+    }}]},
+}}
+
+
 
 
 #Items
