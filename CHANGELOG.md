@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.11.1 (2023-11-26)
+
+### Fix
+
+* Compacting drawer don't show all slot when replaced ([`ead1444`](https://github.com/edayot/SimpleDrawer/commit/ead14441ebde0aa8375f4907bd4b18946e667d06))
+
 ## v1.11.0 (2023-11-26)
 
 ### Feature
