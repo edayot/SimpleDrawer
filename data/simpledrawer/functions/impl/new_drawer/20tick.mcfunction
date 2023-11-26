@@ -38,6 +38,12 @@ execute
                 data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main ItemsNBT.new_drawer.tag.BlockEntityTag.Items[0].tag.simpledrawer
                 data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.tag.simpledrawer
                 scoreboard players operation #place_id simpledrawer.math = @s simpledrawer.new_drawer.id
+
+                execute 
+                    if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:compacting"} 
+                    store result storage simpledrawer:main temp.simpledrawer.slot_count int 1 
+                    run scoreboard players get @s simpledrawer.new_drawer.slot_count
+
                 function simpledrawer:impl/new_drawer/place/variant
                 scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
                 function simpledrawer:impl/new_drawer/base_display_rup
