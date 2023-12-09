@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.11.2 (2023-12-09)
+
+### Fix
+
+* Compatibility string ([`5ca5a7d`](https://github.com/edayot/SimpleDrawer/commit/5ca5a7d7dea08beb5a65f63ebd692196bcee371f))
+
 ## v1.11.1 (2023-11-26)
 
 ### Fix
