@@ -6,6 +6,7 @@ import os
 import json
 import requests
 import weld
+from tqdm import tqdm
 
 @property
 def modified_suffixes(self):
@@ -120,10 +121,9 @@ def cache_dependencies(ctx: Context):
         if dep["versioning"]["type"]=="normal":
             list_dep.append(f"{dep['id']}@{dep['version_']}")
     
-      
+    list_dep=tqdm(list_dep,desc="Downloading dependencies", total=len(list_dep), dynamic_ncols = True, leave=False)
     for dep in list_dep:
         if dep not in ctx.cache.json["airdox_"]["list_dep"]:
-            print(f"Downloading {dep}")
             ctx.cache.json["airdox_"]["list_dep"].append(dep)
             dep_full_id,dep_version=dep.split("@")
             dep_author,dep_id=dep_full_id.split(":")
