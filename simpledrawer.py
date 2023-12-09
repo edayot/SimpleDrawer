@@ -3,6 +3,16 @@ from beet import Context, Function
 import nbtlib
 
 
+def generate_version_string(versions):
+    if not versions:
+        return "No versions specified"
+
+    if len(versions) == 1:
+        return versions[0]
+
+    version_string = ', '.join(versions[:-1]) + " or " + versions[-1]
+    return version_string
+
 def add_mc_version_support(ctx: Context):
     "Injecting mc_version_support"
     t=""
@@ -10,10 +20,9 @@ def add_mc_version_support(ctx: Context):
         t=t+f"execute if score #dataversion simpledrawer.math matches {dataversion} run scoreboard players set #goodversion simpledrawer.math 1\n"
     t=t+'\n'
     final_tellraw='execute unless score #goodversion simpledrawer.math matches 1 run tellraw @a [{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},{"text": "SimpleDrawer may not work in this version of Minecraft!, it\'s only compatible with {mc_version}","color":"red"}]'
-    versions=""
-    for mc_version in ctx.meta["mc_supports"][:-1]:
-        versions=versions+mc_version+", "
-    versions=versions[:-2]+" and "+ctx.meta["mc_supports"][-1]
+    
+    versions=generate_version_string(ctx.meta["mc_supports"])
+
     t=t+final_tellraw.replace("{mc_version}",versions)+"\n"
 
     path_function="simpledrawer:impl/mc_version_warning_2".replace("impl/","v"+ctx.project_version+"/")
