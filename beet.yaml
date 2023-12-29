@@ -27,33 +27,17 @@ meta:
   modrinth_id: "JmCxCKiW"
   mc_supports: ["1.20.2"]
   mc_supports_dataversion: [3578]
-  smithed_dependencies:
-    - id: "smithed:crafter"
-      version_: "0.2.0"
-      versioning:
-        type: "normal"
-        prefix: "#smithed.crafter"
-
-    - id: "smithed:custom-block"
-      version_: "0.2.0"
-      versioning:
-        type: "normal"
-        prefix: "#smithed.custom_block"
-
-    - id: "smithed:actionbar"
-      version_: "0.4.1"
-      versioning:
-        type: "normal"
-        prefix: "#smithed.actionbar"
-
-    - id: "airdox_:itemio"
-      version_: "0.9.1"
-      versioning:
-        type: "normal"
-        prefix: "#itemio"
-        
-    - id: "dorkorc:dork.base64"
-      version_: "0.0.0"
-      versioning:
-        type: "included"
-        prefix: "dork.base64"
+  weld_deps:
+    enable_weld_merging: True
+    clean_load_tag: False
+    include_prerelease: False
+    deps:
+      - id: "custom-block"
+        match: ">0.0.0"
+        source: "smithed"
+      - id: "itemio"
+        match: ">0.9.0"
+        source: "smithed"
+      - id: "code-of-copper"
+        match: ">0.1.0"
+        source: "modrinth"

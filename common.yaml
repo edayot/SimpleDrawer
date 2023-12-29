@@ -5,6 +5,7 @@ resource_pack:
   zipped: false
 
 require:
+  - airdox_.add_tests_directory
   - airdox_.allow_function_without_name
   - smithed_libraries.plugins.companion_mod
   - smithed_libraries.plugins.misc.display_broadcasted_pack

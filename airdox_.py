@@ -2,6 +2,18 @@ from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta
 from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
+from typing import ClassVar, Iterable, List, Optional, Tuple, TypeVar, Union
+import beet
+from beet.core.file import (
+    BinaryFileBase,
+    BinaryFileContent,
+    FileDeserialize,
+    JsonFile,
+    TextFileBase,
+    TextFileContent,
+)
+from dataclasses import dataclass
+from beet.library.base import NamespacePin, NamespaceProxyDescriptor
 import os
 import json
 import requests
@@ -146,8 +158,25 @@ def cache_dependencies(ctx: Context):
             elif not resourcepack.ok:
                 raise Exception(f"Error downloading {dep} resourcepack")
 
-            
-            
+class PackTest(TextFileBase[List[str]]):
+    """Class representing a PackTest test."""
+
+    scope: ClassVar[Tuple[str, ...]] = ("tests",)
+    extension: ClassVar[str] = ".mcfunction"
+
+@dataclass
+class PackTestManager:
+    """Service for managing json messages."""
+
+    ctx: Context
+
+    def __post_init__(self):
+        self.ctx.data.extend_namespace.append(PackTest)
+    
+
+
+def add_tests_directory(ctx: Context):
+   ctx.inject(PackTestManager)
             
             
 
