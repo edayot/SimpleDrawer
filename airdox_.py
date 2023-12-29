@@ -5,7 +5,7 @@ from beet.contrib.model_merging import model_merging
 import os
 import json
 import requests
-import weld
+from smithed import weld
 from tqdm import tqdm
 
 @property
