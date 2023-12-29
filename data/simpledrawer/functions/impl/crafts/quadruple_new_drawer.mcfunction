@@ -18,3 +18,4 @@ execute if data storage smithed.crafter:main root.temp{crafting_input:{0:[{Slot:
 loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer_craft
 
 
+return 1
