@@ -52,6 +52,8 @@ except KeyError:
 
 dep = []
 for i in dep_no:
+    if dep["type"] == "included":
+        continue
     dep.append({"id":i["id"].split(":")[1],"version":i["version_"]})
 
 
