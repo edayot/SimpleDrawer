@@ -119,6 +119,7 @@ def get_ids():
     return data["values"]
 
 def get_translate_from_id(id):
+    id = "minecraft:"+id if not id.startswith("minecraft:") else id
     #Get translate from id
     translate=id
     translate=translate.replace(":",".")
@@ -144,11 +145,6 @@ def main():
         else:
             print("No translate for "+id)
             #delete id from all.jsonD
-            with open("all.jsonD","r") as f:
-                data=json.load(f)
-                data["values"].remove(id)
-            with open("all.jsonD","w") as f:
-                json.dump(data,f,indent=4)
     with open("test_translate.json","w") as f:
         json.dump(I,f,indent=4)
 
@@ -163,11 +159,9 @@ def main_multiple():
             I.append(item_modifier)
         else:
             print("No translate for "+id)
-            #delete id from all.jsonD
-            with open("all.jsonD","r") as f:
-                data=json.load(f)
-                data["values"].remove(id)
-            with open("all.jsonD","w") as f:
-                json.dump(data,f,indent=4)
     with open("test_translate_multiple.json","w") as f:
         json.dump(I,f,indent=4)
+
+if __name__ == "__main__":
+    main()
+    main_multiple()
