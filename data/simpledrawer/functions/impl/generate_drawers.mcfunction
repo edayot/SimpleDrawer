@@ -36,7 +36,8 @@ wood_types = [
     "mangrove",
     "spruce",
     "warped",
-    "oak"
+    "oak",
+    "ice"
 ]
 wood_types.sort()
 

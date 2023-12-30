@@ -3,7 +3,7 @@
 
 with open("give_all.mcfunction", "w") as f:
     t = ""
-    for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
+    for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak", "ice"]:
         t=t+f"""
 
 

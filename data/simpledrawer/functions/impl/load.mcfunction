@@ -377,7 +377,7 @@ scoreboard players set #10000000 simpledrawer.math 10000000
 scoreboard players set #100000000 simpledrawer.math 100000000
 scoreboard players set #1000000000 simpledrawer.math 1000000000
 
-scoreboard players set #max_resummon simpledrawer.math 32
+scoreboard players set #max_resummon simpledrawer.math 4
 
 execute unless score #configured simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
 
