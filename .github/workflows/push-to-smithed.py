@@ -46,7 +46,7 @@ download_url = (
 )
 
 try:
-    dep_no = beet['meta']['smithed_dependencies']
+    dep_no = beet['meta']['weld_deps']['deps']
 except KeyError:
     dep_no = []
 

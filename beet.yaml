@@ -14,12 +14,13 @@ data_pack:
 resource_pack:
   load: [.]
 
+require:
+  - weld_deps
+  
 pipeline:
   - simpledrawer.add_mc_version_support
   - simpledrawer.add_versioning_to_items
   - airdox_.test_load_generator
-  - airdox_.cache_dependencies
-  - airdox_.load_included
 
 extend: "common.yaml"
 
@@ -29,15 +30,37 @@ meta:
   mc_supports_dataversion: [3578]
   weld_deps:
     enable_weld_merging: True
-    clean_load_tag: False
+    clean_load_tag: True
     include_prerelease: False
     deps:
-      - id: "custom-block"
-        match: ">0.0.0"
-        source: "smithed"
       - id: "itemio"
-        match: ">0.9.0"
+        match: ">=0.9.1, <0.10.0"
         source: "smithed"
-      - id: "code-of-copper"
-        match: ">0.1.0"
-        source: "modrinth"
+        versioning: 
+          type: "normal"
+          prefix: "#itemio"
+      - id: "crafter"
+        match: ">=0.2.0"
+        source: "smithed"
+        versioning: 
+          type: "normal"
+          prefix: "#smithed.crafter"
+      - id: "custom-block"
+        match: ">=0.2.0"
+        source: "smithed"
+        versioning: 
+          type: "normal"
+          prefix: "#smithed.custom_block"
+      - id: "actionbar"
+        match: ">=0.4.1"
+        source: "smithed"
+        versioning: 
+          type: "normal"
+          prefix: "#smithed.actionbar"
+      - id: "dorkorc:dork.base64"
+        match: "0.0.0"
+        source: "integrated"
+        versioning: 
+          type: "not_versioned"
+          prefix: "dork.base64"
+      

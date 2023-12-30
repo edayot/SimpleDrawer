@@ -9,11 +9,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
-smithed-libraries = {git = "https://github.com/edayot/Libraries.git", branch = "1.20.4"}
-smithed= {git = "https://github.com/Smithed-MC/smithed-python.git", branch = "main"}
-python-semantic-release = "^7.32.2"
+weld-deps = {git = "https://github.com/edayot/weld-deps.git", branch = "main"}
 cryptography = "^41.0.0"
 
+[tool.poetry.dev-dependencies]
 sphinx = "^7.1.1"
 sphinx_design = "^0.5.0"
 sphinx-pyproject = "^0.1.0"
@@ -24,6 +23,7 @@ sphinxcontrib-mermaid = "^0.7.1"
 sphinx_copybutton = "^0.5.2"
 furo = "^2023.7.26"
 linkify-it-py = "^2.0.2"
+python-semantic-release = "^8.7.0"
 
 [tool.semantic_release]
 major_on_zero = false
