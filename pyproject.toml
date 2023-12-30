@@ -11,6 +11,7 @@ readme = "README.md"
 python = ">=3.11,<3.12"
 weld-deps = {git = "https://github.com/edayot/weld-deps.git", branch = "main"}
 cryptography = "^41.0.0"
+tqdm = "^4.66.1"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^7.1.1"
