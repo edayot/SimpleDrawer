@@ -30,12 +30,16 @@ python-semantic-release = "^8.7.0"
 major_on_zero = false
 build_command = "make BUILD_TYPE=release"
 dist_path = "build"
-upload_to_pypi = false
-upload_to_release = true
-version_toml = "pyproject.toml:tool.poetry.version"
-version_pattern = "beet.yaml:(?<=version: \")(\\d+\\.\\d+\\.\\d+)"
+version_toml = ["pyproject.toml:tool.poetry.version"]
 version_source = "commit"
-remove_dist = false
+
+[tool.semantic_release.publish]
+upload_to_vcs_release = true
+dist_glob_patterns = ["build/*"]
+
+
+
+
 
 [build-system]
 requires = ["poetry-core"]

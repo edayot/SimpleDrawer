@@ -54,6 +54,7 @@ ARGS = --project beet.yaml \
 	-s resource_pack.description=$(ASSETS_DESCRIPTION) \
 	-s data_pack.zipped=$(ZIPPED) \
 	-s resource_pack.zipped=$(ZIPPED) \
+	-s version=$(VERSION) \
 
 UNBUNDLED_ARGS = $(ARGS) \
 	-s data_pack.name=$(DATA_NAME) \
