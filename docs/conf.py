@@ -9,7 +9,13 @@
 project = 'SimpleDrawer'
 author = 'edayot'
 copyright='Erwan DAYOT'
-release = '0.5.4'
+
+import toml
+pyproject = toml.load("../pyproject.toml")
+beet = pyproject["tool"]["poetry"]
+
+
+release = beet["version"]
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

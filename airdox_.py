@@ -43,6 +43,9 @@ def allow_function_without_name(ctx: Context):
                 
 
 
+def clean_useless_tags(ctx: Context):
+    for useless_tag in ctx.data.function_tags.match(f"{ctx.project_id}:_useless"):
+        del ctx.data.function_tags[useless_tag]
 
 
 

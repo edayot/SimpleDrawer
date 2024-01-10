@@ -8,8 +8,6 @@ require:
   - airdox_.add_tests_directory
   - airdox_.allow_function_without_name
   - smithed_libraries.plugins.companion_mod
-  - smithed_libraries.plugins.misc.display_broadcasted_pack
-  - smithed_libraries.plugins.manifest.collect_version
   - mecha.contrib.messages
   - beet.contrib.render
   - beet.contrib.model_merging
@@ -19,6 +17,7 @@ require:
 pipeline:
   - mecha
   - smithed_libraries.plugins.versioning
+  - airdox_.clean_useless_tags
   - beet.contrib.find_replace
   - airdox_.add_license
   - airdox_.add_readme
@@ -64,7 +63,7 @@ meta:
       #  ex: smithed.actionbar/impl/reset -> smithed.actionbar/impl/v1.2.3/reset
       # here, we need to specify `{{ ctx.project_id }}`
       refactor:
-        match: "*:*"                  # which files to look at
+        match: "{{ project_id }}:*"                  # which files to look at
         find: "{{ project_id }}:impl/"               # which paths to look for
         replace: "{{ project_id }}:v{{ version }}/"  # what to replace path w/
 
