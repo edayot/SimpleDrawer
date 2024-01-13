@@ -33,7 +33,7 @@ try:
     MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
 except KeyError:
     try:
-        with open(".github/workflows/credentials.json", "r") as f:
+        with open("credentials.json", "r") as f:
             creds = json.load(f)
         MODRINTH_AUTH_TOKEN = creds['MODRINTH_AUTH_TOKEN']
     except:
@@ -49,14 +49,18 @@ except FileNotFoundError:
     except FileNotFoundError:
         sys.exit(1,"beet.yaml not found")
 
+# get current version using poetry version command
+command = f"poetry version | cut -d' ' -f2"
+CURRENT_VERSION = os.popen(command).read().strip()
+print("CURRENT_VERSION: " + CURRENT_VERSION)
 
-release=requests.get(f"https://api.github.com/repos/edayot/{beet['name']}/releases/tags/v{beet['version']}").json()
+release=requests.get(f"https://api.github.com/repos/edayot/{beet['name']}/releases/tags/v{CURRENT_VERSION}").json()
 
 
 
 data={
-    "name":f"v{beet['version']}",
-    "version_number":beet['version'],
+    "name":f"v{CURRENT_VERSION}",
+    "version_number":CURRENT_VERSION,
     "changelog":release['body'],
     "dependencies":[],
     "game_versions":beet['meta']['mc_supports'],
@@ -70,17 +74,26 @@ data={
 }
 
 
+
+
+
 # check if the directory exists
 build="build"
-files={}
+bundled_datapack=False
 for file in os.listdir(build):
     if "Bundled" in file:
+        bundled_datapack=True
+        break
+
+files={}
+for file in os.listdir(build):
+    if "Bundled" in file or not bundled_datapack:
         data['file_parts'].append(file)
 
         with open(os.path.join(build,file),"rb") as f:
             files[file] = (file,f.read())
 
-    if "Datapack" in file and "Bundled" in file:
+    if "Datapack" in file and "Bundled" in file or not bundled_datapack:
         data['primary_file']=file
 
 
