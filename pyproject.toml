@@ -36,6 +36,9 @@ version_toml = ["pyproject.toml:tool.poetry.version"]
 version_source = "commit"
 
 remove_dist = false
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["build/*.zip"]
 upload_to_vcs_release = true
 
 
