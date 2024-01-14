@@ -32,12 +32,6 @@ meta:
     clean_load_tag: True
     include_prerelease: False
     deps:
-      - id: "itemio"
-        match: ">=0.9.1, <0.10.0"
-        source: "smithed"
-        versioning: 
-          type: "normal"
-          prefix: "#itemio"
       - id: "crafter"
         match: ">=0.2.0"
         source: "smithed"
