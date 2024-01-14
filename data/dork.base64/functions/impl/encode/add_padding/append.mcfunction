@@ -1,0 +1,1 @@
+$data modify storage dork.base64:temp args.encode.output set value "$(output)$(padding)"
