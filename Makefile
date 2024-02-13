@@ -1,7 +1,7 @@
 
 
 
-MINECRAFT_FOLDER = /mnt/c/Users/erwan/AppData/Roaming/PrismLauncher/instances/Simply\ Optimized/.minecraft/
+MINECRAFT_FOLDER = /mnt/c/Users/erwan/AppData/Roaming/PrismLauncher/instances/Simply\ Optimized\(1\)/.minecraft/
 SAVE_FOLDER = $(MINECRAFT_FOLDER)saves/Datapack\ island/
 DATAPACKS_FOLDER = $(SAVE_FOLDER)datapacks/
 RESOURCES_PACK_FOLDER = $(MINECRAFT_FOLDER)resourcepacks/
