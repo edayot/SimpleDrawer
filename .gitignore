@@ -12,3 +12,4 @@ docs/_build/
 README.bbcode
 build
 !example_material/pack.mcmeta
+.env
