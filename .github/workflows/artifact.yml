@@ -36,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
         run: |
-          make BUILD_TYPE=artifact
+          make b BUILD_TYPE=artifact
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
       - uses: actions/upload-artifact@v3
