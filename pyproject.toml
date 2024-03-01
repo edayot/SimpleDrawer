@@ -12,7 +12,7 @@ python = ">=3.11,<3.12"
 weld-deps = {git = "https://github.com/edayot/weld-deps.git", branch = "main"}
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git", branch = "1.20.4"}
 smithed= {git = "https://github.com/Smithed-MC/smithed-python.git", branch = "main"}
-cryptography = "^41.0.0"
+cryptography = "^42.0.4"
 tqdm = "^4.66.1"
 
 [tool.poetry.dev-dependencies]
