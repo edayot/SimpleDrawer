@@ -3,8 +3,8 @@
 scoreboard players set @s simpledrawer.new_drawer.slot_count 1
 
 scoreboard players set #count_display simpledrawer.math 0
-execute store result score #count_display simpledrawer.math run data get entity @s item.tag.simpledrawer.globalCount
-execute store result score #maxCount_display simpledrawer.math run data get entity @s item.tag.simpledrawer.maxCount
+execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.globalCount
+execute store result score #maxCount_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.maxCount
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id

@@ -15,7 +15,7 @@
 								"minecraft:lore": [
 								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
 								],
-								"minecraft:custom_model_data": 1430000,
+								"minecraft:custom_model_data": 1430002,
 								"minecraft:custom_data": {
 								  "ctc": {
 									"id": "gold_upgrade",

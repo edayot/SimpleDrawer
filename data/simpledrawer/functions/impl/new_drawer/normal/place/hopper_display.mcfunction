@@ -13,6 +13,6 @@ tp @s ~ ~ ~ ~180 ~
 data merge entity @s {transformation:{scale:[0.125f,0.125f,0.001f]},item_display:"gui"}
 
 data modify storage simpledrawer:main temp.item_stored.Count set value 1b
-data modify entity @s item set value {id:"minecraft:air",Count:1b}
+data modify entity @s item set value {id:"minecraft:air",count:1}
 
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{hopper:1b} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.hopper_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{hopper:1b} run loot replace entity @s container.0 loot simpledrawer:impl/items/hopper_upgrade

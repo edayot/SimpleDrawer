@@ -1,7 +1,7 @@
 
 
 data modify storage simpledrawer:main temp.version set value {major: 0, minor: 0, patch: 0}
-data modify storage simpledrawer:main temp.version set from storage smithed.custom_block:main blockApi.__data.Items[0].tag.simpledrawer.version
+data modify storage simpledrawer:main temp.version set from storage smithed.custom_block:main blockApi.__data.Items[0].components."minecraft:custom_data".simpledrawer.version
 
 execute store result score #drawer.major simpledrawer.math run data get storage simpledrawer:main temp.version.major
 execute store result score #drawer.minor simpledrawer.math run data get storage simpledrawer:main temp.version.minor

@@ -1,5 +1,5 @@
 
-data modify storage simpledrawer:main temp.simpledrawerXX set from entity @s item.tag.simpledrawer
+data modify storage simpledrawer:main temp.simpledrawerXX set from entity @s item.components."minecraft:custom_data".simpledrawer
 
 
 execute store success score #if_player_around simpledrawer.math if entity @a[distance=..16]

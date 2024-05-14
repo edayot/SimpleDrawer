@@ -63,7 +63,6 @@ execute unless score #configured simpledrawer.config matches 1 run function simp
 
 advancement revoke @a only simpledrawer:impl/interact
 advancement revoke @a only simpledrawer:impl/attack
-advancement revoke @a only simpledrawer:impl/click
 
 
 schedule function simpledrawer:impl/tick 1t replace

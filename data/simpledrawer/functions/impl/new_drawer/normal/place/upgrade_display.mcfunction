@@ -12,14 +12,14 @@ scoreboard players operation @s simpledrawer.new_drawer.id = #place_id simpledra
 tp @s ~ ~ ~ ~180 ~
 data merge entity @s {transformation:{scale:[0.125f,0.125f,0.001f]},item_display:"gui"}
 
-data modify storage simpledrawer:main temp.item_stored.Count set value 1b
-data modify entity @s item set value {id:"minecraft:air",Count:1b}
+data modify storage simpledrawer:main temp.item_stored.count set value 1
+data modify entity @s item set value {id:"minecraft:air",count:1}
 
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{upgrade:"iron"} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.iron_upgrade
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{upgrade:"gold"} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.gold_upgrade
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{upgrade:"diamond"} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.diamond_upgrade
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{upgrade:"star"} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.star_upgrade
-execute if data storage simpledrawer:main temp.item.tag.simpledrawer{upgrade:"netherite"} run data modify entity @s item set from storage simpledrawer:main ItemsNBT.netherite_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{upgrade:"iron"} run loot replace entity @s container.0 loot simpledrawer:impl/items/iron_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{upgrade:"gold"} run loot replace entity @s container.0 loot simpledrawer:impl/items/gold_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{upgrade:"diamond"} run loot replace entity @s container.0 loot simpledrawer:impl/items/diamond_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{upgrade:"star"} run loot replace entity @s container.0 loot simpledrawer:impl/items/star_upgrade
+execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{upgrade:"netherite"} run loot replace entity @s container.0 loot simpledrawer:impl/items/netherite_upgrade
 
 
 

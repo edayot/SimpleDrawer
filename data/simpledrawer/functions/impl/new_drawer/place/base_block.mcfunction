@@ -7,7 +7,7 @@ tag @s add smithed.strict
 
 scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawer.new_drawer.id
 
-data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",Count:1b,tag:{CustomModelData:1430000}}
+data modify storage simpledrawer:main temp.item set value {id:"minecraft:furnace",count:1,components:{"minecraft:custom_model_data":1430000}}
 tp @s ~ ~ ~ ~ ~
 
 data modify entity @s item set from storage simpledrawer:main temp.item

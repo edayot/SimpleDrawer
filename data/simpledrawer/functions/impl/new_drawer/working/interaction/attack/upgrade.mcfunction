@@ -1,7 +1,7 @@
 scoreboard players set #if_upgrade simpledrawer.math 1
 
-data modify storage simpledrawer:main temp.actual_upgrade set from entity @s item.tag.simpledrawer.upgrade
-data modify storage simpledrawer:main temp.actual_hopper set from entity @s item.tag.simpledrawer.hopper
+data modify storage simpledrawer:main temp.actual_upgrade set from entity @s item.components."minecraft:custom_data".simpledrawer.upgrade
+data modify storage simpledrawer:main temp.actual_hopper set from entity @s item.components."minecraft:custom_data".simpledrawer.hopper
 
 scoreboard players set #upgrade_success simpledrawer.math 0
 
