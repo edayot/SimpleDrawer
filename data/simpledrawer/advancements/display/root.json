@@ -7,7 +7,7 @@
             "translate": "simpledrawer.advancement.root.description"
         },
         "icon": {
-            "item": "minecraft:written_book",
+            "id": "minecraft:written_book",
             "nbt": "{CustomModelData:1430000}"
         },
         "frame": "task",

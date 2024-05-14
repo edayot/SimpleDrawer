@@ -7,8 +7,10 @@
             "translate": "Click 32 times on a drawer"
         },
         "icon": {
-            "item": "minecraft:jigsaw",
-            "nbt": "{CustomModelData:1430007}"
+            "id": "minecraft:jigsaw",
+            "components": {
+                "minecraft:custom_model_data": 1430007
+              }
         },
         "frame": "task",
         "show_toast": true,

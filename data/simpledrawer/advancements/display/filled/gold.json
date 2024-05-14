@@ -17,8 +17,10 @@
             ]
         },
         "icon": {
-            "item": "minecraft:furnace",
-            "nbt": "{CustomModelData:1430008}"
+            "id": "minecraft:jigsaw",
+            "components": {
+                "minecraft:custom_model_data": 1430008
+              }
         },
         "frame": "task",
         "show_toast": true,

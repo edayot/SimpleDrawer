@@ -1,8 +1,6 @@
 {
     "simpledrawer.name":"SimpleDrawer",
     "simpledrawer.load":"[Loaded SimpleDrawer ",
-    "simpledrawer.drawer.empty":"Empty Drawer §7(legacy)",
-    "simpledrawer.drawer.filled":"Filled Drawer §7(legacy)",
     "simpledrawer.hopper_upgrade":"Hopper upgrade",
     "simpledrawer.iron_upgrade":"Iron upgrade",
     "simpledrawer.gold_upgrade":"Gold upgrade",
@@ -23,8 +21,6 @@
     "simpledrawer.place_error":"You can't place the drawer here",
     "simpledrawer.input_error":"This item isn't allowed in the drawer",
     "simpledrawer.full_error":"The drawer is full",
-    "simpledrawer.drawer_connector":"Drawer Connector",
-    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s",
     "simpledrawer.new_drawer.empty":"Empty Drawer",
     "simpledrawer.new_drawer.filled":"Filled Drawer",
     "simpledrawer.double_new_drawer.empty":"Empty Double Drawer",

@@ -38,12 +38,6 @@ meta:
         versioning: 
           type: "normal"
           prefix: "#itemio"
-      - id: "actionbar"
-        match: ">=0.4.1"
-        source: "smithed"
-        versioning: 
-          type: "normal"
-          prefix: "#smithed.actionbar"
       - id: "dorkorc:dork.base64"
         match: "0.0.0"
         source: "integrated"

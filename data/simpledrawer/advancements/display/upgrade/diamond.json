@@ -12,7 +12,7 @@
             ]
         },
         "icon": {
-            "item": "minecraft:jigsaw",
+            "id": "minecraft:jigsaw",
             "nbt": "{CustomModelData:1430003}"
         },
         "frame": "task",

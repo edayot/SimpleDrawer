@@ -1,8 +1,6 @@
 {
     "simpledrawer.name":"SimpleDrawer",
     "simpledrawer.load":"[Chargé SimpleDrawer ",
-    "simpledrawer.drawer.empty":"Drawer Vide §7(originel)",
-    "simpledrawer.drawer.filled":"Drawer Rempli §7(originel)",
     "simpledrawer.hopper_upgrade":"Amélioration hopper",
     "simpledrawer.iron_upgrade":"Amélioration fer",
     "simpledrawer.gold_upgrade":"Amélioration or",
@@ -23,8 +21,6 @@
     "simpledrawer.place_error":"Tu ne peux pas placer un drawer ici",
     "simpledrawer.input_error":"Cet item n'est pas autorisé dans un drawer",
     "simpledrawer.full_error":"Ce drawer est plein",
-    "simpledrawer.drawer_connector":"Connecteur de drawer",
-    "simpledrawer.drawer_connector.gui":"\uc000\uc002\uc001%s",
     "simpledrawer.new_drawer.empty":"Drawer Vide",
     "simpledrawer.new_drawer.filled":"Drawer Rempli",
     "simpledrawer.double_new_drawer.empty":"Drawer Double Vide",
