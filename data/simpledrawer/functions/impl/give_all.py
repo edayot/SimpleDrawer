@@ -9,15 +9,15 @@ with open("give_all.mcfunction", "w") as f:
 
 data modify storage simpledrawer:main temp.ItemCraft set from storage simpledrawer:main ItemsNBT.new_drawer
 data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:trim".material set value "simpledrawer:{material}"
-data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
+data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
 loot give @s loot simpledrawer:impl/items/new_drawer_craft
 data modify storage simpledrawer:main temp.ItemCraft set from storage simpledrawer:main ItemsNBT.double_new_drawer
 data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:trim".material set value "simpledrawer:{material}"
-data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
+data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
 loot give @s loot simpledrawer:impl/items/new_drawer_craft
 data modify storage simpledrawer:main temp.ItemCraft set from storage simpledrawer:main ItemsNBT.quadruple_new_drawer
 data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:trim".material set value "simpledrawer:{material}"
-data modify storage simpledrawer:main temp.ItemCraft.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
+data modify storage simpledrawer:main temp.ItemCraft.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer.wood_type set value "simpledrawer:{material}"
 loot give @s loot simpledrawer:impl/items/new_drawer_craft
 
 

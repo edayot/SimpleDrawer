@@ -15,5 +15,5 @@ execute store result storage simpledrawer:main temp.dropped_item.tag.CustomModel
 data modify storage simpledrawer:main temp.dropped_item.components."minecraft:trim".material set from entity @s item.components."minecraft:custom_data".simpledrawer.wood_type
 
 execute 
-    store result storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer.slot_count int 1 
+    store result storage simpledrawer:main temp.dropped_item.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer.slot_count int 1 
     run scoreboard players get @s simpledrawer.new_drawer.slot_count

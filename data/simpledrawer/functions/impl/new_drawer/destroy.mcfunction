@@ -17,9 +17,9 @@ execute
 
 data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main ItemsNBT.new_drawer
 
-data modify storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
+data modify storage simpledrawer:main temp.dropped_item.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
 
-data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main temp.dropped_item.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer
+data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main temp.dropped_item.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer
 
 function simpledrawer:impl/new_drawer/destroy_variant
 

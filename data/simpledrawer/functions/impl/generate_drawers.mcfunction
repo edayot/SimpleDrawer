@@ -6,7 +6,7 @@
 
 def place_drawer(wood_type, variant, drawer_type, upgrade, hopper):
     scoreboard players add #global simpledrawer.new_drawer.id 1
-    data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main ItemsNBT.new_drawer.tag.BlockEntityTag.Items[0].components."minecraft:custom_data".simpledrawer
+    data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main ItemsNBT.new_drawer.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer
 
     data modify storage simpledrawer:main temp.simpledrawer.wood_type set value f"{wood_type}"
     data modify storage simpledrawer:main temp.simpledrawer.type set value f"{drawer_type}"

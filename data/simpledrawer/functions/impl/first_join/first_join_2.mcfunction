@@ -1,4 +1,4 @@
-loot give @s loot simpledrawer:impl/items/guide
+# loot give @s loot simpledrawer:impl/items/guide
 scoreboard players add @s simpledrawer.player.input_cooldown 0
 scoreboard players add @s simpledrawer.player.output_cooldown 0
 scoreboard players enable @s simpledrawer.config

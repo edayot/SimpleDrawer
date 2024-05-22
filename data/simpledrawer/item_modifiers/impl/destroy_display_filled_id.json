@@ -42,7 +42,8 @@
 		  "color": "blue",
 		  "italic": true
 		}
-	  ]
+	  ],
+	  "mode": "append"
 	}
   ]
   

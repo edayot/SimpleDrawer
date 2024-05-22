@@ -31,7 +31,8 @@
 			"italic": false
 		  }
         ]
-	  ]
+	  ],
+	  "mode": "append"
 	}
   ]
   
