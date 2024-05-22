@@ -6,7 +6,7 @@ scoreboard players set #modified_slot simpledrawer.io 26
 
 
 data modify storage simpledrawer:io output set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:26}]
-execute store result storage simpledrawer:io output.Count int 1 run scoreboard players get #initCount simpledrawer.math
+execute store result storage simpledrawer:io output.count int 1 run scoreboard players get #initCount simpledrawer.math
 scoreboard players operation #count_output simpledrawer.io = #initCount simpledrawer.math
 
 

@@ -20,7 +20,7 @@ execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math
 
 # apply new count
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
-execute store result storage simpledrawer:main temp.newItem.Count int 1 run scoreboard players get #newCount simpledrawer.math
+execute store result storage simpledrawer:main temp.newItem.count int 1 run scoreboard players get #newCount simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 
 # apply new item
@@ -30,5 +30,5 @@ data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items
 #display
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math 7
-data modify storage simpledrawer:main temp.newItem.Count set value 1b
+data modify storage simpledrawer:main temp.newItem.count set value 1b
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem

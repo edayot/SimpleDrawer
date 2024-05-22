@@ -56,19 +56,19 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
 
             execute
                 store result score #nb_block simpledrawer.math 
-                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:0}].Count
+                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:0}].count
 
             execute 
                 store result score #nb_ingot simpledrawer.math 
-                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:1}].Count
+                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:1}].count
 
             execute 
                 store result score #nb_nugget simpledrawer.math 
-                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:2}].Count
+                run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:2}].count
 
             execute 
                 store result score #output_count simpledrawer.math
-                run data get storage simpledrawer:io output.Count
+                run data get storage simpledrawer:io output.count
 
             execute 
                 if score #type simpledrawer.io matches 0
@@ -104,13 +104,13 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
                     scoreboard players operation #nb_ingot simpledrawer.math /= #nugget_in_ingot simpledrawer.io
 
             execute 
-                store result storage simpledrawer:io material.block.Count int 1 
+                store result storage simpledrawer:io material.block.count int 1 
                 run scoreboard players get #nb_block simpledrawer.math
             execute
-                store result storage simpledrawer:io material.ingot.Count int 1 
+                store result storage simpledrawer:io material.ingot.count int 1 
                 run scoreboard players get #nb_ingot simpledrawer.math
             execute
-                store result storage simpledrawer:io material.nugget.Count int 1 
+                store result storage simpledrawer:io material.nugget.count int 1 
                 run scoreboard players get #nb_nugget simpledrawer.math
 
             data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items set value []
@@ -146,14 +146,14 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             data modify storage simpledrawer:main temp_item.Slot set value 0
             data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items append from storage simpledrawer:main temp_item
 
-            data modify entity @s item.components."minecraft:custom_data".simpledrawer.globalCount set from storage simpledrawer:main temp_item.Count
+            data modify entity @s item.components."minecraft:custom_data".simpledrawer.globalCount set from storage simpledrawer:main temp_item.count
 
             execute store result score #total_item simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.globalCount
 
             # display items
             scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
             scoreboard players set #search_slot simpledrawer.math 0
-            data modify storage simpledrawer:main temp_item.Count set value 1b
+            data modify storage simpledrawer:main temp_item.count set value 1b
             execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp_item
 
             scoreboard players set #search_slot simpledrawer.math 1

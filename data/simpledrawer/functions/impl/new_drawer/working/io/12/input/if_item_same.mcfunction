@@ -9,7 +9,7 @@ scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount si
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
 
 
-execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:12}].Count
+execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:12}].count
 scoreboard players operation #newCount simpledrawer.math = #initCount simpledrawer.math 
 scoreboard players operation #newCount simpledrawer.math += #inputCount simpledrawer.math 
 
@@ -18,7 +18,7 @@ execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math
 
 # apply new count
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
-execute store result entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:12}].Count int 1 run scoreboard players get #newCount simpledrawer.math
+execute store result entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:12}].count int 1 run scoreboard players get #newCount simpledrawer.math
 
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io -= #initCount simpledrawer.math

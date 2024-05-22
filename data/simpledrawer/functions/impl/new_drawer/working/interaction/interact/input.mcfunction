@@ -2,7 +2,7 @@ scoreboard players set #if_item simpledrawer.math 1
 
 data remove storage simpledrawer:io input
 data modify storage simpledrawer:io input set from storage simpledrawer:main temp.SelectedItem
-execute store result score #countItem simpledrawer.math run data get storage simpledrawer:io input.Count
+execute store result score #countItem simpledrawer.math run data get storage simpledrawer:io input.count
 
 
 scoreboard players set #count_input simpledrawer.math 1
@@ -10,7 +10,7 @@ execute if score #ifsneak simpledrawer.math matches 1 run scoreboard players set
 
 execute if score #countItem simpledrawer.math < #count_input simpledrawer.math run scoreboard players operation #count_input simpledrawer.math = #countItem simpledrawer.math
 
-execute store result storage simpledrawer:io input.Count int 1 run scoreboard players get #count_input simpledrawer.math
+execute store result storage simpledrawer:io input.count int 1 run scoreboard players get #count_input simpledrawer.math
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
