@@ -38,19 +38,19 @@ The function tag will be called when the material of the item need to be checked
 
 execute 
     unless score #success_material simpledrawer.io matches 1
-    if data storage simpledrawer:io item_material{tag:{ctc:{id:"my_block",from:"my_data_pack"}}}
+    if data storage simpledrawer:io item_material{components:{"minecraft:custom_data":{ctc:{id:"my_block",from:"my_data_pack"}}}}
     run function my_data_pack:my_material/block:
         scoreboard players set #type simpledrawer.io 0
         function my_data_pack:my_material
 execute 
     unless score #success_material simpledrawer.io matches 1
-    if data storage simpledrawer:io item_material{tag:{ctc:{id:"my_ingot",from:"my_data_pack"}}}
+    if data storage simpledrawer:io item_material{components:{"minecraft:custom_data":{ctc:{id:"my_ingot",from:"my_data_pack"}}}}
     run function my_data_pack:my_material/block:
         scoreboard players set #type simpledrawer.io 1
         function my_data_pack:my_material
 execute
     unless score #success_material simpledrawer.io matches 1
-    if data storage simpledrawer:io item_material{tag:{ctc:{id:"my_nugget",from:"my_data_pack"}}}
+    if data storage simpledrawer:io item_material{components:{"minecraft:custom_data":{ctc:{id:"my_nugget",from:"my_data_pack"}}}}
     run function my_data_pack:my_material/block:
         scoreboard players set #type simpledrawer.io 2
         function my_data_pack:my_material
