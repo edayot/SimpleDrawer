@@ -1,4 +1,4 @@
-from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta
+from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta, Function
 from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
@@ -78,6 +78,7 @@ def delete_load_tag_and_packpng(ctx: Context):
 
 def test_load_generator(ctx: Context):
     "Injecting test_load"
+    print("Generating test_load")
 
 
     dep_check="""scoreboard players set #{project_id}.{dep_id} load.status 0
@@ -112,7 +113,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     final_test=final_test+"run function {project_id}:v{project_version}/load".format(project_id=ctx.project_id,project_version=ctx.project_version)
 
     function=function+final_test
-    ctx.data.functions[f"{ctx.project_id}:v{ctx.project_version}/test_load"]=TextFile(function)
+    ctx.data.functions[f"{ctx.project_id}:v{ctx.project_version}/test_load"]=Function(function)
     
 
     # dep functions tag

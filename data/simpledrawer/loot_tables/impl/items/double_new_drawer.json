@@ -17,7 +17,7 @@
 								],
 								"minecraft:custom_model_data": 1430001,
 								"minecraft:trim": {
-								  "material": "simpledrawer:oak",
+								  "material": "minecraft:quartz",
 								  "pattern": "minecraft:sentry"
 								},
 								"minecraft:container": [
