@@ -74,9 +74,9 @@ execute
             } \
         } \
 
-
-        function simpledrawer:impl/new_drawer/destroy/variant
-
+        scoreboard players set #nb_items simpledrawer.math 0
+        execute store result score #nb_items simpledrawer.math if data storage simpledrawer:main temp.simpledrawer.Items[]
+        execute if score #nb_items simpledrawer.math matches 1.. run function ./destroy/filled
 
 
 

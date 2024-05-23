@@ -1,0 +1,6 @@
+{
+	"function": "minecraft:set_lore",
+	"entity": "this",
+	"lore": [],
+	"mode": "replace_all"
+}

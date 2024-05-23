@@ -19,6 +19,7 @@ require:
 pipeline:
   - simpledrawer.add_mc_version_support
   - simpledrawer.add_versioning_to_items
+  - simpledrawer.generate_translation
   - airdox_.test_load_generator
 
 extend: "common.yaml"

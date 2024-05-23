@@ -1,6 +1,7 @@
 
 from beet import Context, Function
 import nbtlib
+import requests
 
 
 def generate_version_string(versions):
@@ -40,3 +41,62 @@ def add_versioning_to_items(ctx: Context):
 
     ctx.data.functions[path_function]=Function()
     ctx.data.functions[path_function].append(versioning)
+
+
+
+
+def get_translation(key, id):
+    return {
+        "function": "minecraft:set_lore",
+        "entity": "this",
+        "lore": [
+            {
+                "translate": "container.shulkerBox.itemCount",
+                "with": [
+                    {
+                        "translate": key,
+                        "color": "white",
+                        "italic": False
+                    },
+                    {
+                        "score": {
+                            "name": "#count_destroy",
+                            "objective": "simpledrawer.math"
+                        }
+                    }
+                ],
+                "color": "white",
+                "italic": False
+            }
+        ],
+        "mode": "append",
+        "conditions": [
+            {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "equipment": {
+                        "mainhand": {
+                            "items": id
+                        }
+                    }
+                }
+            }
+        ]
+    }
+
+
+
+
+def generate_translation(ctx: Context):
+
+    mc_version = ctx.meta.get("mc_supports", ["1.20.6"])
+    mc_version = mc_version[0]
+
+    url = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-summary/item_components/data.json"
+
+    r = requests.get(url)
+    r.raise_for_status()
+
+    data = r.json()
+    print(data)
