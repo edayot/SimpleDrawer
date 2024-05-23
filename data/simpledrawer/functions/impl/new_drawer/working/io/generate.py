@@ -150,7 +150,7 @@ data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items
 #display
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math {i}
-data modify storage simpledrawer:main temp.newItem.count set value 1b
+data modify storage simpledrawer:main temp.newItem.count set value 1
 execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem
 """
     unless_item=unless_item.replace("___chaine___",chaine)

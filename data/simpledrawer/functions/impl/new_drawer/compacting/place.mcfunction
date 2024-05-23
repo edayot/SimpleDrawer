@@ -8,7 +8,7 @@ tag @s add simpledrawer.new_drawer.stone_base
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 0
-data modify storage simpledrawer:main temp.item_stored set value {id:"minecraft:air",count:0}
+data remove storage simpledrawer:main temp.item_stored
 data modify storage simpledrawer:main temp.item_stored set from storage simpledrawer:main temp.simpledrawer.Items[{Slot:0}]
 
 execute positioned ~ ~0.375 ~ positioned ^ ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/compacting/place/text_display_top
@@ -22,7 +22,7 @@ execute positioned ~ ~0.075 ~ positioned ^ ^ ^0.1 summon interaction run functio
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 1
-data modify storage simpledrawer:main temp.item_stored set value {id:"minecraft:air",count:0}
+data remove storage simpledrawer:main temp.item_stored
 data modify storage simpledrawer:main temp.item_stored set from storage simpledrawer:main temp.simpledrawer.Items[{Slot:1}]
 
 execute positioned ~ ~-0.505 ~ positioned ~ ~0.375 ~ positioned ^-0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/compacting/place/text_display
@@ -34,7 +34,7 @@ execute positioned ~ ~-0.505 ~ positioned ~ ~0.025 ~ positioned ^-0.25 ^ ^0.29 s
 
 
 scoreboard players set #part_index simpledrawer.new_drawer.part_id 2
-data modify storage simpledrawer:main temp.item_stored set value {id:"minecraft:air",count:0}
+data remove storage simpledrawer:main temp.item_stored
 data modify storage simpledrawer:main temp.item_stored set from storage simpledrawer:main temp.simpledrawer.Items[{Slot:2}]
 
 execute positioned ~ ~-0.505 ~ positioned ~ ~0.375 ~ positioned ^0.25 ^ ^0.505 summon text_display run function simpledrawer:impl/new_drawer/compacting/place/text_display
