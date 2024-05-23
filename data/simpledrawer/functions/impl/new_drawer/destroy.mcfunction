@@ -1,30 +1,19 @@
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.wood_base] 
-    store success score #if_item_exists simpledrawer.math 
-    run tag @e[type=item,nbt={Item:{id:"minecraft:beehive",count:1},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
+    run kill @e[type=item,nbt={Item:{id:"minecraft:beehive",count:1},Age:0s},limit=1,sort=nearest,distance=..1]
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.stone_base] 
-    store success score #if_item_exists simpledrawer.math 
-    run tag @e[type=item,nbt={Item:{id:"minecraft:lodestone",count:1},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
+    run kill @e[type=item,nbt={Item:{id:"minecraft:lodestone",count:1},Age:0s},limit=1,sort=nearest,distance=..1]
 
 
-execute 
-    unless score #if_item_exists simpledrawer.math matches 1
-    run summon item ~ ~ ~ {Tags:["simpledrawer.dropped_item"],Item:{id:"minecraft:stone",count:1}}
 
 
-data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main ItemsNBT.new_drawer
-
-data modify storage simpledrawer:main temp.dropped_item.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
-
-data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main temp.dropped_item.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer
-
-function simpledrawer:impl/new_drawer/destroy_variant
 
 
-execute as @e[type=item,tag=simpledrawer.dropped_item,limit=1,sort=nearest] run function simpledrawer:impl/new_drawer/destroy_item
+
+
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
