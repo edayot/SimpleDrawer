@@ -33,10 +33,12 @@
 											"type": "normal",
 											"variant": "single",
 											"wood_type": "simpledrawer:oak",
+											"loot_table": "simpledrawer:impl/items/new_drawer",
 											"upgrade": "wood",
 											"hopper": 0,
 											"globalCount": 0,
-											"maxCount": 256
+											"maxCount": 256,
+											"Items":[]
 										  },
 										  "smithed": {
 											"block": {

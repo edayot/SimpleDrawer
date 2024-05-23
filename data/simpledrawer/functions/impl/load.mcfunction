@@ -5,6 +5,7 @@
 
 scoreboard players set simpledrawer load.status 1
 function simpledrawer:impl/set_version
+function simpledrawer:impl/versioning_items
 
 gamerule maxCommandChainLength 2147483647
 

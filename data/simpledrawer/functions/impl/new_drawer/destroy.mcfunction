@@ -10,6 +10,73 @@ execute
 
 
 
+data remove storage simpledrawer:main temp.simpledrawer
+data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
+
+data modify storage simpledrawer:main temp.summoned set value 1b
+
+
+function ~/loot_spawn with storage simpledrawer:main temp.simpledrawer
+
+function ~/loot_spawn:
+    $loot spawn ~ ~ ~ loot { \
+        "pools": [ \
+            { \
+                "rolls": 1, \
+                "entries": [ \
+                    { \
+                        "type": "minecraft:loot_table", \
+                        "value": "$(loot_table)", \
+                        "functions": [ \
+                            { \
+                                "function": "minecraft:copy_custom_data", \
+                                "source": { \
+                                    "type": "minecraft:storage", \
+                                    "source": "simpledrawer:main" \
+                                }, \
+                                "ops": [ \
+                                    { \
+                                        "source": "temp.summoned", \
+                                        "target": "simpledrawer_summoned", \
+                                        "op": "replace" \
+                                    } \
+                                ] \
+                            } \
+                        ] \
+                    } \
+                ] \
+            } \
+        ] \
+    }
+
+execute 
+    as @e[type=item,sort=nearest]
+    if items entity @s container.0 minecraft:furnace[minecraft:custom_data~{simpledrawer_summoned:1b}] 
+    run function ~/item:
+        data remove entity @s Item.components."minecraft:custom_data".simpledrawer_summoned
+
+        item modify entity @s container.0 { \
+            "function": "minecraft:modify_contents", \
+            "component": "minecraft:container", \
+            "modifier": { \
+                "function": "minecraft:copy_custom_data", \
+                "source": { \
+                    "type": "minecraft:storage", \
+                    "source": "simpledrawer:main" \
+                }, \
+                "ops": [ \
+                    { \
+                        "source": "temp.simpledrawer", \
+                        "target": "simpledrawer", \
+                        "op": "replace" \
+                    } \
+                ] \
+            } \
+        } \
+
+
+        function simpledrawer:impl/new_drawer/destroy/variant
+
 
 
 
