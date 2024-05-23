@@ -39,8 +39,6 @@
 											"loot_table": "simpledrawer:impl/items/compacting_new_drawer",
 											"upgrade": "wood",
 											"hopper": 0,
-											"globalCount": 0,
-											"maxCount": 256,
 											"Items": []
 										  },
 										  "smithed": {
@@ -70,10 +68,16 @@
 						{
                             "function": "minecraft:modify_contents",
                             "component": "minecraft:container",
-                            "modifier": {
-                                "function": "minecraft:reference",
-                                "name": "simpledrawer:impl/add_versionning"
-                            }
+                            "modifier": [
+								{
+									"function": "minecraft:set_custom_data",
+									"tag": "{simpledrawer:{globalCount:0,maxCount:256}}"
+								},
+								{
+									"function": "minecraft:reference",
+									"name": "simpledrawer:impl/add_versionning"
+								}
+							]
                         },
                         {
                             "function": "minecraft:reference",
