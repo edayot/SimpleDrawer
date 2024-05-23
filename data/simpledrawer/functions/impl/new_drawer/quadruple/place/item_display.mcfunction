@@ -15,5 +15,5 @@ scoreboard players operation @s simpledrawer.new_drawer.part_id = #part_index si
 tp @s ~ ~ ~ ~180 ~
 data merge entity @s {transformation:{scale:[0.25f,0.25f,0.001f]},item_display:"gui"}
 
-data modify storage simpledrawer:main temp.item_stored.Count set value 1b
+data modify storage simpledrawer:main temp.item_stored.count set value 1
 data modify entity @s item set from storage simpledrawer:main temp.item_stored

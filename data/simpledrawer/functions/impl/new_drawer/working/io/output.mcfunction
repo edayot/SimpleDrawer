@@ -157,10 +157,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp_item
 
             scoreboard players set #search_slot simpledrawer.math 1
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
 
             scoreboard players set #search_slot simpledrawer.math 2
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
 
     execute
         if score #total_item simpledrawer.math matches 0
@@ -174,9 +174,9 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
 
             data modify storage simpledrawer:io material set value {
                 material: "simpledrawer.minecraft.iron",
-                block: {id:"minecraft:air",Count:0b,Slot:0},
-                ingot: {id:"minecraft:air",Count:0b,Slot:1},
-                nugget: {id:"minecraft:air",Count:0b,Slot:2}
+                block: {id:"minecraft:air",count:0,Slot:0},
+                ingot: {id:"minecraft:air",count:0,Slot:1},
+                nugget: {id:"minecraft:air",count:0,Slot:2}
             }
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
 

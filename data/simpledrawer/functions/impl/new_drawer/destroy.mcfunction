@@ -2,17 +2,17 @@
 execute 
     if entity @s[tag=simpledrawer.new_drawer.wood_base] 
     store success score #if_item_exists simpledrawer.math 
-    run tag @e[type=item,nbt={Item:{id:"minecraft:beehive",Count:1b},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
+    run tag @e[type=item,nbt={Item:{id:"minecraft:beehive",count:1},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.stone_base] 
     store success score #if_item_exists simpledrawer.math 
-    run tag @e[type=item,nbt={Item:{id:"minecraft:lodestone",Count:1b},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
+    run tag @e[type=item,nbt={Item:{id:"minecraft:lodestone",count:1},Age:0s},limit=1,sort=nearest,distance=..1] add simpledrawer.dropped_item
 
 
 execute 
     unless score #if_item_exists simpledrawer.math matches 1
-    run summon item ~ ~ ~ {Tags:["simpledrawer.dropped_item"],Item:{id:"minecraft:stone",Count:1b}}
+    run summon item ~ ~ ~ {Tags:["simpledrawer.dropped_item"],Item:{id:"minecraft:stone",count:1}}
 
 
 data modify storage simpledrawer:main temp.dropped_item set from storage simpledrawer:main ItemsNBT.new_drawer

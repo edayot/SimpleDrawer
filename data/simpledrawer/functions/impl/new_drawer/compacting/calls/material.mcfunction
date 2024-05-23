@@ -87,26 +87,26 @@ generate_material(
     "simpledrawer.minecraft.gold",
     block={
         test: {id:"minecraft:gold_block"},
-        nbt: {id:"minecraft:gold_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:gold_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:gold_ingot"},
-        nbt: {id:"minecraft:gold_ingot",Count:1,Slot:1}
+        nbt: {id:"minecraft:gold_ingot",count:1,Slot:1}
     },
     nugget={
         test: {id:"minecraft:gold_nugget"},
-        nbt: {id:"minecraft:gold_nugget",Count:1,Slot:2}
+        nbt: {id:"minecraft:gold_nugget",count:1,Slot:2}
     }
 ) 
 generate_material(
     "simpledrawer.minecraft.redstone",
     block={
         test: {id:"minecraft:redstone_block"},
-        nbt: {id:"minecraft:redstone_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:redstone_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:redstone"},
-        nbt: {id:"minecraft:redstone",Count:1,Slot:1}
+        nbt: {id:"minecraft:redstone",count:1,Slot:1}
     },
 )
 
@@ -114,15 +114,15 @@ generate_material(
     "simpledrawer.minecraft.iron",
     block={
         test: {id:"minecraft:iron_block"},
-        nbt: {id:"minecraft:iron_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:iron_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:iron_ingot"},
-        nbt: {id:"minecraft:iron_ingot",Count:1,Slot:1}
+        nbt: {id:"minecraft:iron_ingot",count:1,Slot:1}
     },
     nugget={
         test: {id:"minecraft:iron_nugget"},
-        nbt: {id:"minecraft:iron_nugget",Count:1,Slot:2}
+        nbt: {id:"minecraft:iron_nugget",count:1,Slot:2}
     }
 )
 
@@ -130,11 +130,11 @@ generate_material(
     "simpledrawer.minecraft.copper",
     block={
         test: {id:"minecraft:copper_block"},
-        nbt: {id:"minecraft:copper_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:copper_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:copper_ingot"},
-        nbt: {id:"minecraft:copper_ingot",Count:1,Slot:1}
+        nbt: {id:"minecraft:copper_ingot",count:1,Slot:1}
     }
 )
 
@@ -142,44 +142,44 @@ generate_material(
     "simpledrawer.minecraft.diamond",
     block={
         test: {id:"minecraft:diamond_block"},
-        nbt: {id:"minecraft:diamond_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:diamond_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:diamond"},
-        nbt: {id:"minecraft:diamond",Count:1,Slot:1}
+        nbt: {id:"minecraft:diamond",count:1,Slot:1}
     },
 )
 generate_material(
     "simpledrawer.minecraft.emerald",
     block={
         test: {id:"minecraft:emerald_block"},
-        nbt: {id:"minecraft:emerald_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:emerald_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:emerald"},
-        nbt: {id:"minecraft:emerald",Count:1,Slot:1}
+        nbt: {id:"minecraft:emerald",count:1,Slot:1}
     },
 )
 generate_material(
     "simpledrawer.minecraft.lapis",
     block={
         test: {id:"minecraft:lapis_block"},
-        nbt: {id:"minecraft:lapis_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:lapis_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:lapis_lazuli"},
-        nbt: {id:"minecraft:lapis_lazuli",Count:1,Slot:1}
+        nbt: {id:"minecraft:lapis_lazuli",count:1,Slot:1}
     },
 )
 generate_material(
     "simpledrawer.minecraft.coal",
     block={
         test: {id:"minecraft:coal_block"},
-        nbt: {id:"minecraft:coal_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:coal_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:coal"},
-        nbt: {id:"minecraft:coal",Count:1,Slot:1}
+        nbt: {id:"minecraft:coal",count:1,Slot:1}
     },
 )
 
@@ -187,11 +187,11 @@ generate_material(
     "simpledrawer.minecraft.netherite",
     block={
         test: {id:"minecraft:netherite_block"},
-        nbt: {id:"minecraft:netherite_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:netherite_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:netherite_ingot"},
-        nbt: {id:"minecraft:netherite_ingot",Count:1,Slot:1}
+        nbt: {id:"minecraft:netherite_ingot",count:1,Slot:1}
     },
 )
 
@@ -199,33 +199,33 @@ generate_material(
     "simpledrawer.minecraft.raw_iron",
     block={
         test: {id:"minecraft:raw_iron_block"},
-        nbt: {id:"minecraft:raw_iron_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:raw_iron_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:raw_iron"},
-        nbt: {id:"minecraft:raw_iron",Count:1,Slot:1}
+        nbt: {id:"minecraft:raw_iron",count:1,Slot:1}
     }
 )
 generate_material(
     "simpledrawer.minecraft.raw_gold",
     block={
         test: {id:"minecraft:raw_gold_block"},
-        nbt: {id:"minecraft:raw_gold_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:raw_gold_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:raw_gold"},
-        nbt: {id:"minecraft:raw_gold",Count:1,Slot:1}
+        nbt: {id:"minecraft:raw_gold",count:1,Slot:1}
     }
 )
 generate_material(
     "simpledrawer.minecraft.raw_copper",
     block={
         test: {id:"minecraft:raw_copper_block"},
-        nbt: {id:"minecraft:raw_copper_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:raw_copper_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:raw_copper"},
-        nbt: {id:"minecraft:raw_copper",Count:1,Slot:1}
+        nbt: {id:"minecraft:raw_copper",count:1,Slot:1}
     }
 )
 
@@ -234,11 +234,11 @@ generate_material(
     "simpledrawer.minecraft.slime",
     block={
         test: {id:"minecraft:slime_block"},
-        nbt: {id:"minecraft:slime_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:slime_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:slime_ball"},
-        nbt: {id:"minecraft:slime_ball",Count:1,Slot:1}
+        nbt: {id:"minecraft:slime_ball",count:1,Slot:1}
     },
 )
 
@@ -246,11 +246,11 @@ generate_material(
     "simpledrawer.minecraft.wheat",
     block={
         test: {id:"minecraft:hay_block"},
-        nbt: {id:"minecraft:hay_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:hay_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:wheat"},
-        nbt: {id:"minecraft:wheat",Count:1,Slot:1}
+        nbt: {id:"minecraft:wheat",count:1,Slot:1}
     },
 )
 
@@ -258,11 +258,11 @@ generate_material(
     "simpledrawer.minecraft.bone",
     block={
         test: {id:"minecraft:bone_block"},
-        nbt: {id:"minecraft:bone_block",Count:1,Slot:0}
+        nbt: {id:"minecraft:bone_block",count:1,Slot:0}
     },
     ingot={
         test: {id:"minecraft:bone_meal"},
-        nbt: {id:"minecraft:bone_meal",Count:1,Slot:1}
+        nbt: {id:"minecraft:bone_meal",count:1,Slot:1}
     },
 )
 

@@ -67,7 +67,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
                 unless data storage simpledrawer:io material.nugget
                 run function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call_3:
                     scoreboard players set @s simpledrawer.new_drawer.slot_count 2
-                    data modify storage simpledrawer:io material.nugget set value {id:"minecraft:air",Count:1,Slot:2}
+                    data modify storage simpledrawer:io material.nugget set value {id:"minecraft:air",count:1,Slot:2}
             
             data modify storage simpledrawer:io material.block.Slot set value 0
             data modify storage simpledrawer:io material.ingot.Slot set value 1
@@ -103,7 +103,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items:
 
     execute
         if score @s simpledrawer.new_drawer.slot_count matches 2
-        at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+        at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
 
 
 function simpledrawer:impl/new_drawer/working/io/compacting_input/none:
@@ -291,10 +291,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
             execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp_item
 
             scoreboard players set #search_slot simpledrawer.math 1
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
 
             scoreboard players set #search_slot simpledrawer.math 2
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",Count:0b}
+            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
 
 
 

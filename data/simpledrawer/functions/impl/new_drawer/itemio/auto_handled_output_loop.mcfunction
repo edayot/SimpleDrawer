@@ -1,5 +1,5 @@
 
-execute store result score #count_aho simpledrawer.math run data get storage simpledrawer:main temp.Items_aho[0].Count
+execute store result score #count_aho simpledrawer.math run data get storage simpledrawer:main temp.Items_aho[0].count
 
 execute if score #count_aho simpledrawer.math matches 1.. 
     run function ./auto_handled_output_loop_output:
