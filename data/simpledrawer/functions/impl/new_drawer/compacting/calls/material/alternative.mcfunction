@@ -15,7 +15,6 @@ generate_material(
         nbt: {id:"minecraft:clay_ball",count:1,Slot:1}
     },
     ingot_in_block=4,
-    nugget_in_block=16,
     nugget_in_ingot=4,
 )
 
@@ -31,7 +30,6 @@ generate_material(
     },
     nugget=None,
     ingot_in_block=4,
-    nugget_in_block=16,
     nugget_in_ingot=4,
 )
 
@@ -47,7 +45,6 @@ generate_material(
     },
     nugget=None,
     ingot_in_block=4,
-    nugget_in_block=16,
     nugget_in_ingot=4,
 )
 
@@ -63,6 +60,5 @@ generate_material(
     },
     nugget=None,
     ingot_in_block=4,
-    nugget_in_block=16,
     nugget_in_ingot=4,
 )

@@ -7,7 +7,6 @@
 #- score #success_material simpledrawer.io (0: fail, 1: success)
 #- score #type simpledrawer.io (0: block, 1: ingot, 2: nugget)
 #- score #ingot_in_block simpledrawer.io
-#- score #nugget_in_block simpledrawer.io
 #- score #nugget_in_ingot simpledrawer.io
 #- score @s simpledrawer.new_drawer.slot_count (3: normal, 2: redstone block like)
 
@@ -24,7 +23,6 @@ def generate_material(
     ingot,
     nugget=None,
     ingot_in_block=9,
-    nugget_in_block=81,
     nugget_in_ingot=9,
 ):
     name=f'{__name__}/{translate_key}/block'
@@ -56,8 +54,6 @@ def generate_material(
     function name:
         scoreboard players set #success_material simpledrawer.io 1
         scoreboard players set #ingot_in_block simpledrawer.io f"{ingot_in_block}"
-        scoreboard players set #nugget_in_block simpledrawer.io f"{nugget_in_block}"
-
         scoreboard players set #nugget_in_ingot simpledrawer.io f"{nugget_in_ingot}"
 
         material_last=translate_key.split(".")[-1]

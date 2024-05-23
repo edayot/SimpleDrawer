@@ -58,6 +58,9 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/function_call:
     data remove storage simpledrawer:io material
     function #simpledrawer:material
     function simpledrawer:impl/new_drawer/compacting/calls/material
+    scoreboard players set #nugget_in_block simpledrawer.io -1
+    scoreboard players operation #nugget_in_block simpledrawer.io = #nugget_in_ingot simpledrawer.io
+    scoreboard players operation #nugget_in_block simpledrawer.io *= #ingot_in_block simpledrawer.io
     
     execute 
         if score #success_material simpledrawer.io matches 1

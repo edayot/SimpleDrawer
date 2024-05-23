@@ -44,4 +44,9 @@ meta:
         versioning: 
           type: "not_versioned"
           prefix: "dork.base64"
-      
+      - id: "crafter"
+        match: ">=0.2.0"
+        source: "smithed"
+        versioning: 
+          type: "not_versioned"
+          prefix: "#smithed.custom_block"
