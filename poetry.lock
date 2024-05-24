@@ -774,13 +774,13 @@ tokenstream = ">=1.7.0,<2.0.0"
 
 [[package]]
 name = "model-resolver"
-version = "0.6.0"
+version = "0.6.1"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "model_resolver-0.6.0-py3-none-any.whl", hash = "sha256:342d072cee59eb7b7e9ee60335ddbc695c5a18533b914ee8cc9ad4bfe0c8faa5"},
-    {file = "model_resolver-0.6.0.tar.gz", hash = "sha256:4bbd143a4c6eab170daf7f89f6d7d557e7d825d50b625fe1c0249dec4b1fde81"},
+    {file = "model_resolver-0.6.1-py3-none-any.whl", hash = "sha256:2402dc6400357d6d4b4244e8dafcd598cb3b4bfb640b903f619b830fe6e8f77e"},
+    {file = "model_resolver-0.6.1.tar.gz", hash = "sha256:c08c7715f6819ac07e99ae455d54133c8b563a17437a192281b1d67bd95cbab5"},
 ]
 
 [package.dependencies]
@@ -1370,13 +1370,13 @@ files = [
 
 [[package]]
 name = "smithed"
-version = "0.18.1"
+version = "0.18.2"
 description = "Smithed's Python client with CLI, weld and more"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "smithed-0.18.1-py3-none-any.whl", hash = "sha256:323e051da064fc57c2e412f064199a46c9801b5dba5e5e85af1567845028a5df"},
-    {file = "smithed-0.18.1.tar.gz", hash = "sha256:8da86715a625f74859b6b5bbaca11bb6641ef2bfa0c9eb3c5e7f7ea42d56667b"},
+    {file = "smithed-0.18.2-py3-none-any.whl", hash = "sha256:1399d118994219291331c8ce0c74b2b1e013832e87c5eff88a3d199a82b6f9c1"},
+    {file = "smithed-0.18.2.tar.gz", hash = "sha256:dd9ba7efb91c3ca1d620bcf852d4bd3637e5a9a8e5d76b17cfe317db5d79ac9e"},
 ]
 
 [package.dependencies]
@@ -1777,13 +1777,13 @@ typing-extensions = ">=3.7.4.3"
 
 [[package]]
 name = "typing-extensions"
-version = "4.11.0"
+version = "4.12.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "typing_extensions-4.11.0-py3-none-any.whl", hash = "sha256:c1f94d72897edaf4ce775bb7558d5b79d8126906a14ea5ed1635921406c0387a"},
-    {file = "typing_extensions-4.11.0.tar.gz", hash = "sha256:83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"},
+    {file = "typing_extensions-4.12.0-py3-none-any.whl", hash = "sha256:b349c66bea9016ac22978d800cfff206d5f9816951f12a7d0ec5578b0a819594"},
+    {file = "typing_extensions-4.12.0.tar.gz", hash = "sha256:8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8"},
 ]
 
 [[package]]
