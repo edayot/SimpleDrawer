@@ -1,5 +1,5 @@
 
-from beet import Context, Function
+from beet import Context, Function, ItemModifier
 import nbtlib
 import requests
 
@@ -46,6 +46,7 @@ def add_versioning_to_items(ctx: Context):
 
 
 def get_translation(key, id):
+    id = get_real_id(id)
     return {
         "function": "minecraft:set_lore",
         "entity": "this",
@@ -87,16 +88,43 @@ def get_translation(key, id):
 
 
 
+def get_translate_from_id(id, lang):
+    #Get translate from id
+    translate=get_real_id(id)
+    translate=translate.replace(":",".")
+    if "block."+translate in lang:
+        return "block."+translate
+    elif "item."+translate in lang:
+        return "item."+translate
+    else:
+        return None
+    
+def get_real_id(id):
+    return f"minecraft:{id}" if ":" not in id else id
+
 
 def generate_translation(ctx: Context):
 
     mc_version = ctx.meta.get("mc_supports", ["1.20.6"])
     mc_version = mc_version[0]
 
-    url = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-summary/item_components/data.json"
+    lang = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-assets/assets/minecraft/lang/en_us.json"
+    items = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-registries/item/data.json"
 
-    r = requests.get(url)
-    r.raise_for_status()
+    lang = requests.get(lang).json()
+    items = requests.get(items).json()
+    
+    L = []
 
-    data = r.json()
-    # print(data)
+    for id in items:
+        translate = get_translate_from_id(id, lang)
+        if translate:
+            modifier = get_translation(translate, id)
+        else:
+            modifier = get_translation(id, id)
+        L.append(modifier)
+    
+    impl = f"v{ctx.project_version}"
+    path = "simpledrawer:impl/destroy/translate".replace("impl/", impl + "/")
+    ctx.data.item_modifiers[path] = ItemModifier(L)
+        

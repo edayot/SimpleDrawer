@@ -17,6 +17,10 @@ execute
     store result score #success_item simpledrawer.math 
     run item modify entity @s container.0 simpledrawer:impl/destroy/item_name
 
+execute 
+    if score #success_item simpledrawer.math matches 0 
+    store result score #success_item simpledrawer.math 
+    run function ./fallback_translations
 
 data remove storage simpledrawer:main temp.ItemsDestroy[0]
 execute if data storage simpledrawer:main temp.ItemsDestroy[0] run function ./filled_loop
