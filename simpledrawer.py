@@ -99,4 +99,4 @@ def generate_translation(ctx: Context):
     r.raise_for_status()
 
     data = r.json()
-    print(data)
+    # print(data)

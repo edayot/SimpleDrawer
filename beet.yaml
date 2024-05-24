@@ -21,6 +21,7 @@ pipeline:
   - simpledrawer.add_versioning_to_items
   - simpledrawer.generate_translation
   - airdox_.test_load_generator
+  - model_resolver
 
 extend: "common.yaml"
 
