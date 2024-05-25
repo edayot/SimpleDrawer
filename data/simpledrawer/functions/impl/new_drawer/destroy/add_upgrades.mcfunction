@@ -1,3 +1,23 @@
+
+
+scoreboard players set #temp_upgrade simpledrawer.math 0
+execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run scoreboard players set #temp_upgrade simpledrawer.math 1
+execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"iron"} run scoreboard players set #temp_upgrade simpledrawer.math 1
+execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"gold"} run scoreboard players set #temp_upgrade simpledrawer.math 1
+execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"diamond"} run scoreboard players set #temp_upgrade simpledrawer.math 1
+execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"star"} run scoreboard players set #temp_upgrade simpledrawer.math 1
+execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"netherite"} run scoreboard players set #temp_upgrade simpledrawer.math 1
+
+execute if score #temp_upgrade simpledrawer.math matches 1 run item modify entity @s container.0 {
+	"function": "minecraft:set_lore",
+	"lore": [
+		{
+			"text": "",
+		}
+	],
+	"mode": "append"
+}
+
 execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run item modify entity @s container.0 {
 	"function": "minecraft:set_lore",
 	"lore": [

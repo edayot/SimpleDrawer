@@ -4,7 +4,7 @@ $item modify entity @s container.0 { \
         [ \
             { \
                 "text": "$(globalCount)", \
-                "color": "gray", \
+                "color": "dark_gray", \
                 "italic": false \
             }, \
             { \

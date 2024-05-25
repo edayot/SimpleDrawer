@@ -13,6 +13,7 @@
                             "components": {
 								"minecraft:item_name": "{\"translate\":\"simpledrawer.new_drawer.empty\",\"color\":\"white\",\"italic\":false}",
 								"minecraft:lore": [
+								  "{\"color\":\"dark_gray\",\"extra\":[\"/\",\"256\"],\"italic\":false,\"text\":\"0\"}",
 								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
 								],
 								"minecraft:custom_model_data": 1430000,
