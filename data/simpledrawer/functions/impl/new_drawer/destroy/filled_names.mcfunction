@@ -1,5 +1,4 @@
 
-say filled_names
 
 execute 
     if data storage simpledrawer:main temp.simpledrawer{type:"normal",variant:"single"} 
