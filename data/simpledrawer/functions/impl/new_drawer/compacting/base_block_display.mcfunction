@@ -14,5 +14,5 @@ execute
 
 execute
     if score #temp_slot_count simpledrawer.math matches 3
-    run data modify entity @s item.components."minecraft:custom_model_data" set value 1430003
+    run data modify entity @s item.components."minecraft:custom_model_data" set value 1430002
 

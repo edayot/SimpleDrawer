@@ -15,6 +15,9 @@ data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.
 
 data modify storage simpledrawer:main temp.summoned set value 1b
 
+scoreboard players set #temp_slot_count simpledrawer.math 0
+scoreboard players operation #temp_slot_count simpledrawer.math = @s simpledrawer.new_drawer.slot_count
+
 
 function ~/loot_spawn with storage simpledrawer:main temp.simpledrawer
 
@@ -72,12 +75,16 @@ execute
                     } \
                 ] \
             } \
-        } \
+        } 
+
+
 
         scoreboard players set #nb_items simpledrawer.math 0
         execute store result score #nb_items simpledrawer.math if data storage simpledrawer:main temp.simpledrawer.Items[]
         execute if score #nb_items simpledrawer.math matches 1.. run function ./destroy/filled
         execute if score #nb_items simpledrawer.math matches 0 run function ./destroy/empty
+
+        function simpledrawer:impl/new_drawer/destroy/variant
 
 
 
