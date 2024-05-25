@@ -70,16 +70,17 @@ def image_count(count: int) -> Image:
 		Image: The image with the count
 	"""
 	# Create the image
-	img = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+	size = 64
+	img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
 	draw = ImageDraw.Draw(img)
-	font_size = 16
-	font = ImageFont.truetype(f"./build_assets/minecraft_font.ttf", size = font_size)
+	font_size = 24
+	font = ImageFont.truetype(f"./images/minecraft_font.ttf", size = font_size)
 
 	# Calculate text size and positions of the two texts
 	text_width = draw.textlength(str(count), font = font)
-	text_height = font_size + 4
-	pos_1 = (32-text_width), (32-text_height)
-	pos_2 = (30-text_width), (30-text_height)
+	text_height = font_size + 6
+	pos_1 = (size-text_width), (size-text_height)
+	pos_2 = (pos_1[0]-2, pos_1[1]-2)
 	
 	# Draw the count
 	draw.text(pos_1, str(count), (50, 50, 50), font = font)
@@ -107,7 +108,7 @@ def create_result_image(ctx: Context, result: Item, count: int = 1):
     img.paste(img_item, (32, 32), img_item)
     if count > 1:
         img_count = image_count(count)
-        img.paste(img_count, (0, 0), img_count)
+        img.paste(img_count, (36, 32), img_count)
     return img
 
 
@@ -234,7 +235,7 @@ def beet_default(ctx: Context):
         [smooth_stone, smooth_stone, smooth_stone]
     ]
     craft_img = create_crafting_image(ctx, craft)
-    result_img = create_result_image(ctx, heavy_workbench)
+    result_img = create_result_image(ctx, heavy_workbench, 4)
 
     import os
     os.makedirs("./build", exist_ok=True)
