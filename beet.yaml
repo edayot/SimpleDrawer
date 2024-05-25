@@ -21,11 +21,15 @@ pipeline:
   - simpledrawer.add_versioning_to_items
   - simpledrawer.generate_translation
   - airdox_.test_load_generator
-  # - model_resolver
+  - guide
 
 extend: "common.yaml"
 
 meta:
+  model_resolver:
+    render_size: 64
+    load_vanilla: true
+    save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"
   mc_supports: ["1.20.6"]
   mc_supports_dataversion: [3839]

@@ -78,7 +78,6 @@ def delete_load_tag_and_packpng(ctx: Context):
 
 def test_load_generator(ctx: Context):
     "Injecting test_load"
-    print("Generating test_load")
 
 
     dep_check="""scoreboard players set #{project_id}.{dep_id} load.status 0
