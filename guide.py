@@ -1,10 +1,11 @@
-from beet import Context
+from beet import Context, Font, Texture, LootTable
 from model_resolver import beet_default as model_resolver
 
 from dataclasses import dataclass, field
 from typing import Optional
 from enum import Enum
 from PIL import Image, ImageDraw, ImageFont
+import json
 
 PAGE_NUMBER = 0
 def page_number():
@@ -112,115 +113,265 @@ def create_result_image(ctx: Context, result: Item, count: int = 1):
     return img
 
 
+
+def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
+    craft_img = create_crafting_image(ctx, craft)
+    result_img = create_result_image(ctx, result, count)
+
+    craft_texture_path = f"simpledrawer:item/pages/{result.page_name[0]}_craft"
+    result_texture_path = f"simpledrawer:item/pages/{result.page_name[0]}_result"
+    ctx.assets.textures[craft_texture_path] = Texture(craft_img)
+    ctx.assets.textures[result_texture_path] = Texture(result_img)
+    # Create a font for the page
+    font_path = f'simpledrawer:pages'
+    if not font_path in ctx.assets.fonts:
+        print("Creating font")
+        ctx.assets.fonts[font_path] = Font({
+            "providers": [
+            {
+                "type": "reference",
+                "id": "minecraft:include/space"
+            },
+            { "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
+            { "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
+            { "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
+            ],
+        })
+    
+    # generate the char index for the page
+    # page 1 : \uff01, \uff02
+    # page 2 : \uff03, \uff04
+    # ...
+
+    char_craft = 0xff01 + 2*result.page_index
+    char_result = 0xff02 + 2*result.page_index
+    char_craft = f'\\u{char_craft:04x}'
+    char_result = f'\\u{char_result:04x}'
+    char_craft = char_craft.encode().decode("unicode_escape")
+    char_result = char_result.encode().decode("unicode_escape")
+
+
+    ctx.assets.fonts[font_path].data["providers"].append({
+        "type": "bitmap",
+        "file": f'{craft_texture_path}.png',
+        "ascent": -3,
+        "height": 68,
+        "chars": [char_craft]
+    })
+    ctx.assets.fonts[font_path].data["providers"].append({
+        "type": "bitmap",
+        "file": f'{result_texture_path}.png',
+        "ascent": -20,
+        "height": 34,
+        "chars": [char_result]
+    })
+    
+    page = [""]
+    page.append({
+        "translate": result.page_name[0],
+        "font":"simpledrawer:medium",
+        "color":"black"
+    })
+    page.append({
+        "text":f"\n{char_craft} {char_result}\n\n",
+        "font":font_path,
+        "color":"white"
+    })
+
+    for i in range(6):
+        real_i=i//2
+        page.append({"text":"\uef00\uef00","font":font_path,"color":"white"})
+        for j in range(3):
+            item = craft[real_i][j]
+            page.append(get_item_json(item))
+        if i in [1,2,3,4]:
+            page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
+            page.append(get_item_json(result))
+        page.append("\n")
+    
+    if result.description is not None:
+        page.append("\n")
+        page.append({
+            "translate": result.description[0],
+            "color":"black",
+            "italic":False
+        })
+    return json.dumps(page)
+            
+            
+
+
+
+def get_item_json(item: Item | None, font_path: str = "simpledrawer:pages"):
+    if item is None:
+        return {
+            "text":"\uef01",
+            "font":font_path,
+            "color":"white"
+        }
+    if item.page_index == -1:
+        return {
+            "text":"\uef01",
+            "font":font_path,
+            "color":"white",
+            "hoverEvent":{"action":"show_item","contents": item.minimal_representation}
+        }
+    return {
+        "text":"\uef01",
+        "font":font_path,
+        "color":"white",
+        "hoverEvent":{"action":"show_item","contents": item.minimal_representation},
+        "clickEvent":{"action":"change_page","value":f"{item.page_index}"}
+    }
+
+
+def create_loot_table(ctx: Context, pages: list[str]):
+    loot_table = {
+        "pools": [
+            {
+                "rolls": 1,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:written_book",
+                        "functions": [
+                            {
+                                "function": "minecraft:set_components",
+                                "components": {
+                                    "minecraft:written_book_content": {
+                                        "title": "Guide",
+                                        "author": "AirDox_",
+                                        "pages": pages,
+                                        "resolved": True
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    ctx.data.loot_tables[f"simpledrawer:v{ctx.project_version}/items/guide"] = LootTable(loot_table)
+
+
+
+
 def beet_default(ctx: Context):
 
     # 1. Construct all needed renders, add them to the ctx    
     air = Item(
         model="minecraft:block/air",
-        minimal_representation='{"id":"minecraft:air"}',
+        minimal_representation={"id":"minecraft:air"},
         page_index=-1
     )
     stick = Item(
         model="minecraft:item/stick",
-        minimal_representation='{"id":"minecraft:stick"}',
+        minimal_representation={"id":"minecraft:stick"},
         page_index=-1
     )
     barrel = Item(
         model="minecraft:item/barrel",
-        minimal_representation='{"id":"minecraft:barrel"}',
+        minimal_representation={"id":"minecraft:barrel"},
         page_index=-1
     )
     oak_planks = Item(
         model="minecraft:item/oak_planks",
-        minimal_representation='{"id":"minecraft:oak_planks"}',
+        minimal_representation={"id":"minecraft:oak_planks"},
         page_index=-1
     )
     iron_nugget = Item(
         model="minecraft:item/iron_nugget",
-        minimal_representation='{"id":"minecraft:iron_nugget"}',
+        minimal_representation={"id":"minecraft:iron_nugget"},
         page_index=-1
     )
     iron_ingot = Item(
         model="minecraft:item/iron_ingot",
-        minimal_representation='{"id":"minecraft:iron_ingot"}',
+        minimal_representation={"id":"minecraft:iron_ingot"},
         page_index=-1
     )
     diamond = Item(
         model="minecraft:item/diamond",
-        minimal_representation='{"id":"minecraft:diamond"}',
+        minimal_representation={"id":"minecraft:diamond"},
         page_index=-1
     )
     nether_star = Item(
         model="minecraft:item/nether_star",
-        minimal_representation='{"id":"minecraft:nether_star"}',
+        minimal_representation={"id":"minecraft:nether_star"},
         page_index=-1
     )
     netherite_ingot = Item(
         model="minecraft:item/netherite_ingot",
-        minimal_representation='{"id":"minecraft:netherite_ingot"}',
+        minimal_representation={"id":"minecraft:netherite_ingot"},
         page_index=-1
     )
     redstone = Item(
         model="minecraft:item/redstone",
-        minimal_representation='{"id":"minecraft:redstone"}',
+        minimal_representation={"id":"minecraft:redstone"},
         page_index=-1
     )
     hopper = Item(
         model="minecraft:item/hopper",
-        minimal_representation='{"id":"minecraft:hopper"}',
+        minimal_representation={"id":"minecraft:hopper"},
         page_index=-1
     )
     crafting_table = Item(
         model="minecraft:item/crafting_table",
-        minimal_representation='{"id":"minecraft:crafting_table"}',
+        minimal_representation={"id":"minecraft:crafting_table"},
         page_index=-1
     )
     oak_log = Item(
         model="minecraft:item/oak_log",
-        minimal_representation='{"id":"minecraft:oak_log"}',
+        minimal_representation={"id":"minecraft:oak_log"},
         page_index=-1
     )
     smooth_stone = Item(
         model="minecraft:item/smooth_stone",
-        minimal_representation='{"id":"minecraft:smooth_stone"}',
+        minimal_representation={"id":"minecraft:smooth_stone"},
         page_index=-1
     )
     gold_ingot = Item(
         model="minecraft:item/gold_ingot",
-        minimal_representation='{"id":"minecraft:gold_ingot"}',
+        minimal_representation={"id":"minecraft:gold_ingot"},
         page_index=-1
     )
     book = Item(
         model="minecraft:item/book",
-        minimal_representation='{"id":"minecraft:book"}',
+        minimal_representation={"id":"minecraft:book"},
         page_index=-1
     )
     chest = Item(
         model="minecraft:item/chest",
-        minimal_representation='{"id":"minecraft:chest"}',
+        minimal_representation={"id":"minecraft:chest"},
         page_index=-1
     )
     crafting_table = Item(
         model="minecraft:item/crafting_table",
-        minimal_representation='{"id":"minecraft:crafting_table"}',
+        minimal_representation={"id":"minecraft:crafting_table"},
         page_index=-1
     )
     piston = Item(
         model="minecraft:item/piston",
-        minimal_representation='{"id":"minecraft:piston"}',
+        minimal_representation={"id":"minecraft:piston"},
         page_index=-1
     )
     smooth_stone = Item(
         model="minecraft:item/smooth_stone",
-        minimal_representation='{"id":"minecraft:smooth_stone"}',
+        minimal_representation={"id":"minecraft:smooth_stone"},
         page_index=-1
     )
 
     heavy_workbench = Item(
         model="smithed.crafter:block/table",
-        minimal_representation='{"id":"minecraft:furnace"}',
+        minimal_representation={"id":"minecraft:furnace"},
         page_name=("block.smithed.crafter",{}),
         description=("simpledrawer.guide.heavy_workbench",{}),
+    )
+    new_drawer = Item(
+        model="simpledrawer:block/new_drawer/oak_full_drawers_1",
+        minimal_representation={"id":"minecraft:furnace"},
+        page_name=("simpledrawer.new_drawer.empty",{}),
+        description=("simpledrawer.guide.new_drawer",{}),
     )
 
     # 2. Add the filter to the model_resolver
@@ -229,21 +380,27 @@ def beet_default(ctx: Context):
     model_resolver(ctx)
 
     # 3. Create the crafting recipes
+    pages = []
     craft=[
         [oak_log, oak_log, oak_log],
         [oak_log, crafting_table, oak_log],
         [smooth_stone, smooth_stone, smooth_stone]
     ]
-    craft_img = create_crafting_image(ctx, craft)
-    result_img = create_result_image(ctx, heavy_workbench, 4)
+    result = heavy_workbench
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
 
-    import os
-    os.makedirs("./build", exist_ok=True)
-    craft_img.save("./build/craft_img.png")
-    result_img.save("./build/result_img.png")
+    craft=[
+        [oak_planks, stick, oak_planks],
+        [stick, iron_nugget, stick],
+        [oak_planks, barrel, oak_planks]
+    ]
+    result = new_drawer
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
 
 
-
-    
-
+    # print(pages)
+    # 4. Create the loot table
+    create_loot_table(ctx, pages)
 
