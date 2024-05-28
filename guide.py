@@ -34,6 +34,7 @@ class Item:
     page_name : Optional[TranslatedString] = None
     description: Optional[TranslatedString] = None
     page_index: int = field(default_factory=page_number)
+    add_space_to_page_name: bool = False
 
     def __post_init__(self):
         REGISTRY[self.model] = self
@@ -115,6 +116,8 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
         "font":"simpledrawer:medium",
         "color":"black"
     })
+    if result.add_space_to_page_name:
+        page.append("\n")
     page.append({
         "text":f"\n\uef13 \uef14\n",
         "font":font_path,
@@ -133,15 +136,16 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
                 render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/minecraft/block/air"
 
                 # create a char for the item
-                ctx.assets.fonts[font_path].data["providers"].append(
-                    {
-                        "type": "bitmap",
-                        "file": f"{render}.png",
-                        "ascent": {0: 8, 1: 7, 2: 6}.get(i),
-                        "height": 16,
-                        "chars": [char_item]
-                    }
-                )
+                if e == 0:
+                    ctx.assets.fonts[font_path].data["providers"].append(
+                        {
+                            "type": "bitmap",
+                            "file": f"{render}.png",
+                            "ascent": {0: 8, 1: 7, 2: 6}.get(i),
+                            "height": 16,
+                            "chars": [char_item]
+                        }
+                    )
                 page.append(get_item_json(item, font_path, f'\uef03{char_item}\uef03' if e == 0 else "\uef01"))
             if (i == 0 and e == 1) or (i == 1 and e == 1) or (i == 2 and e == 0):
                 page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
@@ -338,15 +342,60 @@ def beet_default(ctx: Context):
 
     heavy_workbench = Item(
         model="smithed.crafter:block/table",
-        minimal_representation={"id":"minecraft:furnace"},
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"block.smithed.crafter"})
+            }
+            },
         page_name=("block.smithed.crafter",{}),
         description=("simpledrawer.guide.heavy_workbench",{}),
+        add_space_to_page_name=True
     )
     new_drawer = Item(
         model="simpledrawer:block/new_drawer/oak_full_drawers_1",
-        minimal_representation={"id":"minecraft:furnace"},
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.new_drawer.empty"})
+            }
+        },
         page_name=("simpledrawer.new_drawer.empty",{}),
         description=("simpledrawer.guide.new_drawer",{}),
+        add_space_to_page_name=True
+    )
+    double_new_drawer = Item(
+        model="simpledrawer:block/new_drawer/oak_full_drawers_2",
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.double_new_drawer.empty"})
+            }
+        },
+        page_name=("simpledrawer.double_new_drawer.empty",{}),
+        description=("simpledrawer.guide.double_new_drawer",{}),
+    )
+    quadruple_new_drawer = Item(
+        model="simpledrawer:block/new_drawer/oak_full_drawers_4",
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.quadruple_new_drawer.empty"})
+            }
+        },
+        page_name=("simpledrawer.quadruple_new_drawer.empty",{}),
+        description=("simpledrawer.guide.quadruple_new_drawer",{}),
+    )
+    compacting_drawer = Item(
+        model="simpledrawer:block/new_drawer/compdrawers_open1",
+        minimal_representation={
+            "id":"minecraft:furnace",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.compacting_new_drawer.empty"})
+            }
+        },
+        page_name=("simpledrawer.compacting_new_drawer.empty",{}),
+        description=("simpledrawer.guide.compacting_new_drawer",{}),
     )
 
     # 2. Add the filter to the model_resolver
@@ -383,6 +432,34 @@ def beet_default(ctx: Context):
     result = new_drawer
     count = 1
     pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [oak_planks, barrel, oak_planks],
+        [stick, iron_nugget, stick],
+        [oak_planks, barrel, oak_planks]
+    ]
+    craft_result=double_new_drawer
+    count = 1
+    pages.append(add_page(ctx, craft, craft_result, count))
+
+    craft=[
+        [oak_planks, barrel, oak_planks],
+        [barrel, iron_nugget, barrel],
+        [oak_planks, barrel, oak_planks]
+    ]
+    craft_result=quadruple_new_drawer
+    count = 1
+    pages.append(add_page(ctx, craft, craft_result, count))
+
+    craft=[
+        [smooth_stone,crafting_table,smooth_stone],
+        [piston,new_drawer,piston],
+        [smooth_stone,iron_ingot,smooth_stone]
+    ]
+    craft_result=compacting_drawer
+    count = 1
+    pages.append(add_page(ctx, craft, craft_result, count))
+
 
 
     # print(pages)
