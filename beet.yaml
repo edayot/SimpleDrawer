@@ -27,7 +27,7 @@ extend: "common.yaml"
 
 meta:
   model_resolver:
-    render_size: 64
+    render_size: 256
     load_vanilla: true
     save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"

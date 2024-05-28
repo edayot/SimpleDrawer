@@ -89,43 +89,11 @@ def image_count(count: int) -> Image:
 	return img
 
 
-def create_crafting_image(ctx: Context, craft: list[list[Item]]):
-    # Create a 256x256 image based on the craft
-    img_base : Image.Image = ctx.assets.textures["simpledrawer:item/font/template_craft"].image
-    img = img_base.copy()
-    for i, row in enumerate(craft):
-        for j, item in enumerate(row):
-            path = f"simpledrawer:render/{item.model.replace(':','/')}" 
-            img_item = ctx.assets.textures[path].image
-            pos_img = get_pos(i,j)
-            img.paste(img_item, pos_img, img_item)
-    return img
-
-def create_result_image(ctx: Context, result: Item, count: int = 1):
-    img_base : Image.Image = ctx.assets.textures["simpledrawer:item/font/template_result"].image
-    img = img_base.copy()
-    path = f"simpledrawer:render/{result.model.replace(':','/')}"
-    img_item = ctx.assets.textures[path].image
-    img.paste(img_item, (32, 32), img_item)
-    if count > 1:
-        img_count = image_count(count)
-        img.paste(img_count, (36, 32), img_count)
-    return img
-
-
 
 def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
-    craft_img = create_crafting_image(ctx, craft)
-    result_img = create_result_image(ctx, result, count)
-
-    craft_texture_path = f"simpledrawer:item/pages/{result.page_name[0]}_craft"
-    result_texture_path = f"simpledrawer:item/pages/{result.page_name[0]}_result"
-    ctx.assets.textures[craft_texture_path] = Texture(craft_img)
-    ctx.assets.textures[result_texture_path] = Texture(result_img)
     # Create a font for the page
-    font_path = f'simpledrawer:pages'
+    font_path = f'simpledrawer:pages/{result.page_index}'
     if not font_path in ctx.assets.fonts:
-        print("Creating font")
         ctx.assets.fonts[font_path] = Font({
             "providers": [
             {
@@ -135,37 +103,12 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
             { "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
             { "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
             { "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
+            { "type": "bitmap", "file": "simpledrawer:item/font/none_5_release.png",				"ascent": 7, "height": 8, "chars": ["\uef03"] },
+            { "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",				"ascent": -3, "height": 68, "chars": ["\uef13"] },
+	        { "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",				"ascent": -20, "height": 34, "chars": ["\uef14"] },
             ],
         })
-    
-    # generate the char index for the page
-    # page 1 : \uff01, \uff02
-    # page 2 : \uff03, \uff04
-    # ...
 
-    char_craft = 0xff01 + 2*result.page_index
-    char_result = 0xff02 + 2*result.page_index
-    char_craft = f'\\u{char_craft:04x}'
-    char_result = f'\\u{char_result:04x}'
-    char_craft = char_craft.encode().decode("unicode_escape")
-    char_result = char_result.encode().decode("unicode_escape")
-
-
-    ctx.assets.fonts[font_path].data["providers"].append({
-        "type": "bitmap",
-        "file": f'{craft_texture_path}.png',
-        "ascent": -3,
-        "height": 68,
-        "chars": [char_craft]
-    })
-    ctx.assets.fonts[font_path].data["providers"].append({
-        "type": "bitmap",
-        "file": f'{result_texture_path}.png',
-        "ascent": -20,
-        "height": 34,
-        "chars": [char_result]
-    })
-    
     page = [""]
     page.append({
         "translate": result.page_name[0],
@@ -173,22 +116,34 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
         "color":"black"
     })
     page.append({
-        "text":f"\n{char_craft} {char_result}\n\n",
+        "text":f"\n\uef13 \uef14\n",
         "font":font_path,
         "color":"white"
     })
+    page.append("\n")
+    char_init = 0xff01 + 12*result.page_index
+    for i in range(3):
+        for e in range(2):
+            page.append({"text":"\uef00\uef00","font":font_path,"color":"white"})
+            for j in range(3):
+                char_item = char_init
+                char_item = f"\\u{char_item:04x}".encode().decode("unicode_escape")
+                char_init += 1
+                item = craft[i][j]
+                render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/minecraft/block/air"
 
-    for i in range(6):
-        real_i=i//2
-        page.append({"text":"\uef00\uef00","font":font_path,"color":"white"})
-        for j in range(3):
-            item = craft[real_i][j]
-            page.append(get_item_json(item))
-        if i in [1,2,3,4]:
-            page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
-            page.append(get_item_json(result))
-        page.append("\n")
-    
+                # create a char for the item
+                ctx.assets.fonts[font_path].data["providers"].append(
+                    {
+                        "type": "bitmap",
+                        "file": f"{render}.png",
+                        "ascent": {0: 8, 1: 7, 2: 6}.get(i),
+                        "height": 16,
+                        "chars": [char_item]
+                    }
+                )
+                page.append(get_item_json(item, font_path, f'\uef03{char_item}\uef03' if e == 0 else "\uef01"))
+            page.append("\n")
     if result.description is not None:
         page.append("\n")
         page.append({
@@ -202,22 +157,22 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
 
 
 
-def get_item_json(item: Item | None, font_path: str = "simpledrawer:pages"):
+def get_item_json(item: Item | None, font_path: str, char : str = "\uef01"):
     if item is None:
         return {
-            "text":"\uef01",
+            "text":char,
             "font":font_path,
             "color":"white"
         }
     if item.page_index == -1:
         return {
-            "text":"\uef01",
+            "text":char,
             "font":font_path,
             "color":"white",
             "hoverEvent":{"action":"show_item","contents": item.minimal_representation}
         }
     return {
-        "text":"\uef01",
+        "text":char,
         "font":font_path,
         "color":"white",
         "hoverEvent":{"action":"show_item","contents": item.minimal_representation},
@@ -378,6 +333,16 @@ def beet_default(ctx: Context):
     filter = REGISTRY.keys()
     ctx.meta["model_resolver"]["filter"] = filter
     model_resolver(ctx)
+    # add a white point on the top left corner / bottom right corner
+    for model in filter:
+        path = f"simpledrawer:render/{model.replace(':','/')}"
+        if not path in ctx.assets.textures:
+            continue
+        img = ctx.assets.textures[path].image
+        img = img.copy()
+        img.putpixel((0,0),(255,255,255,255))
+        img.putpixel((img.width-1,img.height-1),(255,255,255,255))
+        ctx.assets.textures[path] = Texture(img)
 
     # 3. Create the crafting recipes
     pages = []

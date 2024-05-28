@@ -96,7 +96,11 @@ ifndef RESOURCES_PACK_FOLDER
 	$(error RESOURCES_PACK_FOLDER is not set)
 endif
 
-b: clean
+b: clean run
+
+build: link run
+
+run: 
 ifeq ($(BUILD_TYPE), dev)
 	@poetry run beet $(BUNDLED_ARGS) build
 else
