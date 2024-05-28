@@ -143,6 +143,26 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
                     }
                 )
                 page.append(get_item_json(item, font_path, f'\uef03{char_item}\uef03' if e == 0 else "\uef01"))
+            if (i == 0 and e == 1) or (i == 1 and e == 1) or (i == 2 and e == 0):
+                page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
+                page.append(get_item_json(result, font_path, "\uef02\uef02"))
+            if i == 1 and e == 0:
+                page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
+                char_result = char_init
+                char_result = f"\\u{char_result:04x}".encode().decode("unicode_escape")
+                char_init += 1
+                render_result = f"simpledrawer:render/{result.model.replace(':','/')}"
+                ctx.assets.fonts[font_path].data["providers"].append(
+                    {
+                        "type": "bitmap",
+                        "file": f"{render_result}.png",
+                        "ascent": 8,
+                        "height": 16,
+                        "chars": [char_result]
+                    }
+                )
+                char_space = "\uef00\uef00\uef03"
+                page.append(get_item_json(result, font_path, f'{char_space}{char_result}{char_space}\uef00'))
             page.append("\n")
     if result.description is not None:
         page.append("\n")
