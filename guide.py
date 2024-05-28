@@ -7,7 +7,7 @@ from enum import Enum
 from PIL import Image, ImageDraw, ImageFont
 import json
 
-PAGE_NUMBER = 0
+PAGE_NUMBER = 1
 def page_number():
     global PAGE_NUMBER
     PAGE_NUMBER += 1
@@ -365,7 +365,7 @@ def beet_default(ctx: Context):
         ctx.assets.textures[path] = Texture(img)
 
     # 3. Create the crafting recipes
-    pages = []
+    pages = ['[""]']
     craft=[
         [oak_log, oak_log, oak_log],
         [oak_log, crafting_table, oak_log],
