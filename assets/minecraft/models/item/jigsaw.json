@@ -7,7 +7,7 @@
         {"predicate":{"custom_model_data":1430003},"model":"simpledrawer:item/diamond_upgrade"},
         {"predicate":{"custom_model_data":1430004},"model":"simpledrawer:item/star_upgrade"},
         {"predicate":{"custom_model_data":1430005},"model":"simpledrawer:item/netherite_upgrade"},
-        {"predicate":{"custom_model_data":1430006},"model":"simpledrawer:item/downgrade_wand"}
+        {"predicate":{"custom_model_data":1430006},"model":"simpledrawer:item/downgrade_wrench"}
 
     ]
 }

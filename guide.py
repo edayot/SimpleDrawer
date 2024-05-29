@@ -145,7 +145,7 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
 
 
 def get_item_json(item: Item | None, font_path: str, char : str = "\uef01"):
-    if item is None:
+    if item.minimal_representation.get("id") == "minecraft:air":
         return {
             "text":char,
             "font":font_path,
@@ -215,7 +215,7 @@ def create_font(ctx: Context):
         ],
     })
     for item in REGISTRY.values():
-        render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/minecraft/block/air"
+        render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/simpledrawer/block/air"
         for i in range(3):
             char_item = f"\\u{item.char_index+i:04x}".encode().decode("unicode_escape")
             ctx.assets.fonts[font_path].data["providers"].append(
@@ -391,6 +391,96 @@ def beet_default(ctx: Context):
         page_name=("simpledrawer.compacting_new_drawer.empty",{}),
         description=("simpledrawer.guide.compacting_new_drawer",{}),
     )
+    global PAGE_NUMBER
+    PAGE_NUMBER += 1
+    hopper_upgrade = Item(
+        model="simpledrawer:item/hopper_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.hopper_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.hopper_upgrade",{}),
+        description=("simpledrawer.guide.hopper_upgrade",{}),
+    )
+    iron_upgrade = Item(
+        model="simpledrawer:item/iron_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.iron_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.iron_upgrade",{}),
+        description=("simpledrawer.guide.iron_upgrade",{}),
+    )
+    gold_upgrade = Item(
+        model="simpledrawer:item/gold_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.gold_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.gold_upgrade",{}),
+        description=("simpledrawer.guide.gold_upgrade",{}),
+    )
+    diamond_upgrade = Item(
+        model="simpledrawer:item/diamond_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.diamond_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.diamond_upgrade",{}),
+        description=("simpledrawer.guide.diamond_upgrade",{}),
+    )
+    star_upgrade = Item(
+        model="simpledrawer:item/star_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.star_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.star_upgrade",{}),
+        description=("simpledrawer.guide.star_upgrade",{}),
+    )
+    netherite_upgrade = Item(
+        model="simpledrawer:item/netherite_upgrade",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.netherite_upgrade"})
+            }
+        },
+        page_name=("simpledrawer.netherite_upgrade",{}),
+        description=("simpledrawer.guide.netherite_upgrade",{}),
+    )
+    downgrade_wrench = Item(
+        model="simpledrawer:item/downgrade_wrench",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.downgrade_wrench"})
+            }
+        },
+        page_name=("simpledrawer.downgrade_wrench",{}),
+        description=("simpledrawer.guide.downgrade_wrench",{}),
+    )
+    guide = Item(
+        model="simpledrawer:item/guide",
+        minimal_representation={
+            "id":"minecraft:jigsaw",
+            "components": {
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide"})
+            }
+        },
+        page_name=("simpledrawer.guide",{}),
+        description=("simpledrawer.guide.guide",{}),
+    )
 
     # 2. Add the filter to the model_resolver
     filter = REGISTRY.keys()
@@ -465,6 +555,80 @@ def beet_default(ctx: Context):
     craft_result=compacting_drawer
     count = 1
     pages.append(add_page(ctx, craft, craft_result, count))
+
+    pages.append(json.dumps([""]))
+
+    craft=[
+        [stick, stick, stick],
+        [hopper, iron_upgrade, hopper],
+        [redstone, air, redstone]
+    ]
+    result = hopper_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [stick, stick, stick],
+        [iron_ingot, oak_planks, iron_ingot],
+        [iron_ingot, oak_planks, iron_ingot]
+    ]
+    result = iron_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [stick, stick, stick],
+        [gold_ingot, iron_upgrade, gold_ingot],
+        [gold_ingot, air, gold_ingot]
+    ]
+    result = gold_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [stick, stick, stick],
+        [diamond, gold_upgrade, diamond],
+        [diamond, air, diamond]
+    ]
+    result = diamond_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [stick, diamond, stick],
+        [iron_ingot, diamond_upgrade, iron_ingot],
+        [iron_ingot, nether_star, iron_ingot]
+    ]
+    result = star_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [nether_star, nether_star, nether_star],
+        [netherite_ingot, star_upgrade, netherite_ingot],
+        [netherite_ingot, netherite_ingot, netherite_ingot]
+    ]
+    result = netherite_upgrade
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [air, iron_nugget, iron_upgrade],
+        [air, iron_ingot, iron_nugget],
+        [iron_ingot, air, air]
+    ]
+    result = downgrade_wrench
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
+
+    craft=[
+        [barrel, iron_nugget, air],
+        [book, oak_planks, air],
+        [air, air, air]
+    ]
+    result = guide
+    count = 1
+    pages.append(add_page(ctx, craft, result, count))
 
 
 
