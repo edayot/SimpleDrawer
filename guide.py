@@ -185,8 +185,24 @@ def create_loot_table(ctx: Context, pages: list[str]):
                                         "author": "AirDox_",
                                         "pages": pages,
                                         "resolved": True
-                                    }
+                                    },
+                                    "minecraft:custom_model_data": 1430000,
+                                    "minecraft:custom_data": {
+                                        "ctc": {
+                                            "id": "guide",
+                                            "from": "airdox_:simpledrawer",
+                                        },
+                                        "smithed": {
+                                            "id": "airdox_:simpledrawer/guide",
+                                        }
+                                    },
+                                    "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide","color":"white"}),
+                                    "minecraft:enchantment_glint_override": False
                                 }
+                            },
+                            {
+                                "function": "minecraft:reference",
+                                "name": "simpledrawer:impl/add_versionning"
                             }
                         ]
                     }
@@ -398,7 +414,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.hopper_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.hopper_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.hopper_upgrade",{}),
@@ -409,7 +425,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.iron_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.iron_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.iron_upgrade",{}),
@@ -420,7 +436,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.gold_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.gold_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.gold_upgrade",{}),
@@ -431,7 +447,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.diamond_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.diamond_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.diamond_upgrade",{}),
@@ -442,7 +458,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.star_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.star_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.star_upgrade",{}),
@@ -453,7 +469,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.netherite_upgrade"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.netherite_upgrade","color":"white"})
             }
         },
         page_name=("simpledrawer.netherite_upgrade",{}),
@@ -473,7 +489,7 @@ def beet_default(ctx: Context):
     guide = Item(
         model="simpledrawer:item/guide",
         minimal_representation={
-            "id":"minecraft:jigsaw",
+            "id":"minecraft:written_book",
             "components": {
                 "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide"})
             }

@@ -17,11 +17,11 @@ require:
   - weld_deps
   
 pipeline:
+  - guide
   - simpledrawer.add_mc_version_support
   - simpledrawer.add_versioning_to_items
   - simpledrawer.generate_translation
   - airdox_.test_load_generator
-  - guide
 
 extend: "common.yaml"
 
