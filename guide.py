@@ -13,6 +13,12 @@ def page_number():
     PAGE_NUMBER += 1
     return PAGE_NUMBER
 
+CHAR_INDEX_NUMBER = 0xff01
+def char_index_number():
+    global CHAR_INDEX_NUMBER
+    CHAR_INDEX_NUMBER += 3
+    return CHAR_INDEX_NUMBER
+
 class Lang(Enum):
     en_us = "en_us"
     fr_fr = "fr_fr"
@@ -35,6 +41,7 @@ class Item:
     description: Optional[TranslatedString] = None
     page_index: int = field(default_factory=page_number)
     add_space_to_page_name: bool = False
+    char_index: int = field(default_factory=char_index_number)
 
     def __post_init__(self):
         REGISTRY[self.model] = self
@@ -93,23 +100,7 @@ def image_count(count: int) -> Image:
 
 def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
     # Create a font for the page
-    font_path = f'simpledrawer:pages/{result.page_index}'
-    if not font_path in ctx.assets.fonts:
-        ctx.assets.fonts[font_path] = Font({
-            "providers": [
-            {
-                "type": "reference",
-                "id": "minecraft:include/space"
-            },
-            { "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
-            { "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
-            { "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
-            { "type": "bitmap", "file": "simpledrawer:item/font/none_5_release.png",				"ascent": 7, "height": 8, "chars": ["\uef03"] },
-            { "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",				"ascent": -3, "height": 68, "chars": ["\uef13"] },
-	        { "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",				"ascent": -20, "height": 34, "chars": ["\uef14"] },
-            ],
-        })
-
+    font_path = f'simpledrawer:pages'
     page = [""]
     page.append({
         "translate": result.page_name[0],
@@ -124,47 +115,19 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
         "color":"white"
     })
     page.append("\n")
-    char_init = 0xff01 + 12*result.page_index
     for i in range(3):
         for e in range(2):
             page.append({"text":"\uef00\uef00","font":font_path,"color":"white"})
             for j in range(3):
-                char_item = char_init
-                char_item = f"\\u{char_item:04x}".encode().decode("unicode_escape")
-                char_init += 1
                 item = craft[i][j]
-                render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/minecraft/block/air"
-
-                # create a char for the item
-                if e == 0:
-                    ctx.assets.fonts[font_path].data["providers"].append(
-                        {
-                            "type": "bitmap",
-                            "file": f"{render}.png",
-                            "ascent": {0: 8, 1: 7, 2: 6}.get(i),
-                            "height": 16,
-                            "chars": [char_item]
-                        }
-                    )
+                char_item = f"\\u{item.char_index + i:04x}".encode().decode("unicode_escape")
                 page.append(get_item_json(item, font_path, f'\uef03{char_item}\uef03' if e == 0 else "\uef01"))
             if (i == 0 and e == 1) or (i == 1 and e == 1) or (i == 2 and e == 0):
                 page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
                 page.append(get_item_json(result, font_path, "\uef02\uef02"))
             if i == 1 and e == 0:
                 page.append({"text":"\uef00\uef00\uef00\uef00","font":font_path,"color":"white"})
-                char_result = char_init
-                char_result = f"\\u{char_result:04x}".encode().decode("unicode_escape")
-                char_init += 1
-                render_result = f"simpledrawer:render/{result.model.replace(':','/')}"
-                ctx.assets.fonts[font_path].data["providers"].append(
-                    {
-                        "type": "bitmap",
-                        "file": f"{render_result}.png",
-                        "ascent": 8,
-                        "height": 16,
-                        "chars": [char_result]
-                    }
-                )
+                char_result = f"\\u{result.char_index:04x}".encode().decode("unicode_escape")
                 char_space = "\uef00\uef00\uef03"
                 page.append(get_item_json(result, font_path, f'{char_space}{char_result}{char_space}\uef00'))
             page.append("\n")
@@ -235,12 +198,43 @@ def create_loot_table(ctx: Context, pages: list[str]):
 
 
 
+def create_font(ctx: Context):
+    font_path = "simpledrawer:pages"
+    ctx.assets.fonts[font_path] = Font({
+        "providers": [
+        {
+            "type": "reference",
+            "id": "minecraft:include/space"
+        },
+        { "type": "bitmap", "file": "simpledrawer:item/font/none_2_release.png",				"ascent": 7, "height": 8, "chars": ["\uef00"] },
+        { "type": "bitmap", "file": "simpledrawer:item/font/none_3_release.png",				"ascent": 7, "height": 8, "chars": ["\uef01"] },
+        { "type": "bitmap", "file": "simpledrawer:item/font/none_4_release.png",				"ascent": 7, "height": 8, "chars": ["\uef02"] },
+        { "type": "bitmap", "file": "simpledrawer:item/font/none_5_release.png",				"ascent": 7, "height": 8, "chars": ["\uef03"] },
+        { "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",				"ascent": -3, "height": 68, "chars": ["\uef13"] },
+        { "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",				"ascent": -20, "height": 34, "chars": ["\uef14"] },
+        ],
+    })
+    for item in REGISTRY.values():
+        render = f"simpledrawer:render/{item.model.replace(':','/')}" if item is not None else "simpledrawer:render/minecraft/block/air"
+        for i in range(3):
+            char_item = f"\\u{item.char_index+i:04x}".encode().decode("unicode_escape")
+            ctx.assets.fonts[font_path].data["providers"].append(
+                {
+                    "type": "bitmap",
+                    "file": f"{render}.png",
+                    "ascent": {0: 8, 1: 7, 2: 6}.get(i),
+                    "height": 16,
+                    "chars": [char_item]
+                }
+            )
+
+
 
 def beet_default(ctx: Context):
 
     # 1. Construct all needed renders, add them to the ctx    
     air = Item(
-        model="minecraft:block/air",
+        model="simpledrawer:block/air",
         minimal_representation={"id":"minecraft:air"},
         page_index=-1
     )
@@ -320,7 +314,7 @@ def beet_default(ctx: Context):
         page_index=-1
     )
     chest = Item(
-        model="minecraft:item/chest",
+        model="simpledrawer:block/chest",
         minimal_representation={"id":"minecraft:chest"},
         page_index=-1
     )
@@ -412,9 +406,21 @@ def beet_default(ctx: Context):
         img.putpixel((0,0),(137,137,137,255))
         img.putpixel((img.width-1,img.height-1),(137,137,137,255))
         ctx.assets.textures[path] = Texture(img)
+    
+    # 3. Create the font
+    create_font(ctx)
 
-    # 3. Create the crafting recipes
-    pages = ['[""]']
+    # 4. Create the crafting recipes
+    pages = []
+    first_page = json.dumps([
+        "",
+        {"translate":"simpledrawer.guide_first","font":"simpledrawer:big","color":"black","bold":True},
+        "\n\n",
+        {"translate":"simpledrawer.guide.first_page","color":"black",},
+    ])
+    pages.append(first_page)
+
+
     craft=[
         [oak_log, oak_log, oak_log],
         [oak_log, crafting_table, oak_log],
@@ -463,6 +469,6 @@ def beet_default(ctx: Context):
 
 
     # print(pages)
-    # 4. Create the loot table
+    # 5. Create the loot table
     create_loot_table(ctx, pages)
 
