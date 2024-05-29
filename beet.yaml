@@ -44,12 +44,6 @@ meta:
         versioning: 
           type: "normal"
           prefix: "#itemio"
-      - id: "dorkorc:dork.base64"
-        match: "0.0.0"
-        source: "integrated"
-        versioning: 
-          type: "not_versioned"
-          prefix: "dork.base64"
       - id: "crafter"
         match: ">=0.2.0"
         source: "smithed"

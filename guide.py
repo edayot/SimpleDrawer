@@ -409,8 +409,8 @@ def beet_default(ctx: Context):
             continue
         img = ctx.assets.textures[path].image
         img = img.copy()
-        img.putpixel((0,0),(255,255,255,255))
-        img.putpixel((img.width-1,img.height-1),(255,255,255,255))
+        img.putpixel((0,0),(137,137,137,255))
+        img.putpixel((img.width-1,img.height-1),(137,137,137,255))
         ctx.assets.textures[path] = Texture(img)
 
     # 3. Create the crafting recipes
