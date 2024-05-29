@@ -244,6 +244,33 @@ def create_font(ctx: Context):
                 }
             )
 
+def generate_item_list(ctx: Context):
+    items = []
+    for item in REGISTRY.values():
+        if item.page_index == -1:
+            continue
+        items.append(item)
+    items.sort(key=lambda x: x.page_index)
+    groups = []
+    i = 0
+    while i < len(items):
+        group = []
+        for j in range(6):
+            if i+j < len(items):
+                group.append(items[i+j])
+        groups.append(group)
+        i += 6
+    res = []
+    for group in groups:
+        for e in range(2):
+            for item in group:
+                char_item = f"\\u{item.char_index:04x}".encode().decode("unicode_escape")
+                res.append(get_item_json(item, "simpledrawer:pages", f'\uef03{char_item}\uef03' if e == 0 else "\uef01"))
+            res.append("\n")
+    return res
+
+
+        
 
 
 def beet_default(ctx: Context):
@@ -360,19 +387,17 @@ def beet_default(ctx: Context):
             },
         page_name=("block.smithed.crafter",{}),
         description=("simpledrawer.guide.heavy_workbench",{}),
-        add_space_to_page_name=True
     )
     new_drawer = Item(
         model="simpledrawer:block/new_drawer/oak_full_drawers_1",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.new_drawer.empty"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.new_drawer"})
             }
         },
-        page_name=("simpledrawer.new_drawer.empty",{}),
+        page_name=("simpledrawer.new_drawer",{}),
         description=("simpledrawer.guide.new_drawer",{}),
-        add_space_to_page_name=True
     )
     double_new_drawer = Item(
         model="simpledrawer:block/new_drawer/oak_full_drawers_2",
@@ -382,7 +407,7 @@ def beet_default(ctx: Context):
                 "minecraft:item_name": json.dumps({"translate":"simpledrawer.double_new_drawer.empty"})
             }
         },
-        page_name=("simpledrawer.double_new_drawer.empty",{}),
+        page_name=("simpledrawer.double_new_drawer",{}),
         description=("simpledrawer.guide.double_new_drawer",{}),
     )
     quadruple_new_drawer = Item(
@@ -393,7 +418,7 @@ def beet_default(ctx: Context):
                 "minecraft:item_name": json.dumps({"translate":"simpledrawer.quadruple_new_drawer.empty"})
             }
         },
-        page_name=("simpledrawer.quadruple_new_drawer.empty",{}),
+        page_name=("simpledrawer.quadruple_new_drawer",{}),
         description=("simpledrawer.guide.quadruple_new_drawer",{}),
     )
     compacting_drawer = Item(
@@ -404,7 +429,7 @@ def beet_default(ctx: Context):
                 "minecraft:item_name": json.dumps({"translate":"simpledrawer.compacting_new_drawer.empty"})
             }
         },
-        page_name=("simpledrawer.compacting_new_drawer.empty",{}),
+        page_name=("simpledrawer.compacting_new_drawer",{}),
         description=("simpledrawer.guide.compacting_new_drawer",{}),
     )
     global PAGE_NUMBER
@@ -480,7 +505,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.downgrade_wrench"})
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.downgrade_wrench","color":"white"})
             }
         },
         page_name=("simpledrawer.downgrade_wrench",{}),
@@ -523,6 +548,8 @@ def beet_default(ctx: Context):
         {"translate":"simpledrawer.guide_first","font":"simpledrawer:big","color":"black","bold":True},
         "\n\n",
         {"translate":"simpledrawer.guide.first_page","color":"black",},
+        "\n",
+        *generate_item_list(ctx)
     ])
     pages.append(first_page)
 
