@@ -44,9 +44,9 @@ meta:
         versioning: 
           type: "normal"
           prefix: "#itemio"
-      - id: "crafter"
-        match: ">=0.2.0"
+      - id: "smithed.crafter.dev"
+        match: ">=0.4.0"
         source: "smithed"
         versioning: 
-          type: "not_versioned"
+          type: "normal"
           prefix: "#smithed.custom_block"
