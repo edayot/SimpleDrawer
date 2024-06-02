@@ -111,8 +111,8 @@ def generate_translation(ctx: Context):
     lang = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-assets/assets/minecraft/lang/en_us.json"
     items = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-registries/item/data.json"
 
-    lang = requests.get(lang).json()
-    items = requests.get(items).json()
+    lang = ctx.cache["simpledrawer"].download(lang)
+    items = ctx.cache["simpledrawer"].download(items)
     
     L = []
 
