@@ -1,7 +1,7 @@
 
 from beet import Context, Function, ItemModifier
 import nbtlib
-import requests
+import json
 
 
 def generate_version_string(versions):
@@ -114,9 +114,9 @@ def generate_translation(ctx: Context):
     lang = ctx.cache["simpledrawer"].download(lang)
     items = ctx.cache["simpledrawer"].download(items)
 
-    lang = open(lang).read()
-    items = open(items).read()
-    
+    lang = json.loads(open(lang).read())
+    items = json.loads(open(items).read())
+
     L = []
 
     for id in items:

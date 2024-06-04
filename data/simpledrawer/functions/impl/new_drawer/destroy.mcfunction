@@ -75,7 +75,8 @@ execute
                     } \
                 ] \
             } \
-        } 
+        }
+        data modify entity @s Item.components."minecraft:trim".material set from storage simpledrawer:main temp.simpledrawer.wood_type
 
 
 

@@ -16,7 +16,8 @@ def get_item_modifier(material):
             "components": {
             "minecraft:trim": {
                 "material": material,
-                "pattern": "minecraft:sentry"
+                "pattern": "minecraft:sentry",
+                "show_in_tooltip": False
             }
             }
         }

@@ -12,7 +12,8 @@
         "components": {
             "minecraft:trim": {
                 "material": "simpledrawer:spruce",
-                "pattern": "minecraft:sentry"
+                "pattern": "minecraft:sentry",
+                "show_in_tooltip": false
             }
         }
     }
