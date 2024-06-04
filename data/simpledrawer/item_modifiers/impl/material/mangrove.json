@@ -1,0 +1,19 @@
+[
+    {
+        "function": "minecraft:modify_contents",
+        "component": "minecraft:container",
+        "modifier": {
+            "function": "minecraft:set_custom_data",
+            "tag": "{simpledrawer:{wood_type:\"simpledrawer:mangrove\"}}"
+        }
+    },
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:trim": {
+                "material": "simpledrawer:mangrove",
+                "pattern": "minecraft:sentry"
+            }
+        }
+    }
+]

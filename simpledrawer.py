@@ -113,6 +113,9 @@ def generate_translation(ctx: Context):
 
     lang = ctx.cache["simpledrawer"].download(lang)
     items = ctx.cache["simpledrawer"].download(items)
+
+    lang = open(lang).read()
+    items = open(items).read()
     
     L = []
 

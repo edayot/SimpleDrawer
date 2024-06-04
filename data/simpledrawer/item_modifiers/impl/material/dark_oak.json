@@ -1,0 +1,19 @@
+[
+    {
+        "function": "minecraft:modify_contents",
+        "component": "minecraft:container",
+        "modifier": {
+            "function": "minecraft:set_custom_data",
+            "tag": "{simpledrawer:{wood_type:\"simpledrawer:dark_oak\"}}"
+        }
+    },
+    {
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:trim": {
+                "material": "simpledrawer:dark_oak",
+                "pattern": "minecraft:sentry"
+            }
+        }
+    }
+]
