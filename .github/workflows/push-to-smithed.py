@@ -52,9 +52,11 @@ except KeyError:
     dep_no = []
 
 dep = []
-for i in dep_no:
-    dep.append({"id":i["id"].split(":")[1],"version":i["version_"]})
+with open(".beet_cache/default/index.json", "r") as f:
+    cache = json.load(f)["json"]
 
+for d, v in cache["weld_deps_installed"].items():
+    dep.append({"id": d, "version": v})
 
 
 pack_version = {
