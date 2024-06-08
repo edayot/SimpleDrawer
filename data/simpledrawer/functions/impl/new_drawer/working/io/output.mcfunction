@@ -185,6 +185,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             data modify entity @s item.components."minecraft:custom_data".simpledrawer.current_material set value "none"
             data modify entity @s item.components."minecraft:custom_data".simpledrawer.current_material_name set value '{"text":"none"}'
 
+            data remove entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_0
+            data remove entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_1
+            data remove entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_2
+
             data remove storage simpledrawer:io material
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
 

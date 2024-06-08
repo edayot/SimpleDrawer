@@ -43,7 +43,8 @@
 											  "id": "simpledrawer:new_drawer"
 											}
 										  }
-										}
+										},
+										"minecraft:container": []
 									  }
 									}
 								  }
