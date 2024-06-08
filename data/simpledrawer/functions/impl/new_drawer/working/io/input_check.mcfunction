@@ -25,11 +25,6 @@ execute if score @s simpledrawer.new_drawer.slot_count matches 24.. if score #sl
 execute if score @s simpledrawer.new_drawer.slot_count matches 25.. if score #slot simpledrawer.io matches 24 run function simpledrawer:impl/new_drawer/working/io/24/input
 execute if score @s simpledrawer.new_drawer.slot_count matches 26.. if score #slot simpledrawer.io matches 25 run function simpledrawer:impl/new_drawer/working/io/25/input
 execute if score @s simpledrawer.new_drawer.slot_count matches 27.. if score #slot simpledrawer.io matches 26 run function simpledrawer:impl/new_drawer/working/io/26/input
-execute if score @s simpledrawer.new_drawer.slot_count matches 28.. if score #slot simpledrawer.io matches 27 run function simpledrawer:impl/new_drawer/working/io/27/input
-execute if score @s simpledrawer.new_drawer.slot_count matches 29.. if score #slot simpledrawer.io matches 28 run function simpledrawer:impl/new_drawer/working/io/28/input
-execute if score @s simpledrawer.new_drawer.slot_count matches 30.. if score #slot simpledrawer.io matches 29 run function simpledrawer:impl/new_drawer/working/io/29/input
-execute if score @s simpledrawer.new_drawer.slot_count matches 31.. if score #slot simpledrawer.io matches 30 run function simpledrawer:impl/new_drawer/working/io/30/input
-execute if score @s simpledrawer.new_drawer.slot_count matches 32.. if score #slot simpledrawer.io matches 31 run function simpledrawer:impl/new_drawer/working/io/31/input
 
 
 

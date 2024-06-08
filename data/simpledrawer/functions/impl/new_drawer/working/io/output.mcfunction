@@ -1,7 +1,7 @@
 # Inputs
 # Take #count simpledrawer.io as input
 
-# A score #slot simpledrawer.io (-1 for checking all slot) support up to 32 slots in the drawer
+# A score #slot simpledrawer.io (-1 for checking all slot) support up to 27 slots in the drawer
 
 # Outputs
 # The item in storage simpledrawer.io output
@@ -13,7 +13,7 @@ data remove storage simpledrawer:io output
 
 
 
-execute if score #slot simpledrawer.io matches 32.. run scoreboard players set #success simpledrawer.io -1
+execute if score #slot simpledrawer.io matches 27.. run scoreboard players set #success simpledrawer.io -1
 execute if score #slot simpledrawer.io matches ..-2 run scoreboard players set #success simpledrawer.io -1
 
 execute if score #count simpledrawer.io matches ..0 run scoreboard players set #success simpledrawer.io -1

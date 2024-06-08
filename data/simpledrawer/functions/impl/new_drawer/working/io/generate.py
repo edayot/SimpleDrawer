@@ -3,7 +3,7 @@ import os
 
 chaine='[{"score":{"name":"#newCount","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount","objective":"simpledrawer.math"}}]'
 
-for i in range(32):
+for i in range(3*9):
 
     #create folder
     try:
