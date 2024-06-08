@@ -5,7 +5,7 @@ scoreboard players set #modified_slot simpledrawer.io 21
 
 
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
-data modify storage simpledrawer:main temp.newItem set from storage simpledrawer:io input
+data modify storage simpledrawer:main temp.newItem.item set from storage simpledrawer:io input
 
 
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
@@ -24,11 +24,11 @@ execute store result storage simpledrawer:main temp.newItem.count int 1 run scor
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 
 # apply new item
-data modify storage simpledrawer:main temp.newItem.Slot set value 21
-data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items append from storage simpledrawer:main temp.newItem
+data modify storage simpledrawer:main temp.newItem.slot set value 21
+data modify entity @s item.components."minecraft:container" append from storage simpledrawer:main temp.newItem
 
 #display
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math 21
 data modify storage simpledrawer:main temp.newItem.count set value 1
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem
+execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem.item

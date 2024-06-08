@@ -1,7 +1,7 @@
 
 
 item replace entity 93682a08-d099-4e8f-a4a6-1e33a3692301 weapon.mainhand with gold_ingot
-data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from storage simpledrawer:main temp.ItemsDestroy[0].id
+data modify entity 93682a08-d099-4e8f-a4a6-1e33a3692301 HandItems[0].id set from storage simpledrawer:main temp.ItemsDestroy[0].item.id
 execute as 93682a08-d099-4e8f-a4a6-1e33a3692301 run item modify entity @s weapon.mainhand simpledrawer:impl/destroy/translate
 
 scoreboard players set #success_lore_destroy simpledrawer.math 0

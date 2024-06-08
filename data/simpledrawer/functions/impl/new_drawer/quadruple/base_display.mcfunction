@@ -19,7 +19,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 scoreboard players set #search_slot simpledrawer.math 0
 scoreboard players set #count_display simpledrawer.math 0
-execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:0}].count
+execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:0}].item.count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay
@@ -29,7 +29,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 scoreboard players set #search_slot simpledrawer.math 1
 scoreboard players set #count_display simpledrawer.math 0
-execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:1}].count
+execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:1}].item.count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay
@@ -37,7 +37,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 scoreboard players set #search_slot simpledrawer.math 2
 scoreboard players set #count_display simpledrawer.math 0
-execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:2}].count
+execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:2}].item.count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay
@@ -45,7 +45,7 @@ execute unless score #noformat simpledrawer.math matches 1 at @s run data modify
 
 scoreboard players set #search_slot simpledrawer.math 3
 scoreboard players set #count_display simpledrawer.math 0
-execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:3}].count
+execute store result score #count_display simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:3}].item.count
 execute if score #noformat simpledrawer.math matches 1 at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.text_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] text set value '[{"score":{"name":"#count_display","objective":"simpledrawer.math"}}]'
 
 execute unless score #noformat simpledrawer.math matches 1 run function simpledrawer:impl/new_drawer/utils/format_countdisplay

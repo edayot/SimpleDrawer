@@ -6,7 +6,7 @@
 			"translate": "container.shulkerBox.itemCount",
 			"with": [
 				{
-					"nbt": "temp.ItemsDestroy[0].id",
+					"nbt": "temp.ItemsDestroy[0].item.id",
 					"storage": "simpledrawer:main",
 					"color": "white",
 					"italic": false

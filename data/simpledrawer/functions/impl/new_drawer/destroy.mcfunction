@@ -13,6 +13,9 @@ execute
 data remove storage simpledrawer:main temp.simpledrawer
 data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
 
+data remove storage simpledrawer:main temp.simpledrawer_container
+data modify storage simpledrawer:main temp.simpledrawer_container set from entity @s item.components."minecraft:container"
+
 data modify storage simpledrawer:main temp.summoned set value 1b
 
 scoreboard players set #temp_slot_count simpledrawer.math 0
@@ -76,12 +79,13 @@ execute
                 ] \
             } \
         }
+        data modify entity @s Item.components."minecraft:container"[0].item.components."minecraft:container" set from storage simpledrawer:main temp.simpledrawer_container
         data modify entity @s Item.components."minecraft:trim".material set from storage simpledrawer:main temp.simpledrawer.wood_type
 
 
 
         scoreboard players set #nb_items simpledrawer.math 0
-        execute store result score #nb_items simpledrawer.math if data storage simpledrawer:main temp.simpledrawer.Items[]
+        execute store result score #nb_items simpledrawer.math if data storage simpledrawer:main temp.simpledrawer_container[]
         execute if score #nb_items simpledrawer.math matches 1.. run function ./destroy/filled
         execute if score #nb_items simpledrawer.math matches 0 run function ./destroy/empty
 

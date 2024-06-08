@@ -39,8 +39,7 @@
 											"wood_type": "simpledrawer:compacting",
 											"loot_table": "simpledrawer:impl/items/compacting_new_drawer",
 											"upgrade": "wood",
-											"hopper": 0,
-											"Items": []
+											"hopper": 0
 										  },
 										  "smithed": {
 											"block": {

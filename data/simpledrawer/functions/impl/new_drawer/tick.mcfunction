@@ -35,8 +35,8 @@ execute
             run function ./resummon_player_entities:
                 scoreboard players add #count_summon simpledrawer.math 1
                 data remove storage simpledrawer:main temp
-                data modify storage simpledrawer:main temp.simpledrawer set from storage simpledrawer:main ItemsNBT.new_drawer.components."minecraft:container".Items[0].components."minecraft:custom_data".simpledrawer
                 data modify storage simpledrawer:main temp.simpledrawer set from entity @s item.components."minecraft:custom_data".simpledrawer
+                data modify storage simpledrawer:main temp.simpledrawer_container set from entity @s item.components."minecraft:container"
                 scoreboard players operation #place_id simpledrawer.math = @s simpledrawer.new_drawer.id
 
                 execute 

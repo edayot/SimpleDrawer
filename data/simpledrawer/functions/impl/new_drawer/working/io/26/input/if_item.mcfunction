@@ -2,7 +2,7 @@
 scoreboard players set #if_item simpledrawer.math 1
 #say if item
 data modify storage simpledrawer:main temp.item1 set from storage simpledrawer:io input
-data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:26}]
+data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:container"[{slot:26}].item
 
 data remove storage simpledrawer:main temp.item1.count
 data remove storage simpledrawer:main temp.item2.count

@@ -1,7 +1,7 @@
 
 
 scoreboard players set #initCount simpledrawer.math -1
-execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:4}].count
+execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:4}].item.count
 
 
 

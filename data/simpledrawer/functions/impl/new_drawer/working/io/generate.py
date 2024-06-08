@@ -26,7 +26,7 @@ for i in range(3*9):
 #say {i}
 
 scoreboard players set #if_item simpledrawer.math 0
-execute if data entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}] run function simpledrawer:impl/new_drawer/working/io/{i}/input/if_item
+execute if data entity @s item.components."minecraft:container"[{{slot:{i}}}].item run function simpledrawer:impl/new_drawer/working/io/{i}/input/if_item
 execute if score #if_item simpledrawer.math matches 0 run function simpledrawer:impl/new_drawer/working/io/{i}/input/unless_item
 
 
@@ -37,7 +37,7 @@ execute if score #if_item simpledrawer.math matches 0 run function simpledrawer:
     output=f"""
 
 scoreboard players set #initCount simpledrawer.math -1
-execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}].count
+execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:container"[{{slot:{i}}}].item.count
 
 
 
@@ -54,7 +54,7 @@ execute if score #initCount simpledrawer.math matches 1.. if score #count simple
 scoreboard players set #if_item simpledrawer.math 1
 #say if item
 data modify storage simpledrawer:main temp.item1 set from storage simpledrawer:io input
-data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}]
+data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:container"[{{slot:{i}}}].item
 
 data remove storage simpledrawer:main temp.item1.count
 data remove storage simpledrawer:main temp.item2.count
@@ -84,7 +84,7 @@ scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount si
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
 
 
-execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}].count
+execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:container"[{{slot:{i}}}].item.count
 scoreboard players operation #newCount simpledrawer.math = #initCount simpledrawer.math 
 scoreboard players operation #newCount simpledrawer.math += #inputCount simpledrawer.math 
 
@@ -93,7 +93,7 @@ execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math
 
 # apply new count
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
-execute store result entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}].count int 1 run scoreboard players get #newCount simpledrawer.math
+execute store result entity @s item.components."minecraft:container"[{{slot:{i}}}].item.count int 1 run scoreboard players get #newCount simpledrawer.math
 
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io -= #initCount simpledrawer.math
@@ -125,7 +125,7 @@ scoreboard players set #modified_slot simpledrawer.io {i}
 
 
 data modify storage simpledrawer:io output set from storage simpledrawer:io input
-data modify storage simpledrawer:main temp.newItem set from storage simpledrawer:io input
+data modify storage simpledrawer:main temp.newItem.item set from storage simpledrawer:io input
 
 
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
@@ -144,14 +144,14 @@ execute store result storage simpledrawer:main temp.newItem.count int 1 run scor
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 
 # apply new item
-data modify storage simpledrawer:main temp.newItem.Slot set value {i}
-data modify entity @s item.components."minecraft:custom_data".simpledrawer.Items append from storage simpledrawer:main temp.newItem
+data modify storage simpledrawer:main temp.newItem.slot set value {i}
+data modify entity @s item.components."minecraft:container" append from storage simpledrawer:main temp.newItem
 
 #display
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math {i}
 data modify storage simpledrawer:main temp.newItem.count set value 1
-execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem
+execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp.newItem.item
 """
     unless_item=unless_item.replace("___chaine___",chaine)
     with open(f"{i}/input/unless_item.mcfunction", "w") as f:
@@ -165,7 +165,7 @@ scoreboard players set #modified_slot simpledrawer.io {i}
 
 
 
-data modify storage simpledrawer:io output set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}]
+data modify storage simpledrawer:io output set from entity @s item.components."minecraft:container"[{{slot:{i}}}].item
 execute store result storage simpledrawer:io output.count int 1 run scoreboard players get #initCount simpledrawer.math
 scoreboard players operation #count_output simpledrawer.io = #initCount simpledrawer.math
 
@@ -176,7 +176,7 @@ scoreboard players operation #newGlobalCount simpledrawer.math -= #initCount sim
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
 
 
-data remove entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}]
+data remove entity @s item.components."minecraft:container"[{{slot:{i}}}]
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math {i}
@@ -194,7 +194,7 @@ scoreboard players set #success simpledrawer.io 1
 scoreboard players set #modified_slot simpledrawer.io {i}
 
 
-data modify storage simpledrawer:io output set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}]
+data modify storage simpledrawer:io output set from entity @s item.components."minecraft:container"[{{slot:{i}}}].item
 execute store result storage simpledrawer:io output.count int 1 run scoreboard players get #count simpledrawer.io
 scoreboard players operation #count_output simpledrawer.io = #count simpledrawer.io
 
@@ -207,7 +207,7 @@ scoreboard players operation #newGlobalCount simpledrawer.math -= #count simpled
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
 
 
-execute store result entity @s item.components."minecraft:custom_data".simpledrawer.Items[{{Slot:{i}}}].count int 1 run scoreboard players get #newCount simpledrawer.math
+execute store result entity @s item.components."minecraft:container"[{{slot:{i}}}].item.count int 1 run scoreboard players get #newCount simpledrawer.math
 
 
 

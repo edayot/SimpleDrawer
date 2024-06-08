@@ -5,7 +5,7 @@ scoreboard players set #modified_slot simpledrawer.io 5
 
 
 
-data modify storage simpledrawer:io output set from entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:5}]
+data modify storage simpledrawer:io output set from entity @s item.components."minecraft:container"[{slot:5}].item
 execute store result storage simpledrawer:io output.count int 1 run scoreboard players get #initCount simpledrawer.math
 scoreboard players operation #count_output simpledrawer.io = #initCount simpledrawer.math
 
@@ -16,7 +16,7 @@ scoreboard players operation #newGlobalCount simpledrawer.math -= #initCount sim
 execute store result entity @s item.components."minecraft:custom_data".simpledrawer.globalCount int 1 run scoreboard players get #newGlobalCount simpledrawer.math
 
 
-data remove entity @s item.components."minecraft:custom_data".simpledrawer.Items[{Slot:5}]
+data remove entity @s item.components."minecraft:container"[{slot:5}]
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #search_slot simpledrawer.math 5

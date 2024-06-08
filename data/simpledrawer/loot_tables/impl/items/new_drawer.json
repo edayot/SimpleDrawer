@@ -36,8 +36,7 @@
 											"wood_type": "simpledrawer:oak",
 											"loot_table": "simpledrawer:impl/items/new_drawer",
 											"upgrade": "wood",
-											"hopper": 0,
-											"Items":[]
+											"hopper": 0
 										  },
 										  "smithed": {
 											"block": {

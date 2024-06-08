@@ -6,7 +6,7 @@
 			"translate": "container.shulkerBox.itemCount",
 			"with": [
 				{
-					"nbt": "temp.ItemsDestroy[0].components.\"minecraft:item_name\"",
+					"nbt": "temp.ItemsDestroy[0].item.components.\"minecraft:item_name\"",
 					"storage": "simpledrawer:main",
 					"interpret": true,
 					"color": "white",
