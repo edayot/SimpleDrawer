@@ -14,6 +14,7 @@ execute
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
             command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
             raw f"{command}"
+        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
 
 
 execute 
@@ -30,6 +31,7 @@ execute
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
             command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
             raw f"{command}"
+        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
 
 
 execute 
@@ -46,6 +48,7 @@ execute
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
             command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
             raw f"{command}"
+        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
 
 
 
@@ -135,6 +138,44 @@ execute
 
 
 
+
+
+
+
+
+# Christmas Event
+# New Drawer Ice
+execute
+    if score #christmas_event simpledrawer.math matches 1
+    if entity @s[scores={smithed.data=0}]
+    if data storage smithed.crafter:input recipe{
+        0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:packed_ice"}],
+        1:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:stick"}],
+        2:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}]
+    }
+    run function ~/new_drawer
+
+# Double New Drawer Ice
+execute
+    if score #christmas_event simpledrawer.math matches 1
+    if entity @s[scores={smithed.data=0}]
+    if data storage smithed.crafter:input recipe{
+        0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
+        1:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:stick"}],
+        2:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}]
+    }
+    run function ~/double_new_drawer
+
+# Quadruple New Drawer Ice
+execute
+    if score #christmas_event simpledrawer.math matches 1
+    if entity @s[scores={smithed.data=0}]
+    if data storage smithed.crafter:input recipe{
+        0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
+        1:[{Slot:0b,id:"minecraft:barrel"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:barrel"}],
+        2:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}]
+    }
+    run function ~/quadruple_new_drawer
 
 
 

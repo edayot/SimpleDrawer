@@ -238,6 +238,12 @@ def create_font(ctx: Context):
         { "type": "bitmap", "file": "simpledrawer:item/font/none_5_release.png",				"ascent": 7, "height": 8, "chars": ["\uef03"] },
         { "type": "bitmap", "file": "simpledrawer:item/font/template_craft.png",				"ascent": -3, "height": 68, "chars": ["\uef13"] },
         { "type": "bitmap", "file": "simpledrawer:item/font/template_result.png",				"ascent": -20, "height": 34, "chars": ["\uef14"] },
+
+        { "type": "bitmap", "file": "simpledrawer:item/font/drawer.png",				        "ascent": 7, "height": 64, "chars": ["\uee00"] },
+        { "type": "bitmap", "file": "simpledrawer:item/logo/github.png",				        "ascent": 7, "height": 25, "chars": ["\uee01"] },
+        { "type": "bitmap", "file": "simpledrawer:item/logo/pmc.png",				            "ascent": 7, "height": 25, "chars": ["\uee02"] },
+        { "type": "bitmap", "file": "simpledrawer:item/logo/smithed.png",				        "ascent": 7, "height": 25, "chars": ["\uee03"] },
+        { "type": "bitmap", "file": "simpledrawer:item/logo/modrinth.png",				        "ascent": 7, "height": 25, "chars": ["\uee04"] },
         ],
     })
     for item in REGISTRY.values():
@@ -284,6 +290,7 @@ def generate_item_list(ctx: Context):
 
 
 def beet_default(ctx: Context):
+    global PAGE_NUMBER
 
     # 1. Construct all needed renders, add them to the ctx    
     air = Item(
@@ -409,6 +416,8 @@ def beet_default(ctx: Context):
         page_name=("simpledrawer.new_drawer",{}),
         description=("simpledrawer.guide.new_drawer",{}),
     )
+    PAGE_NUMBER += 1
+    PAGE_NUMBER += 1
     double_new_drawer = Item(
         model="simpledrawer:block/new_drawer/oak_full_drawers_2",
         minimal_representation={
@@ -442,7 +451,6 @@ def beet_default(ctx: Context):
         page_name=("simpledrawer.compacting_new_drawer",{}),
         description=("simpledrawer.guide.compacting_new_drawer",{}),
     )
-    global PAGE_NUMBER
     PAGE_NUMBER += 1
     hopper_upgrade = Item(
         model="simpledrawer:item/hopper_upgrade",
@@ -582,6 +590,17 @@ def beet_default(ctx: Context):
     count = 1
     pages.append(add_page(ctx, craft, result, count))
 
+    pages.append(json.dumps([
+        "",
+        {"translate":"simpledrawer.guide.drawers.inserting_title","color":"black","font":"simpledrawer:medium"},
+        {"translate":"simpledrawer.guide.drawers.inserting","color":"black"}
+    ]))
+    pages.append(json.dumps([
+        "",
+        {"translate":"simpledrawer.guide.drawers.extracting_title","color":"black","font":"simpledrawer:medium"},
+        {"translate":"simpledrawer.guide.drawers.extracting","color":"black"}
+    ]))
+
     craft=[
         [oak_planks, barrel, oak_planks],
         [stick, iron_nugget, stick],
@@ -609,7 +628,12 @@ def beet_default(ctx: Context):
     count = 1
     pages.append(add_page(ctx, craft, craft_result, count))
 
-    pages.append(json.dumps([""]))
+    pages.append(json.dumps([
+        "",
+        {"translate":"simpledrawer.upgrades","font":"simpledrawer:big","color":"black"},
+        {"text":"\n\n\n","font":"simpledrawer:big","color":"black"},
+        {"translate":"simpledrawer.guide.upgrade","color":"black"}
+    ]))
 
     craft=[
         [stick, stick, stick],
@@ -683,6 +707,28 @@ def beet_default(ctx: Context):
     count = 1
     pages.append(add_page(ctx, craft, result, count))
 
+
+    pages.append(json.dumps([
+        "",
+        {"translate":"simpledrawer.project","font":"simpledrawer:big","color":"black","bold":True},
+        {"text":"\n\n","font":"simpledrawer:pages","color":"white"},
+        {"translate":"simpledrawer.guide.project_pages","color":"black"},
+        {"text":"\n","font":"simpledrawer:pages","color":"white"},
+        {"text":"\uee01","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/ItemIO"}},
+        {"text":"\uee02","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uee03","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uee04","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+
+        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/ItemIO"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+
+        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/ItemIO"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+    ]))
 
 
     # print(pages)
