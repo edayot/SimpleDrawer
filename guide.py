@@ -1,4 +1,4 @@
-from beet import Context, Font, Texture, LootTable
+from beet import Context, Font, Texture, LootTable, ItemModifier
 from model_resolver import beet_default as model_resolver
 
 from dataclasses import dataclass, field
@@ -168,6 +168,7 @@ def get_item_json(item: Item | None, font_path: str, char : str = "\uef01"):
 
 
 def create_loot_table(ctx: Context, pages: list[str]):
+    item_modifier_path = f"simpledrawer:impl/guide_modifier".replace("impl/", f"v{ctx.project_version}/")
     loot_table = {
         "pools": [
             {
@@ -178,31 +179,8 @@ def create_loot_table(ctx: Context, pages: list[str]):
                         "name": "minecraft:written_book",
                         "functions": [
                             {
-                                "function": "minecraft:set_components",
-                                "components": {
-                                    "minecraft:written_book_content": {
-                                        "title": "Guide",
-                                        "author": "AirDox_",
-                                        "pages": pages,
-                                        "resolved": True
-                                    },
-                                    "minecraft:custom_model_data": 1430000,
-                                    "minecraft:custom_data": {
-                                        "ctc": {
-                                            "id": "guide",
-                                            "from": "airdox_:simpledrawer",
-                                        },
-                                        "smithed": {
-                                            "id": "airdox_:simpledrawer/guide",
-                                        }
-                                    },
-                                    "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide","color":"white"}),
-                                    "minecraft:enchantment_glint_override": False
-                                }
-                            },
-                            {
                                 "function": "minecraft:reference",
-                                "name": "simpledrawer:impl/add_versionning"
+                                "name": item_modifier_path
                             }
                         ]
                     }
@@ -210,6 +188,38 @@ def create_loot_table(ctx: Context, pages: list[str]):
             }
         ]
     }
+    item_modifier = [
+        {
+            "function": "minecraft:set_components",
+            "components": {
+                "minecraft:written_book_content": {
+                    "title": "Guide",
+                    "author": "AirDox_",
+                    "pages": pages,
+                    "resolved": True
+                },
+                "minecraft:custom_model_data": 1430000,
+                "minecraft:custom_data": {
+                    "ctc": {
+                        "id": "guide",
+                        "from": "airdox_:simpledrawer",
+                    },
+                    "smithed": {
+                        "id": "airdox_:simpledrawer/guide",
+                    }
+                },
+                "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide","color":"white"}),
+                "minecraft:enchantment_glint_override": False
+            }
+        },
+        {
+            "function": "minecraft:reference",
+            "name": "simpledrawer:impl/add_versionning".replace("impl/", f"v{ctx.project_version}/")
+        }
+    ]
+
+    ctx.data.item_modifiers[item_modifier_path] = ItemModifier(item_modifier)
+
     ctx.data.loot_tables[f"simpledrawer:v{ctx.project_version}/items/guide"] = LootTable(loot_table)
 
 

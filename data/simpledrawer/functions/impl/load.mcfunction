@@ -34,11 +34,6 @@ scoreboard objectives add simpledrawer.player.input_cooldown dummy
 scoreboard objectives add simpledrawer.player.last_id dummy
 scoreboard objectives add simpledrawer.nb_click dummy
 
-scoreboard objectives add simpledrawer.config trigger
-scoreboard players enable @a simpledrawer.config
-
-scoreboard objectives add simpledrawer.update_guide trigger
-scoreboard players enable @a simpledrawer.update_guide
 
 scoreboard objectives add simpledrawer.leave_game minecraft.custom:minecraft.leave_game
 
