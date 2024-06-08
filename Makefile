@@ -101,7 +101,7 @@ b: clean run
 build: link run
 
 run: 
-	rm -rf build
+	@rm -rf build
 ifeq ($(BUILD_TYPE), dev)
 	@poetry run beet $(BUNDLED_ARGS) build
 else

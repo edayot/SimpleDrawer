@@ -7,11 +7,13 @@ data modify storage simpledrawer:io output set from storage simpledrawer:io inpu
 
 scoreboard players operation #newGlobalCount simpledrawer.math = #globalCount simpledrawer.math 
 scoreboard players operation #newGlobalCount simpledrawer.math += #inputCount simpledrawer.math 
+execute if data entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_15 run scoreboard players remove #newGlobalCount simpledrawer.math 1
 
 
 execute store result score #initCount simpledrawer.math run data get entity @s item.components."minecraft:container"[{slot:15}].item.count
 scoreboard players operation #newCount simpledrawer.math = #initCount simpledrawer.math 
 scoreboard players operation #newCount simpledrawer.math += #inputCount simpledrawer.math 
+execute if data entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_15 run scoreboard players remove #newCount simpledrawer.math 1
 
 execute if score #newGlobalCount simpledrawer.math > #maxCount simpledrawer.math run function simpledrawer:impl/new_drawer/working/io/15/input/over
 
@@ -22,5 +24,6 @@ execute store result entity @s item.components."minecraft:container"[{slot:15}].
 
 scoreboard players operation #count_insert simpledrawer.io = #newCount simpledrawer.math
 scoreboard players operation #count_insert simpledrawer.io -= #initCount simpledrawer.math
+execute if data entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_15 run scoreboard players add #count_insert simpledrawer.io 1
 
 

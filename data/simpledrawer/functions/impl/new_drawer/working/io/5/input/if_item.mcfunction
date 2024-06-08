@@ -1,6 +1,6 @@
 
 scoreboard players set #if_item simpledrawer.math 1
-#say if item
+# say if item 5
 data modify storage simpledrawer:main temp.item1 set from storage simpledrawer:io input
 data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:container"[{slot:5}].item
 
