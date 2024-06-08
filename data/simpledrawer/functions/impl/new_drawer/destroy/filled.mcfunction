@@ -24,7 +24,7 @@ execute
     data remove storage simpledrawer:main temp.ItemsDestroy
     data modify storage simpledrawer:main temp.ItemsDestroy set from storage simpledrawer:main temp.simpledrawer_container
 
-    execute if data storage simpledrawer:main temp.ItemsDestroy[0].item run function ./filled_loop
+    execute if data storage simpledrawer:main temp.ItemsDestroy[0] run function ./filled_loop
 
 execute
     if score #has_material simpledrawer.math matches 1

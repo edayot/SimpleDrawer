@@ -26,5 +26,5 @@ execute
     unless data storage simpledrawer:main temp{destroy_id:"minecraft:air"}
     run function ./fallback_translations
 
-data remove storage simpledrawer:main temp.ItemsDestroy[0].item
-execute if data storage simpledrawer:main temp.ItemsDestroy[0].item run function ./filled_loop
+data remove storage simpledrawer:main temp.ItemsDestroy[0]
+execute if data storage simpledrawer:main temp.ItemsDestroy[0] run function ./filled_loop
