@@ -7,12 +7,21 @@
 def place_drawer(wood_type, variant, drawer_type, upgrade, hopper):
     scoreboard players add #global simpledrawer.new_drawer.id 1
     data remove storage simpledrawer:main temp.simpledrawer
-    # TODO: FIND A WAY TO MAKE THIS WORK
+    data modify storage simpledrawer:main temp.simpledrawer_container set value []
 
     data modify storage simpledrawer:main temp.simpledrawer.wood_type set value f"{wood_type}"
     data modify storage simpledrawer:main temp.simpledrawer.type set value f"{drawer_type}"
     data modify storage simpledrawer:main temp.simpledrawer.variant set value f"{variant}"
     data modify storage simpledrawer:main temp.simpledrawer.upgrade set value f"{upgrade}"
+    if variant == "single":
+        data modify storage simpledrawer:main temp.simpledrawer.loot_table set value f"simpledrawer:impl/items/new_drawer"
+    if variant == "double":
+        data modify storage simpledrawer:main temp.simpledrawer.loot_table set value f"simpledrawer:impl/items/double_new_drawer"
+    if variant == "quadruple":
+        data modify storage simpledrawer:main temp.simpledrawer.loot_table set value f"simpledrawer:impl/items/quadruple_new_drawer"
+    if drawer_type == "compacting":
+        data modify storage simpledrawer:main temp.simpledrawer.loot_table set value f"simpledrawer:impl/items/compacting_new_drawer"
+
     raw f"data modify storage simpledrawer:main temp.simpledrawer.maxCount set from storage simpledrawer:main drawer_type.{upgrade}.maxCount"
     raw f"data modify storage simpledrawer:main temp.simpledrawer.hopper set value {hopper}b"
 
@@ -84,6 +93,6 @@ for hopper in [0,1]:
         k_offset = 2*k
         name = f"simpledrawer:impl/generate_all_drawer/compacting_{upgrade}_{hopper}"
         function name:
-            place_drawer("simpledrawer:acacia", "normal", "compacting", upgrade, hopper)
+            place_drawer("simpledrawer:compacting", "normal", "compacting", upgrade, hopper)
         
         execute positioned ~i_offset ~k_offset ~j_offset run function name
