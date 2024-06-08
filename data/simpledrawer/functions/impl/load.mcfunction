@@ -29,16 +29,9 @@ scoreboard objectives add simpledrawer.block.patch dummy
 
 
 scoreboard objectives add simpledrawer.io dummy
-scoreboard objectives add simpledrawer.player.output_cooldown dummy
-scoreboard objectives add simpledrawer.player.input_cooldown dummy
-scoreboard objectives add simpledrawer.player.last_id dummy
 scoreboard objectives add simpledrawer.nb_click dummy
 
 
-scoreboard objectives add simpledrawer.leave_game minecraft.custom:minecraft.leave_game
-
-scoreboard objectives add simpledrawer.config.output_mode dummy
-scoreboard objectives add simpledrawer.config.input_mode dummy
 
 scoreboard players set #9 simpledrawer.math 9
 scoreboard players set #81 simpledrawer.math 81
@@ -52,9 +45,8 @@ scoreboard players set #10000000 simpledrawer.math 10000000
 scoreboard players set #100000000 simpledrawer.math 100000000
 scoreboard players set #1000000000 simpledrawer.math 1000000000
 
-scoreboard players set #max_resummon simpledrawer.math 4
 
-execute unless score #configured simpledrawer.config matches 1 run function simpledrawer:impl/config/load_default
+execute unless score #private.configured simpledrawer.math matches 1 run function simpledrawer:impl/config/load_default
 
 
 advancement revoke @a only simpledrawer:impl/interact
