@@ -43,6 +43,7 @@ meta:
   mecha:
     formatting: preserve
     multiline: true
+    match: ["simpledrawer:**"]
 
   smithed:
     versioning:
