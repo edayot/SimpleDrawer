@@ -168,7 +168,7 @@ def get_item_json(item: Item | None, font_path: str, char : str = "\uef01"):
 
 
 def create_loot_table(ctx: Context, pages: list[str]):
-    item_modifier_path = f"simpledrawer:impl/guide_modifier".replace("impl/", f"v{ctx.project_version}/")
+    item_modifier_path = f"simpledrawer:impl/guide_modifier"
     loot_table = {
         "pools": [
             {
@@ -180,7 +180,7 @@ def create_loot_table(ctx: Context, pages: list[str]):
                         "functions": [
                             {
                                 "function": "minecraft:reference",
-                                "name": item_modifier_path
+                                "name": item_modifier_path.replace(":impl/", f":v{ctx.project_version}/")
                             }
                         ]
                     }
@@ -218,9 +218,22 @@ def create_loot_table(ctx: Context, pages: list[str]):
         }
     ]
 
-    ctx.data.item_modifiers[item_modifier_path] = ItemModifier(item_modifier)
+    ctx.data.item_modifiers[item_modifier_path.replace(":impl/", f":v{ctx.project_version}/")] = ItemModifier(item_modifier)
 
-    ctx.data.loot_tables[f"simpledrawer:v{ctx.project_version}/items/guide"] = LootTable(loot_table)
+    loot_table_path = f"simpledrawer:impl/items/guide"
+    ctx.data.loot_tables[loot_table_path.replace(":impl/",f":v{ctx.project_version}/")] = LootTable(loot_table)
+
+    cache = ctx.cache["simpledrawer_guide"]
+    with open(cache.get_path(loot_table_path), "w") as f:
+        json.dump(loot_table, f, indent=4)
+    with open(cache.get_path(item_modifier_path), "w") as f:
+        json.dump(item_modifier, f, indent=4)
+    
+    cache.json["loot_tables"] = []
+    cache.json["item_modifiers"] = []
+    cache.json["loot_tables"].append(loot_table_path)
+    cache.json["item_modifiers"].append(item_modifier_path) 
+
 
 
 
@@ -290,6 +303,29 @@ def generate_item_list(ctx: Context):
 
 
 def beet_default(ctx: Context):
+    reset_cache = False
+    cache = ctx.cache["simpledrawer_guide"]
+    if not reset_cache:
+        namespaced_things = [
+            ("textures",Texture,"assets"),
+            ("fonts",Font,"assets"),
+            ("loot_tables",LootTable,"data"),
+            ("item_modifiers",ItemModifier,"data")
+        ]
+        if all(key[0] in cache.json for key in namespaced_things):
+            for namespaced in namespaced_things:
+                for key in cache.json[namespaced[0]]:
+                    key_version = key.replace(f":impl/", f":v{ctx.project_version}/")
+                    if namespaced[2] == "data":
+                        ctx.data[namespaced[1]][key_version] = namespaced[1](source_path=cache.get_path(key))
+                    elif namespaced[2] == "assets":
+                        ctx.assets[namespaced[1]][key_version] = namespaced[1](source_path=cache.get_path(key))
+                    else:
+                        raise ValueError(f"Invalid namespaced type {namespaced[2]}")
+            return
+    else:
+        cache.clear()
+        
     global PAGE_NUMBER
 
     # 1. Construct all needed renders, add them to the ctx    
@@ -545,19 +581,31 @@ def beet_default(ctx: Context):
     filter = REGISTRY.keys()
     ctx.meta["model_resolver"]["filter"] = filter
     model_resolver(ctx)
+    cache.json["textures"] = []
     # add a white point on the top left corner / bottom right corner
     for model in filter:
         path = f"simpledrawer:render/{model.replace(':','/')}"
         if not path in ctx.assets.textures:
             continue
-        img = ctx.assets.textures[path].image
+        img : Image.Image = ctx.assets.textures[path].image
         img = img.copy()
         img.putpixel((0,0),(137,137,137,255))
         img.putpixel((img.width-1,img.height-1),(137,137,137,255))
         ctx.assets.textures[path] = Texture(img)
+        with open(cache.get_path(path), "wb") as f:
+            img.save(f, "PNG")
+        cache.json["textures"].append(path)
     
     # 3. Create the font
     create_font(ctx)
+    # cache the font
+    font_path = "simpledrawer:pages"
+    font = ctx.assets.fonts[font_path].data
+    with open(cache.get_path(font_path), "w") as f:
+        json.dump(font, f, indent=4)
+    if not "fonts" in cache.json:
+        cache.json["fonts"] = []
+    cache.json["fonts"].append(font_path)
 
     # 4. Create the crafting recipes
     pages = []
