@@ -48,7 +48,6 @@ execute
             run function simpledrawer:impl/new_drawer/working/io/compacting_input/normal
 
 
-function simpledrawer:impl/new_drawer/base_display
 
 
 
@@ -353,4 +352,6 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
     
     
 
+function ./store_count
+function simpledrawer:impl/new_drawer/base_display
 

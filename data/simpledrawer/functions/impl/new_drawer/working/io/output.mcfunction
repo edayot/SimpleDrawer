@@ -193,4 +193,5 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
 
 
+function ./store_count
 function simpledrawer:impl/new_drawer/base_display
