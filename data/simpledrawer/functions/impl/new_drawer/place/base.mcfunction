@@ -26,7 +26,7 @@ execute positioned ^ ^ ^1 summon item_display run function simpledrawer:impl/new
 
 
 
-data modify entity @s item set value {id:"minecraft:barrier",count:1,components:{"minecraft:custom_model_data":1430000,"minecraft:custom_data":{simpledrawer:{}}}}
+data modify entity @s item set value {id:"minecraft:barrel",count:1,components:{"minecraft:custom_model_data":1430000,"minecraft:custom_data":{simpledrawer:{}}}}
 data modify entity @s item.components."minecraft:custom_data".simpledrawer set from storage simpledrawer:main temp.simpledrawer
 data modify entity @s item.components."minecraft:container" set from storage simpledrawer:main temp.simpledrawer_container
 
