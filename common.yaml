@@ -9,7 +9,6 @@ require:
   - airdox_.allow_function_without_name
   - smithed_libraries.plugins.companion_mod
   - mecha.contrib.messages
-  - beet.contrib.render
   - beet.contrib.model_merging
   - bolt
 
@@ -21,8 +20,6 @@ pipeline:
   - beet.contrib.find_replace
   - airdox_.add_license
   - airdox_.add_readme
-  - mecha.contrib.messages
-  - beet.contrib.render
   - beet.contrib.minify_json
   - beet.contrib.minify_function
   - airdox_.add_id

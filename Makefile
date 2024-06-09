@@ -98,7 +98,7 @@ endif
 
 b: clean run
 
-build: link run
+build: run
 
 run: 
 	@rm -rf build
