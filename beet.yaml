@@ -18,6 +18,7 @@ require:
   
 pipeline:
   - guide
+  - pack
   - simpledrawer.add_mc_version_support
   - simpledrawer.add_versioning_to_items
   - simpledrawer.generate_translation
