@@ -31,6 +31,10 @@ execute
         scoreboard players set @s simpledrawer.block.patch 0
 
 
+execute
+    if score @s simpledrawer.block.major matches ..1
+    run return fail
+
 
 #copy the new version
 scoreboard players operation @s simpledrawer.block.major = #simpledrawer.major load.status

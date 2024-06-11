@@ -8,10 +8,7 @@
 
 
 # store the new_drawer version automaticly
-execute store result storage smithed.custom_block:main blockApi.__data.Items[0].components."minecraft:custom_data".simpledrawer.version.major int 1 run scoreboard players get #simpledrawer.major load.status
-execute store result storage smithed.custom_block:main blockApi.__data.Items[0].components."minecraft:custom_data".simpledrawer.version.minor int 1 run scoreboard players get #simpledrawer.minor load.status
-execute store result storage smithed.custom_block:main blockApi.__data.Items[0].components."minecraft:custom_data".simpledrawer.version.patch int 1 run scoreboard players get #simpledrawer.patch load.status
-
-
-function simpledrawer:impl/new_drawer/place
+execute
+    if score #drawer.major simpledrawer.math matches 2..
+    run function simpledrawer:impl/new_drawer/place
 
