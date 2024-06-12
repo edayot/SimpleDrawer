@@ -28,14 +28,6 @@ There is also a crafting recipe for the guide :
 
 This command will give you all items available in the datapack : `/function simpledrawer:give`
 
-<details>
-<summary>Christmas event</summary>
-
-This command will enable the christmas event : `/function simpledrawer:event/christmas`
-
-Normaly, the event is enabled from mid-december to mid-january, but you can enable it whenever you want.
-
-</details>
 
 In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
 

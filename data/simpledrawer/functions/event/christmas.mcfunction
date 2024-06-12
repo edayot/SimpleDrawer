@@ -1,1 +1,0 @@
-function #simpledrawer:event/christmas

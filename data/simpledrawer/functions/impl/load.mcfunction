@@ -58,10 +58,3 @@ schedule function simpledrawer:impl/5tick 5t replace
 schedule function simpledrawer:impl/20tick 20t replace
 
 function simpledrawer:impl/mc_version_warning
-
-setblock -29999990 33 1610 air
-setblock -29999990 33 1610 player_head{SkullOwner:{Name:"jeb_"}}
-
-
-scoreboard players set #second_in_a_year simpledrawer.math 315576 # = 60*60*24*365.25 / 100 (for precision)
-function simpledrawer:impl/timestamp
