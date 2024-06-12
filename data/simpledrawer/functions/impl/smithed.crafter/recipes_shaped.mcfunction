@@ -145,7 +145,7 @@ execute
 
 # New Drawer Ice
 execute
-    if biome ~ ~ ~ #minecraft:spawns_snow_foxes
+    if biome ~ ~ ~ #simpledrawer:snowy
     if entity @s[scores={smithed.data=0}]
     if data storage smithed.crafter:input recipe{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:packed_ice"}],
@@ -156,7 +156,7 @@ execute
 
 # Double New Drawer Ice
 execute
-    if biome ~ ~ ~ #minecraft:spawns_snow_foxes
+    if biome ~ ~ ~ #simpledrawer:snowy
     if entity @s[scores={smithed.data=0}]
     if data storage smithed.crafter:input recipe{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
@@ -167,7 +167,7 @@ execute
 
 # Quadruple New Drawer Ice
 execute
-    if biome ~ ~ ~ #minecraft:spawns_snow_foxes
+    if biome ~ ~ ~ #simpledrawer:snowy
     if entity @s[scores={smithed.data=0}]
     if data storage smithed.crafter:input recipe{
         0:[{Slot:0b,id:"minecraft:packed_ice"},{Slot:1b,id:"minecraft:barrel"},{Slot:2b,id:"minecraft:packed_ice"}],
