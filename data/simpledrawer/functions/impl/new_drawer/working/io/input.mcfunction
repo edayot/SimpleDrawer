@@ -310,6 +310,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
         run function simpledrawer:impl/new_drawer/working/io/compacting_input/normal/clear_others:
             scoreboard players set @s simpledrawer.new_drawer.slot_count 1
 
+            data remove storage simpledrawer:main temp_item
             execute 
                 if score #modified_slot simpledrawer.io matches 0
                 run data modify storage simpledrawer:main temp_item set from entity @s item.components."minecraft:container"[{slot:0}]
@@ -328,7 +329,7 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
             data modify storage simpledrawer:main temp_item.slot set value 0
             data modify entity @s item.components."minecraft:container" append from storage simpledrawer:main temp_item
 
-            data modify entity @s item.components."minecraft:custom_data".simpledrawer.globalCount set from storage simpledrawer:main temp_item.count
+            data modify entity @s item.components."minecraft:custom_data".simpledrawer.globalCount set from storage simpledrawer:main temp_item.item.count
 
             # display items
             scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
@@ -337,10 +338,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
             execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set from storage simpledrawer:main temp_item
 
             scoreboard players set #search_slot simpledrawer.math 1
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
+            execute at @s run data remove entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item
 
             scoreboard players set #search_slot simpledrawer.math 2
-            execute at @s run data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:air",count:0}
+            execute at @s run data remove entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item
 
 
 
