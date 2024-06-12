@@ -1,5 +1,5 @@
 {
     "values": [
-        "simpledrawer:impl/calls/itemio/auto_handled_output"
+        "#simpledrawer:itemio/auto_handled_output"
     ]
 }
