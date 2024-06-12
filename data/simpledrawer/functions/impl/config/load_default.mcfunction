@@ -8,6 +8,7 @@ data modify storage simpledrawer:main drawer_type set value {
 }
 
 
-scoreboard players set #max_resummon simpledrawer.math 4
+scoreboard players set #config.max_resummon simpledrawer.math 4
+scoreboard players set #config.alternative_compacting simpledrawer.math 0
 
 scoreboard players set #private.configured simpledrawer.math 1
