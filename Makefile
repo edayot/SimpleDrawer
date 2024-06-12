@@ -111,6 +111,7 @@ endif
 
 
 watch: link
+	@rm -rf build
 	@poetry run beet --project beet.yaml $(BUNDLED_ARGS) watch
 
 link: check_env
