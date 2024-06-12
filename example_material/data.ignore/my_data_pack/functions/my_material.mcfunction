@@ -9,9 +9,9 @@ data modify storage simpledrawer:io material set value {material: "my_data_pack.
 
 
 # Fill the NBT with your own items
-data modify storage simpledrawer:io material.block set value {id: "minecraft:command_block", tag:{display:{Name:'{"text":"My block"}'},ctc:{id:"my_block",from:"my_data_pack"}}}
-data modify storage simpledrawer:io material.ingot set value {id: "minecraft:command_block", tag:{display:{Name:'{"text":"My ingot"}'},ctc:{id:"my_ingot",from:"my_data_pack"}}}
-data modify storage simpledrawer:io material.nugget set value {id: "minecraft:command_block", tag:{display:{Name:'{"text":"My nugget"}'},ctc:{id:"my_nugget",from:"my_data_pack"}}}
+data modify storage simpledrawer:io material.block set value {slot:0, item:{id: "minecraft:command_block", components:{"minecraft:custom_name":"{\"text\":\"My block\"}","minecraft:custom_data":{ctc:{id:"my_block",from:"my_data_pack"}}}}}
+data modify storage simpledrawer:io material.ingot set value {slot:1, item:{id: "minecraft:command_block", components:{"minecraft:custom_name":"{\"text\":\"My ingot\"}","minecraft:custom_data":{ctc:{id:"my_ingot",from:"my_data_pack"}}}}}
+data modify storage simpledrawer:io material.nugget set value {slot:2, item:{id: "minecraft:command_block", components:{"minecraft:custom_name":"{\"text\":\"My nugget\"}","minecraft:custom_data":{ctc:{id:"my_nugget",from:"my_data_pack"}}}}}
 
 
 

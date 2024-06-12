@@ -8,7 +8,6 @@
 #- score #type simpledrawer.io (0: block, 1: ingot, 2: nugget)
 #- score #ingot_in_block simpledrawer.io
 #- score #nugget_in_ingot simpledrawer.io
-#- score @s simpledrawer.new_drawer.slot_count (3: normal, 2: redstone block like)
 
 
 
@@ -67,8 +66,6 @@ def generate_material(
                 ingot: ingot.nbt,
             }
         else:
-            scoreboard players set @s simpledrawer.new_drawer.slot_count 3
-
             data modify storage simpledrawer:io material set value {
                 material: translate_key,
                 material_name:f'{{"translate":"{translate_key}","fallback":"{material_last}"}}',
