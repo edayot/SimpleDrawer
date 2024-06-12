@@ -209,7 +209,10 @@ def create_loot_table(ctx: Context, pages: list[str]):
                     }
                 },
                 "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide","color":"white"}),
-                "minecraft:enchantment_glint_override": False
+                "minecraft:enchantment_glint_override": False,
+                "minecraft:lore": [
+                    "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
+                ]
             }
         },
         {
