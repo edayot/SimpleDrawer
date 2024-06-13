@@ -63,7 +63,7 @@ ARGS = --project beet.yaml \
 UNBUNDLED_ARGS = $(ARGS) \
 	-s data_pack.name=$(DATA_NAME) \
 	-s resource_pack.name=$(ASSETS_NAME) \
-	-s meta.bundled=false \
+	-s meta.weld_deps.enabled=false \
 
 BUNDLED_ARGS = $(ARGS) \
 	-s data_pack.name=$(DATA_BUNDLED_NAME) \
@@ -105,8 +105,8 @@ run:
 ifeq ($(BUILD_TYPE), dev)
 	@poetry run beet $(BUNDLED_ARGS) build
 else
-	@poetry run beet $(UNBUNDLED_ARGS) build
 	@poetry run beet $(BUNDLED_ARGS) build
+	@poetry run beet $(UNBUNDLED_ARGS) build
 endif
 
 
