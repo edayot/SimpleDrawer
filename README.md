@@ -29,8 +29,6 @@ There is also a crafting recipe for the guide :
 This command will give you all items available in the datapack : `/function simpledrawer:give`
 
 
-In creative mod only : you can break the item frame, this will totally break the drawer (only for old version of the datapack).
-
 # Developers :
 See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your own material or disabling items.
 
@@ -49,4 +47,4 @@ See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your 
 
 - Minecraft Title Generator (blockbench plugin) : https://ewanhowell.com/plugins/minecraft-title-generator/
 
-- Minecraft base64 decoder : https://github.com/DorkOrc/Minecraft-Base64-Tool
+- Minecraft base64 decoder : https://github.com/DorkOrc/Minecraft-Base64-Tool (used for versions prior to 2.0.0)
