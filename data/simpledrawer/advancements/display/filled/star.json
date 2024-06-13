@@ -17,10 +17,10 @@
             ]
         },
         "icon": {
-            "id": "minecraft:jigsaw",
+            "id": "minecraft:furnace",
             "components": {
-                "minecraft:custom_model_data": 1430016
-              }
+				"minecraft:custom_model_data": 1430000
+			}
         },
         "frame": "challenge",
         "show_toast": true,

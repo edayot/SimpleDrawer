@@ -774,20 +774,20 @@ tokenstream = ">=1.7.0,<2.0.0"
 
 [[package]]
 name = "model-resolver"
-version = "0.8.4"
+version = "0.9.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "model_resolver-0.8.4-py3-none-any.whl", hash = "sha256:b6ce965552fcbff4b34ec3261131d0fde51dc768e3063a7bf142e5627bdda2cd"},
-    {file = "model_resolver-0.8.4.tar.gz", hash = "sha256:0eaca098f015dfed9398a30e6a39b22435a5265d66c9e31613e47afb5ed8db37"},
+    {file = "model_resolver-0.9.0-py3-none-any.whl", hash = "sha256:b0b1da35da8e44100eee1d6139819fe4c63c1c9c6648554846c4ab1c255cf0e1"},
+    {file = "model_resolver-0.9.0.tar.gz", hash = "sha256:1befe26da84685eab127e4c1bf54c81aa269e3df674574d29b94774f38bcb239"},
 ]
 
 [package.dependencies]
 beet = ">=0.104.1"
 black = ">=24.4.2,<25.0.0"
 pillow = ">=10.3.0,<11.0.0"
-pyopenglalwaysworking = ">=3.1.99,<4.0.0"
+pyopengl = "3.1.0"
 rich = ">=13.7.1,<14.0.0"
 tqdm = ">=4.66.2,<5.0.0"
 typer = ">=0.12.3,<0.13.0"
@@ -1040,13 +1040,13 @@ files = [
 
 [[package]]
 name = "pydantic"
-version = "2.7.3"
+version = "2.7.4"
 description = "Data validation using Python type hints"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pydantic-2.7.3-py3-none-any.whl", hash = "sha256:ea91b002777bf643bb20dd717c028ec43216b24a6001a280f83877fd2655d0b4"},
-    {file = "pydantic-2.7.3.tar.gz", hash = "sha256:c46c76a40bb1296728d7a8b99aa73dd70a48c3510111ff290034f860c99c419e"},
+    {file = "pydantic-2.7.4-py3-none-any.whl", hash = "sha256:ee8538d41ccb9c0a9ad3e0e5f07bf15ed8015b481ced539a1759d8cc89ae90d0"},
+    {file = "pydantic-2.7.4.tar.gz", hash = "sha256:0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52"},
 ]
 
 [package.dependencies]
@@ -1163,14 +1163,14 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
-name = "pyopenglalwaysworking"
-version = "3.1.99"
+name = "pyopengl"
+version = "3.1.0"
 description = "Standard OpenGL bindings for Python"
 optional = false
 python-versions = "*"
 files = [
-    {file = "PyOpenGLAlwaysWorking-3.1.99-py3-none-any.whl", hash = "sha256:f2850bae2248fc14dfcb573c217d69ea4ac65176f96d88956d92a1edc248f465"},
-    {file = "pyopenglalwaysworking-3.1.99.tar.gz", hash = "sha256:fa1c08ac96e65832a3d2289c8012597b93051536d3976b8fb6f629803cb3a83e"},
+    {file = "PyOpenGL-3.1.0.tar.gz", hash = "sha256:9b47c5c3a094fa518ca88aeed35ae75834d53e4285512c61879f67a48c94ddaf"},
+    {file = "PyOpenGL-3.1.0.zip", hash = "sha256:efa4e39a49b906ccbe66758812ca81ced13a6f26931ab2ba2dba2750c016c0d0"},
 ]
 
 [[package]]

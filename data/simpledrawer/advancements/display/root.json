@@ -22,6 +22,6 @@
         }
     },
     "rewards": {
-        "function": "simpledrawer:advancements/display/root"
+        "function": "simpledrawer:impl/first_join/first_join"
     }
 }

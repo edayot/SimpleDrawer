@@ -13,7 +13,9 @@
         },
         "icon": {
             "id": "minecraft:jigsaw",
-            "nbt": "{CustomModelData:1430005}"
+            "components": {
+				"minecraft:custom_model_data": 1430005
+			}
         },
         "frame": "challenge",
         "show_toast": true,
