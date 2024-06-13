@@ -21,6 +21,7 @@ scoreboard objectives add simpledrawer.new_drawer.id dummy
 scoreboard objectives add simpledrawer.new_drawer.part_id dummy
 scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
 scoreboard objectives add simpledrawer.new_drawer.as_players_entities dummy
+scoreboard objectives add simpledrawer.new_drawer.no_format_cooldown dummy
 
 # Versioning block for future updates
 scoreboard objectives add simpledrawer.block.major dummy
@@ -55,6 +56,5 @@ advancement revoke @a only simpledrawer:impl/attack
 
 schedule function simpledrawer:impl/tick 1t replace
 schedule function simpledrawer:impl/5tick 5t replace
-schedule function simpledrawer:impl/20tick 20t replace
 
 function simpledrawer:impl/mc_version_warning

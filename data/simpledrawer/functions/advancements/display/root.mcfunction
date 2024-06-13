@@ -1,1 +1,0 @@
-function #simpledrawer:_useless/first_join/first_join

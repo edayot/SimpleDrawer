@@ -12,6 +12,8 @@ execute
     run function ./check_player_nearby:
         scoreboard players set #player_nearby simpledrawer.math 0
         execute if entity @a[distance=..16] run scoreboard players set #player_nearby simpledrawer.math 1
+        scoreboard players add @s simpledrawer.new_drawer.no_format_cooldown 0
+        scoreboard players remove @s[scores={simpledrawer.new_drawer.no_format_cooldown=1..}] simpledrawer.new_drawer.no_format_cooldown 1
 
         execute 
             if score #player_nearby simpledrawer.math matches 0
@@ -56,6 +58,7 @@ execute
         execute 
             if score #player_nearby simpledrawer.math matches 1 
             if score @s simpledrawer.new_drawer.as_players_entities matches 1 
+            if score @s simpledrawer.new_drawer.no_format_cooldown matches 0
             if entity @s[tag=simpledrawer.new_drawer.to_update] run function simpledrawer:impl/new_drawer/base_display_rup
 
         execute if entity @s[predicate=!simpledrawer:impl/test_version] run function simpledrawer:impl/new_drawer/test_version
