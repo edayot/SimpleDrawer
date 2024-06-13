@@ -7,9 +7,7 @@ resource_pack:
 require:
   - airdox_.add_tests_directory
   - airdox_.allow_function_without_name
-  - smithed_libraries.plugins.companion_mod
   - mecha.contrib.messages
-  - beet.contrib.model_merging
   - bolt
 
 
