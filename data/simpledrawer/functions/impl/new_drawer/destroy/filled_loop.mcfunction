@@ -1,8 +1,12 @@
 
 
 
+scoreboard players set #count_destroy simpledrawer.math -1
+function ./get_count_destroy with storage simpledrawer:main temp.ItemsDestroy[0]
 
-execute store result score #count_destroy simpledrawer.math run data get storage simpledrawer:main temp.ItemsDestroy[0].item.count
+function ./get_count_destroy:
+    $execute store result score #count_destroy simpledrawer.math run data get storage simpledrawer:main temp.simpledrawer.items_counts.$(slot)
+
 data modify storage simpledrawer:main temp.destroy_id set from storage simpledrawer:main temp.ItemsDestroy[0].item.id
 
 scoreboard players set #success_item simpledrawer.math 0

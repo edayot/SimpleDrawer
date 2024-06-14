@@ -1,16 +1,14 @@
 
 execute store result score #count_aho simpledrawer.math run data get storage simpledrawer:main temp.Items_aho[0].item.count
 
-scoreboard players set #temp_if_count_0 simpledrawer.io 0
-function ./test_0_count with storage simpledrawer:main temp.Items_aho[0]
+scoreboard players set #count_aho simpledrawer.math -1
+function ./get_count_aho with storage simpledrawer:main temp.Items_aho[0]
 
-function ./test_0_count:
-    $execute if data entity @s item.components."minecraft:custom_data".simpledrawer.set_count_0_$(slot) run scoreboard players set #temp_if_count_0 simpledrawer.io 1
-    
+function ./get_count_aho:
+    $execute store result score #count_aho simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.items_counts.$(slot)
 
 execute 
     if score #count_aho simpledrawer.math matches 1.. 
-    if score #temp_if_count_0 simpledrawer.io matches 0
     run function ./auto_handled_output_loop_output:
         data modify storage itemio:io Item_auto_output set from storage simpledrawer:main temp.Items_aho[0].item
         #tellraw @a {"nbt":"Item_auto_output","storage":"itemio:io"}

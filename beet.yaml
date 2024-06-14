@@ -23,6 +23,7 @@ pipeline:
   - simpledrawer.add_versioning_to_items
   - simpledrawer.generate_translation
   - airdox_.test_load_generator
+  - airdox_.monkey_patch_1_21
 
 extend: "common.yaml"
 
