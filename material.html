@@ -274,12 +274,7 @@
 <td><p>#ingot_in_block</p></td>
 <td><p>simpledrawer.io</p></td>
 </tr>
-<tr class="row-even"><td><p>Number of nugget in a block</p></td>
-<td><p>score</p></td>
-<td><p>#nugget_in_block</p></td>
-<td><p>simpledrawer.io</p></td>
-</tr>
-<tr class="row-odd"><td><p>Number of nugget in a ingot</p></td>
+<tr class="row-even"><td><p>Number of nugget in a ingot</p></td>
 <td><p>score</p></td>
 <td><p>#nugget_in_ingot</p></td>
 <td><p>simpledrawer.io</p></td>
@@ -295,20 +290,26 @@
 <h5>In the function tag<a class="headerlink" href="#in-the-function-tag" title="Link to this heading">¶</a></h5>
 <div class="highlight-mcfunction notranslate"><div class="highlight"><pre><span></span><span class="nb">execute</span><span class="w"> </span>
 <span class="w">    </span><span class="kc">unless</span><span class="w"> </span><span class="kc">score</span><span class="w"> </span><span class="vm">#success_material</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="kc">matches</span><span class="w"> </span><span class="mf">1</span>
-<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_block</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}}</span>
-<span class="w">    </span><span class="nb">run function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
+<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span>
+<span class="w">        </span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_block</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="kc">run</span><span class="nb"> function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
 <span class="w">        </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#type</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">0</span>
 <span class="w">        </span><span class="kc">function</span><span class="w"> </span><span class="nf">my_data_pack:my_material</span>
 <span class="nb">execute</span><span class="w"> </span>
 <span class="w">    </span><span class="kc">unless</span><span class="w"> </span><span class="kc">score</span><span class="w"> </span><span class="vm">#success_material</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="kc">matches</span><span class="w"> </span><span class="mf">1</span>
-<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_ingot</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}}</span>
-<span class="w">    </span><span class="nb">run function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
+<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span>
+<span class="w">        </span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_ingot</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="kc">run</span><span class="nb"> function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
 <span class="w">        </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#type</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">1</span>
 <span class="w">        </span><span class="kc">function</span><span class="w"> </span><span class="nf">my_data_pack:my_material</span>
 <span class="nb">execute</span>
 <span class="w">    </span><span class="kc">unless</span><span class="w"> </span><span class="kc">score</span><span class="w"> </span><span class="vm">#success_material</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="kc">matches</span><span class="w"> </span><span class="mf">1</span>
-<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_nugget</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}}</span>
-<span class="w">    </span><span class="nb">run function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
+<span class="w">    </span><span class="kc">if</span><span class="w"> </span><span class="kc">data</span><span class="w"> </span><span class="kc">storage</span><span class="w"> </span><span class="nf">simpledrawer:io</span><span class="w"> </span><span class="kc">item_material</span><span class="p">{</span>
+<span class="w">        </span><span class="na">components</span><span class="p">:{</span><span class="na">&quot;minecraft</span><span class="p">:</span><span class="nt">custom_data</span><span class="s2">&quot;:{ctc:{id:&quot;</span><span class="nt">my_nugget</span><span class="s2">&quot;,from:&quot;</span><span class="nt">my_data_pack</span><span class="s2">&quot;}}}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="kc">run</span><span class="nb"> function</span><span class="w"> </span><span class="nf">my_data_pack:my_material/block</span><span class="err">:</span>
 <span class="w">        </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#type</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">2</span>
 <span class="w">        </span><span class="kc">function</span><span class="w"> </span><span class="nf">my_data_pack:my_material</span>
 </pre></div>
@@ -320,7 +321,6 @@
 <span class="w">    </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#success_material</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">1</span>
 
 <span class="w">    </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#ingot_in_block</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">9</span>
-<span class="w">    </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#nugget_in_block</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">81</span>
 <span class="w">    </span><span class="kc">scoreboard</span><span class="w"> </span><span class="kc">players</span><span class="w"> </span><span class="kc">set</span><span class="w"> </span><span class="vm">#nugget_in_ingot</span><span class="w"> </span><span class="kc">simpledrawer.io</span><span class="w"> </span><span class="mf">9</span>
 
 
@@ -328,9 +328,9 @@
 <span class="w">        </span><span class="na">material</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_data_pack.my_material&#39;, # The UNIQUE identifier of the material, should be namespaced</span>
 <span class="w">        </span><span class="nb">material_name</span><span class="err">:</span><span class="w"> </span><span class="s1">&#39;{&quot;text&quot;:&quot;My material&quot;}&#39;</span><span class="err">,</span><span class="w"> </span><span class="c1"># The json text component of the material name</span>
 
-<span class="w">        </span><span class="kc">block</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">block</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="err">,</span><span class="c1"># The block NBT of the block form of the material</span>
-<span class="w">        </span><span class="kc">ingot</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">item</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="err">,</span><span class="w"> </span><span class="c1"># The item NBT of the ingot form of the material</span>
-<span class="w">        </span><span class="kc">nugget</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">item</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="w"> </span><span class="c1"># The item NBT of the nugget form of the material, don&#39;t declare if the material doesn&#39;t have a nugget form</span>
+<span class="w">        </span><span class="kc">block</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">block</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="err">,</span><span class="w"> </span><span class="c1"># The block NBT of the block form of the material</span>
+<span class="w">        </span><span class="kc">ingot</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">ingot</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="err">,</span><span class="w"> </span><span class="c1"># The item NBT of the ingot form of the material</span>
+<span class="w">        </span><span class="kc">nugget</span><span class="err">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">The</span><span class="w"> </span><span class="kc">nugget</span><span class="w"> </span><span class="kc">NBT</span><span class="o">&gt;</span><span class="w"> </span><span class="c1"># The item NBT of the nugget form of the material, don&#39;t declare if the material doesn&#39;t have a nugget form</span>
 <span class="w">    </span><span class="err">}</span>
 </pre></div>
 </div>
