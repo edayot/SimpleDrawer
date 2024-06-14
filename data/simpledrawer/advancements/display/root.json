@@ -8,7 +8,9 @@
         },
         "icon": {
             "id": "minecraft:written_book",
-            "nbt": "{CustomModelData:1430000}"
+            "components": {
+                "minecraft:custom_model_data": 1430000
+              }
         },
         "frame": "task",
         "show_toast": true,
