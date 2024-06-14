@@ -13,7 +13,7 @@ data modify storage simpledrawer:main temp.SelectedItem set from entity @s Selec
 tag @s add simpledrawer.interacter
 scoreboard players set #found simpledrawer.math 0
 execute 
-    as @e[tag=simpledrawer.new_drawer.part.interaction,distance=..7,sort=nearest] 
+    as @e[tag=simpledrawer.new_drawer.part.interaction,distance=..10,sort=nearest] 
     run function simpledrawer:impl/new_drawer/working/interaction/interact/search_test:
         execute 
             if score #found simpledrawer.math matches 0
