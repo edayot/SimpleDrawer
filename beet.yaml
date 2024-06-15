@@ -33,8 +33,8 @@ meta:
     load_vanilla: true
     save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"
-  mc_supports: ["1.20.6"]
-  mc_supports_dataversion: [3839]
+  mc_supports: ["1.21"]
+  mc_supports_dataversion: [3953]
   weld_deps:
     enable_weld_merging: True
     clean_load_tag: True
