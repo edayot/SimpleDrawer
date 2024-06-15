@@ -160,6 +160,8 @@ def monkey_patch_1_21(ctx: Context):
     ctx.data.entity_type_tags.proxy_key.scope = ("tags", "entity_type")
     ctx.data.fluid_tags.proxy_key.scope = ("tags", "fluid")
     ctx.data.game_event_tags.proxy_key.scope = ("tags", "game_event")
+    ctx.data.pack_format = 48
+    ctx.assets.pack_format = 34
     
     
     
