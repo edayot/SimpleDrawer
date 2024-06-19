@@ -1,6 +1,7 @@
 # @public
 
 advancement revoke @s only simpledrawer:impl/attack
+execute unless score simpledrawer load.status matches 1 run return fail
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
 #say ATTACK

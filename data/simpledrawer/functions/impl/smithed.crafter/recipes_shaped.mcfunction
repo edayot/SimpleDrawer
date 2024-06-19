@@ -1,4 +1,5 @@
 # @public
+execute unless score simpledrawer load.status matches 1 run return fail
 
 execute 
     if entity @s[scores={smithed.data=0}]

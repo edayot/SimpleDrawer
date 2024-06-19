@@ -1,6 +1,7 @@
 # @public
 #say INTERACT
 advancement revoke @s only simpledrawer:impl/interact
+execute unless score simpledrawer load.status matches 1 run return fail
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
 
