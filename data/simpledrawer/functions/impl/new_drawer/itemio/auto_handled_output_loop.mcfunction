@@ -11,6 +11,7 @@ execute
     if score #count_aho simpledrawer.math matches 1.. 
     run function ./auto_handled_output_loop_output:
         data modify storage itemio:io Item_auto_output set from storage simpledrawer:main temp.Items_aho[0].item
+        execute store result storage itemio:io Item_auto_output.count int 1 run scoreboard players get #count_aho simpledrawer.math
         #tellraw @a {"nbt":"Item_auto_output","storage":"itemio:io"}
         function #itemio:calls/auto_handled_output
         #tellraw @a {"score":{"name":"#remove_count","objective":"itemio.math.output"}}
