@@ -32,7 +32,7 @@ function ~/loot_spawn:
                 "entries": [ \
                     { \
                         "type": "minecraft:loot_table", \
-                        "value": "$(loot_table)", \
+                        "value": "simpledrawer:impl/$(loot_table)", \
                         "functions": [ \
                             { \
                                 "function": "minecraft:copy_custom_data", \

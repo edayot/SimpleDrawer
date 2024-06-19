@@ -22,6 +22,7 @@
 								  "pattern": "minecraft:sentry",
 								  "show_in_tooltip": false
 								},
+								"minecraft:lock": "simpledrawer{]55641156416514561564~}~&\"éé\"ofsqjdfnhjswfbhjfdbdfgvfsdghvfdgv§§§h",
 								"minecraft:container": [
 								  {
 									"slot": 0,
@@ -37,7 +38,7 @@
 											"current_material_name": "{\"text\":\"none\"}",
 											"slot_count": 1,
 											"wood_type": "simpledrawer:compacting",
-											"loot_table": "simpledrawer:impl/items/compacting_new_drawer",
+											"loot_table": "items/compacting_new_drawer",
 											"upgrade": "wood",
 											"hopper": 0
 										  },
