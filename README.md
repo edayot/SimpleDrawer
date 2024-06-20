@@ -17,8 +17,7 @@ The most important item of the datapack is the guide, every player will receive 
 
 There is also a crafting recipe for the guide :
 <p align="center">
-<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/craft_guide.png> 
-<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/assets/simpledrawer/textures/item/font/result_guide.png>
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/guide_craft.png> 
 </p>
 
 ## ⚠ Warning the datapack has to be loaded at the world start (or server start)! (If not, you will have unmatching textures)
