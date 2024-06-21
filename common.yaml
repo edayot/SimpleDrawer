@@ -15,7 +15,6 @@ pipeline:
   - mecha
   - smithed_libraries.plugins.versioning
   - airdox_.clean_useless_tags
-  - beet.contrib.find_replace
   - airdox_.add_license
   - airdox_.add_readme
   - beet.contrib.minify_json
@@ -30,14 +29,6 @@ meta:
   airdox_:
     license_path: "LICENSE"
     readme_path: "README.md"
-  find_replace:
-    substitute:
-      - data_pack:
-          match:
-            functions: "{{ project_id }}:*"
-        substitute:
-          - find: "__version__"
-            replace: "{{ version_string }}"
   mecha:
     formatting: preserve
     multiline: true
