@@ -12,10 +12,10 @@ try:
     beet = yaml.safe_load(open("beet.yaml"))
 except KeyError:
     try:
-        with open("credentials.json", "r") as f:
+        with open(".github/workflows/credentials.json", "r") as f:
             creds = json.load(f)
         SMITHED_TOKEN = creds['SMITHED_TOKEN']
-        beet = yaml.safe_load(open("../../beet.yaml"))
+        beet = yaml.safe_load(open("./beet.yaml"))
     except:
         print("Missing credentials")
         exit(1)
