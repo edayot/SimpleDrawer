@@ -121,7 +121,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
 class PackTest(Function):
     """Class representing a PackTest test."""
 
-    scope: ClassVar[Tuple[str, ...]] = ("tests",)
+    scope: ClassVar[Tuple[Tuple[str, ...], ...]] = (("tests",))
 
 @dataclass
 class PackTestManager:
