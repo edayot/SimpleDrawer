@@ -74,16 +74,16 @@ jobs:
           # print the version bump
           echo "Version bump: $VERSION_BUMP"
           if [ "$VERSION_BUMP" = "automatic" ]; then
-            COMMAND = "poetry run semantic-release -v version && poetry run semantic-release -v publish"
+            COMMAND="poetry run semantic-release -v version && poetry run semantic-release -v publish"
           fi
           if [ "$VERSION_BUMP" = "patch" ]; then
-            COMMAND = "poetry run semantic-release -v version --patch && poetry run semantic-release -v publish"
+            COMMAND="poetry run semantic-release -v version --patch && poetry run semantic-release -v publish"
           fi
           if [ "$VERSION_BUMP" = "minor" ]; then
-            COMMAND = "poetry run semantic-release -v version --minor && poetry run semantic-release -v publish"
+            COMMAND="poetry run semantic-release -v version --minor && poetry run semantic-release -v publish"
           fi
           if [ "$VERSION_BUMP" = "major" ]; then
-            COMMAND = "poetry run semantic-release -v version --major && poetry run semantic-release -v publish"
+            COMMAND="poetry run semantic-release -v version --major && poetry run semantic-release -v publish"
           fi
           echo "Running command: $COMMAND"
           /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
