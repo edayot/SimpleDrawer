@@ -10,6 +10,7 @@ overrides:
 
 data_pack:
   load: [.]
+  pack_format: 48
 resource_pack:
   load: [.]
 
