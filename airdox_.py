@@ -100,7 +100,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
 
             final_test=final_test+"if score #{project_id}.{dep_id} load.status matches 1 ".format(project_id=ctx.project_id,dep_id=dep["id"])
 
-    final_test=final_test+f"if score #trim_loaded {ctx.project_id}.math matches 1 "
+    final_test=final_test+f"if score #{ctx.project_id}.trim_loaded load.status matches 1 "
     final_test=final_test+"run function {project_id}:v{project_version}/load".format(project_id=ctx.project_id,project_version=ctx.project_version)
 
     function=function+final_test
