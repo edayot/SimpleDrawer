@@ -1,4 +1,3 @@
-scoreboard players set #if_item simpledrawer.math 1
 
 data remove storage simpledrawer:io input
 data modify storage simpledrawer:io input set from storage simpledrawer:main temp.SelectedItem
