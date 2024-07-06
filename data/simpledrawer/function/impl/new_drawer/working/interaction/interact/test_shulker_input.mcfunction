@@ -29,7 +29,7 @@ execute if score #is_shulker_box simpledrawer.math matches 0 run return run func
 
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
-scoreboard players operation #slot simpledrawer.io = @s simpledrawer.new_drawer.part_id
+scoreboard players set #slot simpledrawer.io -1
 
 scoreboard players set #one_success simpledrawer.math 0
 
@@ -48,8 +48,8 @@ function simpledrawer:impl/new_drawer/working/interaction/interact/test_shulker_
 
     function simpledrawer:impl/new_drawer/working/io/input
 
-    execute if score #success simpledrawer.io matches 0 run data remove storage simpledrawer:main temp.looping_container[0]
-    execute if score #success simpledrawer.io matches 0 run return run execute if data storage simpledrawer:main temp.looping_container[0] run function simpledrawer:impl/new_drawer/working/interaction/interact/test_shulker_input/loop with storage simpledrawer:main temp.looping_container[0]
+    execute unless score #success simpledrawer.io matches 1 run data remove storage simpledrawer:main temp.looping_container[0]
+    execute unless score #success simpledrawer.io matches 1 run return run execute if data storage simpledrawer:main temp.looping_container[0] run function simpledrawer:impl/new_drawer/working/interaction/interact/test_shulker_input/loop with storage simpledrawer:main temp.looping_container[0]
 
     scoreboard players set #one_success simpledrawer.math 1
 
