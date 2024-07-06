@@ -2,6 +2,17 @@
 
 
 
+## v2.0.1 (2024-07-06)
+
+### Fix
+
+* fix: datapack not loading on new world ([`6f606ab`](https://github.com/edayot/SimpleDrawer/commit/6f606ab7b214b1a9e526b1b05a93b9105bf98aef))
+
+* fix: specify the format ([`f1cc06e`](https://github.com/edayot/SimpleDrawer/commit/f1cc06e03e98baf0ce265f4b6060315170ac0304))
+
+* fix: local usage ([`3ef298b`](https://github.com/edayot/SimpleDrawer/commit/3ef298b95fb239a25d12a0786c5dbbd5fe910ac5))
+
+
 ## v2.0.0 (2024-07-02)
 
 ### Chore
