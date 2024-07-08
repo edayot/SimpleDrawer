@@ -42,8 +42,6 @@ remove_dist = false
 dist_glob_patterns = ["build/*.zip"]
 upload_to_vcs_release = true
 
-[tool.semantic_release.branches.main]
-match = "(main|master|hopper_craft_fix)"
 
 
 
