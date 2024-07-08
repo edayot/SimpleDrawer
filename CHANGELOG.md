@@ -2,6 +2,17 @@
 
 
 
+## v2.0.2 (2024-07-08)
+
+### Chore
+
+* chore: allow release on branch ([`64994a2`](https://github.com/edayot/SimpleDrawer/commit/64994a23d679ede3e680cc7e457e2541f30e947f))
+
+### Fix
+
+* fix: hopper_upgrade craft not registred ([`5605e80`](https://github.com/edayot/SimpleDrawer/commit/5605e80abcba2cdc3d58e5244285ba141dd668bb))
+
+
 ## v2.0.1 (2024-07-06)
 
 ### Fix
