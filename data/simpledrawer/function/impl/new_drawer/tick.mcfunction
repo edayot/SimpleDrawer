@@ -48,7 +48,7 @@ execute
 
                 function simpledrawer:impl/new_drawer/place/variant
                 scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
-                function simpledrawer:impl/new_drawer/base_display_rup
+                function simpledrawer:impl/new_drawer/base_display
                 
                 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
                 data modify entity @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,sort=nearest, predicate=simpledrawer:impl/search_id_new_drawer] transformation.scale set value [1.001f,1.001f,1.001f]
@@ -59,6 +59,6 @@ execute
             if score #player_nearby simpledrawer.math matches 1 
             if score @s simpledrawer.new_drawer.as_players_entities matches 1 
             if score @s simpledrawer.new_drawer.no_format_cooldown matches 0
-            if entity @s[tag=simpledrawer.new_drawer.to_update] run function simpledrawer:impl/new_drawer/base_display_rup
+            run function simpledrawer:impl/new_drawer/base_display
 
         execute if entity @s[predicate=!simpledrawer:impl/test_version] run function simpledrawer:impl/new_drawer/test_version

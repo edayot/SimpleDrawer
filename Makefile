@@ -1,3 +1,8 @@
+define NEWLINE
+
+endef
+
+
 # check for a .env file and load it if it exists
 ifeq ($(wildcard .env),)
     include_env :=
@@ -40,13 +45,13 @@ ifdef version_bool
 	DATA_BUNDLED_NAME = "datapack-bundled"
 	ASSETS_BUNDLED_NAME = "resourcepack-bundled"
 else
-	DATA_NAME = "{{ project_name }}-{{ version_string }}-Datapack"
-	ASSETS_NAME = "{{ project_name }}-{{ version_string }}-Resourcepack"
-	DATA_BUNDLED_NAME = "{{ project_name }}-{{ version_string }}-Datapack-Bundled"
-	ASSETS_BUNDLED_NAME = "{{ project_name }}-{{ version_string }}-Resourcepack-Bundled"
+	DATA_NAME = "{{ project_name }}-{{ project_version }}-Datapack"
+	ASSETS_NAME = "{{ project_name }}-{{ project_version }}-Resourcepack"
+	DATA_BUNDLED_NAME = "{{ project_name }}-{{ project_version }}-Datapack-Bundled"
+	ASSETS_BUNDLED_NAME = "{{ project_name }}-{{ project_version }}-Resourcepack-Bundled"
 endif
 
-DESCRIPTION = "{{ project_description }}\n by {{ project_author }}, {{ version_string }}"
+DESCRIPTION = "{{ project_description }} v{{ version_string }}"
 
 
 DATA_DESCRIPTION = $(DESCRIPTION)\ -\ Datapack
