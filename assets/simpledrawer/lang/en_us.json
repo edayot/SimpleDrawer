@@ -52,7 +52,7 @@
     "simpledrawer.drawers":"Drawer manual",
     "simpledrawer.guide.drawers.inserting_title":"Inserting : \n\n",
     "simpledrawer.guide.drawers.extracting_title":"Extracting : \n\n",
-    "simpledrawer.guide.drawers.inserting":"Just right click on the drawer with the item you want to insert. Sneaking will insert a full stack and with an empty hand you will insert all items from your inventory.",
+    "simpledrawer.guide.drawers.inserting":"Just right click on the drawer with the item you want to insert. Sneaking will insert a full stack and with an empty hand you will insert all items from your inventory. The content of a shulker box can be inserted by sneaking + right clicking.",
     "simpledrawer.guide.drawers.extracting":"Just left click on the drawer to extract one item. Sneaking will extract a full stack.\n\nPS : In snowy biomes you can craft drawers with Packed Ice.",
     "simpledrawer.iron_tier":"Iron tier",
     "simpledrawer.gold_tier":"Gold tier",
