@@ -1,4 +1,4 @@
-from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta, Function
+from beet import Context, TextFile, ResourcePack, DataPack, JsonFile, Mcmeta, Function, NamespaceFileScope
 from copy import deepcopy
 from pathlib import PurePath
 from beet.contrib.model_merging import model_merging
@@ -121,7 +121,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
 class PackTest(Function):
     """Class representing a PackTest test."""
 
-    scope: ClassVar[Tuple[Tuple[str, ...], ...]] = (("tests",))
+    scope: ClassVar[NamespaceFileScope] = {0:("tests",),45:("test",)}
 
 @dataclass
 class PackTestManager:
