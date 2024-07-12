@@ -27,6 +27,7 @@ execute if score #is_shulker_box simpledrawer.math matches 0 if data storage sim
 execute if score #is_shulker_box simpledrawer.math matches 0 run return run function simpledrawer:impl/new_drawer/working/interaction/interact/input
 
 
+execute unless loaded -30000000 20 1610 run return fail
 
 scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
 scoreboard players set #slot simpledrawer.io -1
@@ -70,8 +71,11 @@ function simpledrawer:impl/new_drawer/working/interaction/interact/test_shulker_
 
 execute 
     if score #one_success simpledrawer.math matches 1
+    in minecraft:overworld
     run function simpledrawer:impl/new_drawer/working/interaction/interact/replace_shulker_box_storage:
-        data remove storage simpledrawer:main temp.container
-        data modify storage simpledrawer:main temp.container set from storage simpledrawer:main temp.SelectedItem.components."minecraft:container"
-        function simpledrawer:impl/new_drawer/working/interaction/interact/replace_shulker_box with storage simpledrawer:main temp
+        setblock -30000000 22 1610 air
+        setblock -30000000 22 1610 yellow_shulker_box
+        data modify storage simpledrawer:main temp.SelectedItem.Slot set value 0b
+        data modify block -30000000 22 1610 Items append from storage simpledrawer:main temp.SelectedItem
+        loot replace entity @p[tag=simpledrawer.interacter] weapon.mainhand mine -30000000 22 1610 stick[minecraft:custom_data={drop_contents:1b}]
 
