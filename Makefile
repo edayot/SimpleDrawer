@@ -45,10 +45,10 @@ ifdef version_bool
 	DATA_BUNDLED_NAME = "datapack-bundled"
 	ASSETS_BUNDLED_NAME = "resourcepack-bundled"
 else
-	DATA_NAME = "{{ project_name }}-{{ project_version }}-Datapack"
-	ASSETS_NAME = "{{ project_name }}-{{ project_version }}-Resourcepack"
-	DATA_BUNDLED_NAME = "{{ project_name }}-{{ project_version }}-Datapack-Bundled"
-	ASSETS_BUNDLED_NAME = "{{ project_name }}-{{ project_version }}-Resourcepack-Bundled"
+	DATA_NAME = "{{ project_name }}-v{{ project_version }}-Datapack"
+	ASSETS_NAME = "{{ project_name }}-v{{ project_version }}-Resourcepack"
+	DATA_BUNDLED_NAME = "{{ project_name }}-v{{ project_version }}-Datapack-Bundled"
+	ASSETS_BUNDLED_NAME = "{{ project_name }}-v{{ project_version }}-Resourcepack-Bundled"
 endif
 
 DESCRIPTION = "{{ project_description }} v{{ version_string }}"

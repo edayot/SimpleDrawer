@@ -4,5 +4,3 @@ $item modify entity @p[tag=simpledrawer.interacter] weapon.mainhand { \
         "minecraft:container": $(container) \
     } \
 }
-
-$say $(container)
