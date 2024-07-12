@@ -1,3 +1,4 @@
+from typing_extensions import Any
 from beet import Context, Font, Texture, LootTable, ItemModifier
 from model_resolver import beet_default as model_resolver
 
@@ -36,7 +37,7 @@ REGISTRY : dict[str, "Item"] = {}
 @dataclass
 class Item:
     model: str
-    minimal_representation: str
+    minimal_representation: dict
     page_name : Optional[TranslatedString] = None
     description: Optional[TranslatedString] = None
     page_index: int = field(default_factory=page_number)
@@ -90,7 +91,7 @@ def image_count(count: int) -> Image:
 	text_height = font_size + 6
 	pos_1 = (size-text_width), (size-text_height)
 	pos_2 = (pos_1[0]-2, pos_1[1]-2)
-	
+
 	# Draw the count
 	draw.text(pos_1, str(count), (50, 50, 50), font = font)
 	draw.text(pos_2, str(count), (255, 255, 255), font = font)
@@ -101,7 +102,7 @@ def image_count(count: int) -> Image:
 def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
     # Create a font for the page
     font_path = f'simpledrawer:pages'
-    page = [""]
+    page : list[Any]= [""]
     page.append({
         "translate": result.page_name[0],
         "font":"simpledrawer:medium",
@@ -139,8 +140,8 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
             "italic":False
         })
     return json.dumps(page)
-            
-            
+
+
 
 
 
@@ -231,11 +232,11 @@ def create_loot_table(ctx: Context, pages: list[str]):
         json.dump(loot_table, f, indent=4)
     with open(cache.get_path(item_modifier_path), "w") as f:
         json.dump(item_modifier, f, indent=4)
-    
+
     cache.json["loot_tables"] = []
     cache.json["item_modifiers"] = []
     cache.json["loot_tables"].append(loot_table_path)
-    cache.json["item_modifiers"].append(item_modifier_path) 
+    cache.json["item_modifiers"].append(item_modifier_path)
 
 
 
@@ -302,7 +303,7 @@ def generate_item_list(ctx: Context):
     return res
 
 
-        
+
 
 
 def beet_default(ctx: Context):
@@ -328,10 +329,10 @@ def beet_default(ctx: Context):
             return
     else:
         cache.clear()
-        
+
     global PAGE_NUMBER
 
-    # 1. Construct all needed renders, add them to the ctx    
+    # 1. Construct all needed renders, add them to the ctx
     air = Item(
         model="simpledrawer:block/air",
         minimal_representation={"id":"minecraft:air"},
@@ -598,7 +599,7 @@ def beet_default(ctx: Context):
         with open(cache.get_path(path), "wb") as f:
             img.save(f, "PNG")
         cache.json["textures"].append(path)
-    
+
     # 3. Create the font
     create_font(ctx)
     # cache the font
@@ -785,4 +786,3 @@ def beet_default(ctx: Context):
     # print(pages)
     # 5. Create the loot table
     create_loot_table(ctx, pages)
-
