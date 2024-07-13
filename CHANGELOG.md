@@ -2,15 +2,50 @@
 
 
 
+## v2.1.0 (2024-07-13)
+
+### Chore
+
+* chore: rollback ([`5d79d45`](https://github.com/edayot/SimpleDrawer/commit/5d79d45505b08bd643e4db191102dc1a66aeda43))
+
+### Fix
+
+* fix: bad github link ([`a4646be`](https://github.com/edayot/SimpleDrawer/commit/a4646bec484e6a714f981478fe2785a14ea51efd))
+
+* fix: using yellow shulker box instead of a macro ([`1b13f25`](https://github.com/edayot/SimpleDrawer/commit/1b13f25f049aef9b59f8cf28a51eea8516b75702))
+
+* fix: wrong typing ([`63854ab`](https://github.com/edayot/SimpleDrawer/commit/63854ab287486a55876a5780a585f053a0a815ed))
+
+* fix: Flashing numbers when the player sneak click #31 ([`854e898`](https://github.com/edayot/SimpleDrawer/commit/854e898529aa657052f549fca887ff3f7d402690))
+
+### Unknown
+
+* choire: update deps ([`0fd31d4`](https://github.com/edayot/SimpleDrawer/commit/0fd31d4792bab242aac7f950f8bcb94a8a58efbd))
+
+* random fixes ([`6e46d25`](https://github.com/edayot/SimpleDrawer/commit/6e46d25a9c373383c3275895cc3c140d33ef37e2))
+
+* bump beet ([`8ea6c43`](https://github.com/edayot/SimpleDrawer/commit/8ea6c4368af6344097fd1fcc188109ae2db7d786))
+
+* upddate drawer description ([`5e2ce8a`](https://github.com/edayot/SimpleDrawer/commit/5e2ce8a38a0d331ee92e5378030701223e1ef2a7))
+
+* Merge branch &#39;hopper_craft_fix&#39; ([`79cc741`](https://github.com/edayot/SimpleDrawer/commit/79cc7412acf9ea2614b477c3c120bbc0fba61e6d))
+
+
 ## v2.0.2 (2024-07-08)
 
 ### Chore
 
 * chore: allow release on branch ([`64994a2`](https://github.com/edayot/SimpleDrawer/commit/64994a23d679ede3e680cc7e457e2541f30e947f))
 
+### Feature
+
+* feat: shulker_box input #30 ([`4636268`](https://github.com/edayot/SimpleDrawer/commit/46362682f32f043717399ff28934f9a63a5c1601))
+
 ### Fix
 
 * fix: hopper_upgrade craft not registred ([`5605e80`](https://github.com/edayot/SimpleDrawer/commit/5605e80abcba2cdc3d58e5244285ba141dd668bb))
+
+* fix: update stop condition ([`63d9ef0`](https://github.com/edayot/SimpleDrawer/commit/63d9ef049cce0f0cb406590a60ce4f25ff940634))
 
 
 ## v2.0.1 (2024-07-06)
