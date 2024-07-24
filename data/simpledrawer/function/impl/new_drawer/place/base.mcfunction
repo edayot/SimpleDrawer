@@ -31,7 +31,7 @@ data modify entity @s item.components."minecraft:custom_data".simpledrawer set f
 data modify entity @s item.components."minecraft:container" set from storage simpledrawer:main temp.simpledrawer_container
 
 
-execute store result score #maxCount simpledrawer.math run data get entity @s item.components."minecraft:custom_data".simpledrawer.maxCount
+execute store result score #maxCount simpledrawer.math run data get storage simpledrawer:main temp.simpledrawer.maxCount
 
 tag @s add simpledrawer.block
 tag @s add simpledrawer.new_drawer.base
@@ -41,8 +41,8 @@ tag @s add simpledrawer.new_drawer.part.base
 scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
 
 
-execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{hopper:1b} run tag @s add simpledrawer.new_drawer.hopper
-execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
+execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run tag @s add simpledrawer.new_drawer.hopper
+execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run tag @s add itemio.container.hopper
 
 
 tag @s add smithed.block
@@ -66,8 +66,8 @@ function simpledrawer:impl/new_drawer/place/variant
 
 function simpledrawer:impl/new_drawer/base_display
 
-execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{wood_type:"simpledrawer:ice"} run tag @s add simpledrawer.new_drawer.stone_base
-execute if data storage simpledrawer:main temp.item.components."minecraft:custom_data".simpledrawer{wood_type:"simpledrawer:ice"} run tag @s remove simpledrawer.new_drawer.wood_base
+execute if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s add simpledrawer.new_drawer.stone_base
+execute if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s remove simpledrawer.new_drawer.wood_base
 
 scoreboard players set #temp simpledrawer.math 0
 execute store success score #temp simpledrawer.math if entity @s[tag=simpledrawer.new_drawer.wood_base] run setblock ~ ~ ~ beehive
