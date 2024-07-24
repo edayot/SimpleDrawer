@@ -46,17 +46,14 @@ download_url = (
     "{ziptype}.zip"
 )
 
-try:
-    dep_no = beet['meta']['smithed_dependencies']
-except KeyError:
-    dep_no = []
 
 dep = []
-with open(".beet_cache/default/index.json", "r") as f:
-    cache = json.load(f)["json"]
 
-for d, v in cache["weld_deps_installed"].items():
-    dep.append({"id": d, "version": v})
+for d in beet["meta"]["weld_deps"]["deps"]:
+    dep.append({
+        "id":d["id"],
+        "version":d["version"]
+    })
 
 
 pack_version = {
