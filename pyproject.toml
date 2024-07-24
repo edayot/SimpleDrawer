@@ -12,7 +12,7 @@ python = ">=3.11,<3.12"
 weld-deps = ">=0.7.0"
 smithed-libraries = {git = "https://github.com/edayot/Libraries.git", branch = "main"}
 cryptography = "^42.0.4"
-beet = {git = "https://github.com/edayot/beet.git", branch = "1.21-fixes_from_TheNuclearNexus_branch"}
+beet = ">=0.108.1"
 tqdm = "^4.66.1"
 model-resolver = ">=0.6.0"
 

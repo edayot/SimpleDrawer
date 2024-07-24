@@ -86,15 +86,10 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     function=""
     final_test="execute "
 
-    installed_deps=ctx.cache.json["weld_deps_installed"]
-
     for dep in ctx.meta["weld_deps"]["deps"]:
         if dep["versioning"]["type"]=="normal":
             
-            if dep["id"] in installed_deps:
-                major,minor,patch=installed_deps[dep["id"]].split(".")
-            else:
-                raise Exception("Dependency {dep_id} not installed".format(dep_id=dep["id"]))
+            major,minor,patch = dep["version"].split(".")
             
             function=function+dep_check.format(project_id=ctx.project_id,dep_id=dep["id"],dep_name=dep["id"],dep_major=major,dep_minor=minor,dep_patch=patch,dep_prefix=dep["versioning"]["prefix"],project_name=ctx.project_name)
 
