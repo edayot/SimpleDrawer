@@ -2,6 +2,19 @@
 
 
 
+## v2.1.1 (2024-07-24)
+
+### Chore
+
+* chore: release script ([`780f919`](https://github.com/edayot/SimpleDrawer/commit/780f919fb02b8d1decdd864d05f596ab682e8adb))
+
+* chore: update deps ([`e18f8d7`](https://github.com/edayot/SimpleDrawer/commit/e18f8d716212188b6de110ba01a20c2eb5ea7706))
+
+### Fix
+
+* fix: hopper upgrade don&#39;t work after block placement ([`571659d`](https://github.com/edayot/SimpleDrawer/commit/571659d36615df191211c1128f44b633764fd763))
+
+
 ## v2.1.0 (2024-07-13)
 
 ### Chore
