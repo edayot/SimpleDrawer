@@ -2,6 +2,15 @@
 
 
 
+## v2.1.2 (2024-10-26)
+
+### Fix
+
+* fix: compatible with 1.21.1 ([`f0a0c8c`](https://github.com/edayot/SimpleDrawer/commit/f0a0c8ca192ae45fc3c59bb9643cd8c0921cd55a))
+
+* fix: random fail in CI ([`516d130`](https://github.com/edayot/SimpleDrawer/commit/516d1301c7a1c3ab8c0557df6e6f5308c8bb2bf1))
+
+
 ## v2.1.1 (2024-07-24)
 
 ### Chore
