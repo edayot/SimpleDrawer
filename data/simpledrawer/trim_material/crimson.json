@@ -4,6 +4,6 @@
       "color": "#ffffff",
       "translate": "crimson"
     },
-    "ingredient": "minecraft:air",
+    "ingredient": "minecraft:command_block",
     "item_model_index": 0.143008
   }

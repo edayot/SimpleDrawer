@@ -22,7 +22,7 @@
 								  "pattern": "minecraft:sentry",
 								  "show_in_tooltip": false
 								},
-								"minecraft:lock": "simpledrawer{]55641156416514561564~}~&\"éé\"ofsqjdfnhjswfbhjfdbdfgvfsdghvfdgv§§§h",
+								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
 								"minecraft:container": [
 								  {
 									"slot": 0,
@@ -50,7 +50,7 @@
 										},
 										"minecraft:container": [],
 										"minecraft:custom_model_data": 1430000,
-										"minecraft:lock": "simpledrawer{]55641156416514561564~}~&\"éé\"ofsqjdfnhjswfbhjfdbdfgvfsdghvfdgv§§§h"
+										"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}}
 									  }
 									}
 								  }
