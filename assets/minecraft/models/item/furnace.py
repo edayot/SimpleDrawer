@@ -72,7 +72,7 @@ for i in range(1430000,1430006):
                 "custom_model_data":i,
                 "trim_type":j_
                 },
-            "model":"simpledrawer:block/new_drawer/"+material+"_full_drawers_"+drawer_type
+            "model":"simpledrawer:block/new_drawer/"+material+"_"+drawer_type
         }
         data["overrides"].append(default)
 
