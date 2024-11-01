@@ -22,6 +22,7 @@ There is also a crafting recipe for the guide :
 
 >[!Warning]
 >Only for versions before 2.2.0
+>
 >The datapack has to be loaded at the world start (or server start)! (If not, you will have unmatching textures)
 
 
