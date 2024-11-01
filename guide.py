@@ -446,7 +446,7 @@ def beet_default(ctx: Context):
         description=("simpledrawer.guide.heavy_workbench",{}),
     )
     new_drawer = Item(
-        model="simpledrawer:block/new_drawer/oak_full_drawers_1",
+        model="simpledrawer:item/new_drawer/oak_1",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
@@ -459,7 +459,7 @@ def beet_default(ctx: Context):
     PAGE_NUMBER += 1
     PAGE_NUMBER += 1
     double_new_drawer = Item(
-        model="simpledrawer:block/new_drawer/oak_full_drawers_2",
+        model="simpledrawer:item/new_drawer/oak_2",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
@@ -470,7 +470,7 @@ def beet_default(ctx: Context):
         description=("simpledrawer.guide.double_new_drawer",{}),
     )
     quadruple_new_drawer = Item(
-        model="simpledrawer:block/new_drawer/oak_full_drawers_4",
+        model="simpledrawer:item/new_drawer/oak_4",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
@@ -481,7 +481,7 @@ def beet_default(ctx: Context):
         description=("simpledrawer.guide.quadruple_new_drawer",{}),
     )
     compacting_drawer = Item(
-        model="simpledrawer:block/new_drawer/compdrawers_open1",
+        model="simpledrawer:item/new_drawer/comp_1",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {

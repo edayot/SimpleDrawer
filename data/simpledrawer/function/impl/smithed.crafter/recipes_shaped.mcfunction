@@ -13,9 +13,17 @@ execute
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer
 
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
-            command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
-            raw f"{command}"
-        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
+            execute 
+                if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
+                run function ~/modify_{material}:
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/{material}_1"
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:{material}"
+
+        execute 
+            if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} 
+            run function ~/modify_ice:
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/ice_1"
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:ice"
 
 
 execute 
@@ -30,9 +38,17 @@ execute
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/double_new_drawer
 
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
-            command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
-            raw f"{command}"
-        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
+            execute 
+                if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
+                run function ~/modify_{material}:
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/{material}_2"
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:{material}"
+
+        execute 
+            if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} 
+            run function ~/modify_ice:
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/ice_2"
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:ice"
 
 
 execute 
@@ -47,9 +63,17 @@ execute
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/quadruple_new_drawer
 
         for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
-            command = 'execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:'+material+'_planks"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/'+material
-            raw f"{command}"
-        execute if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} run item modify block ~ ~ ~ container.16 simpledrawer:impl/material/ice
+            execute 
+                if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
+                run function ~/modify_{material}:
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/{material}_4"
+                    data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:{material}"
+
+        execute 
+            if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:"minecraft:packed_ice"}]} 
+            run function ~/modify_ice:
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:item_model" set value f"simpledrawer:new_drawer/ice_4"
+                data modify block ~ ~ ~ Items[{Slot:16b}].components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.wood_type set value f"simpledrawer:ice"
 
 
 

@@ -16,13 +16,8 @@
 								  "{\"color\":\"dark_gray\",\"extra\":[\"/\",\"256\"],\"italic\":false,\"text\":\"0\"}",
 								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
 								],
-								"minecraft:custom_model_data": 1430000,
-								"minecraft:trim": {
-								  "material": "simpledrawer:oak",
-								  "pattern": "minecraft:sentry",
-								  "show_in_tooltip": false
-								},
 								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
+								"minecraft:item_model": "simpledrawer:new_drawer/oak_1",
 								"minecraft:container": [
 								  {
 									"slot": 0,
@@ -46,7 +41,6 @@
 										  }
 										},
 										"minecraft:container": [],
-										"minecraft:custom_model_data": 1430000,
 										"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}}
 									  }
 									}

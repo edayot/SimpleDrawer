@@ -9,7 +9,7 @@ scoreboard players operation @s simpledrawer.new_drawer.id = #global simpledrawe
 
 tp @s ~ ~ ~ ~ ~
 
-data modify entity @s item set value {id:"minecraft:furnace",count:1,components:{"minecraft:custom_model_data":1430000}}
+data modify entity @s item set value {id:"minecraft:furnace",count:1,components:{"minecraft:item_model":"simpledrawer:new_drawer/oak_1"}}
 
 data merge entity @s {transformation:{scale:[1.001f,1.001f,1.001f],translation:[0.0f,0.0f,-1.0f]}}
 

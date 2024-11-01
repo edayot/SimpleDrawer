@@ -7,12 +7,7 @@ execute
 
 
 
-
-execute store result score #model simpledrawer.math run data get entity @s Item.components."minecraft:custom_model_data"
-
-scoreboard players add #model simpledrawer.math 3
-
-execute store result entity @s Item.components."minecraft:custom_model_data" int 1 run scoreboard players get #model simpledrawer.math
+data modify entity @s Item.components."minecraft:item_model" set from storage simpledrawer:main temp.item_models.tapped
 
 item modify entity @s container.0 simpledrawer:impl/destroy/clear
 

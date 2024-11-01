@@ -3,18 +3,18 @@
     "overrides":[
 
 
-        {"predicate":{"custom_model_data":1430000,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_1"},
-        {"predicate":{"custom_model_data":1430001,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_2"},
-        {"predicate":{"custom_model_data":1430002,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_3"},
-        {"predicate":{"custom_model_data":1430003,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_1_tapped"},
-        {"predicate":{"custom_model_data":1430004,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_2_tapped"},
-        {"predicate":{"custom_model_data":1430005,"trim_type": 0.143011},"model":"simpledrawer:block/new_drawer/comp_3_tapped"},
+        {"predicate":{"custom_model_data":1430000,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_1"},
+        {"predicate":{"custom_model_data":1430001,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_2"},
+        {"predicate":{"custom_model_data":1430002,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_3"},
+        {"predicate":{"custom_model_data":1430003,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_1_tapped"},
+        {"predicate":{"custom_model_data":1430004,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_2_tapped"},
+        {"predicate":{"custom_model_data":1430005,"trim_type": 0.143011},"model":"simpledrawer:item/new_drawer/comp_3_tapped"},
 
 
 
 
 
-        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:block/new_drawer/oak_1"}
+        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:item/new_drawer/oak_1"}
 
 
     ]
