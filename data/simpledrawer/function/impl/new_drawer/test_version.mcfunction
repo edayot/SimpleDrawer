@@ -36,6 +36,16 @@ execute
     run return fail
 
 
+eexecute
+    if score @s simpledrawer.block.major matches 2
+    if score @s simpledrawer.block.minor matches ..1
+    run function ./2.0_2.1_to_2.2:
+        scoreboard players set @s simpledrawer.block.major 2
+        scoreboard players set @s simpledrawer.block.minor 2
+        scoreboard players set @s simpledrawer.block.patch 0
+        function simpledrawer:impl/new_drawer/base_display
+
+
 #copy the new version
 scoreboard players operation @s simpledrawer.block.major = #simpledrawer.major load.status
 scoreboard players operation @s simpledrawer.block.minor = #simpledrawer.minor load.status
