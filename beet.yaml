@@ -32,27 +32,27 @@ meta:
     load_vanilla: true
     save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"
-  mc_supports: ["1.21", "1.21.1"]
-  mc_supports_dataversion: [3953, 3955]
+  mc_supports: ["1.21.2", "1.21.3"]
+  mc_supports_dataversion: [4080, 4082]
   weld_deps:
     enable_weld_merging: True
     clean_load_tag: True
     include_prerelease: False
     deps:
       - id: "itemio"
-        version: "1.2.6"
+        version: "1.3.1"
         source: "smithed"
         versioning: 
           type: "normal"
           prefix: "#itemio"
       - id: "smithed.crafter.dev"
-        version: "0.4.1"
+        version: "0.5.0"
         source: "smithed"
         versioning: 
           type: "normal"
           prefix: "#smithed.crafter"
       - id: "smithed.custom_block.dev"
-        version: "0.4.1"
+        version: "0.5.0"
         source: "smithed"
         versioning: 
           type: "normal"

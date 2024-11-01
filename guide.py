@@ -435,7 +435,7 @@ def beet_default(ctx: Context):
     )
 
     heavy_workbench = Item(
-        model="smithed.crafter:block/table",
+        model="smithed.crafter:item/table",
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
