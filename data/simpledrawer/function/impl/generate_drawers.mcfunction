@@ -1,5 +1,5 @@
 
-
+from simpledrawer import DRAWER_TYPES
 
 
 
@@ -35,20 +35,7 @@ def place_drawer(wood_type, variant, drawer_type, upgrade, hopper):
 
 
 
-wood_types = [
-    "acacia",
-    "bamboo",
-    "birch",
-    "cherry",
-    "crimson",
-    "dark_oak",
-    "jungle",
-    "mangrove",
-    "spruce",
-    "warped",
-    "oak",
-    "ice"
-]
+wood_types = list(DRAWER_TYPES)
 wood_types.sort()
 
 drawer_variants = [

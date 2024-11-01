@@ -1,4 +1,6 @@
 # @public
+from simpledrawer import WOOD_TYPES
+
 execute unless score simpledrawer load.status matches 1 run return fail
 
 execute 
@@ -12,7 +14,7 @@ execute
         scoreboard players set @s smithed.data 1
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/new_drawer
 
-        for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
+        for material in WOOD_TYPES:
             execute 
                 if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
                 run function ~/modify_{material}:
@@ -37,7 +39,7 @@ execute
         scoreboard players set @s smithed.data 1
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/double_new_drawer
 
-        for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
+        for material in WOOD_TYPES:
             execute 
                 if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
                 run function ~/modify_{material}:
@@ -62,7 +64,7 @@ execute
         scoreboard players set @s smithed.data 1
         loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/quadruple_new_drawer
 
-        for material in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak"]:
+        for material in WOOD_TYPES:
             execute 
                 if data storage smithed.crafter:input recipe{0:[{Slot:0b,id:f"minecraft:{material}_planks"}]} 
                 run function ~/modify_{material}:

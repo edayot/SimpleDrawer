@@ -4,6 +4,23 @@ import nbtlib
 import json
 
 
+WOOD_TYPES = {
+    "acacia",
+    "bamboo",
+    "birch",
+    "cherry",
+    "crimson",
+    "dark_oak",
+    "jungle",
+    "mangrove",
+    "spruce",
+    "warped",
+    "oak",
+    "pale_oak",
+}
+DRAWER_TYPES = WOOD_TYPES.copy() | {"ice"}
+
+
 def generate_version_string(versions):
     if not versions:
         return "No versions specified"

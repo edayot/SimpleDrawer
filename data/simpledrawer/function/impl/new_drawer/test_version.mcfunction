@@ -36,7 +36,7 @@ execute
     run return fail
 
 
-eexecute
+execute
     if score @s simpledrawer.block.major matches 2
     if score @s simpledrawer.block.minor matches ..1
     run function ./2.0_2.1_to_2.2:

@@ -1,3 +1,5 @@
+from simpledrawer import DRAWER_TYPES
+
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.wood_base] 
@@ -26,7 +28,7 @@ data modify storage simpledrawer:main temp.item_models set value {normal:"simple
 execute 
     if data storage simpledrawer:main temp.simpledrawer{type:"normal",variant:"single"}
     run function ~/get_model/single:
-        for wood_type in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak", "ice"]:
+        for wood_type in DRAWER_TYPES:
             execute 
                 if data storage simpledrawer:main temp.simpledrawer{wood_type:f"simpledrawer:{wood_type}"} 
                 run data modify storage simpledrawer:main temp.item_models set value {
@@ -37,7 +39,7 @@ execute
 execute
     if data storage simpledrawer:main temp.simpledrawer{type:"normal",variant:"double"}
     run function ~/get_model/double:
-        for wood_type in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak", "ice"]:
+        for wood_type in DRAWER_TYPES:
             execute 
                 if data storage simpledrawer:main temp.simpledrawer{wood_type:f"simpledrawer:{wood_type}"} 
                 run data modify storage simpledrawer:main temp.item_models set value {
@@ -48,7 +50,7 @@ execute
 execute
     if data storage simpledrawer:main temp.simpledrawer{type:"normal",variant:"quadruple"}
     run function ~/get_model/quadruple:
-        for wood_type in ["acacia","bamboo","birch","cherry","crimson","dark_oak","jungle","mangrove","spruce","warped","oak", "ice"]:
+        for wood_type in DRAWER_TYPES:
             execute 
                 if data storage simpledrawer:main temp.simpledrawer{wood_type:f"simpledrawer:{wood_type}"} 
                 run data modify storage simpledrawer:main temp.item_models set value {
