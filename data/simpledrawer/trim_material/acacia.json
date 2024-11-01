@@ -1,9 +1,0 @@
-{
-    "asset_name": "acacia",
-    "description": {
-      "color": "#ffffff",
-      "translate": "acacia"
-    },
-    "ingredient": "minecraft:command_block",
-    "item_model_index": 0.143004
-  }
