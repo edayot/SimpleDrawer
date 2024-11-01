@@ -19,7 +19,7 @@
         "icon": {
             "id": "minecraft:furnace",
             "components": {
-				"minecraft:custom_model_data": 1430000
+				"minecraft:item_model": "simpledrawer:new_drawer/oak_1"
 			}
         },
         "frame": "challenge",

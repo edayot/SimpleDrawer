@@ -14,7 +14,7 @@
         "icon": {
             "id": "minecraft:jigsaw",
             "components": {
-				"minecraft:custom_model_data": 1430001
+				"minecraft:item_model": "simpledrawer:iron_upgrade"
 			}
         },
         "frame": "task",

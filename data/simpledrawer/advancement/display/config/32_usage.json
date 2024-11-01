@@ -9,7 +9,7 @@
         "icon": {
             "id": "minecraft:jigsaw",
             "components": {
-                "minecraft:custom_model_data": 1430007
+                "minecraft:item_model": "simpledrawer:downgrade_wrench"
               }
         },
         "frame": "task",

@@ -9,7 +9,7 @@
         "icon": {
             "id": "minecraft:written_book",
             "components": {
-                "minecraft:custom_model_data": 1430000
+                "minecraft:item_model": "simpledrawer:guide"
               }
         },
         "frame": "task",

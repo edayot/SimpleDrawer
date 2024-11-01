@@ -199,7 +199,7 @@ def create_loot_table(ctx: Context, pages: list[str]):
                     "pages": pages,
                     "resolved": True
                 },
-                "minecraft:custom_model_data": 1430000,
+                "minecraft:item_model": "simpledrawer:guide",
                 "minecraft:custom_data": {
                     "ctc": {
                         "id": "guide",

@@ -14,7 +14,7 @@
         "icon": {
             "id": "minecraft:jigsaw",
             "components": {
-				"minecraft:custom_model_data": 1430004
+				"minecraft:item_model": "simpledrawer:star_upgrade"
 			}
         },
         "frame": "challenge",

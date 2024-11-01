@@ -15,7 +15,7 @@
 								"minecraft:lore": [
 								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
 								],
-								"minecraft:custom_model_data": 1430004,
+								"minecraft:item_model": "simpledrawer:star_upgrade",
 								"minecraft:custom_data": {
 								  "ctc": {
 									"id": "star_upgrade",
