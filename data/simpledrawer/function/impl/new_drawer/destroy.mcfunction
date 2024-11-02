@@ -59,7 +59,7 @@ execute
                 }
 
 execute 
-    if data storage simpledrawer:main temp.simpledrawerXX{type:"compacting",variant:"normal"}
+    if data storage simpledrawer:main temp.simpledrawer{type:"compacting",variant:"normal"}
     run function ~/get_model/compacting:
         execute
             if score @s simpledrawer.new_drawer.slot_count matches 1
