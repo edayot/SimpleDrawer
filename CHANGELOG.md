@@ -2,6 +2,13 @@
 
 
 
+## v2.2.1 (2024-11-02)
+
+### Fix
+
+* fix: good pack version ([`ae2a0ae`](https://github.com/edayot/SimpleDrawer/commit/ae2a0aeec10a0a2495e6dc39c631f31ce9cfa47a))
+
+
 ## v2.2.0 (2024-11-02)
 
 ### Chore
