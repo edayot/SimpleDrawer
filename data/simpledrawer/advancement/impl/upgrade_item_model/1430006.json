@@ -1,0 +1,26 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "minecraft:custom_model_data": 1430006
+                        },
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "ctc":{
+                                    "from": "airdox_:simpledrawer"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "simpledrawer:impl/calls/random_things/upgrade_item_model"
+    }
+}

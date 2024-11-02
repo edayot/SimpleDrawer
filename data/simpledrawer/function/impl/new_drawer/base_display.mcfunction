@@ -3,6 +3,7 @@ data modify storage simpledrawer:main temp.simpledrawerXX set from entity @s ite
 data modify storage simpledrawer:main temp.simpledrawer_containerXX set from entity @s item.components."minecraft:container"
 
 
+data modify entity @s item.components."minecraft:item_model" set value "simpledrawer:vide"
 
 
 execute if data storage simpledrawer:main temp.simpledrawerXX{type:"normal"} run function simpledrawer:impl/new_drawer/normal/base_display
