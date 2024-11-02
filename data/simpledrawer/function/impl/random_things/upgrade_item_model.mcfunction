@@ -1,7 +1,6 @@
 # @public
 
 
-say aaaa
 advancement revoke @s only simpledrawer:impl/upgrade_item_model/1430000
 advancement revoke @s only simpledrawer:impl/upgrade_item_model/1430001
 advancement revoke @s only simpledrawer:impl/upgrade_item_model/1430002
@@ -60,7 +59,8 @@ execute
             $item modify entity @s container.$(slot) { \
                 "function": "minecraft:set_components", \
                 "components": { \
-                    "minecraft:item_model": "$(model)" \
+                    "minecraft:item_model": "$(model)", \
+                    "!minecraft:custom_model_data": {} \
                 } \
             }
         
