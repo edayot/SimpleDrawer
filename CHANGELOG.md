@@ -2,6 +2,49 @@
 
 
 
+## v2.2.0 (2024-11-02)
+
+### Chore
+
+* chore: update deps + fix guide ([`59926cf`](https://github.com/edayot/SimpleDrawer/commit/59926cf206722bec8eb849cfb6057d2055f2888a))
+
+### Documentation
+
+* docs: update readme ([`5d622fe`](https://github.com/edayot/SimpleDrawer/commit/5d622fe8938d5690e66f9f7f696866a427e91a93))
+
+### Feature
+
+* feat: Adding pale oak drawer type ([`23eefbb`](https://github.com/edayot/SimpleDrawer/commit/23eefbb5b3c3aef7969392ff083b22155d8b42c6))
+
+* feat: from custom_model_data to item_model for drawers ([`ef78d5d`](https://github.com/edayot/SimpleDrawer/commit/ef78d5d7b91a3e4b0bbaa65a49633d75dfa5e329))
+
+* feat: simpler model name ([`42663a6`](https://github.com/edayot/SimpleDrawer/commit/42663a64100d8589a97a15e1ba2faf74da906048))
+
+### Fix
+
+* fix: good upgrade strategie ([`10a3538`](https://github.com/edayot/SimpleDrawer/commit/10a3538bdd85da31778ef3a85c3d11cb0b245186))
+
+* fix: wrong name ([`50b7025`](https://github.com/edayot/SimpleDrawer/commit/50b7025c07f801d92273c46e1c2b60551102a73e))
+
+* fix: placed drawer are converted ([`7c3a1e7`](https://github.com/edayot/SimpleDrawer/commit/7c3a1e7aeca9f530d38cc33df1a2b0f486a1be7e))
+
+* fix: ensure minimum backward compatibility ([`e219e5a`](https://github.com/edayot/SimpleDrawer/commit/e219e5ad7ff249e6b2ff12f8885bef198b3be4c1))
+
+* fix: delete useless things ([`8a71f23`](https://github.com/edayot/SimpleDrawer/commit/8a71f23680b758a83ec03cb850a450762de17750))
+
+* fix: update to new 1.21.3 format ([`d356d3f`](https://github.com/edayot/SimpleDrawer/commit/d356d3f2f9e49b6d2f6a065058282a84218fa1b9))
+
+### Unknown
+
+* delete custom_model_data ([`a077c24`](https://github.com/edayot/SimpleDrawer/commit/a077c24e66010a7f24b628c81720f914df442c3e))
+
+* ff ([`2edfe1b`](https://github.com/edayot/SimpleDrawer/commit/2edfe1b7f4a18e03b267eeecb94046b0c9fdbf30))
+
+* Update README.md ([`270b234`](https://github.com/edayot/SimpleDrawer/commit/270b234c8b93bd3316cd1b633ea8707ad29e8a24))
+
+* and for others items ([`92b6959`](https://github.com/edayot/SimpleDrawer/commit/92b6959b02c9bd2b7addcd57f45f65b89992838b))
+
+
 ## v2.1.2 (2024-10-26)
 
 ### Fix
