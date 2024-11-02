@@ -9,8 +9,10 @@ overrides:
   - meta.smithed.versioning.scheduled_paths: [impl/tick,impl/5tick,impl/20tick,impl/mc_version_check,impl/timestamp]
 
 data_pack:
+  pack_format: 57
   load: [.]
 resource_pack:
+  pack_format: 42
   load: [.]
 
 require:
