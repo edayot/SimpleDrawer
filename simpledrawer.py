@@ -62,7 +62,7 @@ def add_versioning_to_items(ctx: Context):
 
 
 
-def get_translation(key, id):
+def get_translation(item_name, id):
     id = get_real_id(id)
     return {
         "function": "minecraft:set_lore",
@@ -71,11 +71,7 @@ def get_translation(key, id):
             {
                 "translate": "container.shulkerBox.itemCount",
                 "with": [
-                    {
-                        "translate": key,
-                        "color": "white",
-                        "italic": False
-                    },
+                    item_name,
                     {
                         "score": {
                             "name": "#count_destroy",
@@ -104,17 +100,6 @@ def get_translation(key, id):
     }
 
 
-
-def get_translate_from_id(id, lang):
-    #Get translate from id
-    translate=get_real_id(id)
-    translate=translate.replace(":",".")
-    if "block."+translate in lang:
-        return "block."+translate
-    elif "item."+translate in lang:
-        return "item."+translate
-    else:
-        return None
     
 def get_real_id(id):
     return f"minecraft:{id}" if ":" not in id else id
@@ -125,26 +110,21 @@ def generate_translation(ctx: Context):
     mc_version = ctx.meta.get("mc_supports", ["1.20.6"])
     mc_version = mc_version[0]
 
-    lang = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-assets/assets/minecraft/lang/en_us.json"
-    items = f"https://raw.githubusercontent.com/misode/mcmeta/{mc_version}-registries/item/data.json"
-
-    lang = ctx.cache["simpledrawer"].download(lang)
-    items = ctx.cache["simpledrawer"].download(items)
-
-    lang = json.loads(open(lang).read())
-    items = json.loads(open(items).read())
-
-    L = []
-
-    for id in items:
-        translate = get_translate_from_id(id, lang)
-        if translate:
-            modifier = get_translation(translate, id)
-        else:
-            modifier = get_translation(id, id)
-        L.append(modifier)
     
-    impl = f"v{ctx.project_version}"
-    path = "simpledrawer:impl/destroy/translate".replace("impl/", impl + "/")
-    ctx.data.item_modifiers[path] = ItemModifier(L)
+    item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
+    with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
+        item_components = json.load(f)
+
+
+    item_modifier = []
+
+    for id, components in item_components.items():
+        item_name = json.loads(components["minecraft:item_name"])
+        item_name["color"] = "white"
+        item_name["italic"] = False
+        item_modifier.append(get_translation(item_name, get_real_id(id)))
+    
+    impl = f"v{ctx.project_version}/"
+    path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
+    ctx.data.item_modifiers[path] = ItemModifier(item_modifier)
         
