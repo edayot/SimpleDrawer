@@ -48,6 +48,9 @@ scoreboard players set #1000000000 simpledrawer.math 1000000000
 
 
 execute unless score #private.configured simpledrawer.math matches 1 run function simpledrawer:impl/config/load_default
+execute 
+    unless data storage simpledrawer:main config.resummon_range 
+    run data modify storage simpledrawer:main config.resummon_range set value 16
 
 
 advancement revoke @a only simpledrawer:impl/interact
