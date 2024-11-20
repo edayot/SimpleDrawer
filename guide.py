@@ -40,6 +40,7 @@ class Item:
     minimal_representation: dict
     page_name : Optional[TranslatedString] = None
     description: Optional[TranslatedString] = None
+    description_with: Optional[list] = None
     page_index: int = field(default_factory=page_number)
     add_space_to_page_name: bool = False
     char_index: int = field(default_factory=char_index_number)
@@ -134,11 +135,14 @@ def add_page(ctx: Context, craft: list[list[Item]], result: Item, count: int):
             page.append("\n")
     if result.description is not None:
         page.append("\n")
-        page.append({
+        text = {
             "translate": result.description[0],
             "color":"black",
-            "italic":False
-        })
+            "italic":False,
+        }
+        if result.description_with:
+            text["with"] = result.description_with
+        page.append(text)
     return json.dumps(page)
 
 
@@ -197,7 +201,7 @@ def create_loot_table(ctx: Context, pages: list[str]):
                     "title": "Guide",
                     "author": "AirDox_",
                     "pages": pages,
-                    "resolved": True
+                    "resolved": False
                 },
                 "minecraft:item_model": "simpledrawer:guide",
                 "minecraft:custom_data": {
@@ -512,7 +516,11 @@ def beet_default(ctx: Context):
             }
         },
         page_name=("simpledrawer.iron_upgrade",{}),
-        description=("simpledrawer.guide.iron_upgrade",{}),
+        description=("simpledrawer.guide.capacity_template",{}),
+        description_with=[{
+			"nbt": "drawer_type.iron.maxCount",
+			"storage": "simpledrawer:main"
+		}],
     )
     gold_upgrade = Item(
         model="simpledrawer:item/gold_upgrade",
@@ -523,7 +531,11 @@ def beet_default(ctx: Context):
             }
         },
         page_name=("simpledrawer.gold_upgrade",{}),
-        description=("simpledrawer.guide.gold_upgrade",{}),
+        description=("simpledrawer.guide.capacity_template",{}),
+        description_with=[{
+            "nbt": "drawer_type.gold.maxCount",
+            "storage": "simpledrawer:main"
+        }],
     )
     diamond_upgrade = Item(
         model="simpledrawer:item/diamond_upgrade",
@@ -534,7 +546,11 @@ def beet_default(ctx: Context):
             }
         },
         page_name=("simpledrawer.diamond_upgrade",{}),
-        description=("simpledrawer.guide.diamond_upgrade",{}),
+        description=("simpledrawer.guide.capacity_template",{}),
+        description_with=[{
+            "nbt": "drawer_type.diamond.maxCount",
+            "storage": "simpledrawer:main"
+        }],
     )
     star_upgrade = Item(
         model="simpledrawer:item/star_upgrade",
@@ -545,7 +561,11 @@ def beet_default(ctx: Context):
             }
         },
         page_name=("simpledrawer.star_upgrade",{}),
-        description=("simpledrawer.guide.star_upgrade",{}),
+        description=("simpledrawer.guide.capacity_template",{}),
+        description_with=[{
+            "nbt": "drawer_type.star.maxCount",
+            "storage": "simpledrawer:main"
+        }],
     )
     netherite_upgrade = Item(
         model="simpledrawer:item/netherite_upgrade",
@@ -556,7 +576,11 @@ def beet_default(ctx: Context):
             }
         },
         page_name=("simpledrawer.netherite_upgrade",{}),
-        description=("simpledrawer.guide.netherite_upgrade",{}),
+        description=("simpledrawer.guide.capacity_template",{}),
+        description_with=[{
+            "nbt": "drawer_type.netherite.maxCount",
+            "storage": "simpledrawer:main"
+        }],
     )
     downgrade_wrench = Item(
         model="simpledrawer:item/downgrade_wrench",
