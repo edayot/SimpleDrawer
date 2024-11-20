@@ -6,7 +6,7 @@ data modify storage simpledrawer:main drawer_type set value {
     star:{maxCount:1048576},
     netherite:{maxCount:1073741824}
 }
-data modify storage simpledrawer:main config.resummon_range set value 16
+data modify storage simpledrawer:main config.resummon_range set value "16"
 
 
 scoreboard players set #config.max_resummon simpledrawer.math 4

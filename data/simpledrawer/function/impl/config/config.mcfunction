@@ -71,7 +71,7 @@ def config_scoreboard(
         )
         execute 
             if score f"{scoreboard}" simpledrawer.math matches f"{value}" 
-            run function f"simpledrawer:config/print/{scoreboard_trimmed}/{value}":
+            run function f"simpledrawer:impl/config/print/{scoreboard_trimmed}/{value}":
                 tellraw @s text
                 scoreboard players set #temp.success simpledrawer.math 1
     text = get_text(
@@ -80,7 +80,7 @@ def config_scoreboard(
         values=values, 
         default_value=default_value, 
         current_value="",
-        command=f"/function simpledrawer:config/set_scoreboard/{scoreboard}",
+        command=f"/function simpledrawer:impl/config/set_scoreboard/{scoreboard}",
     )
     execute
         unless score #temp.success simpledrawer.math matches 1
@@ -115,7 +115,7 @@ def config_storage(
         start = storage.removesuffix("."+last)
         execute 
             if data storage simpledrawer:main f"{start}{{{last}:\"{value}\"}}" 
-            run function f"simpledrawer:config/print/{storage}/{value}":
+            run function f"simpledrawer:impl/config/print/{storage}/{value}":
                 tellraw @s text
                 scoreboard players set #temp.success simpledrawer.math 1
     text = get_text(
@@ -124,7 +124,7 @@ def config_storage(
         values=values, 
         default_value=default_value, 
         current_value="",
-        command=f"/function simpledrawer:config/set_storage/{storage}",
+        command=f"/function simpledrawer:impl/config/set_storage/{storage}",
     )
     execute
         unless score #temp.success simpledrawer.math matches 1
