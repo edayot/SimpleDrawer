@@ -1,4 +1,5 @@
 # @public
+from copy import deepcopy
 
 
 
@@ -94,41 +95,103 @@ def config_storage(
     storage: str, 
     values: list[str], 
     default_value: str,
+    allow_custom: bool = False,
     ): 
-    scoreboard players set #temp.success simpledrawer.math 0
-    for value in values:
-        func_name = f"simpledrawer:impl/config/set_storage/{storage}"
-        function f"{func_name}/{value}":
-            data modify storage simpledrawer:main f"{storage}" set value f"{value}"
-            function simpledrawer:config
-        
-        command = f"/function {func_name}"
+    if not allow_custom:    
+        scoreboard players set #temp.success simpledrawer.math 0
+        for value in values:
+            func_name = f"simpledrawer:impl/config/set_storage/{storage}"
+            function f"{func_name}/{value}":
+                data modify storage simpledrawer:main f"{storage}" set value f"{value}"
+                function simpledrawer:config
+            
+            command = f"/function {func_name}"
+            text = get_text(
+                name=name, 
+                description=description, 
+                values=values, 
+                default_value=default_value, 
+                current_value=value,
+                command=command,
+            )
+            last = storage.split(".")[-1]
+            start = storage.removesuffix("."+last)
+            execute 
+                if data storage simpledrawer:main f"{start}{{{last}:\"{value}\"}}" 
+                run function f"simpledrawer:impl/config/print/{storage}/{value}":
+                    tellraw @s text
+                    scoreboard players set #temp.success simpledrawer.math 1
         text = get_text(
             name=name, 
             description=description, 
             values=values, 
             default_value=default_value, 
-            current_value=value,
-            command=command,
+            current_value="",
+            command=f"/function simpledrawer:impl/config/set_storage/{storage}",
         )
+        execute
+            unless score #temp.success simpledrawer.math matches 1
+            run tellraw @s text
+    else:
+        func_name = f"simpledrawer:impl/config/set_storage/{storage.lower()}/reset"
+        function func_name:
+            data modify storage simpledrawer:main storage set value default_value
+            function simpledrawer:config
+        text_custom = ["",]
+        text_default = ["",]
+        x = {
+            "text": f"{name} : ",
+            "color": "green",
+            "hoverEvent": {
+                "action": "show_text",
+                "contents": description
+            }
+        }
+        text_custom.append(x)
+        text_default.append(x)
+        default = {
+            "text": f" {default_value} ",
+            "bold": True,
+            "hoverEvent": {
+                "action": "show_text",
+                "contents": f"Click to reset \"{name}\" to {default_value}"
+            },
+            "clickEvent": {
+                "action": "run_command",
+                "value": f"/function {func_name}"
+            }
+        }
+        text_custom.append(deepcopy(default))
+        default["underlined"] = True
+        text_default.append(deepcopy(default))
+        custom = {
+            "text": " Custom ",
+            "bold": False,
+            "hoverEvent": {
+                "action": "show_text",
+                "contents": f"Click to set a custom value for \"{name}\""
+            },
+            "clickEvent": {
+                "action": "suggest_command",
+                "value": f"/data modify storage simpledrawer:main {storage} set value {default_value}"
+            },
+        }
+        text_default.append(deepcopy(custom))
+        custom["underlined"] = True
+        text_custom.append(deepcopy(custom))
         last = storage.split(".")[-1]
         start = storage.removesuffix("."+last)
-        execute 
-            if data storage simpledrawer:main f"{start}{{{last}:\"{value}\"}}" 
-            run function f"simpledrawer:impl/config/print/{storage}/{value}":
-                tellraw @s text
-                scoreboard players set #temp.success simpledrawer.math 1
-    text = get_text(
-        name=name, 
-        description=description, 
-        values=values, 
-        default_value=default_value, 
-        current_value="",
-        command=f"/function simpledrawer:impl/config/set_storage/{storage}",
-    )
-    execute
-        unless score #temp.success simpledrawer.math matches 1
-        run tellraw @s text
+        if isinstance(default_value, str):
+            if_data = f"{start}{{{last}:\"{default_value}\"}}"
+        else:
+            if_data = f"{start}{{{last}:{default_value}}}"
+        execute
+            if data storage simpledrawer:main f"{if_data}"
+            run tellraw @s text_default
+        execute
+            unless data storage simpledrawer:main f"{if_data}"
+            run tellraw @s text_custom
+
     
 
 
@@ -172,6 +235,56 @@ config_scoreboard(
     ["0", "1"],
     "0"
 )
+config_storage(
+    "Drawer Capacity",
+    "The maximum number of items that can be stored in a normal drawer",
+    "drawer_type.wood.maxCount", 
+    [],
+    256,
+    True,
+)
+config_storage(
+    "Iron Upgrade Capacity",
+    "The maximum number of items that can be stored in a drawer with an iron upgrade",
+    "drawer_type.iron.maxCount", 
+    [],
+    2048,
+    True,
+)
+config_storage(
+    "Gold Upgrade Capacity",
+    "The maximum number of items that can be stored in a drawer with a gold upgrade",
+    "drawer_type.gold.maxCount", 
+    [],
+    8192,
+    True,
+)
+config_storage(
+    "Diamond Upgrade Capacity",
+    "The maximum number of items that can be stored in a drawer with a diamond upgrade",
+    "drawer_type.diamond.maxCount", 
+    [],
+    65536,
+    True,
+)
+config_storage(
+    "Star Upgrade Capacity",
+    "The maximum number of items that can be stored in a drawer with a star upgrade",
+    "drawer_type.star.maxCount", 
+    [],
+    1048576,
+    True,
+)
+config_storage(
+    "Netherite Upgrade Capacity",
+    "The maximum number of items that can be stored in a drawer with a netherite upgrade",
+    "drawer_type.netherite.maxCount", 
+    [],
+    1073741824,
+    True,
+)
+
+
 
 
 
