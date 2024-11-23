@@ -31,10 +31,13 @@ def get_text(
         current_text = ""
         if is_current:
             current_text = " (current)"
+        color = "white"
+        if is_current:
+            color = "red"
         text.append({
             "text": f" {value} ",
+            "color": color,
             "bold": is_default,
-            "underlined": is_current,
             "hoverEvent": {
                 "action": "show_text",
                 "contents": f"Click to set \"{name}\" to {value}{default_text}{current_text}"
@@ -140,7 +143,7 @@ def config_storage(
         text_custom = ["",]
         text_default = ["",]
         x = {
-            "text": f"{name} : ",
+            "text": f"{name}: ",
             "color": "green",
             "hoverEvent": {
                 "action": "show_text",
@@ -162,7 +165,7 @@ def config_storage(
             }
         }
         text_custom.append(deepcopy(default))
-        default["underlined"] = True
+        default["color"] = "red"
         text_default.append(deepcopy(default))
         custom = {
             "text": " Custom ",
@@ -177,7 +180,7 @@ def config_storage(
             },
         }
         text_default.append(deepcopy(custom))
-        custom["underlined"] = True
+        custom["color"] = "red"
         text_custom.append(deepcopy(custom))
         last = storage.split(".")[-1]
         start = storage.removesuffix("."+last)
@@ -205,7 +208,7 @@ tellraw @s [
 ]
 tellraw @s [
     "",
-    {"text":"LOD : \n","color":"green"}, 
+    {"text":"LOD: \n","color":"green"}, 
     {"text":"Drawer that are far away reduce their number of entities, to increase performance", "color":"gray"}
 ]
 config_scoreboard(
@@ -222,10 +225,10 @@ config_storage(
     ["4", "8", "12", "16", "32", "64", "128", "256"],
     "16"
 ) 
-tellraw @s "\n"
+tellraw @s ""
 tellraw @s [
     "",
-    {"text":"Gameplay : \n","color":"green"}, 
+    {"text":"Gameplay: \n","color":"green"}, 
     {"text":"Options about player using a drawer", "color":"gray"},
 ]
 config_scoreboard(
