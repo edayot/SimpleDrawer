@@ -86,7 +86,7 @@ print(json.dumps({"pack_version": pack_version}["pack_version"], indent=4))
 
 
 # print response
-print("RESPONSE:")
+print(f"RESPONSE: {response.status_code}")
 print(response.text)
 
 
