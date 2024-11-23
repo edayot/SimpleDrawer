@@ -30,6 +30,12 @@ There is also a crafting recipe for the guide :
 
 This command will give you all items available in the datapack : `/function simpledrawer:give`
 
+# Configure the datapack :
+
+You can configure the datapack in-game using the configuration menu : `/function simpledrawer:config`
+
+It's a clickable chat menu, you can change LOD, enable/disable alternative compacting recipes, configure capacity upgrades.
+
 
 # Developers :
 See the [documentation](https://edayot.github.io/SimpleDrawer/) for adding your own material or disabling items.
