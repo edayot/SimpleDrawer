@@ -2,6 +2,33 @@
 
 
 
+## v2.3.0 (2024-11-23)
+
+### Chore
+
+* chore: add status code to release script ([`725b631`](https://github.com/edayot/SimpleDrawer/commit/725b6310383f96215cf247c0fded5f4f7536b1f6))
+
+### Documentation
+
+* docs: update readme.md ([`abfa2cd`](https://github.com/edayot/SimpleDrawer/commit/abfa2cdc024764a476ef6878d80d8de905d4b2de))
+
+### Feature
+
+* feat: custom value for drawer capacity ([`9b36dc5`](https://github.com/edayot/SimpleDrawer/commit/9b36dc53627449f2383c34068965d1de009f9f1c))
+
+* feat: count from storage for upgrades in guide ([`86a25fa`](https://github.com/edayot/SimpleDrawer/commit/86a25fa823f79e82eff924f7e91765a62e3b89d3))
+
+* feat: new configuration menu ([`2b5898b`](https://github.com/edayot/SimpleDrawer/commit/2b5898b784319d1098e6dec87f168509a0b39630))
+
+* feat: update the script that get the name in function of the id ([`fedff5d`](https://github.com/edayot/SimpleDrawer/commit/fedff5dbfe3844754f2582f3a0baf911dabd0ee6))
+
+### Fix
+
+* fix: change to color in config menu ([`4a2f50b`](https://github.com/edayot/SimpleDrawer/commit/4a2f50b5c88215badd35dbe16615c73a6238e61b))
+
+* fix: default config value ([`09b1341`](https://github.com/edayot/SimpleDrawer/commit/09b1341f2767f1136d265403879d0446b1325363))
+
+
 ## v2.2.1 (2024-11-02)
 
 ### Fix
