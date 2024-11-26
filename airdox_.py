@@ -117,6 +117,12 @@ class PackTest(Function):
 
     scope: ClassVar[NamespaceFileScope] = {0:("tests",),45:("test",)}
 
+class ItemModelNamespace(JsonFile):
+    """Class representing a model."""
+
+    scope: ClassVar[NamespaceFileScope] = ("items",)
+    extension: ClassVar[str] = ".json"
+
 @dataclass
 class PackTestManager:
     """Service for managing json messages."""
@@ -125,6 +131,7 @@ class PackTestManager:
 
     def __post_init__(self):
         self.ctx.data.extend_namespace.append(PackTest)
+        self.ctx.data.extend_namespace.append(ItemModelNamespace)
     
 
 

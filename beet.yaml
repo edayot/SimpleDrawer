@@ -10,9 +10,11 @@ overrides:
 
 data_pack:
   pack_format: 57
+  supported_formats: [57, 61]
   load: [.]
 resource_pack:
   pack_format: 42
+  supported_formats: [42, 46]
   load: [.]
 
 require:
@@ -34,8 +36,8 @@ meta:
     load_vanilla: true
     save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"
-  mc_supports: ["1.21.2", "1.21.3"]
-  mc_supports_dataversion: [4080, 4082]
+  mc_supports: ["1.21.2", "1.21.3", "1.21.4-pre3"]
+  mc_supports_dataversion: [4080, 4082, 4183]
   weld_deps:
     enable_weld_merging: True
     clean_load_tag: True
