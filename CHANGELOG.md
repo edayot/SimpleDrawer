@@ -2,6 +2,21 @@
 
 
 
+## v2.4.0 (2024-12-08)
+
+### Chore
+
+* chore: updating deps ([`4a0535d`](https://github.com/edayot/SimpleDrawer/commit/4a0535d4b7a1b5b9b76c7a9f481be1df31224e3f))
+
+### Feature
+
+* feat: update to 1.21.4 ([`ab9d132`](https://github.com/edayot/SimpleDrawer/commit/ab9d132cb7e4a7a49c498518bd4501ef4a24360a))
+
+### Unknown
+
+* Update README.md ([`7fa0030`](https://github.com/edayot/SimpleDrawer/commit/7fa0030abba091e07882c592e4e2a90b0a7ebce3))
+
+
 ## v2.3.0 (2024-11-23)
 
 ### Chore
