@@ -348,12 +348,12 @@ def beet_default(ctx: Context):
         page_index=-1
     )
     barrel = Item(
-        model="minecraft:item/barrel",
+        model="minecraft:block/barrel",
         minimal_representation={"id":"minecraft:barrel"},
         page_index=-1
     )
     oak_planks = Item(
-        model="minecraft:item/oak_planks",
+        model="minecraft:block/oak_planks",
         minimal_representation={"id":"minecraft:oak_planks"},
         page_index=-1
     )
@@ -393,18 +393,13 @@ def beet_default(ctx: Context):
         page_index=-1
     )
     crafting_table = Item(
-        model="minecraft:item/crafting_table",
+        model="minecraft:block/crafting_table",
         minimal_representation={"id":"minecraft:crafting_table"},
         page_index=-1
     )
     oak_log = Item(
-        model="minecraft:item/oak_log",
+        model="minecraft:block/oak_log",
         minimal_representation={"id":"minecraft:oak_log"},
-        page_index=-1
-    )
-    smooth_stone = Item(
-        model="minecraft:item/smooth_stone",
-        minimal_representation={"id":"minecraft:smooth_stone"},
         page_index=-1
     )
     gold_ingot = Item(
@@ -417,23 +412,13 @@ def beet_default(ctx: Context):
         minimal_representation={"id":"minecraft:book"},
         page_index=-1
     )
-    chest = Item(
-        model="simpledrawer:block/chest",
-        minimal_representation={"id":"minecraft:chest"},
-        page_index=-1
-    )
-    crafting_table = Item(
-        model="minecraft:item/crafting_table",
-        minimal_representation={"id":"minecraft:crafting_table"},
-        page_index=-1
-    )
     piston = Item(
-        model="minecraft:item/piston",
+        model="minecraft:block/piston",
         minimal_representation={"id":"minecraft:piston"},
         page_index=-1
     )
     smooth_stone = Item(
-        model="minecraft:item/smooth_stone",
+        model="minecraft:block/smooth_stone",
         minimal_representation={"id":"minecraft:smooth_stone"},
         page_index=-1
     )

@@ -1887,13 +1887,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "weld-deps"
-version = "0.14.0"
+version = "0.14.1"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "weld_deps-0.14.0-py3-none-any.whl", hash = "sha256:bc8b7dedae3b6597e7543c76c613342a5041582397f9b0529df99d339f6b0925"},
-    {file = "weld_deps-0.14.0.tar.gz", hash = "sha256:d3f4de845effcfde5c35e7f1ebf561fa81cb85664c4539a97427db6768de7a49"},
+    {file = "weld_deps-0.14.1-py3-none-any.whl", hash = "sha256:b7120a866655aee1d0cfe391201e7682967c6f0e87a7add447fdd7698d21dba6"},
+    {file = "weld_deps-0.14.1.tar.gz", hash = "sha256:9687b1d7bdc8f304ca30399db25f6f6747dcca6b2beeac2696f34b0deaa22cbc"},
 ]
 
 [package.dependencies]
