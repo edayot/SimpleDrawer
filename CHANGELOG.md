@@ -2,6 +2,13 @@
 
 
 
+## v2.4.1 (2024-12-12)
+
+### Fix
+
+* fix: delete useless files ([`f523db6`](https://github.com/edayot/SimpleDrawer/commit/f523db6533c65d3532b58881e058f67b8e62352e))
+
+
 ## v2.4.0 (2024-12-08)
 
 ### Chore
