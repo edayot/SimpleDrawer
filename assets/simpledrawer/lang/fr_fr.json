@@ -28,7 +28,7 @@
     "simpledrawer.quadruple_new_drawer.filled":"Drawer Quadruple Rempli",
     "simpledrawer.compacting_new_drawer.empty":"Drawer Compacteur Vide",
     "simpledrawer.compacting_new_drawer.filled":"Drawer Compacteur Rempli",
-    "simpledrawer.guide":"SimpleDrawer Guide",
+    "simpledrawer.guide":"Guide",
     "simpledrawer.guide_first":"Guide",
     "simpledrawer.guide.heavy_workbench":"C'est une table de craft qui permet de crafter les items de SimpleDrawer.",
     "simpledrawer.guide.new_drawer":"C'est un bloc qui permet de stocker un seul type d'item, mais 256 en unités",
