@@ -96,8 +96,8 @@ execute
     if entity @s[scores={smithed.data=0}]
     if data storage smithed.crafter:input recipe{
         0:[{Slot:0b,id:"minecraft:stick"},{Slot:1b,id:"minecraft:stick"},{Slot:2b,id:"minecraft:stick"}],
-        1:[{Slot:0b,id:"minecraft:iron_ingot"},{Slot:1b,id:"minecraft:oak_planks"},{Slot:2b,id:"minecraft:iron_ingot"}],
-        2:[{Slot:0b,id:"minecraft:iron_ingot"},{Slot:1b,id:"minecraft:oak_planks"},{Slot:2b,id:"minecraft:iron_ingot"}]
+        1:[{Slot:0b,id:"minecraft:iron_ingot"},{Slot:1b,item_tag:["#minecraft:planks"]},{Slot:2b,id:"minecraft:iron_ingot"}],
+        2:[{Slot:0b,id:"minecraft:iron_ingot"},{Slot:1b,item_tag:["#minecraft:planks"]},{Slot:2b,id:"minecraft:iron_ingot"}]
     }
     run loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/iron_upgrade
 
@@ -166,7 +166,7 @@ execute
     if entity @s[scores={smithed.data=0}]
     if data storage smithed.crafter:input recipe{
         0:[{Slot:0b,id:"minecraft:barrel"},{Slot:1b,id:"minecraft:iron_nugget"},{Slot:2b,id:"minecraft:air"}],
-        1:[{Slot:0b,id:"minecraft:book"},{Slot:1b,id:"minecraft:oak_planks"},{Slot:2b,id:"minecraft:air"}],
+        1:[{Slot:0b,id:"minecraft:book"},{Slot:1b,item_tag:["#minecraft:planks"]},{Slot:2b,id:"minecraft:air"}],
     }
     if data storage smithed.crafter:input {recipe:{2:[]}}
     run loot replace block ~ ~ ~ container.16 loot simpledrawer:impl/items/guide
