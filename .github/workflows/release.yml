@@ -40,56 +40,34 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
-      - name: Apt update
-        run: | 
-          sudo apt-get update -qq -y
-          export DEBIAN_FRONTEND=noninteractive
-      - name: Setup OpenGl
-        run: | 
-          sudo apt-get -y install \
-            freeglut3-dev \
-            libgl1-mesa-dev \
-            libxcursor-dev \
-            libpulse-dev \
-            libxinerama-dev \
-            libxrandr-dev \
-            libxv-dev \
-            mesa-utils \
-            libgl1-mesa-glx \
-            mesa-common-dev \
-            libglapi-mesa \
-            libgbm1 \
-            libgl1-mesa-dri \
-            libsdl1.2-dev \
-            libfreetype6-dev \
-            xvfb \
-            x11-utils
-      - name: Release
+
+      - name: Setup OpenGL and Run Release
+        uses: edayot/model_resolver@master
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_HASH: ${{ github.sha }}
           VERSION_BUMP: ${{ github.event.inputs.version_bump }}
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "action@github.com"
-          # print the version bump
-          echo "Version bump: $VERSION_BUMP"
-          if [ "$VERSION_BUMP" = "automatic" ]; then
-            COMMAND="poetry run semantic-release -v version"
-          fi
-          if [ "$VERSION_BUMP" = "patch" ]; then
-            COMMAND="poetry run semantic-release -v version --patch"
-          fi
-          if [ "$VERSION_BUMP" = "minor" ]; then
-            COMMAND="poetry run semantic-release -v version --minor"
-          fi
-          if [ "$VERSION_BUMP" = "major" ]; then
-            COMMAND="poetry run semantic-release -v version --major"
-          fi
-          echo "Running command: $COMMAND"
-          /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
-          COMMAND="poetry run semantic-release -v publish"
-          echo "Running command: $COMMAND"
-          /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
+        with:
+          commands: |
+            git config --global user.name "github-actions"
+            git config --global user.email "action@github.com"
+
+            # print the version bump
+            echo "Version bump: $VERSION_BUMP"
+
+            if [ "$VERSION_BUMP" = "automatic" ]; then
+              poetry run semantic-release -v version
+            fi
+            if [ "$VERSION_BUMP" = "patch" ]; then
+              poetry run semantic-release -v version --patch
+            fi
+            if [ "$VERSION_BUMP" = "minor" ]; then
+              poetry run semantic-release -v version --minor
+            fi
+            if [ "$VERSION_BUMP" = "major" ]; then
+              poetry run semantic-release -v version --major
+            fi
+            poetry run semantic-release -v publish
       - name: Push to smithed
         continue-on-error: true
         run: poetry run python .github/workflows/push-to-smithed.py 
