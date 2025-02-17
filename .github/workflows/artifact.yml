@@ -64,19 +64,19 @@ jobs:
           /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: datapack
           path: build/datapack/
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: resourcepack
           path: build/resourcepack/
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: datapack-bundled
           path: build/datapack-bundled/
-      - uses: actions/upload-artifact@v3  
+      - uses: actions/upload-artifact@v4  
         with:
           name: resourcepack-bundled
           path: build/resourcepack-bundled/
