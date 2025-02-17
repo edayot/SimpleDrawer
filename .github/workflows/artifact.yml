@@ -35,33 +35,14 @@ jobs:
         run: | 
           sudo apt-get update -qq -y
           export DEBIAN_FRONTEND=noninteractive
-      - name: Setup OpenGl
-        run: | 
-          sudo apt-get -y install \
-            freeglut3-dev \
-            libgl1-mesa-dev \
-            libxcursor-dev \
-            libpulse-dev \
-            libxinerama-dev \
-            libxrandr-dev \
-            libxv-dev \
-            mesa-utils \
-            libgl1-mesa-glx \
-            mesa-common-dev \
-            libglapi-mesa \
-            libgbm1 \
-            libgl1-mesa-dri \
-            libsdl1.2-dev \
-            libfreetype6-dev \
-            xvfb \
-            x11-utils
-      - name: Release
+      - name: Setup OpenGL and Run Release
+        uses: edayot/model_resolver@master
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
-        run: |
-          COMMAND="make b BUILD_TYPE=artifact"
-          /usr/bin/xvfb-run -s "-screen 0 1920x1080x24 +extension GLX +extension RENDER" $COMMAND
+        with:
+          commands: |
+            make b BUILD_TYPE=artifact
       
       # Upload build/ datapack.zip, resourcepack.zip, datapack-bundled.zip, resourcepack-bundled.zip
       - uses: actions/upload-artifact@v4
