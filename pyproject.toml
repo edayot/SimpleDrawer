@@ -14,7 +14,7 @@ smithed-libraries = {git = "https://github.com/edayot/Libraries.git", branch = "
 cryptography = "^42.0.4"
 beet = ">=0.108.1"
 tqdm = "^4.66.1"
-model-resolver = ">=0.6.0"
+model-resolver = "0.12.0"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^7.1.1"
