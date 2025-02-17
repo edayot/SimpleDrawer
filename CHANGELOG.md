@@ -2,6 +2,27 @@
 
 
 
+## v2.4.2 (2025-02-17)
+
+### Chore
+
+* chore: update model_resolver config ([`c4c4dba`](https://github.com/edayot/SimpleDrawer/commit/c4c4dba7f28ab783df5ad063e9567244b8367d66))
+
+* chore: update deps ([`40a10f5`](https://github.com/edayot/SimpleDrawer/commit/40a10f5f530bc4d0589b32822013a41e672af085))
+
+### Fix
+
+* fix: workflow ([`3739e75`](https://github.com/edayot/SimpleDrawer/commit/3739e75d871d2e2d0b464e31e11c82cd1be18dc2))
+
+* fix: oak_planks -&gt; #planks ([`a7f3925`](https://github.com/edayot/SimpleDrawer/commit/a7f3925e2d0c67128d57ce5c44d22228eee972f0))
+
+### Unknown
+
+* abc ([`aa11e20`](https://github.com/edayot/SimpleDrawer/commit/aa11e205daf8da88049826611b6b6799b7b89de5))
+
+* xyz ([`bbb4022`](https://github.com/edayot/SimpleDrawer/commit/bbb40229e6b15141dd1e912c07d3808f21f1f563))
+
+
 ## v2.4.1 (2024-12-12)
 
 ### Fix
