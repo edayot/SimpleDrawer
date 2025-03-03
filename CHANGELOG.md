@@ -2,6 +2,17 @@
 
 
 
+## v2.4.3 (2025-03-03)
+
+### Chore
+
+* chore: cache ([`b0745a2`](https://github.com/edayot/SimpleDrawer/commit/b0745a24030a6817c4c2472fc036215465f97a28))
+
+### Fix
+
+* fix: when dropping items, it use the good Owner ([`9f90daf`](https://github.com/edayot/SimpleDrawer/commit/9f90daf97ff5d42ac72473d29c80fc083bf29508))
+
+
 ## v2.4.2 (2025-02-17)
 
 ### Chore
