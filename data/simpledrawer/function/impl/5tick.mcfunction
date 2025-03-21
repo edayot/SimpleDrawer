@@ -8,4 +8,8 @@ execute
         scoreboard players set @s simpledrawer.new_drawer.no_format_cooldown 20
         function simpledrawer:impl/new_drawer/base_display
 
+
+execute as @a run function simpledrawer:impl/5tick_player
+
+
 schedule function simpledrawer:impl/5tick 5t replace

@@ -60,4 +60,10 @@ meta:
         source: "smithed"
         versioning: 
           type: "normal"
-          prefix: "#smithed.custom_block"
+          prefix: "#smithed.custom_block"  
+  lsp:
+    excluded_plugins:
+      - "smithed_libraries.plugins.versioning"
+      - "simpledrawer.add_mc_version_support"
+      - "simpledrawer.add_versioning_to_items"
+      - "airdox_.test_load_generator"

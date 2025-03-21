@@ -66,20 +66,39 @@ function simpledrawer:impl/new_drawer/place/variant
 
 function simpledrawer:impl/new_drawer/base_display
 
-execute if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s add simpledrawer.new_drawer.stone_base
-execute if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:ice"} run tag @s remove simpledrawer.new_drawer.wood_base
 
-scoreboard players set #temp simpledrawer.math 0
-execute store success score #temp simpledrawer.math if entity @s[tag=simpledrawer.new_drawer.wood_base] run setblock ~ ~ ~ beehive
-execute store success score #temp simpledrawer.math if entity @s[tag=simpledrawer.new_drawer.stone_base] run setblock ~ ~ ~ lodestone
+scoreboard players set #base_success simpledrawer.math 0
 
-execute 
-    if score #temp simpledrawer.math matches 0
-    run setblock ~ ~ ~ beehive
-execute 
-    if score #temp simpledrawer.math matches 0
-    run tag @s add simpledrawer.new_drawer.wood_base
-execute 
-    if score #temp simpledrawer.math matches 0
-    run tag @s remove simpledrawer.new_drawer.stone_base
+function ~/base_stone:
+    tag @s add simpledrawer.new_drawer.stone_base
+    tag @s remove simpledrawer.new_drawer.wood_base
+    setblock ~ ~ ~ lodestone
+    scoreboard players set #base_success simpledrawer.math 1
 
+function ~/base_wood:
+    tag @s add simpledrawer.new_drawer.wood_base
+    tag @s remove simpledrawer.new_drawer.stone_base
+    setblock ~ ~ ~ beehive
+    scoreboard players set #base_success simpledrawer.math 1
+
+
+
+execute
+    if score #base_success simpledrawer.math matches 0
+    if entity @s[tag=simpledrawer.new_drawer.wood_base]
+    run function ~/base_wood
+
+execute
+    if score #base_success simpledrawer.math matches 0
+    if entity @s[tag=simpledrawer.new_drawer.stone_base]
+    run function ~/base_stone
+
+execute
+    if score #base_success simpledrawer.math matches 0
+    if data storage simpledrawer:main temp.simpledrawer{wood_type:"simpledrawer:ice"} 
+    run function ~/base_stone
+
+# Else
+execute
+    if score #base_success simpledrawer.math matches 0
+    run function ~/base_wood
