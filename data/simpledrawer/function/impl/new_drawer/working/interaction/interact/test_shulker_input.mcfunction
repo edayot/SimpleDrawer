@@ -77,5 +77,5 @@ execute
         setblock -30000000 22 1610 yellow_shulker_box
         data modify storage simpledrawer:main temp.SelectedItem.Slot set value 0b
         data modify block -30000000 22 1610 Items append from storage simpledrawer:main temp.SelectedItem
-        loot replace entity @p[tag=simpledrawer.interacter] weapon.mainhand mine -30000000 22 1610 stick[minecraft:custom_data={drop_contents:1b}]
+        item replace entity @p[tag=simpledrawer.interacter] weapon.mainhand from block -30000000 22 1610 container.0
 
