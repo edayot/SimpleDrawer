@@ -2,6 +2,23 @@
 
 
 
+## v2.5.0 (2025-04-12)
+
+### Feature
+
+* feat: more user interaction #41 ([`c0fcf73`](https://github.com/edayot/SimpleDrawer/commit/c0fcf73717d470ede2ca759ab0e63abc4430762f))
+
+### Fix
+
+* fix: shulker box input clear armor ([`cc3e7d0`](https://github.com/edayot/SimpleDrawer/commit/cc3e7d00dd632852de50e981cd45d2cc56faf2a0))
+
+### Unknown
+
+* feat update text component to 1.21.5 ([`e0b697d`](https://github.com/edayot/SimpleDrawer/commit/e0b697daa583b82c33ca48430355627e9838d183))
+
+* fix better destroy function handeling ([`5578f56`](https://github.com/edayot/SimpleDrawer/commit/5578f564cce12934d42b35dfb92799b18dfe9c3f))
+
+
 ## v2.4.3 (2025-03-03)
 
 ### Chore
