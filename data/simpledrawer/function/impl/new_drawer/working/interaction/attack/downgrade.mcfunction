@@ -15,3 +15,4 @@ execute if score #upgrade_success simpledrawer.math matches 0 if data storage si
 
 
 
+execute if score #upgrade_success simpledrawer.math matches 1 at @s playsound minecraft:block.anvil.destroy block @p[tag=simpledrawer.attacker] ~ ~ ~ 0.2 1.8

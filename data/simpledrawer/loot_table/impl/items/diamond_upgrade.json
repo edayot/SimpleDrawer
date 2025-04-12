@@ -13,6 +13,7 @@
                             "components": {
 								"minecraft:item_name": {"translate":"simpledrawer.diamond_upgrade","color":"white","italic":false},
 								"minecraft:lore": [
+                  {"translate":"simpledrawer.upgrade_lore","color":"gray"},
 								  {"translate":"simpledrawer.name","color":"blue","italic":true}
 								],
 								"minecraft:item_model": "simpledrawer:diamond_upgrade",
