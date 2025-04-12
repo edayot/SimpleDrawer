@@ -2,6 +2,13 @@
 
 
 
+## v2.5.1 (2025-04-12)
+
+### Fix
+
+* fix: guide not working ([`f4bc7e5`](https://github.com/edayot/SimpleDrawer/commit/f4bc7e5c743f08bbe7a62f61e93b135b82eeb2c9))
+
+
 ## v2.5.0 (2025-04-12)
 
 ### Feature
