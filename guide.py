@@ -311,7 +311,7 @@ def generate_item_list(ctx: Context):
 
 
 def beet_default(ctx: Context):
-    reset_cache = False
+    reset_cache = True
     cache = ctx.cache["simpledrawer_guide"]
     if not reset_cache:
         namespaced_things = [
@@ -775,20 +775,20 @@ def beet_default(ctx: Context):
         {"text":"\n\n","font":"simpledrawer:pages","color":"white"},
         {"translate":"simpledrawer.guide.project_pages","color":"black"},
         {"text":"\n","font":"simpledrawer:pages","color":"white"},
-        {"text":"\uee01","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/SimpleDrawer"}},
-        {"text":"\uee02","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
-        {"text":"\uee03","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
-        {"text":"\uee04","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+        {"text":"\uee01","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+        {"text":"\uee02","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uee03","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uee04","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
 
-        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/SimpleDrawer"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
 
-        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"GitHub"}},"clickEvent":{"action":"open_url","value":"https://github.com/edayot/SimpleDrawer"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Planet Minecraft"}},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Smithed"}},"clickEvent":{"action":"open_url","value":"https://smithed.net/packs/simpledrawer"}},
-        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hoverEvent":{"action":"show_text","value":{"text":"Modrinth"}},"clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/simpledrawer"}},
+        {"text":"\n\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+        {"text":"\uef02\uef00\uef00\uef00","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
     ]))
 
 
