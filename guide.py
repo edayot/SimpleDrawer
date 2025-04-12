@@ -161,14 +161,14 @@ def get_item_json(item: Item | None, font_path: str, char : str = "\uef01"):
             "text":char,
             "font":font_path,
             "color":"white",
-            "hoverEvent":{"action":"show_item","contents": item.minimal_representation}
+            "hover_event":{"action":"show_item", **item.minimal_representation}
         }
     return {
         "text":char,
         "font":font_path,
         "color":"white",
-        "hoverEvent":{"action":"show_item","contents": item.minimal_representation},
-        "clickEvent":{"action":"change_page","value":f"{item.page_index}"}
+        "hover_event":{"action":"show_item", **item.minimal_representation},
+        "click_event":{"action":"change_page","page":item.page_index}
     }
 
 
@@ -213,7 +213,7 @@ def create_loot_table(ctx: Context, pages: list[str]):
                         "id": "airdox_:simpledrawer/guide",
                     }
                 },
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide","color":"white"}),
+                "minecraft:item_name": {"translate":"simpledrawer.guide","color":"white"},
                 "minecraft:enchantment_glint_override": False,
                 "minecraft:lore": [
                     "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
@@ -428,7 +428,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"block.smithed.crafter"})
+                "minecraft:item_name": {"translate":"block.smithed.crafter"}
             }
             },
         page_name=("block.smithed.crafter",{}),
@@ -439,7 +439,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.new_drawer"})
+                "minecraft:item_name": {"translate":"simpledrawer.new_drawer"}
             }
         },
         page_name=("simpledrawer.new_drawer",{}),
@@ -452,7 +452,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.double_new_drawer.empty"})
+                "minecraft:item_name": {"translate":"simpledrawer.double_new_drawer.empty"}
             }
         },
         page_name=("simpledrawer.double_new_drawer",{}),
@@ -463,7 +463,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.quadruple_new_drawer.empty"})
+                "minecraft:item_name": {"translate":"simpledrawer.quadruple_new_drawer.empty"}
             }
         },
         page_name=("simpledrawer.quadruple_new_drawer",{}),
@@ -474,7 +474,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:furnace",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.compacting_new_drawer.empty"})
+                "minecraft:item_name": {"translate":"simpledrawer.compacting_new_drawer.empty"}
             }
         },
         page_name=("simpledrawer.compacting_new_drawer",{}),
@@ -486,7 +486,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.hopper_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.hopper_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.hopper_upgrade",{}),
@@ -497,7 +497,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.iron_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.iron_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.iron_upgrade",{}),
@@ -512,7 +512,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.gold_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.gold_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.gold_upgrade",{}),
@@ -527,7 +527,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.diamond_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.diamond_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.diamond_upgrade",{}),
@@ -542,7 +542,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.star_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.star_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.star_upgrade",{}),
@@ -557,7 +557,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.netherite_upgrade","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.netherite_upgrade","color":"white"}
             }
         },
         page_name=("simpledrawer.netherite_upgrade",{}),
@@ -572,7 +572,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:jigsaw",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.downgrade_wrench","color":"white"})
+                "minecraft:item_name": {"translate":"simpledrawer.downgrade_wrench","color":"white"}
             }
         },
         page_name=("simpledrawer.downgrade_wrench",{}),
@@ -583,7 +583,7 @@ def beet_default(ctx: Context):
         minimal_representation={
             "id":"minecraft:written_book",
             "components": {
-                "minecraft:item_name": json.dumps({"translate":"simpledrawer.guide"})
+                "minecraft:item_name": {"translate":"simpledrawer.guide"}
             }
         },
         page_name=("simpledrawer.guide",{}),
@@ -794,4 +794,5 @@ def beet_default(ctx: Context):
 
     # print(pages)
     # 5. Create the loot table
+    pages = [json.loads(page) for page in pages]
     create_loot_table(ctx, pages)
