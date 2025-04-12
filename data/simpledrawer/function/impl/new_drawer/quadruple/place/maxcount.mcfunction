@@ -17,7 +17,7 @@ tp @s ~ ~ ~ ~ ~
 
 execute store result score #globalCount simpledrawer.math run data get storage simpledrawer:main temp.simpledrawer.globalCount
 
-data modify entity @s text set value '[{"score":{"name":"#globalCount","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount","objective":"simpledrawer.math"}}]'
+data modify entity @s text set value [{"score":{"name":"#globalCount","objective":"simpledrawer.math"}},{"text":"/"},{"score":{"name":"#maxCount","objective":"simpledrawer.math"}}]
 
 
 

@@ -9,12 +9,10 @@ overrides:
   - meta.smithed.versioning.scheduled_paths: [impl/tick,impl/5tick,impl/20tick,impl/mc_version_check,impl/timestamp]
 
 data_pack:
-  pack_format: 57
-  supported_formats: [57, 61]
+  pack_format: 71
   load: [.]
 resource_pack:
-  pack_format: 42
-  supported_formats: [42, 46]
+  pack_format: 55
   load: [.]
 
 require:
@@ -36,27 +34,27 @@ meta:
     load_vanilla: true
     save_namespace: "simpledrawer"
   modrinth_id: "JmCxCKiW"
-  mc_supports: ["1.21.4"]
-  mc_supports_dataversion: [4189]
+  mc_supports: ["1.21.5"]
+  mc_supports_dataversion: [4325]
   weld_deps:
     enable_weld_merging: True
     clean_load_tag: True
     include_prerelease: False
     deps:
       - id: "itemio"
-        version: "1.3.3"
+        version: "1.4.0"
         source: "smithed"
         versioning: 
           type: "normal"
           prefix: "#itemio"
       - id: "crafter"
-        version: "0.6.2"
+        version: "0.7.0"
         source: "smithed"
         versioning: 
           type: "normal"
           prefix: "#smithed.crafter"
       - id: "custom-block"
-        version: "0.6.2"
+        version: "0.7.0"
         source: "smithed"
         versioning: 
           type: "normal"

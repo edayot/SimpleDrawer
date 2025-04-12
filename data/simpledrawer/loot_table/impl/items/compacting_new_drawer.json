@@ -11,10 +11,10 @@
                         {
                             "function": "minecraft:set_components",
                             "components": {
-								"minecraft:item_name": "{\"translate\":\"simpledrawer.compacting_new_drawer.empty\",\"color\":\"white\",\"italic\":false}",
+								"minecraft:item_name": {"translate":"simpledrawer.compacting_new_drawer.empty","color":"white","italic":false},
 								"minecraft:lore": [
-									"{\"color\":\"dark_gray\",\"extra\":[\"/\",\"256\"],\"italic\":false,\"text\":\"0\"}",
-								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
+									{"color":"dark_gray","extra":["/","256"],"italic":false,"text":"0"},
+								  {"translate":"simpledrawer.name","color":"blue","italic":true}
 								],
 								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
 								"minecraft:item_model": "simpledrawer:new_drawer/comp_1",
@@ -30,7 +30,7 @@
 											"type": "compacting",
 											"variant": "normal",
 											"current_material": "none",
-											"current_material_name": "{\"text\":\"none\"}",
+											"current_material_name": {"text":"none"},
 											"slot_count": 1,
 											"wood_type": "simpledrawer:compacting",
 											"loot_table": "items/compacting_new_drawer",

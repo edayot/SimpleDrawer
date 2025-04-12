@@ -20,10 +20,10 @@
                     "id": "airdox_:simpledrawer/guide"
                 }
             },
-            "minecraft:item_name": "{\"translate\": \"simpledrawer.guide\", \"color\": \"white\"}",
+            "minecraft:item_name": {"translate": "simpledrawer.guide", "color": "white"},
             "minecraft:enchantment_glint_override": false,
             "minecraft:lore": [
-                "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
+                {"translate":"simpledrawer.name","color":"blue","italic":true}
             ]
         },
         "count": 1,

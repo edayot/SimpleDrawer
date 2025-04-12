@@ -11,9 +11,9 @@
                         {
                             "function": "minecraft:set_components",
                             "components": {
-								"minecraft:item_name": "{\"translate\":\"simpledrawer.hopper_upgrade\",\"color\":\"white\",\"italic\":false}",
+								"minecraft:item_name": {"translate":"simpledrawer.hopper_upgrade","color":"white","italic":false},
 								"minecraft:lore": [
-								  "{\"translate\":\"simpledrawer.name\",\"color\":\"blue\",\"italic\":true}"
+								  {"translate":"simpledrawer.name","color":"blue","italic":true}
 								],
 								"minecraft:item_model": "simpledrawer:hopper_upgrade",
 								"minecraft:custom_data": {

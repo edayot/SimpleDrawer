@@ -18,7 +18,7 @@ tp @s ~ ~ ~ ~ ~
 
 execute store result score #newCount simpledrawer.math run data get storage simpledrawer:main temp.item_stored.count
 
-data modify entity @s text set value '[{"score":{"name":"#newCount","objective":"simpledrawer.math"}}]'
+data modify entity @s text set value [{"score":{"name":"#newCount","objective":"simpledrawer.math"}}]
 
 data merge entity @s {transformation:{scale:[0.2f,0.2f,0.2f]},background:0}
 

@@ -119,7 +119,7 @@ def generate_translation(ctx: Context):
     item_modifier = []
 
     for id, components in item_components.items():
-        item_name = json.loads(components["minecraft:item_name"])
+        item_name = components["minecraft:item_name"]
         item_name["color"] = "white"
         item_name["italic"] = False
         item_modifier.append(get_translation(item_name, get_real_id(id)))
