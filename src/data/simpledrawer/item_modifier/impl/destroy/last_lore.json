@@ -1,0 +1,12 @@
+{
+	"function": "minecraft:set_lore",
+	"entity": "this",
+	"lore": [
+		{
+			"translate": "simpledrawer.name",
+			"color": "blue",
+			"italic": true
+		}
+	],
+	"mode": "append"
+}

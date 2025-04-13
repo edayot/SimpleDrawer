@@ -1,0 +1,89 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:furnace",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+								"minecraft:item_name": {"translate":"simpledrawer.compacting_new_drawer.empty","color":"white","italic":false},
+								"minecraft:lore": [
+									{"color":"dark_gray","extra":["/","256"],"italic":false,"text":"0"},
+								  {"translate":"simpledrawer.name","color":"blue","italic":true}
+								],
+								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
+								"minecraft:item_model": "simpledrawer:new_drawer/comp_1",
+								"minecraft:container": [
+								  {
+									"slot": 0,
+									"item": {
+									  "id": "minecraft:barrel",
+									  "count": 1,
+									  "components": {
+										"minecraft:custom_data": {
+										  "simpledrawer": {
+											"type": "compacting",
+											"variant": "normal",
+											"current_material": "none",
+											"current_material_name": {"text":"none"},
+											"slot_count": 1,
+											"wood_type": "simpledrawer:compacting",
+											"loot_table": "items/compacting_new_drawer",
+											"upgrade": "wood",
+											"hopper": 0
+										  },
+										  "smithed": {
+											"block": {
+											  "id": "simpledrawer:new_drawer"
+											}
+										  }
+										},
+										"minecraft:container": [],
+										"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}}
+									  }
+									}
+								  }
+								],
+								"minecraft:custom_data": {
+								  "ctc": {
+									"id": "new_drawer",
+									"from": "airdox_:simpledrawer",
+									"traits": {
+									  "block": 1
+									}
+								  },
+								  "smithed": {
+									"id": "airdox_:simpledrawer/compacting_new_drawer"
+								  }
+								}
+							  }
+                        },
+						{
+                            "function": "minecraft:modify_contents",
+                            "component": "minecraft:container",
+                            "modifier": [
+								{
+									"function": "minecraft:set_custom_data",
+									"tag": "{simpledrawer:{globalCount:0,maxCount:256,items_counts:{0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0,21:0,22:0,23:0,24:0,25:0,26:0}}}"
+								},
+								{
+									"function": "minecraft:reference",
+									"name": "simpledrawer:impl/add_versionning"
+								}
+							]
+                        },
+                        {
+                            "function": "minecraft:reference",
+                            "name": "simpledrawer:impl/add_versionning"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

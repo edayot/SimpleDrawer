@@ -1,0 +1,31 @@
+{
+    "display": {
+        "title": {
+            "translate": "simpledrawer.advancement.upgrade.star.title"
+        },
+        "description": {
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.star"
+                }
+            ]
+        },
+        "icon": {
+            "id": "minecraft:jigsaw",
+            "components": {
+				"minecraft:item_model": "simpledrawer:star_upgrade"
+			}
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Use star upgrade": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/upgrade/diamond"
+}

@@ -1,0 +1,60 @@
+{
+	"condition": "minecraft:entity_scores",
+	"entity": "this",
+	"scores": {
+		"simpledrawer.block.major": {
+			"min": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.major"
+				},
+				"score": "load.status"
+			},
+			"max": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.major"
+				},
+				"score": "load.status"
+			}
+		},
+		"simpledrawer.block.minor": {
+			"min": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.minor"
+				},
+				"score": "load.status"
+			},
+			"max": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.minor"
+				},
+				"score": "load.status"
+			}
+		},
+        "simpledrawer.block.patch": {
+			"min": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.patch"
+				},
+				"score": "load.status"
+			},
+			"max": {
+				"type": "minecraft:score",
+				"target": {
+					"type": "minecraft:fixed",
+					"name": "#simpledrawer.patch"
+				},
+				"score": "load.status"
+			}
+		}
+	}
+}

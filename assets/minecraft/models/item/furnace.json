@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:block/furnace",
-    "overrides":[
-        {"predicate":{"custom_model_data":1430000},"model":"simpledrawer:item/new_drawer/oak_1"}
-    ]
-}

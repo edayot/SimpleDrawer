@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "translate": "simpledrawer.advancement.filled.title",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.netherite"
+                }
+            ]
+        },
+        "description": {
+            "translate": "simpledrawer.advancement.filled.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.netherite"
+                }
+            ]
+        },
+        "icon": {
+            "id": "minecraft:furnace",
+            "components": {
+				"minecraft:item_model": "simpledrawer:new_drawer/oak_1"
+			}
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "Fill a netherite drawer": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/filled/star"
+}

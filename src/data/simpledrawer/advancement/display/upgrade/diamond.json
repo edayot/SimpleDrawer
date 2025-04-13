@@ -1,0 +1,31 @@
+{
+    "display": {
+        "title": {
+            "translate": "simpledrawer.advancement.upgrade.diamond.title"
+        },
+        "description": {
+            "translate": "simpledrawer.advancement.upgrade.description",
+            "with": [
+                {
+                    "translate": "simpledrawer.advancement.diamond"
+                }
+            ]
+        },
+        "icon": {
+            "id": "minecraft:jigsaw",
+            "components": {
+				"minecraft:item_model": "simpledrawer:diamond_upgrade"
+			}
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Use diamond upgrade": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "simpledrawer:display/upgrade/gold"
+}

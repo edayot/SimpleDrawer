@@ -1,0 +1,7 @@
+{
+    "values": [
+        {"id":"#minecraft:spawns_snow_foxes","required":false},
+        {"id":"#c:is_snowy","required":false},
+        {"id":"#c:is_snowy_plains","required":false}
+    ]
+}
