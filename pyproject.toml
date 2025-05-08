@@ -15,7 +15,10 @@ python-semantic-release = "^8.7.0"
 
 
 [tool.beet.meta.simple_item_plugin]
-generate_guide = false
+generate_guide = true
+items_on_first_page = true
+creator = "airdox_"
+prefix_namespace_with_creator = true
 
 
 [[tool.beet.meta.weld_deps.deps]]
@@ -104,7 +107,7 @@ pack_format = 55
 [tool.beet.meta]
 mc_supports = ["1.21.5"]
 mc_supports_dataversion = [4325]
-minecraft_version = "1.21"
+minecraft_version = "1.21.5"
 modrinth_id = "template"
 
 [tool.beet.meta.mecha]
@@ -115,7 +118,8 @@ match = ["simpledrawer:**"]
 [tool.beet.meta.model_resolver]
 render_size = 256
 load_vanilla = true
-save_namespace = "template"
+save_namespace = "grappling_hook"
+minecraft_version = "1.21.5"
 
 
 
