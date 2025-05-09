@@ -1,12 +1,15 @@
 from dataclasses import dataclass
-from typing import Optional
-from beet import Context
+from typing import Any, Iterable, Literal, Optional
+from beet import Context, ItemModel
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
 from simple_item_plugin.guide import ItemGroup
 
 from simple_item_plugin.types import TranslatedString
+from beet import Context, Function, ItemModifier
+import nbtlib
+import json
 
 
 class SimpleDrawerItem(Item):
@@ -90,6 +93,7 @@ def beet_default(ctx: Context):
     ctx.require("simpledrawer.add_mc_version_support")
     ctx.require("simpledrawer.generate_translation")
     ctx.require("simpledrawer.airdox_.test_load_generator")
+    ctx.require("simpledrawer.new_drawer_model")
 
     cobblestone = VanillaItem(id="minecraft:cobblestone").export(ctx)
     slime_ball = VanillaItem(id="minecraft:slime_ball").export(ctx)
@@ -321,10 +325,6 @@ def beet_default(ctx: Context):
 
 
 
-from beet import Context, Function, ItemModifier
-import nbtlib
-import json
-
 
 WOOD_TYPES = {
     "acacia",
@@ -341,6 +341,7 @@ WOOD_TYPES = {
     "pale_oak",
 }
 DRAWER_TYPES = WOOD_TYPES.copy() | {"ice"}
+ALL_DRAWER_TYPES = DRAWER_TYPES.copy() | {"compacting"}
 
 
 def generate_version_string(versions):
@@ -436,3 +437,4 @@ def generate_translation(ctx: Context):
     path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
     ctx.data.item_modifiers[path] = ItemModifier(item_modifier)
         
+
