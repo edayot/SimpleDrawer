@@ -1,13 +1,6 @@
 {
     "textures": {
-        "tape": "simpledrawer:block/tape",
-        "particle": "#front",
-        "down": "#bottom",
-        "up": "#top",
-        "north": "#front",
-        "east": "#side",
-        "south": "#side",
-        "west": "#side"
+        "tape": "simpledrawer:block/tape"
     },
     "gui_light": "side",
     "display": {
@@ -43,17 +36,6 @@
             "scale": [ 0.40, 0.40, 0.40 ]
         },
         "elements": [
-            {   "from": [ 0, 0, 0 ],
-                "to": [ 16, 16, 16 ],
-                "faces": {
-                    "down":  { "texture": "#down", "cullface": "down" },
-                    "up":    { "texture": "#up", "cullface": "up" },
-                    "north": { "texture": "#north", "cullface": "north" },
-                    "south": { "texture": "#south", "cullface": "south" },
-                    "west":  { "texture": "#west", "cullface": "west" },
-                    "east":  { "texture": "#east", "cullface": "east" }
-                }
-            },
             {
                 "from": [0, 0, -0.01],
                 "to": [16, 16, -0.01],

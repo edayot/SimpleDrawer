@@ -6,7 +6,16 @@ from simpledrawer.plugin import ALL_DRAWER_TYPES
 def beet_default(ctx: Context):
     wood_types = iter(ALL_DRAWER_TYPES)
     res = {
-        "model": iter_wood_types(wood_types)
+        "model": {
+            "type": "minecraft:composite",
+            "models": [
+                iter_wood_types(wood_types),
+                generate_tapped_condition(
+                    is_empty={"type": "minecraft:empty"},
+                    is_filled=generate_plain_model("simpledrawer:item/new_drawer/tapped")
+                )
+            ]
+        }
     }
     ctx.assets.item_models["simpledrawer:new_drawer"] = ItemModel(res)
 
@@ -18,24 +27,15 @@ def iter_wood_types(wood_types):
         return {"type": "minecraft:empty"}
     on_false = iter_wood_types(wood_types)
     if current == "compacting":
-        on_true = generate_solt_count_condition(
+        on_true = generate_slot_count_condition(
             slot_count=1,
-            on_true=generate_tapped_compacting_condition(
-                is_empty=generate_plain_model("simpledrawer:item/new_drawer/comp_1"),
-                is_filled=generate_plain_model("simpledrawer:item/new_drawer/comp_1_tapped"),
-            ),
-            on_false=generate_solt_count_condition(
+            on_true=generate_plain_model("simpledrawer:item/new_drawer/comp_1"),
+            on_false=generate_slot_count_condition(
                 slot_count=2,
-                on_true=generate_tapped_compacting_condition(
-                    is_empty=generate_plain_model("simpledrawer:item/new_drawer/comp_2"),
-                    is_filled=generate_plain_model("simpledrawer:item/new_drawer/comp_2_tapped"),
-                ),
-                on_false=generate_solt_count_condition(
+                on_true=generate_plain_model("simpledrawer:item/new_drawer/comp_2"),
+                on_false=generate_slot_count_condition(
                     slot_count=3,
-                    on_true=generate_tapped_compacting_condition(
-                        is_empty=generate_plain_model("simpledrawer:item/new_drawer/comp_3"),
-                        is_filled=generate_plain_model("simpledrawer:item/new_drawer/comp_3_tapped"),
-                    ),
+                    on_true=generate_plain_model("simpledrawer:item/new_drawer/comp_3"),     
                     on_false={"type": "minecraft:empty"}
                 )
             ),
@@ -60,10 +60,7 @@ def iter_variants(variants: Iterable[Literal["single", "double", "quadruple"]], 
         return {"type": "minecraft:empty"}
     on_false = iter_variants(variants, wood_type)
     current_number = {"single": "1", "double": "2", "quadruple": "4"}[current]
-    on_true = generate_tapped_condition(
-        is_empty=generate_plain_model(f"simpledrawer:item/new_drawer/{wood_type}_{current_number}"),
-        is_filled=generate_plain_model(f"simpledrawer:item/new_drawer/{wood_type}_{current_number}_tapped")
-    )
+    on_true = generate_plain_model(f"simpledrawer:item/new_drawer/{wood_type}_{current_number}")
     return generate_variant_condition(
         current,
         on_true=on_true,
@@ -135,36 +132,10 @@ def generate_variant_condition(variant: Literal["single", "double", "quadruple",
         "on_false": on_false,
     }
 
-
-def generate_tapped_condition(is_empty: Any, is_filled: Any,):
+def generate_slot_count_condition(slot_count: int, on_true: Any, on_false: Any,):
     """
-    Generate a condition for a tapped drawer.
-    :param on_true: The value if the condition is true.
-    :param on_false: The value if the condition is false.
-    :return: The condition.
-    """
-    return {
-        "type": "minecraft:condition",
-        "property": "minecraft:component",
-        "predicate": "minecraft:container",
-        "value": {
-            "items": {
-                "contains": [
-                    {
-                        "predicates": {
-                            "minecraft:custom_data": "{simpledrawer: {globalCount: 0}}"
-                        }
-                    }
-                ]
-            }
-        },
-        "on_true": is_empty,
-        "on_false": is_filled,
-    }
-
-def generate_solt_count_condition(slot_count: int, on_true: Any, on_false: Any,):
-    """
-    Generate a condition for a tapped drawer.
+    Generate a condition for a slot count.
+    :param slot_count: The slot count.
     :param on_true: The value if the condition is true.
     :param on_false: The value if the condition is false.
     :return: The condition.
@@ -189,7 +160,7 @@ def generate_solt_count_condition(slot_count: int, on_true: Any, on_false: Any,)
     }
 
 
-def generate_tapped_compacting_condition(is_empty: Any, is_filled: Any,):
+def generate_tapped_condition(is_empty: Any, is_filled: Any,):
     """
     Generate a condition for a tapped drawer.
     :param on_true: The value if the condition is true.
@@ -205,7 +176,15 @@ def generate_tapped_compacting_condition(is_empty: Any, is_filled: Any,):
                 "contains": [
                     {
                         "predicates": {
-                            "minecraft:custom_data": "{simpledrawer: {items_counts: {0: 0, 1: 0, 2: 0}}}"
+                            "minecraft:custom_data": (
+                                    "{simpledrawer: {items_counts: {"
+                                    "0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, "
+                                    "6: 0, 7: 0, 8: 0, 9: 0, 10: 0, "
+                                    "11: 0, 12: 0, 13: 0, 14: 0, 15: 0, "
+                                    "16: 0, 17: 0, 18: 0, 19: 0, 20: 0, "
+                                    "21: 0, 22: 0, 23: 0, 24: 0, 25: 0, "
+                                    "26: 0}}}"
+                                )
                         }
                     }
                 ]
