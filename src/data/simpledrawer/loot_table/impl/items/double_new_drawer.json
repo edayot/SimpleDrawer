@@ -17,7 +17,7 @@
 								  {"translate":"simpledrawer.name","color":"blue","italic":true}
 								],
 								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
-								"minecraft:item_model": "simpledrawer:new_drawer/oak_2",
+								"minecraft:item_model": "simpledrawer:new_drawer",
 								"minecraft:container": [
 								  {
 									"slot": 0,

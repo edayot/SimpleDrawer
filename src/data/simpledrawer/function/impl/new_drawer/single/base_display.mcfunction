@@ -18,8 +18,5 @@ execute unless score @s simpledrawer.new_drawer.no_format_cooldown matches 1.. a
 
 
 
-execute at @s as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:impl/search_id_new_drawer,distance=..10] run function simpledrawer:impl/new_drawer/single/base_block_display
-
-
 
 

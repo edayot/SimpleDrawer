@@ -63,6 +63,13 @@ execute unless score @s simpledrawer.new_drawer.no_format_cooldown matches 1.. a
 
 
 
-execute at @s as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:impl/search_id_new_drawer,distance=..10] run function simpledrawer:impl/new_drawer/compacting/base_block_display
+execute 
+    at @s 
+    as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:impl/search_id_new_drawer,distance=..10]
+    store result entity @s item.components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.slot_count byte 1
+    run scoreboard players get #temp_slot_count simpledrawer.math
 
+
+
+data modify entity @s item.components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.slot_count set from storage simpledrawer:main temp.simpledrawer.slot_count
 

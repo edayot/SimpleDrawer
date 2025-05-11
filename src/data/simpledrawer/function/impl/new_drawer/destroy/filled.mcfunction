@@ -7,8 +7,6 @@ execute
 
 
 
-data modify entity @s Item.components."minecraft:item_model" set from storage simpledrawer:main temp.item_models.tapped
-
 item modify entity @s container.0 simpledrawer:impl/destroy/clear
 
 function simpledrawer:impl/new_drawer/destroy/count with storage simpledrawer:main temp.simpledrawer

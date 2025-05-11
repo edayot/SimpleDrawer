@@ -30,7 +30,7 @@ execute
         data modify storage simpledrawer:main temp.args.slot set from storage simpledrawer:main temp.InventoryUpgrade[0].Slot
         execute
             if data storage simpledrawer:main temp.InventoryUpgrade[0].components."minecraft:custom_data".ctc{id:"new_drawer"}
-            run function ~/../drawer
+            run data modify storage simpledrawer:main temp.args.model set value "simpledrawer:new_drawer"
         execute
             if data storage simpledrawer:main temp.InventoryUpgrade[0].components."minecraft:custom_data".ctc{id:"hopper_upgrade"}
             run data modify storage simpledrawer:main temp.args.model set value "simpledrawer:hopper_upgrade"
