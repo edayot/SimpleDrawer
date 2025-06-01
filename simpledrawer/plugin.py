@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import Any, Iterable, Literal, Optional
-from beet import Context, ItemModel
+from beet import Context, FluidTag, ItemModel
 from simple_item_plugin.types import NAMESPACE, Lang
-from simple_item_plugin.item import Item
+from simple_item_plugin.item import Item, BlockProperties
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
-from simple_item_plugin.guide import ItemGroup
+from simple_item_plugin.guide import ItemGroup, Page
 
 from simple_item_plugin.types import TranslatedString
 from beet import Context, Function, ItemModifier
@@ -65,6 +65,54 @@ class UpgradeItem:
         ).export(ctx)
         return item
     
+@dataclass(kw_only=True)
+class DrawerItem:
+    id: str
+    wood_type: str
+    variant: str
+    additional_pages: Optional[list[Page]] = None
+
+    def export(self, ctx: Context):
+        item = ExternalItem(
+            id=self.id,
+            base_item="minecraft:furnace",
+            loot_table_path=f"simpledrawer:impl/{self.id}",
+            item_model="simpledrawer:new_drawer",
+            minimal_representation={
+                "id":"minecraft:furnace",
+                "components": {
+                    "minecraft:item_name": {"translate":f"simpledrawer.{self.id}"},
+                    "minecraft:tooltip_display": {
+                        "hidden_components": [
+                            "minecraft:container",
+                        ]
+                    },
+                    "minecraft:container": [
+                        {
+                            "slot": 0,
+                            "item": {
+                                "id": "minecraft:stone",
+                                "count": 1,
+                                "components": {
+                                    "minecraft:custom_data": {
+                                        "simpledrawer": {
+                                            "wood_type": self.wood_type,
+                                            "variant": self.variant,
+                                            "items_counts": {str(x):0 for x in range(27)},
+                                            "slot_count": 1,
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                    
+                }
+            },
+            guide_description=(f"simpledrawer.guide.{self.id}",{}),
+            additional_pages=self.additional_pages
+        )
+        return item.export(ctx)
 
 
 
@@ -116,6 +164,7 @@ def beet_default(ctx: Context):
     netherite_ingot = VanillaItem(id="minecraft:netherite_ingot").export(ctx)
     nether_star = VanillaItem(id="minecraft:nether_star").export(ctx)
     hopper = VanillaItem(id="minecraft:hopper").export(ctx)
+    piston = VanillaItem(id="minecraft:piston").export(ctx)
 
 
 
@@ -143,6 +192,96 @@ def beet_default(ctx: Context):
             (smooth_stone, smooth_stone, smooth_stone),
         ),
         result=(heavy_workbench, 1),
+    ).export(ctx, True)
+
+    new_drawer = DrawerItem(
+        id="new_drawer",
+        wood_type="simpledrawer:oak",
+        variant="single",
+        additional_pages=[
+            Page(
+                ctx=ctx,
+                content=[
+                    "",
+                    {"translate":"simpledrawer.guide.drawers.inserting_title","color":"black","font":"simpledrawer:medium_font"},
+                    {"translate":"simpledrawer.guide.drawers.inserting","color":"black"}
+                ]
+            ),
+            Page(
+                ctx=ctx,
+                content=[
+                    "",
+                    {"translate":"simpledrawer.guide.drawers.extracting_title","color":"black","font":"simpledrawer:medium_font"},
+                    {"translate":"simpledrawer.guide.drawers.extracting","color":"black"}
+                ]
+            )
+        ]
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (oak_planks, stick, oak_planks),
+            (stick, iron_nugget, stick),
+            (oak_planks, barrel, oak_planks),
+        ),
+        result=(new_drawer, 1),
+    ).export(ctx, True)
+
+    double_new_drawer = DrawerItem(
+        id="double_new_drawer",
+        wood_type="simpledrawer:oak",
+        variant="double",
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (oak_planks, barrel, oak_planks),
+            (stick, iron_nugget, stick),
+            (oak_planks, barrel, oak_planks),
+        ),
+        result=(double_new_drawer, 1),
+    ).export(ctx, True)
+
+
+    quadruple_new_drawer = DrawerItem(
+        id="quadruple_new_drawer",
+        wood_type="simpledrawer:oak",
+        variant="quadruple",
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (oak_planks, barrel, oak_planks),
+            (barrel, iron_nugget, barrel),
+            (oak_planks, barrel, oak_planks),
+        ),
+        result=(quadruple_new_drawer, 1),
+    ).export(ctx, True)
+
+    compacting_new_drawer = DrawerItem(
+        id="compacting_new_drawer",
+        wood_type="simpledrawer:compacting",
+        variant="normal",
+        additional_pages=[
+            Page(
+                ctx=ctx,
+                content=[
+                    "",
+                    {"translate":"simpledrawer.upgrades","font":"simpledrawer:medium_font","color":"black"},
+                    {"text":"\n\n","font":"simpledrawer:big","color":"black"},
+                    {"translate":"simpledrawer.guide.upgrade","color":"black"}
+                ]
+            ),
+        ]
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (smooth_stone, crafting_table, smooth_stone),
+            (piston, new_drawer, piston),
+            (smooth_stone, iron_ingot, smooth_stone),
+        ),
+        result=(compacting_new_drawer, 1),
     ).export(ctx, True)
 
 
@@ -288,7 +427,33 @@ def beet_default(ctx: Context):
         guide_description=(f"{NAMESPACE}.guide.description", {
             Lang.en_us: "The guide you are currently holding.",
             Lang.fr_fr: "Le guide que vous tenez actuellement."
-        })
+        }),
+        additional_pages=[
+            Page(
+                ctx=ctx,
+                content=[
+                    "",
+                    {"translate":"simpledrawer.project","font":"simpledrawer:big_font","color":"black","bold":True},
+                    {"text":"\n\n","font":"simpledrawer:pages","color":"white"},
+                    {"translate":"simpledrawer.guide.project_pages","color":"black"},
+                    {"text":"\n","font":"simpledrawer:pages","color":"white"},
+                    {"text":"\u0031","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+                    {"text":"\u0032","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+                    {"text":"\u0033","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+                    {"text":"\u0034","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
+
+                    {"text":"\n\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
+
+                    {"text":"\n\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"GitHub"}},"click_event":{"action":"open_url","url":"https://github.com/edayot/SimpleDrawer"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Planet Minecraft"}},"click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/simple-drawer/"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Smithed"}},"click_event":{"action":"open_url","url":"https://smithed.net/packs/simpledrawer"}},
+                    {"text":"\uf8f2\uf8f0\uf8f0\uf8f0","font":"simpledrawer:pages","color":"white","hover_event":{"action":"show_text","value":{"text":"Modrinth"}},"click_event":{"action":"open_url","url":"https://modrinth.com/datapack/simpledrawer"}},
+                ]
+            ),  
+        ]
     ).export(ctx)
 
     ShapedRecipe(
@@ -306,7 +471,10 @@ def beet_default(ctx: Context):
         name=("", {}),
         items_list=[
             heavy_workbench, 
-            
+            new_drawer,
+            double_new_drawer,
+            quadruple_new_drawer,
+            compacting_new_drawer,
             iron_upgrade, 
             gold_upgrade,
             diamond_upgrade,
