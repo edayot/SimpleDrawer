@@ -18,6 +18,11 @@
 								],
 								"minecraft:lock": {"components":{"minecraft:custom_data":{"simpledrawer":"lock"}}},
 								"minecraft:item_model": "simpledrawer:new_drawer",
+								"minecraft:tooltip_display": {
+									"hidden_components": [
+										"minecraft:container"
+									]
+								},
 								"minecraft:container": [
 								  {
 									"slot": 0,

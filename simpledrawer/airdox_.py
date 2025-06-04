@@ -98,7 +98,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     final_test=final_test+"run function {project_id}:v{project_version}/load".format(project_id=ctx.project_id,project_version=ctx.project_version)
 
     function=function+final_test
-    ctx.data.functions[f"{ctx.project_id}:impl/test_load"].append(function)
+    ctx.data.functions.setdefault(f"{ctx.project_id}:impl/test_load").append(function)
     
 
     # dep functions tag
@@ -117,12 +117,6 @@ class PackTest(Function):
 
     scope: ClassVar[NamespaceFileScope] = {0:("tests",),45:("test",)}
 
-class ItemModelNamespace(JsonFile):
-    """Class representing a model."""
-
-    scope: ClassVar[NamespaceFileScope] = ("items",)
-    extension: ClassVar[str] = ".json"
-
 @dataclass
 class PackTestManager:
     """Service for managing json messages."""
@@ -131,7 +125,6 @@ class PackTestManager:
 
     def __post_init__(self):
         self.ctx.data.extend_namespace.append(PackTest)
-        self.ctx.data.extend_namespace.append(ItemModelNamespace)
     
 
 
