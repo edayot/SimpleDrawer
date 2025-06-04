@@ -118,28 +118,10 @@ class DrawerItem:
 
 
 def beet_default(ctx: Context):
-    """
-    require:
-    - airdox_.add_tests_directory
-    - airdox_.allow_function_without_name
-    - mecha.contrib.messages
-    - bolt
-
-    """
-
-    """
-
-      - guide
-    - pack
-    - simpledrawer.add_mc_version_support
-    - simpledrawer.add_versioning_to_items
-    - simpledrawer.generate_translation
-    - airdox_.test_load_generator
-    
-    """
     # ctx.require("simpledrawer.pack")
     ctx.require("simpledrawer.add_mc_version_support")
     ctx.require("simpledrawer.generate_translation")
+    ctx.require("simpledrawer.airdox_.add_id")
     ctx.require("simpledrawer.airdox_.test_load_generator")
     ctx.require("simpledrawer.new_drawer_model")
 

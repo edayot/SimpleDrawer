@@ -79,8 +79,6 @@ output = "build"
 pipeline = [
     "simple_item_plugin",
     "simpledrawer",
-    "simpledrawer.airdox_.test_load_generator",
-    "simpledrawer.airdox_.add_id",
 ]
 require=[
     "bolt",
