@@ -1,1 +1,0 @@
-tellraw @s [{"translate":"simpledrawer.load","color":"green"},{"text":f"{ctx.meta.version_string}]","color":"green"}]

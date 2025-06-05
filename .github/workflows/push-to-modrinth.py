@@ -7,8 +7,10 @@ import sys
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 import hashlib
 import time
+import toml
 
 time.sleep(10)
+MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
 
 def get_sha512(file):
     sha512 = hashlib.sha512()
@@ -29,32 +31,18 @@ def post_modrinth_version(data,files):
         files=files
     )
 
-try: 
-    MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
-except KeyError:
-    try:
-        with open("credentials.json", "r") as f:
-            creds = json.load(f)
-        MODRINTH_AUTH_TOKEN = creds['MODRINTH_AUTH_TOKEN']
-    except:
-        print("Missing credentials")
-        exit(1)
 
 
-try:
-    beet = yaml.safe_load(open("beet.yaml"))
-except FileNotFoundError:
-    try:
-        beet = yaml.safe_load(open("../../beet.yaml"))
-    except FileNotFoundError:
-        sys.exit(1,"beet.yaml not found")
+beet = toml.load("pyproject.toml")['tool']['beet']
+poetry = toml.load("pyproject.toml")['tool']['poetry']
+
 
 # get current version using poetry version command
 command = f"poetry version | cut -d' ' -f2"
 CURRENT_VERSION = os.popen(command).read().strip()
 print("CURRENT_VERSION: " + CURRENT_VERSION)
 
-release=requests.get(f"https://api.github.com/repos/edayot/{beet['name']}/releases/tags/v{CURRENT_VERSION}").json()
+release=requests.get(f"https://api.github.com/repos/edayot/{poetry['name']}/releases/tags/v{CURRENT_VERSION}").json()
 
 
 
@@ -81,19 +69,19 @@ data={
 build="build"
 bundled_datapack=False
 for file in os.listdir(build):
-    if "Bundled" in file:
+    if "_bundled" in file:
         bundled_datapack=True
         break
 
 files={}
 for file in os.listdir(build):
-    if "Bundled" in file or not bundled_datapack:
+    if "_bundled" in file or not bundled_datapack:
         data['file_parts'].append(file)
 
         with open(os.path.join(build,file),"rb") as f:
             files[file] = (file,f.read())
 
-    if "Datapack" in file and "Bundled" in file or not bundled_datapack:
+    if "_dp_bundled" in file or not bundled_datapack:
         data['primary_file']=file
 
 
@@ -131,4 +119,3 @@ for file in files_modrinth:
         print(f"Hashes match for {file['filename']}")
             
 # Modify the resource pack file_type to "required-resource-pack"
-

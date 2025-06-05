@@ -1,9 +1,0 @@
-{
-    "parent": "simpledrawer:item/new_drawer/full_drawers_orientable_tapped",
-    "textures": {
-        "top": "simpledrawer:block/new_drawer/drawers_comp_side",
-        "front": "simpledrawer:block/new_drawer/drawers_comp_front_0",
-        "side": "simpledrawer:block/new_drawer/drawers_comp_side",
-        "bottom": "simpledrawer:block/new_drawer/drawers_comp_trim"
-    }
-}

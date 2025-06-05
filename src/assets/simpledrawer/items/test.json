@@ -1,0 +1,28 @@
+{
+    "model": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:container",
+        "value": {
+            "items": {
+                "contains": [
+                    {
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "simpledrawer": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "on_true": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/diamond"
+        },
+        "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/iron_ingot"
+        }
+    }
+}

@@ -21,10 +21,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Setup Python 3.11
+      - name: Setup Python 3.12
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.12
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
@@ -40,8 +40,8 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
-
-      - name: Setup OpenGL and Run Release
+      
+      - name: Setup OpenGL and Run Tests
         uses: edayot/model_resolver@master
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -49,7 +49,24 @@ jobs:
           VERSION_BUMP: ${{ github.event.inputs.version_bump }}
         with:
           commands: |
-            bash .github/workflows/release.sh
+            git config --global user.name "github-actions"
+            git config --global user.email "action@github.com"
+            # print the version bump
+            echo "Version bump: $VERSION_BUMP"
+            if [ "$VERSION_BUMP" = "automatic" ]; then
+              poetry run semantic-release -v version
+            fi
+            if [ "$VERSION_BUMP" = "patch" ]; then
+              poetry run semantic-release -v version --patch
+            fi
+            if [ "$VERSION_BUMP" = "minor" ]; then
+              poetry run semantic-release -v version --minor
+            fi
+            if [ "$VERSION_BUMP" = "major" ]; then
+              poetry run semantic-release -v version --major
+            fi
+            poetry run semantic-release -v publish
+
       - name: Push to smithed
         continue-on-error: true
         run: poetry run python .github/workflows/push-to-smithed.py 
