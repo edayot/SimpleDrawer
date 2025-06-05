@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simpledrawer"
-version = "2.5.1"
+version = "2.6.0"
 description = ""
 authors = ["edayot <pro.e.dayot@gmail.com>"]
 readme = "README.md"
