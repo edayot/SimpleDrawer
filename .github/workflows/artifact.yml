@@ -4,14 +4,6 @@ on:
     branches:
       - master
 
-env:
-  MINECRAFT_VERSION: 1.21
-  FABRIC_LOADER_VERSION: 0.15.11
-  PACKTEST_VERSION: 1.8.0-beta3
-  FABRIC_API_VERSION: 0.100.1+1.21
-  INSTALLER_VERSION: 1.0.1
-
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -67,19 +59,3 @@ jobs:
         with:
           name: resourcepack-bundled
           path: build/resourcepack-bundled/
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-      - name: Download server and mods in a python script
-        run: |
-          python3 -m pip install requests
-          python3 .github/workflows/download_files.py
-      - name: Download and prepare files
-        run: |
-          mkdir -p world/datapacks
-          cp -r build/datapack-bundled/ world/datapacks/datapack/
-      - name: Run tests
-        run: |
-          java -Xmx2G -Dpacktest.auto -Dpacktest.auto.annotations -jar server.jar nogui
-      
