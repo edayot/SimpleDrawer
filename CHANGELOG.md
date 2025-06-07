@@ -2,6 +2,27 @@
 
 
 
+## v2.6.1 (2025-06-07)
+
+### Fix
+
+* fix: #44 ([`5bd0a62`](https://github.com/edayot/SimpleDrawer/commit/5bd0a62f5d8b2dc09d6b7b4f08eaa4e352280757))
+
+### Unknown
+
+* modrinth id ([`6678cfb`](https://github.com/edayot/SimpleDrawer/commit/6678cfb16a8aebf47ee426ba34f95675c4c83754))
+
+* docs ([`c1c79dd`](https://github.com/edayot/SimpleDrawer/commit/c1c79ddb2d57afcda2240f6aa7fbc5245e1afafb))
+
+* ecample material ([`c262a26`](https://github.com/edayot/SimpleDrawer/commit/c262a26d211db8ed735d6bf59261cc3e06d7a2a9))
+
+* license ([`3fd88ba`](https://github.com/edayot/SimpleDrawer/commit/3fd88bae875d7754e673e9f6f4a8d7ac65de02d8))
+
+* Update modrinth_update.yml ([`916bffc`](https://github.com/edayot/SimpleDrawer/commit/916bffc984333e61a2d1825a4f77bc2c40ccc89a))
+
+* rollback images ([`a2380ed`](https://github.com/edayot/SimpleDrawer/commit/a2380ed3595c09b1aeb4aa12f0b6d786e4b50ec4))
+
+
 ## v2.6.0 (2025-06-05)
 
 ### Documentation
