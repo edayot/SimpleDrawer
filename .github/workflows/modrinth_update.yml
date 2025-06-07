@@ -7,7 +7,7 @@ jobs:
       runs-on: 'ubuntu-latest'
       steps:
       - uses: actions/checkout@v3
-      - uses: funnyboy-roks/modrinth-auto-desc@v1.5
+      - uses: funnyboy-roks/modrinth-auto-desc@v1.6
         with:
           auth-token: ${{ secrets.MODRINTH_AUTH_TOKEN }}
           slug: 'template'
