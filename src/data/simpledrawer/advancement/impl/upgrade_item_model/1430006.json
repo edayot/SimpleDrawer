@@ -6,11 +6,15 @@
                 "items": [
                     {
                         "components": {
-                            "minecraft:custom_model_data": 1430006
+                            "minecraft:custom_model_data": {
+                                "floats": [
+                                    1430006
+                                ]
+                            }
                         },
                         "predicates": {
                             "minecraft:custom_data": {
-                                "ctc":{
+                                "ctc": {
                                     "from": "airdox_:simpledrawer"
                                 }
                             }
