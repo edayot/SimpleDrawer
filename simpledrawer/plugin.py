@@ -244,6 +244,19 @@ def beet_default(ctx: Context):
         id="compacting_new_drawer",
         wood_type="simpledrawer:compacting",
         variant="normal",
+    ).export(ctx)
+
+    drawer_controller = SimpleDrawerItem(
+        id="drawer_controller",
+        base_item="minecraft:furnace",
+        item_name=(f"{NAMESPACE}.item.drawer_controller", {
+            Lang.en_us: "Drawer Controller",
+            Lang.fr_fr: "Contrôleur de drawer"
+        }),
+        block_properties=BlockProperties(
+            base_block="minecraft:lodestone",
+            all_same_faces=False,
+        ),
         additional_pages=[
             Page(
                 ctx=ctx,
@@ -528,7 +541,7 @@ def get_translation(item_name, id):
         "entity": "this",
         "lore": [
             {
-                "translate": "container.shulkerBox.itemCount",
+                "translate": "simpledrawer.new_drawer.item_count",
                 "with": [
                     item_name,
                     {

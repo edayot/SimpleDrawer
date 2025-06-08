@@ -44,6 +44,7 @@
     "simpledrawer.double_new_drawer":"Double Drawer",
     "simpledrawer.quadruple_new_drawer":"Quadruple Drawer",
     "simpledrawer.compacting_new_drawer": "Compacting Drawer",
+    "simpledrawer.new_drawer.item_count":"%s x%s",
     "simpledrawer.upgrades":"Upgrades",
     "simpledrawer.guide.first_page":"This guide show all the blocks and items added by SimpleDrawer, with their respectives recipes.",
     "simpledrawer.drawers":"Drawer manual",

@@ -3,7 +3,7 @@
 	"entity": "this",
 	"lore": [
 		{
-			"translate": "container.shulkerBox.itemCount",
+			"translate": "simpledrawer.new_drawer.item_count",
 			"with": [
 				{
 					"nbt": "temp.ItemsDestroy[0].item.id",

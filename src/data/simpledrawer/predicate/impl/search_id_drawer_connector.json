@@ -1,0 +1,26 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+        "simpledrawer.drawer_connector.id": {
+            "min": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#search_id"
+                },
+                "score": "simpledrawer.math",
+                "scale": 1
+            },
+            "max": {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#search_id"
+                },
+                "score": "simpledrawer.math",
+                "scale": 1
+            }
+        }
+    }
+}

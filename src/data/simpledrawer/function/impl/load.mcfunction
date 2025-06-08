@@ -14,7 +14,6 @@ gamerule maxCommandChainLength 2147483647
 
 
 
-scoreboard objectives add simpledrawer.math dummy
 scoreboard objectives add simpledrawer.id dummy
 
 scoreboard objectives add simpledrawer.new_drawer.id dummy
@@ -22,6 +21,10 @@ scoreboard objectives add simpledrawer.new_drawer.part_id dummy
 scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
 scoreboard objectives add simpledrawer.new_drawer.as_players_entities dummy
 scoreboard objectives add simpledrawer.new_drawer.no_format_cooldown dummy
+
+scoreboard objectives add simpledrawer.drawer_connector.id dummy
+
+
 
 # Versioning block for future updates
 scoreboard objectives add simpledrawer.block.major dummy

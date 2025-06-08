@@ -13,7 +13,10 @@ for i in range(3*9):
     function f"{path}/input":
         scoreboard players set #if_item simpledrawer.math 0
         execute if data entity @s f'item.components."minecraft:container"[{{slot:{i}}}].item' run function ~/if_item
-        execute if score #if_item simpledrawer.math matches 0 run function ~/unless_item
+        execute 
+            if score #if_item simpledrawer.math matches 0 
+            unless score #slot simpledrawer.io matches -2
+            run function ~/unless_item
 
         function ~/over:
             scoreboard players operation #newGlobalCount simpledrawer.math = #maxCount simpledrawer.math
@@ -24,7 +27,7 @@ for i in range(3*9):
 
         function ~/if_item:
             scoreboard players set #if_item simpledrawer.math 1
-            # say if item {i}
+            # say f"if item {i}"
             data modify storage simpledrawer:main temp.item1 set from storage simpledrawer:io input
             raw f'data modify storage simpledrawer:main temp.item2 set from entity @s item.components."minecraft:container"[{{slot:{i}}}].item'
 
