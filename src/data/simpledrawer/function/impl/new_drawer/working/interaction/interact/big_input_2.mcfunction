@@ -1,5 +1,6 @@
 
 
+scoreboard players set #one_success simpledrawer.math 0
 
 function simpledrawer:impl/new_drawer/working/interaction/interact/big_input/0
 
@@ -40,4 +41,9 @@ execute unless score #success simpledrawer.io matches -2 run function simpledraw
 execute unless score #success simpledrawer.io matches -2 run function simpledrawer:impl/new_drawer/working/interaction/interact/big_input/35
 
 
+
+
+execute
+    if score #one_success simpledrawer.math matches 1
+    run function simpledrawer:impl/new_drawer/base_display
 

@@ -203,4 +203,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_output/normal:
             function simpledrawer:impl/new_drawer/working/io/compacting_input/display_items
 
 
-function simpledrawer:impl/new_drawer/base_display
+execute 
+    if score #success simpledrawer.io matches 1 
+    if score #disable_display simpledrawer.io matches 0
+    run function simpledrawer:impl/new_drawer/base_display
+
+scoreboard players set #disable_display simpledrawer.io 0
+

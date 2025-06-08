@@ -7,6 +7,8 @@
 # -1 for checking all slot
 # -2 for checking all slot unless the slot is empty
 
+# A score #disable_display simpledrawer.io to disable the display of the drawer
+
 # Outputs
 # The item in storage simpledrawer.io output
 # The 
@@ -350,5 +352,10 @@ function simpledrawer:impl/new_drawer/working/io/compacting_input/normal:
     
     
 
-function simpledrawer:impl/new_drawer/base_display
+execute 
+    if score #success simpledrawer.io matches 1 
+    if score #disable_display simpledrawer.io matches 0
+    run function simpledrawer:impl/new_drawer/base_display
+
+scoreboard players set #disable_display simpledrawer.io 0
 
