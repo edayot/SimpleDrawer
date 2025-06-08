@@ -16,7 +16,7 @@ def get_text(
         {
             "text": f"{name} : ",
             "color": "green",
-            "hoverEvent": {
+            "hover_event": {
                 "action": "show_text",
                 "contents": description
             }
@@ -38,11 +38,11 @@ def get_text(
             "text": f" {value} ",
             "color": color,
             "bold": is_default,
-            "hoverEvent": {
+            "hover_event": {
                 "action": "show_text",
                 "contents": f"Click to set \"{name}\" to {value}{default_text}{current_text}"
             },
-            "clickEvent": {
+            "click_event": {
                 "action": "run_command",
                 "value": command+"/"+value
             }
@@ -145,7 +145,7 @@ def config_storage(
         x = {
             "text": f"{name}: ",
             "color": "green",
-            "hoverEvent": {
+            "hover_event": {
                 "action": "show_text",
                 "contents": description
             }
@@ -155,11 +155,11 @@ def config_storage(
         default = {
             "text": f" {default_value} ",
             "bold": True,
-            "hoverEvent": {
+            "hover_event": {
                 "action": "show_text",
                 "contents": f"Click to reset \"{name}\" to {default_value}"
             },
-            "clickEvent": {
+            "click_event": {
                 "action": "run_command",
                 "value": f"/function {func_name}"
             }
@@ -170,11 +170,11 @@ def config_storage(
         custom = {
             "text": " Custom ",
             "bold": False,
-            "hoverEvent": {
+            "hover_event": {
                 "action": "show_text",
                 "contents": f"Click to set a custom value for \"{name}\""
             },
-            "clickEvent": {
+            "click_event": {
                 "action": "suggest_command",
                 "value": f"/data modify storage simpledrawer:main {storage} set value {default_value}"
             },
