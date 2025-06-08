@@ -1,0 +1,8 @@
+$scoreboard players set #config.max_resummon simpledrawer.math $(lod_reconstruction)
+$data modify storage simpledrawer:main config.resummon_range set value $(lod_range)
+$scoreboard players set #config.alternative_compacting simpledrawer.math $(alternative_compacting)
+$data modify storage simpledrawer:main drawer_type.iron.maxCount set value $(iron_capacity)
+$data modify storage simpledrawer:main drawer_type.gold.maxCount set value $(gold_capacity)
+$data modify storage simpledrawer:main drawer_type.diamond.maxCount set value $(diamond_capacity)
+$data modify storage simpledrawer:main drawer_type.star.maxCount set value $(star_capacity)
+$data modify storage simpledrawer:main drawer_type.netherite.maxCount set value $(netherite_capacity)
