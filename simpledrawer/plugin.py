@@ -147,6 +147,11 @@ def beet_default(ctx: Context):
     nether_star = VanillaItem(id="minecraft:nether_star").export(ctx)
     hopper = VanillaItem(id="minecraft:hopper").export(ctx)
     piston = VanillaItem(id="minecraft:piston").export(ctx)
+    observer = VanillaItem(id="minecraft:observer").export(ctx)
+    iron_block = VanillaItem(id="minecraft:iron_block").export(ctx)
+    ender_pearl = VanillaItem(id="minecraft:ender_pearl").export(ctx)
+    dragon_head = VanillaItem(id="minecraft:dragon_head").export(ctx)
+    redstone_block = VanillaItem(id="minecraft:redstone_block").export(ctx)
 
 
 
@@ -240,10 +245,43 @@ def beet_default(ctx: Context):
         result=(quadruple_new_drawer, 1),
     ).export(ctx, True)
 
+    drawer_frame = SimpleDrawerItem(
+        id="drawer_frame",
+        item_name=(
+            f"{NAMESPACE}.item.drawer_frame",
+            {
+                Lang.en_us: "Mechanical Drawer Frame",
+                Lang.fr_fr: "Cadre de drawer mécanique",
+            }
+        ),
+        guide_description=("simpledrawer.guide.drawer_frame", {
+            Lang.en_us: "A frame used to create mechanical drawers.",
+            Lang.fr_fr: "Un cadre utilisé pour créer des drawers mécaniques.",
+        }),
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (smooth_stone, observer, smooth_stone),
+            (iron_block, new_drawer, iron_block),
+            (smooth_stone, observer, smooth_stone),
+        ),
+        result=(drawer_frame, 1),
+    ).export(ctx)
+
     compacting_new_drawer = DrawerItem(
         id="compacting_new_drawer",
         wood_type="simpledrawer:compacting",
         variant="normal",
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (smooth_stone, crafting_table, smooth_stone),
+            (piston, drawer_frame, piston),
+            (smooth_stone, redstone_block, smooth_stone),
+        ),
+        result=(compacting_new_drawer, 1),
     ).export(ctx)
 
     drawer_controller = SimpleDrawerItem(
@@ -257,6 +295,10 @@ def beet_default(ctx: Context):
             base_block="minecraft:lodestone",
             all_same_faces=False,
         ),
+        guide_description=("simpledrawer.guide.drawer_controller", {
+            Lang.en_us: "A controller for drawers, shift-right-click to transfer items to nearby drawers.",
+            Lang.fr_fr: "Un contrôleur pour les drawers, shift-clic droit pour transférer les items vers les drawers à proximité.",
+        }),
         additional_pages=[
             Page(
                 ctx=ctx,
@@ -272,12 +314,13 @@ def beet_default(ctx: Context):
 
     ShapedRecipe(
         items=(
-            (smooth_stone, crafting_table, smooth_stone),
-            (piston, new_drawer, piston),
-            (smooth_stone, iron_ingot, smooth_stone),
+            (smooth_stone, nether_star, smooth_stone),
+            (ender_pearl, drawer_frame, ender_pearl),
+            (smooth_stone, dragon_head, smooth_stone),
         ),
-        result=(compacting_new_drawer, 1),
+        result=(drawer_controller, 1),
     ).export(ctx, True)
+
 
 
     iron_upgrade = UpgradeItem(
@@ -469,7 +512,9 @@ def beet_default(ctx: Context):
             new_drawer,
             double_new_drawer,
             quadruple_new_drawer,
+            drawer_frame,
             compacting_new_drawer,
+            drawer_controller,
             iron_upgrade, 
             gold_upgrade,
             diamond_upgrade,
