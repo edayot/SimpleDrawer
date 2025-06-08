@@ -4,13 +4,13 @@
 		"trigger": "minecraft:player_interacted_with_entity",
 		"conditions": {
 		  "entity": {
-			"nbt": "{Tags:[\"simpledrawer.drawer_connector.interaction\"]}"
+			"nbt": "{Tags:[\"simpledrawer.drawer_controller.interaction\"]}"
 		  }
 		}
 	  }
 	},
 	"rewards": {
-	  "function": "simpledrawer:impl/calls/drawer_connector/interact"
+	  "function": "simpledrawer:impl/calls/drawer_controller/interact"
 	}
   }
   

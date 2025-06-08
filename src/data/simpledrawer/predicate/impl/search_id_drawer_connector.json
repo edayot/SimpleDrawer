@@ -2,7 +2,7 @@
     "condition": "minecraft:entity_scores",
     "entity": "this",
     "scores": {
-        "simpledrawer.drawer_connector.id": {
+        "simpledrawer.drawer_controller.id": {
             "min": {
                 "type": "minecraft:score",
                 "target": {

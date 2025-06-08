@@ -1,5 +1,5 @@
 # @public
-advancement revoke @s only simpledrawer:impl/interact_drawer_connector
+advancement revoke @s only simpledrawer:impl/interact_drawer_controller
 execute unless score simpledrawer load.status matches 1 run return fail
 playsound minecraft:entity.item_frame.add_item block @s ~ ~ ~
 
@@ -13,7 +13,7 @@ data modify storage simpledrawer:main temp.SelectedItem set from entity @s Selec
 tag @s add simpledrawer.interacter
 scoreboard players set #found simpledrawer.math 0
 execute 
-    as @e[tag=simpledrawer.drawer_connector.interaction,distance=..10,sort=nearest] 
+    as @e[tag=simpledrawer.drawer_controller.interaction,distance=..10,sort=nearest] 
     run function ~/search_test:
         execute 
             if score #found simpledrawer.math matches 0

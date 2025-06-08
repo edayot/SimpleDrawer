@@ -1,8 +1,8 @@
 
 
 
-scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.drawer_connector.id
-kill @e[tag=simpledrawer.drawer_connector.interaction,predicate=simpledrawer:impl/search_id_drawer_connector]
+scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.drawer_controller.id
+kill @e[tag=simpledrawer.drawer_controller.interaction,predicate=simpledrawer:impl/search_id_drawer_controller]
 
 
 

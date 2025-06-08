@@ -22,7 +22,7 @@ scoreboard objectives add simpledrawer.new_drawer.slot_count dummy
 scoreboard objectives add simpledrawer.new_drawer.as_players_entities dummy
 scoreboard objectives add simpledrawer.new_drawer.no_format_cooldown dummy
 
-scoreboard objectives add simpledrawer.drawer_connector.id dummy
+scoreboard objectives add simpledrawer.drawer_controller.id dummy
 
 
 
