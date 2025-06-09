@@ -76,18 +76,18 @@ ignore = [
 [tool.beet.data_pack]
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
-pack_format = 71
+pack_format = 80
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
-pack_format = 55
+pack_format = 63
 
 
 [tool.beet.meta]
-mc_supports = ["1.21.5"]
-mc_supports_dataversion = [4325]
-minecraft_version = "1.21.5"
+mc_supports = ["1.21.6-pre3"]
+mc_supports_dataversion = [4432]
+minecraft_version = "1.21.6-pre3"
 modrinth_id = "JmCxCKiW"
 
 

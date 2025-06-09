@@ -13,6 +13,7 @@
     "simpledrawer.text.in_total":" in total §r",
     "simpledrawer.text.named":"Named : §r",
     "simpledrawer.text.cant_downgrade":"Can't downgrade filled drawer",
+    "simpledrawer.text.cant_destroy_drawer":"You can't destroy this drawer without shulker tape",
     "simpledrawer.guide.message":"Check the wiki for details",
     "simpledrawer.tellraw_prefix":"[SimpleDrawer] ",
     "simpledrawer.load_error.smithed.custom_block":"No smithed.custom_block lib found",

@@ -13,6 +13,7 @@
     "simpledrawer.text.in_total":" au total §r",
     "simpledrawer.text.named":"Nommé : §r",
     "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli",
+    "simpledrawer.text.cant_destroy_drawer":"Tu ne peux pas détruire ce drawer sans du ruban de shulker",
     "simpledrawer.guide.message":"Lisez le wiki pour plus de détails",
     "simpledrawer.tellraw_prefix":"[SimpleDrawer] ",
     "simpledrawer.load_error.smithed.custom_block":"La librairie smithed.custom_block n'a pas été trouvé",

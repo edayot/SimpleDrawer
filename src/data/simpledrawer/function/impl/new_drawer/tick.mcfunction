@@ -9,6 +9,7 @@ execute
 
 execute
     if score #good_version simpledrawer.math matches 1
+    if entity @s[tag=!simpledrawer.new_drawer.tape]
     run function ./check_player_nearby with storage simpledrawer:main config
 
 
@@ -52,6 +53,13 @@ function ./check_player_nearby:
                 store result storage simpledrawer:main temp.simpledrawer.slot_count int 1 
                 run scoreboard players get @s simpledrawer.new_drawer.slot_count
 
+            scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
+            kill @e[
+                tag=!simpledrawer.new_drawer.base,
+                tag=!simpledrawer.new_drawer.part.base_block,
+                tag=simpledrawer.new_drawer.part,
+                predicate=simpledrawer:impl/search_id_new_drawer
+            ]
             function simpledrawer:impl/new_drawer/place/variant
             scoreboard players set @s simpledrawer.new_drawer.as_players_entities 1
             function simpledrawer:impl/new_drawer/base_display

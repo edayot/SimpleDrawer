@@ -1,6 +1,7 @@
+from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Iterable, Literal, Optional
-from beet import Context, FluidTag, ItemModel
+from beet import Context, LootTable
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item, BlockProperties
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
@@ -10,6 +11,7 @@ from simple_item_plugin.types import TranslatedString
 from beet import Context, Function, ItemModifier
 import nbtlib
 import json
+from beet.contrib.vanilla import Vanilla
 
 
 class SimpleDrawerItem(Item):
@@ -76,7 +78,7 @@ class DrawerItem:
         item = ExternalItem(
             id=self.id,
             base_item="minecraft:furnace",
-            loot_table_path=f"simpledrawer:impl/{self.id}",
+            loot_table_path=f"simpledrawer:impl/items/{self.id}",
             item_model="simpledrawer:new_drawer",
             minimal_representation={
                 "id":"minecraft:furnace",
@@ -124,6 +126,7 @@ def beet_default(ctx: Context):
     ctx.require("simpledrawer.airdox_.add_id")
     ctx.require("simpledrawer.airdox_.test_load_generator")
     ctx.require("simpledrawer.new_drawer_model")
+    ctx.require("simpledrawer.create_tape_loot_table")
 
     cobblestone = VanillaItem(id="minecraft:cobblestone").export(ctx)
     slime_ball = VanillaItem(id="minecraft:slime_ball").export(ctx)
@@ -180,6 +183,47 @@ def beet_default(ctx: Context):
         ),
         result=(heavy_workbench, 1),
     ).export(ctx, True)
+
+    shulker_tape = SimpleDrawerItem(
+        id="shulker_tape",
+        item_name=(
+            f"{NAMESPACE}.item.shulker_tape",
+            {
+                Lang.en_us: "Shulker Tape",
+                Lang.fr_fr: "Ruban de Shulker",
+            }
+        ),
+        base_item="minecraft:shulker_shell",
+        guide_description=("simpledrawer.guide.shulker_tape", {
+            Lang.en_us: "A tape to package drawers to be transported. 40 durability.",
+            Lang.fr_fr: "Un ruban pour emballer les drawers à transporter. 40 de durabilité.",
+        }),
+        components_extra={
+            "minecraft:max_stack_size": 1,
+            "minecraft:custom_data": {
+                "simpledrawer": {
+                    "upgrade": 1,
+                },
+            },
+            "minecraft:max_damage": 40,
+            "minecraft:damage": 0,
+            "minecraft:tool": {
+                "damage_per_block": 1,
+                "rules": [
+                    {
+                        "blocks": "minecraft:lodestone",
+                        "correct_for_drops": True,
+                        "speed": 15.0
+                    },
+                    {
+                        "blocks": "minecraft:beehive",
+                        "correct_for_drops": True,
+                        "speed": 3.0
+                    }
+                ]
+            }
+        }
+    ).export(ctx)
 
     new_drawer = DrawerItem(
         id="new_drawer",
@@ -250,13 +294,13 @@ def beet_default(ctx: Context):
         item_name=(
             f"{NAMESPACE}.item.drawer_frame",
             {
-                Lang.en_us: "Mechanical Drawer Frame",
-                Lang.fr_fr: "Cadre de drawer mécanique",
+                Lang.en_us: "Drawer Frame",
+                Lang.fr_fr: "Cadre de drawer",
             }
         ),
         guide_description=("simpledrawer.guide.drawer_frame", {
-            Lang.en_us: "A frame used to create mechanical drawers.",
-            Lang.fr_fr: "Un cadre utilisé pour créer des drawers mécaniques.",
+            Lang.en_us: "A frame used to create drawers.",
+            Lang.fr_fr: "Un cadre utilisé pour créer des drawers.",
         }),
     ).export(ctx)
 
@@ -646,3 +690,36 @@ def generate_translation(ctx: Context):
     ctx.data.item_modifiers[path] = ItemModifier(item_modifier)
         
 
+
+
+def create_tape_loot_table(ctx: Context):
+    vanilla = Vanilla(ctx, minecraft_version=ctx.meta.get("minecraft_version", "1.20.6"))
+
+    originals = [
+        "minecraft:blocks/lodestone",
+        "minecraft:blocks/beehive",
+    ]
+    for original in originals:
+        original_loot_table = deepcopy(vanilla.data.loot_tables[original].data)
+        original_loot_table["pools"].insert(0, {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "simpledrawer:special_tape"
+                }
+            ]
+        })
+        original_loot_table["__smithed__"] = {
+            "rules": [
+                {
+                    "type": "smithed:append",
+                    "target": "pools[0].entries",
+                    "source": {
+                        "type": "smithed:reference",
+                        "path": "pools[0].entries[0]"
+                    }
+                }
+            ]
+        }
+        ctx.data.loot_tables[original] = LootTable(original_loot_table)

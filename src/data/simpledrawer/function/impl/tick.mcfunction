@@ -23,6 +23,21 @@ execute
     at @s 
     run function simpledrawer:impl/new_drawer/destroy
 
+kill @e[
+    type=item,
+    nbt={
+        Item:{
+            id:"minecraft:lodestone",
+            count:1,
+            components:{
+                "minecraft:custom_data":{
+                    simpledrawer:{tape:1b}
+                }
+            },
+        },
+    },
+]
+
 
 
 

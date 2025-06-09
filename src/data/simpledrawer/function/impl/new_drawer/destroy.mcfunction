@@ -10,6 +10,51 @@ execute
     run kill @e[type=item,nbt={Item:{id:"minecraft:lodestone",count:1},Age:0s},limit=1,sort=nearest,distance=..1]
 
 
+scoreboard players set #break_with_tape simpledrawer.math 0
+execute 
+    store success score #break_with_tape simpledrawer.math
+    run kill @e[
+        type=item,
+        nbt={
+            Item:{
+                id:"minecraft:jigsaw",
+                count:1,
+                components:{
+                    "minecraft:custom_data":{
+                        simpledrawer:{tape:1b}
+                    }
+                },
+            },
+            Age:0s
+        },
+        limit=1,
+        sort=nearest,
+        distance=..1
+    ]
+
+
+empty_counts = {}
+for i in range(27):
+    empty_counts[i] = 0
+
+execute 
+    if score #break_with_tape simpledrawer.math matches 0
+    if entity @s[tag=!simpledrawer.new_drawer.tape]
+    unless data entity @s item.components.minecraft:custom_data.simpledrawer{items_counts:empty_counts}
+    run return run function ~/nope_destroy:
+        title @a[tag=!global.ignore.gui,distance=..10] actionbar [
+            {"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},
+            {"translate":"simpledrawer.text.cant_destroy_drawer","color":"red"}
+        ]
+        execute
+            if entity @s[tag=simpledrawer.new_drawer.wood_base] 
+            run setblock ~ ~ ~ minecraft:beehive replace
+        execute
+            if entity @s[tag=simpledrawer.new_drawer.stone_base]
+            run setblock ~ ~ ~ minecraft:lodestone replace
+
+
+
 
 
 data remove storage simpledrawer:main temp.simpledrawer

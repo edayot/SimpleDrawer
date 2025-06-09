@@ -3,8 +3,14 @@ execute
     if predicate simpledrawer:impl/sneaking 
     positioned ~ ~1.5 ~
     positioned ^ ^ ^2 
-    as @e[tag=simpledrawer.new_drawer.base,limit=1,sort=nearest,distance=..3,predicate=simpledrawer:impl/test_version] 
-    run function ~/no_format:
+    as @e[
+        tag=simpledrawer.new_drawer.base,
+        tag=!simpledrawer.new_drawer.tape,
+        limit=1,
+        sort=nearest,
+        distance=..3,
+        predicate=simpledrawer:impl/test_version
+    ] run function ~/no_format:
         scoreboard players set @s simpledrawer.new_drawer.no_format_cooldown 20
         function simpledrawer:impl/new_drawer/base_display
 

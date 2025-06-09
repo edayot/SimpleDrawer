@@ -1,0 +1,40 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:jigsaw",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "minecraft:item_model": "air",
+                                "minecraft:custom_data": "{\"simpledrawer\":{\"tape\":true}}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "smithed": {
+                                    "id": "airdox_:simpledrawer/shulker_tape"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ]
+        }
+    ]
+}

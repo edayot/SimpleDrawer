@@ -61,15 +61,14 @@ def generate_material(
 
             data modify storage simpledrawer:io material set value {
                 material: translate_key,
-                material_name: f'{{"translate":"{translate_key}","fallback":"{material_last}"}}',
+                material_name: {"translate":translate_key,"fallback":material_last},
                 block: block.nbt,
                 ingot: ingot.nbt,
             }
         else:
             data modify storage simpledrawer:io material set value {
                 material: translate_key,
-                material_name:f'{{"translate":"{translate_key}","fallback":"{material_last}"}}',
-                
+                material_name:{"translate":translate_key,"fallback":material_last},
                 block: block.nbt,
                 ingot: ingot.nbt,
                 nugget: nugget.nbt

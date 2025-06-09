@@ -17,6 +17,9 @@ execute if data entity @s item.components."minecraft:custom_data".simpledrawer{u
 
 
 
-
+execute 
+    at @s
+    as @e[tag=simpledrawer.new_drawer.part.base_block,limit=1,predicate=simpledrawer:impl/search_id_new_drawer,distance=..10]
+    run data modify entity @s item.components."minecraft:container"[0].item.components."minecraft:custom_data".simpledrawer.items_counts.0 set value 0
 
 
