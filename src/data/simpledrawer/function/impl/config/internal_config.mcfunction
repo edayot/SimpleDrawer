@@ -3,6 +3,7 @@ result_template = """function simpledrawer:impl/config/save_config {
 lod_reconstruction: \\$(lod_reconstruction),
 lod_range: \\$(lod_range),
 alternative_compacting: \\$(alternative_compacting),
+disable_shulker_tape: \\$(disable_shulker_tape),
 iron_capacity: \\$(iron_capacity),
 gold_capacity: \\$(gold_capacity),
 diamond_capacity: \\$(diamond_capacity),
@@ -46,6 +47,15 @@ dialog = {
                             },
                             {
                                 "text": "Allow sand to sandstone, clay to clayblock, quartz to quartzblock, red sand to red sandstone in the compacting drawer\n\n",
+                                "color": "#77767b"
+                            }
+                        ],
+                        [
+                            {
+                                "text": "Disable Shulker Tape: "
+                            },
+                            {
+                                "text": "Disable the shulker tape functionality to prevent packaging drawers\n\n",
                                 "color": "#77767b"
                             }
                         ],
@@ -127,6 +137,14 @@ dialog = {
             "initial": "__alternative_compacting__"
         },
         {
+            "type": "minecraft:boolean",
+            "key": "disable_shulker_tape",
+            "label": "Disable Shulker Tape",
+            "on_true": "1",
+            "on_false": "0",
+            "initial": "__disable_shulker_tape__"
+        },
+        {
             "type": "minecraft:number_range",
             "key": "iron_capacity",
             "label": "Iron Capacity",
@@ -200,6 +218,7 @@ dialog = dialog.replace("__result_template__", result_template.replace("\\$", "\
 dialog = dialog.replace("\"__lod_reconstruction__\"", "$(lod_reconstruction)")
 dialog = dialog.replace("\"__lod_range__\"", "$(lod_range)")
 dialog = dialog.replace("\"__alternative_compacting__\"", "$(alternative_compacting)")
+dialog = dialog.replace("\"__disable_shulker_tape__\"", "$(disable_shulker_tape)")
 dialog = dialog.replace("\"__iron_capacity__\"", "$(iron_capacity)")
 dialog = dialog.replace("\"__gold_capacity__\"", "$(gold_capacity)")
 dialog = dialog.replace("\"__diamond_capacity__\"", "$(diamond_capacity)")

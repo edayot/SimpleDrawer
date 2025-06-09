@@ -31,6 +31,9 @@ execute
         sort=nearest,
         distance=..1
     ]
+execute
+    if score #config.disable_shulker_tape simpledrawer.math matches 1
+    run scoreboard players set #break_with_tape simpledrawer.math 1
 
 
 empty_counts = {}

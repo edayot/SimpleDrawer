@@ -11,5 +11,6 @@ data modify storage simpledrawer:main config.resummon_range set value 16
 
 scoreboard players set #config.max_resummon simpledrawer.math 4
 scoreboard players set #config.alternative_compacting simpledrawer.math 0
+scoreboard players set #config.disable_shulker_tape simpledrawer.math 0
 
 scoreboard players set #private.configured simpledrawer.math 1

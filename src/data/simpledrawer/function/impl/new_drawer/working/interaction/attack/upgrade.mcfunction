@@ -16,6 +16,7 @@ execute if score #upgrade_success simpledrawer.math matches 0 if data storage si
 
 execute 
     if score #upgrade_success simpledrawer.math matches 0 
+    unless score #config.disable_shulker_tape simpledrawer.math matches 1
     unless entity @s[tag=simpledrawer.new_drawer.tape]
     if data storage simpledrawer:main temp.SelectedItem.components."minecraft:custom_data".smithed{id:"airdox_:simpledrawer/shulker_tape"}
     run function ~/self_tape:

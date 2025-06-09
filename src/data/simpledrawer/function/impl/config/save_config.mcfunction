@@ -1,6 +1,7 @@
 $scoreboard players set #config.max_resummon simpledrawer.math $(lod_reconstruction)
 $data modify storage simpledrawer:main config.resummon_range set value $(lod_range)
 $scoreboard players set #config.alternative_compacting simpledrawer.math $(alternative_compacting)
+$scoreboard players set #config.disable_shulker_tape simpledrawer.math $(disable_shulker_tape)
 $data modify storage simpledrawer:main drawer_type.iron.maxCount set value $(iron_capacity)
 $data modify storage simpledrawer:main drawer_type.gold.maxCount set value $(gold_capacity)
 $data modify storage simpledrawer:main drawer_type.diamond.maxCount set value $(diamond_capacity)
