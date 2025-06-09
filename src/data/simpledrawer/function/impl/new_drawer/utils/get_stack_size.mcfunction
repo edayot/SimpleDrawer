@@ -1,7 +1,7 @@
 
 
 
-execute if data entity @s HandItems[0].components."minecraft:max_stack_size" run return run data get entity @s HandItems[0].components."minecraft:max_stack_size"
+execute if data entity @s equipment.mainhand.components."minecraft:max_stack_size" run return run data get entity @s equipment.mainhand.components."minecraft:max_stack_size"
 
 
 execute as @s if items entity @s weapon *[minecraft:max_stack_size=64] run return 64
