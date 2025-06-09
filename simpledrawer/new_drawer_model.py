@@ -5,17 +5,50 @@ from simpledrawer.plugin import ALL_DRAWER_TYPES
 
 def beet_default(ctx: Context):
     wood_types = iter(ALL_DRAWER_TYPES)
+
+    upgrade = {
+        "type": "minecraft:composite",
+        "models": [
+            generate_upgrade_condition(
+                "iron",
+                on_true=generate_upgrade_model("iron"),
+                on_false=generate_upgrade_condition(
+                    "gold",
+                    on_true=generate_upgrade_model("gold"),
+                    on_false=generate_upgrade_condition(
+                        "diamond",
+                        on_true=generate_upgrade_model("diamond"),
+                        on_false=generate_upgrade_condition(
+                            "star",
+                            on_true=generate_upgrade_model("star"),
+                            on_false=generate_upgrade_condition(
+                                "netherite",
+                                on_true=generate_upgrade_model("netherite"),
+                                on_false={"type": "minecraft:empty"}
+                            )
+                        )
+                    )
+                )
+            ),
+            generate_hopper_condition(
+                on_true=generate_plain_model("simpledrawer:item/new_drawer/hopper_upgrade"),
+                on_false={"type": "minecraft:empty"}
+            ),
+        ]
+    }
+
     res = {
         "model": {
             "type": "minecraft:composite",
             "models": [
                 iter_wood_types(wood_types),
                 generate_tapped_condition(
-                    is_empty={"type": "minecraft:empty"},
+                    is_empty=upgrade,
                     is_filled=generate_plain_model("simpledrawer:item/new_drawer/tapped")
                 )
             ]
-        }
+        },
+        "oversized_in_gui": True,
     }
     ctx.assets.item_models["simpledrawer:new_drawer"] = ItemModel(res)
 
@@ -195,7 +228,71 @@ def generate_tapped_condition(is_empty: Any, is_filled: Any,):
     }
 
 
-def generate_plain_model(model: str):
+def generate_upgrade_condition(upgrade: str, on_true: Any, on_false: Any,):
+    """
+    Generate a condition for a variant.
+    :param upgrade: The upgrade type.
+    :param on_true: The value if the condition is true.
+    :param on_false: The value if the condition is false.
+    :return: The condition.
+    """
+    print(type(on_true), type(on_false))
+    return {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:container",
+        "value": {
+            "items": {
+                "contains": [
+                    {
+                        "predicates": {
+                            "minecraft:custom_data": {
+                                "simpledrawer": {
+                                    "upgrade": upgrade
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "on_true": on_true,
+        "on_false": on_false,
+    }
+
+def generate_hopper_condition(on_true: Any, on_false: Any,):
+    """
+    Generate a condition for a variant.
+    :param on_true: The value if the condition is true.
+    :param on_false: The value if the condition is false.
+    :return: The condition.
+    """
+    return {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:container",
+        "value": {
+            "items": {
+                "contains": [
+                    {
+                        "predicates": {
+                            "minecraft:custom_data": "{simpledrawer: {hopper: 1b}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "on_true": on_true,
+        "on_false": on_false,
+    }
+
+
+def generate_upgrade_model(upgrade: str) -> dict[str, str]:
+    return generate_plain_model(f"simpledrawer:item/new_drawer/{upgrade}_upgrade")
+    
+
+
+def generate_plain_model(model: str) -> dict[str, str]:
     return {
         "type": "minecraft:model",
         "model": model,

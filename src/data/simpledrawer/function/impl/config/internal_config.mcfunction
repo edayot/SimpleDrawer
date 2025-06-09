@@ -123,8 +123,8 @@ dialog = {
             "type": "minecraft:number_range",
             "key": "lod_range",
             "label": "LOD Range",
-            "start": 2,
-            "end": 256,
+            "start": 8,
+            "end": 48,
             "step": 4,
             "initial": "__lod_range__"
         },

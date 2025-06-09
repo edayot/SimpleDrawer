@@ -1,0 +1,6 @@
+{
+    "parent": "simpledrawer:item/new_drawer/generic_upgrade",
+    "textures": {
+        "upgrade": "simpledrawer:item/star_upgrade"
+    }
+}
