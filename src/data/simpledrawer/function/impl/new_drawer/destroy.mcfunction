@@ -3,11 +3,15 @@ from simpledrawer import DRAWER_TYPES
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.wood_base] 
-    run kill @e[type=item,nbt={Item:{id:"minecraft:beehive",count:1},Age:0s},limit=1,sort=nearest,distance=..1]
+    run function ~/destroy_wood_base:
+        kill @e[type=item,nbt={Item:{id:"minecraft:beehive"},Age:0s},limit=1,sort=nearest,distance=..1]
+        kill @e[type=item,nbt={Item:{id:"minecraft:beehive"},Age:1s},limit=1,sort=nearest,distance=..1]
 
 execute 
     if entity @s[tag=simpledrawer.new_drawer.stone_base] 
-    run kill @e[type=item,nbt={Item:{id:"minecraft:lodestone",count:1},Age:0s},limit=1,sort=nearest,distance=..1]
+    run function ~/destroy_stone_base:
+        kill @e[type=item,nbt={Item:{id:"minecraft:lodestone"},Age:0s},limit=1,sort=nearest,distance=..1]
+        kill @e[type=item,nbt={Item:{id:"minecraft:lodestone"},Age:1s},limit=1,sort=nearest,distance=..1]
 
 
 scoreboard players set #break_with_tape simpledrawer.math 0
@@ -31,8 +35,30 @@ execute
         sort=nearest,
         distance=..1
     ]
+scoreboard players set #break_by_player simpledrawer.math 0
+execute 
+    store success score #break_by_player simpledrawer.math
+    run kill @e[
+        type=item,
+        nbt={
+            Item:{
+                id:"minecraft:jigsaw",
+                count:1,
+                components:{
+                    "minecraft:custom_data":{
+                        simpledrawer:{player:1b}
+                    }
+                },
+            },
+            Age:0s
+        },
+        limit=1,
+        sort=nearest,
+        distance=..1
+    ]
 execute
     if score #config.disable_shulker_tape simpledrawer.math matches 1
+    if score #break_by_player simpledrawer.math matches 1
     run scoreboard players set #break_with_tape simpledrawer.math 1
 
 
@@ -42,6 +68,7 @@ for i in range(27):
 
 execute 
     if score #break_with_tape simpledrawer.math matches 0
+    if score #break_by_player simpledrawer.math matches 1
     if entity @s[tag=!simpledrawer.new_drawer.tape]
     unless data entity @s item.components.minecraft:custom_data.simpledrawer{items_counts:empty_counts}
     run return run function ~/nope_destroy:
@@ -55,6 +82,14 @@ execute
         execute
             if entity @s[tag=simpledrawer.new_drawer.stone_base]
             run setblock ~ ~ ~ minecraft:lodestone replace
+
+
+execute
+    if score #break_by_player simpledrawer.math matches 0
+    run return run function ~/destroy_early:
+        scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
+        kill @e[tag=simpledrawer.new_drawer.part,predicate=simpledrawer:impl/search_id_new_drawer]
+        kill
 
 
 

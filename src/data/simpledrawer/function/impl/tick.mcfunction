@@ -31,7 +31,7 @@ kill @e[
             count:1,
             components:{
                 "minecraft:custom_data":{
-                    simpledrawer:{tape:1b}
+                    simpledrawer:{drop_item:1b}
                 }
             },
         },

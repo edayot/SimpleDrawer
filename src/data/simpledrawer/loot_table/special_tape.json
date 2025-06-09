@@ -12,7 +12,37 @@
                             "function": "minecraft:set_components",
                             "components": {
                                 "minecraft:item_model": "air",
-                                "minecraft:custom_data": "{\"simpledrawer\":{\"tape\":true}}"
+                                "minecraft:custom_data": "{\"simpledrawer\":{\"player\":true, \"drop_item\":true}}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type": "minecraft:player"
+                    }
+                },
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:jigsaw",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "minecraft:item_model": "air",
+                                "minecraft:custom_data": "{\"simpledrawer\":{\"tape\":true, \"drop_item\":true}}"
                             }
                         }
                     ]
