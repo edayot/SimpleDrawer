@@ -236,7 +236,6 @@ def generate_upgrade_condition(upgrade: str, on_true: Any, on_false: Any,):
     :param on_false: The value if the condition is false.
     :return: The condition.
     """
-    print(type(on_true), type(on_false))
     return {
         "type": "minecraft:condition",
         "property": "minecraft:component",
