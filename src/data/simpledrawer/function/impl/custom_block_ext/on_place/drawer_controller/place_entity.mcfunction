@@ -16,3 +16,26 @@ execute
 
 
         data merge entity @s {width:0.85,height:0.85} 
+
+
+
+tag @s add itemio.container
+tag @s add itemio.container.auto_handled_io
+tag @s add itemio.container.not_vanilla_container
+
+
+tag @s add smithed.block
+tag @s add smithed.entity
+tag @s add smithed.strict
+
+
+tag @s add itemio.container
+tag @s add itemio.container.auto_handled_io
+tag @s add itemio.container.not_vanilla_container
+tag @s add itemio.container.hopper
+
+tag @s add global.ignore
+
+function #itemio:calls/container/init
+
+

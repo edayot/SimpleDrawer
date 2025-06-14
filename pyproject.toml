@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 simple-item-plugin = ">=0.9.1"
+stewbeet = "^2.0.5"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^8.7.0"
@@ -106,6 +107,7 @@ load_function = "simpledrawer:impl/load"
 [tool.beet.meta.mecha]
 multiline = true
 match = ["simpledrawer:**"]
+formatting = "preserve"
 
 
 [tool.beet.meta.model_resolver]
