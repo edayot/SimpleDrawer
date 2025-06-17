@@ -432,13 +432,13 @@ tokenstream = ">=1.7.0,<2.0.0"
 
 [[package]]
 name = "model-resolver"
-version = "1.8.1"
+version = "1.8.2"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.12"
 files = [
-    {file = "model_resolver-1.8.1-py3-none-any.whl", hash = "sha256:9671701f3330caabfa07bd486ce41cc06fef231a63292bf00e2f8dbc18867144"},
-    {file = "model_resolver-1.8.1.tar.gz", hash = "sha256:60fc03950fc8efc2385d871cbb34ccecfe9c1271ac78cee4a28df3ad0e083ea2"},
+    {file = "model_resolver-1.8.2-py3-none-any.whl", hash = "sha256:c5286f28b2186dde26d902669bd93aa3beafeb66104a69b434560decab9d7f73"},
+    {file = "model_resolver-1.8.2.tar.gz", hash = "sha256:e1875891e635edacbe99f279e8e1eb6948dee49fc94b90456808b05898a870c7"},
 ]
 
 [package.dependencies]
@@ -1292,13 +1292,13 @@ files = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.25.1"
+version = "0.27.0"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.12"
 files = [
-    {file = "simple_item_plugin-0.25.1-py3-none-any.whl", hash = "sha256:fd2b529e9253d3d28e06cf18b6d260435069f8adccb0f7db9240210c56fe8d21"},
-    {file = "simple_item_plugin-0.25.1.tar.gz", hash = "sha256:68ee9bd8e7d5152d4889fd3760efea7c3689d76a08176011e1d414be9c774d9c"},
+    {file = "simple_item_plugin-0.27.0-py3-none-any.whl", hash = "sha256:5cbe37e08f0da15ab0c5ca34dd55d90344fec67191476bdeff45fa4ecb54d922"},
+    {file = "simple_item_plugin-0.27.0.tar.gz", hash = "sha256:e12a1ca9af08e59df793c3ff8e355604e4afa798e460ae2788e8218183e7f56d"},
 ]
 
 [package.dependencies]

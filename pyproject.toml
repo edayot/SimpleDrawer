@@ -86,9 +86,9 @@ pack_format = 63
 
 
 [tool.beet.meta]
-mc_supports = ["1.21.6-pre3"]
-mc_supports_dataversion = [4432]
-minecraft_version = "1.21.6-pre3"
+mc_supports = ["1.21.6"]
+mc_supports_dataversion = [4435]
+minecraft_version = "1.21.6"
 modrinth_id = "JmCxCKiW"
 
 
@@ -144,7 +144,7 @@ tag_path="calls"
 
 [[tool.beet.meta.weld_deps.deps]]
 id = "itemio"
-version = "1.4.0"
+version = "1.4.1"
 source = "smithed"
 [tool.beet.meta.weld_deps.deps.versioning]
 type = "normal"
@@ -152,7 +152,7 @@ prefix = "#itemio"
 
 [[tool.beet.meta.weld_deps.deps]]
 id = "crafter"
-version = "0.7.0"
+version = "0.7.1"
 source = "smithed"
 [tool.beet.meta.weld_deps.deps.versioning]
 type = "normal"
@@ -160,7 +160,7 @@ prefix = "#smithed.crafter"
 
 [[tool.beet.meta.weld_deps.deps]]
 id = "custom-block"
-version = "0.7.0"
+version = "0.7.1"
 source = "smithed"
 [tool.beet.meta.weld_deps.deps.versioning]
 type = "normal"
