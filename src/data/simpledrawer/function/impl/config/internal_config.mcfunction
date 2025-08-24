@@ -19,7 +19,7 @@ dialog = {
         {
             "type": "minecraft:plain_message",
             "contents": {
-                "text": "Description of configurations",
+                "text": "Description of configurations (hover me)",
                 "hover_event": {
                     "action": "show_text",
                     "value": [
