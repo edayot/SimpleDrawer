@@ -1,5 +1,6 @@
 from copy import deepcopy
 from dataclasses import dataclass
+from tkinter import NO
 from typing import Any, Iterable, Literal, Optional
 from beet import Context, LootTable
 from simple_item_plugin.types import NAMESPACE, Lang
@@ -155,6 +156,7 @@ def beet_default(ctx: Context):
     ender_pearl = VanillaItem(id="minecraft:ender_pearl").export(ctx)
     dragon_head = VanillaItem(id="minecraft:dragon_head").export(ctx)
     redstone_block = VanillaItem(id="minecraft:redstone_block").export(ctx)
+    shulker_shell = VanillaItem(id="minecraft:shulker_shell").export(ctx)
 
 
 
@@ -193,6 +195,12 @@ def beet_default(ctx: Context):
                 Lang.fr_fr: "Ruban de Shulker",
             }
         ),
+        lore=[
+            ("simpledrawer.shulker_tape_lore", {
+                Lang.en_us: "You can break a drawer with it, it has 40 durability.",
+                Lang.fr_fr: "Vous pouvez casser un drawer avec, il a 40 de durabilité.",
+            })
+        ],
         base_item="minecraft:shulker_shell",
         guide_description=("simpledrawer.guide.shulker_tape", {
             Lang.en_us: "A tape to package drawers to be transported. 40 durability.",
@@ -223,6 +231,15 @@ def beet_default(ctx: Context):
                 ]
             }
         }
+    ).export(ctx)
+
+    ShapedRecipe(
+        items=(
+            (slime_ball, None, None),
+            (shulker_shell, None, None),
+            (slime_ball, None, None),
+        ),
+        result=(shulker_tape, 1),
     ).export(ctx)
 
     new_drawer = DrawerItem(
@@ -553,6 +570,7 @@ def beet_default(ctx: Context):
         name=("", {}),
         items_list=[
             heavy_workbench, 
+            shulker_tape,
             new_drawer,
             double_new_drawer,
             quadruple_new_drawer,
