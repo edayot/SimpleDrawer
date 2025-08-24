@@ -35,6 +35,8 @@ scoreboard objectives add simpledrawer.block.patch dummy
 scoreboard objectives add simpledrawer.io dummy
 scoreboard objectives add simpledrawer.nb_click dummy
 
+scoreboard objectives add simpledrawer.break trigger
+scoreboard objectives add simpledrawer.break_cooldown dummy
 
 
 scoreboard players set #9 simpledrawer.math 9

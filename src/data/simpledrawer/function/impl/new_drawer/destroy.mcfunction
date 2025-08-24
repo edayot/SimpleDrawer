@@ -61,6 +61,15 @@ execute
     if score #break_by_player simpledrawer.math matches 1
     run scoreboard players set #break_with_tape simpledrawer.math 1
 
+scoreboard players set #break_override simpledrawer.math 0
+execute
+    if entity @p[distance=..10, scores={simpledrawer.break_cooldown=1..}]
+    run scoreboard players set #break_override simpledrawer.math 1
+
+execute
+    if score #break_override simpledrawer.math matches 1
+    run return run function ~/destroy_early
+
 
 empty_counts = {}
 for i in range(27):
@@ -72,7 +81,7 @@ execute
     if entity @s[tag=!simpledrawer.new_drawer.tape]
     unless data entity @s item.components.minecraft:custom_data.simpledrawer{items_counts:empty_counts}
     run return run function ~/nope_destroy:
-        title @a[tag=!global.ignore.gui,distance=..10] actionbar [
+        tellraw @a[tag=!global.ignore.gui,distance=..10] [
             {"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},
             {"translate":"simpledrawer.text.cant_destroy_drawer","color":"red"}
         ]

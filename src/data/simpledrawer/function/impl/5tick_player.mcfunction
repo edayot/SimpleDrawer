@@ -6,6 +6,20 @@ execute if score @s simpledrawer.nb_click matches 32.. run advancement grant @s 
 
 
 
+scoreboard players enable @s simpledrawer.break
+execute if score @s simpledrawer.break matches 1.. run function ~/enable_break:
+	scoreboard players set @s simpledrawer.break_cooldown 480
+	scoreboard players set @s simpledrawer.break 0
+	tellraw @s [
+		{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},
+		{"translate":"simpledrawer.text.destroy_cooldown","color":"red"}
+	]
+execute if score @s simpledrawer.break_cooldown matches 0 run tellraw @s [
+	{"translate":"simpledrawer.tellraw_prefix","color":"dark_red"},
+	{"translate":"simpledrawer.text.end_destroy_cooldown","color":"red"}
+]
+execute if score @s simpledrawer.break_cooldown matches 0.. run scoreboard players remove @s simpledrawer.break_cooldown 1
+
 
 major,minor,patch = ctx.project_version.split('.')
 

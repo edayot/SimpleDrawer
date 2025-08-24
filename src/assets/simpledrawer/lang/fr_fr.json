@@ -13,7 +13,9 @@
     "simpledrawer.text.in_total":" au total §r",
     "simpledrawer.text.named":"Nommé : §r",
     "simpledrawer.text.cant_downgrade":"Impossible de rétrograder un drawer rempli",
-    "simpledrawer.text.cant_destroy_drawer":"Tu ne peux pas détruire ce drawer sans du ruban de shulker",
+    "simpledrawer.text.cant_destroy_drawer":"Tu ne peux pas détruire ce drawer sans du ruban de shulker, désactive ce comportement globalement /function simpledrawer:config ou pendant 2 minutes avec /trigger simpledrawer.break (supprime les items).",
+    "simpledrawer.text.destroy_cooldown":"Tu peux maintenant détruire les drawers sans ruban de shulker (supprime les items).",
+    "simpledrawer.text.end_destroy_cooldown":"Tu ne peux plus détruire les drawers sans ruban de shulker.",
     "simpledrawer.guide.message":"Lisez le wiki pour plus de détails",
     "simpledrawer.tellraw_prefix":"[SimpleDrawer] ",
     "simpledrawer.load_error.smithed.custom_block":"La librairie smithed.custom_block n'a pas été trouvé",
@@ -45,6 +47,7 @@
     "simpledrawer.double_new_drawer":"Drawer Double",
     "simpledrawer.quadruple_new_drawer":"Drawer Quadruple",
     "simpledrawer.compacting_new_drawer":"Drawer Compacteur",
+    "simpledrawer.new_drawer.item_count":"%s x%s",
     "simpledrawer.upgrades":"Améliorations",
     "simpledrawer.guide.first_page":"Ce guide montre tous les blocs et items de SimpleDrawer, avec leurs recettes respectives.",
 
@@ -116,5 +119,6 @@
     "simpledrawer.advancement.star":"étoile",
     "simpledrawer.advancement.netherite":"netherite"
 
-    
+
+
 }
