@@ -67,6 +67,8 @@ execute
     run scoreboard players set #break_override simpledrawer.math 1
 
 execute
+    if score #config.disable_shulker_tape simpledrawer.math matches 0
+    if score #break_with_tape simpledrawer.math matches 0
     if score #break_override simpledrawer.math matches 1
     run return run function ~/destroy_early
 
@@ -78,6 +80,7 @@ for i in range(27):
 execute 
     if score #break_with_tape simpledrawer.math matches 0
     if score #break_by_player simpledrawer.math matches 1
+    if score #break_override simpledrawer.math matches 0
     if entity @s[tag=!simpledrawer.new_drawer.tape]
     unless data entity @s item.components.minecraft:custom_data.simpledrawer{items_counts:empty_counts}
     run return run function ~/nope_destroy:
