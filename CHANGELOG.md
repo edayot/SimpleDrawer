@@ -2,6 +2,67 @@
 
 
 
+## v2.7.0 (2025-09-28)
+
+### Chore
+
+* chore: reverse order ([`f0bc91a`](https://github.com/edayot/SimpleDrawer/commit/f0bc91a289b66d3afa6ae1a6316cf2e70402731b))
+
+### Feature
+
+* feat: description ([`8a01da6`](https://github.com/edayot/SimpleDrawer/commit/8a01da6a2e01720a23cddc8098e2ee3335018016))
+
+* feat: destroy drawer without shulker tape ([`afcf371`](https://github.com/edayot/SimpleDrawer/commit/afcf371655dd0a4e3a1d3f74b01caac7f81c2d73))
+
+* feat: enchant #45 ([`af6663f`](https://github.com/edayot/SimpleDrawer/commit/af6663f90bf24559f3ace62326a90271de64a7d3))
+
+* feat: update to 1.21.6 ([`90630a7`](https://github.com/edayot/SimpleDrawer/commit/90630a7f91202035130ec4ca1501abbe0e3616bf))
+
+* feat: drawer controller is now compatible with hoppers ([`deceef3`](https://github.com/edayot/SimpleDrawer/commit/deceef33fad710b0d3cefb0728bf4abbc7ba4ff8))
+
+* feat: shulker_tape to rebalance drawers ([`4077364`](https://github.com/edayot/SimpleDrawer/commit/407736404586c67cda0cbf5c7498ccd0fb5253a2))
+
+* feat: new config screen ([`6f48138`](https://github.com/edayot/SimpleDrawer/commit/6f48138b763d806e9e4f5f53a21ecdb6bcb87efc))
+
+* feat: implementing drawer connector ([`0d366da`](https://github.com/edayot/SimpleDrawer/commit/0d366da8a8ef0dc4ffb2828c278533183aa030d9))
+
+### Fix
+
+* fix: build command ([`aabb8f2`](https://github.com/edayot/SimpleDrawer/commit/aabb8f2732babe09ea1b629e20c7491f2fa00748))
+
+* fix: HandItems[0] to zquipment.mainhand ([`27f268a`](https://github.com/edayot/SimpleDrawer/commit/27f268ac8a7cdd667981d4200d837a67f1535460))
+
+* fix: hover event &amp; click event ([`a4720f4`](https://github.com/edayot/SimpleDrawer/commit/a4720f4e11a103d530a1f6df3df80a972fcf93a5))
+
+### Performance
+
+* perf: item_display -&gt; item model for upgrades ([`5adb37f`](https://github.com/edayot/SimpleDrawer/commit/5adb37f9d93817fdde8c9c4e21010c254ad0d205))
+
+* perf: imrove performance in big input operation ([`1dd14a9`](https://github.com/edayot/SimpleDrawer/commit/1dd14a9b3866ce9b56da934c1c1a70ecf851cbde))
+
+### Unknown
+
+* bug fix ([`97afd31`](https://github.com/edayot/SimpleDrawer/commit/97afd3110b439a3036133725033f4d2085e41210))
+
+* update to 1.21.8 ([`e15bf4c`](https://github.com/edayot/SimpleDrawer/commit/e15bf4cb89f86b5e42fe410a1f1dfe0c2cd35831))
+
+* ss ([`a3183f9`](https://github.com/edayot/SimpleDrawer/commit/a3183f9ffdb4b8083e259cd2220311c6ccb15978))
+
+* fix entity ([`c955ee2`](https://github.com/edayot/SimpleDrawer/commit/c955ee2f1b8e3cd9be16b5472db49fa3495ac3a4))
+
+* destroy tnt working ([`7104b5c`](https://github.com/edayot/SimpleDrawer/commit/7104b5cc4862b82af8b90485e34ba35d69dfdefc))
+
+* azaa ([`f253873`](https://github.com/edayot/SimpleDrawer/commit/f2538736e1e36ae379f41aec600353d973b954c9))
+
+* slot count fix ([`eb19bf9`](https://github.com/edayot/SimpleDrawer/commit/eb19bf9c331400181115896ec1db70708fcd2990))
+
+* add controller craft ([`252b339`](https://github.com/edayot/SimpleDrawer/commit/252b339f485be1d23f38cba7178cf784bb95a34c))
+
+* rename ([`dddeb1d`](https://github.com/edayot/SimpleDrawer/commit/dddeb1d87365ad2f7dad61e512bfb615ab4344cb))
+
+* rename ([`479de83`](https://github.com/edayot/SimpleDrawer/commit/479de83350c22595b4fe0973fec142e6f3127598))
+
+
 ## v2.6.1 (2025-06-07)
 
 ### Fix
