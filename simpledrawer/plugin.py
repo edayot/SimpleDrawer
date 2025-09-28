@@ -4,7 +4,7 @@ from tkinter import NO
 from typing import Any, Iterable, Literal, Optional
 from beet import Context, LootTable
 from simple_item_plugin.types import NAMESPACE, Lang
-from simple_item_plugin.item import Item, BlockProperties
+from simple_item_plugin.item import Item, BlockProperties, export_translated_string
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
 from simple_item_plugin.guide import ItemGroup, Page
 
@@ -22,6 +22,7 @@ class SimpleDrawerItem(Item):
             "id": self.id,
             "from": "airdox_:simpledrawer",
         }
+        export_translated_string(ctx, self.guide_description) if self.guide_description else None
         return res
     
     def set_components(self):
@@ -357,10 +358,16 @@ def beet_default(ctx: Context):
             all_same_faces=False,
         ),
         guide_description=("simpledrawer.guide.drawer_controller", {
-            Lang.en_us: "A controller for drawers, shift-right-click to transfer items to nearby drawers.",
-            Lang.fr_fr: "Un contrôleur pour les drawers, shift-clic droit pour transférer les items vers les drawers à proximité.",
+            Lang.en_us: "A controller for drawers, shift-right-click to transfer items to ",
+            Lang.fr_fr: "Un contrôleur pour les drawers, shift-clic droit pour",
         }),
         additional_pages=[
+            Page(
+                ctx=ctx,
+                content=[
+                    {"translate":"simpledrawer.guide.drawer_controller_2",}
+                ]
+            ),
             Page(
                 ctx=ctx,
                 content=[
@@ -372,6 +379,11 @@ def beet_default(ctx: Context):
             ),
         ]
     ).export(ctx)
+
+    export_translated_string(ctx, ("simpledrawer.guide.drawer_controller_2", {
+        Lang.en_us: "nearby drawers. It only accept items that are already in the nearby drawers.",
+        Lang.fr_fr: "transférer les items vers les drawers à proximité. Cela n'accepte que les items qui sont déjà dans les drawers à proximité.",
+    }))
 
     ShapedRecipe(
         items=(
