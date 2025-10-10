@@ -1,14 +1,15 @@
 [tool.poetry]
 name = "simpledrawer"
 version = "2.7.0"
-description = ""
-authors = ["edayot <pro.e.dayot@gmail.com>"]
+description = "A simple datapack that add drawers in to minecraft"
+authors = ["airdox_"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 simple-item-plugin = ">=0.9.1"
-stewbeet = "^2.0.5"
+beet = {git = "https://github.com/edayot/beet.git", rev = "update_1_21_9"}
+click = "8.2.1"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^8.7.0"
