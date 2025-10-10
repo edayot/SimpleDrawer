@@ -77,20 +77,15 @@ ignore = [
 [tool.beet.data_pack]
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
-pack_format = 81
-supported_formats = [ 80, 81 ]
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
-pack_format = 64
-supported_formats = [ 63, 64 ]
-
 
 [tool.beet.meta]
-mc_supports = ["1.21.6", "1.21.7", "1.21.8"]
-mc_supports_dataversion = [4435, 4438, 4440]
-minecraft_version = "1.21.8"
+mc_supports = ["1.21.9-rc1"]
+mc_supports_dataversion = [4553]
+minecraft_version = "1.21.9-rc1"
 modrinth_id = "JmCxCKiW"
 
 
