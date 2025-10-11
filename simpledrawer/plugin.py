@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from tkinter import NO
 from typing import Any, Iterable, Literal, Optional
 from beet import Context, LootTable
+from beet.core.utils import split_version
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item, BlockProperties, export_translated_string
 from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
@@ -695,30 +696,60 @@ def get_translation(item_name, id):
 def get_real_id(id):
     return f"minecraft:{id}" if ":" not in id else id
 
+def get_pack_format(ctx: Context, version: str):
+    with open(ctx.cache["simpledrawer"].download("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json"), "r") as f:
+        summary = json.load(f)
+    for x in summary:
+        ver = x["id"]
+        if ver == version:
+            dp_major = x["data_pack_version"]
+            dp_minor = x["data_pack_version_minor"]
+            rp_major = x["resource_pack_version"]
+            rp_minor = x["resource_pack_version_minor"]
+            return (
+                (dp_major, dp_minor),
+                (rp_major, rp_minor),
+            )
+    raise ValueError(f"{version} does not exist")
 
 def generate_translation(ctx: Context):
 
-    mc_version = ctx.meta.get("mc_supports", ["1.20.6"])
-    mc_version = mc_version[0]
+    mc_versions = ctx.meta.get("mc_supports", ["1.20.6"])
 
     
-    item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
-    with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
-        item_components = json.load(f)
+
+    for mc_version in mc_versions:
+        item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
+        with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
+            item_components = json.load(f)
 
 
-    item_modifier = []
+        item_modifier: list[dict[str, str]] = []
 
-    for id, components in item_components.items():
-        item_name = components["minecraft:item_name"]
-        item_name["color"] = "white"
-        item_name["italic"] = False
-        item_modifier.append(get_translation(item_name, get_real_id(id)))
-    
-    impl = f"v{ctx.project_version}/"
-    path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
-    ctx.data.item_modifiers[path] = ItemModifier(item_modifier)
+        for id, components in item_components.items():
+            item_name = components["minecraft:item_name"]
+            item_name["color"] = "white"
+            item_name["italic"] = False
+            item_modifier.append(get_translation(item_name, get_real_id(id)))
         
+        impl = f"v{ctx.project_version}/"
+        path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
+
+        directory = f"simpledrawer_{mc_version.replace(".", "_")}"
+        dp = ctx.data.overlays[directory]
+        dp.item_modifiers[path] = ItemModifier(item_modifier)
+        overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {"entries": []})
+        entries: list[dict[str, Any]] = overlays["entries"]
+        formats, _ = get_pack_format(ctx, mc_version)
+        
+        entries.append({
+            "directory": directory,
+            "min_format": [formats[0], formats[1]],
+            "max_format": [formats[0], formats[1]],
+            "formats": formats[0],
+        })
+
+            
 
 
 
