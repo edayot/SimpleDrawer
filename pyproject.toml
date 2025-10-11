@@ -79,15 +79,15 @@ ignore = [
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
 pack_format = 81
-min_format = 81
-max_format = 88
+# min_format = 81
+# max_format = 88
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
 pack_format = 64
-min_format = 64
-max_format = 69
+# min_format = 64
+# max_format = 69
 
 [tool.beet.meta]
 mc_supports = ["1.21.8", "1.21.10"]
