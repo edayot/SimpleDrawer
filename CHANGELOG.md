@@ -2,6 +2,13 @@
 
 
 
+## v2.7.2 (2025-10-11)
+
+### Fix
+
+* fix: minecraft version ([`5dab7d5`](https://github.com/edayot/SimpleDrawer/commit/5dab7d526001d0c2f2c6d5a71b7482888acca92d))
+
+
 ## v2.7.1 (2025-10-11)
 
 ### Fix
