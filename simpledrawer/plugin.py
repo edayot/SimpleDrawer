@@ -393,7 +393,7 @@ def beet_default(ctx: Context):
             (smooth_stone, dragon_head, smooth_stone),
         ),
         result=(drawer_controller, 1),
-    ).export(ctx, True)
+    ).export(ctx)
 
 
 
