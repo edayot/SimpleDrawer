@@ -90,9 +90,9 @@ pack_format = 64
 # max_format = 69
 
 [tool.beet.meta]
-mc_supports = ["1.21.8", "1.21.10"]
-mc_supports_dataversion = [4440, 4556]
-minecraft_version = "1.21.9-rc1"
+mc_supports = ["1.21.8"]
+mc_supports_dataversion = [4440]
+minecraft_version = "1.21.8"
 modrinth_id = "JmCxCKiW"
 
 
