@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simpledrawer"
-version = "2.7.2"
+version = "2.7.3"
 description = "A simple datapack that add drawers in to minecraft"
 authors = ["airdox_"]
 readme = "README.md"

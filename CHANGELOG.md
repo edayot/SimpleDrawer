@@ -2,6 +2,19 @@
 
 
 
+## v2.7.3 (2025-10-11)
+
+### Fix
+
+* fix: craft exporting ([`18ed9f2`](https://github.com/edayot/SimpleDrawer/commit/18ed9f21d18ed4383b74e2e463d96d14283455fa))
+
+### Unknown
+
+* wip translation for multiple minecraft version ([`86a88b2`](https://github.com/edayot/SimpleDrawer/commit/86a88b2b1a6209fe6056babdc579c90507962273))
+
+* 1.21.10 ([`dc40444`](https://github.com/edayot/SimpleDrawer/commit/dc404445242027746f841aeb66ef3dd9fb52a31c))
+
+
 ## v2.7.2 (2025-10-11)
 
 ### Fix
