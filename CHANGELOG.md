@@ -2,6 +2,21 @@
 
 
 
+## v2.7.1 (2025-10-11)
+
+### Fix
+
+* fix: drawer frame craft not working ([`dbcfa40`](https://github.com/edayot/SimpleDrawer/commit/dbcfa40044d146e1e911f6d327c4c5e404b40470))
+
+### Unknown
+
+* remove format for a 1.21.8 release ([`a591187`](https://github.com/edayot/SimpleDrawer/commit/a591187b10839374f3ac1cd473dfe524a1a34614))
+
+* changing ([`546d60d`](https://github.com/edayot/SimpleDrawer/commit/546d60d52cf5c9fcdb9e179422695c87a38ef826))
+
+* Merge branch &#39;1.21.9&#39; ([`c7de71e`](https://github.com/edayot/SimpleDrawer/commit/c7de71e321635817752320cd6340ceaab89fe6f4))
+
+
 ## v2.7.0 (2025-09-28)
 
 ### Chore
@@ -41,6 +56,8 @@
 * perf: imrove performance in big input operation ([`1dd14a9`](https://github.com/edayot/SimpleDrawer/commit/1dd14a9b3866ce9b56da934c1c1a70ecf851cbde))
 
 ### Unknown
+
+* update to 1.21.9 ([`168d068`](https://github.com/edayot/SimpleDrawer/commit/168d0686d29b836280e3fdf80d534f34bbfe093d))
 
 * bug fix ([`97afd31`](https://github.com/edayot/SimpleDrawer/commit/97afd3110b439a3036133725033f4d2085e41210))
 
