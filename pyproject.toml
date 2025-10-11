@@ -78,14 +78,20 @@ ignore = [
 [tool.beet.data_pack]
 name = "{{ project_id }}_{{ project_version }}_dp_bundled"
 load = "src"
+pack_format = 81
+min_format = 81
+max_format = 88
 
 [tool.beet.resource_pack]
 name = "{{ project_id }}_{{ project_version }}_rp_bundled"
 load = "src"
+pack_format = 64
+min_format = 64
+max_format = 69
 
 [tool.beet.meta]
-mc_supports = ["1.21.9-rc1"]
-mc_supports_dataversion = [4553]
+mc_supports = ["1.21.8", "1.21.10"]
+mc_supports_dataversion = [4440, 4556]
 minecraft_version = "1.21.9-rc1"
 modrinth_id = "JmCxCKiW"
 
@@ -96,7 +102,7 @@ generate_guide = true
 items_on_first_page = true
 creator = "airdox_"
 prefix_namespace_with_creator = true
-item_for_pack_png = "new_drawer"
+item_for_pack_png = "airdox_:simpledrawer/new_drawer"
 tick_function = "simpledrawer:impl/tick"
 load_function = "simpledrawer:impl/load"
 

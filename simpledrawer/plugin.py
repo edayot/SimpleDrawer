@@ -78,7 +78,7 @@ class DrawerItem:
 
     def export(self, ctx: Context):
         item = ExternalItem(
-            id=self.id,
+            id=f"airdox_:simpledrawer/{self.id}",
             base_item="minecraft:furnace",
             loot_table_path=f"simpledrawer:impl/items/{self.id}",
             item_model="simpledrawer:new_drawer",
