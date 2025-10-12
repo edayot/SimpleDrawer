@@ -2,6 +2,17 @@
 
 
 
+## v2.7.4 (2025-10-12)
+
+### Fix
+
+* fix: handle 1.21.9 ([`d9a24fb`](https://github.com/edayot/SimpleDrawer/commit/d9a24fbf95a8526ed4f2b9ff46a9e217e1f55fac))
+
+### Unknown
+
+* set resource pck required ([`7c00a61`](https://github.com/edayot/SimpleDrawer/commit/7c00a613bee593cb21028621b6a4aa2ebea5f665))
+
+
 ## v2.7.3 (2025-10-11)
 
 ### Fix
