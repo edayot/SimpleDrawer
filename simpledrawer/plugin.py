@@ -1,5 +1,6 @@
 from copy import deepcopy
 from dataclasses import dataclass
+from itertools import pairwise
 from tkinter import NO
 from typing import Any, Iterable, Literal, Optional
 from beet import Context, LootTable
@@ -716,13 +717,14 @@ def generate_translation(ctx: Context):
 
     mc_versions = ctx.meta.get("mc_supports", ["1.20.6"])
 
-    
+    entries = []    
 
     for mc_version in mc_versions:
         item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
         with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
             item_components = json.load(f)
 
+        formats, _ = get_pack_format(ctx, mc_version)
 
         item_modifier: list[dict[str, str]] = []
 
@@ -735,19 +737,29 @@ def generate_translation(ctx: Context):
         impl = f"v{ctx.project_version}/"
         path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
 
-        directory = f"simpledrawer_{mc_version.replace(".", "_")}"
-        dp = ctx.data.overlays[directory]
-        dp.item_modifiers[path] = ItemModifier(item_modifier)
+        directory = f"simpledrawer_{formats[0]}_{formats[1]}"
         overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {"entries": []})
         entries: list[dict[str, Any]] = overlays["entries"]
-        formats, _ = get_pack_format(ctx, mc_version)
-        
+        if directory in [x["directory"] for x in entries]:
+            continue
+        dp = ctx.data.overlays[directory]
+        dp.item_modifiers[path] = ItemModifier(item_modifier)
+             
         entries.append({
             "directory": directory,
             "min_format": [formats[0], formats[1]],
             "max_format": [formats[0], formats[1]],
             "formats": formats[0],
         })
+    
+    b = None
+    for a, b in pairwise(entries):
+        min_format = b["min_format"]
+        a["max_format"] = [min_format[0] - 1, 999]
+    if b:
+        b["max_format"][1] = 999
+
+
 
             
 
