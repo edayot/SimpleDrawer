@@ -119,3 +119,11 @@ for file in files_modrinth:
         print(f"Hashes match for {file['filename']}")
             
 # Modify the resource pack file_type to "required-resource-pack"
+resource_pack_hash: str = r.json()["files"][1]["hashes"]["sha1"]
+requests.patch(
+    f"https://api.modrinth.com/v2/version/{r.json()["id"]}",
+    headers={
+        "Authorization":MODRINTH_AUTH_TOKEN
+    },
+    json={"file_types": [{"algorithm": "sha1", "hash": resource_pack_hash, "file_type": "required-resource-pack"}]}
+)
