@@ -17,6 +17,25 @@ execute
 
         data merge entity @s {width:0.85,height:0.85} 
 
+execute 
+    positioned ~ ~ ~ positioned ^ ^ ^1
+    summon item_display
+    run function ~/place_display:
+        tag @s add global.ignore
+        tag @s add simpledrawer.drawer_controller.display
+
+
+        tag @s add smithed.entity
+        tag @s add smithed.strict
+
+        scoreboard players operation @s simpledrawer.drawer_controller.id = #global simpledrawer.drawer_controller.id
+
+        data modify entity @s item set value {id: "minecraft:furnace", count: 1, components: {"minecraft:item_model": "simpledrawer:drawer_controller"}}
+        data merge entity @s {transformation:{scale:[1.001f,1.001f,1.001f],translation:[0.0f,0.0f,-1.0f]}}
+
+        tp @s ~ ~ ~ ~ ~
+
+
 
 
 tag @s add itemio.container

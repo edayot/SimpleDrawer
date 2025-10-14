@@ -358,6 +358,7 @@ def beet_default(ctx: Context):
         block_properties=BlockProperties(
             base_block="minecraft:lodestone",
             all_same_faces=False,
+            entity_type="marker",
         ),
         guide_description=("simpledrawer.guide.drawer_controller", {
             Lang.en_us: "A controller for drawers, shift-right-click to transfer items to ",

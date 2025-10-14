@@ -7,7 +7,7 @@
 
 
 <p align="center">
-<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/simple_drawer.png>
+<img src=https://raw.githubusercontent.com/edayot/SimpleDrawer/master/images/new_visual.png>
 </p>
 
 A simple datapack that add drawer to minecraft !
