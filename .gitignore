@@ -13,5 +13,6 @@ README.bbcode
 build
 !example_material/pack.mcmeta
 .env
+versions
 
 old
