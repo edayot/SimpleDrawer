@@ -2,6 +2,23 @@
 
 
 
+## v2.7.5 (2025-11-29)
+
+### Feature
+
+* feat: new gui items models, and fix advancements textures ([`3f127c3`](https://github.com/edayot/SimpleDrawer/commit/3f127c3ed15bb7d17d1b139a34ae5b1490966581))
+
+* feat: new_visual ([`cd10bca`](https://github.com/edayot/SimpleDrawer/commit/cd10bca8698ecec82f3808de15409bc77273624c))
+
+### Fix
+
+* fix: lightning ([`0ba87bf`](https://github.com/edayot/SimpleDrawer/commit/0ba87bf0858c92822a7f10574acedf09001d0d65))
+
+### Unknown
+
+* chest room image ([`2befe5e`](https://github.com/edayot/SimpleDrawer/commit/2befe5e2c0efc66270d51a9727ebe9c4dc6cd913))
+
+
 ## v2.7.4 (2025-10-12)
 
 ### Fix
