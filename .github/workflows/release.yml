@@ -74,6 +74,7 @@ jobs:
             poetry run semantic-release -v publish
 
       - name: Run update_last_release script
+        continue-on-error: true
         # run the script that prints / logs the current project version
         run: poetry run python .github/workflows/update_last_release.py
         env:
