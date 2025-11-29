@@ -56,6 +56,15 @@ execute unless score #private.configured simpledrawer.math matches 1 run functio
 execute 
     unless data storage simpledrawer:main config.resummon_range 
     run data modify storage simpledrawer:main config.resummon_range set value "16"
+execute
+    unless score #config.max_resummon simpledrawer.math matches 1.. 
+    run scoreboard players set #config.max_resummon simpledrawer.math 4
+execute
+    unless score #config.alternative_compacting simpledrawer.math matches 0..1
+    run scoreboard players set #config.alternative_compacting simpledrawer.math 0
+execute
+    unless score #config.disable_shulker_tape simpledrawer.math matches 0..1
+    run scoreboard players set #config.disable_shulker_tape simpledrawer.math 0    
 
 
 advancement revoke @a only simpledrawer:impl/interact
