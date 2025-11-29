@@ -7,7 +7,7 @@ from beet import Context, LootTable
 from beet.core.utils import split_version
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item, BlockProperties, export_translated_string
-from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem
+from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem, ConditionalCrafting
 from simple_item_plugin.guide import ItemGroup, Page
 
 from simple_item_plugin.types import TranslatedString
@@ -243,6 +243,11 @@ def beet_default(ctx: Context):
             (slime_ball, None, None),
         ),
         result=(shulker_tape, 1),
+        conditional_crafting=ConditionalCrafting(
+            fake_player="#config.disable_shulker_tape",
+            scoreboard="simpledrawer.math",
+            value=0
+        )
     ).export(ctx)
 
     new_drawer = DrawerItem(
