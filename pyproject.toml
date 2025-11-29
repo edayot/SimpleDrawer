@@ -8,11 +8,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 simple-item-plugin = ">=0.9.1"
-beet = {git = "https://github.com/edayot/beet.git", rev = "update_1_21_9"}
-click = "8.2.1"
+beet = ">=0.112.0"
+click = ">=8.1.7"
 
 [tool.poetry.dev-dependencies]
-python-semantic-release = "^8.7.0"
+python-semantic-release = "^10.5.0"
 
 [tool.semantic_release]
 major_on_zero = false
@@ -41,6 +41,8 @@ dist_glob_patterns = ["build/*.zip"]
 upload_to_vcs_release = true
 
 
+[tool.semantic_release.changelog]
+template_dir = "templates"
 
 
 

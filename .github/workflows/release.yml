@@ -40,8 +40,14 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
+      - name: Run update_versions script
+        # run the script that prints / logs the current project version
+        run: poetry run python .github/workflows/update_versions.py
+        env:
+          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
+          GITHUB_SHA: ${{ github.sha }}
       
-      - name: Setup OpenGL and Run Tests
+      - name: Setup OpenGL and Release
         uses: edayot/model_resolver@master
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -67,6 +73,14 @@ jobs:
             fi
             poetry run semantic-release -v publish
 
+      - name: Run update_last_release script
+        # run the script that prints / logs the current project version
+        run: poetry run python .github/workflows/update_last_release.py
+        env:
+          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
+          GITHUB_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Push to smithed
         continue-on-error: true
         run: poetry run python .github/workflows/push-to-smithed.py 
@@ -78,9 +92,3 @@ jobs:
         run: poetry run python .github/workflows/push-to-modrinth.py 
         env:
           MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}
-      - name: Run update_versions script
-        # run the script that prints / logs the current project version
-        run: poetry run python .github/workflows/update_versions.py
-        env:
-          VERSION_BUMP: ${{ github.event.inputs.version_bump }}
-          GITHUB_SHA: ${{ github.sha }}
