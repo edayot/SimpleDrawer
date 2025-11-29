@@ -2,6 +2,13 @@
 
 
 
+## v2.7.6 (2025-11-29)
+
+### Fix
+
+* fix: config defaults ([`9225b20`](https://github.com/edayot/SimpleDrawer/commit/9225b201bd1c9432a4243d5b07ff45f175f070ae))
+
+
 ## v2.7.5 (2025-11-29)
 
 ### Feature
