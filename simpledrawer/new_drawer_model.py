@@ -1,3 +1,4 @@
+from re import X
 from typing import Any, Iterable, Literal
 from beet import Context, ItemModel
 from simpledrawer.plugin import ALL_DRAWER_TYPES
@@ -31,7 +32,7 @@ def beet_default(ctx: Context):
                 )
             ),
             generate_hopper_condition(
-                on_true=generate_plain_model("simpledrawer:item/new_drawer/hopper_upgrade"),
+                on_true=generate_upgrade_model("hopper"),
                 on_false={"type": "minecraft:empty"}
             ),
         ]
@@ -286,9 +287,31 @@ def generate_hopper_condition(on_true: Any, on_false: Any,):
     }
 
 
-def generate_upgrade_model(upgrade: str) -> dict[str, str]:
-    return generate_plain_model(f"simpledrawer:item/new_drawer/{upgrade}_upgrade")
-    
+def generate_upgrade_model(upgrade: str) -> dict[str, Any]:
+    return {
+        "type": "minecraft:select",
+        "property": "minecraft:display_context",
+        "cases": [
+            {
+                "when": "gui",
+                "model": generate_plain_model(f"simpledrawer:item/new_drawer/{upgrade}_upgrade_gui")
+            },
+            *({
+                "when": x,
+                "model": generate_plain_model(f"simpledrawer:item/new_drawer/{upgrade}_upgrade")
+            } for x in [
+                "none",
+                "thirdperson_lefthand",
+                "thirdperson_righthand",
+                "firstperson_lefthand",
+                "firstperson_righthand",
+                "head",
+                "ground",
+                "fixed",
+                "on_shelf"
+            ])
+        ],
+    }
 
 
 def generate_plain_model(model: str) -> dict[str, str]:
