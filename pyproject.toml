@@ -93,6 +93,7 @@ max_format = [69, 0]
 
 [tool.beet.meta]
 mc_supports = ["1.21.8", "1.21.9", "1.21.10"]
+version_string = "1.21.8 - 1.21.10"
 mc_supports_dataversion = [4440, 4554, 4556]
 minecraft_version = "1.21.10"
 modrinth_id = "JmCxCKiW"
