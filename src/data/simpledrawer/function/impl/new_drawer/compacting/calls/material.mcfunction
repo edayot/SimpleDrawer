@@ -127,6 +127,10 @@ generate_material(
     ingot={
         test: {id:"minecraft:copper_ingot"},
         nbt: {item:{id:"minecraft:copper_ingot",count:1}}
+    },
+    nugget={
+        test: {id:"minecraft:copper_nugget"},
+        nbt: {item:{id:"minecraft:copper_nugget",count:1}}
     }
 )
 

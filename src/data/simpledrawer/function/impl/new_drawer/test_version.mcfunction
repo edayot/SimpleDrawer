@@ -96,6 +96,37 @@ execute
 
 
 
+# from 2.6.0 to 2.8.0 => material change in compacting drawers
+execute
+    if score @s simpledrawer.block.major matches 2
+    if score @s simpledrawer.block.minor matches 6..7
+    if score @s simpledrawer.block.patch matches 0..
+    run function ./2.6_to_2.7:
+        scoreboard players set @s simpledrawer.block.major 2
+        scoreboard players set @s simpledrawer.block.minor 8
+        scoreboard players set @s simpledrawer.block.patch 0
+
+        execute 
+            if items entity @s container.0 *[
+                minecraft:custom_data~{simpledrawer:{current_material:"simpledrawer.minecraft.copper"}}
+            ] run function ./upgrade:
+                execute 
+                    store result score #temp simpledrawer.math 
+                    run data get entity @s item.components."minecraft:custom_data".simpledrawer.items_counts.1
+                scoreboard players operation #temp simpledrawer.math *= #9 simpledrawer.math
+                execute
+                    store result entity @s item.components."minecraft:custom_data".simpledrawer.items_counts.2 int 1
+                    run scoreboard players get #temp simpledrawer.math
+                data modify entity @s item.components."minecraft:container" append value {item:{id:"minecraft:copper_nugget",count:1}, slot:2}
+                scoreboard players set @s simpledrawer.new_drawer.slot_count 3
+
+                scoreboard players operation #search_id simpledrawer.math = @s simpledrawer.new_drawer.id
+                scoreboard players set #search_slot simpledrawer.math 2
+                data modify entity @e[tag=simpledrawer.new_drawer.part.item_display,limit=1,predicate=simpledrawer:impl/search_id_slot_new_drawer,distance=..10] item set value {id:"minecraft:copper_nugget",count:1}
+
+                function simpledrawer:impl/new_drawer/base_display
+
+
         
 
 
