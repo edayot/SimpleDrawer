@@ -719,51 +719,66 @@ def get_pack_format(ctx: Context, version: str):
             )
     raise ValueError(f"{version} does not exist")
 
+
+def get_components(ctx: Context, mc_version: str):
+    item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
+    with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
+        item_components = json.load(f)
+    return item_components
+
+def get_item_modifier(item_components: dict[str, Any]):
+    item_modifier: list[dict[str, str]] = []
+
+    for id, components in item_components.items():
+        item_name = components["minecraft:item_name"]
+        item_name["color"] = "white"
+        item_name["italic"] = False
+        item_modifier.append(get_translation(item_name, get_real_id(id)))
+    return item_modifier
+
 def generate_translation(ctx: Context):
 
     mc_versions = ctx.meta.get("mc_supports", ["1.20.6"])
 
     entries = []    
 
-    for mc_version in mc_versions:
-        item_components_url = f"https://raw.githubusercontent.com/misode/mcmeta/refs/tags/{mc_version}-summary/item_components/data.json"
-        with open(ctx.cache["simpledrawer"].download(item_components_url), "r") as f:
-            item_components = json.load(f)
-
+    if len(mc_versions) == 1:
+        # on ne créer pas un overlay
+        mc_version = mc_versions[0]
+        item_components = get_components(ctx, mc_version)
         formats, _ = get_pack_format(ctx, mc_version)
+        item_modifier = get_item_modifier(item_components)
+        ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier)
+    else:
+        for mc_version in mc_versions:
+            item_components = get_components(ctx, mc_version)
+            formats, _ = get_pack_format(ctx, mc_version)
+            item_modifier = get_item_modifier(item_components)
 
-        item_modifier: list[dict[str, str]] = []
+            impl = f"v{ctx.project_version}/"
+            path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
 
-        for id, components in item_components.items():
-            item_name = components["minecraft:item_name"]
-            item_name["color"] = "white"
-            item_name["italic"] = False
-            item_modifier.append(get_translation(item_name, get_real_id(id)))
+            directory = f"simpledrawer_{formats[0]}_{formats[1]}"
+            overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {"entries": []})
+            entries: list[dict[str, Any]] = overlays["entries"]
+            if directory in [x["directory"] for x in entries]:
+                continue
+            dp = ctx.data.overlays[directory]
+            dp.item_modifiers[path] = ItemModifier(item_modifier)
+                
+            entries.append({
+                "directory": directory,
+                "min_format": [formats[0], formats[1]],
+                "max_format": [formats[0], formats[1]],
+                "formats": formats[0],
+            })
         
-        impl = f"v{ctx.project_version}/"
-        path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
-
-        directory = f"simpledrawer_{formats[0]}_{formats[1]}"
-        overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {"entries": []})
-        entries: list[dict[str, Any]] = overlays["entries"]
-        if directory in [x["directory"] for x in entries]:
-            continue
-        dp = ctx.data.overlays[directory]
-        dp.item_modifiers[path] = ItemModifier(item_modifier)
-             
-        entries.append({
-            "directory": directory,
-            "min_format": [formats[0], formats[1]],
-            "max_format": [formats[0], formats[1]],
-            "formats": formats[0],
-        })
-    
-    b = None
-    for a, b in pairwise(entries):
-        min_format = b["min_format"]
-        a["max_format"] = [min_format[0] - 1, 999]
-    if b:
-        b["max_format"][1] = 999
+        b = None
+        for a, b in pairwise(entries):
+            min_format = b["min_format"]
+            a["max_format"] = [min_format[0] - 1, 999]
+        if b:
+            b["max_format"][1] = 999
 
 
 
