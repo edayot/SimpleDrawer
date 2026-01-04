@@ -52,6 +52,7 @@ jobs:
             # print the version bump
             echo "Version bump: $VERSION_BUMP"
             ls -la .
+            env
             # activate the virtual environment
             . ./.venv/bin/activate
             if [ "$VERSION_BUMP" = "automatic" ]; then
