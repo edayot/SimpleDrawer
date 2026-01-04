@@ -51,19 +51,22 @@ jobs:
             git config --global user.email "action@github.com"
             # print the version bump
             echo "Version bump: $VERSION_BUMP"
+            ls -la .
+            # activate the virtual environment
+            . /.venv/bin/activate
             if [ "$VERSION_BUMP" = "automatic" ]; then
-              uv run semantic-release -v version
+              semantic-release -v version
             fi
             if [ "$VERSION_BUMP" = "patch" ]; then
-              uv run semantic-release -v version --patch
+              semantic-release -v version --patch
             fi
             if [ "$VERSION_BUMP" = "minor" ]; then
-              uv run semantic-release -v version --minor
+              semantic-release -v version --minor
             fi
             if [ "$VERSION_BUMP" = "major" ]; then
-              uv run semantic-release -v version --major
+              semantic-release -v version --major
             fi
-            uv run semantic-release -v publish
+            semantic-release -v publish
 
       - name: Run update_last_release script
         continue-on-error: true
