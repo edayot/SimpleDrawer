@@ -9,6 +9,7 @@ dependencies = [
     "bolt>=0.50.0b5",
     "mecha>=0.102.0b2",
     "simple-item-plugin>=0.29.1",
+    "weld-deps>=0.15.0",
 ]
 
 [dependency-groups]
@@ -19,8 +20,9 @@ dev = [
 [tool.uv]
 override-dependencies = ["click>=8.3.1"]
 
-[tool.uv.sources]
-simple-item-plugin = { path = "../simple_item_plugin", editable = true }
+# [tool.uv.sources]
+# simple-item-plugin = { path = "../simple_item_plugin", editable = true }
+# weld-deps = { path = "../weld-deps", editable = true }
 
 
 
@@ -31,7 +33,7 @@ major_on_zero = false
 build_command = '''
     beet -s data_pack.zipped=true \
          -s resource_pack.zipped=true \
-         -s meta.weld_deps.enabled=true && \
+         -s meta.weld_deps.enabled=true \
          -s data_pack.name="{{ project_id }}_{{ project_version }}_dp_bundled" \
          -s resource_pack.name="{{ project_id }}_{{ project_version }}_rp_bundled"
     beet -s data_pack.zipped=true \

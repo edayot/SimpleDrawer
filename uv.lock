@@ -439,15 +439,15 @@ wheels = [
 
 [[package]]
 name = "python-gitlab"
-version = "5.6.0"
+version = "6.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
     { name = "requests-toolbelt" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d6/08/d35d0f28549c43611e942f39b6321a7b35c02189d5badceefe601c0207ce/python_gitlab-5.6.0.tar.gz", hash = "sha256:bc531e8ba3e5641b60409445d4919ace68a2c18cb0ec6d48fbced6616b954166", size = 396148, upload-time = "2025-01-28T16:33:39.136Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9a/bd/b30f1d3b303cb5d3c72e2d57a847d699e8573cbdfd67ece5f1795e49da1c/python_gitlab-6.5.0.tar.gz", hash = "sha256:97553652d94b02de343e9ca92782239aa2b5f6594c5482331a9490d9d5e8737d", size = 400591, upload-time = "2025-10-17T21:40:02.89Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b4/5e/2e1ed7145835afaad87664b2f675a1d7b6e1211ad6ecfe57e200ae45f0bd/python_gitlab-5.6.0-py3-none-any.whl", hash = "sha256:68980cd70929fc7f8f06d8a7b09bd046a6b79e1995c19d61249f046005099100", size = 148836, upload-time = "2025-01-28T16:33:36.818Z" },
+    { url = "https://files.pythonhosted.org/packages/34/bd/b0d440685fbcafee462bed793a74aea88541887c4c30556a55ac64914b8d/python_gitlab-6.5.0-py3-none-any.whl", hash = "sha256:494e1e8e5edd15286eaf7c286f3a06652688f1ee20a49e2a0218ddc5cc475e32", size = 144419, upload-time = "2025-10-17T21:40:01.233Z" },
 ]
 
 [[package]]
@@ -560,8 +560,8 @@ wheels = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.29.1"
-source = { editable = "../simple_item_plugin" }
+version = "0.30.2"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beet" },
     { name = "bolt" },
@@ -569,14 +569,9 @@ dependencies = [
     { name = "model-resolver" },
     { name = "weld-deps" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "beet", specifier = ">=0.113.0b10" },
-    { name = "bolt", specifier = ">=0.50.0b5" },
-    { name = "mecha", specifier = ">=0.102.0b2" },
-    { name = "model-resolver", specifier = ">=1.13.0" },
-    { name = "weld-deps", specifier = ">=0.8.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/9f/15/27f93431b6a6ca3196fb1f444468126366a661b3cd3600202b1c6ba4bee6/simple_item_plugin-0.30.2.tar.gz", hash = "sha256:62db2f64a253d4ce085fd202efdee19aca3849a22bfeca12db854d89b1bd56e9", size = 107628, upload-time = "2026-01-04T14:36:43.223Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8e/12/94e90f9f53ef5b5721d64ddc44b987b1a6785f0d7ba80c6d0da55bde1940/simple_item_plugin-0.30.2-py3-none-any.whl", hash = "sha256:3ef21383fca252922025222e5b01274d02f274a0a93decbf5d9f8037114242ad", size = 106134, upload-time = "2026-01-04T14:36:41.94Z" },
 ]
 
 [[package]]
@@ -588,6 +583,7 @@ dependencies = [
     { name = "bolt" },
     { name = "mecha" },
     { name = "simple-item-plugin" },
+    { name = "weld-deps" },
 ]
 
 [package.dev-dependencies]
@@ -600,7 +596,8 @@ requires-dist = [
     { name = "beet", specifier = ">=0.113.0b10" },
     { name = "bolt", specifier = ">=0.50.0b5" },
     { name = "mecha", specifier = ">=0.102.0b2" },
-    { name = "simple-item-plugin", editable = "../simple_item_plugin" },
+    { name = "simple-item-plugin", specifier = ">=0.29.1" },
+    { name = "weld-deps", specifier = ">=0.15.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -686,16 +683,16 @@ wheels = [
 
 [[package]]
 name = "weld-deps"
-version = "0.15.0"
+version = "0.15.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beet" },
     { name = "requests" },
     { name = "semver" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/bf/10/29443c7e652b14d4c21e5a0670fb039a1a21f657edcd5d4a39134f5fef5b/weld_deps-0.15.0.tar.gz", hash = "sha256:b5329d1508cbc0ed5a2a61acc8b1b6a080dd98b107244a77ef0e102b19d432be", size = 4680, upload-time = "2026-01-03T14:29:54.067Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d2/9b/5c1fdab05c7c8d9d59166a3077de0546b97790e4778a0c065ab6441a8cb9/weld_deps-0.15.1.tar.gz", hash = "sha256:54eca05f5c6d6763434fc2ec65e4c0ab9d107b4e9aadd0389fda0c2c0aef3051", size = 1947829, upload-time = "2026-01-04T14:50:10.122Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/95/62/50c4a8ccbefc30e6ed755a1cddbb7a9fd7660dc4a123f008abb4a4ae0f2b/weld_deps-0.15.0-py3-none-any.whl", hash = "sha256:14198ef1586324143bb2fe5ef8b51772d1fcd3d2fbb3aa0b42d029de3656a8bf", size = 5205, upload-time = "2026-01-03T14:29:53.06Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/4e/ba91b9243960d7776e244a4428be440d94cb82e463ae03f87d6eb8f90f9f/weld_deps-0.15.1-py3-none-any.whl", hash = "sha256:1e765514db3d85d769568e79522e872e1ec6196e3889eba822abae1ddbc42978", size = 5190, upload-time = "2026-01-04T14:50:12.136Z" },
 ]
 
 [[package]]

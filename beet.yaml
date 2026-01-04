@@ -27,14 +27,10 @@ ignore:
 data_pack:
   name: "{{ project_id }}_{{ project_version }}_dp_bundled"
   load: src
-  min_format: [94, 1]
-  max_format: [94, 1]
 
 resource_pack:
   name: "{{ project_id }}_{{ project_version }}_rp_bundled"
   load: src
-  min_format: [75, 0]
-  max_format: [75, 0]
 
 meta:
   mc_supports:
