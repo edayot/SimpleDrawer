@@ -53,7 +53,7 @@ jobs:
             echo "Version bump: $VERSION_BUMP"
             ls -la .
             # activate the virtual environment
-            . /.venv/bin/activate
+            . ./.venv/bin/activate
             if [ "$VERSION_BUMP" = "automatic" ]; then
               semantic-release -v version
             fi
