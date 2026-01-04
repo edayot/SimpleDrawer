@@ -5,9 +5,22 @@ import subprocess
 from urllib.parse import urlencode
 
 
+def run(cmd: str) -> None:
+    """Run a shell command and exit with an error if it fails.
+
+    This ensures the GitHub Actions job fails immediately on errors
+    (e.g. failed git push).
+    """
+    print(f"Running: {cmd}")
+    result = subprocess.run(cmd, shell=True)
+    if result.returncode != 0:
+        print(f"Command failed with exit code {result.returncode}: {cmd}")
+        raise SystemExit(result.returncode)
+
+
 # configure git
-os.system("git config --global user.name \"github-actions\"")
-os.system("git config --global user.email \"action@github.com\"")
+run("git config --global user.name \"github-actions\"")
+run("git config --global user.email \"action@github.com\"")
 
 with open("beet.yaml", "r") as f:
     beet = yaml.safe_load(f)
@@ -20,12 +33,22 @@ else:
     version = mc_supports[0]
 
 
-os.system("git clone -b versions https://github.com/edayot/SimpleDrawer.git versions")
+github_repo = os.environ.get("GITHUB_REPOSITORY", "edayot/SimpleDrawer")
+github_token = os.environ.get("GH_TOKEN")
+
+if github_token:
+    # Use authenticated URL so git push works in CI
+    clone_url = f"https://x-access-token:{github_token}@github.com/{github_repo}.git"
+else:
+    # Fallback to unauthenticated clone (push will likely fail)
+    clone_url = f"https://github.com/{github_repo}.git"
+
+run(f"git clone -b versions {clone_url} versions")
 with open("versions/versions.json", "w") as f:
     json.dump({
         "versions": version
     }, f)
-os.system("cd versions && git add versions.json && git commit -m 'Update versions.json to {}' && git push origin versions".format(version))
+run("cd versions && git add versions.json && git commit -m 'Update versions.json to {}' && git push origin versions".format(version))
 # capture the last commit SHA from the cloned `versions` repo and set it in environment
 sha = subprocess.check_output(["git", "-C", "versions", "rev-parse", "HEAD"]).decode().strip()
 print("Captured versions commit SHA: {}".format(sha))
@@ -54,6 +77,6 @@ if ghenv:
     except Exception as e:
         print("Failed to write to GITHUB_ENV:", e)
 
-os.system("rm -rf versions")
+run("rm -rf versions")
 
 print("Updated versions.json to {}".format(version))

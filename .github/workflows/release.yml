@@ -37,6 +37,7 @@ jobs:
         env:
           VERSION_BUMP: ${{ github.event.inputs.version_bump }}
           GITHUB_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup OpenGL and Release
         uses: edayot/model_resolver@master

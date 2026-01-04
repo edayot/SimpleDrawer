@@ -683,16 +683,16 @@ wheels = [
 
 [[package]]
 name = "weld-deps"
-version = "0.15.1"
+version = "0.15.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beet" },
     { name = "requests" },
     { name = "semver" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d2/9b/5c1fdab05c7c8d9d59166a3077de0546b97790e4778a0c065ab6441a8cb9/weld_deps-0.15.1.tar.gz", hash = "sha256:54eca05f5c6d6763434fc2ec65e4c0ab9d107b4e9aadd0389fda0c2c0aef3051", size = 1947829, upload-time = "2026-01-04T14:50:10.122Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3e/55/f8ddaaaae526f60446822b7bb6c2c6e63fe87546b9b62eade7e992ec067e/weld_deps-0.15.2.tar.gz", hash = "sha256:4cad7d8ea53888ec6c86fb6326f0851971fdc47b1b7f665e7cf1de7309777c12", size = 1947853, upload-time = "2026-01-04T16:30:47.564Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c1/4e/ba91b9243960d7776e244a4428be440d94cb82e463ae03f87d6eb8f90f9f/weld_deps-0.15.1-py3-none-any.whl", hash = "sha256:1e765514db3d85d769568e79522e872e1ec6196e3889eba822abae1ddbc42978", size = 5190, upload-time = "2026-01-04T14:50:12.136Z" },
+    { url = "https://files.pythonhosted.org/packages/38/dd/db28b7ff89ba9613d6b3034b428cb4e7e31cfc1980ab6b863f15b50abe3d/weld_deps-0.15.2-py3-none-any.whl", hash = "sha256:a59d741fec6a38c8f96d1e3439bdad244742c2a01ecf6dae839bd209c42cd55a", size = 5238, upload-time = "2026-01-04T16:30:49.507Z" },
 ]
 
 [[package]]
