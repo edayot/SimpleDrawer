@@ -80,12 +80,12 @@ meta:
       refactor:
         match: "{{ project_id }}:*"
         find: "{{ project_id }}:impl/"
-        replace: "{{ project_id }}:v{{ version }}/"
+        replace: "{{ project_id }}:v{{ project_version }}/"
 
       api:
-        match: "{{ project_id }}:v{{ version }}"
-        implementation_prefix: "{{ project_id }}:v{{ version }}/"
-        version_check_path: "v{{ version }}/calls"
+        match: "{{ project_id }}:v{{ project_version }}"
+        implementation_prefix: "{{ project_id }}:v{{ project_version }}/"
+        version_check_path: "v{{ project_version }}/calls"
         tag_path: calls
 
   weld_deps:

@@ -1,10 +1,13 @@
-import toml
+import yaml
 import os
 import json
 import subprocess
 from urllib.parse import urlencode
 
-mc_supports = toml.load("pyproject.toml")['tool']['beet']['meta']['mc_supports']
+with open("beet.yaml", "r") as f:
+    beet = yaml.safe_load(f)
+
+mc_supports = beet['meta']['mc_supports']
 
 if len(mc_supports) > 1:
     version = mc_supports[0] + " - " + mc_supports[-1]

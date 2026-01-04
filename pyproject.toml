@@ -8,7 +8,7 @@ dependencies = [
     "beet>=0.113.0b10",
     "bolt>=0.50.0b5",
     "mecha>=0.102.0b2",
-    "simple-item-plugin>=0.29.0",
+    "simple-item-plugin>=0.29.1",
 ]
 
 [dependency-groups]
@@ -18,6 +18,9 @@ dev = [
 
 [tool.uv]
 override-dependencies = ["click>=8.3.1"]
+
+[tool.uv.sources]
+simple-item-plugin = { path = "../simple_item_plugin", editable = true }
 
 
 

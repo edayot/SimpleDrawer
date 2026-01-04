@@ -32,16 +32,17 @@ def post_modrinth_version(data,files):
 
 
 
-beet = toml.load("pyproject.toml")['tool']['beet']
-poetry = toml.load("pyproject.toml")['tool']['poetry']
+with open("beet.yaml", "r") as f:
+    beet = yaml.safe_load(f)
 
+project = toml.load("pyproject.toml")["project"]
 
-# get current version using poetry version command
-command = f"poetry version | cut -d' ' -f2"
-CURRENT_VERSION = os.popen(command).read().strip()
+CURRENT_VERSION = project["version"]
 print("CURRENT_VERSION: " + CURRENT_VERSION)
 
-release=requests.get(f"https://api.github.com/repos/edayot/{poetry['name']}/releases/tags/v{CURRENT_VERSION}").json()
+release = requests.get(
+    f"https://api.github.com/repos/edayot/{project['name']}/releases/tags/v{CURRENT_VERSION}"
+).json()
 
 
 
