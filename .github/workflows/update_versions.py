@@ -4,6 +4,11 @@ import json
 import subprocess
 from urllib.parse import urlencode
 
+
+# configure git
+os.system("git config --global user.name \"github-actions\"")
+os.system("git config --global user.email \"action@github.com\"")
+
 with open("beet.yaml", "r") as f:
     beet = yaml.safe_load(f)
 
