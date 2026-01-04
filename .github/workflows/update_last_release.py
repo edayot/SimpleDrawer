@@ -152,10 +152,10 @@ def main():
     # Only update the latest GitHub release body; do not modify CHANGELOG.md
     marker = "<!-- badge -->"
 
-    github_token = os.environ.get("GITHUB_TOKEN")
+    github_token = os.environ.get("GH_TOKEN")
     github_repo = os.environ.get("GITHUB_REPOSITORY")
     if not (github_token and github_repo):
-        eprint("GITHUB_TOKEN or GITHUB_REPOSITORY not set; cannot update release")
+        eprint("GH_TOKEN or GITHUB_REPOSITORY not set; cannot update release")
         sys.exit(2)
 
     ok = update_latest_release_badge(github_repo, github_token, marker, badge)

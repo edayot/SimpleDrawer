@@ -73,6 +73,7 @@ jobs:
           VERSION_BUMP: ${{ github.event.inputs.version_bump }}
           GITHUB_SHA: ${{ github.sha }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
       
       - name: Push to smithed
         continue-on-error: true
