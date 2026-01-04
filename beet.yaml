@@ -1,0 +1,120 @@
+
+id: simpledrawer
+version: 2.7.6
+description: "A simple datapack that add drawers in to minecraft"
+author: airdox_
+
+
+output: build
+
+pipeline:
+  - simple_item_plugin
+  - simpledrawer
+
+require:
+  - bolt
+  - weld_deps
+  - mecha.contrib.relative_location
+  - mecha.contrib.nested_location
+  - simpledrawer.airdox_.add_tests_directory
+  - simpledrawer.airdox_.allow_function_without_name
+  - mecha.contrib.messages
+  - bolt
+
+ignore:
+  - stable_cache.json
+
+data_pack:
+  name: "{{ project_id }}_{{ project_version }}_dp_bundled"
+  load: src
+  min_format: [94, 1]
+  max_format: [94, 1]
+
+resource_pack:
+  name: "{{ project_id }}_{{ project_version }}_rp_bundled"
+  load: src
+  min_format: [75, 0]
+  max_format: [75, 0]
+
+meta:
+  mc_supports:
+    - "1.21.11"
+  mc_supports_dataversion:
+    - 4671
+  minecraft_version: "1.21.11"
+  modrinth_id: "JmCxCKiW"
+
+  simple_item_plugin:
+    generate_guide: true
+    items_on_first_page: true
+    creator: "airdox_"
+    prefix_namespace_with_creator: true
+    item_for_pack_png: "airdox_:simpledrawer/new_drawer"
+    tick_function: "simpledrawer:impl/tick"
+    load_function: "simpledrawer:impl/load"
+
+  mecha:
+    multiline: true
+    match:
+      - "simpledrawer:**"
+    formatting: preserve
+
+  model_resolver:
+    render_size: 256
+    load_vanilla: true
+    save_namespace: grappling_hook
+    minecraft_version: "1.21.11"
+    special_rendering: true
+
+  smithed:
+    versioning:
+      scheduled_paths:
+        - "impl/tick"
+        - "impl/5tick"
+
+      lantern_load:
+        step: load
+        tag_path: load
+        function_path: "impl/test_load"
+
+      refactor:
+        match: "{{ project_id }}:*"
+        find: "{{ project_id }}:impl/"
+        replace: "{{ project_id }}:v{{ version }}/"
+
+      api:
+        match: "{{ project_id }}:v{{ version }}"
+        implementation_prefix: "{{ project_id }}:v{{ version }}/"
+        version_check_path: "v{{ version }}/calls"
+        tag_path: calls
+
+  weld_deps:
+    merge_with_weld: false
+    deps:
+      - id: itemio
+        version: "1.5.3"
+        source: smithed
+        versioning:
+          type: normal
+          prefix: "#itemio"
+
+      - id: crafter
+        version: "0.8.0"
+        source: smithed
+        versioning:
+          type: normal
+          prefix: "#smithed.crafter"
+
+      - id: custom-block
+        version: "0.8.0"
+        source: smithed
+        versioning:
+          type: normal
+          prefix: "#smithed.custom_block"
+
+      - id: custom_block_ext
+        version: "0.2.0"
+        source: smithed
+        versioning:
+          type: normal
+          prefix: "#custom_block_ext"

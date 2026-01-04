@@ -1,18 +1,27 @@
-[tool.poetry]
+[project]
 name = "simpledrawer"
 version = "2.7.6"
-description = "A simple datapack that add drawers in to minecraft"
-authors = ["airdox_"]
+description = "Python project for SimpleDrawer Minecraft datapack"
 readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "beet>=0.113.0b10",
+    "bolt>=0.50.0b5",
+    "mecha>=0.102.0b2",
+    "simple-item-plugin>=0.29.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-simple-item-plugin = ">=0.9.1"
-beet = ">=0.112.0"
-click = ">=8.1.7"
+[dependency-groups]
+dev = [
+    "python-semantic-release>=10.5.0",
+]
 
-[tool.poetry.dev-dependencies]
-python-semantic-release = "^10.5.0"
+[tool.uv]
+override-dependencies = ["click>=8.3.1"]
+
+
+
+
 
 [tool.semantic_release]
 major_on_zero = false
@@ -29,7 +38,10 @@ build_command = '''
          -s resource_pack.name="{{ project_id }}_{{ project_version }}_rp"
 '''
 dist_path = "build"
-version_toml = ["pyproject.toml:tool.poetry.version"]
+version_toml = ["pyproject.toml:project.version"]
+version_variables = [
+    "beet.yaml:version",
+]
 version_source = "commit"
 
 remove_dist = false
@@ -43,141 +55,3 @@ upload_to_vcs_release = true
 
 [tool.semantic_release.changelog]
 template_dir = "templates"
-
-
-
-
-
-
-
-
-
-
-
-
-[tool.beet]
-output = "build"
-
-pipeline = [
-    "simple_item_plugin",
-    "simpledrawer",
-]
-require=[
-    "bolt",
-    "weld_deps",
-    "mecha.contrib.relative_location",
-    "mecha.contrib.nested_location",
-    "simpledrawer.airdox_.add_tests_directory",
-    "simpledrawer.airdox_.allow_function_without_name",
-    "mecha.contrib.messages",
-    "bolt",
-]
-
-ignore = [
-    "stable_cache.json"
-]
-
-[tool.beet.data_pack]
-name = "{{ project_id }}_{{ project_version }}_dp_bundled"
-load = "src"
-min_format = [94, 1]
-max_format = [94, 1]
-
-[tool.beet.resource_pack]
-name = "{{ project_id }}_{{ project_version }}_rp_bundled"
-load = "src"
-min_format = [75, 0]
-max_format = [75, 0]
-
-[tool.beet.meta]
-mc_supports = ["1.21.11"]
-mc_supports_dataversion = [4671]
-minecraft_version = "1.21.11"
-modrinth_id = "JmCxCKiW"
-
-
-
-[tool.beet.meta.simple_item_plugin]
-generate_guide = true
-items_on_first_page = true
-creator = "airdox_"
-prefix_namespace_with_creator = true
-item_for_pack_png = "airdox_:simpledrawer/new_drawer"
-tick_function = "simpledrawer:impl/tick"
-load_function = "simpledrawer:impl/load"
-
-
-
-[tool.beet.meta.mecha]
-multiline = true
-match = ["simpledrawer:**"]
-formatting = "preserve"
-
-
-[tool.beet.meta.model_resolver]
-render_size = 256
-load_vanilla = true
-save_namespace = "grappling_hook"
-minecraft_version = "1.21.11"
-special_rendering = true
-
-
-
-[tool.beet.meta.smithed.versioning]
-scheduled_paths=["impl/tick", "impl/5tick"]
-
-[tool.beet.meta.smithed.versioning.lantern_load]
-step="load"
-tag_path="load"
-function_path="impl/test_load"
-
-[tool.beet.meta.smithed.versioning.refactor]
-match="{{ project_id }}:*"
-find="{{ project_id }}:impl/"
-replace="{{ project_id }}:v{{ version }}/"
-
-
-[tool.beet.meta.smithed.versioning.api]
-match="{{ project_id }}:v{{ version }}"
-implementation_prefix="{{ project_id }}:v{{ version }}/"
-version_check_path="v{{ version }}/calls"
-tag_path="calls"
-
-
-
-
-[[tool.beet.meta.weld_deps.deps]]
-id = "itemio"
-version = "1.5.3"
-source = "smithed"
-[tool.beet.meta.weld_deps.deps.versioning]
-type = "normal"
-prefix = "#itemio"
-
-[[tool.beet.meta.weld_deps.deps]]
-id = "crafter"
-version = "0.8.0"
-source = "smithed"
-[tool.beet.meta.weld_deps.deps.versioning]
-type = "normal"
-prefix = "#smithed.crafter"
-
-[[tool.beet.meta.weld_deps.deps]]
-id = "custom-block"
-version = "0.8.0"
-source = "smithed"
-[tool.beet.meta.weld_deps.deps.versioning]
-type = "normal"
-prefix = "#smithed.custom_block"
-
-
-[[tool.beet.meta.weld_deps.deps]]
-id = "custom_block_ext"
-version = "0.2.0"
-source = "smithed"
-[tool.beet.meta.weld_deps.deps.versioning]
-type = "normal"
-prefix = "#custom_block_ext"
-
-
-
