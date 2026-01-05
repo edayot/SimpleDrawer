@@ -53,21 +53,19 @@ jobs:
             echo "Version bump: $VERSION_BUMP"
             ls -la .
             env
-            # activate the virtual environment
-            . ./.venv/bin/activate
             if [ "$VERSION_BUMP" = "automatic" ]; then
-              simpledrawer.semantic_release -v version
+              uv run python -m simpledrawer.semantic_release -v version
             fi
             if [ "$VERSION_BUMP" = "patch" ]; then
-              simpledrawer.semantic_release -v version --patch
+              uv run python -m simpledrawer.semantic_release -v version --patch
             fi
             if [ "$VERSION_BUMP" = "minor" ]; then
-              simpledrawer.semantic_release -v version --minor
+              uv run python -m simpledrawer.semantic_release -v version --minor
             fi
             if [ "$VERSION_BUMP" = "major" ]; then
-              simpledrawer.semantic_release -v version --major
+              uv run python -m simpledrawer.semantic_release -v version --major
             fi
-            simpledrawer.semantic_release -v publish
+            uv run python -m simpledrawer.semantic_release -v publish
 
       - name: Run update_last_release script
         continue-on-error: true
