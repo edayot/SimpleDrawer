@@ -56,18 +56,18 @@ jobs:
             # activate the virtual environment
             . ./.venv/bin/activate
             if [ "$VERSION_BUMP" = "automatic" ]; then
-              semantic-release -v version
+              simpledrawer.semantic_release -v version
             fi
             if [ "$VERSION_BUMP" = "patch" ]; then
-              semantic-release -v version --patch
+              simpledrawer.semantic_release -v version --patch
             fi
             if [ "$VERSION_BUMP" = "minor" ]; then
-              semantic-release -v version --minor
+              simpledrawer.semantic_release -v version --minor
             fi
             if [ "$VERSION_BUMP" = "major" ]; then
-              semantic-release -v version --major
+              simpledrawer.semantic_release -v version --major
             fi
-            semantic-release -v publish
+            simpledrawer.semantic_release -v publish
 
       - name: Run update_last_release script
         continue-on-error: true

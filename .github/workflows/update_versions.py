@@ -12,7 +12,15 @@ def run(cmd: str) -> None:
     (e.g. failed git push).
     """
     print(f"Running: {cmd}")
-    result = subprocess.run(cmd, shell=True)
+    result = subprocess.run(cmd, shell=True, text=True, capture_output=True)
+
+    # Print command output for easier debugging in CI logs
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        # Prefix stderr to make it stand out in logs
+        print(result.stderr, end="")
+
     if result.returncode != 0:
         print(f"Command failed with exit code {result.returncode}: {cmd}")
         raise SystemExit(result.returncode)
@@ -48,7 +56,7 @@ with open("versions/versions.json", "w") as f:
     json.dump({
         "versions": version
     }, f)
-run("cd versions && git add versions.json && git commit -m 'Update versions.json to {}' && git push origin versions".format(version))
+run("cd versions && git add versions.json && git commit --allow-empty -m 'Update versions.json to {}' && git push origin versions".format(version))
 # capture the last commit SHA from the cloned `versions` repo and set it in environment
 sha = subprocess.check_output(["git", "-C", "versions", "rev-parse", "HEAD"]).decode().strip()
 print("Captured versions commit SHA: {}".format(sha))

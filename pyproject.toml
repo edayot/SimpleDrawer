@@ -64,3 +64,7 @@ upload_to_vcs_release = true
 
 [tool.semantic_release.changelog]
 template_dir = "templates"
+
+
+[project.scripts]
+"simpledrawer.semantic_release" = "simpledrawer.semantic_release:main"
