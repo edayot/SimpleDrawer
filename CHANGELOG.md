@@ -2,6 +2,71 @@
 
 <!-- version list -->
 
+## v2.8.0 (2026-01-05)
+
+<!-- badge -->
+### Bug Fixes
+
+- Configure git
+  ([`9f8cf81`](https://github.com/edayot/SimpleDrawer/commit/9f8cf810761ddc2e9943c0ebca126c118c4b7025))
+
+- Shulker_tape is only craftable if enabled
+  ([`2ae533f`](https://github.com/edayot/SimpleDrawer/commit/2ae533fa4ff60af138e920cd9add59336cb85f9f))
+
+- Update crafter
+  ([`8192fc6`](https://github.com/edayot/SimpleDrawer/commit/8192fc6128e58177c19f5d3d50798cce4a912a66))
+
+### Chores
+
+- Activate env and then execute commands
+  ([`5f29c23`](https://github.com/edayot/SimpleDrawer/commit/5f29c238f65695b3201c6c562867f9bf8d7c95b2))
+
+- Automatic at release
+  ([`7f51f8d`](https://github.com/edayot/SimpleDrawer/commit/7f51f8d8d3ab7312a6e77715995826b353151deb))
+
+- Convert to uv
+  ([`78b7ca2`](https://github.com/edayot/SimpleDrawer/commit/78b7ca2053c8f388181bb44466037bd54bc43690))
+
+- Fix ci
+  ([`7f60a9a`](https://github.com/edayot/SimpleDrawer/commit/7f60a9a78b6f07996cdd845bec10c20fb8f6b70c))
+
+- Fix dependency issue
+  ([`35e6291`](https://github.com/edayot/SimpleDrawer/commit/35e62912595bc4b26ca193f720175a957e46de21))
+
+- Fixing dep issue
+  ([`dd14ef4`](https://github.com/edayot/SimpleDrawer/commit/dd14ef4e4f22c9f2025254153f4f064717596ec6))
+
+- Monkey patch is the WAY to go
+  ([`5eace71`](https://github.com/edayot/SimpleDrawer/commit/5eace711b5fa738c81619164c52e76fcc3a821e3))
+
+- Update python versions
+  ([`908a0e5`](https://github.com/edayot/SimpleDrawer/commit/908a0e50ff9402fff4b9f7f97a59053320c34e46))
+
+- Use uv run
+  ([`4611ffc`](https://github.com/edayot/SimpleDrawer/commit/4611ffc89a930e67e1e8d1bd0fcd38294ef4ae29))
+
+### Documentation
+
+- Add minecraft image
+  ([`0690b91`](https://github.com/edayot/SimpleDrawer/commit/0690b9112d1e60a98fe9108f872688ab9c5de20c))
+
+- Update readme
+  ([`4e7b84a`](https://github.com/edayot/SimpleDrawer/commit/4e7b84a313454e4bfcad9448d097ab3d9375aec6))
+
+- Version string
+  ([`3843519`](https://github.com/edayot/SimpleDrawer/commit/3843519c9b4cd7171a194c4c70fe0520f63d95b7))
+
+### Features
+
+- Add minecraft badge to readme
+  ([`8d057d3`](https://github.com/edayot/SimpleDrawer/commit/8d057d3450ddab086904d4298ed7105409da2dbd))
+
+- Add the badge to github release
+  ([`5c56661`](https://github.com/edayot/SimpleDrawer/commit/5c56661c4711ae0c92b32943be2ced5b142e5ee1))
+
+- Copper nuggets upgrade
+  ([`9b4c803`](https://github.com/edayot/SimpleDrawer/commit/9b4c803364f970ea79553fe8f1b2fdd8b4d66bef))
+
 
 ## v2.7.6 (2025-11-29)
 
