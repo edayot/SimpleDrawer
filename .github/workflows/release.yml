@@ -16,6 +16,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      new_sha: ${{ steps.set_sha.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -76,13 +78,83 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-      
+
+      - name: Capture release SHA
+        id: set_sha
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build/
+
+  publish-smithed:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.release.outputs.new_sha }}
+
+      - name: Setup Python 3.14
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.14
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --group dev
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: build
+
       - name: Push to smithed
         continue-on-error: true
         run: uv run python .github/workflows/push-to-smithed.py 
         env:
           SMITHED_UID: ${{ secrets.SMITHED_UID }}
           SMITHED_TOKEN: ${{ secrets.SMITHED_TOKEN }}
+
+  publish-modrinth:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.release.outputs.new_sha }}
+
+      - name: Setup Python 3.14
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.14
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --group dev
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: build
+
       - name: Push to Modrinth
         continue-on-error: true
         run: uv run python .github/workflows/push-to-modrinth.py 
