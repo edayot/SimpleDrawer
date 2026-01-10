@@ -40,9 +40,13 @@ project = toml.load("pyproject.toml")["project"]
 CURRENT_VERSION = project["version"]
 print("CURRENT_VERSION: " + CURRENT_VERSION)
 
-release = requests.get(
+r = requests.get(
     f"https://api.github.com/repos/edayot/{project['name']}/releases/tags/v{CURRENT_VERSION}"
-).json()
+)
+
+r.raise_for_status()
+
+release = r.json()
 
 
 
