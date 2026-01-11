@@ -7,6 +7,8 @@ import sys
 import hashlib
 import time
 import toml
+from stewbeet.continuous_delivery.pmc import convert_markdown_to_bbcode
+
 
 time.sleep(10)
 MODRINTH_AUTH_TOKEN=os.environ["MODRINTH_AUTH_TOKEN"]
@@ -47,6 +49,10 @@ r = requests.get(
 r.raise_for_status()
 
 release = r.json()
+
+bbcode = convert_markdown_to_bbcode(release['body'])
+with open("changelog_bbcode.txt","w") as f:
+    f.write(bbcode)
 
 
 

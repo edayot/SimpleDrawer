@@ -9,6 +9,7 @@ dependencies = [
     "bolt>=0.50.0b5",
     "mecha>=0.102.0b2",
     "simple-item-plugin>=0.29.1",
+    "stewbeet>=2.4.0",
     "weld-deps>=0.15.0",
 ]
 

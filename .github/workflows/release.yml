@@ -160,3 +160,10 @@ jobs:
         run: uv run python .github/workflows/push-to-modrinth.py 
         env:
           MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}
+
+      - name: Upload changelog_bbcode.txt
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: changelog_bbcode
+          path: changelog_bbcode.txt
