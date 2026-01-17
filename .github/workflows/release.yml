@@ -70,7 +70,6 @@ jobs:
             uv run python -m simpledrawer.semantic_release -v publish
 
       - name: Run update_last_release script
-        continue-on-error: true
         # run the script that prints / logs the current project version
         run: uv run python .github/workflows/update_last_release.py
         env:
@@ -84,7 +83,6 @@ jobs:
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Upload build artifacts
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: build
@@ -156,13 +154,11 @@ jobs:
           path: build
 
       - name: Push to Modrinth
-        continue-on-error: true
         run: uv run python .github/workflows/push-to-modrinth.py 
         env:
           MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}
 
       - name: Upload changelog_bbcode.txt
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: changelog_bbcode
