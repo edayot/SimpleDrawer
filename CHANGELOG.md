@@ -2,6 +2,26 @@
 
 <!-- version list -->
 
+## v2.8.1 (2026-01-17)
+
+<!-- badge -->
+### Bug Fixes
+
+- Upgrade ItemIO lib
+  ([`c51d660`](https://github.com/edayot/SimpleDrawer/commit/c51d66032579289bfc9815b66faf1853bf2875fb))
+
+### Chores
+
+- Add bbcode transformer
+  ([`beadc5a`](https://github.com/edayot/SimpleDrawer/commit/beadc5a61299f006ff14e796d82170e32acc19cf))
+
+- Debug release script
+  ([`f2021f9`](https://github.com/edayot/SimpleDrawer/commit/f2021f9b93bab198b9a305545d200de602e74bfe))
+
+- Test multi job setup
+  ([`124ce21`](https://github.com/edayot/SimpleDrawer/commit/124ce2142a836ed906c8222389ee26d0781109cb))
+
+
 ## v2.8.0 (2026-01-05)
 
 <!-- badge -->
