@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v2.9.1 (2026-03-28)
+
+<!-- badge -->
+### Chores
+
+- Update deps
+  ([`5864bbf`](https://github.com/edayot/SimpleDrawer/commit/5864bbf8ac83435051e694660ecf9cad7be1b8ae))
+
+
 ## v2.9.0 (2026-03-28)
 
 <!-- badge -->
