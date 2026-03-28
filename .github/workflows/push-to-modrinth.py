@@ -108,7 +108,7 @@ for file in os.listdir(build):
 
 r=post_modrinth_version(data,files)
  
-if r.ok != 200:
+if not r.ok:
     print(f"::error Modrinth: Failed to upload version ({r.status_code}):  {r.text}")
     exit(1)
 
