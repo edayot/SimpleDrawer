@@ -14,6 +14,7 @@ pipeline:
 require:
   - bolt
   - weld_deps
+  - weld_deps.contrib.mecha_auto_include.require
   - mecha.contrib.relative_location
   - mecha.contrib.nested_location
   - simpledrawer.airdox_.add_tests_directory
@@ -34,10 +35,10 @@ resource_pack:
 
 meta:
   mc_supports:
-    - "1.21.11"
+    - "26.1"
   mc_supports_dataversion:
-    - 4671
-  minecraft_version: "1.21.11"
+    - 4786
+  minecraft_version: "26.1"
   modrinth_id: "JmCxCKiW"
 
   simple_item_plugin:
@@ -95,14 +96,14 @@ meta:
           prefix: "#itemio"
 
       - id: crafter
-        version_: "0.9.0"
+        version_: "0.10.0"
         source: smithed
         versioning:
           type: normal
           prefix: "#smithed.crafter"
 
       - id: custom-block
-        version_: "0.9.0"
+        version_: "0.10.0"
         source: smithed
         versioning:
           type: normal
