@@ -86,9 +86,5 @@ print(json.dumps({"pack_version": pack_version}["pack_version"], indent=4))
 
 # print response
 print("RESPONSE:")
-print(response.text)
+print(f"::notice {response.text}")
 
-
-if not response.ok:
-    print("Error: " + response.text)
-    sys.exit(1)

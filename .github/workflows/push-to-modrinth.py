@@ -108,14 +108,11 @@ for file in os.listdir(build):
 
 r=post_modrinth_version(data,files)
  
-try:
-    print(r.json())
-except:
-    print(r.text)
-
-if r.status_code != 200:
+if r.ok != 200:
+    print(f"::error Modrinth: Failed to upload version ({r.status_code}):  {r.text}")
     exit(1)
 
+print(r.json())
 
 
 
@@ -124,16 +121,23 @@ files_modrinth=r.json()['files']
 
 for file in files_modrinth:
     if file["hashes"]["sha512"] != get_sha512(os.path.join(build,file["filename"])):
-        print(f"Hashes don't match for {file['filename']}")
+        print(f"::error Modrinth hashes don't match for {file['filename']}")
     else:
-        print(f"Hashes match for {file['filename']}")
+        print(f"::notice Modrinth hashes match for {file['filename']}")
             
 # Modify the resource pack file_type to "required-resource-pack"
 resource_pack_hash: str = r.json()["files"][1]["hashes"]["sha1"]
-requests.patch(
+res = requests.patch(
     f"https://api.modrinth.com/v2/version/{r.json()["id"]}",
     headers={
         "Authorization":MODRINTH_AUTH_TOKEN
     },
     json={"file_types": [{"algorithm": "sha1", "hash": resource_pack_hash, "file_type": "required-resource-pack"}]}
 )
+
+
+if res.ok:
+    print("::notice Modrinth: Successfully updated resource pack file type")
+else:
+    print(f"::error Modrinth: Failed to update resource pack file type ({res.status_code}):  {res.text}")
+

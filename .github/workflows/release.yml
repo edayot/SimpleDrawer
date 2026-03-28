@@ -159,7 +159,7 @@ jobs:
           MODRINTH_AUTH_TOKEN: ${{ secrets.MODRINTH_AUTH_TOKEN }}
 
       - name: Upload changelog_bbcode.txt
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: changelog_bbcode
           path: changelog_bbcode.txt
+          archive: false
