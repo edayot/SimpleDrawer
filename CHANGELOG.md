@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v2.9.0 (2026-03-28)
+
+<!-- badge -->
+### Chores
+
+- Update deps
+  ([`d4bd2b2`](https://github.com/edayot/SimpleDrawer/commit/d4bd2b271a8bb4e86585d0be780fea62a3a51b9b))
+
+### Features
+
+- Update to 26.1
+  ([`b193ef6`](https://github.com/edayot/SimpleDrawer/commit/b193ef6410733d9ee67a9fe0a2fc32f7cead6a4a))
+
+
 ## v2.8.1 (2026-01-17)
 
 <!-- badge -->
