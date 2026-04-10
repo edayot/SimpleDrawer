@@ -768,17 +768,29 @@ def generate_translation(ctx: Context):
                 
             entries.append({
                 "directory": directory,
-                "min_format": [formats[0], formats[1]],
-                "max_format": [formats[0], formats[1]],
-                "formats": formats[0],
+                "min_format": (formats[0], formats[1]),
+                "max_format": (formats[0], formats[1]),
             })
         
+        new_entries = []
+        for e1 in entries:
+            quit = False
+            for e2 in new_entries:
+                if e1 == e2:
+                    quit = True
+                    break
+            if quit: continue
+
+            new_entries.append(e1)
+        print(new_entries)
+
+
         b = None
-        for a, b in pairwise(entries):
+        for a, b in pairwise(new_entries):
             min_format = b["min_format"]
-            a["max_format"] = [min_format[0] - 1, 999]
+            a["max_format"] = (min_format[0] - 1, 999)
         if b:
-            b["max_format"][1] = 999
+            b["max_format"] = (b["max_format"][0], 999)
 
 
 

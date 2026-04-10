@@ -776,7 +776,7 @@ wheels = [
 
 [[package]]
 name = "simpledrawer"
-version = "2.9.0"
+version = "2.9.2"
 source = { virtual = "." }
 dependencies = [
     { name = "beet" },

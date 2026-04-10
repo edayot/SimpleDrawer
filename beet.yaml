@@ -37,9 +37,11 @@ meta:
   mc_supports:
     - "26.1"
     - "26.1.1"
+    - "26.1.2"
   mc_supports_dataversion:
     - 4786
     - 4788
+    - 4790 
   minecraft_version: "26.1.1"
   modrinth_id: "JmCxCKiW"
 
