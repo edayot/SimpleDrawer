@@ -3,11 +3,11 @@ from dataclasses import dataclass
 from itertools import pairwise
 from tkinter import NO
 from typing import Any, Iterable, Literal, Optional
-from beet import Context, LootTable
+from beet import Context, Generator, LootTable
 from beet.core.utils import split_version
 from simple_item_plugin.types import NAMESPACE, Lang
 from simple_item_plugin.item import Item, BlockProperties, export_translated_string
-from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem, ConditionalCrafting
+from simple_item_plugin.crafting import ShapedRecipe, VanillaItem, ExternalItem, ConditionalCrafting, RecipeItemTag
 from simple_item_plugin.guide import ItemGroup, Page
 
 from simple_item_plugin.types import TranslatedString
@@ -18,7 +18,7 @@ from beet.contrib.vanilla import Vanilla
 
 
 class SimpleDrawerItem(Item):
-    def create_custom_data(self, ctx: Context):
+    def create_custom_data(self, ctx: Context | Generator):
         res = super().create_custom_data(ctx)
         res["ctc"] = {
             "id": self.id,
@@ -132,12 +132,8 @@ def beet_default(ctx: Context):
     ctx.require("simpledrawer.new_drawer_model")
     ctx.require("simpledrawer.create_tape_loot_table")
 
-    cobblestone = VanillaItem(id="minecraft:cobblestone").export(ctx)
     slime_ball = VanillaItem(id="minecraft:slime_ball").export(ctx)
-    slime_block = VanillaItem(id="minecraft:slime_block").export(ctx)
     diamond = VanillaItem(id="minecraft:diamond").export(ctx)
-    elytra = VanillaItem(id="minecraft:elytra").export(ctx)
-    obsidian = VanillaItem(id="minecraft:obsidian").export(ctx)
     book = VanillaItem(id="minecraft:book").export(ctx)
     redstone = VanillaItem(id="minecraft:redstone").export(ctx)
     oak_log = VanillaItem(id="minecraft:oak_log").export(ctx)
@@ -146,7 +142,6 @@ def beet_default(ctx: Context):
     barrel = VanillaItem(id="minecraft:barrel").export(ctx)
     iron_nugget = VanillaItem(id="minecraft:iron_nugget").export(ctx)
     iron_ingot = VanillaItem(id="minecraft:iron_ingot").export(ctx)
-    oak_planks = VanillaItem(id="minecraft:oak_planks").export(ctx)
     stick = VanillaItem(id="minecraft:stick").export(ctx)
     gold_ingot = VanillaItem(id="minecraft:gold_ingot").export(ctx)
     diamond = VanillaItem(id="minecraft:diamond").export(ctx)
@@ -161,6 +156,7 @@ def beet_default(ctx: Context):
     redstone_block = VanillaItem(id="minecraft:redstone_block").export(ctx)
     shulker_shell = VanillaItem(id="minecraft:shulker_shell").export(ctx)
 
+    planks = RecipeItemTag(id="minecraft:planks").export(ctx)
 
 
     heavy_workbench = ExternalItem(
@@ -276,9 +272,9 @@ def beet_default(ctx: Context):
 
     ShapedRecipe(
         items=(
-            (oak_planks, stick, oak_planks),
+            (planks, stick, planks),
             (stick, iron_nugget, stick),
-            (oak_planks, barrel, oak_planks),
+            (planks, barrel, planks),
         ),
         result=(new_drawer, 1),
     ).export(ctx, True)
@@ -291,9 +287,9 @@ def beet_default(ctx: Context):
 
     ShapedRecipe(
         items=(
-            (oak_planks, barrel, oak_planks),
+            (planks, barrel, planks),
             (stick, iron_nugget, stick),
-            (oak_planks, barrel, oak_planks),
+            (planks, barrel, planks),
         ),
         result=(double_new_drawer, 1),
     ).export(ctx, True)
@@ -307,9 +303,9 @@ def beet_default(ctx: Context):
 
     ShapedRecipe(
         items=(
-            (oak_planks, barrel, oak_planks),
+            (planks, barrel, planks),
             (barrel, iron_nugget, barrel),
-            (oak_planks, barrel, oak_planks),
+            (planks, barrel, planks),
         ),
         result=(quadruple_new_drawer, 1),
     ).export(ctx, True)
@@ -414,8 +410,8 @@ def beet_default(ctx: Context):
     ShapedRecipe(
         items=(
             (stick, stick, stick),
-            (iron_ingot, oak_planks, iron_ingot),
-            (iron_ingot, oak_planks, iron_ingot),
+            (iron_ingot, planks, iron_ingot),
+            (iron_ingot, planks, iron_ingot),
         ),
         result=(iron_upgrade, 1),
     ).export(ctx)
@@ -578,7 +574,7 @@ def beet_default(ctx: Context):
     ShapedRecipe(
         items=(
             (barrel, iron_nugget, None),
-            (book, oak_planks, None),
+            (book, planks, None),
             (None, None, None),
         ),
         result=(guide, 1),
@@ -748,7 +744,7 @@ def generate_translation(ctx: Context):
         item_components = get_components(ctx, mc_version)
         formats, _ = get_pack_format(ctx, mc_version)
         item_modifier = get_item_modifier(item_components)
-        ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier)
+        ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier) # type: ignore
     else:
         for mc_version in mc_versions:
             item_components = get_components(ctx, mc_version)
@@ -764,7 +760,7 @@ def generate_translation(ctx: Context):
             if directory in [x["directory"] for x in entries]:
                 continue
             dp = ctx.data.overlays[directory]
-            dp.item_modifiers[path] = ItemModifier(item_modifier)
+            dp.item_modifiers[path] = ItemModifier(item_modifier) # type: ignore
                 
             entries.append({
                 "directory": directory,
