@@ -574,8 +574,7 @@ def beet_default(ctx: Context):
     ShapedRecipe(
         items=(
             (barrel, iron_nugget, None),
-            (book, planks, None),
-            (None, None, None),
+            (book, planks, None)
         ),
         result=(guide, 1),
     ).export(ctx)

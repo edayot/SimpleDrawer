@@ -45,7 +45,23 @@ def beet_default(ctx: Context):
                 iter_wood_types(wood_types),
                 generate_tapped_condition(
                     is_empty=upgrade,
-                    is_filled=generate_plain_model("simpledrawer:item/new_drawer/tapped")
+                    is_filled={
+                        "type": "minecraft:composite",
+                        "models": [
+                            generate_plain_model("simpledrawer:item/new_drawer/tapped"),
+                            {
+                                "type": "minecraft:select",
+                                "property": "minecraft:display_context",
+                                "cases": [
+                                    {
+                                        "when": "gui",
+                                        "model": upgrade
+                                    }
+                                ],
+                                "fallback": {"type": "minecraft:empty"}
+                            },
+                        ]
+                    }
                 )
             ]
         },

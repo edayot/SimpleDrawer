@@ -93,7 +93,7 @@ meta:
     merge_with_weld: false
     deps:
       - id: itemio
-        version_: "1.6.1"
+        version_: "1.7.0"
         source: smithed
         versioning:
           type: normal
