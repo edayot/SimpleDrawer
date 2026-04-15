@@ -2,6 +2,18 @@
 
 <!-- version list -->
 
+## v2.9.4 (2026-04-15)
+
+<!-- badge -->
+### Bug Fixes
+
+- Book recipe & filled drawer in gui
+  ([`a983586`](https://github.com/edayot/SimpleDrawer/commit/a98358647b66a3204d74697583e39d0f40006080))
+
+- Use item tag for iron upgrade
+  ([`a5bd979`](https://github.com/edayot/SimpleDrawer/commit/a5bd979acd27957554be956c0b102aab0b694c1a))
+
+
 ## v2.9.3 (2026-04-10)
 
 <!-- badge -->
