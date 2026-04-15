@@ -762,7 +762,7 @@ wheels = [
 
 [[package]]
 name = "simple-item-plugin"
-version = "0.32.1"
+version = "0.32.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beet" },
@@ -771,9 +771,9 @@ dependencies = [
     { name = "model-resolver" },
     { name = "weld-deps" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/05/c1/9b0ae34a956572568043740e74865a5c742fc54c8dc09fab2842183a3b13/simple_item_plugin-0.32.1.tar.gz", hash = "sha256:57ceb10ec33bcdb571b56fb2d3a2346416a66cf3a6ab4ae98ee78746372b7e36", size = 108866, upload-time = "2026-04-15T19:11:48.127Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b6/de/73d6005cff59bcb5f197821536aa27d40f6469fc09289ca9bac447384e1b/simple_item_plugin-0.32.2.tar.gz", hash = "sha256:668244f63596ccbd79ca5b3c1edc1fc2998e52f71bb7bf2b180090bc4948e791", size = 108882, upload-time = "2026-04-15T19:42:36.651Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4d/f9/0dde2c4508fd762faa2bc4b45531ae7ff308bd3bfd80b8fbc9efca5eef42/simple_item_plugin-0.32.1-py3-none-any.whl", hash = "sha256:518d9ea1ec8477996c4660732f3b039fe4beff88b64d3cc5372ec3122e41e9ae", size = 106533, upload-time = "2026-04-15T19:11:47.09Z" },
+    { url = "https://files.pythonhosted.org/packages/25/9b/3941a0019085514e7a23e5faa56c0e2e545fe6c971bb07b7c07d21ebca38/simple_item_plugin-0.32.2-py3-none-any.whl", hash = "sha256:0c2f49ef07728547dfd56b53c7e2672acf76b74dca0305618e9b16297a684de8", size = 106557, upload-time = "2026-04-15T19:42:37.544Z" },
 ]
 
 [[package]]
