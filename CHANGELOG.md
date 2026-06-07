@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v2.9.5 (2026-06-07)
+
+<!-- badge -->
+### Chores
+
+- Upgrade itemio
+  ([`6a6d8ea`](https://github.com/edayot/SimpleDrawer/commit/6a6d8eaa6bb67dc0dcf7c6976a97cfe214ac59cd))
+
+
 ## v2.9.4 (2026-04-15)
 
 <!-- badge -->
