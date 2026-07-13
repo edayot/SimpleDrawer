@@ -15,6 +15,7 @@ from beet import Context, Function, ItemModifier
 import nbtlib
 import json
 from beet.contrib.vanilla import Vanilla
+from rich import print
 
 
 class SimpleDrawerItem(Item):
@@ -745,6 +746,7 @@ def generate_translation(ctx: Context):
         item_modifier = get_item_modifier(item_components)
         ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier) # type: ignore
     else:
+        entries: list[dict[str, Any]] = []
         for mc_version in mc_versions:
             item_components = get_components(ctx, mc_version)
             formats, _ = get_pack_format(ctx, mc_version)
@@ -754,8 +756,6 @@ def generate_translation(ctx: Context):
             path = "simpledrawer:impl/destroy/translate".replace("impl/", impl)
 
             directory = f"simpledrawer_{formats[0]}_{formats[1]}"
-            overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {"entries": []})
-            entries: list[dict[str, Any]] = overlays["entries"]
             if directory in [x["directory"] for x in entries]:
                 continue
             dp = ctx.data.overlays[directory]
@@ -777,7 +777,6 @@ def generate_translation(ctx: Context):
             if quit: continue
 
             new_entries.append(e1)
-        print(new_entries)
 
 
         b = None
@@ -786,6 +785,10 @@ def generate_translation(ctx: Context):
             a["max_format"] = (min_format[0] - 1, 999)
         if b:
             b["max_format"] = (b["max_format"][0], 999)
+
+        overlays: dict[str, Any] = ctx.data.mcmeta.data.setdefault("overlays", {})
+        overlays["entries"] = new_entries
+        
 
 
 
