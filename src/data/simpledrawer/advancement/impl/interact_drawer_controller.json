@@ -1,16 +1,19 @@
 {
 	"criteria": {
-	  "requirement": {
-		"trigger": "minecraft:player_interacted_with_entity",
-		"conditions": {
-		  "entity": {
-			"nbt": "{Tags:[\"simpledrawer.drawer_controller.interaction\"]}"
-		  }
+		"requirement": {
+			"trigger": "minecraft:player_interacted_with_entity",
+			"conditions": {
+				"entity": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"nbt": "{Tags:[\"simpledrawer.drawer_controller.interaction\"]}"
+					}
+				}
+			}
 		}
-	  }
 	},
 	"rewards": {
-	  "function": "simpledrawer:impl/calls/drawer_controller/interact"
+		"function": "simpledrawer:impl/calls/drawer_controller/interact"
 	}
-  }
-  
+}

@@ -30,7 +30,7 @@ class SimpleDrawerItem(Item):
     
     def set_components(self):
         res = super().set_components()
-        res.append({"function": "minecraft:reference", "name": "simpledrawer:impl/add_versionning"})
+        res.append("simpledrawer:impl/add_versionning")
         return res
 
 
@@ -660,7 +660,7 @@ def add_mc_version_support(ctx: Context):
 def get_translation(item_name, id):
     id = get_real_id(id)
     return {
-        "function": "minecraft:set_lore",
+        "type": "minecraft:set_lore",
         "entity": "this",
         "lore": [
             {
@@ -679,19 +679,17 @@ def get_translation(item_name, id):
             }
         ],
         "mode": "append",
-        "conditions": [
-            {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                    "equipment": {
-                        "mainhand": {
-                            "items": id
-                        }
+        "condition": {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "equipment": {
+                    "mainhand": {
+                        "items": id
                     }
                 }
             }
-        ]
+        }
     }
 
 
@@ -730,7 +728,10 @@ def get_item_modifier(item_components: dict[str, Any]):
         item_name["color"] = "white"
         item_name["italic"] = False
         item_modifier.append(get_translation(item_name, get_real_id(id)))
-    return item_modifier
+    return {
+        "type": "minecraft:sequence",
+        "functions": item_modifier
+    }
 
 def generate_translation(ctx: Context):
 
@@ -744,7 +745,7 @@ def generate_translation(ctx: Context):
         item_components = get_components(ctx, mc_version)
         formats, _ = get_pack_format(ctx, mc_version)
         item_modifier = get_item_modifier(item_components)
-        ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier) # type: ignore
+        ctx.data.item_modifiers["simpledrawer:impl/destroy/translate"] = ItemModifier(item_modifier)
     else:
         entries: list[dict[str, Any]] = []
         for mc_version in mc_versions:

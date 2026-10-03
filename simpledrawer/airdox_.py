@@ -96,7 +96,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     function=""
     final_test="execute "
 
-    for dep in ctx.meta["weld_deps"]["deps"]:
+    for dep in ctx.meta["weld_deps"].get("deps", []):
         if dep["versioning"]["type"]=="normal":
             
             major,minor,patch = dep["version_"].split(".")
@@ -115,7 +115,7 @@ execute unless score #{project_id}.{dep_id} load.status matches 1 run tellraw @a
     load_dependencies_tag={
         "values":[]
     }
-    for dep in ctx.meta["weld_deps"]["deps"]:
+    for dep in ctx.meta["weld_deps"].get("deps", []):
         load_dependencies_tag["values"].append({"id":"{dep_prefix}:load".format(dep_prefix=dep["versioning"]["prefix"]), "required":False})
     
     ctx.data.function_tags[f"{ctx.project_id}:load/dependencies"]=FunctionTag(load_dependencies_tag)
@@ -149,23 +149,4 @@ def add_id(ctx: Context):
     ctx.assets.extra["pack.mcmeta"].data["id"]=str(ctx.project_id)
     ctx.data.extra["pack.mcmeta"].data["id"]=str(ctx.project_id)
 
-    
-def monkey_patch_1_21(ctx: Context):
-    ctx.data.structures.proxy_key.scope = ("structure",)
-    ctx.data.advancements.proxy_key.scope = ("advancement",)
-    ctx.data.recipes.proxy_key.scope = ("recipe",)
-    ctx.data.loot_tables.proxy_key.scope = ("loot_table",)
-    ctx.data.predicates.proxy_key.scope = ("predicate",)
-    ctx.data.item_modifiers.proxy_key.scope = ("item_modifier",)
-    ctx.data.functions.proxy_key.scope = ("function",)
-    ctx.data.function_tags.proxy_key.scope = ("tags", "function")
-    ctx.data.item_tags.proxy_key.scope = ("tags", "item")
-    ctx.data.block_tags.proxy_key.scope = ("tags", "block")
-    ctx.data.entity_type_tags.proxy_key.scope = ("tags", "entity_type")
-    ctx.data.fluid_tags.proxy_key.scope = ("tags", "fluid")
-    ctx.data.game_event_tags.proxy_key.scope = ("tags", "game_event")
-    ctx.data.pack_format = 48
-    ctx.assets.pack_format = 34
-    
-    
     

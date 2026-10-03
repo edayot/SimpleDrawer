@@ -5,9 +5,9 @@ description = "Python project for SimpleDrawer Minecraft datapack"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "beet>=0.113.0b10",
-    "bolt>=0.50.0b5",
-    "mecha>=0.102.0b2",
+    "beet>=0.113.0",
+    "bolt>=0.50.0",
+    "mecha>=0.102.0",
     "simple-item-plugin>=0.29.1",
     "stewbeet>=2.4.0",
     "weld-deps>=0.15.0",
@@ -21,8 +21,9 @@ dev = [
 [tool.uv]
 override-dependencies = ["click>=8.3.1"]
 
-# [tool.uv.sources]
-# simple-item-plugin = { path = "../simple_item_plugin", editable = true }
+[tool.uv.sources]
+simple_item_plugin = { path = "../simple_item_plugin", editable = true }
+# beet = { path = "../beet", editable = true }
 # weld-deps = { path = "../weld-deps", editable = true }
 
 

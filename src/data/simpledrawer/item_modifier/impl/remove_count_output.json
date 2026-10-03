@@ -1,15 +1,18 @@
-[
-    {
-        "function": "minecraft:set_count",
-        "count": {
-            "type": "minecraft:score",
-            "target": {
-                "type": "minecraft:fixed",
-                "name": "#count_insert"
-            },
-            "score": "simpledrawer.io",
-            "scale": -1
-        },
-        "add": true
-    }
-]
+{
+    "type": "minecraft:set_count",
+    "count": {
+        "type": "minecraft:mul",
+        "inputs": [
+            -1,
+            {
+                "type": "minecraft:score",
+                "target": {
+                    "type": "minecraft:fixed",
+                    "name": "#count_insert"
+                },
+                "score": "simpledrawer.io"
+            }
+        ]
+    },
+    "add": true
+}

@@ -1,12 +1,11 @@
 {
-	"condition": "minecraft:entity_properties",
+	"type": "minecraft:entity_properties",
 	"entity": "this",
 	"predicate": {
-	  "equipment": {
-		"mainhand": {
-		  "nbt": "{ctc:{id:\"guide\",from:\"airdox_:simpledrawer\"}}"
+		"equipment": {
+			"mainhand": {
+				"nbt": "{ctc:{id:\"guide\",from:\"airdox_:simpledrawer\"}}"
+			}
 		}
-	  }
 	}
-  }
-  
+}

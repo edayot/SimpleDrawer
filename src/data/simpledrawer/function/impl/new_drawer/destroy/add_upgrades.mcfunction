@@ -9,7 +9,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"star"} run 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"netherite"} run scoreboard players set #temp_upgrade simpledrawer.math 1
 
 execute if score #temp_upgrade simpledrawer.math matches 1 run item modify entity @s container.0 {
-	"function": "minecraft:set_lore",
+	"type": "minecraft:set_lore",
 	"lore": [
 		{
 			"text": "",
@@ -19,7 +19,7 @@ execute if score #temp_upgrade simpledrawer.math matches 1 run item modify entit
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run item modify entity @s container.0 {
-	"function": "minecraft:set_lore",
+	"type": "minecraft:set_lore",
 	"lore": [
 		{
 			"translate": "simpledrawer.hopper_tier",
@@ -30,7 +30,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{hopper:1b} run item 
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"iron"} run item modify entity @s container.0 {
-    "function": "minecraft:set_lore",
+    "type": "minecraft:set_lore",
     "lore": [
         {
             "translate": "simpledrawer.iron_tier",
@@ -41,7 +41,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"iron"} run 
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"gold"} run item modify entity @s container.0 {
-    "function": "minecraft:set_lore",
+    "type": "minecraft:set_lore",
     "lore": [
         {
             "translate": "simpledrawer.gold_tier",
@@ -52,7 +52,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"gold"} run 
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"diamond"} run item modify entity @s container.0 {
-    "function": "minecraft:set_lore",
+    "type": "minecraft:set_lore",
     "lore": [
         {
             "translate": "simpledrawer.diamond_tier",
@@ -63,7 +63,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"diamond"} r
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"star"} run item modify entity @s container.0 {
-    "function": "minecraft:set_lore",
+    "type": "minecraft:set_lore",
     "lore": [
         {
             "translate": "simpledrawer.star_tier",
@@ -74,7 +74,7 @@ execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"star"} run 
 }
 
 execute if data storage simpledrawer:main temp.simpledrawer{upgrade:"netherite"} run item modify entity @s container.0 {
-    "function": "minecraft:set_lore",
+    "type": "minecraft:set_lore",
     "lore": [
         {
             "translate": "simpledrawer.netherite_tier",

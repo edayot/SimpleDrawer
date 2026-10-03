@@ -131,9 +131,9 @@ function ~/loot_spawn:
                     { \
                         "type": "minecraft:loot_table", \
                         "value": "simpledrawer:impl/$(loot_table)", \
-                        "functions": [ \
+                        "modifier": [ \
                             { \
-                                "function": "minecraft:copy_custom_data", \
+                                "type": "minecraft:copy_custom_data", \
                                 "source": { \
                                     "type": "minecraft:storage", \
                                     "source": "simpledrawer:main" \
@@ -159,23 +159,23 @@ execute
     run function ~/item:
         data remove entity @s Item.components."minecraft:custom_data".simpledrawer_summoned
 
-        item modify entity @s container.0 { \
-            "function": "minecraft:modify_contents", \
-            "component": "minecraft:container", \
-            "modifier": { \
-                "function": "minecraft:copy_custom_data", \
-                "source": { \
-                    "type": "minecraft:storage", \
-                    "source": "simpledrawer:main" \
-                }, \
-                "ops": [ \
-                    { \
-                        "source": "temp.simpledrawer", \
-                        "target": "simpledrawer", \
-                        "op": "replace" \
-                    } \
-                ] \
-            } \
+        item modify entity @s container.0 {
+            "type": "minecraft:modify_contents",
+            "component": "minecraft:container",
+            "modifier": {
+                "type": "minecraft:copy_custom_data",
+                "source": {
+                    "type": "minecraft:storage",
+                    "source": "simpledrawer:main"
+                },
+                "ops": [
+                    {
+                        "source": "temp.simpledrawer",
+                        "target": "simpledrawer",
+                        "op": "replace"
+                    }
+                ]
+            }
         }
         data modify entity @s Item.components."minecraft:container"[0].item.components."minecraft:container" set from storage simpledrawer:main temp.simpledrawer_container
 

@@ -35,10 +35,10 @@ resource_pack:
 
 meta:
   mc_supports:
-    - "26.2"
+    - "26.3"
   mc_supports_dataversion:
-    - 4903 
-  minecraft_version: "26.2"
+    - 5023 
+  minecraft_version: "26.3"
   modrinth_id: "JmCxCKiW"
 
   simple_item_plugin:
@@ -60,11 +60,12 @@ meta:
     render_size: 256
     load_vanilla: true
     save_namespace: grappling_hook
-    minecraft_version: "26.1.1"
+    minecraft_version: "26.3"
     special_rendering: true
 
   smithed:
     versioning:
+      scoreholder: "#simpledrawer"
       scheduled_paths:
         - "impl/tick"
         - "impl/5tick"
@@ -89,28 +90,28 @@ meta:
     merge_with_weld: false
     deps:
       - id: itemio
-        version_: "1.7.1"
+        version_: "1.8.1"
         source: smithed
         versioning:
           type: normal
           prefix: "#itemio"
 
       - id: crafter
-        version_: "0.10.0"
+        version_: "0.12.0"
         source: smithed
         versioning:
           type: normal
           prefix: "#smithed.crafter"
 
       - id: custom-block
-        version_: "0.10.0"
+        version_: "0.12.0"
         source: smithed
         versioning:
           type: normal
           prefix: "#smithed.custom_block"
 
       - id: custom_block_ext
-        version_: "0.2.0"
+        version_: "0.3.0"
         source: smithed
         versioning:
           type: normal

@@ -45,7 +45,7 @@ execute
 					!item_model="simpledrawer:new_drawer"
 				] 
 				run item modify entity @s f"container.{i}" { \
-					"function": "minecraft:set_components", \
+					"type": "minecraft:set_components", \
 					"components": { \
 						"minecraft:item_model": "simpledrawer:new_drawer", \
 					} \
