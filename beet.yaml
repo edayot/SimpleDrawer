@@ -13,12 +13,12 @@ pipeline:
 
 require:
   - bolt
+  - mcward.beet
+  - mcward.mecha
   - weld_deps
   - weld_deps.contrib.mecha_auto_include.require
   - mecha.contrib.relative_location
   - mecha.contrib.nested_location
-  - simpledrawer.airdox_.add_tests_directory
-  - simpledrawer.airdox_.allow_function_without_name
   - mecha.contrib.messages
   - bolt
 
@@ -85,6 +85,7 @@ meta:
         implementation_prefix: "{{ project_id }}:v{{ project_version }}/"
         version_check_path: "v{{ project_version }}/calls"
         tag_path: calls
+        loot_table_tag_path: ""
 
   weld_deps:
     merge_with_weld: false

@@ -11,6 +11,8 @@ dependencies = [
     "simple-item-plugin>=0.29.1",
     "stewbeet>=2.4.0",
     "weld-deps>=0.15.0",
+    "mcward>=1.2.0",
+    "mcward[beet,cli]>=1.2.0",
 ]
 
 [dependency-groups]
@@ -21,8 +23,8 @@ dev = [
 [tool.uv]
 override-dependencies = ["click>=8.3.1"]
 
-[tool.uv.sources]
-simple_item_plugin = { path = "../simple_item_plugin", editable = true }
+# [tool.uv.sources]
+# simple_item_plugin = { path = "../simple_item_plugin", editable = true }
 # beet = { path = "../beet", editable = true }
 # weld-deps = { path = "../weld-deps", editable = true }
 
