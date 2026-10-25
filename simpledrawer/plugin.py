@@ -625,6 +625,7 @@ WOOD_TYPES = {
     "warped",
     "oak",
     "pale_oak",
+    "poplar",
 }
 DRAWER_TYPES = WOOD_TYPES.copy() | {"ice"}
 ALL_DRAWER_TYPES = DRAWER_TYPES.copy() | {"compacting"}
