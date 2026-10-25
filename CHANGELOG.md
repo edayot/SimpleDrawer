@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v2.11.0 (2026-10-25)
+
+<!-- badge -->
+### Features
+
+- 26.3 update
+  ([`1362a7b`](https://github.com/edayot/SimpleDrawer/commit/1362a7b10b47280a6742ea8659e8fc92e54c57ba))
+
+
 ## v2.10.0 (2026-07-13)
 
 <!-- badge -->
