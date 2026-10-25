@@ -798,7 +798,7 @@ def generate_translation(ctx: Context):
 
 
 def create_tape_loot_table(ctx: Context):
-    vanilla = Vanilla(ctx, minecraft_version=ctx.meta.get("minecraft_version", "1.20.6"))
+    vanilla = Vanilla(ctx)
 
     originals = [
         "minecraft:blocks/lodestone",

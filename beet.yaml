@@ -4,6 +4,7 @@ version: 2.10.0
 description: "A simple datapack that add drawers in to minecraft"
 author: airdox_
 
+minecraft: "26.3"
 
 output: build
 
@@ -34,11 +35,12 @@ resource_pack:
   load: src
 
 meta:
+  playground:
+    resource_pack: true
   mc_supports:
     - "26.3"
   mc_supports_dataversion:
     - 5023 
-  minecraft_version: "26.3"
   modrinth_id: "JmCxCKiW"
 
   simple_item_plugin:
@@ -60,7 +62,6 @@ meta:
     render_size: 256
     load_vanilla: true
     save_namespace: grappling_hook
-    minecraft_version: "26.3"
     special_rendering: true
 
   smithed:
