@@ -33,6 +33,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_HASH: ${{ github.sha }}
+          MC_VERSION: ${{ steps.get-mc-version.outputs.mc_version }}
         with:
           commands: |
             uv run beet -s data_pack.name=\"datapack-bundled\" -s resource_pack.name=\"resourcepack-bundled\"
